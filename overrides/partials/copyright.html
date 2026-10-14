@@ -1,0 +1,8 @@
+<div class="md-copyright">
+  {% if config.copyright %}
+    <div class="md-copyright__highlight">
+      {{ config.copyright }}
+    </div>
+  {% endif %}
+  Versão {{ config.extra.versao }} · Site gerado em {{ build_date_utc.strftime('%d/%m/%Y') }}
+</div>

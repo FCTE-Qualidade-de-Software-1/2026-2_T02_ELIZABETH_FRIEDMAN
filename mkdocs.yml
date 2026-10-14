@@ -1,0 +1,91 @@
+site_name: Avaliação de Qualidade de Produto — Equipe Elizabeth Friedman
+site_description: Projeto final de FGA0315 Qualidade de Software 1 (2026/2, Turma T02) — avaliação de qualidade de produto de software segundo a família SQuaRE.
+site_author: Equipe Elizabeth Friedman
+site_url: https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/
+repo_url: https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN
+repo_name: 2026-2_T02_ELIZABETH_FRIEDMAN
+edit_uri: edit/main/docs/
+
+copyright: FGA0315 Qualidade de Software 1 — UnB/FCTE — 2026/2
+
+theme:
+  name: material
+  language: pt-BR
+  custom_dir: overrides
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - toc.follow
+    - search.highlight
+    - content.tables
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+
+extra:
+  # Atualize a cada entrega (aparece no rodapé de todas as páginas).
+  versao: "0.1 — em construção"
+  generator: false
+
+plugins:
+  - search:
+      lang: pt
+  - git-revision-date-localized:
+      type: date
+      locale: pt_BR
+      fallback_to_build_date: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js
+
+nav:
+  - Início: index.md
+  - Avaliação:
+      - Fase 1 — Requisitos da avaliação: fase-1.md
+      - Fase 2 — Especificação (GQM): fase-2.md
+      - Fase 3 — Projeto da avaliação: fase-3.md
+      - Fase 4 — Execução e resultados: fase-4.md
+  - Gestão do projeto:
+      - Métricas PSM/CID: gestao/metricas.md
+      - Atas de reunião: gestao/atas.md
+  - Entregas: entregas.md
+  - Equipe: equipe.md
+  - Uso de IA: uso-de-ia.md
+  - Referências: referencias.md
