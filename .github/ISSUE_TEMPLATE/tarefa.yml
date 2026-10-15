@@ -1,0 +1,36 @@
+name: Tarefa
+description: Tarefa do projeto (registra estimativa e esforço para as métricas PSM/CID)
+title: "[Tarefa] "
+body:
+  - type: textarea
+    id: objetivo
+    attributes:
+      label: Objetivo
+      description: O que deve ser produzido.
+    validations:
+      required: true
+  - type: textarea
+    id: pronto
+    attributes:
+      label: Critério de pronto
+      description: Como a equipe sabe que a tarefa está concluída (ex.: seção revisada por outro membro e publicada na GitPage).
+    validations:
+      required: true
+  - type: input
+    id: estimativa
+    attributes:
+      label: Estimativa (horas)
+      placeholder: "ex.: 3"
+    validations:
+      required: true
+  - type: textarea
+    id: horas
+    attributes:
+      label: Horas reais
+      description: Preencha ao concluir, ou registre em comentários ao longo da tarefa (uma linha por sessão de trabalho).
+      placeholder: "dd/mm — nome — X h"
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: Evidências
+      description: Links para commits, PRs, páginas ou arquivos gerados.
