@@ -21,8 +21,6 @@ body:
     attributes:
       label: Estimativa (horas)
       placeholder: "ex.: 3"
-    validations:
-      required: true
   - type: textarea
     id: horas
     attributes:
