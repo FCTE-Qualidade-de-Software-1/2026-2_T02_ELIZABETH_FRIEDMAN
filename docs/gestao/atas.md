@@ -36,6 +36,5 @@
 |--------|-------------|-------|-------|
 | Criar as *issues* da Entrega 1 e do PC1 | Eduardo Waski | 15/10 | [#1 a #13](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues) |
 | Preparar slides para a apresentação | Todos | 18/10 | [#13](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/13) |
----
 
 Ver também: [Métricas PSM/CID](metricas.md).
