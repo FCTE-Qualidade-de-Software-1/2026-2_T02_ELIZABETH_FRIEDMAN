@@ -94,10 +94,134 @@ a priorização entre elas estão na [Seção 5](#5-selecao-e-priorizacao-das-ca
 <!--
 Critério 3: classificar o tipo de produto; descrever módulos, interfaces, dependências e restrições.
 Para nota máxima: diagrama de contexto/arquitetura e implicações para a avaliação (o que dá / não dá para medir agora).
-Diagramas podem ser feitos em Mermaid diretamente aqui (bloco ```mermaid).
 -->
 
-*A preencher.*
+### 3.1 Tipo de produto
+
+O Sua Grade UnB é uma **aplicação web cliente-servidor em operação**, de acesso público e
+gratuito. Ela é formada por duas aplicações separadas: um *frontend* acessado pelo navegador e uma
+API REST que concentra as regras de negócio e os dados. Por ser um produto já em uso, e não em
+desenvolvimento, avaliamos o produto pronto: o site público e o código-fonte do *commit* `3d399e7`
+(15/02/2026), o último da branch principal na data da consulta.
+
+### 3.2 Componentes
+
+**Tabela 4 — Componentes do Sua Grade UnB**
+
+| Componente | Tecnologias | Responsabilidade | Onde roda em produção |
+|------------|-------------|------------------|-----------------------|
+| *Frontend* (`web/`) | Next.js 14, React 18, TypeScript, Tailwind CSS | Telas de busca de disciplinas, seleção de turmas, visualização das grades geradas e exportação em PDF; guarda grades no armazenamento do navegador | Vercel |
+| API (`api/`) | Python 3.11, Django 5.1, Django REST Framework | Busca de disciplinas, geração de grades, cadastro e login, grades salvas na conta | Heroku |
+| Banco de dados | PostgreSQL | Departamentos, disciplinas, turmas, usuários e grades salvas | Não identificado publicamente |
+| *Cache* | Redis | *Cache* de 12 h, sessões e controle de quais departamentos já foram atualizados | Não identificado publicamente |
+| Coleta de dados (`updatedb`) | Requests, BeautifulSoup | *Web scraping* das turmas do SIGAA, executado manualmente por um mantenedor | Servidor da API |
+
+Fonte: código-fonte e documentação do repositório; a hospedagem do *frontend* e da API foi
+identificada pelos cabeçalhos HTTP das respostas (consulta em 17/10/2026).
+
+A API é dividida em três módulos Django: `api` (disciplinas, turmas e grades), `users` (cadastro,
+login com Google e *tokens* JWT) e `utils` (coleta do SIGAA, gerador de grades e acesso ao banco).
+O código tem cerca de 5,4 mil linhas de Python na API e 2,6 mil linhas de TypeScript no *frontend*.
+
+### 3.3 Interfaces
+
+A comunicação entre o *frontend* e a API é feita por HTTP com JSON. A API publica sua própria
+documentação em Swagger.
+
+**Tabela 5 — Rotas da API**
+
+| Rota | Método | Função | Exige login |
+|------|--------|--------|-------------|
+| `/courses/` | GET | Busca disciplinas por nome, código ou professor | Não |
+| `/courses/year-period/` | GET | Informa os períodos disponíveis para busca | Não |
+| `/courses/schedules/generate/` | POST | Gera as grades sem conflito de horário (devolve as 5 melhores) | Não |
+| `/courses/schedules/` | GET / POST | Lista e salva grades na conta | Sim |
+| `/courses/schedules/<id>/` | DELETE | Apaga uma grade salva | Sim |
+| `/users/register/<oauth2>/` | POST | Cadastro e login com a conta Google | Não |
+| `/users/login/` | POST | Renova o *token* de acesso | Não |
+| `/users/logout/` | POST | Encerra a sessão | Sim |
+
+Fonte: `api/core/urls.py`, `api/api/urls.py` e `api/users/urls.py` do repositório.
+
+### 3.4 Dependências externas e restrições
+
+- **SIGAA:** é a única fonte dos dados de turmas. A coleta lê o HTML da página pública de turmas, então qualquer mudança no SIGAA pode quebrá-la. A coleta não é automática, depende de um mantenedor rodar o comando no servidor.
+- **Google OAuth:** é o único meio de login. Sem login, o estudante ainda gera grades e pode guardá-las no navegador, mas não na conta.
+- **Hospedagem:** a API roda no Heroku, que é pago, e o *frontend* na Vercel.
+- **Limites do código:** a geração aceita até 11 disciplinas com até 4 turmas cada e devolve as 5 melhores grades e a busca devolve até 15 disciplinas.
+- **Testes:** a API tem 108 testes automatizados, executados no GitHub Actions com relatório de cobertura e o *frontend* não tem testes.
+
+### 3.5 Diagrama de contexto e arquitetura
+
+**Figura 1 — Contexto e arquitetura do Sua Grade UnB**
+
+```mermaid
+flowchart LR
+    accTitle: Contexto e arquitetura do Sua Grade UnB
+    accDescr: O estudante usa o frontend Next.js, hospedado na Vercel, que guarda grades no navegador e chama a API Django, hospedada no Heroku. A API valida o login no Google, grava dados no PostgreSQL e usa o Redis como cache. Um mantenedor executa manualmente a coleta, que lê as turmas do SIGAA e grava no PostgreSQL.
+
+    estudante([Estudante])
+    mantenedor([Mantenedor])
+
+    subgraph vercel [Vercel]
+        web["Frontend<br/>Next.js + TypeScript"]
+    end
+
+    subgraph heroku [Heroku]
+        api["API REST<br/>Django + DRF"]
+        coleta["Coleta updatedb<br/>web scraping"]
+    end
+
+    navegador[("Armazenamento<br/>do navegador")]
+    db[("PostgreSQL")]
+    redis[("Redis<br/>cache e sessões")]
+    google["Google OAuth"]
+    sigaa["SIGAA<br/>turmas públicas"]
+
+    estudante -->|acessa| web
+    web -->|grades sem login| navegador
+    web -->|HTTP + JSON| api
+    web -->|login| google
+    api -->|valida o token| google
+    api --> db
+    api --> redis
+    mantenedor -->|executa manualmente| coleta
+    coleta -->|lê o HTML| sigaa
+    coleta --> db
+```
+
+Fonte: elaborado pela equipe a partir do código-fonte e da documentação do repositório.
+
+### 3.6 Reprodução local e implicações para a avaliação
+
+Em 17/10/2026 rodamos o sistema localmente com `docker compose`, seguindo o README do projeto. Os
+quatro serviços (API, *frontend*, PostgreSQL e Redis) subiram sem erros. Para não fazer
+requisições ao SIGAA, carregamos no banco o HTML de exemplo do SIGAA que já vem no repositório
+(`api/utils/mock/sigaa.html`), com um departamento, 14 disciplinas e 43 turmas. O login foi testado
+com o *token* de teste previsto no próprio código, sem conta Google.
+
+Com isso conseguimos executar o fluxo principal pela API (buscar disciplina, gerar grade, salvar,
+listar e apagar grade) e abrir o *frontend*. Os 108 testes automatizados da API também rodaram e
+passaram, com relatório de cobertura.
+
+**Tabela 8 — O que dá e o que não dá para medir**
+
+| Objeto | Temos acesso? | Implicação para a avaliação |
+|--------|---------------|-----------------------------|
+| Código-fonte completo | Sim | Manutenibilidade pode ser medida por análise estática e pelos testes |
+| Testes automatizados da API | Sim, rodam localmente | Testabilidade pode ser medida pela cobertura e pelo resultado dos testes |
+| Site público | Sim | Capacidade de interação pode ser avaliada com usuários no site real; tempo de carregamento das páginas também |
+| API pública | Sim, com poucas requisições | Tempo de resposta em produção será medido com poucas requisições espaçadas |
+| Reprodução local | Sim, com dados de exemplo | Capacidade e utilização de recursos só serão medidas localmente; os valores não representam o servidor de produção |
+| Logs, métricas e banco de produção | Não | Não dá para medir erros reais, uso de CPU e memória no Heroku nem o número de acessos |
+| Carga real do período de matrícula | Não | Não faremos teste de carga em produção, porque a hospedagem é paga pelos mantenedores |
+| Login real com Google na reprodução local | Só criando um projeto no Google Cloud | Usamos o *token* de teste do código para as rotas que exigem login |
+
+Fonte: elaborado a partir da reprodução local.
+
+Duas limitações valem para os resultados. Os dados de exemplo são poucos e de um único
+departamento, então medições de desempenho locais podem não refletir o volume real de turmas. E
+localmente os servidores rodam em modo de desenvolvimento, diferente da configuração de produção.
 
 ## 4. Modelo de qualidade
 
@@ -106,7 +230,97 @@ Critério 4: modelo escolhido (ISO/IEC 25010), adaptações JUSTIFICADAS por con
 diagrama com ligações às subcaracterísticas.
 -->
 
-*A preencher.*
+### 4.1 Modelo de referência
+
+Usamos o modelo de qualidade de produto da **ISO/IEC 25010:2023**, da série SQuaRE (ISO/IEC 25000),
+e seguimos o processo de avaliação da ISO/IEC 25040. A versão de 2023 renomeou duas das
+características que escolhemos e mudou parte das subcaracterísticas. Neste trabalho usamos os nomes
+de 2023; a Tabela 6 mostra a correspondência com a versão de 2011.
+
+**Tabela 6 — Correspondência entre as versões da ISO/IEC 25010**
+
+| ISO/IEC 25010:2011 | ISO/IEC 25010:2023 | O que mudou nas subcaracterísticas |
+|--------------------|--------------------|------------------------------------|
+| Usabilidade | Capacidade de interação | Estética da interface virou Engajamento do usuário; Acessibilidade foi dividida em Inclusividade e Assistência ao usuário; Autodescritividade foi incluída |
+| Eficiência de desempenho | Eficiência de desempenho | Sem mudanças |
+| Manutenibilidade | Manutenibilidade | Sem mudanças |
+
+Fonte: ISO/IEC 25010:2011 e ISO/IEC 25010:2023.
+
+O termo "usabilidade" passou a fazer parte do modelo de qualidade em uso, descrito na
+ISO/IEC 25019:2023. Como avaliamos a qualidade do produto, e não a qualidade em uso, a
+característica correspondente aqui é a Capacidade de interação.
+
+### 4.2 Adaptação do modelo
+
+O modelo completo tem nove características. Mantivemos as três selecionadas na
+[Seção 5](#5-selecao-e-priorizacao-das-caracteristicas) e, dentro delas, só as subcaracterísticas
+ligadas às partes interessadas da [Tabela 3](#22-mapa-de-partes-interessadas) e às decisões da
+[Tabela 2](#13-uso-pretendido-decisoes-apoiadas).
+
+**Tabela 7 — Subcaracterísticas incluídas e excluídas**
+
+| Característica | Subcaracterística | Situação | Justificativa |
+|----------------|-------------------|----------|---------------|
+| Capacidade de interação | Aprendizibilidade | Incluída | O estudante usa o sistema poucas vezes por semestre, e calouros o usam pela primeira vez na matrícula |
+| | Operabilidade | Incluída | O fluxo principal tem várias etapas (buscar, selecionar, gerar, salvar) e é usado também no celular |
+| | Proteção contra erros do usuário | Incluída | Há relatos de usuários sobre grades geradas acima do limite de créditos (*issue* #238) |
+| | Reconhecibilidade de adequação | Excluída | O sistema tem um único propósito, já indicado no nome e na tela inicial |
+| | Engajamento do usuário | Excluída | O uso é pontual e com objetivo definido; a aparência não pesa nas decisões D1 a D3 |
+| | Inclusividade | Excluída | Fora do escopo desta avaliação por limite de prazo |
+| | Assistência ao usuário | Excluída | Fora do escopo desta avaliação por limite de prazo |
+| | Autodescritividade | Excluída | Sobreposta à aprendizibilidade nas tarefas que vamos observar |
+| Eficiência de desempenho | Comportamento temporal | Incluída | Busca e geração de grade precisam responder rápido no pico da matrícula |
+| | Utilização de recursos | Incluída | A geração combina todas as turmas escolhidas, o que pode chegar a milhões de combinações |
+| | Capacidade | Incluída | O uso se concentra na matrícula, e a API não limita o número de requisições; será medida só na reprodução local |
+| Manutenibilidade | Modularidade | Incluída | Uma mudança no SIGAA deveria afetar só o módulo de coleta |
+| | Analisabilidade | Incluída | Contribuidores externos precisam localizar a causa de falhas em código que não escreveram (D3) |
+| | Modificabilidade | Incluída | A correção da coleta em 2026 mostra que o código precisa ser alterado sem quebrar o resto |
+| | Testabilidade | Incluída | A API tem testes automatizados, mas o *frontend* não tem nenhum |
+| | Reusabilidade | Excluída | Nenhuma das decisões D1 a D3 depende de reaproveitar componentes em outros sistemas |
+
+Fonte: elaborado pela equipe a partir da ISO/IEC 25010:2023.
+
+### 4.3 Diagrama do modelo adaptado
+
+**Figura 2 — Modelo de qualidade adaptado da ISO/IEC 25010:2023**
+
+```mermaid
+flowchart LR
+    accTitle: Modelo de qualidade adaptado da ISO/IEC 25010:2023
+    accDescr: A qualidade do produto se divide em três características. Capacidade de interação inclui aprendizibilidade, operabilidade e proteção contra erros do usuário. Eficiência de desempenho inclui comportamento temporal, utilização de recursos e capacidade. Manutenibilidade inclui modularidade, analisabilidade, modificabilidade e testabilidade. As subcaracterísticas excluídas aparecem tracejadas.
+
+    q["Qualidade do produto<br/>Sua Grade UnB"]
+
+    q --> ci["Capacidade de interação"]
+    q --> ed["Eficiência de desempenho"]
+    q --> ma["Manutenibilidade"]
+
+    ci --> ci1["Aprendizibilidade"]
+    ci --> ci2["Operabilidade"]
+    ci --> ci3["Proteção contra erros<br/>do usuário"]
+    ci -.-> ci4["Reconhecibilidade de adequação"]:::excluida
+    ci -.-> ci5["Engajamento do usuário"]:::excluida
+    ci -.-> ci6["Inclusividade"]:::excluida
+    ci -.-> ci7["Assistência ao usuário"]:::excluida
+    ci -.-> ci8["Autodescritividade"]:::excluida
+
+    ed --> ed1["Comportamento temporal"]
+    ed --> ed2["Utilização de recursos"]
+    ed --> ed3["Capacidade"]
+
+    ma --> ma1["Modularidade"]
+    ma --> ma2["Analisabilidade"]
+    ma --> ma3["Modificabilidade"]
+    ma --> ma4["Testabilidade"]
+    ma -.-> ma5["Reusabilidade"]:::excluida
+
+    classDef excluida stroke-dasharray: 5 5,color:#888
+```
+
+Fonte: elaborado pela equipe a partir da ISO/IEC 25010:2023.
+
+As linhas tracejadas indicam as subcaracterísticas excluídas, com a justificativa na Tabela 7.
 
 ## 5. Seleção e priorização das características
 
