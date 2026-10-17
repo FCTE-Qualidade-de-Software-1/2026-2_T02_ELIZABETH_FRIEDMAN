@@ -1,14 +1,9 @@
 # Avaliação de Qualidade de Produto de Software
 
-<!--
-Página inicial: narrativa para um leitor externo que não conhece a disciplina.
-Responder em poucos parágrafos: o que foi avaliado, por quê, para quem, e onde encontrar cada parte.
--->
-
 Este site documenta o projeto final da equipe **Elizabeth Friedman** na disciplina
 FGA0315 — Qualidade de Software 1 (UnB/FCTE, 2026/2, Turma T02, Profa. Cristiane Soares Ramos).
 
-O projeto avalia a qualidade do produto **[NOME DO SOFTWARE]** seguindo o processo de
+O projeto avalia a qualidade do produto **Sua Grade UnB** seguindo o processo de
 avaliação da família SQuaRE (ISO/IEC 25040), com o modelo de qualidade da ISO/IEC 25010
 e métricas definidas pelo método *Goal–Question–Metric* (GQM).
 
