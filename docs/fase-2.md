@@ -96,7 +96,7 @@ os dados utilizados e a repetição das tarefas serão especificados no plano da
 <!--
 F2-C4 e premissa 2: para cada métrica documentar definição, procedimento de cálculo (fórmula),
 fonte dos dados, procedimento de coleta e critérios de interpretação.
-Fórmulas em LaTeX: \( X = \frac{A}{B} \) em linha, ou \[ ... \] em bloco.
+Fórmulas em LaTeX: $ X = \frac{A}{B} $ em linha, ou $$ ... $$ em bloco.
 -->
 
 ### 3.1 Convenções de medição de eficiência de desempenho
@@ -124,19 +124,19 @@ na preparação do roteiro na Fase 3, conforme o comportamento real da aplicaç�
 
 Para cada tentativa concluída com sucesso:
 
-\[
+$$
 t_i = t_{\mathrm{fim},i} - t_{\mathrm{início},i}
-\]
+$$
 
 Os tempos são expressos em **milissegundos (ms)**. Ordenando os tempos válidos de
 forma crescente, calcular o percentil 95 pelo método do posto mais próximo:
 
-\[
+$$
 P_{95}(t) = t_{(\lceil 0{,}95n \rceil)}
-\]
+$$
 
-Nessa fórmula, \(n\) é o número de tentativas medidas concluídas com sucesso e
-\(t_{(k)}\) é o tempo na posição \(k\) da série ordenada. Com 30 sucessos, utiliza-se
+Nessa fórmula, $n$ é o número de tentativas medidas concluídas com sucesso e
+$t_{(k)}$ é o tempo na posição $k$ da série ordenada. Com 30 sucessos, utiliza-se
 o 29º tempo. Com nenhum sucesso, o percentil é **não calculável**.
 
 Registrar as 30 tentativas, incluindo erros e expiração do tempo de espera, sem
@@ -153,8 +153,8 @@ final, duração, estado (sucesso, erro ou expiração) e referência à evidên
 Registrar a configuração do ambiente e a massa de dados junto ao arquivo.
 
 Para cada métrica, **menor é melhor**. O resultado atende ao requisito temporal
-quando \(M_j \leq L_j\), em que \(L_j\) é o limite de aceitação da operação e do
-cenário, em ms. Os valores de \(L_2\) a \(L_5\), sua justificativa e os níveis de
+quando $M_j \leq L_j$, em que $L_j$ é o limite de aceitação da operação e do
+cenário, em ms. Os valores de $L_2$ a $L_5$, sua justificativa e os níveis de
 pontuação serão definidos na Seção 4 **antes da coleta**. Até essa definição, as
 métricas permitem descrever os tempos, mas não confirmar as hipóteses de aceitação.
 
@@ -164,7 +164,7 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 |-------|-----------|
 | Questão respondida | Q1 |
 | Definição | |
-| Fórmula | \( X = \frac{A}{B} \) |
+| Fórmula | $ X = \frac{A}{B} $ |
 | Fonte dos dados | |
 | Procedimento de coleta | |
 | Interpretação | |
@@ -175,10 +175,10 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 |-------|-----------|
 | Questão respondida | Q2 — hipótese H2; objetivo G2. |
 | Definição | Percentil 95 do tempo entre a ação que solicita a busca e a exibição dos resultados correspondentes ao termo informado, com a interface pronta para interação. |
-| Fórmula | \(M_2 = P_{95}(t_{\mathrm{busca}})\), em ms, conforme a Seção 3.1. |
+| Fórmula | $M_2 = P_{95}(t_{\mathrm{busca}})$, em ms, conforme a Seção 3.1. |
 | Fonte dos dados | Registros de eventos do navegador na reprodução local, arquivo CSV das tentativas e evidências da atualização dos resultados. |
 | Procedimento de coleta | Preparar cenários separados para busca por nome e por código, com termos e resultados esperados fixos. Iniciar a marcação na ação que dispara a busca; se houver busca automática, usar o último evento de entrada do termo, incluindo eventual espera programada pela aplicação. Encerrar quando os resultados correspondentes estiverem visíveis e utilizáveis, sem confundir resultados anteriores com os da nova busca. Executar o protocolo da Seção 3.1 para cada cenário. |
-| Interpretação | Comparar cada cenário com \(L_2\). Um resultado acima do limite indica demora na busca sob as condições medidas. Interpretar junto aos erros e expirações; o resultado não demonstra desempenho em picos de matrícula. |
+| Interpretação | Comparar cada cenário com $L_2$. Um resultado acima do limite indica demora na busca sob as condições medidas. Interpretar junto aos erros e expirações; o resultado não demonstra desempenho em picos de matrícula. |
 
 ### M3 — Tempo de atualização após seleção de turma (P95)
 
@@ -186,10 +186,10 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 |-------|-----------|
 | Questão respondida | Q3 — hipótese H3; objetivo G2. |
 | Definição | Percentil 95 do tempo entre selecionar uma turma e visualizar a atualização completa do estado de seleção na interface. |
-| Fórmula | \(M_3 = P_{95}(t_{\mathrm{seleção}})\), em ms, conforme a Seção 3.1. |
+| Fórmula | $M_3 = P_{95}(t_{\mathrm{seleção}})$, em ms, conforme a Seção 3.1. |
 | Fonte dos dados | Registros de eventos de seleção e atualização visual do navegador na reprodução local, arquivo CSV e evidências do estado selecionado. |
 | Procedimento de coleta | Fixar a disciplina, a turma e as seleções anteriores de cada cenário. Iniciar a marcação na ação de selecionar a turma e encerrar quando os indicadores visuais correspondentes refletirem o novo estado e a interface permitir continuar a tarefa. Restaurar as seleções iniciais entre tentativas, fora do intervalo medido. Executar o protocolo da Seção 3.1. |
-| Interpretação | Comparar cada cenário com \(L_3\). Um resultado acima do limite indica atraso na atualização após a seleção, nas condições medidas. Uma atualização ausente ou incorreta é registrada como erro, não como resposta rápida. |
+| Interpretação | Comparar cada cenário com $L_3$. Um resultado acima do limite indica atraso na atualização após a seleção, nas condições medidas. Uma atualização ausente ou incorreta é registrada como erro, não como resposta rápida. |
 
 ### M4 — Tempo de geração de grades (P95)
 
@@ -197,10 +197,10 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 |-------|-----------|
 | Questão respondida | Q4 — hipótese H4; objetivo G2. |
 | Definição | Percentil 95 do tempo entre solicitar a geração e concluir a apresentação das combinações de grades previstas pelo fluxo da aplicação para o conjunto selecionado. |
-| Fórmula | \(M_4 = P_{95}(t_{\mathrm{geração}})\), em ms, conforme a Seção 3.1. |
+| Fórmula | $M_4 = P_{95}(t_{\mathrm{geração}})$, em ms, conforme a Seção 3.1. |
 | Fonte dos dados | Registros de acionamento e conclusão da geração no navegador da reprodução local, massa de dados de disciplinas e turmas, arquivo CSV e evidências das grades apresentadas. |
 | Procedimento de coleta | Preparar conjuntos fixos de disciplinas e turmas com combinações válidas conhecidas. Documentar por cenário as quantidades de disciplinas, turmas candidatas e combinações válidas esperadas. Iniciar a marcação na solicitação de geração e encerrar quando o processamento e a apresentação previstos pelo fluxo estiverem concluídos e o estudante puder consultar as grades. Não encerrar apenas ao aparecer um indicador de carregamento ou um resultado parcial. Executar o protocolo da Seção 3.1 e calcular o percentil separadamente para cada conjunto. |
-| Interpretação | Comparar cada cenário com \(L_4\). Tempos acima do limite indicam demora na geração para aquele conjunto. Comparações entre conjuntos ajudam a identificar sensibilidade ao volume de combinações, mas não estabelecem a capacidade máxima do sistema. Resultados incompatíveis com a massa de referência são registrados como erro. |
+| Interpretação | Comparar cada cenário com $L_4$. Tempos acima do limite indicam demora na geração para aquele conjunto. Comparações entre conjuntos ajudam a identificar sensibilidade ao volume de combinações, mas não estabelecem a capacidade máxima do sistema. Resultados incompatíveis com a massa de referência são registrados como erro. |
 
 ### M5 — Tempo de retorno do salvamento de grade (P95)
 
@@ -208,10 +208,10 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 |-------|-----------|
 | Questão respondida | Q5 — hipótese H5; objetivo G2. |
 | Definição | Percentil 95 do tempo entre solicitar o salvamento de uma grade e visualizar o sinal de conclusão bem-sucedida fornecido pela interface. |
-| Fórmula | \(M_5 = P_{95}(t_{\mathrm{salvamento}})\), em ms, conforme a Seção 3.1. |
+| Fórmula | $M_5 = P_{95}(t_{\mathrm{salvamento}})$, em ms, conforme a Seção 3.1. |
 | Fonte dos dados | Registros de eventos de salvamento e de sua confirmação no navegador da reprodução local, arquivo CSV e evidências da recuperação da grade salva. |
 | Procedimento de coleta | Preparar uma grade fixa e cenários separados para salvamento na conta de teste e no navegador, conforme as modalidades disponíveis. Concluir autenticação e preparação antes da marcação. Iniciar ao solicitar o salvamento e encerrar na confirmação visual. Depois do intervalo medido, verificar se a grade pode ser recuperada; uma confirmação sem persistência verificada conta como erro. Restaurar o estado inicial entre tentativas e executar o protocolo da Seção 3.1. Se uma modalidade não puder ser reproduzida, registrar a limitação e não lhe atribuir resultado. |
-| Interpretação | Comparar separadamente cada modalidade com \(L_5\). Tempos acima do limite indicam demora no retorno do salvamento. Um retorno rápido sem persistência não confirma H5. O tempo de autenticação e o de recuperação usado na verificação não integram esta métrica. |
+| Interpretação | Comparar separadamente cada modalidade com $L_5$. Tempos acima do limite indicam demora no retorno do salvamento. Um retorno rápido sem persistência não confirma H5. O tempo de autenticação e o de recuperação usado na verificação não integram esta métrica. |
 
 ## 4. Níveis de pontuação e critérios de julgamento
 
