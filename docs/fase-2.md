@@ -8,10 +8,7 @@ F2-C11: deixar EXPLÍCITO como cada objetivo deriva das características e stake
 Os objetivos de medição abaixo derivam do propósito, das decisões apoiadas e das
 necessidades das partes interessadas documentados na [Fase 1](fase-1.md).
 
-G1 utiliza a [Fase 1 já consolidada na `main`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/eb4694b0a4165dc937aece3d1c3079cdd76c8159/docs/fase-1.md), conforme a referência de versão registrada junto ao objetivo. O arquivo da
-[Fase 1 nesta branch](fase-1.md) ainda precisa ser atualizado na integração posterior. Os recortes de G2 e G3 permanecem como propostos, respectivamente, na [issue #5 — GQM de Eficiência](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/5)
-e na [issue #4 — GQM de Usabilidade](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/4).
-Sua conciliação com o modelo consolidado, assim como o diagrama e o julgamento global, será feita na [issue #7 — Julgamento, diagrama e consistência](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/7).
+G1, G2 e G3 derivam da Fase 1 consolidada. Os recortes de G2 e G3 foram elaborados nas issues #4 e #5 e sua conciliação com o modelo da Fase 1 está na [Seção 6](#6-consistencia-com-a-fase-1). O diagrama GQM está na [Seção 5](#5-diagrama-gqm) e o julgamento global dos objetivos na [Seção 4.6](#46-julgamento-global-dos-objetivos).
 
 ## 1. Objetivos de medição (nível conceitual)
 
@@ -78,8 +75,9 @@ melhoria da Fase 4), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-deci
 registra a necessidade dos estudantes de montar a grade, inclusive no celular, e
 identificar obstáculos no fluxo principal. Essa necessidade fundamenta G3 e apoia
 as decisões **D1** e **D2** da [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
-A escolha das quatro subcaracterísticas é uma proposta desta fase e depende de
-conciliação com a seleção de características da Fase 1.
+A comparação das quatro subcaracterísticas de G3 com a seleção da Fase 1 está na
+[Seção 6](#6-consistencia-com-a-fase-1): aprendizagem, operabilidade e proteção contra
+erros do usuário foram incluídas pela Fase 1, e a autodescrição é a única que ela não incluiu.
 
 ## 2. Questões e hipóteses (nível operacional)
 
@@ -834,36 +832,263 @@ registrada para qualquer alteração e sem ajuste para favorecer resultados obse
    enquanto faltar recorte; quando todos estiverem disponíveis, sua categoria
    sintética será a menor nota, acompanhada dos resultados individuais.
 5. Relatar G1 por subcaracterística, com as limitações das medidas e a ausência de
-   cobertura do *frontend*. A integração de G1, G2 e G3, o julgamento global e o
-   diagrama completo pertencem à issue #7.
+   cobertura do *frontend*. A integração de G1, G2 e G3 e o julgamento global estão na
+   [Seção 4.6](#46-julgamento-global-dos-objetivos). 
+
+### 4.6 Julgamento global dos objetivos
+
+O julgamento global reúne os resultados de G1, G2 e G3 **sem criar uma nota única**.
+As métricas usam unidades diferentes (porcentagens, milissegundos e minutos), as notas
+de 0 a 3 são categorias ordenadas e não grandezas que se somam (Seção 4.1), e não há
+base empírica para atribuir pesos entre manutenibilidade, interação e desempenho. A
+matriz de priorização da Fase 1 ([Tabela 10](fase-1.md#52-metodo-de-priorizacao))
+define como a equipe divide o esforço nas Fases 3 e 4, não um peso de qualidade, e por
+isso não entra no cálculo de nenhum resultado.
+
+1. **Estado de cada hipótese.** Usar o resultado das Seções 4.3, 4.4 e 4.5:
+   **sustentada operacionalmente**, **contrariada** ou **inconclusiva**. Uma hipótese
+   sem nenhuma coleta válida fica **não avaliada**.
+2. **Estado de cada objetivo.** Aplicar a tabela a seguir às hipóteses do objetivo:
+   H1.1 a H1.4 em G1, H2 a H5 em G2 e H6 a H9 em G3.
+
+   | Estado do objetivo | Condição |
+   |--------------------|----------|
+   | Atendido nas condições avaliadas | Todas as hipóteses do objetivo foram sustentadas operacionalmente. |
+   | Não atendido | Pelo menos uma hipótese foi contrariada. Listar as contrariadas e as sustentadas. |
+   | Inconclusivo | Nenhuma hipótese foi contrariada, mas pelo menos uma está inconclusiva ou não avaliada. |
+   | Não avaliado | Nenhuma hipótese do objetivo teve coleta válida. |
+
+3. **Apresentação.** Publicar uma linha por objetivo com o estado, o resultado de cada
+   hipótese, as métricas e os recortes que determinaram o estado e as limitações. Não
+   calcular médias, totais nem índice composto de qualidade do produto. "Atendido" quer
+   dizer que as hipóteses formuladas foram sustentadas no recorte medido; não certifica
+   a característica inteira nem o produto.
+4. **Ordem das recomendações (D1 e D2).** Cada hipótese contrariada gera um candidato a
+   recomendação. Ordenar os candidatos pelo recorte de menor nota e, em caso de empate,
+   pela prioridade da característica na Fase 1: Manutenibilidade, Capacidade de interação
+   e Eficiência de desempenho. Hipóteses inconclusivas indicam coleta a completar, não
+   problema do produto. Antes de recomendar uma mudança, avaliar os
+   [*trade-offs* da Fase 1](fase-1.md#53-trade-offs), por exemplo o custo de
+   processamento de ampliar limites de seleção. A ação da Fase 4 (D2) é escolhida pela
+   equipe com esses critérios e com a viabilidade de executá-la.
+5. **Uso dos resultados (D1, D2 e D3).** Os resultados por problema, ordenados como no
+   item 4, orientam D1 e D2. Os resultados de G1 por camada e por componente (API,
+   *frontend*, *scraper* e gerador) orientam D3, a escolha da parte do código por onde
+   um contribuidor começa.
+6. **Validade.** Os julgamentos valem para a versão avaliada e para as condições
+   registradas, conforme os [limites de validade da Fase 1](fase-1.md#64-limites-de-validade-dos-resultados).
+   Não se estendem ao ambiente de produção nem ao pico de matrícula, não são testes de
+   significância estatística e não mudam depois da coleta: os critérios das Seções 4.1 a
+   4.5 ficam congelados antes dela. Um resultado inconclusivo não é favorável nem
+   desfavorável.
 
 ## 5. Diagrama GQM
 
 <!--
 F2-C6: diagrama completo com todos os objetivos, identificando os níveis (conceitual, operacional, quantitativo).
-O exemplo abaixo é só o formato; substitua pelos objetivos reais.
 -->
 
+A **Figura 1** mostra a hierarquia GQM da avaliação: os três objetivos (nível
+conceitual), as doze questões que os desdobram (nível operacional) e as doze métricas
+que respondem a elas (nível quantitativo). Cada questão tem uma hipótese e uma métrica
+própria, e G1 desdobra o identificador Q1 em Q1.1 a Q1.4 (Seção 2.1).
+
+**Figura 1: Hierarquia GQM da avaliação do Sua Grade UnB**
+
 ```mermaid
-flowchart TD
-    subgraph Conceitual
-        G1["G1: objetivo"]
+flowchart LR
+    accTitle: Hierarquia GQM da avaliação do Sua Grade UnB
+    accDescr: Três objetivos se desdobram em doze questões e doze métricas. G1, Manutenibilidade, tem as questões Q1.1 a Q1.4 e as métricas M1.1 a M1.4. G2, Eficiência de desempenho, tem as questões Q2 a Q5 e as métricas M2 a M5. G3, Capacidade de interação, tem as questões Q6 a Q9 e as métricas M6 a M9. Cada questão se liga a uma única métrica.
+
+    subgraph Conceitual["Nível conceitual: objetivos"]
+        G1["G1<br/>Manutenibilidade"]
+        G2["G2<br/>Eficiência de desempenho"]
+        G3["G3<br/>Capacidade de interação"]
     end
-    subgraph Operacional
-        Q1["Q1: questão"]
-        Q2["Q2: questão"]
+
+    subgraph Operacional["Nível operacional: questões"]
+        Q11["Q1.1<br/>Modularidade"]
+        Q12["Q1.2<br/>Analisabilidade"]
+        Q13["Q1.3<br/>Modificabilidade"]
+        Q14["Q1.4<br/>Testabilidade"]
+        Q2["Q2<br/>Tempo da busca"]
+        Q3["Q3<br/>Tempo da seleção"]
+        Q4["Q4<br/>Tempo da geração"]
+        Q5["Q5<br/>Tempo do salvamento"]
+        Q6["Q6<br/>Aprendizagem"]
+        Q7["Q7<br/>Operabilidade"]
+        Q8["Q8<br/>Proteção contra erros"]
+        Q9["Q9<br/>Autodescrição"]
     end
-    subgraph Quantitativo
-        M1["M1: métrica"]
-        M2["M2: métrica"]
-        M3["M3: métrica"]
+
+    subgraph Quantitativo["Nível quantitativo: métricas"]
+        M11["M1.1<br/>Arquivos em ciclos internos (%)"]
+        M12["M1.2<br/>Blocos com CC acima de 10 (%)"]
+        M13["M1.3<br/>Tempo da mudança validada (min)"]
+        M14["M1.4<br/>Cobertura de linhas da API (%)"]
+        M2["M2<br/>P95 da busca (ms)"]
+        M3["M3<br/>P95 da seleção (ms)"]
+        M4["M4<br/>P95 da geração (ms)"]
+        M5["M5<br/>P95 do salvamento (ms)"]
+        M6["M6<br/>Sucesso no primeiro uso (%)"]
+        M7["M7<br/>Sucesso nas tarefas de controle (%)"]
+        M8["M8<br/>Proteção contra perda (%)"]
+        M9["M9<br/>Compreensão da interface (%)"]
     end
-    G1 --> Q1
-    G1 --> Q2
-    Q1 --> M1
-    Q1 --> M2
-    Q2 --> M3
+
+    G1 --> Q11 & Q12 & Q13 & Q14
+    G2 --> Q2 & Q3 & Q4 & Q5
+    G3 --> Q6 & Q7 & Q8 & Q9
+
+    Q11 --> M11
+    Q12 --> M12
+    Q13 --> M13
+    Q14 --> M14
+    Q2 --> M2
+    Q3 --> M3
+    Q4 --> M4
+    Q5 --> M5
+    Q6 --> M6
+    Q7 --> M7
+    Q8 --> M8
+    Q9 --> M9
 ```
+
+Fonte: elaborado pela equipe a partir das Seções 1 a 3.
+
+A tabela a seguir traz a mesma hierarquia em texto, com a hipótese de cada questão e as
+seções em que a métrica é definida, pontuada e julgada.
+
+| Objetivo | Questão | Subcaracterística | Hipótese | Métrica | Definição | Pontuação | Julgamento |
+|----------|---------|-------------------|----------|---------|-----------|-----------|------------|
+| G1 | Q1.1 | Modularidade | H1.1 | M1.1 | [3.4](#34-metricas-de-manutenibilidade-g1) | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) |
+| G1 | Q1.2 | Analisabilidade | H1.2 | M1.2 | 3.4 | 4.1 | 4.5 |
+| G1 | Q1.3 | Modificabilidade | H1.3 | M1.3 | 3.4 | 4.1 | 4.5 |
+| G1 | Q1.4 | Testabilidade | H1.4 | M1.4 | 3.4 | 4.1 | 4.5 |
+| G2 | Q2 | Comportamento temporal | H2 | M2 | [3.1](#31-convencoes-de-medicao-de-eficiencia-de-desempenho) | 4.1 | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) |
+| G2 | Q3 | Comportamento temporal | H3 | M3 | 3.1 | 4.1 | 4.3 |
+| G2 | Q4 | Comportamento temporal | H4 | M4 | 3.1 | 4.1 | 4.3 |
+| G2 | Q5 | Comportamento temporal | H5 | M5 | 3.1 | 4.1 | 4.3 |
+| G3 | Q6 | Aprendizagem | H6 | M6 | [3.3](#33-metricas-de-capacidade-de-interacao-g3) | 4.1 | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) |
+| G3 | Q7 | Operabilidade | H7 | M7 | 3.3 | 4.1 | 4.4 |
+| G3 | Q8 | Proteção contra erros do usuário | H8 | M8 | 3.3 | 4.1 | 4.4 |
+| G3 | Q9 | Autodescrição | H9 | M9 | 3.3 | 4.1 | 4.4 |
+
+O julgamento dos três objetivos em conjunto está na [Seção 4.6](#46-julgamento-global-dos-objetivos).
+
+## 6. Consistência com a Fase 1
+
+Esta seção mostra como os objetivos da Fase 2 derivam das características, das
+subcaracterísticas, das partes interessadas e das decisões da [Fase 1](fase-1.md), e
+registra os pontos em que a Fase 2 difere dela.
+
+### 6.1 Das características da Fase 1 aos objetivos
+
+Cada objetivo deriva de uma **característica priorizada** na Fase 1, e o **ponto de vista**
+do objetivo é o de uma **parte interessada** do [mapa da Fase 1](fase-1.md#22-mapa-de-partes-interessadas)
+(Tabela 3): mantenedores e contribuidores externos motivam a Manutenibilidade, e os
+estudantes motivam a Capacidade de interação (Usabilidade, na Tabela 3) e a Eficiência
+de desempenho.
+
+| Objetivo | Característica priorizada na Fase 1 ([Tabela 10](fase-1.md#52-metodo-de-priorizacao)) | Ponto de vista do objetivo | Parte interessada na Fase 1 (Tabela 3) | Decisões apoiadas |
+|----------|--------------------------------------------------------------------------------------|----------------------------|----------------------------------------|-------------------|
+| G1 | Manutenibilidade (1ª) | Mantenedores e contribuidores externos do Sua Grade UnB | Mantenedores do Sua Grade UnB; contribuidores externos | D1, D2 e D3 |
+| G2 | Eficiência de desempenho (3ª) | Estudantes da UnB que montam a grade no período de matrícula | Estudantes da UnB | D1 e D2 |
+| G3 | Capacidade de interação (2ª) | Estudantes da UnB, inclusive os que usam o sistema pela primeira vez | Estudantes da UnB | D1 e D2 |
+
+As decisões D1 a D3 estão definidas na [Seção 1.3 da Fase 1](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+
+### 6.2 Das subcaracterísticas da Fase 1 às questões
+
+| Subcaracterística (termo da Fase 1) | Situação na [Tabela 7](fase-1.md#42-adaptacao-do-modelo) | Questão e métrica na Fase 2 |
+|-------------------------------------|---------------------------------------------------------|-----------------------------|
+| Modularidade | Incluída | Q1.1 e M1.1 |
+| Analisabilidade | Incluída | Q1.2 e M1.2 |
+| Modificabilidade | Incluída | Q1.3 e M1.3 |
+| Testabilidade | Incluída | Q1.4 e M1.4 |
+| Reusabilidade | Excluída | Sem questão |
+| Comportamento temporal | Incluída | Q2 a Q5 e M2 a M5 |
+| Utilização de recursos | Incluída | Sem questão (item 2 da Seção 6.4) |
+| Capacidade | Incluída | Sem questão (item 2 da Seção 6.4) |
+| Aprendizibilidade | Incluída | Q6 e M6 (chamada de aprendizagem na Fase 2) |
+| Operabilidade | Incluída | Q7 e M7 |
+| Proteção contra erros do usuário | Incluída | Q8 e M8 |
+| Autodescritividade | Excluída | Q9 e M9 (item 1 da Seção 6.4; chamada de autodescrição na Fase 2) |
+| Reconhecibilidade de adequação, engajamento do usuário, inclusividade e assistência ao usuário | Excluídas | Sem questão |
+
+"Aprendizagem" e "autodescrição" na Fase 2 correspondem a "aprendizibilidade" e
+"autodescritividade" na Fase 1: são as subcaracterísticas *learnability* e
+*self-descriptiveness* da ISO/IEC 25010:2023, com tradução diferente.
+
+### 6.3 Dos indicadores da Fase 1 às métricas
+
+A [Tabela 14 da Fase 1](fase-1.md#72-indicadores-da-avaliacao) lista os indicadores da
+avaliação e remete as métricas exatas a esta fase.
+
+| Indicador da Fase 1 | Característica | Métrica na Fase 2 |
+|---------------------|----------------|-------------------|
+| Taxa de conclusão das tarefas do fluxo principal pelos estudantes no teste de usabilidade | Capacidade de interação | M6 (conclusão do fluxo no primeiro uso) e M7 (tarefas de controle da grade) |
+| Pontuação média da escala SUS (*System Usability Scale*) dos participantes | Capacidade de interação | Sem métrica (item 4 da Seção 6.4) |
+| Tempo de resposta da busca e da geração de grade | Eficiência de desempenho | M2 e M4; M3 e M5 completam o fluxo |
+| Métricas de analisabilidade, modificabilidade e testabilidade do código (por exemplo, complexidade e cobertura de testes) | Manutenibilidade | M1.2, M1.3 e M1.4; M1.1 cobre a modularidade |
+
+### 6.4 Diferenças em relação à Fase 1
+
+1. **Autodescritividade.** A Fase 1 a exclui por sobreposição com a aprendizibilidade
+   nas tarefas observadas. G3 a inclui em Q9 e M9 (Seção 2.3). M6 mede se o estudante
+   conclui o fluxo após a exploração inicial; M9 verifica se ele interpreta o estado da
+   montagem e a próxima ação, o que uma tarefa concluída por tentativa e erro não
+   demonstra (Seção 3.3, M9). Por isso os resultados de M6 e M9 são publicados
+   separadamente. A Tabela 7 e a Figura 2 da Fase 1 ainda a apresentam como excluída.
+2. **Utilização de recursos e capacidade.** A Fase 1 inclui as duas em Eficiência de
+   desempenho, medidas apenas na reprodução local
+   ([Seção 6.3 da Fase 1](fase-1.md#63-profundidade)). G2 cobre somente comportamento
+   temporal (Seção 2.2), sem questão, hipótese ou métrica para elas. Os resultados de
+   G2 não permitem concluir nada sobre uso de recursos nem sobre a capacidade do
+   sistema.
+3. **Mudanças controladas em G1.** Para Manutenibilidade, a Fase 1 prevê análise
+   estática, execução dos testes com cobertura e inspeção manual do *scraper* e do
+   gerador ([Seção 6.3 da Fase 1](fase-1.md#63-profundidade)). G1 acrescenta duas
+   mudanças controladas em cópias locais descartáveis (M1.3, Seção 3.4), que a Fase 1
+   não menciona.
+4. **Coleta de interação.** A Fase 1 prevê cerca de cinco estudantes no site real e
+   lista a pontuação SUS média como indicador. G3 especifica M6 a M9 com participantes,
+   roteiros, dados e versão da aplicação fixados na Fase 3 (Seção 3.3), e o SUS não foi
+   especificado como métrica. Incluí-lo exigiria definir fórmula, faixas e regra de
+   julgamento antes da coleta, como nas demais métricas.
+5. **Desempenho no site público.** A Fase 1 prevê o tempo de carregamento do site
+   público e o tempo de resposta da API pública com poucas requisições espaçadas. M2 a
+   M5 são coletadas em reprodução local (Seção 3.1). A Seção 3.1 admite observações do
+   site público, separadas das locais, mas não as especifica como métrica.
+6. **Reprodução local.** A Fase 1 registra a reprodução bem-sucedida de 17/10/2026
+   (quatro serviços e 108 testes da API). A Seção 3.2 registra a falha do Docker na
+   máquina inspecionada em 18/10/2026. São máquinas e datas distintas, e a Seção 3.2
+   já limita seu resultado a essa máquina. M1.3 e M1.4 usam como ambiente a reprodução
+   da Fase 1.
+
+### 6.5 Termos e siglas e onde se ligam às métricas
+
+Os termos técnicos da Fase 2 existem por causa de uma métrica ou do produto avaliado.
+A tabela abaixo explica os que não são de uso comum e indica onde cada um é usado.
+
+| Termo | Significado neste trabalho | Onde é usado |
+|-------|----------------------------|--------------|
+| GQM (*Goal, Question, Metric*) | Método que desdobra cada objetivo em questões e cada questão em métricas | Seções 1 a 5 |
+| *Scraper* | Código que coleta as turmas no SIGAA (`api/utils/web_scraping.py`) | G1, M1.2, M1.3 (tarefa C1) e M1.4 |
+| Gerador | Código que combina as turmas escolhidas em grades sem conflito (`api/utils/schedule_generator.py`) | G1, M1.2, M1.3 (tarefa C2), M1.4 e M4 |
+| Ciclo de importação | Grupo de arquivos que importam uns aos outros em círculo, direta ou indiretamente | M1.1 |
+| Complexidade ciclomática (CC) | Número de caminhos de decisão independentes de uma função ou método | M1.2 |
+| Cobertura de linhas | Percentual das linhas executáveis que os testes executam | M1.4 |
+| *Fixtures* e *mocks* | Dados de teste e cópias locais de respostas externas, como o HTML de exemplo do SIGAA | M1.3 e M1.4 |
+| P95 | Valor abaixo do qual ficam 95% dos tempos medidos, pelo método do posto mais próximo | M2 a M5 |
+| Tentativa de aquecimento | Execução inicial registrada e excluída do cálculo do P95 | M2 a M5 |
+| Relógio monotônico | Relógio do navegador que não retrocede (`performance.now()`), usado para medir intervalos | M2 a M5 |
+| Escala ordinal | Quatro níveis ordenados (0 a 3) sem distância igual entre eles; por isso não se tira média | Seção 4 |
+| Hipótese sustentada operacionalmente | Hipótese cujos recortes atingiram a faixa mínima definida, sem implicar teste estatístico | Seções 4.3 a 4.6 |
+| Reprodução local | Execução do sistema na máquina da equipe, com dados de exemplo e sem acessar o SIGAA | Seções 3.1, 3.2 e 3.4 |
+| CI (integração contínua) | Rotina automática do repositório do produto que roda os testes | M1.4 |
+| WSL (*Windows Subsystem for Linux*) | Ambiente Linux dentro do Windows, citado na descrição da máquina inspecionada | Seção 3.2 |
+| SUS (*System Usability Scale*) | Questionário de usabilidade previsto na Fase 1; não é métrica da Fase 2 | Seção 6.3 |
 
 ---
 
