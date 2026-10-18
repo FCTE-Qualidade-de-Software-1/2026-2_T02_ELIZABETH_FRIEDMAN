@@ -8,13 +8,10 @@ F2-C11: deixar EXPLÍCITO como cada objetivo deriva das características e stake
 Os objetivos de medição abaixo derivam do propósito, das decisões apoiadas e das
 necessidades das partes interessadas documentados na [Fase 1](fase-1.md).
 
-A seleção e a priorização das características na [Seção 5 da Fase 1](fase-1.md#5-selecao-e-priorizacao-das-caracteristicas)
-ainda estão em elaboração. Estes objetivos são iniciais e deverão ser revisados após
-a consolidação dessa seção. O objetivo G3 e suas questões incluem capacidade de
-interação conforme o recorte solicitado para esta etapa. Essa inclusão ainda precisa
-ser conciliada com a orientação de não incluir usabilidade registrada na Seção 5 da
-Fase 1; suas quatro subcaracterísticas são uma proposta inicial, não uma seleção já
-consolidada naquela fase.
+G1 utiliza a [Fase 1 já consolidada na `main`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/eb4694b0a4165dc937aece3d1c3079cdd76c8159/docs/fase-1.md), conforme a referência de versão registrada junto ao objetivo. O arquivo da
+[Fase 1 nesta branch](fase-1.md) ainda precisa ser atualizado na integração posterior. Os recortes de G2 e G3 permanecem como propostos, respectivamente, na [issue #5 — GQM de Eficiência](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/5)
+e na [issue #4 — GQM de Usabilidade](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/4).
+Sua conciliação com o modelo consolidado, assim como o diagrama e o julgamento global, será feita na [issue #7 — Julgamento, diagrama e consistência](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/7).
 
 ## 1. Objetivos de medição (nível conceitual)
 
@@ -38,20 +35,15 @@ as referências detalhadas aparecem após cada objetivo.
 
 | Elemento | Descrição |
 |----------|-----------|
-| Analisar | O código-fonte do Sua Grade UnB, com foco nos componentes de coleta de dados do SIGAA e de busca de disciplinas, seleção de turmas, geração e salvamento de grades. |
-| Com o propósito de | Avaliar a facilidade de manutenção e identificar os componentes que devem receber melhorias prioritárias para viabilizar correções e contribuições de voluntários. |
-| Com respeito a | Manutenibilidade, com foco em analisabilidade, modificabilidade e testabilidade. |
+| Analisar | O código Python da API e TypeScript/TSX do *frontend* do Sua Grade UnB, na versão avaliada definida na [Fase 1](fase-1.md#61-objetos-de-avaliacao), com inspeção detalhada do *scraper* e do gerador de grades. |
+| Com o propósito de | Avaliar a facilidade de manutenção e identificar componentes que devem receber melhorias prioritárias para viabilizar correções e contribuições de voluntários. |
+| Com respeito a | Manutenibilidade: **modularidade, analisabilidade, modificabilidade e testabilidade**, no recorte operacional definido nesta página. |
 | Do ponto de vista de | Mantenedores e contribuidores externos do Sua Grade UnB. |
-| No contexto de | Uma avaliação acadêmica independente conduzida pela equipe Elizabeth Friedman, em cerca de seis semanas, de uma aplicação web em operação e mantida por voluntários, utilizando o repositório público e a reprodução local, sem acesso a logs ou ao banco de dados de produção e sem coletas repetidas no SIGAA. |
+| No contexto de | Uma avaliação acadêmica independente pela equipe Elizabeth Friedman, em cerca de seis semanas, com análise estática do código público, testes da API e pequenas mudanças em cópias locais descartáveis, usando dados e *fixtures* locais, sem acesso à produção e sem consultas ao SIGAA. |
 
-**Origem na Fase 1:** a [Seção 1.1](fase-1.md#11-contexto) registra a manutenção
-por voluntários e a necessidade de adaptar a coleta de dados após mudanças no SIGAA.
-O [propósito da avaliação](fase-1.md#12-proposito) inclui a continuidade da manutenção.
-Na [Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas), as necessidades dos
-mantenedores e dos contribuidores externos motivam explicitamente a manutenibilidade
-e o foco em analisabilidade, modificabilidade e testabilidade. O objetivo apoia as
-decisões **D1** (priorizar correções), **D2** (escolher a melhoria da Fase 4) e **D3**
-(identificar por onde começar a contribuir), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+**Origem na Fase 1:** a manutenção por voluntários e a adaptação da coleta às mudanças no SIGAA ([Seção 1.1](fase-1.md#11-contexto)) motivam o objetivo. A [Tabela 3](fase-1.md#22-mapa-de-partes-interessadas) associa mantenedores e contribuidores externos à manutenibilidade, e a [Seção 5](fase-1.md#5-selecao-e-priorizacao-das-caracteristicas) lhe atribui a primeira prioridade. O [modelo adaptado](fase-1.md#42-adaptacao-do-modelo) seleciona as quatro subcaracterísticas acima e exclui a reusabilidade, e a [profundidade prevista](fase-1.md#63-profundidade) inclui análise estática da API e do *frontend*, execução dos testes com cobertura e inspeção do *scraper* e do gerador. O objetivo apoia as decisões **D1** (priorizar correções), **D2** (escolher a melhoria da Fase 4) e **D3** (orientar novos contribuidores), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+
+A análise estática não demonstra, sozinha, facilidade de manutenção. Por isso G1 combina indicadores estruturais, tarefas de mudança controladas e execução dos testes.
 
 ### G2 — Eficiência de desempenho
 
@@ -98,9 +90,16 @@ F2-C3: uma hipótese clara para CADA questão.
 
 ### 2.1 Manutenibilidade — G1
 
-| ID | Questão | Hipótese | Objetivo |
-|----|---------|----------|----------|
-| Q1 | | H1: | G1 |
+O identificador **Q1** é desdobrado em Q1.1 a Q1.4, e as hipóteses e métricas usam os mesmos sufixos (M1.1 a M1.4), de modo que Q2 a Q9 e M2 a M9 mantêm seus identificadores. As hipóteses são expectativas operacionais a verificar, não resultados já obtidos.
+
+| ID | Subcaracterística | Questão | Hipótese | Objetivo |
+|----|-------------------|---------|----------|----------|
+| Q1.1 | Modularidade | A organização das dependências internas evita grupos de módulos que dependem circularmente entre si e dificultam mudanças isoladas? | H1.1: no máximo 10% dos arquivos de produção de cada camada participam de ciclos de importação internos. | G1 |
+| Q1.2 | Analisabilidade | A estrutura de controle do código permite examinar os caminhos de execução sem concentração elevada de blocos complexos? | H1.2: no máximo 20% dos blocos de cada camada apresentam complexidade ciclomática superior a 10; o *scraper* e o gerador também atendem ao limite, avaliados separadamente. | G1 |
+| Q1.3 | Modificabilidade | Um contribuidor consegue realizar pequenas mudanças no *scraper* e no gerador, preservando os comportamentos que devem continuar funcionando? | H1.3: cada uma das duas mudanças controladas é concluída e validada em até 90 minutos, sem regressões na suíte de referência. | G1 |
+| Q1.4 | Testabilidade | Os testes automatizados existentes exercitam o código da API e seus componentes críticos o suficiente para apoiar a verificação de mudanças? | H1.4: os testes executam pelo menos 70% das linhas executáveis da API e de cada componente crítico (*scraper* e gerador). | G1 |
+
+M1.1 e M1.2 são **indicadores indiretos**: ausência de ciclos e baixa complexidade não comprovam boa arquitetura nem compreensão humana. M1.3 observa dois casos de mudança e não representa toda a manutenção possível. M1.4 mede execução de linhas, não a qualidade das asserções. A testabilidade do *frontend* não recebe nota de cobertura nesta avaliação, porque não há suíte de testes nem comando de teste em `web/package.json`. Essa lacuna é registrada como limitação e não é convertida em cobertura zero medida nem estendida a partir da cobertura Python.
 
 ### 2.2 Eficiência de desempenho — G2
 
@@ -168,8 +167,10 @@ Fórmulas em LaTeX: $ X = \frac{A}{B} $ em linha, ou $$ ... $$ em bloco.
 ### 3.1 Convenções de medição de eficiência de desempenho
 
 As métricas **M2 a M5** respondem, respectivamente, às questões **Q2 a Q5** do
-objetivo **G2**, cobrindo comportamento temporal. A métrica M1 permanece reservada
-à questão de manutenibilidade, ainda em elaboração.
+objetivo **G2**, cobrindo comportamento temporal. As métricas **M1.1 a M1.4**
+respondem, respectivamente, às questões **Q1.1 a Q1.4** e às hipóteses H1.1 a H1.4
+do objetivo **G1**, cobrindo modularidade, analisabilidade, modificabilidade e
+testabilidade, e estão especificadas na [Seção 3.4](#34-metricas-de-manutenibilidade-g1).
 
 Para cada operação e cenário, executar duas tentativas de aquecimento, registradas
 e excluídas do cálculo, seguidas de **30 tentativas medidas**, sequenciais e sem
@@ -224,16 +225,6 @@ cenário, em ms. Os valores de $L_2$ a $L_5$, sua justificativa e os níveis de
 pontuação estão definidos na Seção 4. A confirmação das hipóteses também depende
 das regras de completude e tratamento de falhas dessa seção.
 
-### M1 — Manutenibilidade (a definir)
-
-| Campo | Descrição |
-|-------|-----------|
-| Questão respondida | Q1 |
-| Definição | |
-| Fórmula | $ X = \frac{A}{B} $ |
-| Fonte dos dados | |
-| Procedimento de coleta | |
-| Interpretação | |
 
 ### M2 — Tempo de resposta da busca de disciplinas (P95)
 
@@ -298,7 +289,10 @@ validada previamente, sem essa dependência.
 
 | Métrica | Ferramenta e evidência prevista | Acesso necessário | Ambiente e dependências | Situação e condição para validar |
 |---------|--------------------------------|-------------------|-------------------------|----------------------------------|
-| M1 — Manutenibilidade | A definir após a formulação de Q1 e da métrica. | O código é público, mas a fonte específica depende da definição da métrica. | A definir. | **Não verificável no estado atual:** falta especificar a métrica; não presumir que ferramentas de análise estática sejam suficientes. |
+| M1.1: Ciclos internos | pydeps e Madge; grafos JSON, inventário e revisão dos ciclos. | Código público na versão fixada. | Python e Node; resolução dos *imports* locais e dos aliases. | **Ferramentas executadas em 18/10/2026:** pydeps e Madge geraram grafos JSON, sem avaliação de resultados. Falta conferir a completude do inventário, filtrar o escopo e validar os ciclos antes de pontuar. |
+| M1.2: Complexidade | Radon e ESLint com *parser* TypeScript; relatórios JSON por bloco. | Código público na versão fixada. | Python e Node, com versões registradas. | **Parcialmente testada:** o Radon executou sobre os quatro pacotes da API em 18/10/2026. A execução do ESLint no *frontend*, o congelamento do inventário e a conferência da extração dos blocos ainda faltam para a coleta formal. |
+| M1.3: Mudanças controladas | Git, cronômetro, testes Django e lista de aceitação; *patches* e registros. | Cópia local, *fixtures* e um executor que não conheça as alterações. | Docker Compose, PostgreSQL, Redis e API funcionais; sem SIGAA. | **Ambiente reproduzido pela equipe** ([Fase 1, Seção 3.6](fase-1.md#36-reproducao-local-e-implicacoes-para-a-avaliacao)): em 17/10/2026 os quatro serviços subiram e os 108 testes da API passaram. Faltam definir o executor, preparar as fichas de C1 e C2 e executar o piloto. |
+| M1.4: Cobertura da API | coverage.py 7.3.2, testes Django, relatórios JSON e HTML e configuração explícita de escopo. | Código e testes públicos; banco local descartável. | Mesmos serviços de M1.3, sem banco de produção. | **Suíte executada pela equipe** (Fase 1, Seção 3.6), com o relatório de cobertura do próprio projeto. Falta executar com a configuração própria (`source` explícito e sem exclusões por `pragma: no cover`) e validar o denominador no piloto da Fase 3. |
 | M2 — Busca | Playwright com Chromium, marcações temporais no navegador, CSV e captura dos resultados. | Código público e API local com disciplinas e turmas de referência; confirmar no piloto se o fluxo exige autenticação. | Frontend, backend e banco locais populados; cenários fixos de nome e código. | **Viável sob condições:** executar uma busca de cada tipo, verificar o resultado esperado e demonstrar a captura dos dois instantes e do CSV. |
 | M3 — Seleção | Playwright com Chromium, marcações temporais e captura da atualização visual. | Acesso ao fluxo de disciplinas e turmas; confirmar no piloto os requisitos de sessão. | Mesma aplicação local de M2, com turma conhecida e estado inicial restaurável. | **Viável sob condições:** demonstrar que uma seleção produz o estado esperado e que o roteiro distingue a atualização completa de um estado anterior. |
 | M4 — Geração | Playwright com Chromium, marcações temporais, CSV e evidência das combinações geradas. | Acesso ao gerador e a uma massa local com combinações válidas previamente conferidas. | Aplicação local e conjuntos fixos de disciplinas e turmas, com resultados de referência. | **Viável sob condições:** gerar um conjunto conhecido e verificar que o sinal de término representa a conclusão prevista em M4, incluindo a conferência dos resultados. |
@@ -380,8 +374,11 @@ necessidade de executar o fluxo e validar o registro em piloto.
 **Conclusão de viabilidade:** M2–M9 possuem ferramenta, acesso necessário e ambiente
 identificados, com automação básica e acesso à tela inicial testados. A coleta
 completa permanece **condicionada** à reprodução do produto, aos pilotos e, para
-M6, M7 e M9, aos participantes e dispositivos. M1 depende de especificação.
+M6, M7 e M9, aos participantes e dispositivos. M1.1 a M1.4 estão especificadas na Seção 3.4. As ferramentas de análise estática foram executadas em uma verificação inicial, mas a coleta formal ainda depende da conferência dos inventários e dos procedimentos. M1.3 e M1.4 dependem também da preparação das tarefas e da execução da suíte com a configuração própria.
 Nenhuma métrica pode ser marcada como coleta validada apenas com estas verificações.
+
+
+
 
 ### 3.3 Métricas de capacidade de interação — G3
 
@@ -482,6 +479,154 @@ matriz e os testes de ferramentas da Seção 3.2 registram essas dependências, 
 comprovar a execução das sessões. As faixas de pontuação e as regras de julgamento
 de interação estão definidas na Seção 4 e deverão ser fixadas antes da coleta formal.
 
+### 3.4 Métricas de manutenibilidade (G1)
+
+As quatro métricas são definições operacionais da equipe. A ISO/IEC 25010 fornece
+o modelo de qualidade e não prescreve estas fórmulas nem seus limites de aceitação.
+O protocolo de 30 repetições e o P95 de G2 não se aplicam a G1.
+
+**Rastreabilidade de G1:** a tabela liga cada subcaracterística à sua questão, hipótese e
+métrica, ao ponto onde é pontuada e julgada e à justificativa registrada na Fase 1.
+
+| Subcaracterística | Questão | Hipótese | Métrica | Pontuação e julgamento | Origem na Fase 1 |
+|-------------------|---------|----------|---------|------------------------|------------------|
+| Modularidade | Q1.1 | H1.1 | M1.1 | [Seção 4.1](#41-escala-e-faixas-por-metrica) e [Seção 4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) | [Tabela 7](fase-1.md#42-adaptacao-do-modelo): uma mudança no SIGAA deveria afetar só o módulo de coleta |
+| Analisabilidade | Q1.2 | H1.2 | M1.2 | Seções 4.1 e 4.5 | Tabela 7: contribuidores externos precisam localizar a causa de falhas em código que não escreveram (D3) |
+| Modificabilidade | Q1.3 | H1.3 | M1.3 | Seções 4.1 e 4.5 | Tabela 7: a correção da coleta em 2026 mostra que o código precisa ser alterado sem quebrar o resto |
+| Testabilidade | Q1.4 | H1.4 | M1.4 | Seções 4.1 e 4.5 | Tabela 7: a API tem testes automatizados e o *frontend* não tem nenhum; reprodução local na [Seção 3.6 da Fase 1](fase-1.md#36-reproducao-local-e-implicacoes-para-a-avaliacao) |
+
+#### Escopo, unidades e registros comuns
+
+- **Versão:** produto no *commit* `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`.
+  Guardar o SHA, a data, o sistema operacional, as versões das ferramentas, as
+  configurações, os comandos, os códigos de saída e os relatórios brutos. Distinguir
+  piloto de coleta formal.
+- **API:** arquivos `.py` de produção em `api/api`, `api/core`, `api/users` e
+  `api/utils`. **Frontend:** arquivos `.ts` e `.tsx` de produção em `web`.
+  Excluir testes, migrações geradas, dependências instaladas, *caches*, *builds*,
+  arquivos de declaração `.d.ts` e código gerado. Não excluir um arquivo apenas por
+  ser complexo ou não ter testes. Documentar cada exclusão e sua justificativa.
+  `manage.py` e scripts de instalação ficam fora do recorte de código do produto.
+- **Componentes críticos:** `api/utils/web_scraping.py` e
+  `api/utils/schedule_generator.py`. Publicar seus resultados separadamente em
+  M1.2 e M1.4, para que o total da API não oculte fragilidades locais.
+- **Separação:** não misturar contagens de Python e TypeScript, porque as ferramentas
+  tratam construções de linguagem de formas distintas. Publicar numerador,
+  denominador, unidade, recorte e evidência, além de qualquer percentual.
+- **Dados ausentes:** denominador zero é **Não calculável**. Falha da ferramenta,
+  importação local não resolvida ou ambiente indisponível é **Não avaliado** no recorte
+  afetado. Ausência de evidência nunca vira 0%, 100% ou nota favorável.
+- **Registro mínimo:** arquivo CSV com `metrica, recorte, versao, data, ferramenta,
+  numerador, denominador, valor, unidade, estado, evidencia, observacoes`.
+  Relatórios e *patches* complementam o CSV. Não registrar segredos do ambiente.
+
+### M1.1: Arquivos participantes de ciclos internos
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q1.1, hipótese H1.1; objetivo G1; modularidade. |
+| Definição | Proporção de arquivos de produção que participam de pelo menos um ciclo de importação entre arquivos da mesma camada. Unidade: arquivo, contado uma vez mesmo se participar de vários ciclos. |
+| Fórmula | $M_{1.1} = 100 \times C / N$, em que $C$ é o número de arquivos em ciclos e $N$ o total de arquivos no inventário da camada. Calcular para a API e para o *frontend* separadamente. |
+| Fonte dos dados | Inventário do Git; grafos JSON do pydeps (Python) e do Madge (TypeScript/TSX); lista auditada dos arquivos de cada ciclo. |
+| Procedimento de coleta | Extrair as dependências dos quatro pacotes Python e unir os grafos por caminho de arquivo; analisar todo o *frontend* com seu `tsconfig.json`. Remover nós externos, testes, gerados e nós sintéticos. Conferir todos os arquivos do inventário, inclusive os sem dependências. Em cada grafo dirigido, identificar componentes fortemente conexos com dois ou mais arquivos, ou autoimportação real, e contar a união de seus arquivos. Auditar os *imports* dos ciclos antes de aceitar o resultado. |
+| Interpretação | Menor é melhor; aceitar até 10% em **cada camada**. Ciclos indicam acoplamento estrutural que merece inspeção. Um grafo acíclico não garante baixo acoplamento, boa coesão nem baixo impacto de mudança. |
+
+Dependências de tipo em TypeScript também exigem coordenação na manutenção e são
+consideradas; registrar essa configuração. Importações calculadas dinamicamente e
+as ligações entre API e *frontend* por HTTP ficam fora deste indicador. Referências
+internas não resolvidas devem ser investigadas, nunca descartadas em silêncio.
+Arquivos sem arestas permanecem no denominador **somente após análise confirmada**:
+um arquivo ausente do grafo da ferramenta não é automaticamente um arquivo isolado.
+
+### M1.2: Blocos com complexidade ciclomática elevada
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q1.2, hipótese H1.2; objetivo G1; analisabilidade. |
+| Definição | Proporção de funções e métodos com complexidade ciclomática (CC) maior que 10, conforme o analisador de cada linguagem. |
+| Fórmula | $M_{1.2} = 100 \times B_{>10} / B$, em que $B_{>10}$ conta os blocos com CC maior que 10 e $B$ todos os blocos elegíveis. Calcular por camada e, em Python, também para cada componente crítico. |
+| Fonte dos dados | Relatório JSON do Radon para Python; relatório JSON da regra `complexity` do ESLint com *parser* TypeScript; inventário e lista de blocos identificados por arquivo, posição e nome. |
+| Procedimento de coleta | No Radon, contar funções, métodos e funções internas uma vez, excluindo as médias de classes do denominador. No ESLint, executar a regra com limite 0 para enumerar as funções e seus valores, e com limite 10 para conferir os excedentes; filtrar somente as mensagens dessa regra e tratar erros de *parsing* como falha de coleta. Registrar à parte eventuais blocos reconhecidos pela ferramenta fora do numerador e do denominador principais, que incluem somente funções e métodos. Revisar manualmente os blocos mais complexos do *scraper* e do gerador. |
+| Interpretação | Menor é melhor; aceitar até 20% de blocos acima de 10 em cada recorte. A CC representa ramificações e orienta onde investigar dificuldade de análise. Não mede diretamente o tempo de compreensão, a qualidade dos nomes, a documentação nem o conhecimento do contribuidor. |
+
+Guardar também o maior valor de CC e sua localização em cada recorte, como
+informação diagnóstica e sem criar outra nota. Isso evita esconder um bloco muito
+complexo no percentual de um conjunto grande. Os cálculos e denominadores de
+Python e TypeScript permanecem separados; as categorias não demonstram equivalência
+entre as duas linguagens.
+
+### M1.3: Tempo para concluir uma mudança validada
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q1.3, hipótese H1.3; objetivo G1; modificabilidade. |
+| Definição | Tempo de trabalho decorrido, em minutos, entre receber uma solicitação de mudança e concluir a implementação com seus testes de aceitação e de regressão aprovados. Unidade: uma tarefa, executada uma vez na coleta formal. |
+| Fórmula | $M_{1.3,t} = (t_{fim} - t_{inicio}) / 60$, para instantes em segundos, **somente quando todos os critérios de conclusão forem satisfeitos**. Registrar separadamente a conclusão e os testes aprovados; uma tarefa não concluída não recebe tempo fictício. |
+| Fonte dos dados | Cronômetro, ficha da tarefa, *diff* e *commit* da cópia experimental, testes novos e registros da suíte antes e depois. |
+| Procedimento de coleta | Preparar e testar o ambiente antes de iniciar o relógio. Executar C1 e C2 abaixo em cópias independentes do mesmo *commit*. Incluir leitura, edição, depuração e espera pelos testes no tempo; encerrar ao validar todos os critérios ou ao atingir 90 minutos. Um revisor confere o *patch* e os registros. Não remover testes, enfraquecer asserções nem alterar critérios para obter aprovação. Registrar também o número de arquivos e de linhas alterados em cada *patch*, como informação diagnóstica de modularidade, sem criar outra nota. |
+| Interpretação | Menor tempo com resultado correto é melhor; cada tarefa deve ser concluída em até 90 minutos. Insucesso funcional ou regressão determina nota 0, independentemente da rapidez. O resultado depende do executor e dessas duas tarefas; não caracteriza todo tipo de mudança nem a manutenção em produção. |
+
+**C1 (adaptação do *scraper*):** aceitar também o separador ` – ` (meia-risca,
+U+2013) entre o código e o nome no título da disciplina, preservando o separador
+atual ` - ` (hífen, U+002D). Usar uma cópia do HTML local em `api/utils/mock/sigaa.html`.
+Aceitação: os dois formatos produzem o mesmo código, o mesmo nome e as mesmas turmas;
+os demais campos continuam corretos; há teste automatizado para ambos.
+
+**C2 (validação do gerador):** quando informada, a preferência deve conter
+exatamente três inteiros entre 1 e 3, correspondentes aos turnos M/T/N; `None`
+continua permitido. Aceitação: rejeitar `[]`, `[1, 2]` e `[1, 2, 3, 1]` com
+`ValueError` controlado, preservar a rejeição de valores fora de 1 a 3 e aceitar
+`[1, 2, 3]`, `[3, 2, 1]` e `None`. Usar as disciplinas e turmas locais dos testes
+do gerador e comprovar que as combinações válidas continuam sem conflitos.
+
+C1 e C2 são solicitações experimentais para a medição de modificabilidade, não
+alterações autorizadas nem já feitas no código do produto. Em ambas, a conclusão
+exige testes de aceitação novos e a suíte completa da API aprovada. A suíte deve
+passar na versão inicial; defeitos preexistentes bloqueiam o ensaio até o protocolo
+registrar e resolver a condição, sem removê-los do relato.
+
+O executor deve ser um membro da equipe que não tenha especificado C1 e C2 nem
+conheça a localização das alterações, e não deve ter ensaiado as mesmas mudanças.
+Se isso ocorrer, registrar o aprendizado e escolher outro executor antes de medir.
+O mesmo executor realiza as duas tarefas; registrar sua experiência com
+Python/Django, a familiaridade com o código, a ordem das tarefas e as ferramentas
+de auxílio permitidas, e fixar essas condições antes da coleta. O tempo de
+instalação e a revisão independente não entram no relógio; o avaliador confere os
+registros depois.
+
+Interrupção externa ou infraestrutura inválida gera **Não avaliado**, com o motivo.
+Desistência por dificuldade da mudança ou expiração dos 90 minutos é insucesso.
+Os *patches* ficam como evidência de avaliação, sem envio ao repositório do produto.
+
+### M1.4: Cobertura de linhas executáveis da API
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q1.4, hipótese H1.4; objetivo G1; testabilidade. |
+| Definição | Percentual de linhas executáveis de produção exercitadas pela suíte automatizada existente da API, na versão inicial e sem os testes novos de M1.3. |
+| Fórmula | $M_{1.4} = 100 \times L_e / L_t$, em que $L_e$ são as linhas executáveis cobertas e $L_t$ todas as linhas executáveis no recorte. Usar `covered_lines` e `num_statements` do relatório JSON, e não a quantidade de linhas físicas do arquivo. |
+| Fonte dos dados | coverage.py 7.3.2, configuração de medição, registro dos testes, JSON e relatório HTML da cobertura. |
+| Procedimento de coleta | Executar a suíte completa da API em cópia limpa, com PostgreSQL e Redis locais, *fixtures* existentes e sem acesso externo ao SIGAA. Configurar explicitamente `source` para os quatro pacotes de produção, incluindo arquivos não executados. Excluir testes e migrações, preservando o inventário das exclusões. Publicar a cobertura total e a de `utils/web_scraping.py` e `utils/schedule_generator.py` separadamente. |
+| Interpretação | Maior é melhor; aceitar pelo menos 70% em cada um dos três recortes. A cobertura indica exercício do código e lacunas que orientam novos testes. Não prova que as asserções detectam defeitos, que todos os caminhos foram executados nem que a suíte é fácil de manter. |
+
+A configuração original em `api/setup.cfg` não fixa `source`. Por isso o percentual
+do comando usado no CI do produto não será reutilizado automaticamente: arquivos
+nunca executados precisam entrar no denominador. A medição usa um arquivo de
+configuração próprio, arquivado como evidência, com `source = api, core, users, utils`
+(uma entrada por linha), exclusão dos testes e das migrações e lista vazia em
+`[report] exclude_lines`, para não excluir linhas marcadas com `pragma: no cover`.
+Os arquivos listados em `omit` no `api/setup.cfg` do produto (`utils/json_pretty.py`,
+`api/admin.py` e `users/admin.py`) entram no universo medido; `manage.py` continua
+fora do recorte. Registrar também a cobertura com a lista `omit` original, apenas
+para comparação com o CI do produto. A configuração será fixada e conferida no
+piloto da Fase 3.
+
+Usar os dados locais e os *mocks* que a suíte já oferece, sem executar comandos de
+atualização do banco que coletam o SIGAA. Sem execução válida dos testes, não
+atribuir cobertura zero. Se a suíte falhar, preservar o relatório parcial e os
+registros, mas não usá-los para confirmar H1.4. O *frontend* permanece fora da
+cobertura medida; a ausência de suíte é uma limitação e uma oportunidade de melhoria.
+
 ## 4. Níveis de pontuação e critérios de julgamento
 
 <!--
@@ -528,10 +673,22 @@ efetiva resulta em **Insatisfatório (0)**; todos os cenários protegidos result
 continua sendo publicado para mostrar a extensão das lacunas, mas não compensa um
 risco de perda com a proteção oferecida em outros cenários.
 
-**M1 — Manutenibilidade:** sem pontuação nesta versão, pois a questão, a definição
-e a unidade da métrica ainda não foram especificadas. Suas faixas deverão ser
-definidas quando M1 for elaborada, antes de sua coleta; os limites temporais de
-M2–M5 não se aplicam a ela.
+#### Manutenibilidade: M1.1 a M1.4
+
+Aplicar os intervalos ao valor sem arredondamento prévio; os percentuais estão entre
+0 e 100. Dados inválidos ou indisponíveis não recebem nota. A denominação
+**Excelente** descreve somente o resultado no indicador e no recorte, não uma
+certificação da característica inteira.
+
+| Métrica e recorte | Insatisfatório (0) | Aceitável (1) | Bom (2) | Excelente (3) | Limite de aceitação |
+|-------------------|-------------------|---------------|---------|---------------|---------------------|
+| M1.1: Ciclos, por camada (%) | $M_{1.1} > 10$ | $5 < M_{1.1} \leq 10$ | $0 < M_{1.1} \leq 5$ | $M_{1.1} = 0$ | Até 10% na API e no *frontend* |
+| M1.2: Blocos com CC > 10, por recorte (%) | $M_{1.2} > 20$ | $10 < M_{1.2} \leq 20$ | $5 < M_{1.2} \leq 10$ | $0 \leq M_{1.2} \leq 5$ | Até 20% na API, no *frontend*, no *scraper* e no gerador |
+| M1.3: Mudança validada, por tarefa (min) | Insucesso, regressão ou prazo excedido | $60 < M_{1.3,t} \leq 90$ | $30 < M_{1.3,t} \leq 60$ | $0 < M_{1.3,t} \leq 30$ | C1 e C2 corretas em até 90 min cada |
+| M1.4: Cobertura de linhas, por recorte (%) | $0 \leq M_{1.4} < 70$ | $70 \leq M_{1.4} < 80$ | $80 \leq M_{1.4} < 90$ | $90 \leq M_{1.4} \leq 100$ | Ao menos 70% na API, no *scraper* e no gerador |
+
+Tempo nulo ou negativo em M1.3 é inválido. O tempo só é classificado nos níveis
+1 a 3 após conclusão correta; uma falha não é compensada por uma execução rápida.
 
 ### 4.2 Justificativa dos limites
 
@@ -575,6 +732,20 @@ substitui esses tempos.
 As faixas deverão ser fixadas antes da coleta formal. Qualquer revisão motivada
 pelo piloto deverá registrar a justificativa e a versão do plano, sem ajustar os
 limites depois de observar os resultados formais para melhorar a classificação.
+
+**Justificativa dos limites de G1:** são critérios propostos para revisão por
+pares antes da coleta, não valores normativos da ISO nem requisitos acordados
+com os mantenedores. Em M1.1, zero ciclos é a condição desejada, e até 10% admite
+uma presença limitada que ainda exige inspeção. Em M1.2, CC maior que 10 marca
+blocos para investigação, tomando como referência a transição entre as faixas B
+e C do Radon ([documentação do comando `cc`](https://radon.readthedocs.io/en/stable/commandline.html)); os cortes percentuais de 5%, 10% e 20% e sua aplicação ao TypeScript
+são escolhas da equipe, não uma equivalência validada entre linguagens. M1.3
+reserva no máximo uma sessão de 90 minutos por mudança pequena, com marcos de 30
+e 60 minutos para distinguir o esforço. Em M1.4, 70% é o mínimo proposto para
+orientar a ampliação dos testes, com 80% e 90% como patamares progressivos; uma
+cobertura alta não elimina a necessidade de inspecionar as asserções. Esses valores
+serão revisados no piloto e congelados antes da coleta formal, com justificativa
+registrada para qualquer alteração e sem ajuste para favorecer resultados observados.
 
 ### 4.3 Regras de aplicação e julgamento de eficiência — M2–M5
 
@@ -643,6 +814,29 @@ limites depois de observar os resultados formais para melhorar a classificação
    não significa que todos os estudantes terão sucesso nem constitui teste de
    significância estatística.
 
+### 4.5 Julgamento das hipóteses de manutenibilidade
+
+1. Conferir a versão, o inventário, as configurações e a completude das evidências.
+   Falta de Docker, erro de *parsing* ou *import* interno não resolvido impede julgar
+   o recorte afetado; não é evidência automática de baixa qualidade do produto.
+2. Classificar cada recorte nas faixas de M1.1 a M1.4. Preservar os valores por
+   camada, componente e tarefa, sem média de percentuais de denominadores diferentes
+   nem média de notas ordinais.
+3. H1.1 recebe sustentação operacional se a API e o *frontend* tiverem nota pelo
+   menos 1. H1.2 exige isso na API, no *frontend*, no *scraper* e no gerador. H1.3
+   exige C1 e C2 concluídas com nota pelo menos 1. H1.4 exige nota pelo menos 1 na
+   API, no *scraper* e no gerador, com a suíte de referência aprovada. Trata-se de
+   julgamento operacional nas condições avaliadas, não de teste de significância
+   estatística.
+4. Um recorte válido abaixo do limite contraria a respectiva hipótese. Se nenhum
+   recorte válido a contrariar, mas faltar evidência de algum recorte obrigatório,
+   a hipótese fica **inconclusiva**. Não atribuir uma nota completa à métrica
+   enquanto faltar recorte; quando todos estiverem disponíveis, sua categoria
+   sintética será a menor nota, acompanhada dos resultados individuais.
+5. Relatar G1 por subcaracterística, com as limitações das medidas e a ausência de
+   cobertura do *frontend*. A integração de G1, G2 e G3, o julgamento global e o
+   diagrama completo pertencem à issue #7.
+
 ## 5. Diagrama GQM
 
 <!--
@@ -674,3 +868,5 @@ flowchart TD
 ---
 
 Anterior: [Fase 1](fase-1.md) · Próxima: [Fase 3 — Projeto da avaliação](fase-3.md).
+
+
