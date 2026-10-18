@@ -282,7 +282,8 @@ das regras de completude e tratamento de falhas dessa seção.
 ### 3.2 Verificação de viabilidade da coleta
 
 Esta verificação distingue **viabilidade documental** (há uma ferramenta e um caminho
-de acesso identificados) de **coleta validada** (o roteiro foi executado no ambiente
+de acesso identificados), **ferramenta testada** (o recurso executou uma operação
+básica) e **coleta validada** (o roteiro foi executado no ambiente
 da avaliação e produziu dados e evidências). A consulta ao repositório e a inspeção
 do ambiente foram feitas em **18/10/2026**. Nenhuma das métricas abaixo teve ainda
 sua coleta validada por execução ponta a ponta.
@@ -303,6 +304,10 @@ validada previamente, sem essa dependência.
 | M4 — Geração | Playwright com Chromium, marcações temporais, CSV e evidência das combinações geradas. | Acesso ao gerador e a uma massa local com combinações válidas previamente conferidas. | Aplicação local e conjuntos fixos de disciplinas e turmas, com resultados de referência. | **Viável sob condições:** gerar um conjunto conhecido e verificar que o sinal de término representa a conclusão prevista em M4, incluindo a conferência dos resultados. |
 | M5 — Salvamento no navegador | Playwright com Chromium, marcações temporais, CSV e evidência de recuperação da grade. | Acesso à modalidade de armazenamento no navegador, cuja disponibilidade precisa ser confirmada na versão avaliada. | Aplicação local, contexto de navegador preservado durante a verificação e grade fixa. | **Viável sob condições:** confirmar a modalidade, identificar seu sinal visual de conclusão e recuperar a grade após recarregar a página. Se o sinal não existir, revisar M5 antes da coleta. |
 | M5 — Salvamento na conta | Playwright com Chromium, sessão de teste autenticada, marcações temporais, CSV e evidência de recuperação. | Conta de teste e configuração local de OAuth conforme o projeto; sem credenciais ou banco de produção. | Frontend, backend e banco locais, autenticação funcional e persistência configurada. | **Viável sob condições adicionais:** concluir login antes da medição, salvar e recuperar a grade após recarregar. Sem autenticação funcional, registrar esta modalidade como não coletada; não generalizar o resultado do navegador para a conta. |
+| M6 — Aprendizagem | Navegador, cronômetro, questionário de experiência prévia e ficha CSV; captura de tela para conferir a grade e sua recuperação. | Estudantes sem uso prévio, com autorização para observação; acesso ao fluxo e ao salvamento na modalidade escolhida. | Computador e celular reais, distribuídos entre participantes distintos; aplicação com dados de referência, limites de exploração e aprendizagem fixos e estado inicial restaurável. | **Viável sob condições:** demonstrar em piloto separado a marcação dos dois períodos, a anotação de ajuda e a verificação do resultado salvo. Ferramenta de captura testada em computador; participantes, celular e fluxo completo ainda não verificados. |
+| M7 — Operabilidade | Navegador, ficha de observação em CSV e capturas dos estados anterior e posterior; Playwright pode apoiar a restauração do estado. | Participantes e acesso aos controles de seleção, remoção e alteração; conta de teste apenas se exigida pelo fluxo. | Computador e celular reais, com dimensões e navegador registrados; tarefas equivalentes e massa de dados fixa. | **Viável sob condições:** executar no piloto uma tarefa de cada tipo em cada dispositivo, conferir o estado final e registrar sucesso, insucesso e ajuda. Emulação de tela não substitui a sessão em celular nem a observação de participantes. |
+| M8 — Proteção contra perda | Navegador, roteiro de inspeção executado pelo avaliador, CSV e capturas; Playwright pode repetir ações e conferir estados. | Grades descartáveis e inventário de ações de risco; sessão de teste para operações na conta, sem usar grades pessoais. | Aplicação isolada com estado restaurável, computador e celular; persistência local e autenticação funcional para as respectivas modalidades. | **Viável sob condições:** inventariar ações existentes e executar um cenário por mecanismo disponível, comprovando prevenção, cancelamento ou recuperação. Não requer participantes. Modalidade sem acesso fica não avaliada; ausência de proteção em ação acessível é um resultado da métrica. |
+| M9 — Autodescrição | Navegador, roteiro de perguntas neutras, gabarito de estados, ficha CSV e captura da interface no momento da resposta. | Participantes autorizados e acesso aos estados reais de seleção, geração e salvamento. | Computador e celular reais; dados de referência e método validado para observar estados transitórios sem acrescentar pistas à interface. | **Viável sob condições:** apresentar cada ponto de verificação no piloto, guardar a resposta e conferir a classificação pelo gabarito. O estado de geração em andamento ainda precisa ter sua observabilidade demonstrada; um roteiro automatizado não substitui as respostas dos estudantes. |
 
 A escolha do Playwright se apoia em sua [documentação de automação de navegadores](https://playwright.dev/docs/intro).
 Para as marcações, usar `performance.now()` no mesmo contexto de página, cujo
@@ -312,14 +317,42 @@ observar somente uma alteração no DOM ou uma resposta HTTP não comprova que a
 operação terminou e está visível. Registrar o mecanismo adotado e sua limitação
 de precisão na Fase 3.
 
-**Resultado da inspeção do ambiente de trabalho:** Node `24.19.0`, npm `11.17.0`,
-Python `3.12.3` e GNU Make `4.3` responderam aos comandos de versão. Foram localizados
-arquivos de instalação do Playwright e binários do Chromium no cache do usuário;
-sua presença não comprova inicialização nem compatibilidade com o roteiro.
+**Resultado da inspeção do ambiente de trabalho:** Node `24.19.0`, npm `11.17.0`
+e Python `3.12.3` responderam aos comandos de versão. Playwright `1.62.1` e
+Chromium `151.0.7922.34`, encontrados no cache do usuário, foram executados:
+uma página HTML de teste recebeu um clique, exibiu o estado esperado e produziu
+uma captura de tela. A consulta a `performance.now()` também respondeu. A primeira
+inicialização foi bloqueada pelo sandbox (`Operation not permitted`); o teste
+teve sucesso após execução autorizada fora dele. Esse teste confirma operações
+básicas da ferramenta, não a precisão da medição nem o roteiro do Sua Grade UnB.
+
+Uma abertura da [página pública](https://suagradeunb.com.br/) no mesmo navegador
+retornou HTTP **200**, título **Sua Grade UnB**, as opções **Continuar com o Google**
+e **Continuar como anônimo**, sem exceções JavaScript de página registradas durante
+essa abertura. Não houve login nem avanço para as tarefas. Assim, o acesso à tela
+inicial foi demonstrado, mas a disponibilidade das disciplinas, do fluxo anônimo
+e das modalidades de salvamento ainda não foi confirmada.
+
 `docker compose version` e `docker ps` falharam informando que o Docker não está
 disponível nesta distribuição WSL. A reprodução local, a massa de dados e o login
-de teste ainda não foram demonstrados neste ambiente. Esses resultados descrevem
-a máquina inspecionada, não todas as máquinas da equipe.
+de teste ainda não foram demonstrados neste ambiente. Não foram realizadas sessões
+com participantes nem testes em celular real. Esses resultados descrevem a máquina
+inspecionada, não todas as máquinas da equipe.
+
+**Registro resumido das verificações de 18/10/2026:**
+
+| Verificação executada | Resultado observado | Alcance da evidência |
+|-----------------------|---------------------|----------------------|
+| `node --version`, `npm --version`, `python3 --version` | `v24.19.0`, `11.17.0`, `Python 3.12.3`. | Executáveis disponíveis; não confirma dependências do produto. |
+| Inicialização do Chromium por Playwright, `setContent`, clique e leitura do estado em HTML de teste | Estado esperado `Concluído`; consulta ao relógio e captura de tela concluídas. | Automação e captura básicas testadas; não é coleta de M2–M9. |
+| `page.goto` da página pública e leitura do título e corpo | HTTP 200; título e opções de entrada visíveis. | Acesso inicial testado; tarefas e persistência não exercitadas. |
+| `docker compose version` e `docker ps` | Mensagem de Docker indisponível na distribuição WSL. | Reprodução por Docker não disponível nesta máquina. |
+
+Para M6, M7 e M9, a observação pode ser registrada manualmente em CSV com
+cronômetro e capturas do navegador; não depende de instalar uma plataforma de
+pesquisa ou de acessar logs de produção. M8 pode ser inspecionada pelo avaliador.
+Essas alternativas reduzem dependências de ferramentas, mas não eliminam a
+necessidade de executar o fluxo e validar o registro em piloto.
 
 **Pendências para confirmar a coleta na Fase 3:**
 
@@ -331,14 +364,24 @@ a máquina inspecionada, não todas as máquinas da equipe.
    configurar execução sequencial, sem repetição automática de tentativas com erro.
 4. Executar o piloto de cada linha da matriz, guardando roteiro, configuração,
    CSV com duração válida e evidência do resultado. O piloto é uma verificação
-   do método e não integra as 30 tentativas da coleta formal.
+   do método e não integra as 30 tentativas de M2–M5 nem as observações formais
+   de M6–M9.
 5. Validar a restauração de estado e o registro de erros e expirações, configurar
    o tempo máximo de espera e incorporar ao roteiro os limites da Seção 4.
+6. Para M6, M7 e M9, confirmar o recrutamento, a autorização dos participantes e
+   a disponibilidade de computador e celular reais. Usar participantes distintos
+   entre os dispositivos em M6 e excluir as sessões de piloto da amostra formal.
+7. Para M8, inventariar os riscos e demonstrar a restauração da grade de teste;
+   para M9, validar o gabarito e a apresentação dos estados transitórios. Guardar
+   uma ficha preenchida e a evidência correspondente por cenário de piloto.
+8. Conferir a gravação e leitura do CSV, o cálculo de numeradores e denominadores
+   de M6–M9 e o tratamento de ajuda, falhas, expirações e observações inválidas.
 
-**Conclusão de viabilidade:** há um caminho técnico identificado para M2–M5, mas
-a coleta permanece condicionada à preparação do ambiente e à aprovação dos pilotos.
-M1 depende de especificação. Esta seção não deve ser tratada como evidência de
-medições já executadas nem como encerramento da validação prática.
+**Conclusão de viabilidade:** M2–M9 possuem ferramenta, acesso necessário e ambiente
+identificados, com automação básica e acesso à tela inicial testados. A coleta
+completa permanece **condicionada** à reprodução do produto, aos pilotos e, para
+M6, M7 e M9, aos participantes e dispositivos. M1 depende de especificação.
+Nenhuma métrica pode ser marcada como coleta validada apenas com estas verificações.
 
 ### 3.3 Métricas de capacidade de interação — G3
 
@@ -435,7 +478,8 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 **Situação da coleta de G3:** M6–M9 estão especificadas, mas não foram executadas
 nem validadas em piloto. Sua viabilidade depende da reprodução do fluxo, de dados
 de referência, do recrutamento dos participantes e da validação dos roteiros. A
-inspeção de ferramentas da Seção 3.2 não comprova essas condições. As métricas de
+matriz e os testes de ferramentas da Seção 3.2 registram essas dependências, sem
+comprovar a execução das sessões. As métricas de
 interação não recebem pontuação nesta versão; seus limites e regras de julgamento
 devem ser definidos antes da coleta formal.
 
