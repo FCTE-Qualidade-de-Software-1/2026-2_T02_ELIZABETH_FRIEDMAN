@@ -1,0 +1,409 @@
+%% —-----------------------------------------------------------
+%% sbcreviews-pt.tex
+%% Template para SBC Reviews
+%% (https://journals-sol.sbc.org.br/index.php/reviews/)
+%%
+%% Esta versão do template para a SBC Reviews inclui algumas
+%% modificações sobre o template original da REIC
+%% (https://journals-sol.sbc.org.br/index.php/reic)
+%%
+%% Licença CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/)
+%% Sociedade Brasileira de Computação.
+
+\documentclass[portuguese]{sbcreviews-2025}%
+\usepackage[misc,geometry]{ifsym}
+
+%\usepackage{graphicx} % carregada dentro da classe
+%\usepackage{fontspec} % carregada dentro da classe
+%\usepackage{fontawesome} % carregada dentro da classe
+%\usepackage{color} % carregada dentro da classe
+%\usepackage{hyperref} % carregada dentro da classe
+
+\usepackage{aas_macros}
+\usepackage[bottom]{footmisc}
+
+\usepackage{tabularray}
+% O pacote tabularray torna o uso dos pacotes abaixo desnecessarios.
+%\usepackage{supertabular}
+%\usepackage{multicol}
+%\usepackage{multirow}
+
+\usepackage{afterpage}
+\usepackage{url}
+\usepackage{pifont}
+
+\setcitestyle{square}
+
+\definecolor{engtitle}{rgb}{0.5,0.5,0.5}
+\definecolor{orcidlogo}{rgb}{0.37,0.48,0.13}
+\definecolor{unilogo}{rgb}{0.16, 0.26, 0.58}
+\definecolor{maillogo}{rgb}{0.58, 0.16, 0.26}
+\definecolor{darkblue}{rgb}{0.0,0.0,0.0}
+\hypersetup{colorlinks,breaklinks,
+            linkcolor=darkblue,urlcolor=darkblue,
+            anchorcolor=darkblue,citecolor=darkblue}
+%\hypersetup{colorlinks,citecolor=blue,linkcolor=blue,urlcolor=blue}
+% We disable hyperlinks by default with this line, to avoid the error "\pdfendlink ended up in different nesting level" while writing.
+
+\jid{ROCS}
+\jtitle{SBC Computing Reviews, 202X, XX:1}
+\issn{2966-3938}
+\doi{10.5753/rocs.202X.XXXXXX}
+\copyrightstatement{This work is licensed under a Creative Commons Attribution 4.0 International License}
+\jyear{202X}
+
+\category{Avaliação de Produto de Software} % TODO: confirmar no Overleaf se a classe aceita texto livre em \category (não há .cls neste repo para conferir)
+\title[Avaliação de qualidade do Sua Grade UnB]{Avaliação de Qualidade de Produto de Software: o Sua Grade UnB segundo a família SQuaRE}
+\engtitle{\textcolor{engtitle}{Software Product Quality Evaluation: Sua Grade UnB according to the SQuaRE series}}
+
+%THE ORCID IS MANDATORY FOR EACH AUTHOR
+% TODO: o rótulo curto "Silva et al. 202X" não corresponde ao primeiro autor (Eduardo Silva Waski); proposta: "Waski et al. 2026".
+% TODO: a afiliação do primeiro autor ("Universidade Federal") parece incompleta; os demais usam "Universidade de Brasília".
+\author[Silva et al. 202X]{
+\affil{\textbf{Eduardo Silva Waski}~[{Universidade Federal}~|~{\textit{231011284}}~]}
+
+\affil{\textbf{João Paulo Barbosa Pereira Nunes}~[{Universidade de Brasília}~|~{\textit{232003652}}~]}
+
+\affil{\textbf{José Joaquim da Silva Neto }~[{Universidade de Brasília}~|~{\textit{232027510}}~]}
+
+\affil{\textbf{Júlia Santana Campos}~[{Universidade de Brasília}~|~{\textit{232027494}}~]}
+
+\affil{\textbf{Kaleb de Souza Macedo}~[{Universidade de Brasília}~|~{\textit{231026975}}~]}
+
+\affil{\textbf{Lucas Monteiro Freitas}~[{Universidade de Brasília}~|~{\textit{231035446}}~]}
+
+}
+
+\begin{document}
+
+\begin{frontmatter}
+
+\maketitle
+
+\begin{mail}
+Faculdade UnB Gama, Universidade de Brasília, Brasília, DF, Brasil. % TODO: incluir o CEP; o repo usa a sigla "UnB/FCTE" para a unidade, conferir o nome oficial a usar
+\end{mail}
+
+
+\begin{abstract-pt}
+% TODO: expandir após Fase 4 (o template pede de 500 a 750 palavras).
+Este trabalho apresenta a avaliação de qualidade de produto do Sua Grade UnB, aplicação web de código aberto que ajuda estudantes da Universidade de Brasília a montar a grade horária do semestre. A avaliação segue o processo da ISO/IEC 25040 e o modelo de qualidade da ISO/IEC 25010:2023, com foco em Manutenibilidade, Capacidade de interação e Eficiência de desempenho. As métricas foram derivadas pela abordagem GQM, e a gestão do projeto é acompanhada com indicadores do PSM.
+\end{abstract-pt}
+
+\begin{abstract-en}
+% TODO: expandir após Fase 4 (o template pede de 500 a 750 palavras).
+This paper presents the product quality evaluation of Sua Grade UnB, an open-source web application that helps students at the University of Brasília build their semester timetable. The evaluation follows the ISO/IEC 25040 process and the ISO/IEC 25010:2023 quality model, focusing on Maintainability, Interaction capability and Performance efficiency. Metrics were derived with the GQM approach, and project management is tracked with PSM indicators.
+\end{abstract-en}
+
+\begin{pchaves}
+% TODO: revisar após Fase 4.
+Qualidade de Software, SQuaRE, ISO/IEC 25040, GQM, PSM
+\end{pchaves}
+
+\begin{keywords}
+% TODO: revisar após Fase 4.
+Software Quality, SQuaRE, ISO/IEC 25040, GQM, PSM
+\end{keywords}
+
+\begin{dates}
+% This information will be provided by the editor before publishing the paper
+\noindent{\sffamily\textbf{Recebido/Received:}} DD Month YYYY~~~$\bullet$~~~
+{\sffamily\textbf{Aceito/Accepted:}} DD Month YYYY~~~$\bullet$~~~
+{\sffamily\textbf{Publicado/Published:}} DD Month YYYY
+\end{dates}
+
+
+%\begin{license}
+%Published under the Creative Commons Attribution 4.0 International Public License (CC BY 4.0)
+%\end{license}
+
+\end{frontmatter}
+
+\section{Introdução}
+\label{sec:intro}
+
+% TODO: escrever a Introdução (issue #9): contexto do Sua Grade UnB, motivação e propósito da avaliação (docs/fase-1.md, Seção 1).
+
+\section{Metodologia}\label{sec:metodologia}
+
+A avaliação do Sua Grade UnB é uma avaliação independente, conduzida em contexto
+acadêmico na disciplina FGA0315 -- Qualidade de Software~1 (UnB/FCTE). A equipe
+Elizabeth Friedman atua ao mesmo tempo como requisitante e como avaliadora, e os
+principais destinatários dos resultados são os mantenedores do produto. Todos os
+artefatos da avaliação (planos, especificações, registros de gestão e dados) estão
+publicados no repositório da equipe,
+\url{https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN},
+e na página do projeto,
+\url{https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/}.
+
+\subsection{Processo de avaliação segundo a ISO/IEC 25040}\label{subsec:processo}
+
+O trabalho segue o processo de avaliação de qualidade de produto da
+ISO/IEC~25040~\citep{iso25040}, com o modelo de qualidade da
+ISO/IEC~25010:2023~\citep{iso25010}. Cada fase do projeto corresponde a uma ou mais
+atividades do processo:
+
+\begin{enumerate}
+  \item \textbf{Estabelecer os requisitos da avaliação} (Fase~1);
+  \item \textbf{Especificar a avaliação} (Fase~2);
+  \item \textbf{Projetar a avaliação} (Fase~3);
+  \item \textbf{Executar a avaliação} (Fase~4);
+  \item \textbf{Concluir a avaliação} (Fase~4). % TODO: conferir nome e numeração na ISO/IEC 25040:2024
+\end{enumerate}
+
+\paragraph{Atividade 1 -- Estabelecer os requisitos da avaliação.}
+O propósito definido é identificar e priorizar os problemas de qualidade que mais
+afetam os estudantes no período de matrícula e a continuidade da manutenção do
+sistema por voluntários. A avaliação apoia três decisões: quais problemas os
+mantenedores devem corrigir primeiro (D1), qual ação de melhoria a equipe executará
+(D2) e por qual parte do código novos contribuidores devem começar (D3). As partes
+interessadas mapeadas foram a equipe avaliadora, a docente da disciplina, os
+mantenedores, os contribuidores externos, os estudantes da UnB e a própria
+universidade, como fornecedora dos dados do SIGAA.
+
+O produto foi classificado como uma aplicação web cliente-servidor em operação,
+composta por um \textit{frontend} em Next.js e uma API REST em Django. Do modelo da
+ISO/IEC~25010:2023 foram selecionadas três características, priorizadas por uma
+matriz de pontuação ponderada com os critérios impacto (peso~3), risco (peso~2) e
+viabilidade de medição (peso~1): Manutenibilidade (18 pontos), Capacidade de
+interação (15) e Eficiência de desempenho (11). Os objetos de avaliação são o
+código-fonte e os testes automatizados no \textit{commit} \texttt{3d399e7}
+(15/02/2026), o site e a API públicos e uma reprodução local do sistema com Docker
+Compose. Como a equipe não tem acesso a \textit{logs} nem ao banco de dados de
+produção e não deve gerar carga sobre o SIGAA, as medições de desempenho em
+produção limitam-se a poucas requisições espaçadas, e as demais são feitas na
+reprodução local, com dados de exemplo que acompanham o repositório do produto.
+
+\paragraph{Atividade 2 -- Especificar a avaliação.}
+A especificação foi construída com a abordagem GQM (Seção~\ref{subsec:gqm}): para
+cada característica selecionada foi definido um objetivo de medição, desdobrado em
+questões, hipóteses e métricas. Para todas as métricas foram fixados níveis de
+pontuação e critérios de julgamento antes da coleta.
+
+\paragraph{Atividades 3 a 5.}
+O projeto, a execução e a conclusão da avaliação correspondem às Fases~3 e~4, que
+compõem a segunda entrega do trabalho.
+% TODO: completar após Fase 3 -- método de avaliação por métrica, recursos e ambiente
+%       (hardware, software, massa de dados, perfil dos participantes) e cronograma da avaliação.
+% TODO: completar após Fase 4 -- execução, análise e julgamento (atividades 4 e 5).
+
+\subsection{Abordagem GQM}\label{subsec:gqm}
+
+As métricas foram derivadas pela abordagem \textit{Goal-Question-Metric}
+(GQM)~\citep{basili1994gqm}. Cada objetivo foi descrito pelos cinco elementos do
+modelo: objeto analisado, propósito, foco de qualidade, ponto de vista e contexto.
+Foram definidos três objetivos, cada um ligado a uma característica priorizada e a
+uma parte interessada:
+
+\begin{itemize}
+  \item \textbf{G1 -- Manutenibilidade}, do ponto de vista dos mantenedores e
+        contribuidores externos, com foco em modularidade, analisabilidade,
+        modificabilidade e testabilidade do código da API e do \textit{frontend};
+  \item \textbf{G2 -- Eficiência de desempenho}, do ponto de vista dos estudantes,
+        com foco no comportamento temporal das operações do fluxo principal (buscar
+        disciplinas, selecionar turmas, gerar e salvar grades);
+  \item \textbf{G3 -- Capacidade de interação}, do ponto de vista dos estudantes,
+        inclusive os que usam o sistema pela primeira vez, com foco em aprendizagem,
+        operabilidade, proteção contra erros do usuário e autodescrição.
+\end{itemize}
+
+Os objetivos se desdobram em doze questões, cada uma com uma hipótese e uma métrica
+principal. A Tabela~\ref{tab:gqm} resume a hierarquia e o limite de aceitação de
+cada métrica.
+
+% TODO: se a tabela ficar apertada na coluna ao compilar no Overleaf, trocar table por table*.
+\begin{table}[htbp]
+\centering
+\caption{Questões, métricas e limites de aceitação da avaliação}
+\label{tab:gqm}
+\small
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] Q[l] X[l] X[l] Q[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{6,10} = {0.4pt},
+}
+Obj. & Questão & Subcaracterística & Métrica & Aceitação \\
+G1 & Q1.1 & Modularidade & M1.1 -- Arquivos em ciclos de importação internos (\%) & $\leq 10\%$ por camada \\
+G1 & Q1.2 & Analisabilidade & M1.2 -- Blocos com complexidade ciclomática $> 10$ (\%) & $\leq 20\%$ por recorte \\
+G1 & Q1.3 & Modificabilidade & M1.3 -- Tempo para concluir uma mudança validada (min) & $\leq 90$ min, sem regressão \\
+G1 & Q1.4 & Testabilidade & M1.4 -- Cobertura de linhas executáveis da API (\%) & $\geq 70\%$ por recorte \\
+G2 & Q2 & Comportamento temporal & M2 -- P95 da busca de disciplinas (ms) & $\leq 2000$ ms \\
+G2 & Q3 & Comportamento temporal & M3 -- P95 da atualização após seleção de turma (ms) & $\leq 1000$ ms \\
+G2 & Q4 & Comportamento temporal & M4 -- P95 da geração de grades (ms) & $\leq 10000$ ms \\
+G2 & Q5 & Comportamento temporal & M5 -- P95 do retorno do salvamento (ms) & $\leq 2000$ ms \\
+G3 & Q6 & Aprendizagem & M6 -- Sucesso no primeiro uso após exploração inicial (\%) & $\geq 80\%$ \\
+G3 & Q7 & Operabilidade & M7 -- Sucesso independente nas tarefas de controle da grade (\%) & $\geq 90\%$ \\
+G3 & Q8 & Proteção contra erros do usuário & M8 -- Cobertura de proteção contra perda da grade (\%) & $= 100\%$ \\
+G3 & Q9 & Autodescrição & M9 -- Compreensão dos estados e ações da interface (\%) & $\geq 90\%$ \\
+\end{tblr}
+\end{table}
+
+Em G1, os indicadores estruturais (M1.1 e M1.2) são combinados com duas mudanças
+controladas executadas em cópias locais descartáveis (M1.3), uma no
+\textit{scraper} do SIGAA e outra no gerador de grades, e com a cobertura da suíte
+de testes da API (M1.4). Os componentes críticos
+(\texttt{api/utils/web\_scraping.py} e \texttt{api/utils/schedule\_generator.py})
+têm resultados publicados separadamente. A testabilidade do \textit{frontend} não
+recebe nota, pois ele não possui suíte de testes; essa ausência é registrada como
+limitação.
+
+Em G2, cada operação e cenário é medido com duas tentativas de aquecimento,
+descartadas, e 30 tentativas sequenciais. O resultado é o percentil~95 (P95) pelo
+método do posto mais próximo, calculado sobre os intervalos entre a ação do usuário
+e o resultado visível na interface. Em G3, as métricas são proporções de sucesso
+(maior é melhor), sempre publicadas com numerador e denominador, e são separadas por
+dispositivo (computador e celular), cenário e modalidade de salvamento.
+
+Os resultados de cada métrica são classificados em uma escala ordinal de quatro
+níveis: Insatisfatório~(0), Aceitável~(1), Bom~(2) e Excelente~(3). Por ser ordinal,
+a escala não admite médias. A nota de uma métrica é a menor nota entre seus
+recortes. Cada hipótese é julgada como sustentada operacionalmente, contrariada,
+inconclusiva ou não avaliada, e cada objetivo como atendido nas condições
+avaliadas, não atendido, inconclusivo ou não avaliado. Não se calcula uma nota
+única de qualidade do produto, porque as métricas têm unidades diferentes e não há
+base empírica para atribuir pesos entre as características. Os limites de
+aceitação são critérios operacionais propostos pela equipe para esta avaliação, e
+não valores prescritos pela ISO/IEC~25010.
+
+Em relação ao modelo adaptado na atividade~1, a especificação incluiu a
+subcaracterística autodescrição em G3 e não definiu questões para utilização de
+recursos e capacidade em G2. Portanto, os resultados de G2 não permitem conclusões
+sobre essas duas subcaracterísticas.
+
+\subsection{Gestão da medição com PSM/CID}\label{subsec:psm}
+
+O acompanhamento do próprio projeto segue o modelo PSM (\textit{Practical Software
+Measurement})~\citep{mcgarry2002psm}, com o PSM/CID adotado na disciplina.
+% TODO: confirmar a expansão da sigla CID usada na disciplina antes de explicitá-la no texto.
+O plano de medição tem seis indicadores, distribuídos em três categorias e
+apresentados na Tabela~\ref{tab:psm}. Todos são coletados semanalmente a partir
+dos registros do GitHub.
+
+\begin{table}[htbp]
+\centering
+\caption{Plano de medição da gestão do projeto (PSM/CID)}
+\label{tab:psm}
+\small
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {X[0.9,l] X[1.1,l] X[1.4,l] X[0.9,l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,6} = {0.4pt},
+}
+Categoria & Indicador & Fórmula & Fonte \\
+Desempenho dos processos & Taxa de PRs revisados no prazo & PRs revisados em até 48\,h / PRs abertos & \textit{Pull requests} \\
+ & Taxa de retrabalho & \textit{Issues} reabertas / \textit{issues} fechadas & \textit{Issues} \\
+Calendário e progresso & Conclusão de \textit{issues} planejadas & \textit{Issues} fechadas no período / \textit{issues} planejadas no \textit{milestone} & \textit{Issues} e \textit{milestones} \\
+ & Desvio de prazo & Data real de conclusão $-$ data planejada (dias) & \textit{Milestones} e \textit{issues} \\
+Recursos e custos & Distribuição de carga & \textit{Issues} fechadas por integrante / total de \textit{issues} fechadas & \textit{Issues} (responsáveis) \\
+ & Contribuição por integrante & \textit{Commits} por integrante no período & Histórico de \textit{commits} \\
+\end{tblr}
+\end{table}
+
+O trabalho é organizado em \textit{issues} do GitHub, agrupadas em
+\textit{milestones} por marco do cronograma da disciplina (PC1, E1, PC2, E2 e
+apresentação final) e classificadas por \textit{labels} de fase, de produto
+(artigo, GitPage e gestão) e de tipo de trabalho. Cada tarefa é revisada por outro
+membro antes da publicação, e o nome do revisor fica registrado na \textit{issue}.
+As medições, sua interpretação e as decisões de gestão decorrentes são registradas
+na GitPage, junto com as atas de reunião.
+% TODO: incluir os valores medidos e as decisões tomadas quando o registro de medições
+%       (docs/gestao/metricas.md) tiver dados reais; hoje só contém valores de exemplo.
+
+\subsection{Ferramentas utilizadas}\label{subsec:ferramentas}
+
+A Tabela~\ref{tab:ferramentas} relaciona as ferramentas previstas para a coleta
+com as métricas que apoiam. Os dados brutos de todas as métricas são registrados
+em arquivos CSV, acompanhados das versões das ferramentas, das configurações e das
+evidências correspondentes.
+
+\begin{table}[htbp]
+\centering
+\caption{Ferramentas de medição e métricas apoiadas}
+\label{tab:ferramentas}
+\small
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {X[1,l] X[2,l] Q[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+}
+Ferramenta & Uso & Métricas \\
+pydeps e Madge & Grafos de dependência entre arquivos Python e TypeScript para identificar ciclos de importação & M1.1 \\
+Radon e ESLint (regra \texttt{complexity}) & Complexidade ciclomática por função e método, em Python e TypeScript & M1.2 \\
+Git, testes Django e cronômetro & Execução e validação das mudanças controladas em cópias locais & M1.3 \\
+coverage.py 7.3.2 & Cobertura de linhas executáveis da suíte de testes da API & M1.4 \\
+Playwright com Chromium e \texttt{performance.now()} & Automação do fluxo no navegador e marcação dos instantes de início e fim de cada operação & M2--M5 \\
+Navegador, fichas de observação e capturas de tela & Registro das sessões com estudantes e da inspeção dos cenários de risco & M6--M9 \\
+Docker Compose & Reprodução local da API, do \textit{frontend}, do PostgreSQL e do Redis & M1.3, M1.4, M2--M5 \\
+\end{tblr}
+\end{table}
+% TODO: registrar as versões de pydeps, Madge, Radon e ESLint efetivamente usadas na coleta formal (Fase 3).
+
+Em 18/10/2026, pydeps, Madge e Radon foram executados em uma verificação inicial, e
+o Playwright~1.62.1 com Chromium executou operações básicas de automação e captura.
+Essas verificações confirmam o funcionamento das ferramentas, mas não constituem
+coleta validada de nenhuma métrica. Na gestão do projeto, a equipe usa o GitHub
+(\textit{issues}, \textit{milestones}, \textit{labels} e \textit{pull requests}), a
+GitPage em MkDocs Material publicada pelo GitHub Actions e este artigo em \LaTeX{} no
+modelo da SBC.
+
+\section{Resultados}
+\label{sec:resultados}
+
+% TODO: preencher após a Fase 4 (medições, análise das respostas ao GQM, julgamento e ação de melhoria).
+
+\section{Conclusão}
+\label{sec:conclusao}
+
+% TODO: escrever a Conclusão após a Fase 4.
+
+
+\begin{declarations}
+
+\begin{contributions}
+% TODO: a equipe deve revisar e descrever as contribuições com a Taxonomia CRediT (https://credit.niso.org/).
+%       Rascunho a partir de docs/equipe.md (Entrega 1).
+ESW conduziu a Fase~1 (requisitos da avaliação). KSM e LMF especificaram a avaliação
+pela abordagem GQM (Fase~2). JPBPN e JSC escreveram este manuscrito. JJSN conduziu a
+gestão do projeto e as medições PSM/CID. Todos os autores leram e aprovaram o
+manuscrito final.
+\end{contributions}
+
+\begin{interests}
+Os autores declaram que não têm nenhum conflito de interesses.
+\end{interests}
+
+\begin{materials}
+Os dados e outros materiais criados e/ou usados nesta avaliação estão disponíveis em
+\url{https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN}
+e em \url{https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/}.
+\end{materials}
+
+\begin{aitools}
+% TODO: informar a versão do Claude Code usada (extensão do VS Code) e revisar a lista de usos.
+Os autores utilizaram o Claude Code, com o modelo Claude Opus~5.5 (Anthropic), na
+estruturação deste documento em \LaTeX{} no modelo da SBC e no rascunho da seção de
+Metodologia, a partir dos documentos de avaliação produzidos pela equipe. Todo o
+conteúdo gerado foi revisado e ajustado pelos autores. Os demais usos de IA no
+projeto estão declarados na página do projeto.
+\end{aitools}
+
+\begin{furtherinformation}
+% TODO: confirmar com a docente se as sessões com estudantes exigem submissão a comitê de ética e registrar aqui o resultado.
+A avaliação de Capacidade de interação prevê sessões de observação com estudantes
+de graduação da UnB. Os participantes autorizam a observação e o registro das
+sessões e são identificados apenas por códigos nos dados publicados. As demais
+medições são feitas sobre o código-fonte, os testes e uma reprodução local do
+sistema, sem acesso a dados de produção.
+\end{furtherinformation}
+
+\end{declarations}
+
+\bibliographystyle{apalike-sol}
+\bibliography{refs}
+
+\end{document}
