@@ -152,8 +152,8 @@ usando apenas grades e contas de teste. Para H9, deverá definir os pontos de
 verificação e as respostas esperadas, distinguindo compreender o estado da
 interface de apenas concluir a tarefa.
 
-As métricas, os limites de aceitação e as regras de julgamento de H6–H9 ainda
-precisam ser especificados nas Seções 3 e 4, antes da coleta. Participantes, roteiros
+As métricas de H6–H9 estão definidas na Seção 3.3. Seus limites de aceitação e suas
+regras de julgamento ainda precisam ser especificados na Seção 4, antes da coleta. Participantes, roteiros
 e condições de execução deverão ser documentados na [Fase 3](fase-3.md). Os limites
 temporais de G2 não serão usados automaticamente para julgar G3.
 
@@ -339,6 +339,105 @@ a máquina inspecionada, não todas as máquinas da equipe.
 a coleta permanece condicionada à preparação do ambiente e à aprovação dos pilotos.
 M1 depende de especificação. Esta seção não deve ser tratada como evidência de
 medições já executadas nem como encerramento da validação prática.
+
+### 3.3 Métricas de capacidade de interação — G3
+
+As métricas **M6 a M9** respondem, respectivamente, às questões **Q6 a Q9**.
+São definições operacionais propostas pela equipe para este recorte, não fórmulas
+prescritas pela ISO/IEC 25010. Todas são proporções expressas em **porcentagem (%)**,
+entre 0 e 100, em que **maior é melhor**. Publicar sempre numerador e denominador
+junto ao percentual, pois resultados com poucas observações têm alcance limitado.
+Não aplicar a estas métricas o protocolo de 30 tentativas nem o P95 da Seção 3.1.
+
+#### Convenções de coleta
+
+Antes da coleta formal, fixar na Fase 3 o número e o perfil dos participantes, os
+roteiros, a massa de dados, os resultados esperados, os dispositivos e os limites
+de duração. Validar o protocolo em um piloto separado da coleta formal. Usar uma
+versão fixa da aplicação, dados e contas de teste, sem consultas repetidas ao SIGAA.
+Separar os resultados por dispositivo, cenário e modalidade de salvamento; não
+agregar computador e celular em um único percentual.
+
+Em M6, admitir apenas estudantes sem experiência prévia no sistema. Cada estudante
+participa de uma única sessão de primeiro uso, em um dispositivo; distribuir os
+participantes entre computador e celular para evitar que a experiência adquirida
+em um dispositivo contamine a medição no outro. Em M7 e M9, registrar a experiência
+prévia e, se os mesmos participantes utilizarem os dois dispositivos, alternar a
+ordem de uso entre eles e registrar essa ordem.
+
+O avaliador apresenta o objetivo da tarefa, sem explicar quais controles utilizar.
+As orientações já disponíveis na aplicação podem ser consultadas. Registrar qualquer
+ajuda adicional do avaliador, o momento e o motivo. Obter autorização para observar
+e registrar as sessões e identificar participantes apenas por códigos nos dados
+publicados. Guardar os registros de observação e as evidências de tela com acesso
+restrito quando contiverem informações pessoais.
+
+O CSV deverá conter: métrica, código do participante (quando aplicável), experiência
+prévia, dispositivo, navegador, versão do sistema, cenário, tarefa ou ponto de
+verificação, resultado esperado, resultado observado, início, fim, duração, ajuda
+recebida, estado da observação, motivo de falha ou interrupção e referência à
+evidência. Para M9, guardar também a pergunta, a resposta e sua classificação.
+
+Uma tentativa iniciada que termine por dificuldade de interação, pedido de ajuda
+incompatível com o critério de sucesso ou esgotamento do tempo permanece no
+denominador como insucesso. Em M7, o limite de duração serve para encerrar a tarefa,
+sem substituir a avaliação dos controles. Interrupções por falha do equipamento,
+do roteiro ou da infraestrutura devem ser identificadas como observações inválidas,
+preservadas nos registros e reportadas separadamente. Não descartar defeitos da
+aplicação como se fossem problemas da coleta. Publicar a cobertura realizada em
+relação à planejada; um percentual parcial não representa cobertura completa.
+Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
+
+### M6 — Sucesso no primeiro uso após exploração inicial
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q6 — hipótese H6; objetivo G3; aprendizagem. |
+| Definição | Percentual de estudantes sem experiência prévia que, após uma exploração inicial limitada, concluem corretamente o fluxo de buscar disciplinas, selecionar turmas, gerar e salvar uma grade, sem instruções adicionais do avaliador e dentro do tempo total de aprendizagem previsto. Unidade de observação: uma sessão de primeiro uso por estudante. |
+| Fórmula | $M_6 = 100 \times S_6 / N_6$, em que $S_6$ é o número de sessões com conclusão correta e independente dentro do tempo total permitido, e $N_6$ é o número de sessões válidas iniciadas, incluindo insucessos e expirações. |
+| Fonte dos dados | Questionário de experiência prévia, registros de início e fim da exploração e da execução, ficha de observação, evidência da grade produzida e verificação de seu salvamento. |
+| Procedimento de coleta | Confirmar a ausência de uso prévio. Fixar o limite de exploração $E$ e o limite total de aprendizagem $T$, em minutos, com $0 < E < T$, antes da coleta. Iniciar a contagem ao disponibilizar a interface e permitir exploração livre por até $E$ minutos. Em seguida, apresentar uma tarefa padronizada, com disciplinas de referência, e observar sua execução até a conclusão ou até completar $T$ minutos desde o início da exploração. Registrar separadamente os tempos de exploração e execução. Conferir as escolhas, a grade gerada e sua recuperação após o salvamento. Ajuda adicional, conclusão incorreta, desistência por dificuldade ou término após $T$ não contam em $S_6$. |
+| Interpretação | Maior percentual indica maior sucesso de aprendizagem no primeiro contato, nas condições observadas. Examinar as etapas que impediram a conclusão e os tempos registrados. O resultado não mede retenção após dias de uso nem demonstra facilidade para todos os estudantes. Comparar com o critério de aceitação a definir na Seção 4, sem reutilizar os limites de tempo de resposta de G2. |
+
+### M7 — Sucesso independente nas tarefas de controle da grade
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q7 — hipótese H7; objetivo G3; operabilidade. |
+| Definição | Percentual de execuções de tarefas de selecionar, remover e alterar escolhas concluídas corretamente pelos controles da interface, sem ajuda adicional do avaliador. Unidade de observação: uma tarefa executada por um participante em um dispositivo. |
+| Fórmula | $M_7 = 100 \times S_7 / N_7$, em que $S_7$ é o número de execuções corretas e independentes dentro do limite de duração, e $N_7$ é o número de execuções válidas iniciadas, incluindo insucessos. Calcular por tarefa e dispositivo. |
+| Fonte dos dados | Fichas de observação das sessões, capturas dos estados anterior e posterior da grade, registros de ajuda, bloqueios e dificuldades de acesso aos controles. |
+| Procedimento de coleta | Preparar tarefas equivalentes de seleção, remoção e alteração de disciplinas ou turmas, conforme os controles disponíveis, com estado inicial e resultado esperado fixos. Restaurar o estado antes de cada tarefa. Solicitar o resultado desejado sem indicar o caminho. Registrar a conclusão, as tentativas de correção, a ajuda e qualquer controle que impeça continuar. Conferir o estado final, em vez de considerar apenas o relato do participante. Repetir o conjunto em computador e celular conforme a distribuição prevista no protocolo. |
+| Interpretação | Maior percentual indica maior facilidade de controle nas tarefas observadas. Uma falha localizada em determinado controle ou dispositivo deve ser apresentada mesmo que outras tarefas tenham sucesso. Um resultado em computador não demonstra operabilidade no celular. A sustentação de H7 depende da cobertura dos dois dispositivos e das regras a definir na Seção 4. |
+
+### M8 — Cobertura de proteção contra perda involuntária da grade
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q8 — hipótese H8; objetivo G3; proteção contra erros do usuário. |
+| Definição | Percentual de cenários de ações equivocadas com risco de perda nos quais a aplicação oferece proteção efetiva por prevenção, confirmação anterior à ação ou recuperação da grade. Unidade de observação: um cenário de risco executado pelo avaliador em um dispositivo e modalidade de armazenamento definidos. |
+| Fórmula | $M_8 = 100 \times P_8 / R_8$, em que $P_8$ é o número de cenários com proteção efetiva verificada e $R_8$ é o número de cenários válidos de risco executados. Cada cenário conta uma vez, mesmo que possua mais de um mecanismo de proteção. |
+| Fonte dos dados | Inventário das ações de risco disponíveis na versão avaliada, roteiro de inspeção, capturas de avisos e confirmações e evidências de preservação ou recuperação da grade de referência. |
+| Procedimento de coleta | Inventariar previamente as ações realmente disponíveis que possam descartar uma edição ou excluir/substituir uma grade salva; exemplos a verificar incluem sair da edição, recarregar a página ou acionar exclusão, quando aplicáveis. Fixar os cenários e a grade inicial antes da coleta. Executar cada cenário em estado restaurado. Verificar se a ação é impedida, se há confirmação clara com opção de cancelar antes da perda ou se é possível desfazer e recuperar a grade integralmente. Se houver confirmação, testar seu cancelamento; um aviso exibido apenas depois da perda não constitui proteção. Registrar a comparação da grade antes e depois e repetir por dispositivo e modalidade previstos. |
+| Interpretação | Maior percentual indica maior cobertura de proteção nos riscos inventariados. Cenários sem proteção devem ser descritos individualmente, com o conteúdo perdido e o mecanismo ausente ou ineficaz. Uma confirmação protege contra execução acidental, mas não garante recuperação após uma exclusão conscientemente confirmada. O resultado não estima a frequência de erros reais dos estudantes nem cobre ações ausentes do inventário. Comparar com o critério a definir na Seção 4. |
+
+### M9 — Compreensão dos estados e ações da interface
+
+| Campo | Descrição |
+|-------|-----------|
+| Questão respondida | Q9 — hipótese H9; objetivo G3; autodescrição. |
+| Definição | Percentual de verificações nas quais o estudante interpreta corretamente o estado da montagem e identifica uma próxima ação disponível, usando apenas as informações da interface. Unidade de observação: um ponto de verificação apresentado a um participante. |
+| Fórmula | $M_9 = 100 \times C_9 / V_9$, em que $C_9$ é o número de verificações com respostas corretas tanto sobre o estado quanto sobre a próxima ação, sem explicação do avaliador, e $V_9$ é o número de verificações válidas realizadas. Calcular por ponto de verificação e dispositivo. |
+| Fonte dos dados | Respostas registradas dos participantes, capturas da interface no instante da pergunta, estado real da aplicação e gabarito de estados e ações preparado antes das sessões. |
+| Procedimento de coleta | Definir pontos para turmas selecionadas, geração em andamento e concluída e resultado do salvamento, com perguntas neutras como “Qual é o estado atual?” e “O que você pode fazer agora?”. Validar no piloto como apresentar estados transitórios sem alterar os rótulos ou acrescentar pistas; registrar o método. Preparar um gabarito que aceite diferentes formulações corretas e ações válidas. Registrar a resposta antes de dar qualquer retorno, confrontá-la com o estado real e marcar sucesso somente quando ambas as partes estiverem corretas. Ausência de resposta ou informação insuficiente na interface conta como insucesso. Um ponto não apresentado por problema no roteiro fica como não coletado e reduz a cobertura, sem ser presumido correto. |
+| Interpretação | Maior percentual indica que os estudantes compreendem melhor os estados e as possibilidades de ação nos pontos avaliados. Respostas incorretas ajudam a localizar rótulos, mensagens ou indicadores ambíguos; concluir a tarefa por tentativa e erro não equivale a compreender a interface. Publicar os pontos separadamente para que o reconhecimento da seleção não oculte dificuldades na geração ou no salvamento. A conclusão sobre H9 depende dos critérios a definir na Seção 4 e da cobertura dos pontos previstos. |
+
+**Situação da coleta de G3:** M6–M9 estão especificadas, mas não foram executadas
+nem validadas em piloto. Sua viabilidade depende da reprodução do fluxo, de dados
+de referência, do recrutamento dos participantes e da validação dos roteiros. A
+inspeção de ferramentas da Seção 3.2 não comprova essas condições. As métricas de
+interação não recebem pontuação nesta versão; seus limites e regras de julgamento
+devem ser definidos antes da coleta formal.
 
 ## 4. Níveis de pontuação e critérios de julgamento
 
