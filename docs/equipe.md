@@ -21,4 +21,10 @@ Manter uma tabela por entrega.
 | Membro | Tarefas realizadas | Contribuição (%) |
 |--------|--------------------|------------------|
 | | | |
+| Eduardo Silva Waski | ? | ? |
+| João Paulo Barbosa Pereira Nunes | ? | ? |
+| Jose Joaquim da Silva Neto | ? | ? |
+| Júlia Santana Campos | ? | ? |
+| Kaleb de Souza Macedo | ? | ? |
+| Lucas Monteiro Freitas | ? | ? |
 | **Total** | | **100%** |
