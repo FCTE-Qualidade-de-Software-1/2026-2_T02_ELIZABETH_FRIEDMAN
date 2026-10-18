@@ -10,9 +10,11 @@ necessidades das partes interessadas documentados na [Fase 1](fase-1.md).
 
 A seleção e a priorização das características na [Seção 5 da Fase 1](fase-1.md#5-selecao-e-priorizacao-das-caracteristicas)
 ainda estão em elaboração. Estes objetivos são iniciais e deverão ser revisados após
-a consolidação dessa seção. A menção a usabilidade na Seção 2.2 da Fase 1 também
-precisa ser conciliada com a orientação registrada na Seção 5 de não incluir essa
-característica; não foi definido um objetivo para ela nesta etapa.
+a consolidação dessa seção. O objetivo G3 e suas questões incluem capacidade de
+interação conforme o recorte solicitado para esta etapa. Essa inclusão ainda precisa
+ser conciliada com a orientação de não incluir usabilidade registrada na Seção 5 da
+Fase 1; suas quatro subcaracterísticas são uma proposta inicial, não uma seleção já
+consolidada naquela fase.
 
 ## 1. Objetivos de medição (nível conceitual)
 
@@ -30,6 +32,7 @@ as referências detalhadas aparecem após cada objetivo.
 |----------|--------------------------------|--------------------------------------|-------------------|
 | G1 — Manutenibilidade | Manutenção por voluntários e adaptação da coleta às mudanças no SIGAA ([Seção 1.1](fase-1.md#11-contexto)); continuidade da manutenção ([Seção 1.2](fase-1.md#12-proposito)). | Mantenedores e contribuidores externos: compreender, modificar e testar o código ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | D1, D2 e D3 ([Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas)). |
 | G2 — Eficiência de desempenho | Uso concentrado na matrícula ([Seção 1.1](fase-1.md#11-contexto)) e identificação de tempos de resposta que prejudicam a montagem da grade ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | Estudantes da UnB: tempo de resposta ao buscar disciplinas, selecionar turmas, gerar e salvar grades ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | D1 e D2 ([Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas)). |
+| G3 — Capacidade de interação | Identificação de obstáculos à montagem da grade, inclusive no celular ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | Estudantes da UnB: aprender o fluxo, operar os controles, evitar erros e compreender o estado da interface. Recorte proposto nesta fase. | D1 e D2 ([Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas)). |
 
 ### G1 — Manutenibilidade
 
@@ -69,6 +72,23 @@ no fluxo principal. A mesma tabela estabelece a restrição de não gerar carga 
 o SIGAA. O objetivo apoia as decisões **D1** (priorizar correções) e **D2** (escolher a
 melhoria da Fase 4), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
 
+### G3 — Capacidade de interação (Usabilidade)
+
+| Elemento | Descrição |
+|----------|-----------|
+| Analisar | A interface do Sua Grade UnB no fluxo de buscar disciplinas, selecionar turmas, gerar e salvar grades, em computador e celular. |
+| Com o propósito de | Identificar obstáculos à interação e orientar melhorias que facilitem a montagem da grade pelos estudantes. |
+| Com respeito a | Capacidade de interação, com foco proposto em aprendizagem, operabilidade, proteção contra erros do usuário e autodescrição. |
+| Do ponto de vista de | Estudantes da UnB, incluindo aqueles que utilizam o sistema pela primeira vez. |
+| No contexto de | Uma avaliação acadêmica independente conduzida pela equipe Elizabeth Friedman, em cerca de seis semanas, com tarefas representativas do período de matrícula, dados de referência e condições documentadas de uso em computador e celular, sem acesso a dados de produção e sem coletas repetidas no SIGAA. |
+
+**Origem na Fase 1:** a [Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)
+registra a necessidade dos estudantes de montar a grade, inclusive no celular, e
+identificar obstáculos no fluxo principal. Essa necessidade fundamenta G3 e apoia
+as decisões **D1** e **D2** da [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+A escolha das quatro subcaracterísticas é uma proposta desta fase e depende de
+conciliação com a seleção de características da Fase 1.
+
 ## 2. Questões e hipóteses (nível operacional)
 
 <!--
@@ -101,6 +121,41 @@ os dados utilizados e a repetição das tarefas serão especificados no plano da
 | Q3 | Comportamento temporal | A seleção de turmas atualiza a interface em tempo aceitável para o estudante continuar selecionando as opções desejadas? | H3: O tempo entre selecionar uma turma e visualizar a atualização correspondente na interface atende ao limite de aceitação definido para a seleção, nas condições avaliadas. | G2 |
 | Q4 | Comportamento temporal | A geração de combinações de turmas sem conflito apresenta as grades em tempo aceitável nos cenários de montagem avaliados? | H4: O tempo entre solicitar a geração e visualizar as combinações de grades atende ao limite de aceitação definido para a geração em cada cenário avaliado. | G2 |
 | Q5 | Comportamento temporal | O salvamento de uma grade fornece retorno em tempo aceitável para o estudante concluir a tarefa? | H5: O tempo entre solicitar o salvamento e visualizar sua confirmação atende ao limite de aceitação definido para o salvamento, nas modalidades avaliadas de conta do usuário e armazenamento no navegador. | G2 |
+
+### 2.3 Capacidade de interação (Usabilidade) — G3
+
+Adota-se para este recorte a característica **capacidade de interação** da
+[ISO/IEC 25010:2023](https://www.iso.org/standard/78176.html), mantendo
+“Usabilidade” no título para correspondência com a solicitação da atividade.
+Propõem-se quatro subcaracterísticas ligadas aos obstáculos no fluxo principal
+identificados como preocupação na [Seção 2.2 da Fase 1](fase-1.md#22-mapa-de-partes-interessadas):
+**aprendizagem** (*learnability*), **operabilidade** (*operability*),
+**proteção contra erros do usuário** (*user error protection*) e
+**autodescrição** (*self-descriptiveness*).
+
+O recorte cobre o primeiro uso, o controle das ações, a prevenção de erros e a
+compreensão da interface. As demais subcaracterísticas não são cobertas por estas
+questões; os resultados não deverão ser generalizados para toda a característica.
+
+| ID | Subcaracterística | Questão | Hipótese | Objetivo |
+|----|-------------------|---------|----------|----------|
+| Q6 | Aprendizagem | Um estudante que utiliza o Sua Grade UnB pela primeira vez consegue aprender a buscar disciplinas, selecionar turmas, gerar e salvar uma grade com as orientações oferecidas pelo próprio sistema? | H6: Após uma primeira exploração, os estudantes sem experiência prévia conseguem concluir o fluxo principal com as orientações do sistema, sem instruções adicionais do avaliador, dentro do tempo de aprendizagem estabelecido previamente no protocolo. | G3 |
+| Q7 | Operabilidade | O estudante consegue controlar a seleção de disciplinas e turmas e revisar suas escolhas durante a montagem da grade, tanto no computador quanto no celular? | H7: Nos dois tipos de dispositivo, os estudantes conseguem selecionar, remover e alterar suas escolhas pelos controles da interface, sem bloqueios de navegação ou controles inacessíveis que impeçam concluir as tarefas previstas. | G3 |
+| Q8 | Proteção contra erros do usuário | A interface protege o estudante de ações equivocadas que possam causar perda involuntária da grade em edição ou de uma grade salva? | H8: Nos cenários de ações com risco de perda definidos previamente, a interface impede a perda involuntária por meio de prevenção, confirmação antes da ação ou possibilidade de desfazê-la e recuperar a grade. | G3 |
+| Q9 | Autodescrição | O estudante compreende, a partir dos rótulos, mensagens e indicadores da interface, o estado atual da montagem e a próxima ação disponível? | H9: Nos pontos de verificação do fluxo, os estudantes identificam corretamente as turmas selecionadas, distinguem a geração em andamento da geração concluída e reconhecem se o salvamento foi concluído, com base nas informações da interface e sem explicação do avaliador. | G3 |
+
+As hipóteses são expectativas a verificar. Para H6, o protocolo deverá separar a
+exploração inicial da execução observada e fixar o tempo de aprendizagem. Para H7,
+deverá especificar dispositivos, tamanhos de tela e tarefas equivalentes. Para H8,
+deverá identificar as ações de risco realmente disponíveis na versão avaliada,
+usando apenas grades e contas de teste. Para H9, deverá definir os pontos de
+verificação e as respostas esperadas, distinguindo compreender o estado da
+interface de apenas concluir a tarefa.
+
+As métricas, os limites de aceitação e as regras de julgamento de H6–H9 ainda
+precisam ser especificados nas Seções 3 e 4, antes da coleta. Participantes, roteiros
+e condições de execução deverão ser documentados na [Fase 3](fase-3.md). Os limites
+temporais de G2 não serão usados automaticamente para julgar G3.
 
 ## 3. Métricas (nível quantitativo)
 
