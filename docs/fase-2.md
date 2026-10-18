@@ -80,7 +80,7 @@ Utilização de recursos e capacidade não integram o recorte atual de G2.
 
 As hipóteses são expectativas a verificar, não resultados da avaliação. Os limites
 de tempo aceitáveis por operação e a regra para confirmar ou refutar cada hipótese
-deverão ser definidos nas Seções 3 e 4, antes da coleta. As condições de execução,
+estão definidos na Seção 4, para aplicação na coleta. As condições de execução,
 os dados utilizados e a repetição das tarefas serão especificados no plano da
 [Fase 3](fase-3.md), permitindo comparar os resultados sob condições documentadas.
 
@@ -155,8 +155,8 @@ Registrar a configuração do ambiente e a massa de dados junto ao arquivo.
 Para cada métrica, **menor é melhor**. O resultado atende ao requisito temporal
 quando $M_j \leq L_j$, em que $L_j$ é o limite de aceitação da operação e do
 cenário, em ms. Os valores de $L_2$ a $L_5$, sua justificativa e os níveis de
-pontuação serão definidos na Seção 4 **antes da coleta**. Até essa definição, as
-métricas permitem descrever os tempos, mas não confirmar as hipóteses de aceitação.
+pontuação estão definidos na Seção 4. A confirmação das hipóteses também depende
+das regras de completude e tratamento de falhas dessa seção.
 
 ### M1 — Manutenibilidade (a definir)
 
@@ -267,7 +267,7 @@ a máquina inspecionada, não todas as máquinas da equipe.
    CSV com duração válida e evidência do resultado. O piloto é uma verificação
    do método e não integra as 30 tentativas da coleta formal.
 5. Validar a restauração de estado e o registro de erros e expirações, configurar
-   o tempo máximo de espera e definir os limites de aceitação antes da coleta.
+   o tempo máximo de espera e incorporar ao roteiro os limites da Seção 4.
 
 **Conclusão de viabilidade:** há um caminho técnico identificado para M2–M5, mas
 a coleta permanece condicionada à preparação do ambiente e à aprovação dos pilotos.
@@ -281,11 +281,83 @@ F2-C5: níveis de pontuação para TODAS as métricas e critérios de julgamento
 (como o resultado da medição vira um julgamento).
 -->
 
-| Métrica | Insatisfatório | Aceitável | Bom | Excelente |
-|---------|----------------|-----------|-----|-----------|
-| M1 | | | | |
+### 4.1 Escala e faixas por métrica
 
-**Critério de julgamento:** *A preencher.*
+Adota-se uma escala ordinal de quatro níveis: **Insatisfatório (0)**,
+**Aceitável (1)**, **Bom (2)** e **Excelente (3)**. As notas indicam categorias
+ordenadas, sem pressupor distâncias iguais entre elas; não serão calculadas médias
+dessas notas. Cada faixa se aplica ao **P95 em milissegundos**, por cenário,
+conforme a Seção 3.1. Todos os intervalos abaixo são exclusivos entre si e incluem
+explicitamente seus limites. Tempos negativos são dados inválidos, não resultados
+excelentes.
+
+| Métrica | Insatisfatório (0) | Aceitável (1) | Bom (2) | Excelente (3) | Limite de aceitação |
+|---------|-------------------|---------------|---------|---------------|---------------------|
+| M2 — Busca de disciplinas | $M_2 > 2000$ | $1000 < M_2 \leq 2000$ | $500 < M_2 \leq 1000$ | $0 \leq M_2 \leq 500$ | $L_2 = 2000$ ms |
+| M3 — Atualização da seleção | $M_3 > 1000$ | $300 < M_3 \leq 1000$ | $100 < M_3 \leq 300$ | $0 \leq M_3 \leq 100$ | $L_3 = 1000$ ms |
+| M4 — Geração de grades | $M_4 > 10000$ | $3000 < M_4 \leq 10000$ | $1000 < M_4 \leq 3000$ | $0 \leq M_4 \leq 1000$ | $L_4 = 10000$ ms |
+| M5 — Retorno do salvamento | $M_5 > 2000$ | $1000 < M_5 \leq 2000$ | $500 < M_5 \leq 1000$ | $0 \leq M_5 \leq 500$ | $L_5 = 2000$ ms |
+
+**M1 — Manutenibilidade:** sem pontuação nesta versão, pois a questão, a definição
+e a unidade da métrica ainda não foram especificadas. Suas faixas deverão ser
+definidas quando M1 for elaborada, antes de sua coleta; os limites temporais de
+M2–M5 não se aplicam a ela.
+
+### 4.2 Justificativa dos limites
+
+Como referência para a experiência de espera, Nielsen descreve aproximadamente
+**100 ms** para uma reação percebida como imediata, **1000 ms** para preservar o
+fluxo de pensamento e **10000 ms** para manter a atenção na tarefa
+([Response Times: The 3 Important Limits](https://www.nngroup.com/articles/response-times-3-important-limits/)).
+Essa referência orienta a escolha dos patamares, mas não estabelece faixas de
+P95 específicas para o Sua Grade UnB.
+
+Os cortes da tabela são **critérios operacionais propostos pela equipe para esta
+avaliação**, não requisitos acordados com os mantenedores nem limites impostos
+pela ISO/IEC 25010. Aplicá-los ao P95 também é uma escolha metodológica da equipe.
+A seleção de turma recebe a faixa mais exigente por ser uma interação direta e
+repetida. Busca e salvamento recebem limite de dois segundos para a conclusão da
+operação, com desempenho de até um segundo classificado como bom. A geração admite
+até dez segundos por envolver o processamento de combinações; esse limite é comum
+a todos os conjuntos de referência definidos previamente na Fase 3. Os cortes
+intermediários de 300, 500, 2000 e 3000 ms são adaptações do projeto.
+
+Os mesmos limites de M5 serão aplicados separadamente ao navegador e à conta.
+As faixas deverão ser fixadas antes da coleta formal. Qualquer revisão motivada
+pelo piloto deverá registrar a justificativa e a versão do plano, sem ajustar os
+limites depois de observar os resultados formais para melhorar a classificação.
+
+### 4.3 Regras de aplicação e julgamento
+
+1. **Verificar a validade da coleta.** O cenário deve ter 30 tentativas medidas
+   registradas, ambiente e massa de dados documentados e evidências dos eventos
+   de início e término. Coletas incompletas, indisponibilidade de ambiente,
+   modalidade inacessível ou defeito no roteiro recebem o estado **Não avaliado**,
+   sem nota. Corrigir o problema e realizar uma nova coleta identificada, preservando
+   os registros anteriores. Ausência de evidência não equivale a desempenho ruim.
+2. **Separar tempo e conclusão da tarefa.** Em uma coleta válida, calcular e
+   publicar o P95 das tentativas bem-sucedidas e sua faixa temporal. Se houver
+   qualquer erro da aplicação, resultado incorreto ou expiração do tempo de espera,
+   atribuir ao cenário a classificação final **Insatisfatório (0)** e registrar
+   o motivo, mesmo que o P95 dos sucessos seja baixo. Essa é uma regra conservadora
+   de aceitação da tarefa; uma falha funcional não comprova lentidão. Com zero
+   sucessos, publicar P95 **não calculável** e classificação final 0 por falha de
+   conclusão, sem inventar um valor de tempo.
+3. **Pontuar os cenários sem falha.** Com 30 sucessos, a nota final do cenário é a
+   faixa da tabela, usando o P95 sem arredondamento prévio. Por exemplo, uma busca
+   com P95 de 1000 ms recebe **Bom (2)**; com 1000,1 ms, **Aceitável (1)**; com
+   2000,1 ms, **Insatisfatório (0)**.
+4. **Consolidar por métrica.** Publicar todos os cenários e usar a menor nota como
+   classificação da métrica, sem misturar ambientes. Para M5, apresentar as duas
+   modalidades separadamente. Se algum cenário previsto não for avaliado, informar
+   cobertura parcial e não atribuir uma nota consolidada completa à métrica.
+5. **Responder às hipóteses.** H2–H5 serão consideradas sustentadas nas condições
+   avaliadas quando todos os cenários previstos da respectiva métrica tiverem
+   classificação final pelo menos **Aceitável (1)**. Um cenário insatisfatório
+   refuta a hipótese no recorte avaliado, com indicação da causa. Na ausência de
+   cenário insatisfatório, mas com algum cenário não avaliado, a conclusão é
+   **inconclusiva**. Esses julgamentos não demonstram desempenho em produção nem
+   constituem testes de significância estatística.
 
 ## 5. Diagrama GQM
 
