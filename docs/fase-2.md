@@ -20,6 +20,17 @@ característica; não foi definido um objetivo para ela nesta etapa.
 F2-C1: usar o template GQM completo para cada objetivo.
 -->
 
+Cada objetivo segue os cinco elementos do template GQM: **analisar** (objeto),
+**com o propósito de** (finalidade), **com respeito a** (foco de qualidade),
+**do ponto de vista de** (parte interessada) e **no contexto de** (condições e
+restrições da avaliação). A tabela a seguir resume sua derivação da Fase 1;
+as referências detalhadas aparecem após cada objetivo.
+
+| Objetivo | Necessidade de origem na Fase 1 | Parte interessada e foco de qualidade | Decisões apoiadas |
+|----------|--------------------------------|--------------------------------------|-------------------|
+| G1 — Manutenibilidade | Manutenção por voluntários e adaptação da coleta às mudanças no SIGAA ([Seção 1.1](fase-1.md#11-contexto)); continuidade da manutenção ([Seção 1.2](fase-1.md#12-proposito)). | Mantenedores e contribuidores externos: compreender, modificar e testar o código ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | D1, D2 e D3 ([Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas)). |
+| G2 — Eficiência de desempenho | Uso concentrado na matrícula ([Seção 1.1](fase-1.md#11-contexto)) e identificação de tempos de resposta que prejudicam a montagem da grade ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | Estudantes da UnB: tempo de resposta ao buscar disciplinas, selecionar turmas, gerar e salvar grades ([Seção 2.2, Tabela 3](fase-1.md#22-mapa-de-partes-interessadas)). | D1 e D2 ([Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas)). |
+
 ### G1 — Manutenibilidade
 
 | Elemento | Descrição |
