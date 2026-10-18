@@ -123,18 +123,16 @@ Manutenibilidade aos mantenedores e contribuidores externos, Capacidade de inter
 de desempenho aos estudantes. As demais características do modelo ficaram de fora pelos motivos da
 Tabela 9.
 
-**Tabela 9 — Características não selecionadas**
+**Tabela 9 — Características não selecionadas (Baseadas na ISO 25010:2023)**
 
 | Característica | Por que ficou de fora |
 |----------------|-----------------------|
-| Adequação funcional | O sistema está em uso há três anos e as funções principais funcionam; a falha relatada sobre limite de créditos (*issue* #238) é tratada como proteção contra erros do usuário |
-| Confiabilidade | As falhas conhecidas vêm da coleta do SIGAA, cuja causa (acoplamento ao HTML de outro sistema) é coberta pela Manutenibilidade; disponibilidade em produção não pode ser medida sem acesso aos logs |
-| Segurança | O sistema guarda poucos dados pessoais (nome, e-mail e grades salvas) e uma avaliação adequada exigiria testes de invasão, fora do alcance da equipe no prazo |
+| Adequação funcional | O sistema está em uso há três anos e as funções principais funcionam bem|
+| Confiabilidade | As falhas conhecidas vêm da coleta do SIGAA, cuja causa (acoplamento ao HTML de outro sistema) é coberta pela Manutenibilidade |
+| Segurança | O sistema guarda poucos dados pessoais (nome, e-mail e grades salvas) |
 | Compatibilidade | O sistema tem poucas integrações (Google e SIGAA) e não divide ambiente com outros produtos |
 | Flexibilidade | A implantação é fixa (Vercel e Heroku) e não há demanda por levar o sistema a outros ambientes |
 | Proteção (*safety*) | O uso do sistema não envolve risco físico, ambiental ou financeiro |
-
-Fonte: elaborado pela equipe.
 
 ### 5.2 Método de priorização
 
@@ -143,12 +141,10 @@ de 1 (baixo) a 3 (alto) em cada critério.
 
 - **Impacto (peso 3):** quanto um problema na característica afeta as partes interessadas e as
   decisões D1 a D3 da [Tabela 2](#13-uso-pretendido-decisoes-apoiadas).
-- **Risco (peso 2):** quanto há evidência de que existam problemas hoje (relatos de usuários,
-  histórico do repositório, características do código).
+- **Risco (peso 2):** quanto há evidência de que existam problemas hoje (issues abertas, histórico do repositório ...).
 - **Viabilidade (peso 1):** quanto conseguimos medir a característica com o acesso que temos.
 
-Impacto tem o maior peso porque é ele que liga a avaliação ao seu propósito. Viabilidade tem o menor
-peso para não deixar de lado uma característica importante só por ser difícil de medir.
+Impacto tem o maior peso porque é ele que liga a avaliação ao seu propósito.
 
 **Tabela 10 — Matriz de priorização**
 
@@ -173,10 +169,9 @@ Justificativa das notas:
     - *Impacto 3:* afeta todos os estudantes que usam o sistema na matrícula.
     - *Risco 2:* há relatos de usuários sobre grades acima do limite de créditos (*issue* #238) e
       horários exibidos de forma incompleta (*issue* #248), mas o fluxo principal funciona.
-    - *Viabilidade 2:* o site é público, mas a avaliação depende de recrutar estudantes para os
-      testes.
+    - *Viabilidade 2:* o site é público, mas a avaliação depende convidar uma amostra de estudantes para avaliar.
 - **Eficiência de desempenho.**
-    - *Impacto 2:* lentidão incomoda, mas só impede o uso em situações de pico.
+    - *Impacto 2:* lentidão incomoda, mas não impede a utilização. O que realmente pode afetar é a disponibilidade em momentos de pico, mas a aplicação está em servidores em nuvem.
     - *Risco 2:* a geração combina todas as turmas escolhidas e a API não limita o número de
       requisições, mas o código limita a 11 disciplinas e não há relatos de lentidão.
     - *Viabilidade 1:* não temos acesso às métricas de produção e só podemos medir carga na
@@ -191,10 +186,7 @@ análise mais detalhada e é a primeira candidata à ação de melhoria (D2).
   o servidor, mas restringe o estudante. Recomendações que ampliem esses limites precisam ser
   avaliadas também pelo custo de processamento.
 - **Eficiência × Manutenibilidade:** otimizações como *cache* adicional ou um algoritmo de geração
-  mais elaborado podem deixar o código mais difícil de entender. Na Fase 4, uma melhoria de
-  desempenho só será recomendada se não piorar as métricas de manutenibilidade.
-- **Profundidade × prazo:** priorizar a Manutenibilidade significa menos tempo para a Eficiência
-  de desempenho, que será avaliada com menos métricas e sem medições em produção sob carga.
+  mais elaborado podem deixar o código mais difícil de entender. Na Fase 4, será avaliado o trade-off em caso de sugestão de melhoria.
 - **Validade × viabilidade:** medir carga localmente é viável, mas os valores não representam o
   servidor real. Aceitamos essa limitação, registrada na [Seção 6](#6-escopo-profundidade-e-objetos-de-avaliacao).
 
@@ -211,9 +203,7 @@ análise mais detalhada e é a primeira candidata à ação de melhoria (D2).
 | Testes automatizados da API | *Commit* `3d399e7` | Manutenibilidade (testabilidade) |
 | Site público ([suagradeunb.com.br](https://suagradeunb.com.br/)) | Versão em produção na data da coleta | Capacidade de interação; Eficiência de desempenho (carregamento das páginas) |
 | API pública | Versão em produção na data da coleta | Eficiência de desempenho (tempo de resposta) |
-| Reprodução local com `docker compose` | *Commit* `3d399e7`, com os dados de exemplo do repositório | Eficiência de desempenho (capacidade e utilização de recursos) |
-
-Fonte: elaborado pela equipe.
+| Reprodução local com `docker compose` | *Commit* `3d399e7` | Eficiência de desempenho (capacidade e utilização de recursos) |
 
 As tarefas avaliadas seguem o fluxo principal do sistema: buscar disciplina, selecionar turmas,
 gerar a grade e salvá-la.
@@ -227,11 +217,8 @@ gerar a grade e salvá-la.
 | Características não selecionadas | Ver [Tabela 9](#51-caracteristicas-selecionadas) |
 | Funções secundárias (exportar grade, página de informações, perfil) | Não fazem parte do fluxo principal usado na matrícula |
 | Tela de login do Google | É de outro fornecedor; avaliamos só o que acontece no Sua Grade UnB antes e depois dela |
-| Execução real da coleta no SIGAA | Restrição combinada com a UnB ([Tabela 3](#22-mapa-de-partes-interessadas)); o código da coleta continua no escopo de Manutenibilidade |
 | Infraestrutura de produção (Heroku, Vercel, banco de dados) | Não temos acesso |
-| Teste de carga em produção | A hospedagem é paga pelos mantenedores e uma carga artificial poderia tirar o sistema do ar |
-
-Fonte: elaborado pela equipe.
+| Teste de carga em produção | A hospedagem é paga pelos mantenedores e uma carga poderia tirar o sistema do ar |
 
 ### 6.3 Profundidade
 
@@ -241,9 +228,8 @@ Fonte: elaborado pela equipe.
 - **Capacidade de interação:** teste com cerca de cinco estudantes de graduação da UnB, que
   executarão as tarefas do fluxo principal no site real. Serão registrados o tempo, os erros e a
   conclusão de cada tarefa, e ao final os participantes responderão ao questionário SUS (*System
-  Usability Scale*) (BROOKE, 1996). Cinco participantes são suficientes para encontrar a maior parte dos problemas
-  de usabilidade (NIELSEN; LANDAUER, 1993). Os participantes assinarão um termo de consentimento
-  e serão identificados apenas por código (P1, P2...); gravações só serão feitas com consentimento.
+  Usability Scale*) (BROOKE, 1996). A meta é ao menos cinco participantes  para encontrar possíveis problemas de usabilidade.Os participantes assinarão um termo de consentimento
+  e serão identificados apenas por código (P1, P2...).
 - **Eficiência de desempenho:** tempo de carregamento do site público e tempo de resposta da API
   pública com poucas requisições espaçadas; capacidade e utilização de recursos medidas apenas na
   reprodução local.
@@ -252,14 +238,10 @@ Fonte: elaborado pela equipe.
 
 - Os resultados valem para o *commit* `3d399e7` e para o site no estado em que estiver na data da
   coleta. Mudanças posteriores no sistema podem alterá-los.
-- O teste com cinco participantes serve para encontrar problemas, não para fazer generalizações
-  estatísticas sobre todos os estudantes da UnB.
 - As medições de desempenho em produção serão feitas fora do período de matrícula e não mostram o
   comportamento no pico de acessos.
 - As medições locais usam poucos dados e servidores em modo de desenvolvimento, e por isso não
   representam o desempenho em produção.
-- A equipe é ao mesmo tempo requisitante e avaliadora. Para reduzir o viés, os critérios de
-  julgamento serão definidos na Fase 2, antes da coleta dos dados.
 
 ## 7. Objetivos de Desenvolvimento Sustentável (ODS)
 
@@ -292,12 +274,6 @@ exatas serão definidas no GQM da [Fase 2](fase-2.md).
 | 4.3 | Pontuação SUS média dos participantes | Capacidade de interação |
 | 4.3 | Tempo de resposta da busca e da geração de grade | Eficiência de desempenho |
 | 4.4 | Métricas de analisabilidade, modificabilidade e testabilidade do código (por exemplo, complexidade e cobertura de testes) | Manutenibilidade |
-
-Fonte: elaborado pela equipe.
-
-A contribuição do Sua Grade UnB para essas metas é indireta e local: ele não muda os indicadores
-nacionais, mas atua sobre condições ligadas a eles na UnB. Por isso, os resultados desta avaliação
-serão discutidos como evidência da contribuição do sistema para as metas, e não como medida delas.
 
 ---
 
