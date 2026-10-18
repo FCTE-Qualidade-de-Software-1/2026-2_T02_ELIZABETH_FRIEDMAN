@@ -153,7 +153,7 @@ verificação e as respostas esperadas, distinguindo compreender o estado da
 interface de apenas concluir a tarefa.
 
 As métricas de H6–H9 estão definidas na Seção 3.3. Seus limites de aceitação e suas
-regras de julgamento ainda precisam ser especificados na Seção 4, antes da coleta. Participantes, roteiros
+regras de julgamento estão definidos na Seção 4. Participantes, roteiros
 e condições de execução deverão ser documentados na [Fase 3](fase-3.md). Os limites
 temporais de G2 não serão usados automaticamente para julgar G3.
 
@@ -440,7 +440,7 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fórmula | $M_6 = 100 \times S_6 / N_6$, em que $S_6$ é o número de sessões com conclusão correta e independente dentro do tempo total permitido, e $N_6$ é o número de sessões válidas iniciadas, incluindo insucessos e expirações. |
 | Fonte dos dados | Questionário de experiência prévia, registros de início e fim da exploração e da execução, ficha de observação, evidência da grade produzida e verificação de seu salvamento. |
 | Procedimento de coleta | Confirmar a ausência de uso prévio. Fixar o limite de exploração $E$ e o limite total de aprendizagem $T$, em minutos, com $0 < E < T$, antes da coleta. Iniciar a contagem ao disponibilizar a interface e permitir exploração livre por até $E$ minutos. Em seguida, apresentar uma tarefa padronizada, com disciplinas de referência, e observar sua execução até a conclusão ou até completar $T$ minutos desde o início da exploração. Registrar separadamente os tempos de exploração e execução. Conferir as escolhas, a grade gerada e sua recuperação após o salvamento. Ajuda adicional, conclusão incorreta, desistência por dificuldade ou término após $T$ não contam em $S_6$. |
-| Interpretação | Maior percentual indica maior sucesso de aprendizagem no primeiro contato, nas condições observadas. Examinar as etapas que impediram a conclusão e os tempos registrados. O resultado não mede retenção após dias de uso nem demonstra facilidade para todos os estudantes. Comparar com o critério de aceitação a definir na Seção 4, sem reutilizar os limites de tempo de resposta de G2. |
+| Interpretação | Maior percentual indica maior sucesso de aprendizagem no primeiro contato, nas condições observadas. Examinar as etapas que impediram a conclusão e os tempos registrados. O resultado não mede retenção após dias de uso nem demonstra facilidade para todos os estudantes. Comparar com o critério de aceitação definido na Seção 4, sem reutilizar os limites de tempo de resposta de G2. |
 
 ### M7 — Sucesso independente nas tarefas de controle da grade
 
@@ -451,7 +451,7 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fórmula | $M_7 = 100 \times S_7 / N_7$, em que $S_7$ é o número de execuções corretas e independentes dentro do limite de duração, e $N_7$ é o número de execuções válidas iniciadas, incluindo insucessos. Calcular por tarefa e dispositivo. |
 | Fonte dos dados | Fichas de observação das sessões, capturas dos estados anterior e posterior da grade, registros de ajuda, bloqueios e dificuldades de acesso aos controles. |
 | Procedimento de coleta | Preparar tarefas equivalentes de seleção, remoção e alteração de disciplinas ou turmas, conforme os controles disponíveis, com estado inicial e resultado esperado fixos. Restaurar o estado antes de cada tarefa. Solicitar o resultado desejado sem indicar o caminho. Registrar a conclusão, as tentativas de correção, a ajuda e qualquer controle que impeça continuar. Conferir o estado final, em vez de considerar apenas o relato do participante. Repetir o conjunto em computador e celular conforme a distribuição prevista no protocolo. |
-| Interpretação | Maior percentual indica maior facilidade de controle nas tarefas observadas. Uma falha localizada em determinado controle ou dispositivo deve ser apresentada mesmo que outras tarefas tenham sucesso. Um resultado em computador não demonstra operabilidade no celular. A sustentação de H7 depende da cobertura dos dois dispositivos e das regras a definir na Seção 4. |
+| Interpretação | Maior percentual indica maior facilidade de controle nas tarefas observadas. Uma falha localizada em determinado controle ou dispositivo deve ser apresentada mesmo que outras tarefas tenham sucesso. Um resultado em computador não demonstra operabilidade no celular. A sustentação de H7 depende da cobertura dos dois dispositivos e das regras definidas na Seção 4. |
 
 ### M8 — Cobertura de proteção contra perda involuntária da grade
 
@@ -462,7 +462,7 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fórmula | $M_8 = 100 \times P_8 / R_8$, em que $P_8$ é o número de cenários com proteção efetiva verificada e $R_8$ é o número de cenários válidos de risco executados. Cada cenário conta uma vez, mesmo que possua mais de um mecanismo de proteção. |
 | Fonte dos dados | Inventário das ações de risco disponíveis na versão avaliada, roteiro de inspeção, capturas de avisos e confirmações e evidências de preservação ou recuperação da grade de referência. |
 | Procedimento de coleta | Inventariar previamente as ações realmente disponíveis que possam descartar uma edição ou excluir/substituir uma grade salva; exemplos a verificar incluem sair da edição, recarregar a página ou acionar exclusão, quando aplicáveis. Fixar os cenários e a grade inicial antes da coleta. Executar cada cenário em estado restaurado. Verificar se a ação é impedida, se há confirmação clara com opção de cancelar antes da perda ou se é possível desfazer e recuperar a grade integralmente. Se houver confirmação, testar seu cancelamento; um aviso exibido apenas depois da perda não constitui proteção. Registrar a comparação da grade antes e depois e repetir por dispositivo e modalidade previstos. |
-| Interpretação | Maior percentual indica maior cobertura de proteção nos riscos inventariados. Cenários sem proteção devem ser descritos individualmente, com o conteúdo perdido e o mecanismo ausente ou ineficaz. Uma confirmação protege contra execução acidental, mas não garante recuperação após uma exclusão conscientemente confirmada. O resultado não estima a frequência de erros reais dos estudantes nem cobre ações ausentes do inventário. Comparar com o critério a definir na Seção 4. |
+| Interpretação | Maior percentual indica maior cobertura de proteção nos riscos inventariados. Cenários sem proteção devem ser descritos individualmente, com o conteúdo perdido e o mecanismo ausente ou ineficaz. Uma confirmação protege contra execução acidental, mas não garante recuperação após uma exclusão conscientemente confirmada. O resultado não estima a frequência de erros reais dos estudantes nem cobre ações ausentes do inventário. Comparar com o critério definido na Seção 4. |
 
 ### M9 — Compreensão dos estados e ações da interface
 
@@ -473,15 +473,14 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fórmula | $M_9 = 100 \times C_9 / V_9$, em que $C_9$ é o número de verificações com respostas corretas tanto sobre o estado quanto sobre a próxima ação, sem explicação do avaliador, e $V_9$ é o número de verificações válidas realizadas. Calcular por ponto de verificação e dispositivo. |
 | Fonte dos dados | Respostas registradas dos participantes, capturas da interface no instante da pergunta, estado real da aplicação e gabarito de estados e ações preparado antes das sessões. |
 | Procedimento de coleta | Definir pontos para turmas selecionadas, geração em andamento e concluída e resultado do salvamento, com perguntas neutras como “Qual é o estado atual?” e “O que você pode fazer agora?”. Validar no piloto como apresentar estados transitórios sem alterar os rótulos ou acrescentar pistas; registrar o método. Preparar um gabarito que aceite diferentes formulações corretas e ações válidas. Registrar a resposta antes de dar qualquer retorno, confrontá-la com o estado real e marcar sucesso somente quando ambas as partes estiverem corretas. Ausência de resposta ou informação insuficiente na interface conta como insucesso. Um ponto não apresentado por problema no roteiro fica como não coletado e reduz a cobertura, sem ser presumido correto. |
-| Interpretação | Maior percentual indica que os estudantes compreendem melhor os estados e as possibilidades de ação nos pontos avaliados. Respostas incorretas ajudam a localizar rótulos, mensagens ou indicadores ambíguos; concluir a tarefa por tentativa e erro não equivale a compreender a interface. Publicar os pontos separadamente para que o reconhecimento da seleção não oculte dificuldades na geração ou no salvamento. A conclusão sobre H9 depende dos critérios a definir na Seção 4 e da cobertura dos pontos previstos. |
+| Interpretação | Maior percentual indica que os estudantes compreendem melhor os estados e as possibilidades de ação nos pontos avaliados. Respostas incorretas ajudam a localizar rótulos, mensagens ou indicadores ambíguos; concluir a tarefa por tentativa e erro não equivale a compreender a interface. Publicar os pontos separadamente para que o reconhecimento da seleção não oculte dificuldades na geração ou no salvamento. A conclusão sobre H9 depende dos critérios definidos na Seção 4 e da cobertura dos pontos previstos. |
 
 **Situação da coleta de G3:** M6–M9 estão especificadas, mas não foram executadas
 nem validadas em piloto. Sua viabilidade depende da reprodução do fluxo, de dados
 de referência, do recrutamento dos participantes e da validação dos roteiros. A
 matriz e os testes de ferramentas da Seção 3.2 registram essas dependências, sem
-comprovar a execução das sessões. As métricas de
-interação não recebem pontuação nesta versão; seus limites e regras de julgamento
-devem ser definidos antes da coleta formal.
+comprovar a execução das sessões. As faixas de pontuação e as regras de julgamento
+de interação estão definidas na Seção 4 e deverão ser fixadas antes da coleta formal.
 
 ## 4. Níveis de pontuação e critérios de julgamento
 
@@ -495,10 +494,13 @@ F2-C5: níveis de pontuação para TODAS as métricas e critérios de julgamento
 Adota-se uma escala ordinal de quatro níveis: **Insatisfatório (0)**,
 **Aceitável (1)**, **Bom (2)** e **Excelente (3)**. As notas indicam categorias
 ordenadas, sem pressupor distâncias iguais entre elas; não serão calculadas médias
-dessas notas. Cada faixa se aplica ao **P95 em milissegundos**, por cenário,
-conforme a Seção 3.1. Todos os intervalos abaixo são exclusivos entre si e incluem
-explicitamente seus limites. Tempos negativos são dados inválidos, não resultados
-excelentes.
+dessas notas. Para **M2–M5**, as faixas se aplicam ao **P95 em milissegundos**, por
+cenário, conforme a Seção 3.1; menor é melhor. Para **M6–M9**, aplicam-se aos
+**percentuais**, conforme a Seção 3.3; maior é melhor. Todos os intervalos de cada
+linha são exclusivos entre si e cobrem o domínio válido. Tempos negativos e
+percentuais fora de 0 a 100 são dados inválidos, sem nota.
+
+#### Eficiência de desempenho — M2–M5
 
 | Métrica | Insatisfatório (0) | Aceitável (1) | Bom (2) | Excelente (3) | Limite de aceitação |
 |---------|-------------------|---------------|---------|---------------|---------------------|
@@ -506,6 +508,25 @@ excelentes.
 | M3 — Atualização da seleção | $M_3 > 1000$ | $300 < M_3 \leq 1000$ | $100 < M_3 \leq 300$ | $0 \leq M_3 \leq 100$ | $L_3 = 1000$ ms |
 | M4 — Geração de grades | $M_4 > 10000$ | $3000 < M_4 \leq 10000$ | $1000 < M_4 \leq 3000$ | $0 \leq M_4 \leq 1000$ | $L_4 = 10000$ ms |
 | M5 — Retorno do salvamento | $M_5 > 2000$ | $1000 < M_5 \leq 2000$ | $500 < M_5 \leq 1000$ | $0 \leq M_5 \leq 500$ | $L_5 = 2000$ ms |
+
+#### Capacidade de interação — M6–M9
+
+Na tabela, $M_j$ é o valor numérico do percentual, por exemplo, 90 para 90%.
+As faixas são aplicadas sem arredondamento prévio. Os valores mínimos para a
+categoria **Aceitável (1)** são 80% em M6, 90% em M7 e M9 e 100% em M8.
+
+| Métrica | Insatisfatório (0) | Aceitável (1) | Bom (2) | Excelente (3) | Limite de aceitação |
+|---------|-------------------|---------------|---------|---------------|---------------------|
+| M6 — Sucesso no primeiro uso | $0 \leq M_6 < 80$ | $80 \leq M_6 < 90$ | $90 \leq M_6 < 100$ | $M_6 = 100$ | $M_6 \geq 80$% |
+| M7 — Sucesso nas tarefas de controle | $0 \leq M_7 < 90$ | $90 \leq M_7 < 95$ | $95 \leq M_7 < 100$ | $M_7 = 100$ | $M_7 \geq 90$% |
+| M8 — Proteção contra perda | $0 \leq M_8 < 100$ | Não se aplica | Não se aplica | $M_8 = 100$ | $M_8 = 100$% |
+| M9 — Compreensão da interface | $0 \leq M_9 < 90$ | $90 \leq M_9 < 95$ | $95 \leq M_9 < 100$ | $M_9 = 100$ | $M_9 \geq 90$% |
+
+**M8 usa classificação binária na escala:** qualquer cenário de risco sem proteção
+efetiva resulta em **Insatisfatório (0)**; todos os cenários protegidos resultam em
+**Excelente (3)**. Os níveis 1 e 2 não são atribuídos a essa métrica. O percentual
+continua sendo publicado para mostrar a extensão das lacunas, mas não compensa um
+risco de perda com a proteção oferecida em outros cenários.
 
 **M1 — Manutenibilidade:** sem pontuação nesta versão, pois a questão, a definição
 e a unidade da métrica ainda não foram especificadas. Suas faixas deverão ser
@@ -521,7 +542,7 @@ fluxo de pensamento e **10000 ms** para manter a atenção na tarefa
 Essa referência orienta a escolha dos patamares, mas não estabelece faixas de
 P95 específicas para o Sua Grade UnB.
 
-Os cortes da tabela são **critérios operacionais propostos pela equipe para esta
+Os cortes das tabelas são **critérios operacionais propostos pela equipe para esta
 avaliação**, não requisitos acordados com os mantenedores nem limites impostos
 pela ISO/IEC 25010. Aplicá-los ao P95 também é uma escolha metodológica da equipe.
 A seleção de turma recebe a faixa mais exigente por ser uma interação direta e
@@ -532,11 +553,30 @@ a todos os conjuntos de referência definidos previamente na Fase 3. Os cortes
 intermediários de 300, 500, 2000 e 3000 ms são adaptações do projeto.
 
 Os mesmos limites de M5 serão aplicados separadamente ao navegador e à conta.
+
+Para **M6**, a aceitação a partir de 80% admite dificuldades iniciais de uma parcela
+dos estudantes, enquanto 100% identifica sucesso de todos os participantes
+observados. Para **M7 e M9**, a aceitação exige pelo menos 90%, pois controlar as
+escolhas e compreender o estado da grade são necessidades recorrentes durante o
+fluxo; o patamar de 95% distingue resultados próximos do sucesso integral. Para
+**M8**, exige-se proteção em 100% dos cenários inventariados, pela consequência de
+perder a grade. Esses valores são escolhas iniciais do projeto, sem validação
+empírica como requisitos dos usuários e sem atribuição à ISO ou à referência de
+Nielsen. A categoria Excelente indica sucesso integral na amostra ou no inventário,
+sem garantir ausência de problemas em outros usos.
+
+Publicar os tamanhos das amostras: com cinco observações, por exemplo, os
+percentuais possíveis variam de 20 em 20 pontos, de modo que algumas faixas não
+serão atingíveis. Não arredondar resultados nem aumentar ou reduzir a amostra
+depois da coleta apenas para obter outra categoria. Os limites de exploração e
+aprendizagem de M6 continuam dependendo do protocolo da Fase 3; o corte de 80% não
+substitui esses tempos.
+
 As faixas deverão ser fixadas antes da coleta formal. Qualquer revisão motivada
 pelo piloto deverá registrar a justificativa e a versão do plano, sem ajustar os
 limites depois de observar os resultados formais para melhorar a classificação.
 
-### 4.3 Regras de aplicação e julgamento
+### 4.3 Regras de aplicação e julgamento de eficiência — M2–M5
 
 1. **Verificar a validade da coleta.** O cenário deve ter 30 tentativas medidas
    registradas, ambiente e massa de dados documentados e evidências dos eventos
@@ -567,6 +607,41 @@ limites depois de observar os resultados formais para melhorar a classificação
    cenário insatisfatório, mas com algum cenário não avaliado, a conclusão é
    **inconclusiva**. Esses julgamentos não demonstram desempenho em produção nem
    constituem testes de significância estatística.
+
+### 4.4 Regras de aplicação e julgamento de interação — M6–M9
+
+1. **Verificar a validade e a cobertura.** Exigir protocolo fixado, observações
+   válidas, numerador, denominador e evidências dos resultados. Sem observações
+   válidas, informar **Não avaliado**, sem nota; denominador zero não recebe 0%.
+   Se faltarem participantes, tarefas, dispositivos, modalidades ou pontos
+   previstos, publicar os resultados disponíveis com indicação de cobertura
+   parcial, sem nota consolidada completa.
+2. **Aplicar a faixa ao percentual.** Incluir os insucessos no denominador conforme
+   a Seção 3.3. Por exemplo, em M6, 4 sucessos em 5 sessões válidas produzem 80%
+   e nota **Aceitável (1)**. Em M7, 18 sucessos em 20 execuções válidas de uma
+   tarefa em um dispositivo produzem 90% e nota 1; 19 em 20 produzem 95% e nota
+   **Bom (2)**. Usar a razão exata para a comparação; arredondar apenas a exibição.
+3. **Preservar o detalhamento.** Em M6, pontuar cada dispositivo e modalidade de
+   salvamento previstos. Em M7, pontuar cada tarefa por dispositivo; em M8, cada
+   conjunto de riscos por dispositivo e modalidade; em M9, cada ponto de
+   verificação por dispositivo. Publicar as notas separadas e usar a menor como
+   nota consolidada somente com cobertura completa. Não calcular médias de notas
+   nem misturar denominadores de contextos diferentes.
+4. **Tratar impedimentos.** Em M7, um controle inacessível ou bloqueio reproduzível
+   da aplicação que impeça a tarefa no dispositivo avaliado determina nota final
+   **Insatisfatório (0)** naquele cenário, mesmo que o percentual de outros
+   participantes seja alto. Registrar o percentual e o motivo da nota. Em M8,
+   qualquer cenário de risco executado sem proteção efetiva determina nota 0 no
+   respectivo conjunto, conforme a classificação binária.
+5. **Julgar as hipóteses com os critérios operacionais.** H6, H7 e H9 recebem
+   sustentação operacional quando todos os recortes previstos atingirem pelo
+   menos nota 1 e não houver impedimento que determine nota 0. H8 requer 100% de
+   proteção em todos os conjuntos previstos, isto é, nota 3. Um recorte com nota
+   0 contraria a hipótese nas condições avaliadas. Sem recorte insatisfatório,
+   mas com cobertura parcial, a conclusão é **inconclusiva**. A sustentação
+   operacional admite as taxas de insucesso previstas nos limites de M6, M7 e M9;
+   não significa que todos os estudantes terão sucesso nem constitui teste de
+   significância estatística.
 
 ## 5. Diagrama GQM
 
