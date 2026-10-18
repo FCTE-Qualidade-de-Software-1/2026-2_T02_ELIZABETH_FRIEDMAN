@@ -65,9 +65,31 @@ F2-C2: questões que cobrem os atributos do foco de qualidade (não métricas di
 F2-C3: uma hipótese clara para CADA questão.
 -->
 
+### 2.1 Manutenibilidade — G1
+
 | ID | Questão | Hipótese | Objetivo |
 |----|---------|----------|----------|
 | Q1 | | H1: | G1 |
+
+### 2.2 Eficiência de desempenho — G2
+
+As questões abaixo cobrem **comportamento temporal**, a subcaracterística selecionada
+no [objetivo G2](#g2-eficiencia-de-desempenho), nas quatro operações do fluxo principal
+identificadas na [Seção 2.2 da Fase 1](fase-1.md#22-mapa-de-partes-interessadas).
+Utilização de recursos e capacidade não integram o recorte atual de G2.
+
+As hipóteses são expectativas a verificar, não resultados da avaliação. Os limites
+de tempo aceitáveis por operação e a regra para confirmar ou refutar cada hipótese
+deverão ser definidos nas Seções 3 e 4, antes da coleta. As condições de execução,
+os dados utilizados e a repetição das tarefas serão especificados no plano da
+[Fase 3](fase-3.md), permitindo comparar os resultados sob condições documentadas.
+
+| ID | Subcaracterística | Questão | Hipótese | Objetivo |
+|----|-------------------|---------|----------|----------|
+| Q2 | Comportamento temporal | A busca de disciplinas apresenta os resultados em tempo aceitável para o estudante dar continuidade à montagem da grade? | H2: O tempo entre solicitar uma busca por nome ou código e visualizar seus resultados atende ao limite de aceitação definido para a busca, nas condições avaliadas. | G2 |
+| Q3 | Comportamento temporal | A seleção de turmas atualiza a interface em tempo aceitável para o estudante continuar selecionando as opções desejadas? | H3: O tempo entre selecionar uma turma e visualizar a atualização correspondente na interface atende ao limite de aceitação definido para a seleção, nas condições avaliadas. | G2 |
+| Q4 | Comportamento temporal | A geração de combinações de turmas sem conflito apresenta as grades em tempo aceitável nos cenários de montagem avaliados? | H4: O tempo entre solicitar a geração e visualizar as combinações de grades atende ao limite de aceitação definido para a geração em cada cenário avaliado. | G2 |
+| Q5 | Comportamento temporal | O salvamento de uma grade fornece retorno em tempo aceitável para o estudante concluir a tarefa? | H5: O tempo entre solicitar o salvamento e visualizar sua confirmação atende ao limite de aceitação definido para o salvamento, nas modalidades avaliadas de conta do usuário e armazenamento no navegador. | G2 |
 
 ## 3. Métricas (nível quantitativo)
 
