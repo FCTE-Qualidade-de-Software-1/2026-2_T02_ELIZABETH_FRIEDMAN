@@ -213,6 +213,67 @@ métricas permitem descrever os tempos, mas não confirmar as hipóteses de acei
 | Procedimento de coleta | Preparar uma grade fixa e cenários separados para salvamento na conta de teste e no navegador, conforme as modalidades disponíveis. Concluir autenticação e preparação antes da marcação. Iniciar ao solicitar o salvamento e encerrar na confirmação visual. Depois do intervalo medido, verificar se a grade pode ser recuperada; uma confirmação sem persistência verificada conta como erro. Restaurar o estado inicial entre tentativas e executar o protocolo da Seção 3.1. Se uma modalidade não puder ser reproduzida, registrar a limitação e não lhe atribuir resultado. |
 | Interpretação | Comparar separadamente cada modalidade com $L_5$. Tempos acima do limite indicam demora no retorno do salvamento. Um retorno rápido sem persistência não confirma H5. O tempo de autenticação e o de recuperação usado na verificação não integram esta métrica. |
 
+### 3.2 Verificação de viabilidade da coleta
+
+Esta verificação distingue **viabilidade documental** (há uma ferramenta e um caminho
+de acesso identificados) de **coleta validada** (o roteiro foi executado no ambiente
+da avaliação e produziu dados e evidências). A consulta ao repositório e a inspeção
+do ambiente foram feitas em **18/10/2026**. Nenhuma das métricas abaixo teve ainda
+sua coleta validada por execução ponta a ponta.
+
+O [README do Sua Grade UnB](https://github.com/unb-mds/2023-2-SuaGradeUnB#readme)
+documenta instalação, execução por Docker Compose, frontend em `localhost:3000`,
+backend em `localhost:8000` e configuração de Google OAuth para login. Isso fornece
+um caminho de reprodução, mas não comprova que a aplicação esteja operacional no
+ambiente da equipe. O procedimento de atualização do banco descrito no README
+aciona o SIGAA e não será usado na coleta; a massa local deverá ser preparada e
+validada previamente, sem essa dependência.
+
+| Métrica | Ferramenta e evidência prevista | Acesso necessário | Ambiente e dependências | Situação e condição para validar |
+|---------|--------------------------------|-------------------|-------------------------|----------------------------------|
+| M1 — Manutenibilidade | A definir após a formulação de Q1 e da métrica. | O código é público, mas a fonte específica depende da definição da métrica. | A definir. | **Não verificável no estado atual:** falta especificar a métrica; não presumir que ferramentas de análise estática sejam suficientes. |
+| M2 — Busca | Playwright com Chromium, marcações temporais no navegador, CSV e captura dos resultados. | Código público e API local com disciplinas e turmas de referência; confirmar no piloto se o fluxo exige autenticação. | Frontend, backend e banco locais populados; cenários fixos de nome e código. | **Viável sob condições:** executar uma busca de cada tipo, verificar o resultado esperado e demonstrar a captura dos dois instantes e do CSV. |
+| M3 — Seleção | Playwright com Chromium, marcações temporais e captura da atualização visual. | Acesso ao fluxo de disciplinas e turmas; confirmar no piloto os requisitos de sessão. | Mesma aplicação local de M2, com turma conhecida e estado inicial restaurável. | **Viável sob condições:** demonstrar que uma seleção produz o estado esperado e que o roteiro distingue a atualização completa de um estado anterior. |
+| M4 — Geração | Playwright com Chromium, marcações temporais, CSV e evidência das combinações geradas. | Acesso ao gerador e a uma massa local com combinações válidas previamente conferidas. | Aplicação local e conjuntos fixos de disciplinas e turmas, com resultados de referência. | **Viável sob condições:** gerar um conjunto conhecido e verificar que o sinal de término representa a conclusão prevista em M4, incluindo a conferência dos resultados. |
+| M5 — Salvamento no navegador | Playwright com Chromium, marcações temporais, CSV e evidência de recuperação da grade. | Acesso à modalidade de armazenamento no navegador, cuja disponibilidade precisa ser confirmada na versão avaliada. | Aplicação local, contexto de navegador preservado durante a verificação e grade fixa. | **Viável sob condições:** confirmar a modalidade, identificar seu sinal visual de conclusão e recuperar a grade após recarregar a página. Se o sinal não existir, revisar M5 antes da coleta. |
+| M5 — Salvamento na conta | Playwright com Chromium, sessão de teste autenticada, marcações temporais, CSV e evidência de recuperação. | Conta de teste e configuração local de OAuth conforme o projeto; sem credenciais ou banco de produção. | Frontend, backend e banco locais, autenticação funcional e persistência configurada. | **Viável sob condições adicionais:** concluir login antes da medição, salvar e recuperar a grade após recarregar. Sem autenticação funcional, registrar esta modalidade como não coletada; não generalizar o resultado do navegador para a conta. |
+
+A escolha do Playwright se apoia em sua [documentação de automação de navegadores](https://playwright.dev/docs/intro).
+Para as marcações, usar `performance.now()` no mesmo contexto de página, cujo
+[relógio monotônico é documentado pela MDN](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now).
+Os sinais de conclusão visual precisam ser implementados e conferidos no piloto;
+observar somente uma alteração no DOM ou uma resposta HTTP não comprova que a
+operação terminou e está visível. Registrar o mecanismo adotado e sua limitação
+de precisão na Fase 3.
+
+**Resultado da inspeção do ambiente de trabalho:** Node `24.19.0`, npm `11.17.0`,
+Python `3.12.3` e GNU Make `4.3` responderam aos comandos de versão. Foram localizados
+arquivos de instalação do Playwright e binários do Chromium no cache do usuário;
+sua presença não comprova inicialização nem compatibilidade com o roteiro.
+`docker compose version` e `docker ps` falharam informando que o Docker não está
+disponível nesta distribuição WSL. A reprodução local, a massa de dados e o login
+de teste ainda não foram demonstrados neste ambiente. Esses resultados descrevem
+a máquina inspecionada, não todas as máquinas da equipe.
+
+**Pendências para confirmar a coleta na Fase 3:**
+
+1. Disponibilizar Docker Engine/Compose com integração ao WSL ou outro ambiente
+   de execução compatível, fixar o commit avaliado e iniciar os serviços locais.
+2. Preparar a massa de referência sem executar a coleta do SIGAA e conferir os
+   resultados esperados de busca, seleção e geração.
+3. Fixar as versões do Playwright e do Chromium, demonstrar sua inicialização e
+   configurar execução sequencial, sem repetição automática de tentativas com erro.
+4. Executar o piloto de cada linha da matriz, guardando roteiro, configuração,
+   CSV com duração válida e evidência do resultado. O piloto é uma verificação
+   do método e não integra as 30 tentativas da coleta formal.
+5. Validar a restauração de estado e o registro de erros e expirações, configurar
+   o tempo máximo de espera e definir os limites de aceitação antes da coleta.
+
+**Conclusão de viabilidade:** há um caminho técnico identificado para M2–M5, mas
+a coleta permanece condicionada à preparação do ambiente e à aprovação dos pilotos.
+M1 depende de especificação. Esta seção não deve ser tratada como evidência de
+medições já executadas nem como encerramento da validação prática.
+
 ## 4. Níveis de pontuação e critérios de julgamento
 
 <!--
