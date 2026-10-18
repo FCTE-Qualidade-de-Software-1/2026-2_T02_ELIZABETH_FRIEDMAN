@@ -9,9 +9,15 @@ e métricas definidas pelo método *Goal–Question–Metric* (GQM).
 
 ## Produto avaliado
 
-<!-- Uma ou duas frases sobre o produto e link para o repositório/site dele. -->
+O [Sua Grade UnB](https://suagradeunb.com.br/) é uma aplicação web que ajuda estudantes da
+Universidade de Brasília a montar a grade horária do semestre. O estudante busca disciplinas
+por nome ou código, seleciona as que deseja cursar e o sistema gera combinações de turmas sem
+conflito de horário, que podem ser salvas na conta do usuário ou no próprio navegador. Os dados de turmas são obtidos por *web scraping* das turmas do SIGAA.
 
-*A preencher.*
+O sistema foi desenvolvido no segundo semestre de 2023 por seis estudantes na disciplina de Métodos de Desenvolvimento de Software (MDS) e é open source.
+
+Repositório disponível em: [unb-mds/2023-2-SuaGradeUnB](https://github.com/unb-mds/2023-2-SuaGradeUnB).
+
 
 ## Como navegar
 
