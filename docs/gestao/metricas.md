@@ -34,9 +34,6 @@ As evidências estão no repositório (issues, milestones e commits) e nas
 
 | Data | Indicador | Valor | Interpretação | Decisão tomada |
 |------|-----------|-------|---------------|----------------|
-| 19/10 | Conclusão de issues planejadas | X/Y (Z%) | ... | ... |
-| 19/10 | Taxa de PRs revisados no prazo | X% | ... | ... |
-| 19/10 | Distribuição de carga | A: x, B: y, C: z | ... | ... |
-| 25/10 | Conclusão de issues planejadas | X/Y (Z%) | ... | ... |
-| 25/10 | Taxa de PRs revisados no prazo | X% | ... | ... |
-| 25/10 | Distribuição de carga | ... | ... | ... |
+| 19/10 | Conclusão de issues planejadas | 13/13 (100%) | Todas as issues planejadas para a semana foram concluídas no prazo, sem atraso acumulado para a semana 2. | Manter o ritmo e incluir na semana 2 as issues restantes do milestone, sem reduzir escopo. |
+| 19/10 | Taxa de PRs revisados no prazo | 10/10 (100%) | Todas as revisões ocorreram em até 48h, então a revisão não foi gargalo. | Manter a regra de revisão em até 48h e checá-la de novo na semana 2. |
+| 19/10 | Distribuição de carga | 13/13 issues fechadas pelo responsável designado | A divisão do trabalho foi respeitada, sem issues sem dono nem reatribuições. | Manter a atribuição por integrante e, se alguém terminar antes, puxar issues do backlog em vez de esperar. |
