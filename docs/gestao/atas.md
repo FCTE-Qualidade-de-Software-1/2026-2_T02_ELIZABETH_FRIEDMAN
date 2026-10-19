@@ -97,3 +97,35 @@ Ver também: [Métricas PSM/CID](metricas.md).
 | kaleb Macedo | #4, #5, #6, #7 | Fase 2 (em dupla): GQM de Usabilidade, Eficiência e Manutenibilidade, critérios de julgamento, diagrama GQM e consistência com a Fase 1 | 23/10 |
 | João Paulo e Júlia Santana | #8, #9, #10 | Artigo em LaTeX: template SBC e Metodologia, Introdução e Referencial teórico, seções das Fases 1 e 2, declaração de uso de IA e revisão final | 22/10 e 25/10 |
 | Joaquim Neto | #11, #12, #13 | Gestão (métricas PSM/CID e atas), fechamento da E1 (GitPage, contribuição e release) e material do PC1 | 18/10 e 25/10 |
+
+
+## Ata 03
+
+- **Data e horário:** 18/10/2026, 21h
+- **Local / meio:** on-line
+- **Presentes:**
+    - Eduardo Silva Waski
+    - Joao Paulo Barbosa Pereira Nunes
+    - Jose Joaquim da Silva Neto
+    - Julia Santana Campos
+    - Kaleb de Souza Macedo
+    - Lucas Monteiro Freitas
+- **Ausentes:** nenhum
+
+**Pauta**
+
+1. Definição do conteúdo dos slides para a apresentação do PC1.
+2. Divisão da produção dos slides entre os membros.
+3. Definição de quem apresenta e organização do ensaio.
+
+**Decisões**
+
+1. Os slides do PC1 apresentarão: produto avaliado (SuaGradeUnB), propósito da avaliação, partes interessadas, características priorizadas e sua justificativa, escopo, andamento da Fase 2 (objetivos GQM) e gestão (indicadores PSM/CID e progresso).
+2. Será feito um ensaio antes do PC1, com definição prévia de quem apresenta cada parte.
+3. O material final será salvo no repositório da equipe.
+
+**Encaminhamentos**
+
+| Tarefa | Responsável | Prazo | Issue |
+|--------|-------------|-------|-------|
+| Revisar os slides e apresentação | Todos | 19/10 | -- |
