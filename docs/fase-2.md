@@ -442,6 +442,7 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q7 — hipótese H7; objetivo G3; operabilidade. |
+| Questão apoiada | Q6 — aprendizagem, como evidência complementar. Usar apenas os resultados de participantes sem experiência prévia, identificados por dispositivo e nas condições de primeiro uso previstas para Q6. As tarefas de controle não substituem a conclusão do fluxo completo medida por M6. |
 | Definição | Percentual de execuções de tarefas de selecionar, remover e alterar escolhas concluídas corretamente pelos controles da interface, sem ajuda adicional do avaliador. Unidade de observação: uma tarefa executada por um participante em um dispositivo. |
 | Fórmula | $M_7 = 100 \times S_7 / N_7$, em que $S_7$ é o número de execuções corretas e independentes dentro do limite de duração, e $N_7$ é o número de execuções válidas iniciadas, incluindo insucessos. Calcular por tarefa e dispositivo. |
 | Fonte dos dados | Fichas de observação das sessões, capturas dos estados anterior e posterior da grade, registros de ajuda, bloqueios e dificuldades de acesso aos controles. |
@@ -464,6 +465,7 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q9 — hipótese H9; objetivo G3; autodescrição. |
+| Questões apoiadas | Q6 — aprendizagem, considerando apenas participantes sem experiência prévia nas condições de primeiro uso; Q7 — operabilidade, nos pontos correspondentes às tarefas de seleção e revisão das escolhas. A compreensão dos estados e das ações ajuda a investigar dificuldades, mas não substitui a observação da execução em M6 e M7. |
 | Definição | Percentual de verificações nas quais o estudante interpreta corretamente o estado da montagem e identifica uma próxima ação disponível, usando apenas as informações da interface. Unidade de observação: um ponto de verificação apresentado a um participante. |
 | Fórmula | $M_9 = 100 \times C_9 / V_9$, em que $C_9$ é o número de verificações com respostas corretas tanto sobre o estado quanto sobre a próxima ação, sem explicação do avaliador, e $V_9$ é o número de verificações válidas realizadas. Calcular por ponto de verificação e dispositivo. |
 | Fonte dos dados | Respostas registradas dos participantes, capturas da interface no instante da pergunta, estado real da aplicação e gabarito de estados e ações preparado antes das sessões. |
@@ -523,6 +525,7 @@ métrica, ao ponto onde é pontuada e julgada e à justificativa registrada na F
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.1, hipótese H1.1; objetivo G1; modularidade. |
+| Questão apoiada | Q1.3 — modificabilidade, como evidência complementar das dependências que podem dificultar mudanças isoladas. Confrontar os ciclos com os arquivos envolvidos nas tarefas C1 e C2; o percentual da camada, sozinho, não explica o tempo nem o sucesso de uma mudança. |
 | Definição | Proporção de arquivos de produção que participam de pelo menos um ciclo de importação entre arquivos da mesma camada. Unidade: arquivo, contado uma vez mesmo se participar de vários ciclos. |
 | Fórmula | $M_{1.1} = 100 \times C / N$, em que $C$ é o número de arquivos em ciclos e $N$ o total de arquivos no inventário da camada. Calcular para a API e para o *frontend* separadamente. |
 | Fonte dos dados | Inventário do Git; grafos JSON do pydeps (Python) e do Madge (TypeScript/TSX); lista auditada dos arquivos de cada ciclo. |
@@ -541,6 +544,7 @@ um arquivo ausente do grafo da ferramenta não é automaticamente um arquivo iso
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.2, hipótese H1.2; objetivo G1; analisabilidade. |
+| Questão apoiada | Q1.3 — modificabilidade, como evidência complementar. Confrontar a complexidade dos componentes e blocos envolvidos nas tarefas C1 e C2 com as dificuldades registradas durante a mudança, sem atribuir causalidade apenas pela associação. |
 | Definição | Proporção de funções e métodos com complexidade ciclomática (CC) maior que 10, conforme o analisador de cada linguagem. |
 | Fórmula | $M_{1.2} = 100 \times B_{>10} / B$, em que $B_{>10}$ conta os blocos com CC maior que 10 e $B$ todos os blocos elegíveis. Calcular por camada e, em Python, também para cada componente crítico. |
 | Fonte dos dados | Relatório JSON do Radon para Python; relatório JSON da regra `complexity` do ESLint com *parser* TypeScript; inventário e lista de blocos identificados por arquivo, posição e nome. |
@@ -601,6 +605,7 @@ Os *patches* ficam como evidência de avaliação, sem envio ao repositório do 
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.4, hipótese H1.4; objetivo G1; testabilidade. |
+| Questão apoiada | Q1.3 — modificabilidade, como evidência complementar do apoio dos testes à verificação de regressões. Usar a cobertura da versão inicial nos componentes alterados em C1 e C2; cobertura de linhas não garante detecção de defeitos nem substitui a aprovação dos testes exigida por M1.3. |
 | Definição | Percentual de linhas executáveis de produção exercitadas pela suíte automatizada existente da API, na versão inicial e sem os testes novos de M1.3. |
 | Fórmula | $M_{1.4} = 100 \times L_e / L_t$, em que $L_e$ são as linhas executáveis cobertas e $L_t$ todas as linhas executáveis no recorte. Usar `covered_lines` e `num_statements` do relatório JSON, e não a quantidade de linhas físicas do arquivo. |
 | Fonte dos dados | coverage.py 7.3.2, configuração de medição, registro dos testes, JSON e relatório HTML da cobertura. |
@@ -891,14 +896,26 @@ F2-C6: diagrama completo com todos os objetivos, identificando os níveis (conce
 A **Figura 1** mostra a hierarquia GQM da avaliação: os três objetivos (nível
 conceitual), as doze questões que os desdobram (nível operacional) e as doze métricas
 que respondem a elas (nível quantitativo). Cada questão tem uma hipótese e uma métrica
-própria, e G1 desdobra o identificador Q1 em Q1.1 a Q1.4 (Seção 2.1).
+principal, podendo também usar métricas complementares para investigar os resultados.
+G1 desdobra o identificador Q1 em Q1.1 a Q1.4 (Seção 2.1).
+
+As linhas contínuas entre questões e métricas indicam a medição principal; as
+tracejadas indicam apoio complementar. M1.1, M1.2 e M1.4 apoiam Q1.3; M7 apoia Q6;
+M9 apoia Q6 e Q7. Essas ligações não criam novas notas nem alteram as regras de
+julgamento das hipóteses da Seção 4. As evidências complementares devem ser
+relatadas com seus recortes e limitações e não bastam para sustentar ou contrariar
+a hipótese da questão apoiada. Para Q6, resultados complementares de M7 e M9
+exigem participantes sem experiência prévia nas condições de primeiro uso; se
+essas condições não forem atendidas, registrar o apoio como não avaliado. Perguntas
+de M9 não devem orientar a execução usada em M6 ou M7: fixar sua ordem no protocolo
+e aplicá-las após a tarefa correspondente ou em sessão separada.
 
 **Figura 1: Hierarquia GQM da avaliação do Sua Grade UnB**
 
 ```mermaid
 flowchart LR
     accTitle: Hierarquia GQM da avaliação do Sua Grade UnB
-    accDescr: Três objetivos se desdobram em doze questões e doze métricas. G1, Manutenibilidade, tem as questões Q1.1 a Q1.4 e as métricas M1.1 a M1.4. G2, Eficiência de desempenho, tem as questões Q2 a Q5 e as métricas M2 a M5. G3, Capacidade de interação, tem as questões Q6 a Q9 e as métricas M6 a M9. Cada questão se liga a uma única métrica.
+    accDescr: Três objetivos se desdobram em doze questões e doze métricas. G1, Manutenibilidade, tem as questões Q1.1 a Q1.4 e as métricas M1.1 a M1.4. G2, Eficiência de desempenho, tem as questões Q2 a Q5 e as métricas M2 a M5. G3, Capacidade de interação, tem as questões Q6 a Q9 e as métricas M6 a M9. Linhas contínuas indicam métricas principais. Linhas tracejadas indicam apoio complementar de M1.1, M1.2 e M1.4 a Q1.3, de M7 a Q6 e de M9 a Q6 e Q7.
 
     subgraph Conceitual["Nível conceitual: objetivos"]
         G1["G1<br/>Manutenibilidade"]
@@ -952,27 +969,36 @@ flowchart LR
     Q7 --> M7
     Q8 --> M8
     Q9 --> M9
+
+    Q13 -.-> M11
+    Q13 -.-> M12
+    Q13 -.-> M14
+    Q6 -.-> M7
+    Q6 -.-> M9
+    Q7 -.-> M9
 ```
 
 Fonte: elaborado pela equipe a partir das Seções 1 a 3.
 
-A tabela a seguir traz a mesma hierarquia em texto, com a hipótese de cada questão e as
-seções em que a métrica é definida, pontuada e julgada.
+A tabela a seguir traz a mesma hierarquia em texto, com a hipótese de cada questão,
+as métricas principais e complementares e as seções de definição, pontuação e
+julgamento da métrica principal. As complementares são definidas na mesma seção
+indicada na linha, sem receber uma segunda pontuação pela ligação adicional.
 
-| Objetivo | Questão | Subcaracterística | Hipótese | Métrica | Definição | Pontuação | Julgamento |
-|----------|---------|-------------------|----------|---------|-----------|-----------|------------|
-| G1 | Q1.1 | Modularidade | H1.1 | M1.1 | [3.4](#34-metricas-de-manutenibilidade-g1) | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) |
-| G1 | Q1.2 | Analisabilidade | H1.2 | M1.2 | 3.4 | 4.1 | 4.5 |
-| G1 | Q1.3 | Modificabilidade | H1.3 | M1.3 | 3.4 | 4.1 | 4.5 |
-| G1 | Q1.4 | Testabilidade | H1.4 | M1.4 | 3.4 | 4.1 | 4.5 |
-| G2 | Q2 | Comportamento temporal | H2 | M2 | [3.1](#31-convencoes-de-medicao-de-eficiencia-de-desempenho) | 4.1 | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) |
-| G2 | Q3 | Comportamento temporal | H3 | M3 | 3.1 | 4.1 | 4.3 |
-| G2 | Q4 | Comportamento temporal | H4 | M4 | 3.1 | 4.1 | 4.3 |
-| G2 | Q5 | Comportamento temporal | H5 | M5 | 3.1 | 4.1 | 4.3 |
-| G3 | Q6 | Aprendizagem | H6 | M6 | [3.3](#33-metricas-de-capacidade-de-interacao-g3) | 4.1 | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) |
-| G3 | Q7 | Operabilidade | H7 | M7 | 3.3 | 4.1 | 4.4 |
-| G3 | Q8 | Proteção contra erros do usuário | H8 | M8 | 3.3 | 4.1 | 4.4 |
-| G3 | Q9 | Autodescrição | H9 | M9 | 3.3 | 4.1 | 4.4 |
+| Objetivo | Questão | Subcaracterística | Hipótese | Métrica principal | Métricas complementares | Definição | Pontuação | Julgamento |
+|----------|---------|-------------------|----------|-------------------|-------------------------|-----------|-----------|------------|
+| G1 | Q1.1 | Modularidade | H1.1 | M1.1 | — | [3.4](#34-metricas-de-manutenibilidade-g1) | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) |
+| G1 | Q1.2 | Analisabilidade | H1.2 | M1.2 | — | 3.4 | 4.1 | 4.5 |
+| G1 | Q1.3 | Modificabilidade | H1.3 | M1.3 | M1.1, M1.2 e M1.4 | 3.4 | 4.1 | 4.5 |
+| G1 | Q1.4 | Testabilidade | H1.4 | M1.4 | — | 3.4 | 4.1 | 4.5 |
+| G2 | Q2 | Comportamento temporal | H2 | M2 | — | [3.1](#31-convencoes-de-medicao-de-eficiencia-de-desempenho) | 4.1 | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) |
+| G2 | Q3 | Comportamento temporal | H3 | M3 | — | 3.1 | 4.1 | 4.3 |
+| G2 | Q4 | Comportamento temporal | H4 | M4 | — | 3.1 | 4.1 | 4.3 |
+| G2 | Q5 | Comportamento temporal | H5 | M5 | — | 3.1 | 4.1 | 4.3 |
+| G3 | Q6 | Aprendizagem | H6 | M6 | M7 e M9 (primeiro uso) | [3.3](#33-metricas-de-capacidade-de-interacao-g3) | 4.1 | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) |
+| G3 | Q7 | Operabilidade | H7 | M7 | M9 (seleção e revisão) | 3.3 | 4.1 | 4.4 |
+| G3 | Q8 | Proteção contra erros do usuário | H8 | M8 | — | 3.3 | 4.1 | 4.4 |
+| G3 | Q9 | Autodescrição | H9 | M9 | — | 3.3 | 4.1 | 4.4 |
 
 O julgamento dos três objetivos em conjunto está na [Seção 4.6](#46-julgamento-global-dos-objetivos).
 
