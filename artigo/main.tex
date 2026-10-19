@@ -122,7 +122,188 @@ Software Quality, SQuaRE, ISO/IEC 25040, GQM, PSM
 \section{Introdução}
 \label{sec:intro}
 
-% TODO: escrever a Introdução (issue #9): contexto do Sua Grade UnB, motivação e propósito da avaliação (docs/fase-1.md, Seção 1).
+A qualidade de um produto de software envolve mais do que a ausência de defeitos.
+Ela depende do quanto o produto atende às necessidades de quem o usa e de quem o
+mantém, e essas necessidades variam de um contexto para outro. Para tornar essa
+noção avaliável de forma sistemática, a família de normas SQuaRE
+(\textit{Systems and software Quality Requirements and Evaluation}) oferece um modelo
+de qualidade de produto, descrito na ISO/IEC~25010~\citep{iso25010}, e um processo de
+avaliação, descrito na ISO/IEC~25040~\citep{iso25040}. Para que as medições produzam
+informação útil, cada medida precisa estar ligada a um objetivo explícito, papel que
+a abordagem \textit{Goal-Question-Metric} (GQM)~\citep{basili1994gqm} cumpre ao
+derivar as métricas a partir de objetivos e questões.
+
+O produto avaliado neste trabalho é o Sua Grade UnB
+(\url{https://suagradeunb.com.br/}), uma aplicação web de código aberto que ajuda
+estudantes da Universidade de Brasília (UnB) a montar a grade horária do semestre. O
+estudante busca disciplinas por nome ou código, seleciona as que deseja cursar e o
+sistema gera combinações de turmas sem conflito de horário, que podem ser salvas na
+conta do usuário ou no próprio navegador. Os dados das turmas são obtidos por
+\textit{web scraping} das páginas públicas do SIGAA, o sistema acadêmico da
+universidade. O sistema foi desenvolvido no segundo semestre de 2023 por seis
+estudantes na disciplina de Métodos de Desenvolvimento de Software e, desde então,
+recebe apenas manutenções eventuais: a branch principal do repositório registrou 475
+\textit{commits} em 2023, 33 em 2024, 5 em 2025 e 2 em 2026, segundo consulta feita
+pela equipe em 16/10/2026.
+
+Três fatores motivam a avaliação. Primeiro, o uso é recorrente e concentrado: o
+sistema é procurado a cada período de matrícula, quando muitos estudantes o acessam
+ao mesmo tempo. Segundo, a manutenção depende de voluntários: a equipe que criou o
+projeto já concluiu a disciplina, e as correções recentes vieram de contribuidores
+externos. Terceiro, o sistema depende de uma fonte de dados instável: mudanças no
+SIGAA quebram a coleta, como ocorreu em 2026, quando o \textit{scraper} precisou ser
+refatorado. Esse cenário exige um código fácil de entender e modificar por quem não
+o escreveu. Até onde a equipe verificou, o produto nunca passou por uma avaliação
+sistemática de qualidade, e os mantenedores não dispõem de evidências para decidir o
+que corrigir primeiro.
+
+O objetivo deste trabalho é avaliar a qualidade do Sua Grade UnB em operação para
+identificar e priorizar os problemas de qualidade que mais afetam os estudantes no
+período de matrícula e a continuidade da manutenção do sistema por voluntários. A
+avaliação segue o processo da ISO/IEC~25040 e o modelo da ISO/IEC~25010:2023, com
+foco em três características priorizadas pela equipe: Manutenibilidade, Capacidade
+de interação e Eficiência de desempenho. As métricas são derivadas pela abordagem
+GQM, e o próprio projeto de avaliação é acompanhado com indicadores do modelo
+PSM~\citep{mcgarry2002psm}. Os resultados pretendem apoiar três decisões: quais
+problemas os mantenedores devem corrigir primeiro, qual ação de melhoria a equipe
+executará e por qual parte do código novos contribuidores devem começar.
+% TODO: atualizar após a Fase 4 para resumir os principais resultados e a ação de melhoria.
+Esta versão do artigo cobre as duas primeiras atividades do processo, o
+estabelecimento dos requisitos e a especificação da avaliação; o projeto, a execução
+e a conclusão serão incorporados na versão seguinte.
+
+O restante do artigo está organizado da seguinte forma. A
+Seção~\ref{sec:referencial} apresenta a família SQuaRE, o modelo de qualidade da
+ISO/IEC~25010:2023, o processo da ISO/IEC~25040, a abordagem GQM e o modelo PSM. A
+Seção~\ref{sec:metodologia} descreve como esses referenciais foram aplicados à
+avaliação do Sua Grade UnB. A Seção~\ref{sec:resultados} apresenta os resultados, e
+a Seção~\ref{sec:conclusao} traz as conclusões.
+
+\section{Referencial teórico}\label{sec:referencial}
+
+\subsection{Família SQuaRE}\label{subsec:square}
+
+A série ISO/IEC~25000, conhecida como SQuaRE, reúne as normas de requisitos e
+avaliação de qualidade de sistemas e software~\citep{iso25000}. As normas são
+organizadas em divisões: gestão da qualidade (ISO/IEC~2500n), modelo de qualidade
+(ISO/IEC~2501n), medição da qualidade (ISO/IEC~2502n), requisitos de qualidade
+(ISO/IEC~2503n) e avaliação da qualidade (ISO/IEC~2504n). As divisões se
+complementam: os modelos definem o que avaliar, as normas de medição definem como
+quantificar cada característica, e as normas de avaliação usam os modelos e as
+medidas para conduzir o processo de avaliação~\citep{iso25040}. Este trabalho usa
+principalmente duas delas: a ISO/IEC~25010, da divisão de modelo de qualidade, e a
+ISO/IEC~25040, da divisão de avaliação.
+
+\subsection{Modelo de qualidade de produto da ISO/IEC 25010:2023}\label{subsec:iso25010}
+
+O modelo de qualidade de produto da ISO/IEC~25010 organiza a qualidade em
+características, que se dividem em subcaracterísticas mensuráveis por meio de
+propriedades do produto~\citep{iso25010}. A versão de 2023 substituiu a de 2011 e
+trouxe mudanças relevantes para este trabalho. O modelo passou de oito para nove
+características: Usabilidade foi renomeada para Capacidade de interação,
+Portabilidade foi renomeada para Flexibilidade, que ganhou a subcaracterística
+escalabilidade, e Proteção (\textit{safety}) foi incluída como nova característica.
+Em Capacidade de interação, estética da interface deu lugar a engajamento do
+usuário, acessibilidade foi dividida em inclusividade e assistência ao usuário, e
+autodescritividade foi incluída. Em Segurança, foi incluída a resistência; em
+Confiabilidade, maturidade deu lugar a ausência de falhas. O termo ``usabilidade''
+passou a designar uma característica do modelo de qualidade em uso, descrito na
+ISO/IEC~25019:2023~\citep{iso25019}. Como este trabalho avalia a qualidade do
+produto, e não a qualidade em uso, a característica correspondente aqui é a
+Capacidade de interação.
+
+A Tabela~\ref{tab:iso25010} apresenta as nove características da versão de 2023,
+seus nomes na versão de 2011 e suas subcaracterísticas. Os nomes em português são
+tradução da equipe e são usados em todo o artigo.
+
+\begin{table*}[htbp]
+\centering
+\caption{Características e subcaracterísticas do modelo de qualidade de produto da ISO/IEC~25010:2023}
+\label{tab:iso25010}
+\small
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] Q[l] X[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+}
+Característica (2023) & Nome em 2011 & Subcaracterísticas (2023) \\
+Adequação funcional & Adequação funcional & Completude funcional, correção funcional, apropriação funcional \\
+Eficiência de desempenho & Eficiência de desempenho & Comportamento temporal, utilização de recursos, capacidade \\
+Compatibilidade & Compatibilidade & Coexistência, interoperabilidade \\
+Capacidade de interação & Usabilidade & Reconhecibilidade de adequação, aprendizibilidade, operabilidade, proteção contra erros do usuário, engajamento do usuário, inclusividade, assistência ao usuário, autodescritividade \\
+Confiabilidade & Confiabilidade & Ausência de falhas, disponibilidade, tolerância a falhas, recuperabilidade \\
+Segurança & Segurança & Confidencialidade, integridade, não repúdio, responsabilização, autenticidade, resistência \\
+Manutenibilidade & Manutenibilidade & Modularidade, reusabilidade, analisabilidade, modificabilidade, testabilidade \\
+Flexibilidade & Portabilidade & Adaptabilidade, escalabilidade, instalabilidade, substituibilidade \\
+Proteção (\textit{safety}) & (nova) & Restrição operacional, identificação de riscos, falha segura, alerta de perigo, integração segura \\
+\end{tblr}
+
+\smallskip
+\footnotesize Fonte: elaborado pela equipe a partir da ISO/IEC~25010:2023~\citep{iso25010}.
+\end{table*}
+
+O modelo é genérico e deve ser adaptado ao contexto de cada avaliação: a norma não
+exige que todas as características sejam avaliadas, e a seleção depende do produto,
+das partes interessadas e do propósito da avaliação. A seleção e a adaptação feitas
+para o Sua Grade UnB estão descritas na Seção~\ref{subsec:processo}.
+
+\subsection{Processo de avaliação da ISO/IEC 25040}\label{subsec:iso25040}
+
+A ISO/IEC~25040 define um modelo de referência para o processo de avaliação de
+qualidade de produto. Sua primeira edição, de 2011, organiza o processo em cinco
+atividades~\citep{iso25040v2011}: estabelecer os requisitos da avaliação, que define
+o propósito, o tipo de produto e o modelo de qualidade; especificar a avaliação, que
+seleciona as medidas e define os critérios de julgamento; projetar a avaliação, que
+planeja as atividades, os recursos e o ambiente; executar a avaliação, que obtém as
+medidas e as compara com os critérios; e concluir a avaliação, que analisa os
+resultados e elabora o relatório.
+
+A segunda edição, de 2024, ampliou os objetos de avaliação de software para
+produtos de tecnologia da informação e comunicação, dados e serviços de TI, e
+reorganizou o processo em cinco etapas: definir, projetar, planejar, executar e
+concluir a avaliação~\citep{iso25040}. Este trabalho mantém a divisão em atividades
+da primeira edição, que é a adotada nas fases do trabalho da disciplina, e usa o
+modelo de qualidade da ISO/IEC~25010:2023.
+% TODO (equipe): confirmar com a docente se a divisão em atividades da edição de 2011 é a esperada.
+
+\subsection{Abordagem GQM}\label{subsec:gqm-teoria}
+
+A abordagem GQM parte do princípio de que a medição deve ser orientada a objetivos:
+primeiro se definem os objetivos da organização ou do projeto, depois as questões
+que caracterizam esses objetivos e, por fim, as métricas que respondem às
+questões~\citep{basili1994gqm}. O modelo resultante tem três níveis. No nível
+conceitual, cada objetivo é definido para um objeto de medição, com um propósito, um
+foco de qualidade, um ponto de vista e um contexto. No nível operacional, um conjunto
+de questões descreve como o objetivo será avaliado. No nível quantitativo, cada
+questão é associada a um conjunto de dados, objetivos ou subjetivos, que permite
+respondê-la. Uma mesma métrica pode responder a mais de uma questão, e a
+interpretação dos dados segue o caminho inverso, das métricas para as questões e
+destas para os objetivos.
+
+Na avaliação de produto, o GQM complementa a SQuaRE: o modelo da ISO/IEC~25010
+indica quais características e subcaracterísticas avaliar, e o GQM torna explícito
+por que cada medida foi escolhida e como ela será interpretada em relação ao
+propósito da avaliação.
+
+\subsection{Modelo PSM}\label{subsec:psm-teoria}
+
+O PSM (\textit{Practical Software Measurement}) é um modelo de medição voltado à
+gestão de projetos de software, no qual a medição é guiada pelas necessidades de
+informação de quem toma decisões~\citep{mcgarry2002psm}. As necessidades de
+informação são agrupadas em categorias, como cronograma e progresso, recursos e
+custos, tamanho e estabilidade do produto, qualidade do produto, desempenho do
+processo, efetividade da tecnologia e satisfação do cliente. Cada categoria se
+desdobra em conceitos mensuráveis e em medidas candidatas, que são combinadas em
+indicadores e interpretadas com critérios de decisão definidos previamente. O
+processo de medição é contínuo e iterativo: os indicadores são coletados e
+analisados ao longo do projeto, e as decisões de gestão são registradas junto com
+as medições que as motivaram.
+% TODO (equipe): confirmar a expansão da sigla CID usada na disciplina e explicitá-la aqui.
+
+Neste trabalho, o PSM não é usado para avaliar o Sua Grade UnB, e sim para
+acompanhar o próprio projeto de avaliação, como descrito na
+Seção~\ref{subsec:psm}.
 
 \section{Metodologia}\label{sec:metodologia}
 
@@ -139,7 +320,8 @@ e na página do projeto,
 \subsection{Processo de avaliação segundo a ISO/IEC 25040}\label{subsec:processo}
 
 O trabalho segue o processo de avaliação de qualidade de produto da
-ISO/IEC~25040~\citep{iso25040}, com o modelo de qualidade da
+ISO/IEC~25040, na divisão em atividades da edição de 2011~\citep{iso25040v2011}
+(Seção~\ref{subsec:iso25040}), com o modelo de qualidade da
 ISO/IEC~25010:2023~\citep{iso25010}. Cada fase do projeto corresponde a uma ou mais
 atividades do processo:
 
@@ -148,7 +330,7 @@ atividades do processo:
   \item \textbf{Especificar a avaliação} (Fase~2);
   \item \textbf{Projetar a avaliação} (Fase~3);
   \item \textbf{Executar a avaliação} (Fase~4);
-  \item \textbf{Concluir a avaliação} (Fase~4). % TODO: conferir nome e numeração na ISO/IEC 25040:2024
+  \item \textbf{Concluir a avaliação} (Fase~4).
 \end{enumerate}
 
 \paragraph{Atividade 1 -- Estabelecer os requisitos da avaliação.}
@@ -187,10 +369,10 @@ compõem a segunda entrega do trabalho.
 %       (hardware, software, massa de dados, perfil dos participantes) e cronograma da avaliação.
 % TODO: completar após Fase 4 -- execução, análise e julgamento (atividades 4 e 5).
 
-\subsection{Abordagem GQM}\label{subsec:gqm}
+\subsection{Especificação com a abordagem GQM}\label{subsec:gqm}
 
-As métricas foram derivadas pela abordagem \textit{Goal-Question-Metric}
-(GQM)~\citep{basili1994gqm}. Cada objetivo foi descrito pelos cinco elementos do
+As métricas foram derivadas pela abordagem GQM
+(Seção~\ref{subsec:gqm-teoria}). Cada objetivo foi descrito pelos cinco elementos do
 modelo: objeto analisado, propósito, foco de qualidade, ponto de vista e contexto.
 Foram definidos três objetivos, cada um ligado a uma característica priorizada e a
 uma parte interessada:
@@ -274,9 +456,8 @@ sobre essas duas subcaracterísticas.
 
 \subsection{Gestão da medição com PSM/CID}\label{subsec:psm}
 
-O acompanhamento do próprio projeto segue o modelo PSM (\textit{Practical Software
-Measurement})~\citep{mcgarry2002psm}, com o PSM/CID adotado na disciplina.
-% TODO: confirmar a expansão da sigla CID usada na disciplina antes de explicitá-la no texto.
+O acompanhamento do próprio projeto segue o modelo PSM
+(Seção~\ref{subsec:psm-teoria}), na forma PSM/CID adotada na disciplina.
 O plano de medição tem seis indicadores, distribuídos em três categorias e
 apresentados na Tabela~\ref{tab:psm}. Todos são coletados semanalmente a partir
 dos registros do GitHub.
