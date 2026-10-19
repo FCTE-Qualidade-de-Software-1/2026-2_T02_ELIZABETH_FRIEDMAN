@@ -41,7 +41,7 @@ Ver também: [Métricas PSM/CID](metricas.md).
 
 ## Ata 02
 
-- **Data e horário:** 23/10/2026, 21h
+- **Data e horário:** 16/10/2026, 21h
 - **Local / meio:** on-line
 - **Presentes:**
     - Eduardo Silva Waski
