@@ -23,11 +23,11 @@ Repositório disponível em: [unb-mds/2023-2-SuaGradeUnB](https://github.com/unb
 
 | Etapa | Conteúdo | Situação |
 |-------|----------|----------|
-| [Fase 1 — Requisitos da avaliação](fase-1.md) | Propósito, partes interessadas, modelo de qualidade, características priorizadas e escopo | Em andamento |
-| [Fase 2 — Especificação](fase-2.md) | Objetivos, questões, hipóteses e métricas (GQM); níveis de pontuação e critérios de julgamento | Não iniciada |
+| [Fase 1 — Requisitos da avaliação](fase-1.md) | Propósito, partes interessadas, modelo de qualidade, características priorizadas e escopo | Concluída |
+| [Fase 2 — Especificação](fase-2.md) | Objetivos, questões, hipóteses e métricas (GQM); níveis de pontuação e critérios de julgamento | Concluída |
 | [Fase 3 — Projeto da avaliação](fase-3.md) | Método, recursos, ambiente e cronograma | Não iniciada |
 | [Fase 4 — Execução e resultados](fase-4.md) | Medições, análise, julgamento e ação de melhoria | Não iniciada |
-| [Gestão do projeto](gestao/metricas.md) | Métricas PSM/CID e [atas de reunião](gestao/atas.md) | Em andamento |
+| [Gestão do projeto](gestao/metricas.md) | Métricas PSM/CID e [atas de reunião](gestao/atas.md) | Em constante evolução |
 
 ## Links rápidos
 
