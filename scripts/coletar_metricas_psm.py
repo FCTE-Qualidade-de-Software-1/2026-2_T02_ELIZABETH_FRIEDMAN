@@ -9,7 +9,8 @@ import json
 import os
 import re
 import subprocess
-from collections import defaultdict
+import unicodedata
+from collections import Counter, defaultdict
 from datetime import date, datetime, time, timedelta
 from zoneinfo import ZoneInfo
 
@@ -36,22 +37,70 @@ def secao(corpo, titulo):
     return m.group(1).strip() if m else ""
 
 
-def numero(texto):
-    m = re.search(r"\d+(?:[.,]\d+)?", texto or "")
-    return float(m.group().replace(",", ".")) if m else None
+TRACO = r"\s*(?:—|–|−|-{1,2})\s*"
+DURACAO = r"(\d+(?:[.,]\d+)?)\s*(?:(?:horas?|hrs?|hs|h)(?:\s*(\d{1,2})\s*(?:min)?)?|(min(?:utos)?))"
+REGISTRO_HORAS = re.compile(rf"(\d{{1,2}})/(\d{{1,2}})(?:/(\d{{4}}|\d{{2}}))?{TRACO}(.+?){TRACO}{DURACAO}(?![\wà-ú])",
+                            re.I)
+ESTIMATIVA = re.compile(r"(\d+(?:[.,]\d+)?)\s*h?", re.I)
+avisos = []
 
 
-REGISTRO_HORAS = re.compile(r"(\d{1,2})/(\d{1,2})\s*[—–-]\s*(.+?)\s*[—–-]\s*(\d+(?:[.,]\d+)?)\s*h", re.I)
+def horas(numero, minutos, so_minutos):
+    valor = float(numero.replace(",", "."))
+    return round(valor / 60 if so_minutos else valor + int(minutos or 0) / 60, 2)
 
 
-def registros_horas(corpo, ano):
+def linhas_uteis(texto):
+    texto = re.sub(r"<!--.*?-->", "", texto, flags=re.S)
+    return [l.strip().lstrip("-*• ").strip() for l in texto.splitlines() if l.strip().lstrip("-*• ").strip()]
+
+
+def estimativa(corpo, n):
+    texto = " ".join(linhas_uteis(secao(corpo, "Estimativa (horas)")))
+    if not texto:
+        return None
+    m = ESTIMATIVA.fullmatch(texto)
+    if m:
+        return float(m.group(1).replace(",", "."))
+    avisos.append(f"#{n}: estimativa não reconhecida (use só o total, ex.: 5 ou 5 h): {texto}")
+    return None
+
+
+def registros_horas(corpo, criada, n):
     regs = []
-    for dia, mes, pessoa, h in REGISTRO_HORAS.findall(secao(corpo, "Horas reais")):
+    for linha in linhas_uteis(secao(corpo, "Horas reais")):
+        m = REGISTRO_HORAS.search(linha)
+        if not m:
+            avisos.append(f"#{n}: linha de horas reais não reconhecida: {linha}")
+            continue
+        dia, mes, ano, pessoa = m.groups()[:4]
         try:
-            regs.append((date(ano, int(mes), int(dia)), pessoa.strip(), float(h.replace(",", "."))))
+            if ano:
+                d = date(int(ano) + (2000 if len(ano) == 2 else 0), int(mes), int(dia))
+            else:
+                d = date(criada.year, int(mes), int(dia))
+                if d < criada.date() - timedelta(days=60):
+                    d = d.replace(year=d.year + 1)
         except ValueError:
-            print(f"AVISO: data inválida em registro de horas: {dia}/{mes} — {pessoa}")
+            avisos.append(f"#{n}: data inválida em horas reais: {linha}")
+            continue
+        regs.append((d, " ".join(pessoa.split()), horas(*m.groups()[4:])))
     return regs
+
+
+def chave_pessoa(nome):
+    sem_acento = "".join(c for c in unicodedata.normalize("NFKD", nome) if not unicodedata.combining(c))
+    return " ".join(sem_acento.casefold().split())
+
+
+def unificar_nomes(registros):
+    grafias = defaultdict(Counter)
+    for r in registros:
+        for _, pessoa, _ in r["horas"]:
+            grafias[chave_pessoa(pessoa)][pessoa] += 1
+    nome = {k: c.most_common(1)[0][0] for k, c in grafias.items()}
+    for r in registros:
+        r["horas"] = [(d, nome[chave_pessoa(p)], h) for d, p, h in r["horas"]]
 
 
 def pct(parte, total):
@@ -79,11 +128,15 @@ def coletar():
     prazos = {m["title"]: date.fromisoformat(m["due_on"][:10]) for m in milestones if m.get("due_on")}
 
     reaberturas = defaultdict(list)
+    estados = defaultdict(list)
     eventos_label = defaultdict(list)
     for e in eventos:
         n, quando = e["issue"]["number"], data_hora(e["created_at"])
         if e["event"] == "reopened":
             reaberturas[n].append(quando)
+            estados[n].append((quando, "aberta"))
+        elif e["event"] == "closed":
+            estados[n].append((quando, situacao_fechada(e.get("state_reason"))))
         elif e["event"] in ("labeled", "unlabeled") and e["label"]["name"] == LABEL_RETRABALHO:
             eventos_label[n].append((quando, e["event"] == "labeled"))
 
@@ -92,17 +145,20 @@ def coletar():
         criada = data_hora(i["createdAt"])
         ms = (i.get("milestone") or {}).get("title", "")
         tem_label = any(l["name"] == LABEL_RETRABALHO for l in i["labels"])
+        n = i["number"]
+        # sem eventos (histórico indisponível), vale o estado e a label atuais
+        fechamento = [(data_hora(i["closedAt"]), situacao_fechada(i.get("stateReason")))] \
+            if i["state"] == "CLOSED" and i.get("closedAt") else []
         registros.append({
-            "numero": i["number"], "titulo": i["title"], "milestone": ms, "prazo": prazos.get(ms),
+            "numero": n, "titulo": i["title"], "milestone": ms, "prazo": prazos.get(ms),
             "responsaveis": " ".join(a["login"] for a in i["assignees"]),
-            "criada": criada, "fechada": data_hora(i.get("closedAt")) if i["state"] == "CLOSED" else None,
-            "descartada": i["state"] == "CLOSED" and i.get("stateReason") == "NOT_PLANNED",
-            "estimativa": numero(secao(i["body"], "Estimativa (horas)")),
-            "horas": registros_horas(i["body"], criada.year),
-            "reaberturas": reaberturas[i["number"]],
-            # sem eventos (ex.: label anterior ao histórico disponível), vale a label atual desde a criação
-            "label_retrabalho": sorted(eventos_label[i["number"]]) or ([(criada, True)] if tem_label else []),
+            "criada": criada, "estados": sorted(estados[n]) or fechamento,
+            "estimativa": estimativa(i["body"], n),
+            "horas": registros_horas(i["body"], criada, n),
+            "reaberturas": reaberturas[n],
+            "label_retrabalho": sorted(eventos_label[n]) or ([(criada, True)] if tem_label else []),
         })
+    unificar_nomes(registros)
 
     linhas_prs = []
     for p in sorted(prs, key=lambda p: p["number"]):
@@ -119,8 +175,26 @@ def coletar():
     return registros, linhas_prs
 
 
+def situacao_fechada(motivo):
+    return "descartada" if (motivo or "").lower() in ("not_planned", "duplicate") else "concluida"
+
+
+def situacao_em(r, t):
+    situacao, quando = "aberta", None
+    for q, s in r["estados"]:
+        if q > t:
+            break
+        situacao, quando = s, q
+    return situacao, quando
+
+
 def concluida_ate(r, t):
-    return r["fechada"] is not None and r["fechada"] <= t and not r["descartada"]
+    return situacao_em(r, t)[0] == "concluida"
+
+
+def fechamento_ate(r, t):
+    situacao, quando = situacao_em(r, t)
+    return quando if situacao == "concluida" else None
 
 
 def retrabalho_ate(r, t):
@@ -164,7 +238,7 @@ def indicadores_em(t, registros, prs):
 
     por_ms = defaultdict(list)
     for r in registros:
-        if r["milestone"] and r["criada"] <= t and not (r["descartada"] and r["fechada"] <= t):
+        if r["milestone"] and r["criada"] <= t and situacao_em(r, t)[0] != "descartada":
             por_ms[r["milestone"]].append(r)
     for ms in sorted(por_ms, key=lambda m: por_ms[m][0]["prazo"] or date.max):
         lista = por_ms[ms]
@@ -175,7 +249,7 @@ def indicadores_em(t, registros, prs):
 
     com_prazo = [r for r in concluidas if r["prazo"]]
     if com_prazo:
-        desvios = [(r["fechada"].date() - r["prazo"]).days for r in com_prazo]
+        desvios = [(fechamento_ate(r, t).date() - r["prazo"]).days for r in com_prazo]
         add("Calendário e progresso", "Desvio de prazo médio", round(sum(desvios) / len(desvios), 1), "dias",
             f"{sum(d > 0 for d in desvios)} de {len(desvios)} issues concluídas depois do prazo do milestone "
             "(negativo = adiantado)")
@@ -216,19 +290,20 @@ def main():
     def fmt(dt):
         return dt.isoformat(timespec="minutes") if dt else ""
 
-    escrever_csv("issues.csv",
-                 ["issue", "titulo", "milestone", "responsaveis", "situacao", "criada_em", "fechada_em",
-                  "prazo_milestone", "desvio_prazo_dias", "estimativa_h", "horas_reais_h", "retrabalho"],
-                 [{"issue": r["numero"], "titulo": r["titulo"], "milestone": r["milestone"],
-                   "responsaveis": r["responsaveis"],
-                   "situacao": "descartada" if r["descartada"] else ("concluida" if r["fechada"] else "aberta"),
-                   "criada_em": fmt(r["criada"]), "fechada_em": fmt(r["fechada"]),
-                   "prazo_milestone": r["prazo"].isoformat() if r["prazo"] else "",
-                   "desvio_prazo_dias": (r["fechada"].date() - r["prazo"]).days
-                   if concluida_ate(r, agora) and r["prazo"] else "",
-                   "estimativa_h": r["estimativa"] if r["estimativa"] is not None else "",
-                   "horas_reais_h": sum(h for _, _, h in r["horas"]) if r["horas"] else "",
-                   "retrabalho": "sim" if retrabalho_ate(r, agora) else "nao"} for r in registros])
+    linhas_issues = []
+    for r in registros:
+        situacao, fechada = situacao_em(r, agora)
+        linhas_issues.append({
+            "issue": r["numero"], "titulo": r["titulo"], "milestone": r["milestone"],
+            "responsaveis": r["responsaveis"], "situacao": situacao,
+            "criada_em": fmt(r["criada"]), "fechada_em": fmt(fechada), "reaberturas": len(r["reaberturas"]),
+            "prazo_milestone": r["prazo"].isoformat() if r["prazo"] else "",
+            "desvio_prazo_dias": (fechada.date() - r["prazo"]).days
+            if situacao == "concluida" and r["prazo"] else "",
+            "estimativa_h": r["estimativa"] if r["estimativa"] is not None else "",
+            "horas_reais_h": round(sum(h for _, _, h in r["horas"]), 2) if r["horas"] else "",
+            "retrabalho": "sim" if retrabalho_ate(r, agora) else "nao"})
+    escrever_csv("issues.csv", list(linhas_issues[0]), linhas_issues)
     escrever_csv("horas.csv", ["issue", "data", "pessoa", "horas"],
                  [{"issue": r["numero"], "data": d.isoformat(), "pessoa": p, "horas": h}
                   for r in registros for d, p, h in r["horas"]])
@@ -245,6 +320,8 @@ def main():
     escrever_csv("indicadores.csv", list(historico[-1][0]), [l for ind in historico for l in ind])
 
     gerar_pagina(historico, agora)
+    for aviso in avisos:
+        print(f"AVISO: {aviso}")
     print(f"{len(registros)} issues, {len(prs)} PRs, {len(historico)} datas de referência "
           f"({historico[0][0]['data_referencia']} a {historico[-1][0]['data_referencia']})")
 
@@ -288,6 +365,11 @@ def gerar_pagina(historico, agora):
         valores = {i["indicador"]: formatar(i["valor"], i["unidade"]) for i in ind}
         dia = date.fromisoformat(ind[0]["data_referencia"]).strftime("%d/%m")
         linhas.append(f"| {dia} | " + " | ".join(valores.get(n, "—") for n in INDICADORES_EVOLUCAO) + " |")
+
+    if avisos:
+        linhas += ["", "## Registros a corrigir", "",
+                   "Registros fora do formato esperado. Linhas não reconhecidas ficam fora dos indicadores.", ""]
+        linhas += [f"- {a}" for a in avisos]
 
     linhas += [
         "",
