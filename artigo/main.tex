@@ -11,8 +11,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{tabularray}
+\usepackage{float}
 
 \sloppy
+\raggedbottom
 
 \title{Avaliação de Qualidade de Produto de Software:\\ o Sua Grade UnB segundo a família SQuaRE}
 
@@ -309,7 +311,7 @@ projeto. Os valores, os dados brutos e as decisões de gestão ficam na página 
 projeto, junto com as atas.
 % TODO (#25): incluir os valores medidos e as decisões de gestão tomadas a partir deles.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Indicadores de gestão do projeto (PSM/CID)}
 \label{tab:psm}
@@ -343,7 +345,7 @@ brutos são registrados em CSV com as versões das ferramentas e as evidências.
 verificação inicial, que confirma o funcionamento das ferramentas, mas não
 constitui coleta validada.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Ferramentas de medição e métricas apoiadas}
 \label{tab:ferramentas}
