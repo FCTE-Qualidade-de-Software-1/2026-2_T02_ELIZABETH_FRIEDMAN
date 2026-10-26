@@ -201,9 +201,29 @@ UnB (SIGAA) & Não ter o SIGAA sobrecarregado pela coleta & Impede coletas repet
 
 O produto é uma aplicação web cliente-servidor em operação, com
 \textit{frontend} em Next.js e API REST em Django. Três características foram
-priorizadas por uma matriz ponderada (impacto, peso~3; risco, peso~2;
-viabilidade de medição, peso~1): Manutenibilidade (18 pontos), Capacidade de
-interação (15) e Eficiência de desempenho (11). Os objetos de avaliação são o
+priorizadas por uma matriz ponderada, em que cada uma recebe nota de 1 (baixo) a
+3 (alto) em impacto, risco e viabilidade de medição
+(Tabela~\ref{tab:priorizacao}).
+
+\begin{table}[htbp]
+\centering
+\caption{Matriz de priorização das características}
+\label{tab:priorizacao}
+\footnotesize
+\begin{tblr}{
+  colspec = {Q[l] Q[c] Q[c] Q[c] Q[c] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Característica & Impacto ($\times$3) & Risco ($\times$2) & Viabilidade ($\times$1) & Total & Prioridade \\
+Manutenibilidade & 3 & 3 & 3 & 18 & 1ª \\
+Capacidade de interação & 3 & 2 & 2 & 15 & 2ª \\
+Eficiência de desempenho & 2 & 2 & 1 & 11 & 3ª \\
+\end{tblr}
+\end{table}
+
+Os objetos de avaliação são o
 código-fonte e os testes no \textit{commit} \texttt{3d399e7} (15/02/2026), o
 site e a API públicos e uma reprodução local com Docker Compose. Como a equipe
 não tem acesso a dados de produção e não deve gerar carga sobre o SIGAA, as
