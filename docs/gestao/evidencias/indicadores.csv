@@ -1,0 +1,36 @@
+data_referencia,categoria,indicador,valor,unidade,detalhe
+2026-10-18,Desempenho dos processos,PRs revisados no prazo,40.0,%,2 de 5 PRs mergeados aprovados antes do merge e em até 48 h
+2026-10-18,Desempenho dos processos,PRs aprovados antes do merge,40.0,%,2 de 5 PRs mergeados
+2026-10-18,Desempenho dos processos,Retrabalho (issues),0.0,%,0 de 9 issues concluídas com a label correcao ou reabertas
+2026-10-18,Desempenho dos processos,Retrabalho (horas),0.0,%,0 h de 22 h reais registradas em issues concluídas
+2026-10-18,Calendário e progresso,Conclusão de issues — PC1 — Ponto de Controle 1,0.0,%,0 de 1 issues concluídas (prazo 19/10)
+2026-10-18,Calendário e progresso,Conclusão de issues — E1 — Fases 1 e 2,75.0,%,9 de 12 issues concluídas (prazo 26/10)
+2026-10-18,Calendário e progresso,Desvio de prazo médio,-8.2,dias,0 de 9 issues concluídas depois do prazo do milestone (negativo = adiantado)
+2026-10-18,Recursos e custos,Esforço real / estimado,1.05,razão,22 h reais / 21 h estimadas em 5 issues com os dois registros
+2026-10-18,Recursos e custos,Issues concluídas sem horas reais,4,issues,de 9 issues concluídas
+2026-10-18,Recursos e custos,Distribuição de esforço — Eduardo Waski,68.2,%,15 h de 22 h registradas
+2026-10-18,Recursos e custos,Distribuição de esforço — LucasMF,31.8,%,7 h de 22 h registradas
+2026-10-25,Desempenho dos processos,PRs revisados no prazo,20.0,%,2 de 10 PRs mergeados aprovados antes do merge e em até 48 h
+2026-10-25,Desempenho dos processos,PRs aprovados antes do merge,20.0,%,2 de 10 PRs mergeados
+2026-10-25,Desempenho dos processos,Retrabalho (issues),0.0,%,0 de 13 issues concluídas com a label correcao ou reabertas
+2026-10-25,Desempenho dos processos,Retrabalho (horas),0.0,%,0 h de 22 h reais registradas em issues concluídas
+2026-10-25,Calendário e progresso,Conclusão de issues — PC1 — Ponto de Controle 1,100.0,%,1 de 1 issues concluídas (prazo 19/10)
+2026-10-25,Calendário e progresso,Conclusão de issues — E1 — Fases 1 e 2,75.0,%,12 de 16 issues concluídas (prazo 26/10)
+2026-10-25,Calendário e progresso,Desvio de prazo médio,-6.8,dias,0 de 13 issues concluídas depois do prazo do milestone (negativo = adiantado)
+2026-10-25,Recursos e custos,Esforço real / estimado,1.05,razão,22 h reais / 21 h estimadas em 5 issues com os dois registros
+2026-10-25,Recursos e custos,Issues concluídas sem horas reais,8,issues,de 13 issues concluídas
+2026-10-25,Recursos e custos,Distribuição de esforço — Eduardo Waski,65.4,%,17 h de 26 h registradas
+2026-10-25,Recursos e custos,Distribuição de esforço — Joaquim Neto,7.7,%,2 h de 26 h registradas
+2026-10-25,Recursos e custos,Distribuição de esforço — LucasMF,26.9,%,7 h de 26 h registradas
+2026-10-26,Desempenho dos processos,PRs revisados no prazo,27.3,%,3 de 11 PRs mergeados aprovados antes do merge e em até 48 h
+2026-10-26,Desempenho dos processos,PRs aprovados antes do merge,27.3,%,3 de 11 PRs mergeados
+2026-10-26,Desempenho dos processos,Retrabalho (issues),7.1,%,1 de 14 issues concluídas com a label correcao ou reabertas
+2026-10-26,Desempenho dos processos,Retrabalho (horas),0.0,%,0 h de 22 h reais registradas em issues concluídas
+2026-10-26,Calendário e progresso,Conclusão de issues — PC1 — Ponto de Controle 1,100.0,%,1 de 1 issues concluídas (prazo 19/10)
+2026-10-26,Calendário e progresso,Conclusão de issues — E1 — Fases 1 e 2,81.2,%,13 de 16 issues concluídas (prazo 26/10)
+2026-10-26,Calendário e progresso,Desvio de prazo médio,-6.4,dias,0 de 14 issues concluídas depois do prazo do milestone (negativo = adiantado)
+2026-10-26,Recursos e custos,Esforço real / estimado,1.05,razão,22 h reais / 21 h estimadas em 5 issues com os dois registros
+2026-10-26,Recursos e custos,Issues concluídas sem horas reais,9,issues,de 14 issues concluídas
+2026-10-26,Recursos e custos,Distribuição de esforço — Eduardo Waski,70.0,%,21 h de 30 h registradas
+2026-10-26,Recursos e custos,Distribuição de esforço — Joaquim Neto,6.7,%,2 h de 30 h registradas
+2026-10-26,Recursos e custos,Distribuição de esforço — LucasMF,23.3,%,7 h de 30 h registradas

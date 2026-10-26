@@ -84,6 +84,7 @@ nav:
       - Fase 4 — Execução e resultados: fase-4.md
   - Gestão do projeto:
       - Métricas PSM/CID: gestao/metricas.md
+      - Indicadores (coleta automática): gestao/indicadores.md
       - Atas de reunião: gestao/atas.md
   - Entregas: entregas.md
   - Equipe: equipe.md
