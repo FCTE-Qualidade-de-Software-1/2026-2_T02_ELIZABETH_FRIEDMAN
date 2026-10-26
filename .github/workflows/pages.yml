@@ -4,9 +4,15 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  schedule:
+    - cron: "59 2 * * 1" # domingo 23:59 em Brasília
+  issues:
+    types: [closed]
 
 permissions:
   contents: read
+  issues: read
+  pull-requests: read
   pages: write
   id-token: write
 
@@ -26,6 +32,11 @@ jobs:
           python-version: "3.12"
           cache: pip
       - run: pip install -r requirements.txt
+      - name: Coletar métricas PSM/CID
+        run: python3 scripts/coletar_metricas_psm.py
+        continue-on-error: true # se a API do GitHub falhar, publica com os dados já commitados
+        env:
+          GH_TOKEN: ${{ github.token }}
       - run: mkdocs build --strict
       - uses: actions/upload-pages-artifact@v3
         with:
