@@ -9,10 +9,10 @@
 
 | Indicador | Valor | Detalhe |
 |---|---|---|
-| PRs revisados no prazo | 20,0% | 2 de 10 PRs mergeados aprovados antes do merge e em até 48 h |
-| PRs aprovados antes do merge | 20,0% | 2 de 10 PRs mergeados |
+| PRs revisados no prazo | 27,3% | 3 de 11 PRs mergeados aprovados antes do merge e em até 48 h |
+| PRs aprovados antes do merge | 27,3% | 3 de 11 PRs mergeados |
 | Retrabalho (issues) | 7,1% | 1 de 14 issues concluídas com a label correcao ou reabertas |
-| Retrabalho (horas) | 0,0% | 0 h de 15 h reais registradas em issues concluídas |
+| Retrabalho (horas) | 0,0% | 0 h de 22 h reais registradas em issues concluídas |
 
 ## Calendário e progresso
 
@@ -26,9 +26,11 @@
 
 | Indicador | Valor | Detalhe |
 |---|---|---|
-| Esforço real / estimado | 1,00 | 15 h reais / 15 h estimadas em 3 issues com os dois registros |
-| Issues concluídas sem horas reais | 11 issues | de 14 issues concluídas |
-| Distribuição de esforço — Eduardo Waski | 100,0% | 15 h de 15 h registradas |
+| Esforço real / estimado | 1,05 | 22 h reais / 21 h estimadas em 5 issues com os dois registros |
+| Issues concluídas sem horas reais | 9 issues | de 14 issues concluídas |
+| Distribuição de esforço — Eduardo Waski | 70,0% | 21 h de 30 h registradas |
+| Distribuição de esforço — Joaquim Neto | 6,7% | 2 h de 30 h registradas |
+| Distribuição de esforço — LucasMF | 23,3% | 7 h de 30 h registradas |
 
 ## Evolução semanal
 
@@ -36,9 +38,9 @@ Valores ao fim de cada domingo (23h59) e na data da última coleta.
 
 | Data | PRs revisados no prazo | Retrabalho (issues) | Desvio de prazo médio | Esforço real / estimado |
 |---|---|---|---|---|
-| 18/10 | 40,0% | 0,0% | -8,2 dias | 1,00 |
-| 25/10 | 20,0% | 0,0% | -6,8 dias | 1,00 |
-| 26/10 | 20,0% | 7,1% | -6,4 dias | 1,00 |
+| 18/10 | 40,0% | 0,0% | -8,2 dias | 1,05 |
+| 25/10 | 20,0% | 0,0% | -6,8 dias | 1,05 |
+| 26/10 | 27,3% | 7,1% | -6,4 dias | 1,05 |
 
 ## Dados brutos
 
