@@ -1,0 +1,18 @@
+issue,titulo,milestone,responsaveis,situacao,criada_em,fechada_em,prazo_milestone,desvio_prazo_dias,estimativa_h,horas_reais_h,retrabalho
+1,Fase 1 — Propósito da avaliação e partes interessadas,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-14T23:55-03:00,2026-10-16T21:34-03:00,2026-10-26,-10,4.0,3.0,nao
+2,Fase 1 — Descrição do SuaGradeUnB e modelo de qualidade,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-14T23:55-03:00,2026-10-18T13:37-03:00,2026-10-26,-8,6.0,6.0,nao
+3,"Fase 1 — Priorização das características, escopo e ODS",E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-14T23:55-03:00,2026-10-18T13:31-03:00,2026-10-26,-8,5.0,6.0,nao
+4,Fase 2 — GQM de Usabilidade (Capacidade de interação),E1 — Fases 1 e 2,LucasMF1 kalebmacedo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:21-03:00,2026-10-26,-8,3.0,,nao
+5,Fase 2 — GQM de Eficiência de desempenho,E1 — Fases 1 e 2,LucasMF1 kalebmacedo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:21-03:00,2026-10-26,-8,3.0,,nao
+6,Fase 2 — GQM de Manutenibilidade,E1 — Fases 1 e 2,LucasMF1 kalebmacedo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:21-03:00,2026-10-26,-8,3.0,,nao
+7,"Fase 2 — Critérios de julgamento, diagrama GQM e consistência com a Fase 1",E1 — Fases 1 e 2,LucasMF1 kalebmacedo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:21-03:00,2026-10-26,-8,4.0,,nao
+8,Artigo — Template SBC e Metodologia,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-14T23:55-03:00,2026-10-21T14:48-03:00,2026-10-26,-5,4.0,,nao
+9,Artigo — Introdução e Referencial teórico,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-14T23:55-03:00,2026-10-21T14:47-03:00,2026-10-26,-5,5.0,,nao
+10,Artigo — Seções da Fase 1 e Fase 2 e revisão final,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-14T23:55-03:00,2026-10-21T14:47-03:00,2026-10-26,-5,6.0,,nao
+11,Gestão — Métricas PSM/CID e atas da E1,E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:10-03:00,2026-10-26,-8,3.0,,nao
+12,"Fechamento da E1 — GitPage, contribuição e release",E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:05-03:00,2026-10-26,-8,3.0,,nao
+13,PC1 — Preparar material da apresentação,PC1 — Ponto de Controle 1,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-19T11:47-03:00,2026-10-19,0,4.0,,nao
+24,Artigo — Modelo SBC em coluna única e redução do conteúdo da E1,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-21T19:11-03:00,2026-10-26T14:24-03:00,2026-10-26,0,10.0,,sim
+25,Gestão — Métricas PSM/CID com dados reais e alinhadas ao modelo,E1 — Fases 1 e 2,JoaquimNetoo,aberta,2026-10-21T19:11-03:00,,2026-10-26,,5.0,,sim
+26,Gestão — Automatizar a coleta das métricas PSM/CID,E1 — Fases 1 e 2,EduardoWaski JoaquimNetoo,aberta,2026-10-21T19:11-03:00,,2026-10-26,,8.0,,sim
+27,Gestão — Criar o GitHub Project do repositório,E1 — Fases 1 e 2,EduardoWaski,aberta,2026-10-21T19:11-03:00,,2026-10-26,,2.0,,sim
