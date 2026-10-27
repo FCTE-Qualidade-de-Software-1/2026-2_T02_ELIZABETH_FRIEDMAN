@@ -39,7 +39,7 @@ theme:
 
 extra:
   # Atualize a cada entrega (aparece no rodapé de todas as páginas).
-  versao: "0.1 — em construção"
+  versao: "1.0 — Entrega 1 (26/10/2026)"
   generator: false
 
 plugins:
