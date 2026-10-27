@@ -9,28 +9,31 @@
 
 | Indicador | Valor | Detalhe |
 |---|---|---|
-| PRs revisados no prazo | 27,3% | 3 de 11 PRs mergeados aprovados antes do merge e em até 48 h |
-| PRs aprovados antes do merge | 27,3% | 3 de 11 PRs mergeados |
-| Retrabalho (issues) | 7,1% | 1 de 14 issues concluídas com a label correcao ou reabertas |
-| Retrabalho (horas) | 0,0% | 0 h de 22 h reais registradas em issues concluídas |
+| PRs revisados no prazo | 35,7% | 5 de 14 PRs mergeados aprovados antes do merge e em até 48 h |
+| PRs aprovados antes do merge | 42,9% | 6 de 14 PRs mergeados |
+| Retrabalho (issues) | 23,5% | 4 de 17 issues concluídas com a label correcao ou reabertas |
+| Retrabalho (horas) | 31,1% | 20.5 h de 66 h reais registradas em issues concluídas |
 
 ## Calendário e progresso
 
 | Indicador | Valor | Detalhe |
 |---|---|---|
 | Conclusão de issues — PC1 — Ponto de Controle 1 | 100,0% | 1 de 1 issues concluídas (prazo 19/10) |
-| Conclusão de issues — E1 — Fases 1 e 2 | 81,2% | 13 de 16 issues concluídas (prazo 26/10) |
-| Desvio de prazo médio | -6,4 dias | 0 de 14 issues concluídas depois do prazo do milestone (negativo = adiantado) |
+| Conclusão de issues — E1 — Fases 1 e 2 | 88,9% | 16 de 18 issues concluídas (prazo 26/10) |
+| Desvio de prazo médio | -5,2 dias | 0 de 17 issues concluídas depois do prazo do milestone (negativo = adiantado) |
 
 ## Recursos e custos
 
 | Indicador | Valor | Detalhe |
 |---|---|---|
-| Esforço real / estimado | 1,05 | 22 h reais / 21 h estimadas em 5 issues com os dois registros |
-| Issues concluídas sem horas reais | 9 issues | de 14 issues concluídas |
-| Distribuição de esforço — Eduardo Waski | 70,0% | 21 h de 30 h registradas |
-| Distribuição de esforço — Joaquim Neto | 6,7% | 2 h de 30 h registradas |
-| Distribuição de esforço — LucasMF | 23,3% | 7 h de 30 h registradas |
+| Esforço real / estimado | 0,94 | 66 h reais / 70 h estimadas em 15 issues com os dois registros |
+| Issues concluídas sem horas reais | 2 issues | de 17 issues concluídas |
+| Distribuição de esforço — Eduardo Waski | 37,0% | 25 h de 67.5 h registradas |
+| Distribuição de esforço — Joaquim Neto | 14,8% | 10 h de 67.5 h registradas |
+| Distribuição de esforço — João Paulo Nunes | 14,8% | 10 h de 67.5 h registradas |
+| Distribuição de esforço — Júlia Santana Campos | 11,9% | 8 h de 67.5 h registradas |
+| Distribuição de esforço — LucasMF | 10,4% | 7 h de 67.5 h registradas |
+| Distribuição de esforço — kalebmacedo | 11,1% | 7.5 h de 67.5 h registradas |
 
 ## Evolução semanal
 
@@ -39,8 +42,8 @@ Valores ao fim de cada domingo (23h59) e na data da última coleta.
 | Data | PRs revisados no prazo | Retrabalho (issues) | Desvio de prazo médio | Esforço real / estimado |
 |---|---|---|---|---|
 | 18/10 | 40,0% | 0,0% | -8,2 dias | 1,05 |
-| 25/10 | 20,0% | 0,0% | -6,8 dias | 1,05 |
-| 26/10 | 27,3% | 7,1% | -6,4 dias | 1,05 |
+| 25/10 | 20,0% | 0,0% | -6,8 dias | 0,99 |
+| 26/10 | 35,7% | 23,5% | -5,2 dias | 0,94 |
 
 ## Dados brutos
 
