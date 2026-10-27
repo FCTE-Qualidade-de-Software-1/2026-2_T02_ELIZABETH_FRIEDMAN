@@ -11,8 +11,10 @@
 \usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{tabularray}
+\usepackage{float}
 
 \sloppy
+\raggedbottom
 
 \title{Avaliação de Qualidade de Produto de Software:\\ o Sua Grade UnB segundo a família SQuaRE}
 
@@ -174,15 +176,56 @@ O propósito é identificar e priorizar os problemas que mais afetam os
 estudantes na matrícula e a continuidade da manutenção. A avaliação apoia três
 decisões: o que os mantenedores devem corrigir primeiro (D1), qual ação de
 melhoria a equipe executará (D2) e por onde novos contribuidores devem começar
-(D3). As partes interessadas são a equipe, a docente, os mantenedores, os
-contribuidores externos, os estudantes e a UnB, como fornecedora dos dados do
-SIGAA.
+(D3). A Tabela~\ref{tab:interessados} resume as partes interessadas e o efeito
+de cada uma sobre a avaliação.
+
+\begin{table}[htbp]
+\centering
+\caption{Partes interessadas na avaliação}
+\label{tab:interessados}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] X[l] X[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Parte interessada & Interesse & Efeito na avaliação \\
+Equipe & Avaliação viável em cerca de seis semanas & Limita o escopo e a profundidade \\
+Docente & Aplicação rastreável da SQuaRE, do GQM e do PSM/CID & Define o método e os prazos \\
+Mantenedores & Saber o que corrigir primeiro (D1) & Motiva Manutenibilidade e recomendações em forma de \textit{issues} \\
+Contribuidores externos & Entender o código para contribuir (D3) & Reforça analisabilidade, modificabilidade e testabilidade \\
+Estudantes & Montar a grade sem conflitos, inclusive no celular & Motiva Capacidade de interação e Eficiência de desempenho \\
+UnB (SIGAA) & Não ter o SIGAA sobrecarregado pela coleta & Impede coletas repetidas no SIGAA \\
+\end{tblr}
+\end{table}
 
 O produto é uma aplicação web cliente-servidor em operação, com
 \textit{frontend} em Next.js e API REST em Django. Três características foram
-priorizadas por uma matriz ponderada (impacto, peso~3; risco, peso~2;
-viabilidade de medição, peso~1): Manutenibilidade (18 pontos), Capacidade de
-interação (15) e Eficiência de desempenho (11). Os objetos de avaliação são o
+priorizadas por uma matriz ponderada, em que cada uma recebe nota de 1 (baixo) a
+3 (alto) em impacto, risco e viabilidade de medição
+(Tabela~\ref{tab:priorizacao}).
+
+\begin{table}[htbp]
+\centering
+\caption{Matriz de priorização das características}
+\label{tab:priorizacao}
+\footnotesize
+\begin{tblr}{
+  colspec = {Q[l] Q[c] Q[c] Q[c] Q[c] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Característica & Impacto ($\times$3) & Risco ($\times$2) & Viabilidade ($\times$1) & Total & Prioridade \\
+Manutenibilidade & 3 & 3 & 3 & 18 & 1ª \\
+Capacidade de interação & 3 & 2 & 2 & 15 & 2ª \\
+Eficiência de desempenho & 2 & 2 & 1 & 11 & 3ª \\
+\end{tblr}
+\end{table}
+
+Os objetos de avaliação são o
 código-fonte e os testes no \textit{commit} \texttt{3d399e7} (15/02/2026), o
 site e a API públicos e uma reprodução local com Docker Compose. Como a equipe
 não tem acesso a dados de produção e não deve gerar carga sobre o SIGAA, as
@@ -257,14 +300,18 @@ Estas atividades compõem a segunda entrega e serão descritas na versão seguin
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
 O projeto é organizado em \textit{issues} do GitHub agrupadas em
-\textit{milestones} por marco da disciplina e revisadas por outro membro antes
-da publicação. O plano de medição tem seis indicadores, coletados semanalmente a
-partir dos registros do GitHub (Tabela~\ref{tab:psm}), e as medições e decisões
-são registradas na página do projeto junto com as atas.
-% TODO: incluir os valores medidos e as decisões tomadas quando o registro de medições
-%       (docs/gestao/metricas.md) tiver dados reais; hoje só contém valores de exemplo.
+\textit{milestones} por marco da disciplina. Cada \textit{issue} registra a
+estimativa de esforço e as horas reais por sessão de trabalho, e cada
+\textit{pull request} é aprovado por outro membro antes do \textit{merge}. Os
+indicadores da Tabela~\ref{tab:psm} são calculados por um \textit{script} que lê
+\textit{issues}, \textit{milestones}, \textit{pull requests} e eventos do
+GitHub. Ele roda a cada publicação da página do projeto, a cada \textit{issue}
+fechada e todo domingo, e recalcula o histórico semanal desde o início do
+projeto. Os valores, os dados brutos e as decisões de gestão ficam na página do
+projeto, junto com as atas.
+% TODO (#25): incluir os valores medidos e as decisões de gestão tomadas a partir deles.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Indicadores de gestão do projeto (PSM/CID)}
 \label{tab:psm}
@@ -274,16 +321,19 @@ são registradas na página do projeto junto com as atas.
   colspec = {Q[l] X[l] X[l]},
   row{1} = {font=\bfseries},
   hline{1,2,Z} = {0.8pt},
-  hline{4,6} = {0.4pt},
+  hline{6,8} = {0.4pt},
   rowsep = 1pt,
 }
 Categoria & Indicador & Fórmula \\
-Desempenho dos processos & PRs revisados no prazo & PRs revisados em até 48\,h / PRs abertos \\
- & Taxa de retrabalho & \textit{Issues} reabertas / \textit{issues} fechadas \\
-Calendário e progresso & Conclusão de \textit{issues} planejadas & Fechadas no período / planejadas no \textit{milestone} \\
- & Desvio de prazo & Data real $-$ data planejada (dias) \\
-Recursos e custos & Distribuição de carga & \textit{Issues} fechadas por integrante / total fechado \\
- & Contribuição por integrante & \textit{Commits} por integrante no período \\
+Desempenho dos processos & PRs revisados no prazo & PRs aprovados antes do \textit{merge} e em até 48\,h / PRs mergeados \\
+ & PRs aprovados antes do \textit{merge} & PRs aprovados antes do \textit{merge} / PRs mergeados \\
+ & Retrabalho (\textit{issues}) & \textit{Issues} concluídas com a \textit{label} de correção ou reabertas / \textit{issues} concluídas \\
+ & Retrabalho (horas) & Horas reais dessas \textit{issues} / horas reais das \textit{issues} concluídas \\
+Calendário e progresso & Conclusão por \textit{milestone} & \textit{Issues} concluídas / \textit{issues} do \textit{milestone} \\
+ & Desvio de prazo médio & Média de (data de fechamento $-$ prazo do \textit{milestone}), em dias \\
+Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, nas \textit{issues} com os dois registros \\
+ & \textit{Issues} sem horas reais & \textit{Issues} concluídas sem registro de horas \\
+ & Distribuição de esforço & Horas reais da pessoa / horas reais registradas \\
 \end{tblr}
 \end{table}
 
@@ -295,7 +345,7 @@ brutos são registrados em CSV com as versões das ferramentas e as evidências.
 verificação inicial, que confirma o funcionamento das ferramentas, mas não
 constitui coleta validada.
 
-\begin{table}[htbp]
+\begin{table}[H]
 \centering
 \caption{Ferramentas de medição e métricas apoiadas}
 \label{tab:ferramentas}
