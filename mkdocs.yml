@@ -81,6 +81,14 @@ nav:
       - Fase 1 — Requisitos da avaliação: fase-1.md
       - Fase 2 — Especificação (GQM): fase-2.md
       - Fase 3 — Projeto da avaliação: fase-3.md
+      - Instrumentos de interação:
+          - Protocolo M6–M9: avaliacao-interacao/protocolo.md
+          - Inventário M8 e gabarito M9: avaliacao-interacao/instrumentos.md
+          - Consentimento e dados: avaliacao-interacao/consentimento.md
+          - Preparação do termo e proteção dos dados: avaliacao-interacao/dados.md
+          - Recrutamento: avaliacao-interacao/recrutamento.md
+          - Fichas CSV: avaliacao-interacao/registros.md
+          - Piloto e pendências: avaliacao-interacao/piloto.md
       - Fase 4 — Execução e resultados: fase-4.md
   - Gestão do projeto:
       - Métricas PSM/CID: gestao/metricas.md
