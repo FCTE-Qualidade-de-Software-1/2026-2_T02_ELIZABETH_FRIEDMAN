@@ -10,11 +10,30 @@ issue,titulo,milestone,responsaveis,situacao,criada_em,fechada_em,reaberturas,pr
 9,Artigo — Introdução e Referencial teórico,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-14T23:55-03:00,2026-10-21T14:47-03:00,0,2026-10-26,-5,5.0,4.0,nao
 10,Artigo — Seções da Fase 1 e Fase 2 e revisão final,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-14T23:55-03:00,2026-10-21T14:47-03:00,0,2026-10-26,-5,6.0,6.0,nao
 11,Gestão — Métricas PSM/CID e atas da E1,E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:10-03:00,0,2026-10-26,-8,3.0,3.0,nao
-12,"Fechamento da E1 — GitPage, contribuição e release",E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:05-03:00,0,2026-10-26,-8,3.0,,nao
-13,PC1 — Preparar material da apresentação,PC1 — Ponto de Controle 1,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-19T11:47-03:00,0,2026-10-19,0,4.0,,nao
+12,"Fechamento da E1 — GitPage, contribuição e release",E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-18T23:05-03:00,0,2026-10-26,-8,3.0,2.5,nao
+13,PC1 — Preparar material da apresentação,PC1 — Ponto de Controle 1,JoaquimNetoo,concluida,2026-10-14T23:55-03:00,2026-10-19T11:47-03:00,0,2026-10-19,0,4.0,2.5,nao
 24,Artigo — Modelo SBC em coluna única e redução do conteúdo da E1,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-21T19:11-03:00,2026-10-26T19:03-03:00,1,2026-10-26,0,10.0,6.0,sim
 25,Gestão — Métricas PSM/CID com dados reais e alinhadas ao modelo,E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-21T19:11-03:00,2026-10-26T22:56-03:00,0,2026-10-26,0,5.0,5.5,sim
 26,Gestão — Automatizar a coleta das métricas PSM/CID,E1 — Fases 1 e 2,EduardoWaski JoaquimNetoo,concluida,2026-10-21T19:11-03:00,2026-10-26T19:50-03:00,0,2026-10-26,0,8.0,8.0,sim
 27,Gestão — Criar o GitHub Project do repositório,E1 — Fases 1 e 2,EduardoWaski,aberta,2026-10-21T19:11-03:00,,0,2026-10-26,,2.0,,sim
 30,Artigo — Atualizar a seção de PSM/CID com os indicadores da coleta automática,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-26T20:14-03:00,2026-10-26T21:02-03:00,0,2026-10-26,0,1.0,1.0,sim
-32,Release da E1 — snapshot dos indicadores e publicação,E1 — Fases 1 e 2,EduardoWaski,aberta,2026-10-26T20:52-03:00,,0,2026-10-26,,1.5,1.5,nao
+32,Release da E1 — snapshot dos indicadores e publicação,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-26T20:52-03:00,2026-10-26T23:49-03:00,0,2026-10-26,0,1.5,1.5,nao
+36,PC2 — Preparar material da apresentação,PC2 — Ponto de Controle 2,,aberta,2026-11-02T16:12-03:00,,0,2026-11-16,,4.0,,nao
+37,Fase 3 — Ambiente de avaliação e massa de dados de referência,E2 — Fases 3 e 4,camposs04,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,4.0,,nao
+38,Fase 3 — Método e roteiros de Manutenibilidade (M1.1 a M1.4),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,5.0,,nao
+39,Fase 3 — Método e roteiros de Eficiência de desempenho (M2 a M5),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
+40,Fase 3 — Protocolo com participantes de Capacidade de interação (M6 a M9),E2 — Fases 3 e 4,LucasMF1 kalebmacedo,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
+41,Fase 3 — Cronograma da avaliação e consistência com a Fase 2,E2 — Fases 3 e 4,JoaquimNetoo,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,3.0,,nao
+42,Fase 4 — Coleta e análise de Manutenibilidade (G1),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
+43,Fase 4 — Coleta e análise de Eficiência de desempenho (G2),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
+44,Fase 4 — Sessões com participantes e análise de Capacidade de interação (G3),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,8.0,,nao
+45,"Fase 4 — Julgamento, relações entre as características e recomendações",E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,5.0,,nao
+46,Fase 4 — Ação de melhoria,E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,8.0,,nao
+47,"Artigo — Metodologia atualizada, Resultados e Conclusão",E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,6.0,,nao
+48,Artigo — Revisão final da 2ª versão,E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,4.0,,nao
+49,Correções apontadas no PC1,E2 — Fases 3 e 4,,descartada,2026-11-02T16:13-03:00,2026-11-02T16:16-03:00,0,2026-11-22,,2.0,,sim
+50,"Gestão — PSM/CID, atas e decisões da E2",E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,3.0,,nao
+51,"Fechamento da E2 — GitPage, contribuição e release",E2 — Fases 3 e 4,,aberta,2026-11-02T16:13-03:00,,0,2026-11-22,,3.0,,nao
+52,Gestão - Preparar a apresentação da gestão PSM/CID,E2 — Fases 3 e 4,LucasMF1 EduardoWaski camposs04 kalebmacedo jpnunes2210 JoaquimNetoo,aberta,2026-11-03T17:03-03:00,,0,2026-11-22,,3.0,,nao
+54,Gestão - Criar e adicionar a ata da reunião do dia 03/11,PC2 — Ponto de Controle 2,EduardoWaski,concluida,2026-11-03T22:38-03:00,2026-11-04T00:11-03:00,0,2026-11-16,-12,1.0,1.0,nao
+55,Gestão - Atualizar dados da gestão PSM/CID e elaborar gráficos de análise,PC2 — Ponto de Controle 2,EduardoWaski JoaquimNetoo,aberta,2026-11-03T22:41-03:00,,0,2026-11-16,,3.0,,nao
