@@ -160,9 +160,9 @@ Ver também: [Métricas PSM/CID](metricas.md).
 
 | Tarefa | Responsável | Prazo | Issue |
 |--------|-------------|-------|-------|
-| Preparar e ensaiar a apresentação da gestão PSM/CID | Todos | 04/11 | [#52](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/52) |
-| Atualizar os dados da gestão PSM/CID e elaborar os gráficos de análise | Eduardo Waski e Joaquim Neto | 04/11 | [#55](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/55) |
-| Registrar a ata da reunião de 03/11 | Eduardo Waski | 04/11 | [#54](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/54) |
-| Fase 3: ambiente de avaliação e massa de dados de referência | Júlia Santana | 04/11 | [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) |
-| Fase 3: cronograma da avaliação e consistência com a Fase 2 | Joaquim Neto | 04/11 | [#41](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/41) |
-| Fase 3: protocolo com participantes de Capacidade de interação (M6 a M9) | Lucas Monteiro e Kaleb Macedo | 07/11 | [#40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40) |
+| Preparar e ensaiar a apresentação da gestão PSM/CID | Todos | 08/11 | [#52](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/52) |
+| Atualizar os dados da gestão PSM/CID e elaborar os gráficos de análise | Eduardo Waski e Joaquim Neto | 08/11 | [#55](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/55) |
+| Registrar a ata da reunião de 03/11 | Eduardo Waski | 08/11 | [#54](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/54) |
+| Fase 3: ambiente de avaliação e massa de dados de referência | Júlia Santana | 08/11 | [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) |
+| Fase 3: cronograma da avaliação e consistência com a Fase 2 | Joaquim Neto | 08/11 | [#41](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/41) |
+| Fase 3: protocolo com participantes de Capacidade de interação (M6 a M9) | Lucas Monteiro e Kaleb Macedo | 08/11 | [#40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40) |
