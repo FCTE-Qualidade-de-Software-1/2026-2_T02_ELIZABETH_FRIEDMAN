@@ -3,6 +3,7 @@
 | Nº | Data | Pauta | Link |
 |----|------|-------|------|
 | 01 | 14/10/2026 | Tarefas da Entrega 1 e organização para o Ponto de Controle 1 | [Ata 01](#ata-01) |
+| 04 | 03/11/2026 | Slides das métricas PSM/CID, gráficos de análise e planejamento da semana | [Ata 04](#ata-04) |
 
 ## Ata 01
 
@@ -129,3 +130,39 @@ Ver também: [Métricas PSM/CID](metricas.md).
 | Tarefa | Responsável | Prazo | Issue |
 |--------|-------------|-------|-------|
 | Revisar os slides e apresentação | Todos | 19/10 | -- |
+
+## Ata 04
+
+- **Data e horário:** 03/11/2026, 21h
+- **Local / meio:** on-line
+- **Presentes:**
+    - Eduardo Silva Waski
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
+    - Kaleb de Souza Macedo
+    - Lucas Monteiro Freitas
+- **Ausentes:** nenhum
+
+**Pauta**
+
+1. Criação dos slides para a apresentação das métricas PSM/CID.
+2. Discussão sobre os gráficos para analisar melhor as métricas coletadas.
+3. Planejamento das atividades da semana.
+
+**Decisões**
+
+1. Os slides da apresentação das métricas usam os dados da coleta automática de 03/11/2026 e seguem o roteiro: modelo PSM, adaptações feitas no CID e por quê, um slide por grupo de indicadores (com a pergunta que origina cada métrica, as medidas base e o critério de decisão) e as decisões tomadas a partir dos dados.
+2. Os gráficos devem mostrar cada item medido (PR, issue ou integrante), e não só o valor acumulado, porque a média e o acumulado escondem a distribuição. Exemplos discutidos: no I6, nenhuma issue fechou depois do prazo, mas seis fecharam no próprio dia; no I2, os PRs #16 a #23 foram aprovados só em 21/10, depois do merge, e por isso não contam como aprovados antes do merge.
+3. Os gráficos de análise serão adicionados à documentação de gestão, junto com os dados atualizados.
+
+**Encaminhamentos**
+
+| Tarefa | Responsável | Prazo | Issue |
+|--------|-------------|-------|-------|
+| Preparar e ensaiar a apresentação da gestão PSM/CID | Todos | 04/11 | [#52](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/52) |
+| Atualizar os dados da gestão PSM/CID e elaborar os gráficos de análise | Eduardo Waski e Joaquim Neto | 04/11 | [#55](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/55) |
+| Registrar a ata da reunião de 03/11 | Eduardo Waski | 04/11 | [#54](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/54) |
+| Fase 3: ambiente de avaliação e massa de dados de referência | Júlia Santana | 04/11 | [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) |
+| Fase 3: cronograma da avaliação e consistência com a Fase 2 | Joaquim Neto | 04/11 | [#41](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/41) |
+| Fase 3: protocolo com participantes de Capacidade de interação (M6 a M9) | Lucas Monteiro e Kaleb Macedo | 07/11 | [#40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40) |
