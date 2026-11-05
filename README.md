@@ -4,6 +4,8 @@
 
 **Documentação completa na GitPage:** <https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/>
 
+**Quadro de tarefas (GitHub Project):** <https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/41>
+
 ![Tela inicial do Sua Grade UnB, com o título "Bem-vindos ao Sua Grade UnB", uma ilustração de calendário e os botões "Continuar com o Google" e "Continuar como anônimo"](docs/assets/img/suagradeunb-tela-inicial.png)
 
 *Tela inicial do Sua Grade UnB (captura de 18/10/2026).*

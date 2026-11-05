@@ -7,6 +7,8 @@ Evidências no repositório: commits, issues, milestones, dashboards.
 
 Este documento descreve como o projeto é medido e gerido segundo o **PSM Continuous Iterative Development (CID) Measurement Framework, v2.1** (PSM, NDIA e INCOSE, 15/04/2021). Para cada decisão tomada pela equipe, ele indica o que o framework prevê e como ela foi adaptada. Os **valores** dos indicadores são calculados automaticamente e ficam em [indicadores](indicadores.md) e nos CSVs de `evidencias/`. Este documento define o que é medido e como ler cada indicador. A interpretação dos valores e as decisões de gestão ficam nas [atas](atas.md).
 
+O andamento das tarefas é acompanhado no [quadro do GitHub Project](https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/41), com visões por status, por milestone e por responsável. O quadro serve só para visualizar: horas, estimativas e prazos continuam no corpo das issues e nos milestones, que são as fontes da coleta.
+
 Convenção de referência: **P1**, **P2** e **P3** são as Partes 1, 2 e 3 do framework, seguidas da seção (ex.: P2 8.3). **I1 a I9** são os nove indicadores do projeto (seção 3).
 
 ## 1. Abordagem do framework
