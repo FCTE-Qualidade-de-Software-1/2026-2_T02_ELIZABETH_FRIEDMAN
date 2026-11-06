@@ -14,13 +14,24 @@ from collections import Counter, defaultdict
 from datetime import date, datetime, time, timedelta
 from zoneinfo import ZoneInfo
 
+import graficos_psm as g
+
 PASTA = "docs/gestao/evidencias"
 PAGINA = "docs/gestao/indicadores.md"
 FUSO = ZoneInfo("America/Sao_Paulo")
 PRAZO_REVISAO = timedelta(hours=48)
 LABEL_RETRABALHO = "correcao"
-INDICADORES_EVOLUCAO = ["PRs revisados no prazo", "Retrabalho (issues)",
-                        "Desvio de prazo médio", "Esforço real / estimado"]
+# indicador, título do gráfico e linha de referência (só os limiares já adotados em metricas.md)
+PAINEIS_EVOLUCAO = [
+    ("PRs revisados no prazo", "I1 — PRs revisados no prazo", {"referencia": (100, "meta")}),
+    ("PRs aprovados antes do merge", "I2 — PRs aprovados antes do merge", {"referencia": (100, "meta")}),
+    ("Retrabalho (issues)", "I3 — Retrabalho (issues)", {}),
+    ("Retrabalho (horas)", "I4 — Retrabalho (horas)", {}),
+    ("Desvio de prazo médio", "I6 — Desvio de prazo médio (dias)", {"referencia": (0, "prazo")}),
+    ("Esforço real / estimado", "I8 — Esforço real / estimado", {"faixa": (0.9, 1.1, "0,9 a 1,1")}),
+    ("Issues concluídas sem horas reais", "I9 — Issues concluídas sem horas reais", {"inteiro": True}),
+]
+INDICADORES_EVOLUCAO = [p[0] for p in PAINEIS_EVOLUCAO]
 
 
 def gh(*args):
@@ -319,7 +330,7 @@ def main():
     historico = [indicadores_em(t, registros, prs) for t in datas_de_referencia(inicio, agora)]
     escrever_csv("indicadores.csv", list(historico[-1][0]), [l for ind in historico for l in ind])
 
-    gerar_pagina(historico, agora)
+    gerar_pagina(historico, agora, montar_graficos(registros, prs, agora))
     for aviso in avisos:
         print(f"AVISO: {aviso}")
     print(f"{len(registros)} issues, {len(prs)} PRs, {len(historico)} datas de referência "
@@ -338,7 +349,193 @@ def formatar(valor, unidade):
     return f"{valor} {unidade}"
 
 
-def gerar_pagina(historico, agora):
+def plural(n, palavra):
+    return f"{n} {palavra}" + ("" if n == 1 else "s")
+
+
+def montar_graficos(registros, prs, agora):
+    """Gráficos por item medido (PR, issue ou integrante), como decidido na ata 04."""
+    def dh(dt):
+        return dt.strftime("%d/%m %H:%M")
+
+    graficos = defaultdict(list)
+
+    itens = []
+    for p in prs:
+        aprovacao = p["primeira_aprovacao"]
+        if aprovacao:
+            espera = (aprovacao - p["criado"]).total_seconds() / 3600
+            if p["no_prazo"]:
+                classe, situacao = "g-azul", "Aprovado antes do merge, em até 48 h"
+            elif p["antes_do_merge"]:
+                classe, situacao = "g-verde", "Aprovado antes do merge, depois de 48 h"
+            else:
+                classe, situacao = "g-laranja", "Aprovado só depois do merge"
+            texto_aprovacao = f"1ª aprovação: {dh(aprovacao)} ({g.num(espera)} h após a abertura)"
+        else:
+            espera, classe, situacao = None, "g-laranja", "Sem aprovação de outra pessoa"
+            texto_aprovacao = "1ª aprovação: nenhuma"
+        itens.append({"rotulo": f"#{p['numero']}", "valor": espera, "classe": classe,
+                      "dica": f"PR #{p['numero']} — {p['autor']}\nAberto: {dh(p['criado'])}\n"
+                              f"Mergeado: {dh(p['mergeado'])}\n{texto_aprovacao}\n{situacao}"})
+    if itens:
+        graficos["Desempenho dos processos"].append((
+            "I1 e I2 — Tempo até a aprovação de cada PR",
+            g.colunas(itens, "horas entre a abertura e a 1ª aprovação",
+                      "Horas até a primeira aprovação de cada PR mergeado",
+                      "Cada coluna é um PR mergeado. A altura é o tempo entre a abertura e a primeira aprovação "
+                      "de outra pessoa. I1 conta só as colunas azuis, e I2 conta as azuis e as verdes. "
+                      "Passe o mouse sobre a coluna para ver as datas.",
+                      [("g-azul", "aprovado antes do merge, em até 48 h"),
+                       ("g-verde", "aprovado antes do merge, depois de 48 h"),
+                       ("g-laranja", "aprovado só depois do merge (× = sem aprovação)")],
+                      referencia=(PRAZO_REVISAO.total_seconds() / 3600, "limite de 48 h"))))
+
+    concluidas = []
+    for r in registros:
+        situacao, fechada = situacao_em(r, agora)
+        if situacao == "concluida":
+            concluidas.append((r, fechada))
+
+    itens = []
+    for r, _ in concluidas:
+        h = round(sum(x for _, _, x in r["horas"]), 2)
+        retrabalho = retrabalho_ate(r, agora)
+        motivo = "reaberta" if r["reaberturas"] else f"label {LABEL_RETRABALHO}"
+        itens.append({"rotulo": f"#{r['numero']}", "valor": h or None,
+                      "classe": "g-laranja" if retrabalho else "g-cinza",
+                      "dica": f"#{r['numero']} {r['titulo']}\n"
+                              + (f"{g.num(h)} h reais" if h else "Sem horas reais registradas")
+                              + (f"\nRetrabalho ({motivo})" if retrabalho else "")})
+    if itens:
+        graficos["Desempenho dos processos"].append((
+            "I3 e I4 — Horas de cada issue concluída e retrabalho",
+            g.colunas(itens, "horas reais", "Horas reais de cada issue concluída, com o retrabalho em destaque",
+                      "Cada coluna é uma issue concluída, com as horas reais registradas. I3 é a fração de colunas "
+                      "laranja, e I4 é a fração das horas que elas somam.",
+                      [("g-laranja", f"retrabalho (label {LABEL_RETRABALHO} ou reaberta)"),
+                       ("g-cinza", "demais issues concluídas (× = sem horas reais)")])))
+
+    por_ms = defaultdict(list)
+    for r in registros:
+        if r["milestone"] and situacao_em(r, agora)[0] != "descartada":
+            por_ms[r["milestone"]].append(r)
+    grupos = []
+    for ms in sorted(por_ms, key=lambda m: por_ms[m][0]["prazo"] or date.max):
+        lista, prazo, feitas, issues = por_ms[ms], por_ms[ms][0]["prazo"], 0, []
+        for r in lista:
+            situacao, fechada = situacao_em(r, agora)
+            concluida = situacao == "concluida"
+            feitas += concluida
+            estado = f"Concluída em {fechada.strftime('%d/%m')}" if concluida else "Aberta"
+            issues.append((r["numero"], concluida, f"#{r['numero']} {r['titulo']}\n{estado}"))
+        grupos.append({"titulo": ms, "subtitulo": f"prazo {prazo.strftime('%d/%m')}" if prazo else "sem prazo",
+                       "resumo": f"{feitas} de {len(lista)} · {g.num(pct(feitas, len(lista)))}%", "issues": issues})
+    if grupos:
+        graficos["Calendário e progresso"].append((
+            "I5 — Issues de cada milestone",
+            g.grade_issues(grupos, "Issues de cada milestone, concluídas e abertas",
+                           "Cada quadrado é uma issue do milestone, com o número dela. As descartadas ficam de fora. "
+                           "I5 é a fração de quadrados cheios.",
+                           [("g-azul", "concluída"), ("g-aberta", "aberta")])))
+
+    pontos = []
+    for r, fechada in concluidas:
+        if not r["prazo"]:
+            continue
+        desvio = (fechada.date() - r["prazo"]).days
+        if desvio < 0:
+            classe, quando = "g-azul", f"{plural(-desvio, 'dia')} antes do prazo"
+        elif desvio == 0:
+            classe, quando = "g-cinza", "no dia do prazo"
+        else:
+            classe, quando = "g-laranja", f"{plural(desvio, 'dia')} depois do prazo"
+        pontos.append({"valor": desvio, "classe": classe,
+                       "dica": f"#{r['numero']} {r['titulo']}\n{r['milestone']}, prazo {r['prazo'].strftime('%d/%m')}"
+                               f"\nFechada em {fechada.strftime('%d/%m')}, {quando}"})
+    if pontos:
+        graficos["Calendário e progresso"].append((
+            "I6 — Desvio de prazo de cada issue concluída",
+            g.pontos_empilhados(pontos, "dias entre o fechamento da issue e o prazo do milestone",
+                                "Desvio de prazo de cada issue concluída, em dias",
+                                "Cada ponto é uma issue concluída. Issues com o mesmo desvio ficam empilhadas. "
+                                "I6 é a média desses valores, e a média não mostra quantas issues fecharam no "
+                                "próprio dia do prazo.",
+                                [("g-azul", "antes do prazo"), ("g-cinza", "no dia do prazo"),
+                                 ("g-laranja", "depois do prazo")])))
+
+    por_pessoa = defaultdict(lambda: [0.0, 0])
+    for r in registros:
+        for _, pessoa, h in r["horas"]:
+            por_pessoa[pessoa][0] += h
+            por_pessoa[pessoa][1] += 1
+    total = sum(h for h, _ in por_pessoa.values())
+    if total:
+        media = total / len(por_pessoa)
+        itens = [{"rotulo": pessoa, "valor": h, "texto_valor": f"{g.num(h)} h · {g.num(pct(h, total))}%",
+                  "dica": f"{pessoa}: {g.num(h)} h em {plural(n, 'registro')}, {g.num(pct(h, total))}% do total"}
+                 for pessoa, (h, n) in sorted(por_pessoa.items(), key=lambda kv: (-kv[1][0], kv[0]))]
+        graficos["Recursos e custos"].append((
+            "I7 — Horas reais de cada integrante",
+            g.barras_horizontais(itens, "Horas reais registradas por integrante",
+                                 "Cada barra é a soma das horas reais que o integrante registrou nas issues, com a "
+                                 "participação no total. A linha tracejada é a média do grupo.",
+                                 (media, f"média {g.num(media)} h"))))
+
+    pontos = []
+    for r, _ in concluidas:
+        real = round(sum(h for _, _, h in r["horas"]), 2)
+        if r["estimativa"] and real:
+            pontos.append({"x": r["estimativa"], "y": real,
+                           "dica": f"#{r['numero']} {r['titulo']}: {g.num(r['estimativa'])} h estimadas, "
+                                   f"{g.num(real)} h reais"})
+    if pontos:
+        graficos["Recursos e custos"].append((
+            "I8 — Horas estimadas e reais de cada issue concluída",
+            g.dispersao(pontos, "horas estimadas", "horas reais", "Horas estimadas e reais de cada issue concluída",
+                        "Cada ponto é uma issue concluída com estimativa e horas reais (×n = n issues com os "
+                        "mesmos valores). Na linha tracejada a estimativa foi exata. I8 divide a soma das horas "
+                        "reais pela soma das estimadas, então as issues maiores pesam mais.")))
+    return graficos
+
+
+def valor_curto(valor, unidade):
+    if unidade == "%":
+        return f"{g.num(valor)}%"
+    if unidade == "razão":
+        return f"{valor:.2f}".replace(".", ",")
+    return g.num(valor)
+
+
+def graficos_evolucao(historico):
+    paineis = []
+    for indicador, titulo, opcoes in PAINEIS_EVOLUCAO:
+        pontos, unidade = [], ""
+        for ind in historico:
+            dia = date.fromisoformat(ind[0]["data_referencia"]).strftime("%d/%m")
+            item = next((i for i in ind if i["indicador"] == indicador), None)
+            if item is None or item["valor"] == "":
+                pontos.append((dia, None, f"{dia}: sem valor"))
+                continue
+            unidade = item["unidade"]
+            pontos.append((dia, item["valor"], f"{dia}: {formatar(item['valor'], unidade)}\n{item['detalhe']}"))
+        valores = [v for _, v, _ in pontos if v is not None]
+        if not valores:
+            continue
+        if unidade == "%":
+            dominio = (0, 100)
+        elif unidade == "razão":
+            dominio = (min(valores + [0.8]), max(valores + [1.2]))
+        else:
+            dominio = (min(valores + [0]), max(valores + [1]))
+        paineis.append(g.painel_linha(titulo, pontos, lambda v, u=unidade: valor_curto(v, u), dominio, **opcoes))
+    return g.paineis(paineis, "Valor de cada indicador ao fim de cada domingo e na data da última coleta. A linha "
+                              "tracejada marca a meta adotada (I1 e I2) ou o prazo (I6), e a faixa em I8 é o intervalo "
+                              "de 0,90 a 1,10 do critério de decisão. I9 tem meta 0. I3, I4 e I6 ainda não têm limiar "
+                              "definido pela equipe.")
+
+
+def gerar_pagina(historico, agora, graficos):
     atual = historico[-1]
     linhas = [
         "# Indicadores PSM/CID (coleta automática)",
@@ -347,18 +544,22 @@ def gerar_pagina(historico, agora):
         "",
         f"Última coleta: **{agora.strftime('%d/%m/%Y')}**. Os valores são calculados a partir das issues, "
         "milestones e pull requests do repositório. A definição dos indicadores e as decisões de gestão "
-        "estão em [Métricas PSM/CID](metricas.md).",
+        "estão em [Métricas PSM/CID](metricas.md). Cada tabela vem acompanhada de gráficos que mostram os itens "
+        "medidos um a um (PR, issue ou integrante). Passe o mouse sobre um item para ver os dados dele.",
         "",
     ]
-    categoria = None
+    categorias = defaultdict(list)
     for i in atual:
-        if i["categoria"] != categoria:
-            categoria = i["categoria"]
-            linhas += ["", f"## {categoria}", "", "| Indicador | Valor | Detalhe |", "|---|---|---|"]
-        linhas.append(f"| {i['indicador']} | {formatar(i['valor'], i['unidade'])} | {i['detalhe']} |")
+        categorias[i["categoria"]].append(i)
+    for categoria, itens in categorias.items():
+        linhas += ["", f"## {categoria}", "", "| Indicador | Valor | Detalhe |", "|---|---|---|"]
+        linhas += [f"| {i['indicador']} | {formatar(i['valor'], i['unidade'])} | {i['detalhe']} |" for i in itens]
+        for titulo, html in graficos.get(categoria, []):
+            linhas += ["", f"### {titulo}", "", html]
 
     linhas += ["", "## Evolução semanal", "",
                "Valores ao fim de cada domingo (23h59) e na data da última coleta.", "",
+               graficos_evolucao(historico), "",
                "| Data | " + " | ".join(INDICADORES_EVOLUCAO) + " |",
                "|---|" + "---|" * len(INDICADORES_EVOLUCAO)]
     for ind in historico:

@@ -3,6 +3,8 @@
 | Nº | Data | Pauta | Link |
 |----|------|-------|------|
 | 01 | 14/10/2026 | Tarefas da Entrega 1 e organização para o Ponto de Controle 1 | [Ata 01](#ata-01) |
+| 02 | 16/10/2026 | Requisitos e cronograma da Entrega 1, divisão em issues e responsáveis | [Ata 02](#ata-02) |
+| 03 | 18/10/2026 | Conteúdo, divisão e ensaio dos slides do Ponto de Controle 1 | [Ata 03](#ata-03) |
 | 04 | 03/11/2026 | Slides das métricas PSM/CID, gráficos de análise e planejamento da semana | [Ata 04](#ata-04) |
 
 ## Ata 01
@@ -11,9 +13,9 @@
 - **Local / meio:** presencial na aula
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum
@@ -46,9 +48,9 @@ Ver também: [Métricas PSM/CID](metricas.md).
 - **Local / meio:** on-line
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum
@@ -64,7 +66,7 @@ Ver também: [Métricas PSM/CID](metricas.md).
 
 1. A Fase 1 (propósito, partes interessadas, descrição do produto, modelo de qualidade, priorização, escopo e ODS) ficará com o Eduardo Waski, com prazo em 18/10, já que o PC1 pode acontecer em 19/10.
 2. A Fase 2 (GQM de Usabilidade, Eficiência de desempenho e Manutenibilidade, critérios de julgamento e diagrama GQM) será feita em dupla por Lucas Monteiro e kaleb Macedo, com meta em 18/10.
-3. O artigo ficará com o João Paulo e Julia Santana.
+3. O artigo ficará com o João Paulo e Júlia Santana.
 4. O Joaquim Neto ficará com a gestão (métricas PSM/CID e atas), com o fechamento da E1 (GitPage, contribuição e release) e com o material do PC1.
 5. Cada tarefa deve ser revisada por outro membro antes de ser publicada na GitPage, e o nome de quem revisou será registrado na *issue*.
 6. O acompanhamento será feito no GitHub, com *milestones* por marco (PC1 e E1) e *labels* por fase (`fase-1`, `fase-2`), por produto (`artigo`, `gitpage`, `gestao`) e por tipo de trabalho.
@@ -106,9 +108,9 @@ Ver também: [Métricas PSM/CID](metricas.md).
 - **Local / meio:** on-line
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum

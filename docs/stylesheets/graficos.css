@@ -1,0 +1,190 @@
+/* Gráficos da página de indicadores, gerados por scripts/graficos_psm.py.
+   Texto, grade e eixos usam as cores do tema (claro e escuro); as cores das séries mudam com o tema. */
+
+:root {
+  --g-azul: #2a78d6;
+  --g-laranja: #eb6834;
+  --g-verde: #1baf7a;
+  --g-cinza: #898781;
+}
+
+[data-md-color-scheme="slate"] {
+  --g-azul: #3987e5;
+  --g-laranja: #d95926;
+  --g-verde: #199e70;
+}
+
+.md-typeset figure.grafico {
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 1em 0 1.6em;
+}
+
+.grafico-rolagem {
+  overflow-x: auto;
+}
+
+.grafico svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 540px;
+  font-family: var(--md-text-font-family);
+  font-variant-numeric: tabular-nums;
+}
+
+.grafico text {
+  fill: var(--md-default-fg-color--light);
+  font-size: 11px;
+}
+
+.grafico .g-valor,
+.grafico .g-rotulo {
+  fill: var(--md-default-fg-color);
+}
+
+.grafico .g-valor {
+  font-weight: 600;
+}
+
+/* contorno na cor do fundo para o texto continuar legível sobre linhas e grade */
+.grafico .g-valor,
+.grafico .g-texto-ref,
+.grafico .g-dica-canto {
+  paint-order: stroke;
+  stroke: var(--md-default-bg-color);
+  stroke-width: 3px;
+  stroke-linejoin: round;
+}
+
+.grafico .g-titulo-eixo,
+.grafico .g-texto-ref,
+.grafico .g-dica-canto {
+  font-size: 10.5px;
+}
+
+.grafico .g-dica-canto {
+  fill: var(--md-default-fg-color--lighter);
+}
+
+.grafico .g-grade {
+  stroke: var(--md-default-fg-color--lightest);
+  stroke-width: 1;
+}
+
+.grafico .g-base {
+  stroke: var(--md-default-fg-color--lighter);
+  stroke-width: 1;
+}
+
+.grafico .g-ref {
+  stroke: var(--md-default-fg-color--light);
+  stroke-width: 1;
+  stroke-dasharray: 4 3;
+}
+
+.grafico .g-faixa {
+  fill: var(--md-default-fg-color--lightest);
+}
+
+.grafico .g-alvo {
+  fill: transparent;
+}
+
+.grafico .g-azul { fill: var(--g-azul); }
+.grafico .g-laranja { fill: var(--g-laranja); }
+.grafico .g-verde { fill: var(--g-verde); }
+.grafico .g-cinza { fill: var(--g-cinza); }
+
+.grafico .g-x {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.grafico .g-x.g-laranja { stroke: var(--g-laranja); }
+.grafico .g-x.g-cinza { stroke: var(--g-cinza); }
+
+.grafico .g-ponto {
+  stroke: var(--md-default-bg-color);
+  stroke-width: 2;
+}
+
+.grafico .g-linha {
+  fill: none;
+  stroke: var(--g-azul);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.grafico .g-chip-feita { fill: var(--g-azul); }
+.grafico .g-chip-aberta {
+  fill: transparent;
+  stroke: var(--g-cinza);
+  stroke-width: 1.5;
+}
+
+.grafico .g-chip-feita-texto,
+.grafico .g-chip-aberta-texto {
+  font-size: 10px;
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.grafico .g-chip-feita-texto { fill: #ffffff; }
+
+.grafico .marca:hover > :not(.g-alvo):not(text) {
+  opacity: 0.75;
+}
+
+.grafico-legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 1.2em;
+  margin-bottom: 0.4em;
+  font-size: 0.7rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.grafico-legenda i {
+  display: inline-block;
+  width: 0.75em;
+  height: 0.75em;
+  margin-right: 0.4em;
+  border-radius: 2px;
+  vertical-align: -0.05em;
+}
+
+.grafico-legenda i.g-azul { background: var(--g-azul); }
+.grafico-legenda i.g-laranja { background: var(--g-laranja); }
+.grafico-legenda i.g-verde { background: var(--g-verde); }
+.grafico-legenda i.g-cinza { background: var(--g-cinza); }
+.grafico-legenda i.g-aberta { border: 1.5px solid var(--g-cinza); }
+
+.md-typeset .grafico figcaption {
+  max-width: none;
+  margin: 0.5em 0 0;
+  font-size: 0.7rem;
+  font-style: normal;
+  text-align: left;
+  color: var(--md-default-fg-color--light);
+}
+
+.grafico-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1em 1.6em;
+}
+
+.grafico-grade svg {
+  min-width: 0;
+}
+
+.md-typeset .grafico-painel-titulo {
+  margin: 0 0 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--md-default-fg-color);
+}
