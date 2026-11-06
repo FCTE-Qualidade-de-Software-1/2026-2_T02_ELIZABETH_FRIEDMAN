@@ -186,6 +186,7 @@ Cada indicador segue os campos do *template* das especificações da Parte 2, se
 |---|---|---|---|---|
 | Indicadores I1 a I9 | Issues (corpo, labels e eventos), milestones e PRs | Domingo 23:59, a cada issue fechada e a cada publicação da GitPage | Workflow "Publicar GitPage" (`pages.yml`), que roda `scripts/coletar_metricas_psm.py` | Em uso desde o PR #28 |
 | Valores calculados | `docs/gestao/indicadores.md` e CSVs em `docs/gestao/evidencias/` | A cada execução do script, com o histórico recalculado por inteiro | Gerados pelo script | Em uso desde o PR #28 |
+| Gráficos dos indicadores | Os mesmos dados da coleta, item a item (PR, issue ou integrante) e a evolução semanal | A cada execução do script | Gerados em SVG por `scripts/graficos_psm.py` dentro da página de [indicadores](indicadores.md), sem biblioteca externa | Em uso (issue #55) |
 | Horas reais por issue e pessoa | Seção "Horas reais" do corpo da issue | Registro pelo responsável. Leitura a cada coleta | Lidas pelo script e copiadas para `evidencias/horas.csv` | Em uso |
 | Horas estimadas por issue | Seção "Estimativa (horas)" no corpo da issue (template) | No planejamento da iteração | Preenchimento manual pelo responsável e leitura pelo script | Em uso |
 | Interpretação e decisão | Seção 6 e atas | Revisão de cada iteração | Manual | Em uso |
