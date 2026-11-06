@@ -15,11 +15,11 @@ issue,titulo,milestone,responsaveis,situacao,criada_em,fechada_em,reaberturas,pr
 24,Artigo — Modelo SBC em coluna única e redução do conteúdo da E1,E1 — Fases 1 e 2,camposs04 jpnunes2210,concluida,2026-10-21T19:11-03:00,2026-10-26T19:03-03:00,1,2026-10-26,0,10.0,6.0,sim
 25,Gestão — Métricas PSM/CID com dados reais e alinhadas ao modelo,E1 — Fases 1 e 2,JoaquimNetoo,concluida,2026-10-21T19:11-03:00,2026-10-26T22:56-03:00,0,2026-10-26,0,5.0,5.5,sim
 26,Gestão — Automatizar a coleta das métricas PSM/CID,E1 — Fases 1 e 2,EduardoWaski JoaquimNetoo,concluida,2026-10-21T19:11-03:00,2026-10-26T19:50-03:00,0,2026-10-26,0,8.0,8.0,sim
-27,Gestão — Criar o GitHub Project do repositório,E1 — Fases 1 e 2,EduardoWaski,aberta,2026-10-21T19:11-03:00,,0,2026-10-26,,2.0,,sim
+27,Gestão — Criar o GitHub Project do repositório,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-21T19:11-03:00,2026-11-05T10:48-03:00,0,2026-10-26,10,2.0,1.5,sim
 30,Artigo — Atualizar a seção de PSM/CID com os indicadores da coleta automática,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-26T20:14-03:00,2026-10-26T21:02-03:00,0,2026-10-26,0,1.0,1.0,sim
 32,Release da E1 — snapshot dos indicadores e publicação,E1 — Fases 1 e 2,EduardoWaski,concluida,2026-10-26T20:52-03:00,2026-10-26T23:49-03:00,0,2026-10-26,0,1.5,1.5,nao
 36,PC2 — Preparar material da apresentação,PC2 — Ponto de Controle 2,,aberta,2026-11-02T16:12-03:00,,0,2026-11-16,,4.0,,nao
-37,Fase 3 — Ambiente de avaliação e massa de dados de referência,E2 — Fases 3 e 4,camposs04,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,4.0,,nao
+37,Fase 3 — Ambiente de avaliação e massa de dados de referência,E2 — Fases 3 e 4,camposs04,concluida,2026-11-02T16:12-03:00,2026-11-05T00:07-03:00,0,2026-11-22,-17,4.0,,nao
 38,Fase 3 — Método e roteiros de Manutenibilidade (M1.1 a M1.4),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,5.0,,nao
 39,Fase 3 — Método e roteiros de Eficiência de desempenho (M2 a M5),E2 — Fases 3 e 4,,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
 40,Fase 3 — Protocolo com participantes de Capacidade de interação (M6 a M9),E2 — Fases 3 e 4,LucasMF1 kalebmacedo,aberta,2026-11-02T16:12-03:00,,0,2026-11-22,,6.0,,nao
