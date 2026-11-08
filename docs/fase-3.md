@@ -312,4 +312,39 @@ Cada linha corresponde a uma issue do repositório. A coluna **Fim** é a meta r
 
 ---
 
+## 4. Consistência com a Fase 2
+
+<!--
+F3-C8: para cada métrica da Fase 2, indicar explicitamente o método e os recursos que a medem.
+Esta seção registra o que a Fase 3 fixou, o que mudou em relação à Fase 2 e o que ainda está pendente.
+-->
+
+A Fase 3 não altera nenhuma métrica, fórmula nem faixa de pontuação da [Fase 2](fase-2.md).
+A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
+
+### 4.1 O que mudou em relação à Fase 2 e por quê
+
+| # | Tema | Na Fase 2 | Na Fase 3 | Por quê e efeito |
+|---|------|-----------|-----------|------------------|
+| 1 | Máquina e Docker | Docker indisponível na distribuição WSL inspecionada em 18/10 ([3.2](fase-2.md#32-verificacao-de-viabilidade-da-coleta)); Node 24.19.0, npm 11.17.0 | Ubuntu 24.04.2 LTS, Docker 29.1.2, Compose v2.40.3; quatro serviços de pé em 03/11 ([2.1](#21-versao-avaliada-e-subida-do-ambiente), [2.2](#22-requisitos-do-avaliador)); Node v22.22.3, npm 11.16.0 | A coleta passou para outra máquina. A pendência 1 da Fase 2 está atendida. As ferramentas de análise estática de M1.1 e M1.2 devem registrar de novo as versões do host, pois as execuções de 18/10 foram só verificação inicial |
+| 2 | Massa de M2–M5 | Conjuntos fixos a definir na Fase 3, sem acionar o SIGAA | Mock do projeto (`api/utils/mock/sigaa.html`): departamento 1499, 14 disciplinas e 43 turmas, todas de Pós-Graduação em Política Social ([2.3](#23-massa-de-referencia)) | É o único conjunto fixo e reproduzível sem rede. Os resultados valem para essa massa, não para o volume de uma matrícula real; a Fase 2 já limita as conclusões nesse sentido |
+| 3 | Sessão na conta (M5) | Conta de teste com autenticação funcional por OAuth local | O login Google fica fora do escopo ([Fase 1, Tabela 12](fase-1.md#62-o-que-fica-fora-do-escopo)); a API aceita um *token* simulado, mas o *frontend* não usa esse caminho, então o roteiro injeta a sessão (**a confirmar** no piloto) | Evita depender de credenciais reais. Se a sessão não puder ser reproduzida, vale a regra da Fase 2: registrar a limitação e não atribuir resultado à modalidade conta |
+| 4 | Período da massa | Não especificado | A massa é gravada no ano e período correntes (`/courses/year-period/`), e o valor é registrado em cada coleta ([2.3](#23-massa-de-referencia)) | O *frontend* só oferece o período atual e o seguinte |
+
+### 4.2 Decisões que a Fase 2 deixou para a Fase 3
+
+| Decisão pendente na Fase 2 | Situação | Issue |
+|----------------------------|----------|------|
+| Fixar versões de Playwright e Chromium; execução sequencial sem nova tentativa | Fixadas: 1.62.1 e 151.0.7922.34; `workers: 1`, `retries: 0` ([2.4](#24-playwright-e-chromium)) | #37, concluído |
+| Reprodução local e massa de referência | Feitas em 03/11 ([2.1](#21-versao-avaliada-e-subida-do-ambiente), [2.3](#23-massa-de-referencia)) | #37, concluído |
+| Tempo máximo de espera por operação (maior que $L_j$) | Pendente | #39 |
+| Seletores e sinais de conclusão visual de M2–M5 | Pendente | #39 |
+| Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Pendente; conferir no piloto | #38 |
+| Executor de C1 e C2 e fichas das mudanças | Pendente | #38 |
+| Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Pendente | #40 |
+| Inventário de riscos de M8 e gabarito de M9 | Pendente | #40 |
+| Pilotos de todas as métricas | Pendente | #38, #39, #40 |
+
+---
+
 Anterior: [Fase 2](fase-2.md) · Próxima: [Fase 4 — Execução e resultados](fase-4.md).
