@@ -1,0 +1,360 @@
+{
+  "incluidos": [
+    "api/api/__init__.py",
+    "api/api/admin.py",
+    "api/api/apps.py",
+    "api/api/decorators.py",
+    "api/api/management/__init__.py",
+    "api/api/management/commands/__init__.py",
+    "api/api/management/commands/initadmin.py",
+    "api/api/management/commands/updatedb.py",
+    "api/api/models.py",
+    "api/api/serializers.py",
+    "api/api/swagger.py",
+    "api/api/urls.py",
+    "api/api/views/delete_schedule.py",
+    "api/api/views/get_schedules.py",
+    "api/api/views/save_schedule.py",
+    "api/api/views/schedules.py",
+    "api/api/views/utils.py",
+    "api/api/views/views.py",
+    "api/core/__init__.py",
+    "api/core/asgi.py",
+    "api/core/settings/base.py",
+    "api/core/settings/dev.py",
+    "api/core/settings/prod.py",
+    "api/core/urls.py",
+    "api/core/wsgi.py",
+    "api/users/__init__.py",
+    "api/users/admin.py",
+    "api/users/apps.py",
+    "api/users/backends/google.py",
+    "api/users/backends/utils.py",
+    "api/users/models.py",
+    "api/users/simplejwt/decorators.py",
+    "api/users/simplejwt/serializers.py",
+    "api/users/urls.py",
+    "api/users/views.py",
+    "api/utils/__init__.py",
+    "api/utils/apps.py",
+    "api/utils/db_handler.py",
+    "api/utils/functions.py",
+    "api/utils/ira_calculator.py",
+    "api/utils/json_pretty.py",
+    "api/utils/management/__init__.py",
+    "api/utils/management/commands/__init__.py",
+    "api/utils/management/commands/updatemock.py",
+    "api/utils/schedule_generator.py",
+    "api/utils/search.py",
+    "api/utils/sessions.py",
+    "api/utils/urls.py",
+    "api/utils/views.py",
+    "api/utils/web_scraping.py",
+    "web/app/components/AsideButton.tsx",
+    "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+    "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "web/app/components/AsideSchedulePopUp/types/types.ts",
+    "web/app/components/Button.tsx",
+    "web/app/components/ClassInfo.tsx",
+    "web/app/components/DisciplineBox.tsx",
+    "web/app/components/InfoHeader.tsx",
+    "web/app/components/LoadingScreen.tsx",
+    "web/app/components/LogoImageHandler.tsx",
+    "web/app/components/Modal/Modal.tsx",
+    "web/app/components/Protected.tsx",
+    "web/app/components/Schedule/Schedule.tsx",
+    "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "web/app/components/SignInSection.tsx",
+    "web/app/contexts/ClassesToShowContext.tsx",
+    "web/app/contexts/SchedulesContext.tsx",
+    "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "web/app/contexts/SelectedClassesContext/types.ts",
+    "web/app/contexts/ShowPopUpContentContext.tsx",
+    "web/app/contexts/UserContext.tsx",
+    "web/app/contexts/YearPeriodContext.tsx",
+    "web/app/hooks/useClassesToShow.ts",
+    "web/app/hooks/useSchedules.ts",
+    "web/app/hooks/useSelectedClasses.ts",
+    "web/app/hooks/useShowPopUpContent.ts",
+    "web/app/hooks/useUser.ts",
+    "web/app/hooks/useWindowDimensions.ts",
+    "web/app/hooks/useYearPeriod.ts",
+    "web/app/layout.tsx",
+    "web/app/not-found.tsx",
+    "web/app/page.tsx",
+    "web/app/schedules/home/components/AddDisciplineButton.tsx",
+    "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "web/app/schedules/home/page.tsx",
+    "web/app/schedules/info/page.tsx",
+    "web/app/schedules/layout.tsx",
+    "web/app/schedules/mygrades/page.tsx",
+    "web/app/schedules/profile/page.tsx",
+    "web/app/utils/api/deleteSchedule.ts",
+    "web/app/utils/api/generateSchedule.ts",
+    "web/app/utils/api/getSchedules.ts",
+    "web/app/utils/api/logout.ts",
+    "web/app/utils/api/registerWithGoogle.ts",
+    "web/app/utils/api/retrieveYearAndPeriod.ts",
+    "web/app/utils/api/saveSchedule.ts",
+    "web/app/utils/api/searchDiscipline.ts",
+    "web/app/utils/dates.ts",
+    "web/app/utils/request.ts",
+    "web/app/utils/retrieveAccessToken.ts",
+    "web/app/utils/settings.ts",
+    "web/app/utils/settingsWithAuth.ts",
+    "web/app/utils/signInWithGoogle.ts",
+    "web/app/utils/toast.ts",
+    "web/tailwind.config.ts"
+  ],
+  "excluidos": [
+    {
+      "arquivo": "api/api/migrations/0001_initial.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0002_auto_20231113_2029.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0003_remove_class_workload_class_special_dates_and_more.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0004_alter_class_special_dates.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0004_auto_20231126_1740.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0005_discipline_unicode_name.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0006_merge_20231127_2255.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0007_schedule.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/0008_schedule_created_at.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/migrations/__init__.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/api/tests/__init__.py",
+      "motivo": "tests"
+    },
+    {
+      "arquivo": "api/api/tests/test_error_request_body_schedule_save.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_generate_schedule_api.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_get_schedules_api.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_models.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_schedule_delete.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_schedule_models.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_schedule_save.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_search_api.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/api/tests/test_year_period_api.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/users/migrations/0001_initial.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/users/migrations/0002_user_picture_url_alter_user_first_name_and_more.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/users/migrations/__init__.py",
+      "motivo": "migrations"
+    },
+    {
+      "arquivo": "api/users/tests/__init__.py",
+      "motivo": "tests"
+    },
+    {
+      "arquivo": "api/users/tests/test_session_login.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/users/tests/test_session_logout.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/users/tests/test_session_register.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/utils/tests/__init__.py",
+      "motivo": "tests"
+    },
+    {
+      "arquivo": "api/utils/tests/test_database_handler.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/utils/tests/test_date_utils.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/utils/tests/test_ira_calculator.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/utils/tests/test_schedule_generator.py",
+      "motivo": "teste ou declaração gerada"
+    },
+    {
+      "arquivo": "api/utils/tests/test_web_scraping.py",
+      "motivo": "teste ou declaração gerada"
+    }
+  ],
+  "sha256": {
+    "api/api/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/api/admin.py": "fcce3c58a5b68d6969d5698eb796be1f1bb04bbc028d345b1b8ba21bd612a319",
+    "api/api/apps.py": "b4db90de55cd6dbcaa174df55724a73e2ff33f64760b0f3f12e3f5903944e314",
+    "api/api/decorators.py": "b27eb5bda6cceb7ec9cf198910b4623f3122ec6f9a19e03a8066e66f8a498b29",
+    "api/api/management/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/api/management/commands/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/api/management/commands/initadmin.py": "21cdc9b14658387c6052d52a7b4bbdcfabf189435b298e918707ec68e6f66885",
+    "api/api/management/commands/updatedb.py": "eb8df1891279c4545eb3315e6539031eab4c7da69a7036206c0253c74d78e182",
+    "api/api/models.py": "914e65da154ef70280b61d21b66acad45d86658c58d49cb2209003605ff16ca4",
+    "api/api/serializers.py": "90119a42311310cf6be52f90ee2c9a2e0bee21aaf4471c270a669c473b2d3d0d",
+    "api/api/swagger.py": "c4d0307a3a8fce2d14aeaa8863e071353c87fdf5836c5694d12fc89f2aa33484",
+    "api/api/urls.py": "b429cfe37756c8062db565c89bd86a4cf43aad5d08375f6ac0230a191f05a5cb",
+    "api/api/views/delete_schedule.py": "a0726ee1f76489f018202322a43aacedb75b6238f7c06e5f7dfbf518e678cb87",
+    "api/api/views/get_schedules.py": "b24bd5f9efa89d2b8963417e855b92ce073691a835df0bad5086f843a04f92db",
+    "api/api/views/save_schedule.py": "442cdaea90f0a949d6f2acc50eb71f44b0c959404dda9cd0a409dda377fb24d1",
+    "api/api/views/schedules.py": "a33cdcc1e2acc11d636102fe125dfc27d42606e2916c7379d86cbe24a8856847",
+    "api/api/views/utils.py": "b31c1da70cc4d97487891321bb8495488970240cf7bc7d869cd8a9d76588c2d1",
+    "api/api/views/views.py": "272e693455c22d979ae29950937c0c361dc6b84f12bb78cdead25ae96e3a5ae3",
+    "api/core/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/core/asgi.py": "e8b725959031b1cf4ff5533aa597b1ca721c691401e83cf844d2960fd0d69dc3",
+    "api/core/settings/base.py": "8a22b227ae17275b3ef0abccc0ca438223ae9e2794611535e7e49821bf4b897e",
+    "api/core/settings/dev.py": "c212f180ac39ebe5b0ec3652d45193b84043ee79ae3774f3a0056c74b8c2b988",
+    "api/core/settings/prod.py": "544d59e3d0e6065c7e5d708e0884f5dd6cab2f208fab1a99f377bd31ba54856e",
+    "api/core/urls.py": "18b8bcca7a23a83e4bdd4eb18598ead315e82b850aa7474874a7124bd7e980a6",
+    "api/core/wsgi.py": "c84510f03819fbefc439640ad369d1debe348b69a41539a25fcbe4f757565220",
+    "api/users/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/users/admin.py": "dadaf3081b2f7f28c6ddbaf6ef20244f6246c62e49b7e1f9201cbebfc82c1b4b",
+    "api/users/apps.py": "bb73c06360191905d2587d834a443594e4c8566df7a946f378a96cd09f07f0da",
+    "api/users/backends/google.py": "111092fc382bc3baea47b8cc373a1c2e172421c1cae6c55fe8d5f964948753d8",
+    "api/users/backends/utils.py": "cb6c5d4c46badaa2f911d2e660e6331f9440ebf69228977980b1216675484ace",
+    "api/users/models.py": "e5660a2e93ac9db4e9f9929ec5f368a453c1abe3267a4c59830a22f7e38bf9a4",
+    "api/users/simplejwt/decorators.py": "405e2ac5efa8c9f3452b34b4a86c177935b14edc63623cc9d18ac90de44dac6c",
+    "api/users/simplejwt/serializers.py": "0b88370b92dee70a84f7858c5b762cf23a263a2211200294f4ecf32bcac517f5",
+    "api/users/urls.py": "48ab57115d12edfc0301db371a54a1acaf68f989c1d02321c4293e0a6f19f671",
+    "api/users/views.py": "74185e9d1a66e133d6f9896122aef1ae2e64cba8aaac2c1db412f6ee5c4bc8f3",
+    "api/utils/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/utils/apps.py": "bba6cd0f247be1469650b3caf2a9cd90e49a96c7f814e27b348bb093ca28dea2",
+    "api/utils/db_handler.py": "83d5e136458f67bdb2d12ac161db16f4cfd6f8e47aed6d5e66d6355fbd145b35",
+    "api/utils/functions.py": "89df50151b9d2af8b4fa9bac2d6e21f12f3768f4a06a737047d6003c953e18f1",
+    "api/utils/ira_calculator.py": "b6686989ba01c412113a67a6836e3dfcc125cc662d254d1ce4132cc7e733daf3",
+    "api/utils/json_pretty.py": "627843d4fa7e75969206b0d46abf7c01d06145e3011faa163820f7aa980c5899",
+    "api/utils/management/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/utils/management/commands/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "api/utils/management/commands/updatemock.py": "56122fd2ac03c3e560855bee14446ea4a436157b9fc2d9ba96df96789dd768e0",
+    "api/utils/schedule_generator.py": "ec608930ece2440178c869603ee81e5a96abebce09d191ae7bfbbccb41c0aafd",
+    "api/utils/search.py": "c60e52f1fae69c2439defc1923b09f8803a3750e9befc1972e74f0c8d76ea4c0",
+    "api/utils/sessions.py": "3eff99a3a53dca4117d2dd24d9870ce9b376c70d12c4cd08571e3c01fa3b1387",
+    "api/utils/urls.py": "43c7d43d6b1d52ca626a2046de4c8c77b04466b1196e6121f34a5205c32f45b5",
+    "api/utils/views.py": "a2633d99a587f19d1a1eda650f8dcf36da9000edf4f7867fc01d664ec3829efa",
+    "api/utils/web_scraping.py": "db7705397357d50aa53218f477e4476f1bb3ee66d01938ed81cc776910effd13",
+    "web/app/components/AsideButton.tsx": "a75eb6e7acbee72349ae962750e382008f902d20c16e3aa782787f0b8c6be929",
+    "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx": "883d1cc6a4956cb96c4c2e449787b1c876c535b1e1f476b9dba62a2194b6801e",
+    "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx": "7c78880bd39f89d1515d19356d939dd0e4af1b36af0f9d1736302c706d4dacdb",
+    "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx": "5ead3386d2d8ace8e18a6e44a2710bdc916f076e9b16d5f9f9d785c0940b83b1",
+    "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx": "9a3cac5f929547f32515d0850f302076881f06974d5895868eb8c98824fda2b1",
+    "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx": "38f936690df87c654014e23231f8db055719e0e9dfddbf6de7b4b6132e6e359b",
+    "web/app/components/AsideSchedulePopUp/Tooltip.tsx": "d5ee372ed60e37a05413ba28558de6e3e8e3929b23183b64e72ad3f30dd549c3",
+    "web/app/components/AsideSchedulePopUp/types/types.ts": "91a68b5558a0a6ce1202da841c62103a1b7e18a43f1fc0dadd3f7f519c746e96",
+    "web/app/components/Button.tsx": "042e645a4ac630b0c02a54aff0cf0649c766e20995a30f1203ad6ca0a620beb9",
+    "web/app/components/ClassInfo.tsx": "3fc2c9727f89ad0ad7ccb4ddfea59b06d16d7fb6bc505e6811a646fee57b0786",
+    "web/app/components/DisciplineBox.tsx": "f2cec10826ef463031e97f4d660e62aed0b22b2159af7e383c34dae797659de2",
+    "web/app/components/InfoHeader.tsx": "4d00682a1f13eae0776efa9bc4edfa65e765ba871cbd69015dc6dd61ce83f36f",
+    "web/app/components/LoadingScreen.tsx": "cc76d9e74ded4280fcfdeae1fff3b6a4313e052335cccb26eb2d43cc72f18aa0",
+    "web/app/components/LogoImageHandler.tsx": "ad69ca2e3e070baf420dcafd0fec45631e601f64fc9d2461839155da75dc2a9b",
+    "web/app/components/Modal/Modal.tsx": "d7265c8e7067e1ea70dc05f18d5ac83c5c886ba5571cba5faa5c3240ca953822",
+    "web/app/components/Protected.tsx": "6723e457d811ae334b02a51fd5c85951a3838c17c2591bc52455e673cff6ee25",
+    "web/app/components/Schedule/Schedule.tsx": "8353861df71f77f9c19d7d7f64f1eece3c6f9149b0e45a2a8f72ec3b40cc64e8",
+    "web/app/components/SchedulePreview/SchedulePreview.tsx": "069bddbac2e3ff4f3f5e04e2015ce25575bfb9314900638540ca0a9ae1a19c24",
+    "web/app/components/SignInSection.tsx": "0743d3bc465aa2cf0310312d2779b7e86a597353aefdaa3c197d378e586736b2",
+    "web/app/contexts/ClassesToShowContext.tsx": "f59049be924e412a1582ec4f7e1429643c918427b7967d47a3cfd46badbe8d74",
+    "web/app/contexts/SchedulesContext.tsx": "ca995274c9c3b3348085392923c998706491772eda00d58193aad1cd2871bace",
+    "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx": "3fb9d1e811de887a22202d63e5ee9bc7442c09f570d5867d9d60344feb292f72",
+    "web/app/contexts/SelectedClassesContext/types.ts": "2bda2ba5e58d72a7f72d8fae715669e0a71a71e337729b69c18399e3ac13f2fa",
+    "web/app/contexts/ShowPopUpContentContext.tsx": "46d5f551407a3e07c7c08d06134e4526761081a83b277f2e543b2a965a645aca",
+    "web/app/contexts/UserContext.tsx": "50ff2a4c37a95d8e846716327ffb0567e388bee6d2297dfd85deefe31a44f9ae",
+    "web/app/contexts/YearPeriodContext.tsx": "8a3c84638b7376440396ee433ad8940fc8ed318d0e44bbb8a23922d435b49a65",
+    "web/app/hooks/useClassesToShow.ts": "31a1d55d5d49218d188787452bc453cbdd4501d2b4a25417d6625ea9cc03f617",
+    "web/app/hooks/useSchedules.ts": "146e5a5150979df733895a99761be400bd41912b68175d1fd02dee88c28a8b4a",
+    "web/app/hooks/useSelectedClasses.ts": "b5bc512d547ccaeeb42ec790eaacbd0bae3c3bd3e2309f800e67f5c7cae95f3e",
+    "web/app/hooks/useShowPopUpContent.ts": "538da6dd9b7c20a7228609e12026089110b824be53f18be1e651b2ddb4f8bd8d",
+    "web/app/hooks/useUser.ts": "b550e0b352de449e1db861ac21f04e01845cea7df42fcf714048ed0ca3a57b40",
+    "web/app/hooks/useWindowDimensions.ts": "13c29fda93cecf4c70eb65edb400793f132844b68447a6b5993d76616e013fa5",
+    "web/app/hooks/useYearPeriod.ts": "68c9b7edd5d274e4f3c7b849c08ed52054abd4dc5883c2711d10f22c74fdb78d",
+    "web/app/layout.tsx": "93a45da8c09f631f50dde427931ae9967da071cde84adab0119510f38f3291d2",
+    "web/app/not-found.tsx": "bea828d8cb552d556b888e7cb5e676b07bd70b3b3d9079d4d3fddfa89031f70a",
+    "web/app/page.tsx": "448b8440d990d6f32fb8033500c60f62b2d5517f5fc88f8bbbc0f0813aec41fd",
+    "web/app/schedules/home/components/AddDisciplineButton.tsx": "1d60669ac3e65e73967f43cd489df10ca36dde0e63c73fe5152254d521f1eb5f",
+    "web/app/schedules/home/components/GenerateScheduleButton.tsx": "b9a9677e980ef0eb01771997c8dcea7c10693f6faa03d6df820b434767485088",
+    "web/app/schedules/home/handlers/ClickOutsideHandler.tsx": "873fa1edb89a45ad2a4e02f196f9d4a1aff63387450d3b2aab70e98316878768",
+    "web/app/schedules/home/page.tsx": "89b2ba0f33d46de9797d55a7c4d00675515a7de655a00b07ce9c1e79d47761a0",
+    "web/app/schedules/info/page.tsx": "a906002eb02792a6a7f7f39a183bb02ab8ccb3c608f515d2ee8566e3d3dcea14",
+    "web/app/schedules/layout.tsx": "9d522a1f900dc3f2cac0ee40cb0d5e212b8a8a606a68fd7aa6c8764b398126c8",
+    "web/app/schedules/mygrades/page.tsx": "a96cf69d2ea018ae5b20ab12be82076d266b048e1bfeb6fee9115e554309d9bf",
+    "web/app/schedules/profile/page.tsx": "08db89b73b54e71a45dbff425d0ae054012d712628ac308b81462aec02f4bc7a",
+    "web/app/utils/api/deleteSchedule.ts": "625ec0891f42bb9bbfa76cf4032e82b510bd0df6fbae6cf382bfffbc30113404",
+    "web/app/utils/api/generateSchedule.ts": "9f5e7f8c18d9dd7531f59cb94603c936e3e5d236d11999f25f7004c6cf1f0991",
+    "web/app/utils/api/getSchedules.ts": "ef63b52d488b353206e4ad06a729e3dd64fbcab209906d9f39d4e21df46e9a05",
+    "web/app/utils/api/logout.ts": "96e4718ed4230f72b6be092f60cdf6d2633033b6725d5c796a06bfd4acdda595",
+    "web/app/utils/api/registerWithGoogle.ts": "37724398fe72107d60818bd2623ce60dff2dde4895f1841f862e32a9f8738b27",
+    "web/app/utils/api/retrieveYearAndPeriod.ts": "08e02e77bcf620f6bd4c187dd7667e16e52a5a2eae8581a2788ffd198f3cbad2",
+    "web/app/utils/api/saveSchedule.ts": "32a91d2d78a8de10ebfa7ee430cc70679e47b1310b1058a30e37bd0e6ea100a1",
+    "web/app/utils/api/searchDiscipline.ts": "82e9971c4aea733e5846f6dfc1757ed583487999cf7fdf14f934cac0558b8753",
+    "web/app/utils/dates.ts": "b4e3ee23bfc07daa4d070a3fce784da5f941f6b7fd8a3d782f51e85333df2a87",
+    "web/app/utils/request.ts": "78436a2d791e07200f93cd630f072d9b9a516b72040c4ab7d0fa219c33e6b5f3",
+    "web/app/utils/retrieveAccessToken.ts": "bc6ddd70dd0370c34c7068ebca0d96b779b5b0b1da9f1b1075af8210136fa7e7",
+    "web/app/utils/settings.ts": "17acb5e4e9604194ffb843aaf867be19dec72a85473fb632458551f1be33a638",
+    "web/app/utils/settingsWithAuth.ts": "5ae01e6766c2f40f3928efeb9349a3a83e08a7e43a77aaca0bcd3cc0353356c4",
+    "web/app/utils/signInWithGoogle.ts": "424f30e12e0783ca937de7fa27ede9a7755bcd3666becbdf0497fdbc2602eb6e",
+    "web/app/utils/toast.ts": "3d25f18ec2eda56e6f4ccb1d4d16639fd1e875d775a022ed751cf827e76b6bc6",
+    "web/tailwind.config.ts": "215ae30eb1a42da2237416e1dcb2e0ca932d520482411f1cbbd13d7c2a8bcbfa"
+  }
+}

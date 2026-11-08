@@ -14,7 +14,29 @@ garantindo repetibilidade e reprodutibilidade.
 
 | Métrica ([Fase 2](fase-2.md#3-metricas-nivel-quantitativo)) | Método / técnica | Ferramenta | Instruções |
 |---------------------------------------------------------------|------------------|------------|------------|
-| M1 | | | |
+| M1.1 — Modularidade | Grafo de imports por arquivo e componentes fortemente conexos; percentual de arquivos em ciclos por camada | pydeps 3.0.1, AST Python e Madge 8.0.0 | [Roteiro e comandos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m11--ciclos-de-importação) |
+| M1.2 — Analisabilidade | Percentual de funções/métodos com complexidade ciclomática maior que 10, em quatro recortes | Radon 6.0.1, ESLint 8.57.1 e parser TypeScript 7.18.0 | [Roteiro e comandos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m12--complexidade-ciclomática) |
+| M1.3 — Modificabilidade | Tempo de duas mudanças independentes, condicionado à aceitação e à ausência de regressão | Git, cronômetro monotônico, testes Django e revisão independente | [Roteiro e fichas C1/C2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) |
+| M1.4 — Testabilidade | Cobertura de linhas executáveis da suíte original, com universo de produção explícito | coverage.py 7.3.2, Django, PostgreSQL e Redis | [Roteiro e configuração própria](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m14--cobertura-de-linhas) |
+
+### 1.1 Procedimentos e pilotos de manutenibilidade
+
+Os [procedimentos executáveis](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade)
+fixam versão, inventário, exclusões, ferramentas, comandos, saídas esperadas e destino dos registros.
+A análise de ciclos localiza dependências estruturais; a complexidade identifica blocos a investigar;
+as mudanças observam esforço validado; a cobertura verifica quanto código de produção é exercitado.
+Esses métodos se complementam, sem demonstrar isoladamente a qualidade de toda a manutenibilidade.
+
+Todos distinguem os níveis 0 a 3 da [Fase 2](fase-2.md#41-escala-e-faixas-por-metrica),
+por camada, componente ou tarefa, conforme a tabela de pontuação dos roteiros.
+Denominador zero é Não calculável; infraestrutura ou evidência inválida é Não avaliado, sem nota.
+O piloto valida o procedimento e não substitui a coleta formal da Fase 4.
+
+O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/evidencias/piloto/RELATORIO.md)
+registra as execuções de 08/11/2026 e suas limitações. A configuração de cobertura foi conferida,
+mas a suíte está pendente porque o Docker não está disponível no WSL atual.
+Executor e revisor de M1.3 ficam em aberto por decisão da equipe; as sessões humanas ainda não ocorreram.
+A issue #38 permanece pendente desses pilotos.
 
 ## 2. Recursos e ambiente de avaliação
 

@@ -1,0 +1,26 @@
+{
+  "API": {
+    "arquivo": "api/api/views/views.py",
+    "nome": "post",
+    "linha": 194,
+    "cc": 15
+  },
+  "frontend": {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 14,
+    "nome": "Function 'Schedule' has a complexity of 7. Maximum allowed is 0.",
+    "cc": 7
+  },
+  "scraper": {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "make_disciplines",
+    "linha": 200,
+    "cc": 7
+  },
+  "gerador": {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_valid_schedule",
+    "linha": 153,
+    "cc": 6
+  }
+}

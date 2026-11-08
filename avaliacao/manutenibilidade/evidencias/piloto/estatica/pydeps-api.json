@@ -1,0 +1,440 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "api",
+      "api.admin",
+      "api.apps",
+      "api.decorators",
+      "api.management",
+      "api.management.commands",
+      "api.management.commands.initadmin",
+      "api.management.commands.updatedb",
+      "api.models",
+      "api.serializers",
+      "api.swagger",
+      "api.tests",
+      "api.tests.test_error_request_body_schedule_save",
+      "api.tests.test_generate_schedule_api",
+      "api.tests.test_get_schedules_api",
+      "api.tests.test_models",
+      "api.tests.test_schedule_delete",
+      "api.tests.test_schedule_models",
+      "api.tests.test_schedule_save",
+      "api.tests.test_search_api",
+      "api.tests.test_year_period_api",
+      "api.urls"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "api": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "api.decorators",
+      "api.serializers",
+      "api.tests.test_models",
+      "api.tests.test_schedule_models",
+      "api.tests.test_schedule_save",
+      "api.tests.test_search_api",
+      "api.urls",
+      "utils.db_handler"
+    ],
+    "name": "api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/__init__.py"
+  },
+  "api.admin": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api.models",
+      "utils",
+      "utils.json_pretty"
+    ],
+    "name": "api.admin",
+    "path": "/tmp/suagrade-validacao-f2/api/api/admin.py"
+  },
+  "api.apps": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "api.apps",
+    "path": "/tmp/suagrade-validacao-f2/api/api/apps.py"
+  },
+  "api.decorators": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "utils.db_handler"
+    ],
+    "imports": [
+      "api",
+      "api.models"
+    ],
+    "name": "api.decorators",
+    "path": "/tmp/suagrade-validacao-f2/api/api/decorators.py"
+  },
+  "api.management": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "api.management",
+    "path": "/tmp/suagrade-validacao-f2/api/api/management/__init__.py"
+  },
+  "api.management.commands": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "api.management.commands",
+    "path": "/tmp/suagrade-validacao-f2/api/api/management/commands/__init__.py"
+  },
+  "api.management.commands.initadmin": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "api.management.commands.initadmin",
+    "path": "/tmp/suagrade-validacao-f2/api/api/management/commands/initadmin.py"
+  },
+  "api.management.commands.updatedb": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "core",
+      "utils",
+      "utils.db_handler",
+      "utils.sessions",
+      "utils.web_scraping"
+    ],
+    "name": "api.management.commands.updatedb",
+    "path": "/tmp/suagrade-validacao-f2/api/api/management/commands/updatedb.py"
+  },
+  "api.models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "api.admin",
+      "api.decorators",
+      "api.serializers",
+      "api.tests.test_models",
+      "api.tests.test_schedule_models",
+      "api.tests.test_schedule_save",
+      "utils.db_handler"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "api.models",
+    "path": "/tmp/suagrade-validacao-f2/api/api/models.py"
+  },
+  "api.serializers": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "api.tests.test_schedule_save",
+      "utils.db_handler"
+    ],
+    "imports": [
+      "api",
+      "api.models",
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.serializers",
+    "path": "/tmp/suagrade-validacao-f2/api/api/serializers.py"
+  },
+  "api.swagger": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "api.swagger",
+    "path": "/tmp/suagrade-validacao-f2/api/api/swagger.py"
+  },
+  "api.tests": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "api.tests.test_schedule_save"
+    ],
+    "name": "api.tests",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/__init__.py"
+  },
+  "api.tests.test_error_request_body_schedule_save": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "api.tests.test_schedule_save"
+    ],
+    "name": "api.tests.test_error_request_body_schedule_save",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_error_request_body_schedule_save.py"
+  },
+  "api.tests.test_generate_schedule_api": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.tests.test_generate_schedule_api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_generate_schedule_api.py"
+  },
+  "api.tests.test_get_schedules_api": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models",
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.tests.test_get_schedules_api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_get_schedules_api.py"
+  },
+  "api.tests.test_models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api",
+      "api.models"
+    ],
+    "name": "api.tests.test_models",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_models.py"
+  },
+  "api.tests.test_schedule_delete": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models",
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.tests.test_schedule_delete",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_schedule_delete.py"
+  },
+  "api.tests.test_schedule_models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api",
+      "api.models",
+      "users",
+      "users.models"
+    ],
+    "name": "api.tests.test_schedule_models",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_schedule_models.py"
+  },
+  "api.tests.test_schedule_save": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api",
+      "api.models",
+      "api.serializers",
+      "api.tests",
+      "api.tests.test_error_request_body_schedule_save",
+      "users",
+      "users.models",
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.tests.test_schedule_save",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_schedule_save.py"
+  },
+  "api.tests.test_search_api": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api",
+      "utils",
+      "utils.db_handler"
+    ],
+    "name": "api.tests.test_search_api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_search_api.py"
+  },
+  "api.tests.test_year_period_api": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "utils",
+      "utils.sessions"
+    ],
+    "name": "api.tests.test_year_period_api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/tests/test_year_period_api.py"
+  },
+  "api.urls": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "api"
+    ],
+    "name": "api.urls",
+    "path": "/tmp/suagrade-validacao-f2/api/api/urls.py"
+  },
+  "core": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.updatedb"
+    ],
+    "name": "core",
+    "path": "/tmp/suagrade-validacao-f2/api/core/__init__.py"
+  },
+  "test.support": {
+    "bacon": 9223372036854775807,
+    "name": "test.support",
+    "path": null
+  },
+  "test.support.import_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.import_helper",
+    "path": null
+  },
+  "test.support.os_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.os_helper",
+    "path": null
+  },
+  "test.support.script_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.script_helper",
+    "path": null
+  },
+  "users": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.initadmin",
+      "api.models",
+      "api.tests.test_get_schedules_api",
+      "api.tests.test_schedule_delete",
+      "api.tests.test_schedule_models",
+      "api.tests.test_schedule_save",
+      "utils.db_handler"
+    ],
+    "name": "users",
+    "path": "/tmp/suagrade-validacao-f2/api/users/__init__.py"
+  },
+  "users.models": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.initadmin",
+      "api.models",
+      "api.tests.test_get_schedules_api",
+      "api.tests.test_schedule_delete",
+      "api.tests.test_schedule_models",
+      "api.tests.test_schedule_save",
+      "utils.db_handler"
+    ],
+    "name": "users.models",
+    "path": "/tmp/suagrade-validacao-f2/api/users/models.py"
+  },
+  "utils": {
+    "bacon": 2,
+    "imported_by": [
+      "api.admin",
+      "api.management.commands.updatedb",
+      "api.serializers",
+      "api.tests.test_generate_schedule_api",
+      "api.tests.test_get_schedules_api",
+      "api.tests.test_schedule_delete",
+      "api.tests.test_schedule_save",
+      "api.tests.test_search_api",
+      "api.tests.test_year_period_api",
+      "utils.web_scraping"
+    ],
+    "name": "utils",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/__init__.py"
+  },
+  "utils.db_handler": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.updatedb",
+      "api.serializers",
+      "api.tests.test_generate_schedule_api",
+      "api.tests.test_get_schedules_api",
+      "api.tests.test_schedule_delete",
+      "api.tests.test_schedule_save",
+      "api.tests.test_search_api"
+    ],
+    "imports": [
+      "api",
+      "api.decorators",
+      "api.models",
+      "api.serializers",
+      "users",
+      "users.models"
+    ],
+    "name": "utils.db_handler",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/db_handler.py"
+  },
+  "utils.functions": {
+    "bacon": 3,
+    "imported_by": [
+      "utils.web_scraping"
+    ],
+    "name": "utils.functions",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/functions.py"
+  },
+  "utils.json_pretty": {
+    "bacon": 2,
+    "imported_by": [
+      "api.admin"
+    ],
+    "name": "utils.json_pretty",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/json_pretty.py"
+  },
+  "utils.sessions": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.updatedb",
+      "api.tests.test_year_period_api",
+      "utils.web_scraping"
+    ],
+    "name": "utils.sessions",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/sessions.py"
+  },
+  "utils.web_scraping": {
+    "bacon": 2,
+    "imported_by": [
+      "api.management.commands.updatedb"
+    ],
+    "imports": [
+      "utils",
+      "utils.functions",
+      "utils.sessions"
+    ],
+    "name": "utils.web_scraping",
+    "path": "/tmp/suagrade-validacao-f2/api/utils/web_scraping.py"
+  }
+}

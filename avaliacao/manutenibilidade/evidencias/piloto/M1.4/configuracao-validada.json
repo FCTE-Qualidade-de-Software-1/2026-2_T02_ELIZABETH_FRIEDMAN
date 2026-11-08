@@ -1,0 +1,17 @@
+{
+  "coverage": "7.3.2",
+  "source": [
+    "api",
+    "core",
+    "users",
+    "utils"
+  ],
+  "omit": [
+    "*/tests/*",
+    "*/test_*.py",
+    "*/migrations/*"
+  ],
+  "exclude_lines": [],
+  "include_namespace_packages": true,
+  "estado": "Configuração validada; suíte não executada: Docker indisponível"
+}
