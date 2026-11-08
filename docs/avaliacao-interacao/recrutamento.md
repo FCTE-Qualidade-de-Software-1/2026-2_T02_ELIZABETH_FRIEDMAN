@@ -1,11 +1,19 @@
 # Recrutamento e triagem
 
-Meta inicial: dez estudantes adultos sem uso prévio, cinco por dispositivo, mais dois
-suplentes por grupo. Piloto: uma pessoa adicional fora da amostra. Distribuição por
-modalidade deve ser fechada no [protocolo](protocolo.md) antes de confirmar a amostra.
-Moderador, observador e contato de pesquisa **a definir pela equipe**; em 03/11/2026
-o usuário informou que os responsáveis pelas entrevistas ainda não foram escolhidos.
-Não há recrutamento ou agenda confirmados neste documento.
+Plano revisado em 08/11/2026: quatro estudantes adultos sem uso prévio, dois no
+computador (P01–P02) e dois no celular (P03–P04), com uma pessoa suplente por grupo.
+Piloto: uma pessoa adicional (PIL01), excluída da amostra formal. A redução da meta
+anterior de dez participantes foi definida antes da coleta para viabilizar a execução
+pela dupla Lucas e Kaleb. A amostra é exploratória por conveniência e oferece menor
+cobertura de dificuldades; não permite generalizações sobre os estudantes da UnB.
+Com duas observações válidas por dispositivo, M6 só pode resultar em 0%, 50% ou 100%.
+Manter os limiares da Fase 2 e publicar contagens e percentuais por recorte.
+
+Lucas Monteiro Freitas será moderador e contato de pesquisa; Kaleb de Souza Macedo
+será observador e responsável pelos CSV e pela inspeção M8. Ambos revisarão M9.
+Sessões individuais online por Google Meet, com link privado enviado ao participante.
+A distribuição por modalidade deve ser fechada no [protocolo](protocolo.md) antes de
+confirmar a amostra. Não há recrutamento ou agenda confirmados neste documento.
 
 ## Convite pronto para envio pela equipe
 
@@ -36,10 +44,10 @@ transferir alguém que já fez M6 para outra sessão de primeiro uso.
 
 Usar [modelo de recrutamento](recrutamento.csv) somente em armazenamento restrito.
 Guardar contatos em cadastro separado ligado pelo código. Confirmar agenda após
-definir equipe e ambiente. Registrar suplentes, recusas e ausências sem detalhes
+confirmar ambiente e contato. Registrar suplentes, recusas e ausências sem detalhes
 pessoais desnecessários. Não confundir código reservado com pessoa recrutada.
 
 Antes de cada sessão, confirmar elegibilidade e autorizações. Antes de liberar a
-coleta formal, verificar cinco confirmações por dispositivo, cobertura das modalidades
+coleta formal, verificar duas confirmações por dispositivo, cobertura das modalidades
 planejadas, suplentes e exclusão do piloto. Se reduzir a amostra, versionar e justificar
 antes da coleta, publicando a cobertura efetiva sem alegar cumprimento da meta original.

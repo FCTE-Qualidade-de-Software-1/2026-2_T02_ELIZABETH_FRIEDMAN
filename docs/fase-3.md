@@ -37,14 +37,18 @@ perfil exigido dos avaliadores/usuários (conhecimento em informática e no dom�
 Para M6–M9, usar a versão `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`
 do Sua Grade UnB em ambiente local isolado, com massa fixa, conta de teste quando
 necessária e acesso por computador e celular físicos. Registrar sistema operacional,
-navegador/versão, dimensões e URL efetiva no manifesto da sessão. O celular acessará
-o endereço da máquina na rede local; `localhost` no celular aponta para o próprio celular.
+navegador/versão, dimensões e URL efetiva no manifesto da sessão. As sessões serão online por Google Meet. Validar acesso remoto privado ao ambiente
+nos dispositivos dos participantes antes do piloto; `localhost` no celular aponta
+para o próprio celular. O compartilhamento de tela também deve ser validado.
 
 O avaliador deve saber restaurar o estado, conferir disciplinas/turmas e preservar
 registros sem orientar o caminho. Participantes: estudantes adultos sem uso prévio,
 com conhecimento básico de navegador e do conceito de disciplina/turma. Planejam-se
-cinco estudantes no computador e cinco no celular, com dois suplentes por grupo;
-uma pessoa adicional participa apenas do piloto. Trata-se de amostra exploratória
+dois estudantes no computador e dois no celular, com um suplente por grupo;
+uma pessoa adicional participa apenas do piloto. A redução de dez para quatro
+participantes foi definida antes da coleta em 08/11/2026 para viabilizar a execução
+pela dupla, com menor cobertura e sem alterar os limiares de julgamento da Fase 2.
+Trata-se de amostra exploratória
 por conveniência, sem pretensão de representatividade estatística.
 
 Recursos, instruções, tempos e pendências estão no [protocolo](avaliacao-interacao/protocolo.md).
@@ -64,15 +68,15 @@ F3-C3: cronograma realista com atividades distribuídas e alinhadas à execuçã
 
 | Atividade | Responsável | Início | Fim | Métricas envolvidas |
 |-----------|-------------|--------|-----|---------------------|
-| Confirmar ambiente, massa e responsáveis; iniciar triagem | Equipe: designação pendente | 03/11/2026 | 04/11/2026 | M6–M9 |
+| Confirmar ambiente, massa e responsáveis; iniciar triagem | Lucas e Kaleb | 03/11/2026 | 04/11/2026 | M6–M9 |
 | Preparar roteiro, consentimento, CSV e instrumentos | Equipe | 03/11/2026 | 05/11/2026 | M6–M9 |
-| Executar piloto e verificar recursos nos dois dispositivos | Moderador e observador: designação pendente | 06/11/2026 | 06/11/2026 | M6–M9 |
+| Executar piloto e verificar recursos nos dois dispositivos | Lucas (moderador) e Kaleb (observador) | 06/11/2026 | 06/11/2026 | M6–M9 |
 | Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Equipe | 06/11/2026 | 07/11/2026 | M6–M9 |
 | Coleta formal e análise na Fase 4 | Equipe | Após liberação do piloto | Agendar antes da coleta | M6–M9 |
 
 ### Situação da issue #40
 
-Materiais preparados em 03/11/2026, versão documental 0.1, **aguardando validação humana**.
+Materiais preparados em 03/11/2026 e revisados em 08/11/2026, protocolo 0.2, **aguardando validação humana**.
 O [registro de piloto e fechamento](avaliacao-interacao/piloto.md) mantém os critérios
 de liberação e as pendências. Não encerrar a issue antes de confirmar recrutamento,
 inventário no ambiente real e piloto com pessoa fora da amostra.

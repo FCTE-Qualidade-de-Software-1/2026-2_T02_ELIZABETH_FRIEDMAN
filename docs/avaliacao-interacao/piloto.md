@@ -1,14 +1,16 @@
 # Piloto e fechamento da issue #40
 
-Situação em 03/11/2026: **não executado**. Nenhum participante foi observado e nenhum
-resultado de métrica é declarado por estes materiais. Responsáveis pelas entrevistas
-ainda não definidos, conforme informação do usuário.
+Situação documental revisada em 08/11/2026: **não executado**. Nenhum resultado de
+métrica é declarado por estes materiais. Lucas será moderador e contato de pesquisa;
+Kaleb será observador e responsável pelos CSV e M8. Sessões online por Google Meet.
+A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de PIL01.
 
 ## Condições antes de agendar
 
-- [ ] Definir moderador, observador e contato; preencher termo com local de guarda e data de exclusão.
+- [x] Definir funções: Lucas modera e atende contatos; Kaleb observa e registra.
+- [ ] Completar curso, e-mail e data exata de exclusão no termo antes de apresentá-lo.
 - [ ] Confirmar ambiente #37, commit, massa real e modalidades acessíveis; preencher manifesto.
-- [ ] Confirmar computador e celular físicos e acesso pela rede local.
+- [ ] Confirmar computador e celular físicos, compartilhamento de tela e acesso remoto privado ao ambiente de teste.
 - [ ] Recrutar uma pessoa sem uso prévio, exclusiva do piloto, e obter consentimento.
 - [ ] Preparar cartões com disciplinas/turmas reais; demonstrar restauração S0/S1/G0.
 

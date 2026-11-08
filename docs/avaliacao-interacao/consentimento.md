@@ -12,7 +12,7 @@ montagem de grades e na compreensão de sua interface.
 Sua participação consistirá em realizar tarefas de busca de disciplinas, seleção e
 alteração de turmas, geração e salvamento de uma grade, além de responder a
 perguntas sobre a interface. A atividade terá duração de aproximadamente **45
-minutos**, em **[LOCAL OU PLATAFORMA DA SESSÃO]**, usando computador ou celular
+minutos**, em **sessão online por Google Meet, com link privado**, usando computador ou celular
 com dados e contas de teste. Você poderá fazer perguntas e esclarecer dúvidas
 antes e durante a atividade.
 
@@ -35,9 +35,12 @@ dos resultados do trabalho da disciplina. Antes da apresentação dos resultados
 os dados serão anonimizados, com remoção de nomes e de informações que permitam
 identificar você. O termo de consentimento será guardado separado dos dados da
 atividade. Terão acesso aos registros originais somente os alunos da equipe
-avaliadora identificados neste termo. Eles serão guardados em **[LOCAL DE
-ARMAZENAMENTO COM ACESSO RESTRITO]**, até **[DATA DE EXCLUSÃO, EM ATÉ 90 DIAS
-APÓS O TÉRMINO DA DISCIPLINA]**, e depois excluídos. Resultados anonimizados poderão
+avaliadora identificados neste termo. Eles serão guardados em **pasta local dados-restritos/, fora do repositório público, no computador de
+Lucas Monteiro Freitas, protegida por senha de acesso ao computador**. Os registros
+serão excluídos **em até 30 dias após a sessão e, em qualquer caso, até 90 dias após
+o término da disciplina, prevalecendo o prazo que ocorrer primeiro**. A equipe
+informará a data exata de exclusão na cópia entregue antes do consentimento:
+**[DATA DE EXCLUSÃO CONFORME A REGRA ACIMA]**. Resultados anonimizados poderão
 permanecer no relatório e no repositório do projeto. Você poderá consultar os
 resultados pela [página pública do projeto](https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/).
 
@@ -48,7 +51,7 @@ registros ao responsável até a data de exclusão indicada, informando seu cód
 Após a anonimização irreversível, pode não ser possível localizar sua contribuição
 para removê-la dos resultados.
 
-Para dúvidas, entre em contato com **[NOME DO ALUNO RESPONSÁVEL E E-MAIL]**.
+Para dúvidas, entre em contato com **Lucas Monteiro Freitas — [E-MAIL DE CONTATO]**, com apoio de **Kaleb de Souza Macedo**.
 
 Declaro que compreendi o objetivo e as condições da atividade, tive oportunidade
 de esclarecer minhas dúvidas e aceito participar. Receberei uma cópia deste termo.

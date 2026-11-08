@@ -1,6 +1,6 @@
 # Protocolo de capacidade de interação — M6 a M9
 
-Versão 0.1 · 03/11/2026 · [Issue #40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40).
+Versão 0.2 · 08/11/2026 · [Issue #40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40).
 Situação: preparado para validação; piloto e recrutamento ainda pendentes.
 
 ## 1. Preparação e congelamento
@@ -29,12 +29,22 @@ em navegador real; emulação não substitui essa verificação.
 
 Fixar após o piloto a distribuição de modalidades por sessão: cada participante
 executa **uma única M6**, no dispositivo e modalidade designados previamente.
-Não repetir M6 na outra modalidade com a mesma pessoa. Se os dez participantes
-forem distribuídos entre modalidades, publicar o tamanho efetivo de cada recorte;
-se forem necessários cinco por dispositivo/modalidade, recrutar vinte estudantes.
+Não repetir M6 na outra modalidade com a mesma pessoa. A amostra revisada é de
+quatro participantes, dois por dispositivo. Se houver distribuição entre modalidades,
+publicar o tamanho efetivo de cada recorte; duas pessoas por dispositivo não equivalem
+a duas por dispositivo/modalidade. Ampliar o recrutamento antes da coleta se forem
+necessárias duas por cada combinação de dispositivo e modalidade.
 Modalidade indisponível permanece não avaliada, sem extrapolar a outra.
 
 ## 2. Sessão e instruções comuns
+
+Sessões online por Google Meet, com Lucas como moderador e Kaleb como observador.
+Validar antes do piloto acesso remoto privado ao ambiente de teste no dispositivo
+do participante; o endereço local da máquina do avaliador não basta para acesso pela
+internet. Usar compartilhamento da tela do dispositivo atribuído, com autorização
+de captura/gravação conferida; compartilhar tela ao vivo não autoriza gravá-la.
+Se a transmissão ou conexão impedir a observação, registrar falha de infraestrutura,
+sem atribuí-la à interface. Confirmar no piloto a viabilidade no celular real.
 
 Reservar até 45 minutos. Aplicar M6 → M7 → M9, sempre no dispositivo atribuído;
 M8 é inspeção separada pelo avaliador. Obter consentimento e verificar triagem
