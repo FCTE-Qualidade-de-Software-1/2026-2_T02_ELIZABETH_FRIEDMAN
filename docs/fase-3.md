@@ -289,9 +289,26 @@ O *smoke* só confirma que o Chromium inicia, que a API responde e que a tela in
 F3-C3: cronograma realista com atividades distribuídas e alinhadas à execução da Fase 4.
 -->
 
-| Atividade | Responsável | Início | Fim | Métricas envolvidas |
-|-----------|-------------|--------|-----|---------------------|
-| | | | | |
+Cada linha corresponde a uma issue do repositório. A coluna **Fim** é a meta registrada na issue;
+**Início** é a previsão da equipe. Todas as atividades terminam até **22/11/2026**.
+
+| Issue | Atividade | Responsável | Início | Fim | Métricas | Depende de |
+|------|-----------|-------------|--------|-----|----------|------------|
+| #37 | Ambiente de avaliação e massa de referência (concluído) | Júlia | 03/11 | 03/11 | M1.3, M1.4, M2–M5 | n/a |
+| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 04/11 | 07/11 | M1.1–M1.4 | #37 |
+| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 04/11 | 07/11 | M2–M5 | #37 |
+| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, kaleb | 04/11 | 07/11 | M6–M9 | n/a |
+| #41 | Cronograma e consistência com a Fase 2 (esta página) | Joaquim | 03/11 | 03/11 | M1.1–M9 | n/a |
+| #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 08/11 | 15/11 | n/a | #38–#41 |
+| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | kaleb | 08/11 | 17/11 | M1.1–M1.4 | #38 |
+| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 08/11 | 17/11 | M2–M5 | #39 |
+| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Lucas, João | 08/11 | 17/11 | M6–M9 | #40 |
+| #45 | Fase 4: julgamento, relações entre características e recomendações | kaleb, Joaquim | 17/11 | 19/11 | M1.1–M9 | #42–#44 |
+| #46 | Fase 4: ação de melhoria | Lucas | 19/11 | 20/11 | n/a | #45 |
+| #47 | Artigo: metodologia, resultados e conclusão | João | 17/11 | 20/11 | n/a | #41–#46 |
+| #48 | Artigo: revisão final da 2ª versão | João | 20/11 | 21/11 | n/a | #47 |
+| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 03/11 | 21/11 | n/a | contínuo |
+| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 21/11 | 22/11 | n/a | #48, #50 |
 
 ---
 
