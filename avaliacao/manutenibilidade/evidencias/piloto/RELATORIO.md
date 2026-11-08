@@ -34,7 +34,7 @@ Inspeção dos componentes críticos: `make_disciplines` (scraper, linha 200, CC
 
 ## M1.3 — Não avaliado
 
-Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a coleta formal; Kaleb executará o piloto e revisará a coleta formal. A elegibilidade de Lucas ainda deve ser confirmada antes da sessão. Piloto humano não executado; também depende da restauração do Docker. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
+Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a coleta formal; Kaleb executará o piloto e revisará a coleta formal. A elegibilidade de Lucas e Kaleb foi confirmada pelo usuário. Piloto humano não executado; também depende da restauração do Docker. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
 
 ## M1.4 — Configuração validada, piloto de suíte pendente
 
@@ -47,9 +47,14 @@ Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a
 - [x] Configuração própria de coverage validada.
 - [x] Níveis 0–3 mapeados por métrica nos roteiros.
 - [x] Responsáveis definidos: Lucas (coleta formal, piloto M1.4 e armazenamento/versionamento das evidências) e Kaleb (piloto C1/C2, revisão da coleta formal e conferência da cobertura). Kaleb guarda as soluções do piloto C1/C2 até a sessão formal.
-- [ ] Confirmar elegibilidade e registrar experiência de Lucas, ordem e auxílios permitidos.
+- [x] Elegibilidade de Lucas e Kaleb confirmada pelo usuário. Ordem C1 → C2; documentação e busca permitidas, sem IA nem ajuda de terceiros durante a medição.
+- [ ] Registrar o perfil descritivo de experiência e familiaridade dos executores antes das sessões.
 - [ ] Disponibilizar Docker no ambiente de avaliação.
 - [ ] Executar piloto humano C1/C2 e arquivar fichas, patches e logs.
 - [ ] Executar piloto M1.4 e conferir todos os arquivos/denominadores dos três recortes.
 
 Questões para a reunião estão no final do README desta pasta. A issue permanece aberta; não foi atualizada remotamente.
+
+## Verificação de prontidão — 08/11/2026
+
+A dependência [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) foi consultada: encerrada como concluída em 05/11/2026, com os quatro itens marcados. A verificação local `docker ps` ainda informa que Docker não está disponível nesta distribuição WSL. Saída preservada em `M1.4/prontidao-docker.txt`. Essa verificação não executa a suíte nem produz cobertura. Os pilotos M1.3/M1.4 continuam pendentes de execução.

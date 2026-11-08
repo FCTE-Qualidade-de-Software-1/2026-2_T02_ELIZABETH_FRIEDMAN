@@ -38,7 +38,7 @@ mas a suíte está pendente porque o Docker não está disponível no WSL atual.
 Lucas será o executor da coleta formal de M1.3; Kaleb fará o piloto e revisará a coleta formal.
 Lucas executará o piloto M1.4 e guardará/versionará as evidências; Kaleb conferirá a cobertura.
 As soluções do piloto C1/C2 ficam sob guarda de Kaleb até a sessão formal. A elegibilidade de Lucas
-ainda deve ser confirmada; as sessões humanas ainda não ocorreram.
+e Kaleb foi confirmada pelo usuário; as sessões humanas ainda não foram registradas.
 A issue #38 permanece pendente desses pilotos.
 
 ## 2. Recursos e ambiente de avaliação
