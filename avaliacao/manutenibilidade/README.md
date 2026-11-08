@@ -73,7 +73,17 @@ bash avaliacao/manutenibilidade/cobertura.sh /caminho/2023-2-SuaGradeUnB avaliac
 3. O script copia `configs/coverage.ini`, publica a configuração efetiva e executa a suíte original. `source` inclui `api`, `core`, `users`, `utils`; testes e migrações são omitidos. `exclude_lines` vazio impede exclusão por `pragma: no cover`. `include_namespace_packages = True` inclui também arquivos em diretórios sem `__init__.py`. `manage.py` está fora de `source`.
 4. Guardar log, códigos de saída, JSON e HTML. Conferir os caminhos do JSON contra o inventário Python: incluir `utils/json_pretty.py`, `api/admin.py`, `users/admin.py` e arquivos não executados. Qualquer diferença precisa de explicação antes da pontuação.
 5. Extrair `covered_lines` e `num_statements` do total da API e dos arquivos `utils/web_scraping.py` e `utils/schedule_generator.py`. Não usar linhas físicas. Gerar três linhas no CSV, com `100 × covered_lines / num_statements`.
-6. `comparacao-omit-ci.json` aplica adicionalmente a lista omitida pelo CI sobre os mesmos dados. É somente comparação, sem substituir o resultado principal. Suíte reprovada: preservar parcial sem confirmar H1.4.
+6. Conferir o inventário e gerar o CSV dos três recortes (usar a pasta efetiva da execução):
+
+```bash
+python3 avaliacao/manutenibilidade/resumir_cobertura.py \
+  avaliacao/manutenibilidade/evidencias/piloto/M1.4/execucao-docker \
+  avaliacao/manutenibilidade/evidencias/piloto/estatica/inventario.json
+```
+
+O comando exige códigos de saída 0, compara os arquivos com o inventário e verifica ausência de linhas excluídas. Divergências interrompem a extração e ficam em `auditoria-inventario.json`. Saída esperada: `resultados.csv` com API, scraper e gerador.
+
+7. `comparacao-omit-ci.json` aplica adicionalmente a lista omitida pelo CI sobre os mesmos dados. É somente comparação, sem substituir o resultado principal. Suíte reprovada: preservar parcial sem confirmar H1.4.
 
 ## Pontuação e validade
 
@@ -94,7 +104,7 @@ Consultar `evidencias/piloto/RELATORIO.md`. A issue só pode ser encerrada após
 
 Responsáveis definidos:
 
-- Lucas: executor de C1/C2 na coleta formal, executor do piloto de cobertura M1.4 e responsável por guardar e versionar as evidências. As soluções do piloto de C1/C2 devem permanecer sob guarda de Kaleb até a sessão formal, preservando Lucas de treinamento prévio.
+- Lucas: executor de C1/C2 na coleta formal e responsável por guardar e versionar as evidências. As soluções do piloto de C1/C2 devem permanecer sob guarda de Kaleb até a sessão formal, preservando Lucas de treinamento prévio.
 - Kaleb: executor do piloto de C1/C2, revisor independente da coleta formal e responsável por conferir as evidências e os denominadores da cobertura da API, scraper e gerador.
 
 Condições das sessões: ordem C1 → C2; permitidas documentação e busca, sem IA nem ajuda de terceiros durante a medição. Registrar qualquer desvio. Cada tarefa parte de uma cópia independente. Essas condições valem para piloto e coleta formal.
@@ -103,5 +113,5 @@ Pendências de execução:
 
 - Elegibilidade de Lucas e Kaleb confirmada pelo usuário; falta apenas registrar o perfil descritivo, sem presumir anos de experiência.
 - Registrar uma descrição breve da experiência e familiaridade de cada executor antes de iniciar.
-- Em qual máquina com Docker/PostgreSQL/Redis funcionarão os pilotos?
+- M1.4 foi executado por Codex com autorização de Lucas nesta máquina, após habilitar o Docker: 108 testes aprovados; evidências em `evidencias/piloto/M1.4/execucao-docker/`. Kaleb fará C1/C2 em outra máquina; preparar e registrar esse ambiente conforme `tarefas/GUIA-PILOTO-KALEB.md`. O usuário informou que Kaleb conhece as linguagens; detalhes de experiência e familiaridade continuam a preencher.
 - Quando executar piloto e coleta formal e quem revisará os procedimentos corrigidos?

@@ -33,13 +33,16 @@ Denominador zero é Não calculável; infraestrutura ou evidência inválida é 
 O piloto valida o procedimento e não substitui a coleta formal da Fase 4.
 
 O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/evidencias/piloto/RELATORIO.md)
-registra as execuções de 08/11/2026 e suas limitações. A configuração de cobertura foi conferida,
-mas a suíte está pendente porque o Docker não está disponível no WSL atual.
+registra as execuções de 08/11/2026 e suas limitações. Após habilitar o Docker no Ubuntu,
+o piloto M1.4 aprovou os 108 testes e conferiu os 50 arquivos do inventário, sem linhas excluídas.
+A cobertura foi 81,8768% na API, 97,5% no scraper e 99,2908% no gerador.
 Lucas será o executor da coleta formal de M1.3; Kaleb fará o piloto e revisará a coleta formal.
-Lucas executará o piloto M1.4 e guardará/versionará as evidências; Kaleb conferirá a cobertura.
+O piloto M1.4 foi executado por Codex com autorização de Lucas; Lucas guardará/versionará
+as evidências e Kaleb conferirá a cobertura.
 As soluções do piloto C1/C2 ficam sob guarda de Kaleb até a sessão formal. A elegibilidade de Lucas
 e Kaleb foi confirmada pelo usuário; as sessões humanas ainda não foram registradas.
-A issue #38 permanece pendente desses pilotos.
+Kaleb fará o piloto C1/C2 em outra máquina, seguindo o guia em `avaliacao/manutenibilidade/tarefas/GUIA-PILOTO-KALEB.md`.
+A issue #38 permanece pendente do piloto humano e da conferência de Kaleb.
 
 ## 2. Recursos e ambiente de avaliação
 
