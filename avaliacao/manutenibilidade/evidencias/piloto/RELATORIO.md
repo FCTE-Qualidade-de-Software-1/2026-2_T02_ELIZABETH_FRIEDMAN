@@ -34,7 +34,7 @@ Inspeção dos componentes críticos: `make_disciplines` (scraper, linha 200, CC
 
 ## M1.3 — Não avaliado
 
-Fichas C1/C2 e protocolo preparados. Executor/revisor em aberto por decisão do usuário. Piloto humano não executado; também depende da restauração do Docker. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
+Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a coleta formal; Kaleb executará o piloto e revisará a coleta formal. A elegibilidade de Lucas ainda deve ser confirmada antes da sessão. Piloto humano não executado; também depende da restauração do Docker. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
 
 ## M1.4 — Configuração validada, piloto de suíte pendente
 
@@ -46,7 +46,8 @@ Fichas C1/C2 e protocolo preparados. Executor/revisor em aberto por decisão do 
 - [x] Pilotos M1.1 e M1.2 executados e auditados.
 - [x] Configuração própria de coverage validada.
 - [x] Níveis 0–3 mapeados por métrica nos roteiros.
-- [ ] Equipe definir executor elegível, pessoa para piloto e revisor, experiência, ordem e auxílios permitidos.
+- [x] Responsáveis definidos: Lucas (coleta formal, piloto M1.4 e armazenamento/versionamento das evidências) e Kaleb (piloto C1/C2, revisão da coleta formal e conferência da cobertura). Kaleb guarda as soluções do piloto C1/C2 até a sessão formal.
+- [ ] Confirmar elegibilidade e registrar experiência de Lucas, ordem e auxílios permitidos.
 - [ ] Disponibilizar Docker no ambiente de avaliação.
 - [ ] Executar piloto humano C1/C2 e arquivar fichas, patches e logs.
 - [ ] Executar piloto M1.4 e conferir todos os arquivos/denominadores dos três recortes.

@@ -35,7 +35,10 @@ O piloto valida o procedimento e não substitui a coleta formal da Fase 4.
 O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/evidencias/piloto/RELATORIO.md)
 registra as execuções de 08/11/2026 e suas limitações. A configuração de cobertura foi conferida,
 mas a suíte está pendente porque o Docker não está disponível no WSL atual.
-Executor e revisor de M1.3 ficam em aberto por decisão da equipe; as sessões humanas ainda não ocorreram.
+Lucas será o executor da coleta formal de M1.3; Kaleb fará o piloto e revisará a coleta formal.
+Lucas executará o piloto M1.4 e guardará/versionará as evidências; Kaleb conferirá a cobertura.
+As soluções do piloto C1/C2 ficam sob guarda de Kaleb até a sessão formal. A elegibilidade de Lucas
+ainda deve ser confirmada; as sessões humanas ainda não ocorreram.
 A issue #38 permanece pendente desses pilotos.
 
 ## 2. Recursos e ambiente de avaliação

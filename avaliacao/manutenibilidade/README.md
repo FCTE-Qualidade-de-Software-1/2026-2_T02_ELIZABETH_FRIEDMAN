@@ -57,7 +57,7 @@ Método: tempo de mudança validada por tarefa, com testes de aceitação e regr
 5. Encerrar quando todos os critérios passarem ou aos 90 min. Calcular minutos apenas em caso de sucesso. O revisor confere patch, critérios e logs após a sessão, fora do tempo.
 6. Guardar evidências conforme as fichas. Piloto das mesmas mudanças deve ser feito por outra pessoa, preservando executor não treinado para a coleta formal.
 
-Saída esperada: duas fichas preenchidas, patches com testes, logs antes/depois e tempo válido ou motivo de insucesso/Não avaliado. Não atribuir tempo fictício. Executor e revisor permanecem **em aberto por decisão do usuário**.
+Saída esperada: duas fichas preenchidas, patches com testes, logs antes/depois e tempo válido ou motivo de insucesso/Não avaliado. Não atribuir tempo fictício. Lucas executará C1/C2 na coleta formal; Kaleb executará o piloto e revisará a coleta formal. Confirmar a elegibilidade de Lucas antes da sessão, sem expô-lo à solução do piloto.
 
 ## M1.4 — Cobertura de linhas
 
@@ -92,10 +92,14 @@ Denominador zero: Não calculável. Infraestrutura inválida, interrupção exte
 
 Consultar `evidencias/piloto/RELATORIO.md`. A issue só pode ser encerrada após piloto humano de M1.3 e piloto completo de M1.4; as pendências não foram marcadas como realizadas.
 
+Responsáveis definidos:
+
+- Lucas: executor de C1/C2 na coleta formal, executor do piloto de cobertura M1.4 e responsável por guardar e versionar as evidências. As soluções do piloto de C1/C2 devem permanecer sob guarda de Kaleb até a sessão formal, preservando Lucas de treinamento prévio.
+- Kaleb: executor do piloto de C1/C2, revisor independente da coleta formal e responsável por conferir as evidências e os denominadores da cobertura da API, scraper e gerador.
+
 Levar à equipe:
 
-- Quem é elegível para executar C1/C2 sem treinamento prévio? Quem fará o piloto, preservando essa pessoa para a coleta formal?
-- Quem revisará patches e aceitação de forma independente?
+- Confirmar a elegibilidade de Lucas segundo o protocolo de M1.3.
 - Qual experiência e familiaridade de cada executor? Qual ordem C1/C2 e quais auxílios (documentação, busca, IA) serão permitidos? Fixar antes de medir.
-- Em qual máquina com Docker/PostgreSQL/Redis funcionarão os pilotos? Quem guardará os relatórios e conferirá o denominador da cobertura?
+- Em qual máquina com Docker/PostgreSQL/Redis funcionarão os pilotos?
 - Quando executar piloto e coleta formal e quem revisará os procedimentos corrigidos?
