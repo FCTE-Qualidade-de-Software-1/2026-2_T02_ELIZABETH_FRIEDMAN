@@ -337,6 +337,16 @@ F3-C3: cronograma realista com atividades distribuídas e alinhadas à execuçã
 | Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Equipe | 06/11/2026 | 07/11/2026 | M6–M9 |
 | Coleta formal e análise na Fase 4 | Equipe | Após liberação do piloto | Agendar antes da coleta | M6–M9 |
 
+| Atividade | Responsável | Início | Fim | Métricas envolvidas |
+|-----------|-------------|--------|-----|---------------------|
+| Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | M6–M9 |
+| Preencher campos do termo, validar acesso ao ambiente nos dois dispositivos, preparar cartões com disciplinas reais, recrutar PIL01 e participantes | Lucas e Kaleb | 09/11/2026 | 10/11/2026 | M6–M9 |
+| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Lucas e Kaleb | 11/11/2026 | 11/11/2026 | M6–M9 |
+| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Lucas e Kaleb | 12/11/2026 | 12/11/2026 | M6–M9 |
+| Inspeção M8 no ambiente, com dados descartáveis | Lucas e Kaleb | 12/11/2026 | 13/11/2026 | M8 |
+| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Lucas e Kaleb | 13/11/2026 | 14/11/2026 | M6, M7, M9 |
+| Análise e escrita dos resultados na Fase 4 | Equipe | 14/11/2026 | 16/11/2026 | M6–M9 |
+
 ### Situação da issue #40
 
 Materiais preparados em 03/11/2026 e revisados em 08/11/2026, protocolo 0.2, **aguardando validação humana**.
