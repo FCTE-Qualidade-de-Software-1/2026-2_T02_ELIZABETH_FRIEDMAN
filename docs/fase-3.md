@@ -329,13 +329,6 @@ confirmados os identificadores reais das disciplinas e turmas usadas nas tarefas
 F3-C3: cronograma realista com atividades distribuídas e alinhadas à execução da Fase 4.
 -->
 
-| Atividade | Responsável | Início | Fim | Métricas envolvidas |
-|-----------|-------------|--------|-----|---------------------|
-| Confirmar ambiente, massa e responsáveis; iniciar triagem | Lucas e Kaleb | 03/11/2026 | 04/11/2026 | M6–M9 |
-| Preparar roteiro, consentimento, CSV e instrumentos | Equipe | 03/11/2026 | 05/11/2026 | M6–M9 |
-| Executar piloto e verificar recursos nos dois dispositivos | Lucas (moderador) e Kaleb (observador) | 06/11/2026 | 06/11/2026 | M6–M9 |
-| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Equipe | 06/11/2026 | 07/11/2026 | M6–M9 |
-| Coleta formal e análise na Fase 4 | Equipe | Após liberação do piloto | Agendar antes da coleta | M6–M9 |
 
 | Atividade | Responsável | Início | Fim | Métricas envolvidas |
 |-----------|-------------|--------|-----|---------------------|
