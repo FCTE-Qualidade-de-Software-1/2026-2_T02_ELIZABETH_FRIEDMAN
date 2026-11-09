@@ -7,6 +7,8 @@ Evidências no repositório: commits, issues, milestones, dashboards.
 
 Este documento descreve como o projeto é medido e gerido segundo o **PSM Continuous Iterative Development (CID) Measurement Framework, v2.1** (PSM, NDIA e INCOSE, 15/04/2021). Para cada decisão tomada pela equipe, ele indica o que o framework prevê e como ela foi adaptada. Os **valores** dos indicadores são calculados automaticamente e ficam em [indicadores](indicadores.md) e nos CSVs de `evidencias/`. Este documento define o que é medido e como ler cada indicador. A interpretação dos valores e as decisões de gestão ficam nas [atas](atas.md).
 
+O andamento das tarefas é acompanhado no [quadro do GitHub Project](https://github.com/orgs/FCTE-Qualidade-de-Software-1/projects/41), com visões por status, por milestone e por responsável. O quadro serve só para visualizar: horas, estimativas e prazos continuam no corpo das issues e nos milestones, que são as fontes da coleta.
+
 Convenção de referência: **P1**, **P2** e **P3** são as Partes 1, 2 e 3 do framework, seguidas da seção (ex.: P2 8.3). **I1 a I9** são os nove indicadores do projeto (seção 3).
 
 ## 1. Abordagem do framework
@@ -184,6 +186,7 @@ Cada indicador segue os campos do *template* das especificações da Parte 2, se
 |---|---|---|---|---|
 | Indicadores I1 a I9 | Issues (corpo, labels e eventos), milestones e PRs | Domingo 23:59, a cada issue fechada e a cada publicação da GitPage | Workflow "Publicar GitPage" (`pages.yml`), que roda `scripts/coletar_metricas_psm.py` | Em uso desde o PR #28 |
 | Valores calculados | `docs/gestao/indicadores.md` e CSVs em `docs/gestao/evidencias/` | A cada execução do script, com o histórico recalculado por inteiro | Gerados pelo script | Em uso desde o PR #28 |
+| Gráficos dos indicadores | Os mesmos dados da coleta, item a item (PR, issue ou integrante) e a evolução semanal | A cada execução do script | Gerados em SVG por `scripts/graficos_psm.py` dentro da página de [indicadores](indicadores.md), sem biblioteca externa | Em uso (issue #55) |
 | Horas reais por issue e pessoa | Seção "Horas reais" do corpo da issue | Registro pelo responsável. Leitura a cada coleta | Lidas pelo script e copiadas para `evidencias/horas.csv` | Em uso |
 | Horas estimadas por issue | Seção "Estimativa (horas)" no corpo da issue (template) | No planejamento da iteração | Preenchimento manual pelo responsável e leitura pelo script | Em uso |
 | Interpretação e decisão | Seção 6 e atas | Revisão de cada iteração | Manual | Em uso |

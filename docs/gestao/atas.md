@@ -3,6 +3,9 @@
 | Nº | Data | Pauta | Link |
 |----|------|-------|------|
 | 01 | 14/10/2026 | Tarefas da Entrega 1 e organização para o Ponto de Controle 1 | [Ata 01](#ata-01) |
+| 02 | 16/10/2026 | Requisitos e cronograma da Entrega 1, divisão em issues e responsáveis | [Ata 02](#ata-02) |
+| 03 | 18/10/2026 | Conteúdo, divisão e ensaio dos slides do Ponto de Controle 1 | [Ata 03](#ata-03) |
+| 04 | 03/11/2026 | Slides das métricas PSM/CID, gráficos de análise e planejamento da semana | [Ata 04](#ata-04) |
 
 ## Ata 01
 
@@ -10,9 +13,9 @@
 - **Local / meio:** presencial na aula
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum
@@ -45,9 +48,9 @@ Ver também: [Métricas PSM/CID](metricas.md).
 - **Local / meio:** on-line
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum
@@ -63,7 +66,7 @@ Ver também: [Métricas PSM/CID](metricas.md).
 
 1. A Fase 1 (propósito, partes interessadas, descrição do produto, modelo de qualidade, priorização, escopo e ODS) ficará com o Eduardo Waski, com prazo em 18/10, já que o PC1 pode acontecer em 19/10.
 2. A Fase 2 (GQM de Usabilidade, Eficiência de desempenho e Manutenibilidade, critérios de julgamento e diagrama GQM) será feita em dupla por Lucas Monteiro e kaleb Macedo, com meta em 18/10.
-3. O artigo ficará com o João Paulo e Julia Santana.
+3. O artigo ficará com o João Paulo e Júlia Santana.
 4. O Joaquim Neto ficará com a gestão (métricas PSM/CID e atas), com o fechamento da E1 (GitPage, contribuição e release) e com o material do PC1.
 5. Cada tarefa deve ser revisada por outro membro antes de ser publicada na GitPage, e o nome de quem revisou será registrado na *issue*.
 6. O acompanhamento será feito no GitHub, com *milestones* por marco (PC1 e E1) e *labels* por fase (`fase-1`, `fase-2`), por produto (`artigo`, `gitpage`, `gestao`) e por tipo de trabalho.
@@ -105,9 +108,9 @@ Ver também: [Métricas PSM/CID](metricas.md).
 - **Local / meio:** on-line
 - **Presentes:**
     - Eduardo Silva Waski
-    - Joao Paulo Barbosa Pereira Nunes
-    - Jose Joaquim da Silva Neto
-    - Julia Santana Campos
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
     - Kaleb de Souza Macedo
     - Lucas Monteiro Freitas
 - **Ausentes:** nenhum
@@ -129,3 +132,39 @@ Ver também: [Métricas PSM/CID](metricas.md).
 | Tarefa | Responsável | Prazo | Issue |
 |--------|-------------|-------|-------|
 | Revisar os slides e apresentação | Todos | 19/10 | -- |
+
+## Ata 04
+
+- **Data e horário:** 03/11/2026, 21h
+- **Local / meio:** on-line
+- **Presentes:**
+    - Eduardo Silva Waski
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
+    - Kaleb de Souza Macedo
+    - Lucas Monteiro Freitas
+- **Ausentes:** nenhum
+
+**Pauta**
+
+1. Criação dos slides para a apresentação das métricas PSM/CID.
+2. Discussão sobre os gráficos para analisar melhor as métricas coletadas.
+3. Planejamento das atividades da semana.
+
+**Decisões**
+
+1. Os slides da apresentação das métricas usam os dados da coleta automática de 03/11/2026 e seguem o roteiro: modelo PSM, adaptações feitas no CID e por quê, um slide por grupo de indicadores (com a pergunta que origina cada métrica, as medidas base e o critério de decisão) e as decisões tomadas a partir dos dados.
+2. Os gráficos devem mostrar cada item medido (PR, issue ou integrante), e não só o valor acumulado, porque a média e o acumulado escondem a distribuição. Exemplos discutidos: no I6, nenhuma issue fechou depois do prazo, mas seis fecharam no próprio dia; no I2, os PRs #16 a #23 foram aprovados só em 21/10, depois do merge, e por isso não contam como aprovados antes do merge.
+3. Os gráficos de análise serão adicionados à documentação de gestão, junto com os dados atualizados.
+
+**Encaminhamentos**
+
+| Tarefa | Responsável | Prazo | Issue |
+|--------|-------------|-------|-------|
+| Preparar e ensaiar a apresentação da gestão PSM/CID | Todos | 08/11 | [#52](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/52) |
+| Atualizar os dados da gestão PSM/CID e elaborar os gráficos de análise | Eduardo Waski e Joaquim Neto | 08/11 | [#55](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/55) |
+| Registrar a ata da reunião de 03/11 | Eduardo Waski | 08/11 | [#54](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/54) |
+| Fase 3: ambiente de avaliação e massa de dados de referência | Júlia Santana | 08/11 | [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) |
+| Fase 3: cronograma da avaliação e consistência com a Fase 2 | Joaquim Neto | 08/11 | [#41](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/41) |
+| Fase 3: protocolo com participantes de Capacidade de interação (M6 a M9) | Lucas Monteiro e Kaleb Macedo | 08/11 | [#40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40) |
