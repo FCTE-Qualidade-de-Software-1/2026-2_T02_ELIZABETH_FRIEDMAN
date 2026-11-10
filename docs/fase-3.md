@@ -302,26 +302,31 @@ O *smoke* só confirma que o Chromium inicia, que a API responde e que a tela in
 F3-C3: cronograma realista com atividades distribuídas e alinhadas à execução da Fase 4.
 -->
 
-Cada linha corresponde a uma issue do repositório. A coluna **Fim** é a meta registrada na issue;
-**Início** é a previsão da equipe. Todas as atividades terminam até **22/11/2026**.
+Cada linha corresponde a uma issue do repositório. **Início** e **Fim** são as datas reais das atividades
+concluídas e a previsão da equipe para as demais, e cada atividade começa depois do fim das que aparecem
+em **Depende de**. A coluna **Situação** vale para 10/11/2026. Todas as atividades terminam até **22/11/2026**.
 
-| Issue | Atividade | Responsável | Início | Fim | Métricas | Depende de |
-|------|-----------|-------------|--------|-----|----------|------------|
-| #37 | Ambiente de avaliação e massa de referência (concluído) | Júlia | 02/11 | 03/11 | M1.3, M1.4, M2–M5 | n/a |
-| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 07/11 | M1.1–M1.4 | #37 |
-| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 07/11 | M2–M5 | #37 |
-| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, kaleb | 02/11 | 07/11 | M6–M9 | n/a |
-| #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 03/11 | M1.1–M9 | n/a |
-| #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 02/11 | 18/11 | n/a | #38–#41 |
-| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | kaleb | 02/11 | 17/11 | M1.1–M1.4 | #38 |
-| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 02/11 | 17/11 | M2–M5 | #39 |
-| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 02/11 | 17/11 | M6–M9 | #40 |
-| #45 | Fase 4: julgamento, relações entre características e recomendações | kaleb, Joaquim | 02/11 | 19/11 | M1.1–M9 | #42–#44 |
-| #46 | Fase 4: ação de melhoria | Lucas | 02/11 | 20/11 | n/a | #45 |
-| #47 | Artigo: metodologia, resultados e conclusão | João | 02/11 | 20/11 | n/a | #41–#46 |
-| #48 | Artigo: revisão final da 2ª versão | João | 02/11 | 21/11 | n/a | #47 |
-| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 02/11 | 21/11 | n/a | contínuo |
-| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 02/11 | 22/11 | n/a | #48, #50 |
+| Issue | Atividade | Responsável | Início | Fim | Métricas | Depende de | Situação |
+|------|-----------|-------------|--------|-----|----------|------------|----------|
+| #37 | Ambiente de avaliação e massa de referência | Júlia | 02/11 | 05/11 | M1.3, M1.4, M2–M5 | n/a | Concluída |
+| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 12/11 | M1.1–M1.4 | #37 | Em andamento |
+| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 12/11 | M2–M5 | #37 | Em andamento |
+| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, Kaleb | 02/11 | 12/11 | M6–M9 | n/a | Em andamento |
+| #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 09/11 | M1.1–M9 | n/a | PR #59 em revisão |
+| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 02/11 | 21/11 | n/a | contínuo | Contínua |
+| #52 | Apresentação da gestão PSM/CID | Todos | 03/11 | 08/11 | n/a | n/a | Concluída |
+| #54 | Ata da reunião de 03/11 | Eduardo | 04/11 | 04/11 | n/a | n/a | Concluída |
+| #55 | Gráficos dos indicadores PSM/CID | Eduardo, Joaquim | 04/11 | 06/11 | n/a | n/a | Concluída |
+| #49 | Correções do PC1 e largura do site | Eduardo | 10/11 | 10/11 | n/a | n/a | PR #60 em revisão |
+| #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 13/11 | 18/11 | n/a | #38–#41 | A iniciar |
+| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | Kaleb | 13/11 | 17/11 | M1.1–M1.4 | #38 | A iniciar |
+| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 13/11 | 17/11 | M2–M5 | #39 | A iniciar |
+| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 13/11 | 17/11 | M6–M9 | #40 | A iniciar |
+| #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 18/11 | 19/11 | M1.1–M9 | #42–#44 | A iniciar |
+| #46 | Fase 4: ação de melhoria | Lucas | 20/11 | 20/11 | n/a | #45 | A iniciar |
+| #47 | Artigo: metodologia, resultados e conclusão | João | 20/11 | 20/11 | n/a | #41–#46 | A iniciar |
+| #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 21/11 | n/a | #47 | A iniciar |
+| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 | n/a | #48, #50 | A iniciar |
 
 ---
 
