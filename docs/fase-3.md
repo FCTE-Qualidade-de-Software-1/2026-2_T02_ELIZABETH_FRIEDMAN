@@ -315,7 +315,7 @@ Cada linha corresponde a uma issue do repositório. A coluna **Fim** é a meta r
 | #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 02/11 | 18/11 | n/a | #38–#41 |
 | #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | kaleb | 02/11 | 17/11 | M1.1–M1.4 | #38 |
 | #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 02/11 | 17/11 | M2–M5 | #39 |
-| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Lucas, João | 02/11 | 17/11 | M6–M9 | #40 |
+| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 02/11 | 17/11 | M6–M9 | #40 |
 | #45 | Fase 4: julgamento, relações entre características e recomendações | kaleb, Joaquim | 02/11 | 19/11 | M1.1–M9 | #42–#44 |
 | #46 | Fase 4: ação de melhoria | Lucas | 02/11 | 20/11 | n/a | #45 |
 | #47 | Artigo: metodologia, resultados e conclusão | João | 02/11 | 20/11 | n/a | #41–#46 |
