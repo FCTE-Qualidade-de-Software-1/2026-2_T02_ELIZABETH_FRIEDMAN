@@ -12,9 +12,22 @@ F3-C1: método justificado e instruções passo a passo para o avaliador,
 garantindo repetibilidade e reprodutibilidade.
 -->
 
-| Métrica ([Fase 2](fase-2.md#3-metricas-nivel-quantitativo)) | Método / técnica | Ferramenta | Instruções |
-|---------------------------------------------------------------|------------------|------------|------------|
-| M1 | | | |
+Os níveis resumem a [escala da Fase 2, seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica) (0 Insatisfatório, 1 Aceitável, 2 Bom, 3 Excelente); em caso de divergência, vale a Fase 2. A coluna **Card** indica onde o passo a passo é detalhado: #38 (M1.1 a M1.4), #39 (M2 a M5) e #40 (M6 a M9). Enquanto esses cards não fecham, o passo a passo de cada métrica fica **a detalhar**.
+
+| Métrica (Fase 2) | Método / técnica | Recurso | Ambiente | Nível de pontuação | Card (instruções) |
+|---|---|---|---|---|---|
+| [M1.1](fase-2.md#m11-arquivos-participantes-de-ciclos-internos) | Análise estática do grafo de importações, por camada; ciclos = componentes fortemente conexos; auditoria manual dos *imports* dos ciclos | pydeps (Python), Madge (TS/TSX), inventário do Git; CSV de registro mínimo | Máquina de avaliação ([2.2](#22-requisitos-do-avaliador)), *commit* `3d399e7` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); sem subir os serviços | Por camada (%): 0 = >10; 1 = >5 a 10; 2 = >0 a 5; 3 = 0 | #38 |
+| [M1.2](fase-2.md#m12-blocos-com-complexidade-ciclomatica-elevada) | Análise estática da complexidade ciclomática (CC > 10), por camada e nos componentes críticos; revisão manual do *scraper* e do gerador | Radon (Python); ESLint, regra `complexity`, com *parser* TypeScript; inventário de blocos | Máquina de avaliação ([2.2](#22-requisitos-do-avaliador)), *commit* `3d399e7` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); sem subir os serviços | Por recorte (%): 0 = >20; 1 = >10 a 20; 2 = >5 a 10; 3 = ≤5 | #38 |
+| [M1.3](fase-2.md#m13-tempo-para-concluir-uma-mudanca-validada) | Mudança controlada e cronometrada (tarefas C1 e C2), uma execução por tarefa, em cópias independentes do mesmo *commit*; revisor confere o *patch* | Git, cronômetro, fichas de C1 e C2, lista de aceitação, suíte Django, `api/utils/mock/sigaa.html`; executor que não conheça as alterações | Cópias do *commit* `3d399e7`; `db`, `redis` e `api` de pé, sem acesso ao SIGAA ([2.1](#21-versao-avaliada-e-subida-do-ambiente)) | Por tarefa (min): 0 = insucesso, regressão ou >90; 1 = >60 a 90; 2 = >30 a 60; 3 = ≤30 | #38 |
+| [M1.4](fase-2.md#m14-cobertura-de-linhas-executaveis-da-api) | Execução da suíte completa da API com cobertura de linhas, total e nos dois componentes críticos | coverage.py 7.3.2 com configuração própria (`source` explícito, sem `pragma: no cover`), relatórios JSON e HTML | Cópia limpa do *commit*, PostgreSQL e Redis locais, *fixtures* existentes, sem SIGAA ([2.1](#21-versao-avaliada-e-subida-do-ambiente)) | Por recorte (%): 0 = <70; 1 = 70 a <80; 2 = 80 a <90; 3 = ≥90 | #38 |
+| [M2](fase-2.md#m2-tempo-de-resposta-da-busca-de-disciplinas-p95) | Roteiro automatizado: 2 tentativas de aquecimento + 30 medidas por cenário (busca por nome e por código); P95 pelo posto mais próximo ([Fase 2, 3.1](fase-2.md#31-convencoes-de-medicao-de-eficiencia-de-desempenho)) | Playwright 1.62.1, Chromium 151.0.7922.34, `performance.now()`, CSV; termos de [2.3](#23-massa-de-referencia) | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >2000; 1 = >1000 a 2000; 2 = >500 a 1000; 3 = ≤500 | #39 |
+| [M3](fase-2.md#m3-tempo-de-atualizacao-apos-selecao-de-turma-p95) | Mesmo protocolo de M2, com seleção de turma e restauração das seleções entre tentativas | Playwright, Chromium, CSV; turma identificada por código da disciplina e número da turma | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >1000; 1 = >300 a 1000; 2 = >100 a 300; 3 = ≤100 | #39 |
+| [M4](fase-2.md#m4-tempo-de-geracao-de-grades-p95) | Mesmo protocolo de M2, com conjuntos fixos de disciplinas e turmas e combinações esperadas conferidas | Playwright, Chromium, CSV; conjuntos da massa de [2.3](#23-massa-de-referencia) (ex.: `PPGPS2475/01` + `PPGPS2939/01`) | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >10000; 1 = >3000 a 10000; 2 = >1000 a 3000; 3 = ≤1000 | #39 |
+| [M5](fase-2.md#m5-tempo-de-retorno-do-salvamento-de-grade-p95) | Mesmo protocolo de M2, separado por modalidade (navegador e conta de teste); depois da medição, recuperar a grade para validar a persistência | Playwright, Chromium, CSV; para a conta, sessão injetada pelo roteiro (**a confirmar** em [2.3](#23-massa-de-referencia)) | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >2000; 1 = >1000 a 2000; 2 = >500 a 1000; 3 = ≤500 | #39 |
+| [M6](fase-2.md#m6-sucesso-no-primeiro-uso-apos-exploracao-inicial) | Sessão de primeiro uso, com exploração livre limitada e tarefa padronizada; distribuição entre computador e celular em participantes distintos | Cronômetro, questionário de experiência prévia, ficha CSV, capturas, termo de consentimento; estudantes sem uso prévio | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <80; 1 = 80 a <90; 2 = 90 a <100; 3 = 100 | #40 |
+| [M7](fase-2.md#m7-sucesso-independente-nas-tarefas-de-controle-da-grade) | Tarefas de selecionar, remover e alterar escolhas, com estado inicial restaurado; conferência do estado final | Ficha de observação CSV, capturas antes e depois; Playwright apenas para restaurar o estado | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
+| [M8](fase-2.md#m8-cobertura-de-protecao-contra-perda-involuntaria-da-grade) | Inspeção pelo avaliador de cada cenário do inventário de ações de risco, com grade de referência restaurada | Inventário de riscos, roteiro de inspeção, CSV, capturas; grades descartáveis | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Binária: 0 = <100%; 3 = 100% (níveis 1 e 2 não se aplicam) | #40 |
+| [M9](fase-2.md#m9-compreensao-dos-estados-e-acoes-da-interface) | Perguntas neutras em pontos de verificação (seleção, geração em andamento e concluída, resultado do salvamento), confrontadas com o gabarito | Gabarito de estados e ações, ficha CSV, capturas da interface no instante da pergunta | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
 
 ## 2. Recursos e ambiente de avaliação
 
@@ -289,9 +302,66 @@ O *smoke* só confirma que o Chromium inicia, que a API responde e que a tela in
 F3-C3: cronograma realista com atividades distribuídas e alinhadas à execução da Fase 4.
 -->
 
-| Atividade | Responsável | Início | Fim | Métricas envolvidas |
-|-----------|-------------|--------|-----|---------------------|
-| | | | | |
+Cada linha corresponde a uma issue do repositório. **Início** e **Fim** são as datas reais das atividades
+concluídas e a previsão da equipe para as demais, e cada atividade começa depois do fim das que aparecem
+em **Depende de**. A coluna **Situação** vale para 10/11/2026. Todas as atividades terminam até **22/11/2026**.
+
+| Issue | Atividade | Responsável | Início | Fim | Métricas | Depende de | Situação |
+|------|-----------|-------------|--------|-----|----------|------------|----------|
+| #37 | Ambiente de avaliação e massa de referência | Júlia | 02/11 | 05/11 | M1.3, M1.4, M2–M5 | n/a | Concluída |
+| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 12/11 | M1.1–M1.4 | #37 | Em andamento |
+| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 12/11 | M2–M5 | #37 | Em andamento |
+| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, Kaleb | 02/11 | 12/11 | M6–M9 | n/a | Em andamento |
+| #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 09/11 | M1.1–M9 | n/a | PR #59 em revisão |
+| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 02/11 | 21/11 | n/a | contínuo | Contínua |
+| #52 | Apresentação da gestão PSM/CID | Todos | 03/11 | 08/11 | n/a | n/a | Concluída |
+| #54 | Ata da reunião de 03/11 | Eduardo | 04/11 | 04/11 | n/a | n/a | Concluída |
+| #55 | Gráficos dos indicadores PSM/CID | Eduardo, Joaquim | 04/11 | 06/11 | n/a | n/a | Concluída |
+| #49 | Correções do PC1 e largura do site | Eduardo | 10/11 | 10/11 | n/a | n/a | PR #60 em revisão |
+| #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 13/11 | 18/11 | n/a | #38–#41 | A iniciar |
+| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | Kaleb | 13/11 | 17/11 | M1.1–M1.4 | #38 | A iniciar |
+| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 13/11 | 17/11 | M2–M5 | #39 | A iniciar |
+| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 13/11 | 17/11 | M6–M9 | #40 | A iniciar |
+| #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 18/11 | 19/11 | M1.1–M9 | #42–#44 | A iniciar |
+| #46 | Fase 4: ação de melhoria | Lucas | 20/11 | 20/11 | n/a | #45 | A iniciar |
+| #47 | Artigo: metodologia, resultados e conclusão | João | 20/11 | 20/11 | n/a | #41–#46 | A iniciar |
+| #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 21/11 | n/a | #47 | A iniciar |
+| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 | n/a | #48, #50 | A iniciar |
+
+---
+
+## 4. Consistência com a Fase 2
+
+<!--
+F3-C8: para cada métrica da Fase 2, indicar explicitamente o método e os recursos que a medem.
+Esta seção registra o que a Fase 3 fixou, o que mudou em relação à Fase 2 e o que ainda está pendente.
+-->
+
+A Fase 3 não altera nenhuma métrica, fórmula nem faixa de pontuação da [Fase 2](fase-2.md).
+A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
+
+### 4.1 O que mudou em relação à Fase 2 e por quê
+
+| # | Tema | Na Fase 2 | Na Fase 3 | Por quê e efeito |
+|---|------|-----------|-----------|------------------|
+| 1 | Máquina e Docker | Docker indisponível na distribuição WSL inspecionada em 18/10 ([3.2](fase-2.md#32-verificacao-de-viabilidade-da-coleta)); Node 24.19.0, npm 11.17.0 | Ubuntu 24.04.2 LTS, Docker 29.1.2, Compose v2.40.3; quatro serviços de pé em 03/11 ([2.1](#21-versao-avaliada-e-subida-do-ambiente), [2.2](#22-requisitos-do-avaliador)); Node v22.22.3, npm 11.16.0 | A coleta passou para outra máquina. A pendência 1 da Fase 2 está atendida. As ferramentas de análise estática de M1.1 e M1.2 devem registrar de novo as versões do host, pois as execuções de 18/10 foram só verificação inicial |
+| 2 | Massa de M2–M5 | Conjuntos fixos a definir na Fase 3, sem acionar o SIGAA | Mock do projeto (`api/utils/mock/sigaa.html`): departamento 1499, 14 disciplinas e 43 turmas, todas de Pós-Graduação em Política Social ([2.3](#23-massa-de-referencia)) | É o único conjunto fixo e reproduzível sem rede. Os resultados valem para essa massa, não para o volume de uma matrícula real; a Fase 2 já limita as conclusões nesse sentido |
+| 3 | Sessão na conta (M5) | Conta de teste com autenticação funcional por OAuth local | O login Google fica fora do escopo ([Fase 1, Tabela 12](fase-1.md#62-o-que-fica-fora-do-escopo)); a API aceita um *token* simulado, mas o *frontend* não usa esse caminho, então o roteiro injeta a sessão (**a confirmar** no piloto) | Evita depender de credenciais reais. Se a sessão não puder ser reproduzida, vale a regra da Fase 2: registrar a limitação e não atribuir resultado à modalidade conta |
+| 4 | Período da massa | Não especificado | A massa é gravada no ano e período correntes (`/courses/year-period/`), e o valor é registrado em cada coleta ([2.3](#23-massa-de-referencia)) | O *frontend* só oferece o período atual e o seguinte |
+
+### 4.2 Decisões que a Fase 2 deixou para a Fase 3
+
+| Decisão pendente na Fase 2 | Situação | Issue |
+|----------------------------|----------|------|
+| Fixar versões de Playwright e Chromium; execução sequencial sem nova tentativa | Fixadas: 1.62.1 e 151.0.7922.34; `workers: 1`, `retries: 0` ([2.4](#24-playwright-e-chromium)) | #37, concluído |
+| Reprodução local e massa de referência | Feitas em 03/11 ([2.1](#21-versao-avaliada-e-subida-do-ambiente), [2.3](#23-massa-de-referencia)) | #37, concluído |
+| Tempo máximo de espera por operação (maior que $L_j$) | Pendente | #39 |
+| Seletores e sinais de conclusão visual de M2–M5 | Pendente | #39 |
+| Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Pendente; conferir no piloto | #38 |
+| Executor de C1 e C2 e fichas das mudanças | Pendente | #38 |
+| Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Pendente | #40 |
+| Inventário de riscos de M8 e gabarito de M9 | Pendente | #40 |
+| Pilotos de todas as métricas | Pendente | #38, #39, #40 |
 
 ---
 
