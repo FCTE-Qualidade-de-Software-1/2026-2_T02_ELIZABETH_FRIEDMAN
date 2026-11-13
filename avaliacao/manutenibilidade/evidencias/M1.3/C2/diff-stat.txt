@@ -1,0 +1,5 @@
+ api/api/tests/test_generate_schedule_api.py | 63 ++++++++++++++++++++++++++++-
+ api/api/views/views.py                      |  2 +-
+ api/utils/schedule_generator.py             | 14 +++++--
+ api/utils/tests/test_schedule_generator.py  | 43 +++++++++++++++-----
+ 4 files changed, 108 insertions(+), 14 deletions(-)
