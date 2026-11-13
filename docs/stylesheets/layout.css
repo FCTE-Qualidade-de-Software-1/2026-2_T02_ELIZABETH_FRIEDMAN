@@ -1,0 +1,4 @@
+/* Largura do site: o Material limita a 61rem, o que deixa faixas vazias em telas grandes. */
+.md-grid {
+  max-width: 75rem;
+}

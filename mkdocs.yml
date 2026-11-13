@@ -73,6 +73,7 @@ markdown_extensions:
 
 extra_css:
   - stylesheets/graficos.css
+  - stylesheets/layout.css
 
 extra_javascript:
   - javascripts/mathjax.js
