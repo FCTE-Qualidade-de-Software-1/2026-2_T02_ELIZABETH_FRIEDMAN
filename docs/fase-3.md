@@ -558,6 +558,34 @@ Running 2 tests using 1 worker
 O *smoke* só confirma que o Chromium inicia, que a API responde e que a tela inicial
 (`Continuar como anônimo`) é exibida. Não é coleta de M2–M5.
 
+### 2.5 Participantes e sessões (M6 a M9)
+
+Para M6–M9, usar a versão `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`
+do Sua Grade UnB (seção 2.1) em ambiente local isolado, com a massa de referência da seção 2.3,
+conta de teste quando necessária e acesso por computador e celular físicos. Registrar sistema operacional,
+navegador/versão, dimensões e URL efetiva no manifesto da sessão. As sessões serão online por Google Meet. Validar acesso remoto privado ao ambiente
+nos dispositivos dos participantes antes do piloto; `localhost` no celular aponta
+para o próprio celular. O compartilhamento de tela também deve ser validado.
+
+O avaliador deve saber restaurar o estado, conferir disciplinas/turmas e preservar
+registros sem orientar o caminho. Participantes: estudantes adultos sem uso prévio,
+com conhecimento básico de navegador e do conceito de disciplina/turma. Planejam-se
+dois estudantes no computador e dois no celular, com um suplente por grupo;
+uma pessoa adicional participa apenas do piloto. A redução de dez para quatro
+participantes foi definida antes da coleta em 08/11/2026 para viabilizar a execução
+pela equipe, com menor cobertura e sem alterar os limiares de julgamento da Fase 2.
+Trata-se de amostra exploratória
+por conveniência, sem pretensão de representatividade estatística.
+
+Recursos, instruções, tempos e pendências estão no [protocolo](avaliacao-interacao/protocolo.md).
+O [consentimento](avaliacao-interacao/consentimento.md), o [recrutamento](avaliacao-interacao/recrutamento.md)
+e os [modelos CSV](avaliacao-interacao/registros.md) fazem parte do instrumento.
+O [procedimento de proteção dos dados](avaliacao-interacao/dados.md) orienta a equipe
+sobre o preenchimento do termo e o tratamento das autorizações e registros.
+O ambiente e a massa de referência são os da #37 (seções 2.1 e 2.3). Ainda precisam ser
+confirmados os identificadores reais das disciplinas e turmas usadas nas tarefas e o acesso
+às modalidades de salvamento. Preparação documental não constitui coleta validada.
+
 ## 3. Cronograma da avaliação
 
 <!--
@@ -573,7 +601,7 @@ em **Depende de**. A coluna **Situação** vale para 12/11/2026. Todas as ativid
 | #37 | Ambiente de avaliação e massa de referência | Júlia | 02/11 | 05/11 | M1.3, M1.4, M2–M5 | n/a | Concluída |
 | #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 12/11 | M1.1–M1.4 | #37 | Em andamento |
 | #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 12/11 | M2–M5 | #37 | Concluída |
-| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, Kaleb | 02/11 | 12/11 | M6–M9 | n/a | Em andamento |
+| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, Kaleb (preparação); Júlia, João (sessões) | 02/11 | 15/11 (previsão) | M6–M9 | n/a | Em andamento: piloto e sessões aguardam participantes |
 | #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 09/11 | M1.1–M9 | n/a | Concluída |
 | #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 02/11 | 21/11 | n/a | contínuo | Contínua |
 | #52 | Apresentação da gestão PSM/CID | Todos | 03/11 | 08/11 | n/a | n/a | Concluída |
@@ -590,6 +618,31 @@ em **Depende de**. A coluna **Situação** vale para 12/11/2026. Todas as ativid
 | #47 | Artigo: metodologia, resultados e conclusão | João | 20/11 | 20/11 | n/a | #41–#46 | A iniciar |
 | #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 21/11 | n/a | #47 | A iniciar |
 | #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 | n/a | #48, #50 | A iniciar |
+
+### 3.1 Cronograma de M6 a M9 (issue #40)
+
+| Atividade | Responsável | Início | Fim | Métricas envolvidas |
+|-----------|-------------|--------|-----|---------------------|
+| Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | M6–M9 |
+| Preencher campos do termo e validar acesso ao ambiente nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 (previsão) | M6–M9 |
+| Recrutar PIL01 e quatro participantes, com um suplente por grupo | Júlia | 10/11/2026 | 14/11/2026 (previsão) | M6, M7, M9 |
+| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Júlia e João | 14/11/2026 (previsão) | 14/11/2026 (previsão) | M6–M9 |
+| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Júlia e João | 15/11/2026 (previsão) | 15/11/2026 (previsão) | M6–M9 |
+| Inspeção M8 no ambiente, com dados descartáveis | Júlia e João | 14/11/2026 (previsão) | 15/11/2026 (previsão) | M8 |
+| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Júlia e João | 16/11/2026 (previsão) | 17/11/2026 (previsão) | M6, M7, M9 |
+| Análise dos resultados de M6 a M9 na Fase 4 (#44 e #45) | Equipe | 17/11/2026 (previsão) | 19/11/2026 (previsão) | M6–M9 |
+
+Cronograma replanejado em 12/11/2026: o piloto previsto para 11/11 e o congelamento previsto para 12/11
+não foram executados, e as sessões dependem do recrutamento dos participantes. As datas marcadas como
+previsão serão confirmadas quando os participantes estiverem agendados; as sessões devem terminar até
+17/11/2026, data final de #44 na tabela acima.
+
+#### Situação da issue #40
+
+Materiais preparados em 03/11/2026 e revisados em 08/11/2026, protocolo 0.2, **aguardando validação humana**.
+O [registro de piloto e fechamento](avaliacao-interacao/piloto.md) mantém os critérios
+de liberação e as pendências. Não encerrar a issue antes de confirmar recrutamento,
+inventário no ambiente real e piloto com pessoa fora da amostra.
 
 ---
 
