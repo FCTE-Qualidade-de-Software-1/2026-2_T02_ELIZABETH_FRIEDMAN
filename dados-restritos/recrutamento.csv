@@ -1,0 +1,6 @@
+participante_codigo,grupo,dispositivo,modalidade,maior_18,estudante_unb,sem_uso_previo,conhecimento_basico,participou_piloto,elegivel,disponibilidade,sessao_agendada,status,consentimento_observacao,consentimento_capturas,consentimento_gravacao_tela,consentimento_audio,consentimento_publicacao,termo_ref
+P01,formal,computador,,,,,,,,,,indicado_pela_equipe,,,,,,
+P02,formal,computador,,,,,,,,,,indicado_pela_equipe,,,,,,
+P03,formal,celular,,,,,,,,,,indicado_pela_equipe,,,,,,
+P04,formal,celular,,,,,,,,,,indicado_pela_equipe,,,,,,
+PIL01,piloto,,,,,,,,,,,indicado_pela_equipe,,,,,,

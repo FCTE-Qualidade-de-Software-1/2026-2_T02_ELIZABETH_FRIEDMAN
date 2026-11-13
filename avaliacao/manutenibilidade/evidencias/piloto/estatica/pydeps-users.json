@@ -1,0 +1,169 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "users",
+      "users.admin",
+      "users.apps",
+      "users.models",
+      "users.tests",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register",
+      "users.urls",
+      "users.views"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "api": {
+    "bacon": 2,
+    "imported_by": [
+      "users.views"
+    ],
+    "name": "api",
+    "path": "/tmp/suagrade-validacao-f2/api/api/__init__.py"
+  },
+  "api.swagger": {
+    "bacon": 2,
+    "imported_by": [
+      "users.views"
+    ],
+    "name": "api.swagger",
+    "path": "/tmp/suagrade-validacao-f2/api/api/swagger.py"
+  },
+  "test.support": {
+    "bacon": 9223372036854775807,
+    "name": "test.support",
+    "path": null
+  },
+  "test.support.import_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.import_helper",
+    "path": null
+  },
+  "test.support.os_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.os_helper",
+    "path": null
+  },
+  "test.support.script_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.script_helper",
+    "path": null
+  },
+  "users": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register",
+      "users.urls",
+      "users.views"
+    ],
+    "name": "users",
+    "path": "/tmp/suagrade-validacao-f2/api/users/__init__.py"
+  },
+  "users.admin": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users.models"
+    ],
+    "name": "users.admin",
+    "path": "/tmp/suagrade-validacao-f2/api/users/admin.py"
+  },
+  "users.apps": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "users.apps",
+    "path": "/tmp/suagrade-validacao-f2/api/users/apps.py"
+  },
+  "users.models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.admin",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register"
+    ],
+    "name": "users.models",
+    "path": "/tmp/suagrade-validacao-f2/api/users/models.py"
+  },
+  "users.tests": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "users.tests",
+    "path": "/tmp/suagrade-validacao-f2/api/users/tests/__init__.py"
+  },
+  "users.tests.test_session_login": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_login",
+    "path": "/tmp/suagrade-validacao-f2/api/users/tests/test_session_login.py"
+  },
+  "users.tests.test_session_logout": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_logout",
+    "path": "/tmp/suagrade-validacao-f2/api/users/tests/test_session_logout.py"
+  },
+  "users.tests.test_session_register": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_register",
+    "path": "/tmp/suagrade-validacao-f2/api/users/tests/test_session_register.py"
+  },
+  "users.urls": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.views"
+    ],
+    "name": "users.urls",
+    "path": "/tmp/suagrade-validacao-f2/api/users/urls.py"
+  },
+  "users.views": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.urls"
+    ],
+    "imports": [
+      "api",
+      "api.swagger",
+      "users"
+    ],
+    "name": "users.views",
+    "path": "/tmp/suagrade-validacao-f2/api/users/views.py"
+  }
+}

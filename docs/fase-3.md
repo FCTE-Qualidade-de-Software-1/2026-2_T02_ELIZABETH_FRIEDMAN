@@ -12,6 +12,38 @@ F3-C1: método justificado e instruções passo a passo para o avaliador,
 garantindo repetibilidade e reprodutibilidade.
 -->
 
+| Métrica ([Fase 2](fase-2.md#3-metricas-nivel-quantitativo)) | Método / técnica | Ferramenta | Instruções |
+|---------------------------------------------------------------|------------------|------------|------------|
+| M1.1 — Modularidade | Grafo de imports por arquivo e componentes fortemente conexos; percentual de arquivos em ciclos por camada | pydeps 3.0.1, AST Python e Madge 8.0.0 | [Roteiro e comandos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m11--ciclos-de-importação) |
+| M1.2 — Analisabilidade | Percentual de funções/métodos com complexidade ciclomática maior que 10, em quatro recortes | Radon 6.0.1, ESLint 8.57.1 e parser TypeScript 7.18.0 | [Roteiro e comandos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m12--complexidade-ciclomática) |
+| M1.3 — Modificabilidade | Tempo de duas mudanças independentes, condicionado à aceitação e à ausência de regressão | Git, cronômetro monotônico, testes Django e revisão independente | [Roteiro e fichas C1/C2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) |
+| M1.4 — Testabilidade | Cobertura de linhas executáveis da suíte original, com universo de produção explícito | coverage.py 7.3.2, Django, PostgreSQL e Redis | [Roteiro e configuração própria](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m14--cobertura-de-linhas) |
+
+### 1.1 Procedimentos e pilotos de manutenibilidade
+
+Os [procedimentos executáveis](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade)
+fixam versão, inventário, exclusões, ferramentas, comandos, saídas esperadas e destino dos registros.
+A análise de ciclos localiza dependências estruturais; a complexidade identifica blocos a investigar;
+as mudanças observam esforço validado; a cobertura verifica quanto código de produção é exercitado.
+Esses métodos se complementam, sem demonstrar isoladamente a qualidade de toda a manutenibilidade.
+
+Todos distinguem os níveis 0 a 3 da [Fase 2](fase-2.md#41-escala-e-faixas-por-metrica),
+por camada, componente ou tarefa, conforme a tabela de pontuação dos roteiros.
+Denominador zero é Não calculável; infraestrutura ou evidência inválida é Não avaliado, sem nota.
+O piloto valida o procedimento e não substitui a coleta formal da Fase 4.
+
+O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/evidencias/piloto/RELATORIO.md)
+registra as execuções de 08/11/2026 e suas limitações. Após habilitar o Docker no Ubuntu,
+o piloto M1.4 aprovou os 108 testes e conferiu os 50 arquivos do inventário, sem linhas excluídas.
+A cobertura foi 81,8768% na API, 97,5% no scraper e 99,2908% no gerador.
+Lucas será o executor da coleta formal de M1.3; Joaquim fará o piloto e revisará a coleta formal.
+O piloto M1.4 foi executado por Codex com autorização de Lucas; Lucas guardará/versionará
+as evidências e Joaquim conferirá a cobertura.
+As soluções do piloto C1/C2 ficam sob guarda de Joaquim até a sessão formal. A elegibilidade de Lucas
+foi confirmada pelo usuário; a de Joaquim deve ser verificada antes do piloto, confirmando que
+não especificou, ensaiou nem conhece a localização das alterações. As sessões humanas ainda não foram registradas.
+O ambiente de Joaquim para o piloto C1/C2 deve ser preparado e registrado, seguindo o guia em `avaliacao/manutenibilidade/tarefas/GUIA-PILOTO-JOAQUIM.md`.
+A issue #38 permanece pendente do piloto humano e da conferência de Joaquim.
 Os níveis resumem a [escala da Fase 2, seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica) (0 Insatisfatório, 1 Aceitável, 2 Bom, 3 Excelente); em caso de divergência, vale a Fase 2. A coluna **Card** indica onde o passo a passo é detalhado: #38 (M1.1 a M1.4), #39 (M2 a M5) e #40 (M6 a M9). Enquanto esses cards não fecham, o passo a passo de cada métrica fica **a detalhar**.
 
 | Métrica (Fase 2) | Método / técnica | Recurso | Ambiente | Nível de pontuação | Card (instruções) |

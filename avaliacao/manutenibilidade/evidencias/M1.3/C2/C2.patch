@@ -1,0 +1,168 @@
+diff --git a/api/api/tests/test_generate_schedule_api.py b/api/api/tests/test_generate_schedule_api.py
+index 9e55706..325be48 100644
+--- a/api/api/tests/test_generate_schedule_api.py
++++ b/api/api/tests/test_generate_schedule_api.py
+@@ -121,4 +121,65 @@ class TestGenerateScheduleAPI(APITestCase):
+         response = self.client.post(self.api_url, body, content_type=self.content_type)
+         
+         self.assertEqual(response.status_code, 200)
+-        self.assertTrue(len(response.data["schedules"]) > 0)
+\ No newline at end of file
++        self.assertTrue(len(response.data["schedules"]) > 0)
++
++    def test_with_invalid_preference_length(self):
++        """A API rejeita listas de preferência com tamanho diferente de três."""
++        invalid_preferences = ([], [1, 2], [1, 2, 3, 1])
++
++        for preference in invalid_preferences:
++            with self.subTest(preference=preference):
++                body = json.dumps({
++                    'preference': preference,
++                    'classes': [self.class_1.id, self.class_2.id,
++                                self.class_3.id, self.class_4.id]
++                })
++                response = self.client.post(
++                    self.api_url, body, content_type=self.content_type)
++                self.assertEqual(response.status_code, 400)
++
++    def test_with_preference_outside_range(self):
++        """A API retorna erro controlado para valores fora de 1 a 3."""
++        invalid_preferences = ([0, 2, 3], [1, 2, 4])
++
++        for preference in invalid_preferences:
++            with self.subTest(preference=preference):
++                body = json.dumps({
++                    'preference': preference,
++                    'classes': [self.class_1.id, self.class_2.id,
++                                self.class_3.id, self.class_4.id]
++                })
++                response = self.client.post(
++                    self.api_url, body, content_type=self.content_type)
++                self.assertEqual(response.status_code, 400)
++
++    def test_with_non_integer_preference_values(self):
++        """A API rejeita valores que não sejam inteiros estritos."""
++        invalid_preferences = ([1, 2, '3'], [1, 2, 2.5], [1, 2, True])
++
++        for preference in invalid_preferences:
++            with self.subTest(preference=preference):
++                body = json.dumps({
++                    'preference': preference,
++                    'classes': [self.class_1.id, self.class_2.id,
++                                self.class_3.id, self.class_4.id]
++                })
++                response = self.client.post(
++                    self.api_url, body, content_type=self.content_type)
++                self.assertEqual(response.status_code, 400)
++
++    def test_with_valid_preference_orders(self):
++        """As duas ordens válidas continuam gerando grades sem conflitos."""
++        valid_preferences = ([1, 2, 3], [3, 2, 1])
++
++        for preference in valid_preferences:
++            with self.subTest(preference=preference):
++                body = json.dumps({
++                    'preference': preference,
++                    'classes': [self.class_1.id, self.class_2.id,
++                                self.class_3.id, self.class_4.id]
++                })
++                response = self.client.post(
++                    self.api_url, body, content_type=self.content_type)
++                self.assertEqual(response.status_code, 200)
++                self.assertGreater(len(response.data['schedules']), 0)
+diff --git a/api/api/views/views.py b/api/api/views/views.py
+index 353f087..3a4a442 100644
+--- a/api/api/views/views.py
++++ b/api/api/views/views.py
+@@ -202,7 +202,7 @@ class GenerateSchedule(APIView):
+         classes_id = request.data.get('classes', None)
+         preference = request.data.get('preference', None)
+         preference_valid = preference is not None and isinstance(preference, list) and all(
+-            isinstance(x, int) for x in preference) and len(preference) == 3
++            type(x) is int for x in preference) and len(preference) == 3
+         classes_valid = classes_id is not None and isinstance(
+             classes_id, list) and all(isinstance(x, int) for x in classes_id) and len(classes_id) > 0
+ 
+diff --git a/api/utils/schedule_generator.py b/api/utils/schedule_generator.py
+index 8b9be29..80e2fe7 100644
+--- a/api/utils/schedule_generator.py
++++ b/api/utils/schedule_generator.py
+@@ -11,7 +11,7 @@ MAXIMUM_DISCIPLINES = 11
+ MAXIMUM_DISPLAYED_CONFLICTS = 4
+ 
+ LIMIT_ERROR_MESSAGE = f"you can only send {MAXIMUM_DISCIPLINES} disciplines and {MAXIMUM_CLASSES_FOR_DISCIPLINE} classes for each discipline."
+-PREFERENCE_RANGE_ERROR = f"preference must be a list of integers with range [{MINIMUM_PREFERENCE_RANGE}, {MAXIMUM_PREFERENCE_RANGE}]"
++PREFERENCE_RANGE_ERROR = f"preference must be a list of exactly 3 integers with range [{MINIMUM_PREFERENCE_RANGE}, {MAXIMUM_PREFERENCE_RANGE}]"
+ NO_SCHEDULES_ERROR = "Não há horários disponíveis para a combinação de disciplinas selecionadas."
+ SUCCESS_MESSAGE = "Horários gerados com sucesso."
+ FIX_PROBLEM_MESSAGE = "\n\nPara resolver o problema, você pode remover uma das seguintes disciplinas: \n\n"
+@@ -44,8 +44,16 @@ class ScheduleGenerator:
+         self._validate_parameters_length()
+ 
+     def _validate_preference(self) -> None:
+-        self.valid = self.preference is None or all(isinstance(
+-            x, int) and MINIMUM_PREFERENCE_RANGE <= x <= MAXIMUM_PREFERENCE_RANGE for x in self.preference)
++        """Valida a preferência dos turnos M/T/N, quando informada."""
++        self.valid = self.preference is None or (
++            isinstance(self.preference, list)
++            and len(self.preference) == len(self.available_letters)
++            and all(
++                type(value) is int
++                and MINIMUM_PREFERENCE_RANGE <= value <= MAXIMUM_PREFERENCE_RANGE
++                for value in self.preference
++            )
++        )
+ 
+         if not self.valid:
+             raise ValueError(PREFERENCE_RANGE_ERROR)
+diff --git a/api/utils/tests/test_schedule_generator.py b/api/utils/tests/test_schedule_generator.py
+index 761b464..55872b1 100644
+--- a/api/utils/tests/test_schedule_generator.py
++++ b/api/utils/tests/test_schedule_generator.py
+@@ -170,12 +170,37 @@ class TestSchedule(APITestCase):
+         self.assertEqual(len(schedules), 4)
+ 
+     def test_with_invalid_preference(self):
+-        """
+-        Testa a geração de horários com preferência inválida
+-        """
+-
+-        try:
+-            schedule_generator = ScheduleGenerator(
+-                classes_id=[self.class_1.id], preference=[1, 2, '3'])
+-        except Exception as error:
+-            self.assertEqual(str(error), PREFERENCE_RANGE_ERROR)
++        """Rejeita valores que não são inteiros entre 1 e 3."""
++        invalid_preferences = ([1, 2, '3'], [1, 2, 0], [1, 2, 4],
++                               [1, 2, 2.5], [1, 2, True])
++
++        for preference in invalid_preferences:
++            with self.subTest(preference=preference):
++                with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
++                    ScheduleGenerator(
++                        classes_id=[self.class_1.id], preference=preference)
++
++    def test_with_invalid_preference_length(self):
++        """Rejeita preferências que não tenham exatamente três posições M/T/N."""
++        invalid_preferences = ([], [1, 2], [1, 2, 3, 1])
++
++        for preference in invalid_preferences:
++            with self.subTest(preference=preference):
++                with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
++                    ScheduleGenerator(
++                        classes_id=[self.class_1.id], preference=preference)
++
++    def test_with_valid_preferences_without_conflicts(self):
++        """As preferências válidas geram grades sem conflitos."""
++        valid_preferences = ([1, 2, 3], [3, 2, 1], None)
++
++        for preference in valid_preferences:
++            with self.subTest(preference=preference):
++                generator = ScheduleGenerator(
++                    classes_id=[self.class_1.id, self.class_2.id,
++                                self.class_3.id, self.class_4.id],
++                    preference=preference)
++                generated_data = generator.generate()
++
++                self.assertIsNotNone(generated_data)
++                self.assertGreater(len(generated_data['schedules']), 0)

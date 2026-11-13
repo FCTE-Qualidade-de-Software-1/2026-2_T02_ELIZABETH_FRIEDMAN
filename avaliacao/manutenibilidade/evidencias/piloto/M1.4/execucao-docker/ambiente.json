@@ -1,0 +1,117 @@
+{
+  "sistema": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "comandos": [
+    {
+      "comando": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "codigo": 0,
+      "stdout": "{\"Client\":{\"Version\":\"29.2.1\",\"ApiVersion\":\"1.53\",\"DefaultAPIVersion\":\"1.53\",\"GitCommit\":\"a5c7197\",\"GoVersion\":\"go1.25.6\",\"Os\":\"linux\",\"Arch\":\"amd64\",\"BuildTime\":\"Mon Feb  2 17:16:41 2026\",\"Context\":\"default\"},\"Server\":{\"Platform\":{\"Name\":\"Docker Desktop 4.61.0 (219004)\"},\"Version\":\"29.2.1\",\"ApiVersion\":\"1.53\",\"MinAPIVersion\":\"1.44\",\"Os\":\"linux\",\"Arch\":\"amd64\",\"Components\":[{\"Name\":\"Engine\",\"Version\":\"29.2.1\",\"Details\":{\"ApiVersion\":\"1.53\",\"Arch\":\"amd64\",\"BuildTime\":\"Mon Feb  2 17:17:24 2026\",\"Experimental\":\"false\",\"GitCommit\":\"6bc6209\",\"GoVersion\":\"go1.25.6\",\"KernelVersion\":\"6.18.54.1-microsoft-standard-WSL2\",\"MinAPIVersion\":\"1.44\",\"Os\":\"linux\"}},{\"Name\":\"containerd\",\"Version\":\"v2.2.1\",\"Details\":{\"GitCommit\":\"dea7da592f5d1d2b7755e3a161be07f43fad8f75\"}},{\"Name\":\"runc\",\"Version\":\"1.3.4\",\"Details\":{\"GitCommit\":\"v1.3.4-0-gd6d73eb8\"}},{\"Name\":\"docker-init\",\"Version\":\"0.19.0\",\"Details\":{\"GitCommit\":\"de40ad0\"}}],\"GitCommit\":\"6bc6209\",\"GoVersion\":\"go1.25.6\",\"KernelVersion\":\"6.18.54.1-microsoft-standard-WSL2\",\"BuildTime\":\"2026-02-02T17:17:24.000000000+00:00\"}}\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "compose",
+        "version"
+      ],
+      "codigo": 0,
+      "stdout": "Docker Compose version v5.0.2\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "exec",
+        "postgresql",
+        "postgres",
+        "--version"
+      ],
+      "codigo": 0,
+      "stdout": "postgres (PostgreSQL) 16.12 (Debian 16.12-1.pgdg13+1)\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "exec",
+        "rediscache",
+        "redis-server",
+        "--version"
+      ],
+      "codigo": 0,
+      "stdout": "Redis server v=8.10.3 sha=00000000:1 malloc=jemalloc-5.3.0 bits=64 build=824ea7d79042256\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "exec",
+        "django-api",
+        "python3",
+        "--version"
+      ],
+      "codigo": 0,
+      "stdout": "Python 3.11.6\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "exec",
+        "django-api",
+        "python3",
+        "-m",
+        "django",
+        "--version"
+      ],
+      "codigo": 0,
+      "stdout": "5.1.5\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "exec",
+        "django-api",
+        "python3",
+        "-m",
+        "pip",
+        "freeze"
+      ],
+      "codigo": 0,
+      "stdout": "asgiref==3.8.1\nasync-timeout==4.0.3\nautopep8==2.0.4\nBabel==2.12.1\nbeautifulsoup4==4.12.2\nBrotli==1.1.0\ncachetools==5.3.1\ncertifi==2024.7.4\ncffi==1.16.0\ncharset-normalizer==3.2.0\nclick==8.1.7\ncolorama==0.4.6\ncoverage==7.3.2\ncryptography==43.0.1\ndefusedxml==0.7.1\ndj-database-url==2.1.0\nDjango==5.1.5\ndjango-cors-headers==4.3.0\ndjango-redis==5.4.0\ndjangorestframework==3.15.2\ndjangorestframework_simplejwt==5.4.0\ndrf-yasg==1.21.7\nghp-import==2.1.0\ngunicorn==22.0.0\nhttplib2==0.22.0\nidna==3.7\ninflection==0.5.1\nJinja2==3.1.5\nMarkdown==3.4.4\nMarkupSafe==2.1.3\nmergedeep==1.3.4\nmkdocs==1.5.3\nmkdocs-material==9.4.2\nmkdocs-material-extensions==1.2\npackaging==23.1\npaginate==0.5.6\npathspec==0.11.2\nplatformdirs==3.10.0\nprotobuf==4.24.4\npsycopg==3.1.13\npsycopg-binary==3.1.13\npyasn1==0.5.0\npyasn1-modules==0.3.0\npycodestyle==2.11.1\npycparser==2.21\nPygments==2.16.1\nPyJWT==2.8.0\npymdown-extensions==10.3\npyparsing==3.1.1\npython-dateutil==2.8.2\npython-decouple==3.8\npython3-openid==3.2.0\npytz==2023.3.post1\nPyYAML==6.0.1\npyyaml_env_tag==0.1\nredis==5.0.1\nregex==2023.8.8\nrequests==2.32.2\nrsa==4.9\nsix==1.16.0\nsoupsieve==2.5\nsqlparse==0.5.0\ntomli==2.0.1\ntyping_extensions==4.8.0\nUnidecode==1.3.7\nuritemplate==4.1.1\nurllib3==2.2.2\nwatchdog==3.0.0\nwhitenoise==6.6.0\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "image",
+        "inspect",
+        "--format",
+        "{{.Id}} {{json .RepoDigests}}",
+        "postgres:16",
+        "redis:alpine",
+        "suagrade-validacao-f2-api"
+      ],
+      "codigo": 0,
+      "stdout": "sha256:e4842c8a99ca99339e1693e6fe5fe62c7becb31991f066f989047dfb2fbf47af [\"postgres@sha256:e4842c8a99ca99339e1693e6fe5fe62c7becb31991f066f989047dfb2fbf47af\"]\nsha256:71885d8cc6e42f2bc0aa2eb853bfc4be200b5108a46ac50e117ae1df0531fb80 [\"redis@sha256:71885d8cc6e42f2bc0aa2eb853bfc4be200b5108a46ac50e117ae1df0531fb80\"]\nsha256:27140510117ac273ac0761b4348981ce2dd37c926bc9555e27b6771a06a0544b [\"suagrade-validacao-f2-api@sha256:27140510117ac273ac0761b4348981ce2dd37c926bc9555e27b6771a06a0544b\"]\n",
+      "stderr": ""
+    },
+    {
+      "comando": [
+        "docker",
+        "inspect",
+        "--format",
+        "{{json .Mounts}}",
+        "django-api"
+      ],
+      "codigo": 0,
+      "stdout": "[{\"Type\":\"bind\",\"Source\":\"/tmp/suagrade-validacao-f2/api\",\"Destination\":\"/usr/src/api\",\"Mode\":\"rw\",\"RW\":true,\"Propagation\":\"rprivate\"}]\n",
+      "stderr": ""
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+colorama==0.4.6
+coverage==7.3.2
+mando==0.7.1
+pydeps==3.0.1
+radon==6.0.1
+six==1.17.0
+stdlib-list==0.12.0

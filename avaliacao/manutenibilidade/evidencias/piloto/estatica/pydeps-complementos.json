@@ -1,0 +1,150 @@
+{
+  "api/api/views/delete_schedule.py": {
+    "delete_schedule.py": {
+      "bacon": 0,
+      "imports": [
+        "utils"
+      ],
+      "name": "delete_schedule.py",
+      "path": null
+    },
+    "utils": {
+      "bacon": 1,
+      "imported_by": [
+        "delete_schedule.py"
+      ],
+      "name": "utils",
+      "path": "/tmp/suagrade-validacao-f2/api/api/views/utils.py"
+    }
+  },
+  "api/api/views/get_schedules.py": {
+    "get_schedules.py": {
+      "bacon": 0,
+      "imports": [
+        "utils"
+      ],
+      "name": "get_schedules.py",
+      "path": null
+    },
+    "utils": {
+      "bacon": 1,
+      "imported_by": [
+        "get_schedules.py"
+      ],
+      "name": "utils",
+      "path": "/tmp/suagrade-validacao-f2/api/api/views/utils.py"
+    }
+  },
+  "api/api/views/save_schedule.py": {
+    "save_schedule.py": {
+      "bacon": 0,
+      "imports": [
+        "utils"
+      ],
+      "name": "save_schedule.py",
+      "path": null
+    },
+    "utils": {
+      "bacon": 1,
+      "imported_by": [
+        "save_schedule.py"
+      ],
+      "name": "utils",
+      "path": "/tmp/suagrade-validacao-f2/api/api/views/utils.py"
+    }
+  },
+  "api/api/views/schedules.py": {
+    "schedules.py": {
+      "bacon": 0,
+      "imports": [
+        "utils"
+      ],
+      "name": "schedules.py",
+      "path": null
+    },
+    "utils": {
+      "bacon": 1,
+      "imported_by": [
+        "schedules.py"
+      ],
+      "name": "utils",
+      "path": "/tmp/suagrade-validacao-f2/api/api/views/utils.py"
+    }
+  },
+  "api/api/views/utils.py": {},
+  "api/api/views/views.py": {
+    "erro": {
+      "mensagem": "Traceback (most recent call last):\n  File \"/tmp/manutencao-venv/bin/pydeps\", line 8, in <module>\n    sys.exit(pydeps())\n             ^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/pydeps.py\", line 176, in pydeps\n    return _pydeps(inp, **_args)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/pydeps.py\", line 39, in _pydeps\n    dep_graph = py2depgraph.py2dep(trgt, **kw)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 237, in py2dep\n    mf.run_script(dummy.fname)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 122, in run_script\n    self.load_module('__main__', fp, pathname, stuff)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 159, in load_module\n    module = mf27.ModuleFinder.load_module(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/mf27.py\", line 151, in load_module\n    self.scan_code(co, m)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/mf27.py\", line 204, in scan_code\n    parent = self.determine_parent(m, level=level)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/modulefinder.py\", line 188, in determine_parent\n    raise ImportError(\"relative importpath too deep\")\nImportError: relative importpath too deep\n"
+    }
+  },
+  "api/core/settings/base.py": {
+    "test.support": {
+      "bacon": 9223372036854775807,
+      "name": "test.support",
+      "path": null
+    },
+    "test.support.import_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.import_helper",
+      "path": null
+    },
+    "test.support.os_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.os_helper",
+      "path": null
+    },
+    "test.support.script_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.script_helper",
+      "path": null
+    }
+  },
+  "api/core/settings/dev.py": {},
+  "api/core/settings/prod.py": {},
+  "api/users/backends/google.py": {},
+  "api/users/backends/utils.py": {
+    "test.support": {
+      "bacon": 9223372036854775807,
+      "name": "test.support",
+      "path": null
+    },
+    "test.support.import_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.import_helper",
+      "path": null
+    },
+    "test.support.os_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.os_helper",
+      "path": null
+    },
+    "test.support.script_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.script_helper",
+      "path": null
+    }
+  },
+  "api/users/simplejwt/decorators.py": {
+    "test.support": {
+      "bacon": 9223372036854775807,
+      "name": "test.support",
+      "path": null
+    },
+    "test.support.import_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.import_helper",
+      "path": null
+    },
+    "test.support.os_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.os_helper",
+      "path": null
+    },
+    "test.support.script_helper": {
+      "bacon": 9223372036854775807,
+      "name": "test.support.script_helper",
+      "path": null
+    }
+  },
+  "api/users/simplejwt/serializers.py": {}
+}
