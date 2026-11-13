@@ -57,7 +57,7 @@ Método: tempo de mudança validada por tarefa, com testes de aceitação e regr
 5. Encerrar quando todos os critérios passarem ou aos 90 min. Calcular minutos apenas em caso de sucesso. O revisor confere patch, critérios e logs após a sessão, fora do tempo.
 6. Guardar evidências conforme as fichas. Piloto das mesmas mudanças deve ser feito por outra pessoa, preservando executor não treinado para a coleta formal.
 
-Saída esperada: duas fichas preenchidas, patches com testes, logs antes/depois e tempo válido ou motivo de insucesso/Não avaliado. Não atribuir tempo fictício. Lucas executará C1/C2 na coleta formal; Kaleb executará o piloto e revisará a coleta formal. A elegibilidade de Lucas e Kaleb para os respectivos papéis foi confirmada pelo usuário. Preservar Lucas de exposição à solução do piloto.
+Saída esperada: duas fichas preenchidas, patches com testes, logs antes/depois e tempo válido ou motivo de insucesso/Não avaliado. Não atribuir tempo fictício. Lucas executará C1/C2 na coleta formal; Joaquim executará o piloto e revisará a coleta formal. A elegibilidade de Lucas foi confirmada pelo usuário; a de Joaquim deve ser verificada antes do piloto, confirmando que não especificou, ensaiou nem conhece a localização das alterações. Preservar Lucas de exposição à solução do piloto.
 
 ## M1.4 — Cobertura de linhas
 
@@ -104,14 +104,14 @@ Consultar `evidencias/piloto/RELATORIO.md`. A issue só pode ser encerrada após
 
 Responsáveis definidos:
 
-- Lucas: executor de C1/C2 na coleta formal e responsável por guardar e versionar as evidências. As soluções do piloto de C1/C2 devem permanecer sob guarda de Kaleb até a sessão formal, preservando Lucas de treinamento prévio.
-- Kaleb: executor do piloto de C1/C2, revisor independente da coleta formal e responsável por conferir as evidências e os denominadores da cobertura da API, scraper e gerador.
+- Lucas: executor de C1/C2 na coleta formal e responsável por guardar e versionar as evidências. As soluções do piloto de C1/C2 devem permanecer sob guarda de Joaquim até a sessão formal, preservando Lucas de treinamento prévio.
+- Joaquim: executor do piloto de C1/C2, revisor independente da coleta formal e responsável por conferir as evidências e os denominadores da cobertura da API, scraper e gerador.
 
 Condições das sessões: ordem C1 → C2; permitidas documentação e busca, sem IA nem ajuda de terceiros durante a medição. Registrar qualquer desvio. Cada tarefa parte de uma cópia independente. Essas condições valem para piloto e coleta formal.
 
 Pendências de execução:
 
-- Elegibilidade de Lucas e Kaleb confirmada pelo usuário; falta apenas registrar o perfil descritivo, sem presumir anos de experiência.
+- Elegibilidade de Lucas confirmada pelo usuário; verificar a de Joaquim antes do piloto e registrar o perfil descritivo de ambos, sem presumir anos de experiência.
 - Registrar uma descrição breve da experiência e familiaridade de cada executor antes de iniciar.
-- M1.4 foi executado por Codex com autorização de Lucas nesta máquina, após habilitar o Docker: 108 testes aprovados; evidências em `evidencias/piloto/M1.4/execucao-docker/`. Kaleb fará C1/C2 em outra máquina; preparar e registrar esse ambiente conforme `tarefas/GUIA-PILOTO-KALEB.md`. O usuário informou que Kaleb conhece as linguagens; detalhes de experiência e familiaridade continuam a preencher.
+- M1.4 foi executado por Codex com autorização de Lucas nesta máquina, após habilitar o Docker: 108 testes aprovados; evidências em `evidencias/piloto/M1.4/execucao-docker/`. Joaquim fará o piloto C1/C2; preparar e registrar esse ambiente conforme `tarefas/GUIA-PILOTO-JOAQUIM.md`. Experiência com Python/Django, familiaridade com o produto, disponibilidade e máquina de Joaquim ainda precisam ser registradas.
 - Quando executar piloto e coleta formal e quem revisará os procedimentos corrigidos?

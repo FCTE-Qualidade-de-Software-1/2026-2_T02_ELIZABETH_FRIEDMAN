@@ -36,13 +36,14 @@ O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-
 registra as execuções de 08/11/2026 e suas limitações. Após habilitar o Docker no Ubuntu,
 o piloto M1.4 aprovou os 108 testes e conferiu os 50 arquivos do inventário, sem linhas excluídas.
 A cobertura foi 81,8768% na API, 97,5% no scraper e 99,2908% no gerador.
-Lucas será o executor da coleta formal de M1.3; Kaleb fará o piloto e revisará a coleta formal.
+Lucas será o executor da coleta formal de M1.3; Joaquim fará o piloto e revisará a coleta formal.
 O piloto M1.4 foi executado por Codex com autorização de Lucas; Lucas guardará/versionará
-as evidências e Kaleb conferirá a cobertura.
-As soluções do piloto C1/C2 ficam sob guarda de Kaleb até a sessão formal. A elegibilidade de Lucas
-e Kaleb foi confirmada pelo usuário; as sessões humanas ainda não foram registradas.
-Kaleb fará o piloto C1/C2 em outra máquina, seguindo o guia em `avaliacao/manutenibilidade/tarefas/GUIA-PILOTO-KALEB.md`.
-A issue #38 permanece pendente do piloto humano e da conferência de Kaleb.
+as evidências e Joaquim conferirá a cobertura.
+As soluções do piloto C1/C2 ficam sob guarda de Joaquim até a sessão formal. A elegibilidade de Lucas
+foi confirmada pelo usuário; a de Joaquim deve ser verificada antes do piloto, confirmando que
+não especificou, ensaiou nem conhece a localização das alterações. As sessões humanas ainda não foram registradas.
+O ambiente de Joaquim para o piloto C1/C2 deve ser preparado e registrado, seguindo o guia em `avaliacao/manutenibilidade/tarefas/GUIA-PILOTO-JOAQUIM.md`.
+A issue #38 permanece pendente do piloto humano e da conferência de Joaquim.
 
 ## 2. Recursos e ambiente de avaliação
 

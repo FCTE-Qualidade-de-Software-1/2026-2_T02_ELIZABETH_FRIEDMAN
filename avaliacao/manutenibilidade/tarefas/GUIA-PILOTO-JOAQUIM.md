@@ -1,4 +1,4 @@
-# Piloto de C1/C2 em outra máquina — Kaleb
+# Piloto de C1/C2 em outra máquina — Joaquim
 
 Este guia prepara o piloto M1.3 da issue #38. Lucas fica reservado para a coleta formal. Não compartilhar as soluções ou patches com Lucas antes dessa coleta.
 
@@ -13,10 +13,10 @@ git clone https://github.com/unb-mds/2023-2-SuaGradeUnB.git suagrade-piloto-C1
 git clone https://github.com/unb-mds/2023-2-SuaGradeUnB.git suagrade-piloto-C2
 git -C suagrade-piloto-C1 checkout 3d399e745383b05e8e3b1a7c97ac0fdbf93a0360
 git -C suagrade-piloto-C2 checkout 3d399e745383b05e8e3b1a7c97ac0fdbf93a0360
-mkdir -p evidencias-kaleb/C1 evidencias-kaleb/C2
+mkdir -p evidencias-joaquim/C1 evidencias-joaquim/C2
 ```
 
-4. Preencher uma cópia da ficha de cada tarefa: executor Kaleb; data; máquina/SO; experiência com Python/Django; familiaridade com o SuaGradeUnB. O usuário informou que Kaleb conhece as linguagens; detalhes de experiência e familiaridade ainda não foram informados. Não presumir anos de experiência.
+4. Preencher uma cópia da ficha de cada tarefa: executor Joaquim; data; máquina/SO; experiência com Python/Django; familiaridade com o SuaGradeUnB. Verificar antes da sessão se Joaquim não especificou, ensaiou nem conhece a localização das alterações. Sua experiência, familiaridade, disponibilidade e máquina ainda precisam ser registradas. Não presumir anos de experiência.
 5. Dentro de `suagrade-piloto-C1`, preparar o ambiente e guardar a suíte inicial. Os comandos abaixo pressupõem as três pastas criadas lado a lado:
 
 ```bash
@@ -25,10 +25,10 @@ docker compose up --build -d db redis api
 docker compose ps
 docker exec postgresql pg_isready -U suagradeunb
 docker exec rediscache redis-cli ping
-git rev-parse HEAD > ../evidencias-kaleb/C1/sha-inicial.txt
-git status --short > ../evidencias-kaleb/C1/estado-inicial.txt
-docker exec -w /usr/src/api django-api python3 manage.py test > ../evidencias-kaleb/C1/antes.log 2>&1
-echo $? > ../evidencias-kaleb/C1/antes-codigo-saida.txt
+git rev-parse HEAD > ../evidencias-joaquim/C1/sha-inicial.txt
+git status --short > ../evidencias-joaquim/C1/estado-inicial.txt
+docker exec -w /usr/src/api django-api python3 manage.py test > ../evidencias-joaquim/C1/antes.log 2>&1
+echo $? > ../evidencias-joaquim/C1/antes-codigo-saida.txt
 ```
 
 6. Conferir o log e código 0. Falha inicial impede começar a medição. Guardar também versões dos serviços e ferramentas, sem copiar arquivos `.env` para as evidências.
@@ -45,11 +45,11 @@ registre esse identificador para permitir reprodução. Para C2, substitua tamb�
 o diretório de evidências. Não iniciar esses comandos com o identificador de exemplo.
 
 ```bash
-printf '%s\n' 'docker exec -w /usr/src/api django-api python3 manage.py test pacote.tests.ClasseDeAceitacao' > ../evidencias-kaleb/C1/aceitacao-comando.txt
-docker exec -w /usr/src/api django-api python3 manage.py test pacote.tests.ClasseDeAceitacao > ../evidencias-kaleb/C1/aceitacao.log 2>&1
-echo $? > ../evidencias-kaleb/C1/aceitacao-codigo-saida.txt
-docker exec -w /usr/src/api django-api python3 manage.py test > ../evidencias-kaleb/C1/depois.log 2>&1
-echo $? > ../evidencias-kaleb/C1/depois-codigo-saida.txt
+printf '%s\n' 'docker exec -w /usr/src/api django-api python3 manage.py test pacote.tests.ClasseDeAceitacao' > ../evidencias-joaquim/C1/aceitacao-comando.txt
+docker exec -w /usr/src/api django-api python3 manage.py test pacote.tests.ClasseDeAceitacao > ../evidencias-joaquim/C1/aceitacao.log 2>&1
+echo $? > ../evidencias-joaquim/C1/aceitacao-codigo-saida.txt
+docker exec -w /usr/src/api django-api python3 manage.py test > ../evidencias-joaquim/C1/depois.log 2>&1
+echo $? > ../evidencias-joaquim/C1/depois-codigo-saida.txt
 ```
 
 Saída esperada: ambos os códigos iguais a `0`, testes novos efetivamente
@@ -70,10 +70,10 @@ Guardar a ficha preenchida e selecionar explicitamente apenas os arquivos da tar
 git status --short
 # Substituir os caminhos pelos arquivos alterados e testes novos da tarefa:
 git add -- caminho/arquivo-alterado caminho/teste-novo
-git diff --cached --binary > ../evidencias-kaleb/C1/mudanca.patch
-git diff --cached --stat > ../evidencias-kaleb/C1/diff-stat.txt
-git diff --cached --numstat > ../evidencias-kaleb/C1/diff-numstat.txt
-git rev-parse HEAD > ../evidencias-kaleb/C1/sha-final.txt
+git diff --cached --binary > ../evidencias-joaquim/C1/mudanca.patch
+git diff --cached --stat > ../evidencias-joaquim/C1/diff-stat.txt
+git diff --cached --numstat > ../evidencias-joaquim/C1/diff-numstat.txt
+git rev-parse HEAD > ../evidencias-joaquim/C1/sha-final.txt
 ```
 
 Sem commit, SHA final pode ser igual ao inicial: o patch registra a alteração. Anotar isso na ficha. Registrar conferência dos critérios e logs, sem apresentar a autoavaliação como revisão independente.
@@ -82,6 +82,6 @@ Encerrar os serviços de C1 com `docker compose down`, sem `-v`. Entrar na cópi
 
 ## Entrega das evidências
 
-Kaleb guarda os patches, testes e soluções até a coleta formal de Lucas. Pode informar agora os tempos, resultados de aceitação, identificação da máquina e dificuldades do procedimento sem revelar a solução. Informar a localização de guarda no relatório do piloto.
+Joaquim guarda os patches, testes e soluções até a coleta formal de Lucas. Pode informar agora os tempos, resultados de aceitação, identificação da máquina e dificuldades do procedimento sem revelar a solução. Informar a localização de guarda no relatório do piloto.
 
 Após a sessão formal, integrar as evidências completas em `avaliacao/manutenibilidade/evidencias/piloto/M1.3/{C1,C2}/`. A guarda restrita não dispensa evidência verificável do piloto. Não marcar C1/C2 como executadas antes da sessão real.

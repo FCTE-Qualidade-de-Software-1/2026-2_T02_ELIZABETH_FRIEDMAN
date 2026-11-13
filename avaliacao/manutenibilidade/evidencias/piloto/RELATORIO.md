@@ -34,7 +34,7 @@ Inspeção dos componentes críticos: `make_disciplines` (scraper, linha 200, CC
 
 ## M1.3 — Não avaliado
 
-Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a coleta formal; Kaleb executará o piloto e revisará a coleta formal. A elegibilidade de Lucas e Kaleb foi confirmada pelo usuário. Piloto humano não executado. Kaleb está disponível e usará outra máquina, conforme informado pelo usuário em 08/11/2026. O usuário informou que ele conhece as linguagens; detalhes de experiência e familiaridade com o produto devem ser registrados antes da sessão. Guia operacional em `../../tarefas/GUIA-PILOTO-KALEB.md`. O Docker desta máquina já está operacional. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
+Fichas C1/C2 e protocolo preparados. Responsáveis definidos: Lucas executará a coleta formal; Joaquim executará o piloto e revisará a coleta formal. A elegibilidade de Lucas foi confirmada pelo usuário. Em 12/11/2026, o usuário substituiu Kaleb por Joaquim no piloto, na revisão da coleta formal e na conferência da cobertura. Piloto humano não executado. A elegibilidade de Joaquim deve ser verificada antes da sessão: não ter especificado, ensaiado nem conhecido a localização das alterações. Experiência com Python/Django, familiaridade com o produto, disponibilidade e máquina de Joaquim ainda precisam ser registradas. Guia operacional em `../../tarefas/GUIA-PILOTO-JOAQUIM.md`. O Docker desta máquina já está operacional. Não há patch, tempo ou nota inventados. Não ensaiar as mudanças com a pessoa reservada para a coleta formal.
 
 ## M1.4 — Piloto executado com Docker
 
@@ -48,7 +48,7 @@ Execução em 08/11/2026, conduzida por Codex com autorização do usuário. Os 
 
 Evidências em `M1.4/execucao-docker/`: configuração efetiva e log, códigos de saída, `coverage.json`, HTML, comparação com as exclusões do CI, versões/imagens/mount da API em `ambiente.json`, auditoria do inventário e `resultados.csv`. A tentativa anterior sem Docker foi preservada na pasta superior para manter o histórico.
 
-A auditoria confrontou os 50 arquivos Python do inventário com os 50 arquivos do JSON: nenhum ausente ou extra, zero linhas excluídas. `utils/json_pretty.py`, `api/admin.py` e `users/admin.py` integram o denominador. Sete arquivos com linhas executáveis e nenhuma linha coberta também foram incluídos, listados em `auditoria-inventario.json`. O resumo foi extraído por `resumir_cobertura.py`, sem arredondamento antes da classificação. Kaleb ainda deve conferir os resultados; este piloto não substitui a coleta formal da Fase 4.
+A auditoria confrontou os 50 arquivos Python do inventário com os 50 arquivos do JSON: nenhum ausente ou extra, zero linhas excluídas. `utils/json_pretty.py`, `api/admin.py` e `users/admin.py` integram o denominador. Sete arquivos com linhas executáveis e nenhuma linha coberta também foram incluídos, listados em `auditoria-inventario.json`. O resumo foi extraído por `resumir_cobertura.py`, sem arredondamento antes da classificação. Joaquim ainda deve conferir os resultados; este piloto não substitui a coleta formal da Fase 4.
 
 ## Pendências para encerrar #38
 
@@ -56,13 +56,14 @@ A auditoria confrontou os 50 arquivos Python do inventário com os 50 arquivos d
 - [x] Pilotos M1.1 e M1.2 executados e auditados.
 - [x] Configuração própria de coverage validada.
 - [x] Níveis 0–3 mapeados por métrica nos roteiros.
-- [x] Responsáveis definidos: Lucas (coleta formal, piloto M1.4 e armazenamento/versionamento das evidências) e Kaleb (piloto C1/C2, revisão da coleta formal e conferência da cobertura). Kaleb guarda as soluções do piloto C1/C2 até a sessão formal.
-- [x] Elegibilidade de Lucas e Kaleb confirmada pelo usuário. Ordem C1 → C2; documentação e busca permitidas, sem IA nem ajuda de terceiros durante a medição.
+- [x] Responsáveis definidos: Lucas (coleta formal, piloto M1.4 e armazenamento/versionamento das evidências) e Joaquim (piloto C1/C2, revisão da coleta formal e conferência da cobertura). Joaquim guarda as soluções do piloto C1/C2 até a sessão formal.
+- [x] Elegibilidade de Lucas confirmada pelo usuário. Ordem C1 → C2; documentação e busca permitidas, sem IA nem ajuda de terceiros durante a medição.
+- [ ] Verificar a elegibilidade de Joaquim antes do piloto: não ter especificado, ensaiado nem conhecido a localização das alterações.
 - [ ] Registrar o perfil descritivo de experiência e familiaridade dos executores antes das sessões.
-- [x] Disponibilizar Docker no ambiente de avaliação desta máquina; a máquina de Kaleb ainda precisa ser preparada.
+- [x] Disponibilizar Docker no ambiente de avaliação desta máquina; a máquina de Joaquim ainda precisa ser preparada.
 - [ ] Executar piloto humano C1/C2 e arquivar fichas, patches e logs.
 - [x] Executar piloto M1.4 e conferir todos os arquivos/denominadores dos três recortes por comparação automática com o inventário.
-- [ ] Kaleb conferir as evidências de cobertura.
+- [ ] Joaquim conferir as evidências de cobertura.
 
 Questões para a reunião estão no final do README desta pasta. A issue permanece aberta; não foi atualizada remotamente.
 
@@ -72,4 +73,4 @@ A dependência [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_
 
 ## Prontidão após habilitação do Ubuntu — 08/11/2026
 
-Docker acessível; API, PostgreSQL e Redis iniciados. Piloto M1.4 executado e auditado conforme seção acima. A verificação anterior de indisponibilidade permanece como histórico. Para encerrar #38 faltam a sessão humana C1/C2 com evidências verificáveis e a conferência de Kaleb. Nenhuma sessão humana foi simulada.
+Docker acessível; API, PostgreSQL e Redis iniciados. Piloto M1.4 executado e auditado conforme seção acima. A verificação anterior de indisponibilidade permanece como histórico. Para encerrar #38 faltam a sessão humana C1/C2 com evidências verificáveis e a conferência de Joaquim. Nenhuma sessão humana foi simulada.
