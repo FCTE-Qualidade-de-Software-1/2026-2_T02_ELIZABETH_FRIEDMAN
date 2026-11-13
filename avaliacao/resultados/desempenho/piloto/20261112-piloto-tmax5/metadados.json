@@ -1,0 +1,73 @@
+{
+  "modo": "piloto",
+  "observacao": "PILOTO: verificação do método; não integra as 30 tentativas medidas (Fase 2, 3.2, pendência 4).",
+  "rodada": "20261112-piloto-tmax5",
+  "inicio": "2026-11-12T21:41:19-03:00",
+  "produto": {
+    "repositorio": "unb-mds/2023-2-SuaGradeUnB",
+    "commit": "3d399e745383b05e8e3b1a7c97ac0fdbf93a0360",
+    "alteracoes_rastreadas": "nenhuma"
+  },
+  "playwright": "1.62.1",
+  "chromium": "151.0.7922.34",
+  "headless": true,
+  "dispositivo": "Desktop Chrome (Playwright devices), viewport 1280x720",
+  "config": {
+    "workers": 1,
+    "fullyParallel": false,
+    "retries": 0,
+    "trace": "off",
+    "screenshot": "manual",
+    "video": "off"
+  },
+  "massa": {
+    "year_period": {
+      "year/period": [
+        "2026/2",
+        "2027/1"
+      ]
+    },
+    "fonte": "avaliacao/massa/seed_referencia.py (depto 1499, 14 disciplinas, 43 turmas)"
+  },
+  "docker_ps": [
+    "nextjs-web\t2023-2-suagradeunb-web\tUp 35 minutes",
+    "django-api\t2023-2-suagradeunb-api\tUp 10 minutes",
+    "postgresql\tpostgres:16\tUp 10 minutes",
+    "rediscache\tredis:alpine\tUp 10 minutes",
+    "n8n\tn8n-n8n\tUp 35 minutes",
+    "instancia_postgres\tpostgres:16\tUp 35 minutes"
+  ],
+  "free_h": [
+    "total        used        free      shared  buff/cache   available",
+    "Mem:           7.5Gi       5.6Gi       562Mi       310Mi       1.9Gi       1.8Gi",
+    "Swap:          4.0Gi       3.2Gi       806Mi"
+  ],
+  "host": {
+    "node": "v22.22.3",
+    "uname": "Linux 7.0.0-38-generic x86_64"
+  },
+  "mecanismo": "Início: Event.timeStamp do clique confiável; fim: performance.now() no 1º quadro (requestAnimationFrame) com o sinal completo; mesmo relógio da página.",
+  "cenarios": {
+    "m2-nome": {
+      "metrica": "M2",
+      "descricao": "Busca por nome: termo \"seminario\", período 2026/2",
+      "esperado": {
+        "termo": "seminario",
+        "disciplinas": [
+          "PPGPS0156",
+          "PPGPS0157",
+          "PPGPS2989"
+        ]
+      },
+      "tmax_ms": 5,
+      "L_ms": 2000,
+      "aquecimento": 1,
+      "medidas": 3,
+      "intervalo_quadros_ms": {
+        "min": 16.5,
+        "mediana": 16.7,
+        "max": 16.8
+      }
+    }
+  }
+}

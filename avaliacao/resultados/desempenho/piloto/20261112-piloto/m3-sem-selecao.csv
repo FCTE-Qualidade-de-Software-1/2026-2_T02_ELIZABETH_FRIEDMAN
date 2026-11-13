@@ -1,0 +1,5 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M3,m3-sem-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:18-03:00,1,sim,2086.5,2116.9,30.4,sucesso,evidencias.jsonl#m3-sem-selecao-aq1
+M3,m3-sem-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:20-03:00,1,não,2027.4,2058.4,31.0,sucesso,evidencias.jsonl#m3-sem-selecao-1; evidencias/m3-sem-selecao-1.png
+M3,m3-sem-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:22-03:00,2,não,1673.0,1703.4,30.4,sucesso,evidencias.jsonl#m3-sem-selecao-2
+M3,m3-sem-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:24-03:00,3,não,2029.6,2060.8,31.2,sucesso,evidencias.jsonl#m3-sem-selecao-3
