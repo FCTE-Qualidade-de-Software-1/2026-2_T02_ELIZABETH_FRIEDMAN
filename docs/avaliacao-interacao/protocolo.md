@@ -38,7 +38,7 @@ Modalidade indisponível permanece não avaliada, sem extrapolar a outra.
 
 ## 2. Sessão e instruções comuns
 
-Sessões online por Google Meet, com Lucas como moderador e Kaleb como observador.
+Sessões online por Google Meet, com Júlia e João como moderador e observador.
 Validar antes do piloto acesso remoto privado ao ambiente de teste no dispositivo
 do participante; o endereço local da máquina do avaliador não basta para acesso pela
 internet. Usar compartilhamento da tela do dispositivo atribuído, com autorização

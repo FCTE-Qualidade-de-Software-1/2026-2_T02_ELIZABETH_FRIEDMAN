@@ -9,9 +9,9 @@ preservar a escolha do participante.
 
 Preencher os campos entre colchetes: curso, e-mail de contato e data exata de
 exclusão, calculada pela regra do termo. Confirmar a disponibilidade do local de
-guarda definido antes da sessão. Lucas Monteiro Freitas será o responsável pelas
-sessões, com Kaleb de Souza Macedo como observador. Não apresentar o termo com
-campos pendentes. Confirmar condições de participação sem despesas e o acesso
+guarda definido antes da sessão. Júlia Santana Campos e
+João Paulo Barbosa Pereira Nunes serão o moderador e o observador das
+sessões. Não apresentar o termo com campos pendentes. Confirmar condições de participação sem despesas e o acesso
 aos resultados. Entregar uma cópia à pessoa e guardar o original assinado fora do
 repositório e da GitPage. Estas orientações são internas e não integram a cópia
 entregue ao participante.

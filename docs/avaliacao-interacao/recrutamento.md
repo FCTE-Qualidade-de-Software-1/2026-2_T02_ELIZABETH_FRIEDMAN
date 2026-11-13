@@ -4,13 +4,16 @@ Plano revisado em 08/11/2026: quatro estudantes adultos sem uso prévio, dois no
 computador (P01–P02) e dois no celular (P03–P04), com uma pessoa suplente por grupo.
 Piloto: uma pessoa adicional (PIL01), excluída da amostra formal. A redução da meta
 anterior de dez participantes foi definida antes da coleta para viabilizar a execução
-pela dupla Lucas e Kaleb. A amostra é exploratória por conveniência e oferece menor
+pela equipe. A amostra é exploratória por conveniência e oferece menor
 cobertura de dificuldades; não permite generalizações sobre os estudantes da UnB.
 Com duas observações válidas por dispositivo, M6 só pode resultar em 0%, 50% ou 100%.
 Manter os limiares da Fase 2 e publicar contagens e percentuais por recorte.
 
-Lucas Monteiro Freitas será moderador e contato de pesquisa; Kaleb de Souza Macedo
-será observador e responsável pelos CSV e pela inspeção M8. Ambos revisarão M9.
+Júlia Santana Campos e João Paulo Barbosa Pereira Nunes
+serão o moderador e o observador das sessões; cada sessão registra quem atuou em cada
+função. Os dois respondem pelos CSV, pela inspeção M8 e pela revisão de M9. O recrutamento
+fica com Júlia. O contato de pesquisa para os participantes **ainda precisa ser definido**
+antes do envio do convite.
 Sessões individuais online por Google Meet, com link privado enviado ao participante.
 A distribuição por modalidade deve ser fechada no [protocolo](protocolo.md) antes de
 confirmar a amostra. Não há recrutamento ou agenda confirmados neste documento.

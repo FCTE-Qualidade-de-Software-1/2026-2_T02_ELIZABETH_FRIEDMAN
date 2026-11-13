@@ -1,13 +1,14 @@
 # Piloto e fechamento da issue #40
 
 Situação documental revisada em 08/11/2026: **não executado**. Nenhum resultado de
-métrica é declarado por estes materiais. Lucas será moderador e contato de pesquisa;
-Kaleb será observador e responsável pelos CSV e M8. Sessões online por Google Meet.
+métrica é declarado por estes materiais. Júlia e João serão moderador e observador e
+respondem pelos CSV e por M8 (funções atualizadas em 12/11/2026). Sessões online por Google Meet.
 A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de PIL01.
 
 ## Condições antes de agendar
 
-- [x] Definir funções: Lucas modera e atende contatos; Kaleb observa e registra.
+- [x] Definir funções: Júlia e João serão moderador e observador.
+- [ ] Definir o contato de pesquisa para os participantes e o local de guarda dos registros.
 - [ ] Completar curso, e-mail e data exata de exclusão no termo antes de apresentá-lo.
 - [ ] Confirmar ambiente #37, commit, massa real e modalidades acessíveis; preencher manifesto.
 - [ ] Confirmar computador e celular físicos, compartilhamento de tela e acesso remoto privado ao ambiente de teste.

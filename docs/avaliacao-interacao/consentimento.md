@@ -51,7 +51,7 @@ registros ao responsável até a data de exclusão indicada, informando seu cód
 Após a anonimização irreversível, pode não ser possível localizar sua contribuição
 para removê-la dos resultados.
 
-Para dúvidas, entre em contato com **Lucas Monteiro Freitas — [E-MAIL DE CONTATO]**, com apoio de **Kaleb de Souza Macedo**.
+Para dúvidas, entre em contato com **Júlia Santana Campos, João Paulo Barbosa Pereira Nunes, Kaleb de Souza Macedo ou Lucas Monteiro Freitas — [E-MAIL DE CONTATO]**.
 
 Declaro que compreendi o objetivo e as condições da atividade, tive oportunidade
 de esclarecer minhas dúvidas e aceito participar. Receberei uma cópia deste termo.

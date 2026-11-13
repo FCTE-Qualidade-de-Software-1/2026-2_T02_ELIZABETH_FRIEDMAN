@@ -333,12 +333,18 @@ F3-C3: cronograma realista com atividades distribuídas e alinhadas à execuçã
 | Atividade | Responsável | Início | Fim | Métricas envolvidas |
 |-----------|-------------|--------|-----|---------------------|
 | Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | M6–M9 |
-| Preencher campos do termo, validar acesso ao ambiente nos dois dispositivos, preparar cartões com disciplinas reais, recrutar PIL01 e participantes | Lucas e Kaleb | 09/11/2026 | 10/11/2026 | M6–M9 |
-| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Lucas e Kaleb | 11/11/2026 | 11/11/2026 | M6–M9 |
-| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Lucas e Kaleb | 12/11/2026 | 12/11/2026 | M6–M9 |
-| Inspeção M8 no ambiente, com dados descartáveis | Lucas e Kaleb | 12/11/2026 | 13/11/2026 | M8 |
-| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Lucas e Kaleb | 13/11/2026 | 14/11/2026 | M6, M7, M9 |
-| Análise e escrita dos resultados na Fase 4 | Equipe | 14/11/2026 | 16/11/2026 | M6–M9 |
+| Preencher campos do termo e validar acesso ao ambiente nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 (previsão) | M6–M9 |
+| Recrutar PIL01 e quatro participantes, com um suplente por grupo | Júlia | 10/11/2026 | 14/11/2026 (previsão) | M6, M7, M9 |
+| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Júlia e João | 14/11/2026 (previsão) | 14/11/2026 (previsão) | M6–M9 |
+| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Júlia e João | 15/11/2026 (previsão) | 15/11/2026 (previsão) | M6–M9 |
+| Inspeção M8 no ambiente, com dados descartáveis | Júlia e João | 14/11/2026 (previsão) | 15/11/2026 (previsão) | M8 |
+| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Júlia e João | 16/11/2026 (previsão) | 17/11/2026 (previsão) | M6, M7, M9 |
+| Análise e escrita dos resultados na Fase 4 | Equipe | 17/11/2026 (previsão) | 19/11/2026 (previsão) | M6–M9 |
+
+Cronograma replanejado em 12/11/2026: o piloto previsto para 11/11 e o congelamento previsto para 12/11
+não foram executados, e as sessões dependem do recrutamento dos participantes. As datas marcadas como
+previsão serão confirmadas quando os participantes estiverem agendados; as sessões devem terminar até
+17/11/2026, data final de #44 no cronograma geral da equipe.
 
 ### Situação da issue #40
 
