@@ -17,3 +17,6 @@ __pycache__/
 *.fdb_latexmk
 *.fls
 *.xdv
+
+# Coleta formal de M2–M5 (#43): fora do repositório até a análise
+avaliacao/resultados/desempenho/coleta/

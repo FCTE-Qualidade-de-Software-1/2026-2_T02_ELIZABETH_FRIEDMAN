@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "test": "playwright test",
-    "test:list": "playwright test --list"
+    "test:list": "playwright test --list",
+    "piloto": "PILOTO=1 playwright test --project=piloto",
+    "coleta": "COLETA=1 playwright test --project=coleta"
   },
   "devDependencies": {
     "@playwright/test": "1.62.1"
