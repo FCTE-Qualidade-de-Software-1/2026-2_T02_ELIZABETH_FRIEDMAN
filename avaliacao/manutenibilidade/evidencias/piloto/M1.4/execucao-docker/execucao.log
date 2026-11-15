@@ -1,0 +1,77 @@
+NAME         IMAGE                       COMMAND                  SERVICE   CREATED          STATUS          PORTS
+django-api   suagrade-validacao-f2-api   "/usr/src/api/config…"   api       30 seconds ago   Up 29 seconds   0.0.0.0:8000->8000/tcp, [::]:8000->8000/tcp
+postgresql   postgres:16                 "docker-entrypoint.s…"   db        31 seconds ago   Up 29 seconds   5432/tcp
+rediscache   redis:alpine                "docker-entrypoint.s…"   redis     31 seconds ago   Up 29 seconds   6379/tcp
+Coverage.py, version 7.3.2 with C extension
+Full documentation is at https://coverage.readthedocs.io/en/7.3.2
+-- config ----------------------------------------------------
+         attempted_config_files: /tmp/manutenibilidade-coverage.ini
+                         branch: False
+                   command_line: None
+                    concurrency: -none-
+                    config_file: /tmp/manutenibilidade-coverage.ini
+              config_files_read: /tmp/manutenibilidade-coverage.ini
+                        context: None
+                    cover_pylib: False
+                      data_file: .coverage
+                          debug: -none-
+                     debug_file: None
+               disable_warnings: -none-
+                dynamic_context: None
+                   exclude_also: -none-
+                   exclude_list: -none-
+                      extra_css: None
+                     fail_under: 0.0
+                         format: None
+                       html_dir: htmlcov
+              html_skip_covered: None
+                html_skip_empty: None
+                     html_title: Coverage report
+                  ignore_errors: False
+     include_namespace_packages: True
+                    json_output: coverage.json
+              json_pretty_print: False
+             json_show_contexts: False
+                    lcov_output: coverage.lcov
+                       parallel: False
+            partial_always_list: while (True|1|False|0):
+                                 if (True|1|False|0):
+                   partial_list: #\s*(pragma|PRAGMA)[:\s]?\s*(no|NO)\s*(branch|BRANCH)
+                          paths: {}
+                 plugin_options: {}
+                        plugins: -none-
+                      precision: 0
+                 relative_files: False
+                report_contexts: None
+                 report_include: None
+                    report_omit: None
+                    run_include: -none-
+                       run_omit: */tests/*
+                                 */test_*.py
+                                 */migrations/*
+                  show_contexts: False
+                   show_missing: True
+                        sigterm: False
+                   skip_covered: False
+                     skip_empty: False
+                           sort: None
+                         source: api
+                                 core
+                                 users
+                                 utils
+                    source_pkgs: -none-
+                          timid: False
+                     xml_output: coverage.xml
+              xml_package_depth: 99
+Found 108 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+............................................................................................................
+----------------------------------------------------------------------
+Ran 108 tests in 2.841s
+
+OK
+Destroying test database for alias 'default'...
+Wrote JSON report to /tmp/manutenibilidade.json
+Wrote HTML report to /tmp/manutenibilidade-html/index.html
+Wrote JSON report to /tmp/manutenibilidade-ci.json

@@ -1,0 +1,65 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "core",
+      "core.asgi",
+      "core.urls",
+      "core.wsgi"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "core": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core",
+    "path": "/tmp/suagrade-validacao-f2/api/core/__init__.py"
+  },
+  "core.asgi": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.asgi",
+    "path": "/tmp/suagrade-validacao-f2/api/core/asgi.py"
+  },
+  "core.urls": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.urls",
+    "path": "/tmp/suagrade-validacao-f2/api/core/urls.py"
+  },
+  "core.wsgi": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.wsgi",
+    "path": "/tmp/suagrade-validacao-f2/api/core/wsgi.py"
+  },
+  "test.support": {
+    "bacon": 9223372036854775807,
+    "name": "test.support",
+    "path": null
+  },
+  "test.support.import_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.import_helper",
+    "path": null
+  },
+  "test.support.os_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.os_helper",
+    "path": null
+  },
+  "test.support.script_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.script_helper",
+    "path": null
+  }
+}

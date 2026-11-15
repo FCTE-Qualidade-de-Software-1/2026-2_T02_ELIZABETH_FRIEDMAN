@@ -1,0 +1,3113 @@
+[
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideButton.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'AsideButton' has a complexity of 1. Maximum allowed is 0.",
+        "line": 13,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 22,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import Image, { StaticImageData } from 'next/image';\n\nimport Button from './Button';\n\ninterface AsideButtonPropsType {\n    image: StaticImageData;\n    pageName: string;\n    innerRef?: (node: any) => void;\n    onClick?: () => void;\n}\n\n\nexport default function AsideButton({ image, pageName, innerRef, onClick }: AsideButtonPropsType) {\n    return (\n        <Button innerRef={innerRef} onClick={onClick} className='z-10 flex-col w-full !gap-1 !pb-2 !shadow-none !text-black' name={pageName}>\n            <Image\n                width={25} height={25}\n                src={image} alt={`ícone da página ${pageName}`}\n            />\n        </Button>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'checkDisciplineObj' has a complexity of 3. Maximum allowed is 0.",
+        "line": 15,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 23,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'createNewClassInfo' has a complexity of 1. Maximum allowed is 0.",
+        "line": 25,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 36,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'AsideSchedulePopUpJSX' has a complexity of 3. Maximum allowed is 0.",
+        "line": 38,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 63,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 51,
+        "column": 58,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 55,
+        "endColumn": 35
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'AsideSchedulePopUp' has a complexity of 1. Maximum allowed is 0.",
+        "line": 65,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 99,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 70,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 72,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleSelectClass' has a complexity of 2. Maximum allowed is 0.",
+        "line": 74,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 92,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { useEffect, useState } from 'react';\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\nimport useShowPopUpContent from '@/app/hooks/useShowPopUpContent';\n\nimport { ClassType, DisciplineType } from '@/app/utils/api/searchDiscipline';\nimport { ClassValueType } from '@/app/contexts/SelectedClassesContext/types';\n\nimport DisciplineOptionForm from './Form/DisciplineOptionForm';\nimport DisciplineFragment from './DisciplineFragment';\n\nimport { AsideSchedulePopUpJSXPropsType, AsideSchedulePopUpPropsType, CheckDisciplineObjPropsType } from './types/types';\n\nimport _ from 'lodash';\n\nfunction checkDisciplineObj(props: CheckDisciplineObjPropsType) {\n    const { disciplineObj, newSelectedClasses, classId, disciplineId, newClassInfo } = props;\n\n    if (disciplineObj.has(classId)) {\n        disciplineObj.delete(classId);\n\n        if (!disciplineObj.size) newSelectedClasses.delete(disciplineId);\n    } else disciplineObj.set(classId, newClassInfo);\n}\n\nfunction createNewClassInfo(props: { cls: ClassType, discipline: DisciplineType }) {\n    const { cls, discipline } = props;\n\n    return {\n        class: cls,\n        discipline: {\n            id: discipline.id,\n            name: discipline.name,\n            code: discipline.code\n        }\n    };\n}\n\nfunction AsideSchedulePopUpJSX(props: AsideSchedulePopUpJSXPropsType) {\n    const { showPopUpContent, searchedDisciplineInfos, setSearchedDisciplineInfos, handleSelectClass } = props;\n\n    return (\n        <div className='flex justify-center'>\n            <div\n                ref={props.divAddClassRef}\n                className={`fixed flex flex-col justify-between items-center w-11/12 ${showPopUpContent ? 'py-5 h-5/6' : 'h-0'} transition-all duration-500 bottom-0 rounded-t-[40px] bg-snow-secondary z-10`}\n            >\n                {showPopUpContent &&\n                    <section className='flex flex-col items-center gap-5 w-full h-full text-[#333333]'>\n                        <DisciplineOptionForm setInfos={setSearchedDisciplineInfos} />\n                        <div className='flex flex-col gap-2 w-10/12 overflow-auto h-full'>\n                            {searchedDisciplineInfos.map((discipline, index) =>\n                                <DisciplineFragment key={index} index={index}\n                                    discipline={discipline} disciplineInfos={{ searchedDisciplineInfos, setSearchedDisciplineInfos }}\n                                    handleSelectClass={handleSelectClass}\n                                />\n                            )}\n                        </div>\n                    </section>\n                }\n            </div>\n        </div >\n    );\n}\n\nexport default function AsideSchedulePopUp(props: AsideSchedulePopUpPropsType) {\n    const { showPopUpContent } = useShowPopUpContent();\n    const { selectedClasses, setSelectedClasses } = useSelectedClasses();\n    const [searchedDisciplineInfos, setSearchedDisciplineInfos] = useState<Array<DisciplineType>>([]);\n\n    useEffect(() => {\n        if (!showPopUpContent) setSearchedDisciplineInfos([]);\n    }, [showPopUpContent, setSearchedDisciplineInfos]);\n\n    function handleSelectClass(discipline: DisciplineType, cls: ClassType) {\n        const disciplineId = discipline.id;\n        const classId = cls.id;\n\n        const newSelectedClasses = _.cloneDeep(selectedClasses);\n        const disciplineObj = newSelectedClasses.get(disciplineId);\n\n        const newClassInfo = createNewClassInfo({ cls, discipline });\n\n        if (disciplineObj) checkDisciplineObj({ disciplineObj, newSelectedClasses, classId, disciplineId, newClassInfo });\n        else {\n            const newDiscipline = new Map<number, ClassValueType>();\n            newDiscipline.set(classId, newClassInfo);\n\n            newSelectedClasses.set(disciplineId, newDiscipline);\n        }\n\n        setSelectedClasses(newSelectedClasses);\n    }\n\n    return AsideSchedulePopUpJSX({\n        divAddClassRef: props.divAddClassRef,\n        showPopUpContent, searchedDisciplineInfos, setSearchedDisciplineInfos,\n        handleSelectClass\n    });\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ClassInfoBox' has a complexity of 4. Maximum allowed is 0.",
+        "line": 16,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 53,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 20,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 23,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ClassType, DisciplineType } from '@/app/utils/api/searchDiscipline';\nimport { HTMLProps, MouseEventHandler, useEffect, useState } from 'react';\n\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\nimport ClassInfo from '../ClassInfo';\nimport Image from 'next/image';\n\nimport addIcon from '@/public/icons/add.jpg';\nimport removeIcon from '@/public/icons/remove.jpg';\n\ninterface ClassInfoBoxPropsType extends HTMLProps<HTMLDivElement> {\n    currentDiscipline: DisciplineType,\n    currentClass: ClassType,\n}\n\nexport default function ClassInfoBox({ currentDiscipline, currentClass, ...props }: ClassInfoBoxPropsType) {\n    const { classesChange, selectedClasses } = useSelectedClasses();\n    const [selected, setSelected] = useState(false);\n\n    useEffect(() => {\n        if (selectedClasses.get(currentDiscipline.id)?.has(currentClass.id)) setSelected(true);\n        else setSelected(false);\n    }, [selectedClasses, classesChange, currentDiscipline, currentClass]);\n\n    return (\n        <div\n            className={`grid grid-cols-7 ${selected ? 'bg-primary bg-opacity-40' : 'hover:bg-gray-300'} hover:bg-opacity-40 hover:cursor-pointer rounded-md py-1 px-2 ${props.className || ''}`}\n        >\n            <ClassInfo currentClass={{\n                class: currentClass,\n                discipline: {\n                    id: currentDiscipline.id,\n                    name: currentDiscipline.name,\n                    code: currentDiscipline.code\n                }\n            }} />\n            <button\n                onClick={props.onClick as MouseEventHandler<HTMLButtonElement> | undefined}\n                className='hover:cursor-pointer col-start-7 flex justify-center items-center'>\n                {selected ?\n                    <Image\n                        width={25} height={25}\n                        src={removeIcon} alt='ícone remover matéria'\n                    />\n                    : <Image\n                        width={25} height={25}\n                        src={addIcon} alt='ícone adicionar matéria'\n                    />\n                }\n            </button>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DisciplineFragmentJSX' has a complexity of 3. Maximum allowed is 0.",
+        "line": 20,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 52,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 29,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 29,
+        "endColumn": 61
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 42,
+        "column": 45,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 46,
+        "endColumn": 27
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 45,
+        "column": 38,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 45,
+        "endColumn": 78
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DisciplineFragment' has a complexity of 1. Maximum allowed is 0.",
+        "line": 54,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 74,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleDisciplineToggle' has a complexity of 1. Maximum allowed is 0.",
+        "line": 57,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 71,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 59,
+        "column": 41,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 68,
+        "endColumn": 10
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Fragment } from 'react';\nimport Image from 'next/image';\nimport ClassInfoBox from './ClassInfoBox';\n\nimport { ClassType, DisciplineType } from '@/app/utils/api/searchDiscipline';\n\nimport expand_more from '@/public/icons/expand_more.png';\nimport expand_less from '@/public/icons/expand_less.png';\n\ninterface DisciplineFragmentPropsType {\n    index: number,\n    discipline: DisciplineType,\n    disciplineInfos: {\n        searchedDisciplineInfos: Array<DisciplineType>,\n        setSearchedDisciplineInfos: React.Dispatch<React.SetStateAction<DisciplineType[]>>\n    }\n    handleSelectClass: (discipline: DisciplineType, cls: ClassType) => void\n}\n\nfunction DisciplineFragmentJSX({ handleDisciplineToggle, ...props }: {\n    handleDisciplineToggle: (index: number) => void,\n    props: DisciplineFragmentPropsType\n}) {\n    const { index, discipline, handleSelectClass } = props.props;\n\n    return (\n        <Fragment>\n            <button\n                onClick={() => handleDisciplineToggle(index)}\n                className='flex items-center gap-3 relative'\n            >\n                <Image\n                    className='absolute left-0'\n                    height={24} width={24}\n                    src={discipline.expanded ? expand_more : expand_less} alt=\"expand icon\" />\n                <span className='font-semibold text-left pl-6'>\n                    {discipline.name} - {discipline.code}\n                </span>\n            </button>\n            {discipline.expanded &&\n                <div className='flex flex-col gap-2'>\n                    {discipline.classes.map((cls, index) =>\n                        <ClassInfoBox\n                            key={index} currentClass={cls} currentDiscipline={discipline}\n                            onClick={() => handleSelectClass(discipline, cls)}\n                        />\n                    )}\n                </div>\n            }\n        </Fragment>\n    );\n}\n\nexport default function DisciplineFragment(props: DisciplineFragmentPropsType) {\n    const { searchedDisciplineInfos, setSearchedDisciplineInfos } = props.disciplineInfos;\n\n    function handleDisciplineToggle(index: number) {\n        let newInfo: Array<DisciplineType> = [];\n        searchedDisciplineInfos.forEach((discipline, number) => {\n            if (number != index) newInfo.push({\n                ...discipline,\n                expanded: false\n            });\n            else newInfo.push({\n                ...discipline,\n                expanded: !discipline.expanded\n            });\n        });\n\n        setSearchedDisciplineInfos(newInfo);\n    }\n\n    return DisciplineFragmentJSX({ handleDisciplineToggle, props });\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Form' has a complexity of 1. Maximum allowed is 0.",
+        "line": 19,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 44,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 32,
+        "column": 31,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 32,
+        "endColumn": 72
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 35,
+        "column": 49,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 35,
+        "endColumn": 114
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'getYearAndPeriod' has a complexity of 3. Maximum allowed is 0.",
+        "line": 46,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleChangeYearAndPeriod' has a complexity of 4. Maximum allowed is 0.",
+        "line": 53,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 57,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DisciplineOptionForm' has a complexity of 1. Maximum allowed is 0.",
+        "line": 59,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 89,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+        "line": 64,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 70,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleYearAndPeriodChange' has a complexity of 3. Maximum allowed is 0.",
+        "line": 72,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 85,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 77,
+        "column": 41,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 82,
+        "endColumn": 14
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 9,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ChangeEvent, Dispatch, SetStateAction, useEffect, useState } from 'react';\nimport useYearPeriod from '@/app/hooks/useYearPeriod';\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\n\nimport { errorToast } from '@/app/utils/toast';\n\nimport { DisciplineOptionFormPropsType, FormType, defaultFormData } from '../types/types';\nimport { DisciplineType } from '@/app/utils/api/searchDiscipline';\n\nimport InputForm from './InputForm';\n\ninterface FormPropsType {\n    form: FormType,\n    disableDefault: boolean,\n    setInfos: Dispatch<SetStateAction<Array<DisciplineType>>>,\n    handleYearAndPeriodChange: (event: ChangeEvent<HTMLSelectElement>) => void,\n}\n\nfunction Form(props: FormPropsType) {\n    const { formData, setFormData } = props.form;\n    const { disableDefault, handleYearAndPeriodChange } = props;\n\n    const { periods } = useYearPeriod();\n\n    return (\n        <>\n            <div className='flex flex-col items-center gap-1 w-full max-w-md'>\n                <span className='text-xl font-semibold'>Ano/Período</span>\n                <select\n                    className='bg-white shadow-md h-14 w-11/12 p-2 rounded-xl'\n                    value={`${formData.year}/${formData.period}`}\n                    onChange={event => handleYearAndPeriodChange(event)}\n                >\n                    <option disabled={disableDefault} value=\"\">Selecione uma opção</option>\n                    {periods['year/period'].map((item, index) => <option key={index} value={item}>{item}</option>)}\n                </select>\n            </div>\n            <div className='flex flex-col items-center gap-1 w-full max-w-md'>\n                <span className='text-xl font-semibold'>Matéria</span>\n                <InputForm form={{ formData, setFormData }} setInfos={props.setInfos} />\n            </div>\n        </>\n    );\n}\n\nfunction getYearAndPeriod(text: string) {\n    const year = text.split('/')[0] || defaultFormData.year;\n    const period = text.split('/')[1] || defaultFormData.period;\n    \n    return { year, period };\n}\n\nfunction handleChangeYearAndPeriod(text: string, currentYearPeriod: string, selectedClasses: any, handleSetYearPeriod: () => void) {\n    if (currentYearPeriod && selectedClasses && currentYearPeriod != text) {\n        errorToast('Há disciplinas selecionadas de outro período, não pode haver mistura!');\n    } else handleSetYearPeriod();\n}\n\nexport default function DisciplineOptionForm(props: DisciplineOptionFormPropsType) {\n    const { selectedClasses, currentYearPeriod, setCurrentYearPeriod } = useSelectedClasses();\n    const [disableDefault, setDisableDefault] = useState(false);\n    const [formData, setFormData] = useState(defaultFormData);\n\n    useEffect(() => {\n        if (!disableDefault && formData == defaultFormData && selectedClasses.size) {\n            const { year, period } = getYearAndPeriod(currentYearPeriod);\n            setFormData({ ...formData, year: year, period: period });\n            setDisableDefault(true);\n        }\n    }, [disableDefault, currentYearPeriod, formData, selectedClasses]);\n\n    function handleYearAndPeriodChange(event: ChangeEvent<HTMLSelectElement>) {\n        const text = event.target.value.trim();\n        const { year, period } = getYearAndPeriod(text);\n\n        if (year && period) {\n            const handleSetYearPeriod = () => {\n                setFormData({ ...formData, year: year, period: period });\n                props.setInfos([]);\n                setCurrentYearPeriod(text);\n                setDisableDefault(true);\n            };\n            handleChangeYearAndPeriod(text, currentYearPeriod, selectedClasses.size, handleSetYearPeriod);\n        }\n    }\n\n    return <Form form={{ formData, setFormData }} disableDefault={disableDefault}\n        handleYearAndPeriodChange={handleYearAndPeriodChange} setInfos={props.setInfos} />;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Form' has a complexity of 1. Maximum allowed is 0.",
+        "line": 19,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 41,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 29,
+        "column": 27,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 29,
+        "endColumn": 86
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'makeDisciplineSearch' has a complexity of 2. Maximum allowed is 0.",
+        "line": 43,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 50,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 47,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 47,
+        "endColumn": 82
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'handleDisciplineSearch' has a complexity of 4. Maximum allowed is 0.",
+        "line": 52,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 59,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'InputForm' has a complexity of 1. Maximum allowed is 0.",
+        "line": 61,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 74,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'handleSearch' has a complexity of 3. Maximum allowed is 0.",
+        "line": 65,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 71,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { useRef } from 'react';\n\nimport toast from 'react-hot-toast';\n\nimport Image from 'next/image';\n\nimport searchIcon from '@/public/icons/search.jpg';\n\nimport searchDiscipline, { DisciplineType } from '@/app/utils/api/searchDiscipline';\n\nimport { FormData, FormType, InputFormPropsType } from '../types/types';\n\ninterface FormPropsType {\n    form: FormType,\n    handleSearch: (event: React.FormEvent<HTMLFormElement>) => Promise<void>,\n    inputRef: React.RefObject<HTMLInputElement>\n}\n\nfunction Form(props: FormPropsType) {\n    const { formData, setFormData } = props.form;\n    const { handleSearch, inputRef } = props;\n\n    return (\n        <form className='flex items-center w-11/12 px-2 bg-white shadow-md rounded-xl' onSubmit={handleSearch}>\n            <input\n                type=\"text\"\n                placeholder='Matéria ou Professor...'\n                value={formData.search}\n                onChange={(e) => setFormData({ ...formData, search: e.target.value })}\n                ref={inputRef}\n                className='h-14 p-2 w-full rounded-xl focus:outline-none'\n            />\n            <button type='submit' >\n                <Image\n                    width={30} height={30}\n                    src={searchIcon} alt='ícone de pesquisa'\n                />\n            </button>\n        </form>\n    );\n}\n\nasync function makeDisciplineSearch(textSearch: string, year: string, period: string, setInfos: (infos: Array<DisciplineType>) => void) {\n    const data = await searchDiscipline(textSearch, year, period);\n    if (data) {\n        let infos: Array<DisciplineType> = [];\n        data.forEach(discipline => infos.push({ ...discipline, expanded: false }));\n        setInfos(infos);\n    }\n}\n\nasync function handleDisciplineSearch(formData: FormData, setInfos: (infos: Array<DisciplineType>) => void) {\n    const { search, year, period } = formData;\n    const textSearch = search.trim();\n\n    if (!textSearch) toast.error('Escreva no nome da disciplina');\n    else if (!year || !period) toast.error('Escolha o ano/período');\n    else await makeDisciplineSearch(textSearch, year, period, setInfos);\n}\n\nexport default function InputForm(props: InputFormPropsType) {\n    const inputRef = useRef<HTMLInputElement>(null);\n    const { formData } = props.form;\n\n    async function handleSearch(event: React.FormEvent<HTMLFormElement>) {\n        event.preventDefault();\n\n        if (inputRef && inputRef.current) inputRef.current.blur();\n\n        await handleDisciplineSearch(formData, props.setInfos);\n    }\n\n    return <Form form={props.form} handleSearch={handleSearch} inputRef={inputRef} />;\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 17,
+        "column": 25,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 19,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Tooltip' has a complexity of 3. Maximum allowed is 0.",
+        "line": 21,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 63,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 25,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 35,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'keyPress' has a complexity of 2. Maximum allowed is 0.",
+        "line": 26,
+        "column": 9,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 28,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 32,
+        "column": 16,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 34,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 40,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 40,
+        "endColumn": 47
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 51,
+        "column": 34,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 56
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport styles from '@/app/styles/tooltip.module.css';\n\nimport Image from 'next/image';\n\nimport useWindowDimensions from '../../hooks/useWindowDimensions';\nimport { useEffect, useState } from 'react';\n\nimport questionIcon from '@/public/icons/question.jpg';\nimport closeIcon from '@/public/icons/close.jpg';\n\ninterface TooltipPropsType {\n    children: React.ReactNode,\n};\n\nexport const isMobile = (width?: number) => {\n    return width && width <= 768;\n};\n\nexport default function Tooltip({ children }: TooltipPropsType) {\n    const [active, setActive] = useState(false);\n    const { width } = useWindowDimensions();\n\n    useEffect(() => {\n        function keyPress(event: KeyboardEvent) {\n            if (event.key === 'Escape') setActive(false);\n        }\n\n        if (active) document.addEventListener('keydown', keyPress);\n\n        return () => {\n            document.removeEventListener('keydown', keyPress);\n        };\n    }, [active]);\n\n    return (\n        <div className={styles.tooltip}>\n            <span\n                onClick={() => setActive(true)}\n                className='flex justify-center items-center text-xs border-black border-solid border-2 rounded-full h-5 w-5 hover:bg-gray-300'>\n                <Image\n                    width={15} height={15}\n                    src={questionIcon} alt='ícone de interrogação'\n                />\n            </span>\n            <span className={`${active ? 'visible' : 'invisible'} ${styles.inside} ${styles.tooltiptext} p-2`}>\n                <div className='relative flex flex-col gap-1 justify-center items-center rounded-md p-5 bg-snow-primary'>\n                    {children}\n                    <button\n                        onClick={() => setActive(false)}\n                        className={`absolute right-2 ${isMobile(width) ? 'bottom-2' : 'top-2'}`}\n                    >\n                        <Image\n                            src={closeIcon}\n                            alt='fechar'\n                        />\n                    </button>\n                </div>\n            </span>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/AsideSchedulePopUp/types/types.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/Button.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Button' has a complexity of 2. Maximum allowed is 0.",
+        "line": 8,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 19,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { HTMLProps, LegacyRef } from 'react';\n\ninterface ButtonPropsType extends HTMLProps<HTMLButtonElement> {\n    children: React.ReactNode;\n    innerRef?: LegacyRef<HTMLButtonElement> | undefined\n}\n\nexport default function Button({ children, innerRef, ...props }: ButtonPropsType) {\n    return (\n        <button\n            ref={innerRef}\n            {...props}\n            className={`flex justify-center items-center gap-3 font-medium rounded-xl shadow py-3 px-5 hover:shadow-md transition-all duration-300 text-white ${props.className || ''}`}\n            type='submit'\n        >\n            {children}\n        </button>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/ClassInfo.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'generateSpecialDates' has a complexity of 1. Maximum allowed is 0.",
+        "line": 11,
+        "column": 8,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 34,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 12,
+        "column": 30,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 33,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'make_days' has a complexity of 1. Maximum allowed is 0.",
+        "line": 17,
+        "column": 9,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 23,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 18,
+        "column": 51,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 21,
+        "endColumn": 23
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ClassInfo' has a complexity of 3. Maximum allowed is 0.",
+        "line": 36,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 64,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 48,
+        "column": 57,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 39
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 6,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { Fragment } from 'react';\n\nimport { ClassValueType } from '../contexts/SelectedClassesContext/types';\n\nimport Tooltip from './AsideSchedulePopUp/Tooltip';\n\ninterface ClassInfoPropsType {\n    currentClass: ClassValueType\n}\n\nexport function generateSpecialDates(special_dates: Array<Array<string>>, days: Array<string>) {\n    return special_dates.map((specialDate, index) => {\n        const day = specialDate[0];\n        const start = parseInt(specialDate[1]) - 1;\n        const end = parseInt(specialDate[2]) - 1;\n\n        function make_days(start: number, end: number) {\n            return days.slice(start, end + 1).map((day, index) =>\n                <div className='pl-3' key={index}>\n                    {day}\n                </div>\n            );\n        }\n\n        return (\n            <Fragment key={index}>\n                <span className='font-semibold'>\n                    {day}\n                </span>\n                {make_days(start, end)}\n            </Fragment>\n        );\n    });\n}\n\nexport default function ClassInfo({ currentClass }: ClassInfoPropsType) {\n    return (\n        <div className = \"col-span-6\">\n            <div>\n                <span className='font-semibold'>Sala:</span> {currentClass.class.classroom}\n            </div>\n            <div className='flex gap-1'>\n                <span className='font-semibold'>Horários:</span> {currentClass.class.schedule}\n                <Tooltip>\n                    <div className='flex flex-col gap-1 w-64'>\n                        <span className='text-center font-semibold text-lg'>Horários</span>\n                        {!currentClass.class.special_dates.length ?\n                            currentClass.class.days.map((day, index) =>\n                                <div key={index}>\n                                    {day}\n                                </div>\n                            ) : generateSpecialDates(\n                                currentClass.class.special_dates,\n                                currentClass.class.days\n                            )}\n                    </div>\n                </Tooltip>\n            </div>\n            <div>\n                <span className='font-semibold'>Professor:</span> {currentClass.class.teachers[0]} {currentClass.class.teachers.length > 1 && 'e outros'}\n            </div>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/DisciplineBox.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DisciplineBox' has a complexity of 1. Maximum allowed is 0.",
+        "line": 22,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 47,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleDeleteClass' has a complexity of 2. Maximum allowed is 0.",
+        "line": 25,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 32,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import Image from 'next/image';\n\nimport { ClassValueType } from '../contexts/SelectedClassesContext/types';\n\nimport useSelectedClasses from '../hooks/useSelectedClasses';\n\nimport ClassInfo from './ClassInfo';\n\nimport deleteIcon from '../../public/icons/delete.jpg';\n\nimport _ from 'lodash';\n\ninterface DisciplineBoxPropsType {\n    currentClass: ClassValueType\n    discipline: {\n        id: number,\n        name: string,\n        code: string\n    }\n}\n\nexport default function DisciplineBox({ currentClass, discipline }: DisciplineBoxPropsType) {\n    const { selectedClasses, setSelectedClasses } = useSelectedClasses();\n\n    function handleDeleteClass() {\n        const newSelectedClasses = _.cloneDeep(selectedClasses);\n        newSelectedClasses.get(discipline.id)?.delete(currentClass.class.id);\n        if (!newSelectedClasses.get(discipline.id)?.size) {\n            newSelectedClasses.delete(discipline.id);\n        }\n        setSelectedClasses(newSelectedClasses);\n    }\n\n    return (\n        <span className='relative flex justify-between rounded-lg w-10/12 py-2 pl-4 pr-8 shadow-lg bg-snow-primary'>\n            <div>\n                <section>\n                    <span className='font-semibold'>Código: </span> {discipline.code}\n                </section>\n                <ClassInfo currentClass={currentClass} />\n            </div>\n            <button onClick={handleDeleteClass} className='absolute right-1 top-0 bottom-0 my-auto'>\n                <Image height={24} width={24} src={deleteIcon} alt=\"deletar\" />\n            </button>\n        </span>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/InfoHeader.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'InfoHeader' has a complexity of 3. Maximum allowed is 0.",
+        "line": 15,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 39,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useState } from 'react';\nimport useWindowDimensions from '../hooks/useWindowDimensions';\nimport useUser from '../hooks/useUser';\n\nimport { days, months } from '../utils/dates';\n\nconst currentDateObject = new Date(\n    new Date().toLocaleString('en', {\n        timeZone: 'America/Sao_Paulo'\n    })\n);\n\nexport default function InfoHeader() {\n    const { user } = useUser();\n    const { breakHeighPoint } = useWindowDimensions();\n\n    const [currentDate, _] = useState(currentDateObject);\n\n    const currentDay = currentDate.getDate().toString();\n    const currentMonth = months[currentDate.getMonth()];\n    const currentWeekDay = days[currentDate.getDay()];\n\n    return (\n        <header className={`\n            fixed top-0 w-full \n            rounded-b-[40px] mb-8 flex flex-col z-[5] justify-end bg-primary px-6 \n            ${breakHeighPoint ? 'h-24' : 'h-0'} transition-all duration-300\n        `}>\n            <h1 className='col-span-2 font-semibold text-base text-white'>\n                Olá, {user.is_anonymous ? 'Anônimo' : user.first_name}!\n            </h1>\n            <p className='mb-5 col-span-2 font-medium text-base text-white'>\n                {currentWeekDay}, {currentDay} de {currentMonth}\n            </p>\n        </header>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/LoadingScreen.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 3,
+        "column": 30,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 13,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import styles from '@/app/styles/loading.module.css';\n\nexport const LoadingScreen = () => {\n    return (\n        <div className={styles.loading_screen}>\n            <div className={styles.dot}></div>\n            <div className={styles.dot}></div>\n            <div className={styles.dot}></div>\n            <div className={styles.dot}></div>\n            <div className={styles.dot}></div>\n        </div>\n    );\n};",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/LogoImageHandler.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'LogoImageHandler' has a complexity of 3. Maximum allowed is 0.",
+        "line": 11,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 22,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport Image from 'next/image';\n\nimport logoImage from '../../public/logo.png';\n\nimport useWindowDimensions from '../hooks/useWindowDimensions';\n\nconst MIN_HEIGHT = 720;\n\nexport default function LogoImageHandler() {\n    const { height } = useWindowDimensions();\n\n    if (height && height <= MIN_HEIGHT) return null;\n\n    return (\n        <Image\n            src={logoImage}\n            alt='Pessoa marcando datas em um calendário com borda azul'\n        />\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/Modal/Modal.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Modal' has a complexity of 2. Maximum allowed is 0.",
+        "line": 11,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 30,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 18,
+        "column": 34,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 18,
+        "endColumn": 61
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import Image from 'next/image';\n\nimport closeIcon from '@/public/icons/close.jpg';\n\ninterface ModalPropsType {\n    children: React.ReactNode;\n    setActiveModal: (active: boolean) => void;\n    noExit?: boolean;\n}\n\nexport default function Modal({ children, setActiveModal, noExit }: ModalPropsType) {\n    return (\n        <div className=\"flex justify-center items-center fixed bg-snow-primary bg-opacity-[55%] h-full w-full top-0 left-0 z-50\">\n            <div className=\"relative overflow-auto h-[87%] w-11/12 rounded-lg bg-[#ECECEC] mx-2\">\n                {children}\n                {!noExit &&\n                    <button\n                        onClick={() => setActiveModal(false)}\n                        className='absolute left-2 top-2'\n                    >\n                        <Image\n                            src={closeIcon}\n                            alt=\"fechar\"\n                        />\n                    </button>\n                }\n            </div>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/Protected.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Protected' has a complexity of 3. Maximum allowed is 0.",
+        "line": 14,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 30,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+        "line": 19,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 25,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { usePathname, useRouter } from 'next/navigation';\nimport { useEffect } from 'react';\n\nimport useUser from '../hooks/useUser';\n\nconst protectedRoutes = ['/schedules/profile'];\n\ninterface ProtectedPropsType {\n    children: React.ReactNode;\n}\n\nexport default function Protected({ children }: ProtectedPropsType) {\n    const { user, isLoading } = useUser();\n    const path = usePathname();\n    const router = useRouter();\n\n    useEffect(() => {\n        if (!isLoading) {\n            if (user.is_anonymous && protectedRoutes.includes(path)) {\n                router.replace('/');\n            }\n        }\n    }, [user.is_anonymous, isLoading, path, router]);\n\n    if (user.is_anonymous && protectedRoutes.includes(path)) return null;\n\n    return children;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/Schedule/Schedule.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Schedule' has a complexity of 7. Maximum allowed is 0.",
+        "line": 14,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 141,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 27,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 62,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'addClassToSchedule' has a complexity of 1. Maximum allowed is 0.",
+        "line": 33,
+        "column": 9,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 56,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 6. Maximum allowed is 0.",
+        "line": 37,
+        "column": 35,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 55,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 59,
+        "column": 31,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 59,
+        "endColumn": 73
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 74,
+        "column": 35,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 77,
+        "endColumn": 35
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 82,
+        "column": 32,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 96,
+        "endColumn": 31
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+        "line": 88,
+        "column": 43,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 93,
+        "endColumn": 43
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 5. Maximum allowed is 0.",
+        "line": 103,
+        "column": 53,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 135,
+        "endColumn": 26
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 113,
+        "column": 64,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 122,
+        "endColumn": 42
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 10,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { ScheduleClassType } from '@/app/contexts/SchedulesContext';\nimport { HTMLProps, useEffect, useState } from 'react';\nimport { generateSpecialDates } from '../ClassInfo';\nimport Tooltip from '../AsideSchedulePopUp/Tooltip';\n\ninterface SchedulePropsType extends HTMLProps<HTMLDivElement> {\n    schedules?: Array<ScheduleClassType>;\n    preview?: boolean;\n    toDownload?: boolean;\n}\n\nexport default function Schedule({ schedules, preview, toDownload, ...props }: SchedulePropsType) {\n    const [currentSchedule, setCurrentSchedule] = useState<Array<Array<ScheduleClassType>>>(new Array(6).fill(new Array(15).fill(null)));\n    const uniqueTeachers = new Set<string>();\n\n    const days = ['Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'];\n    const times = [\n        '08:00 - 08:55', '08:55 - 09:50', '10:00 - 10:55',\n        '10:55 - 11:50', '12:00 - 12:55', '12:55 - 13:50',\n        '14:00 - 14:55', '14:55 - 15:50', '16:00 - 16:55',\n        '16:55 - 17:50', '18:00 - 18:55', '19:00 - 19:50',\n        '19:50 - 20:40', '20:50 - 21:40', '21:40 - 22:30'\n    ];\n\n    useEffect(() => {\n        const baseSchedule = new Array(6);\n        for (let i = 0; i < baseSchedule.length; i++) {\n            baseSchedule[i] = new Array(15).fill(null);\n        }\n\n        function addClassToSchedule(scheduleStructure: ScheduleClassType) {\n            const { schedule } = scheduleStructure;\n            const splitSchedule = schedule.split(' ');\n\n            splitSchedule.forEach((piece) => {\n                const regex = /^(\\d+)([MNT])(\\d+)$/;\n                const match = piece.match(regex);\n                if (match) {\n                    const [, day, period, time] = match;\n\n                    for (let i = 0; i < day.length; i++) {\n                        const x = parseInt(day[i]) - 2;\n                        for (let j = 0; j < time.length; j++) {\n                            let y = parseInt(time[j]) - 1;\n\n                            if (period === 'T') y += 5;\n                            else if (period === 'N') y += 11;\n\n                            baseSchedule[x][y] = scheduleStructure;\n                        }\n                    }\n                }\n            });\n        }\n\n        if (schedules) {\n            schedules.forEach((schedule) => addClassToSchedule(schedule));\n            setCurrentSchedule(baseSchedule);\n        }\n    }, [schedules]);\n\n    return (\n        <div\n            {...props}\n            className={`${toDownload ? 'flex justify-end flex-row-reverse pt-10 tracking-[0.01px]' : ''} ${preview ? 'scale-[.3]' : ''}`}\n            onClick={props.onClick}\n        >\n            <div className={`p-5 ${!toDownload ? 'm-auto' : ''} w-max`}>\n                <div className=\"flex justify-end\">\n                    <div className=\"w-40\"></div>\n                    <div className=\"flex\">\n                        {days.map((day, index) =>\n                            <div key={index} className=\"text-center w-28 m-[2px]\">\n                                <p>{day}</p>\n                            </div>\n                        )}\n                    </div>\n                </div>\n                <div className='flex flex-col'>\n                    {times.map((time, timeIndex) =>\n                        <div className=\"flex\" key={timeIndex}>\n                            <div className=\"flex justify-center items-center font-mono w-40\">\n                                <p>{time}</p>\n                            </div>\n                            <div className=\"flex\">\n                                {days.map((day, dayIndex) =>\n                                    <div key={dayIndex} className={`flex ${toDownload ? 'pb-5 font-mono' : ''} rounded-xl border border-[#9B9898] justify-center items-center w-28 h-8 m-[2px]`}>\n                                        {currentSchedule[dayIndex] &&\n                                            currentSchedule[dayIndex][timeIndex] &&\n                                            currentSchedule[dayIndex][timeIndex].discipline.code}\n                                    </div>\n                                )}\n                            </div>\n                        </div>\n                    )}\n                </div>\n            </div>\n            {!preview &&\n                <div className={`flex flex-col w-max pl-10 pb-5 ${toDownload ? 'max-w-lg' : ''}`}>\n                    <ul className='list-disc'>\n                        {schedules && schedules.map((schedule, index) => {\n                            return (\n                                <div className='p-1' key={index}>\n                                    <li>\n                                        <span className={`font-semibold ${toDownload ? 'font-mono' : ''}`}>\n                                            {schedule.discipline.code}\n                                        </span> - {schedule.discipline.name} - <span className={toDownload ? 'font-mono' : ''}>({schedule.classroom})</span>\n                                    </li>\n                                    <span className='font-semibold'>PROFESSORES:</span>\n                                    <ul className='list-inside'>\n                                        {schedule.teachers.map((teacher, index) => {\n                                            if (uniqueTeachers.has(teacher)) return null;\n\n                                            uniqueTeachers.add(teacher);\n                                            return (\n                                                <li key={index}>\n                                                    <p>{teacher}</p>\n                                                </li>\n                                            );\n                                        })}\n                                    </ul>\n                                    {schedule.special_dates.length ?\n                                        <>\n                                            <span className='font-semibold pr-2'>DATAS:</span>\n                                            {!toDownload ? <Tooltip>\n                                                {generateSpecialDates(schedule.special_dates, schedule.days)}\n                                            </Tooltip> : generateSpecialDates(schedule.special_dates, schedule.days)}\n                                        </> : null\n                                    }\n\n                                </div>\n                            );\n                        })}\n                    </ul>\n                </div>\n            }\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 26,
+        "column": 21,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 26,
+        "endColumn": 81
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DeleteButton' has a complexity of 1. Maximum allowed is 0.",
+        "line": 28,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 38,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 34,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 34,
+        "endColumn": 58
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DeleteModalHandler' has a complexity of 2. Maximum allowed is 0.",
+        "line": 40,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 68,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'handleDelete' has a complexity of 2. Maximum allowed is 0.",
+        "line": 52,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 56,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 63,
+        "column": 38,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 63,
+        "endColumn": 89
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 64,
+        "column": 38,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 64,
+        "endColumn": 58
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleDate' has a complexity of 1. Maximum allowed is 0.",
+        "line": 70,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 78,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'BottomPart' has a complexity of 6. Maximum allowed is 0.",
+        "line": 80,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 123,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 99,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 103,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 113,
+        "column": 34,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 116,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'UploadToCloudButton' has a complexity of 1. Maximum allowed is 0.",
+        "line": 125,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 164,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleSuccessToSave' has a complexity of 1. Maximum allowed is 0.",
+        "line": 134,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 140,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 135,
+        "column": 40,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 138,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 138,
+        "column": 18,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 138,
+        "endColumn": 37
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleErrorToSave' has a complexity of 2. Maximum allowed is 0.",
+        "line": 142,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 147,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'handleUploadToCloud' has a complexity of 1. Maximum allowed is 0.",
+        "line": 153,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 157,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 154,
+        "column": 71,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 156,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 156,
+        "column": 18,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 156,
+        "endColumn": 58
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 160,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 160,
+        "endColumn": 53
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleDownloadPDF' has a complexity of 1. Maximum allowed is 0.",
+        "line": 166,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 177,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Method 'callback' has a complexity of 2. Maximum allowed is 0.",
+        "line": 171,
+        "column": 19,
+        "nodeType": "FunctionExpression",
+        "messageId": "complex",
+        "endLine": 173,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'SchedulePreview' has a complexity of 4. Maximum allowed is 0.",
+        "line": 179,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 247,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'handleDeleteCloud' has a complexity of 2. Maximum allowed is 0.",
+        "line": 193,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 201,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 197,
+        "column": 44,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 199,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 199,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 199,
+        "endColumn": 41
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleDeleteLocal' has a complexity of 1. Maximum allowed is 0.",
+        "line": 203,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 207,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 209,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 217,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 211,
+        "column": 24,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 215,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 223,
+        "column": 30,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 225,
+        "endColumn": 22
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 30,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useEffect, useState } from 'react';\nimport useSchedules from '@/app/hooks/useSchedules';\nimport useUser from '@/app/hooks/useUser';\n\nimport { CloudScheduleType, ScheduleClassType } from '@/app/contexts/SchedulesContext';\n\nimport Image from 'next/image';\nimport Modal from '../Modal/Modal';\nimport Schedule from '../Schedule/Schedule';\nimport Button from '../Button';\n\nimport uploadIcon from '@/public/icons/upload.jpg';\nimport downloadIcon from '@/public/icons/download.jpg';\nimport deleteIcon from '@/public/icons/delete.jpg';\nimport saveSchedule from '@/app/utils/api/saveSchedule';\nimport getSchedules from '@/app/utils/api/getSchedules';\nimport { days, months } from '@/app/utils/dates';\nimport deleteSchedule from '@/app/utils/api/deleteSchedule';\nimport { errorToast, successToast } from '@/app/utils/toast';\n\nimport jsPDF from 'jspdf';\nimport { AxiosError } from 'axios';\n\nconst commonError = () => errorToast('Houve um erro na atualização das grades!');\n\nfunction DeleteButton({\n    setActiveDeleteModal,\n}: {\n    setActiveDeleteModal: (value: boolean) => void;\n}) {\n    return (\n        <button onClick={() => setActiveDeleteModal(true)}>\n            <Image width={25} height={25} src={deleteIcon} alt=\"ícone de deletar\" />\n        </button>\n    );\n}\n\nfunction DeleteModalHandler(props: {\n    deleteModal: {\n        activeDeleteModal: boolean;\n        setActiveDeleteModal: (value: boolean) => void;\n    }\n    isCloud?: boolean;\n    index: number;\n    deleteHandler: {\n        handleDeleteCloud: () => Promise<void>;\n        handleDeleteLocal: () => void;\n    }\n}) {\n    async function handleDelete() {\n        if (!props.isCloud) props.deleteHandler.handleDeleteLocal();\n        else await props.deleteHandler.handleDeleteCloud();\n        props.deleteModal.setActiveDeleteModal(false);\n    }\n\n    return props.deleteModal.activeDeleteModal &&\n        <Modal setActiveModal={props.deleteModal.setActiveDeleteModal} noExit>\n            <div className=\"flex flex-col items-center justify-center h-full gap-10\">\n                <h1 className=\"font-semibold text-center\">A grade será deletada para sempre, tem certeza?</h1>\n                <div className=\"flex gap-16 justify-center mt-4\">\n                    <Button onClick={() => props.deleteModal.setActiveDeleteModal(false)} className='bg-gray-400'>Não</Button>\n                    <Button onClick={() => handleDelete()} className='bg-primary'>Sim</Button>\n                </div>\n            </div>\n        </Modal>;\n}\n\nfunction handleDate(created_at: string) {\n    const date = new Date(created_at);\n\n    const currentDay = date.getDate().toString();\n    const currentMonth = months[date.getMonth()];\n    const currentWeekDay = days[date.getDay()];\n\n    return `${currentWeekDay}, ${currentDay} de ${currentMonth}`;\n}\n\nfunction BottomPart(props: {\n    schedules: {\n        localSchedule?: Array<ScheduleClassType>;\n        cloudSchedule?: CloudScheduleType;\n    }\n    index: number;\n    position: number;\n    isCloud?: boolean;\n    handleDelete: () => void;\n    setters: {\n        setActiveScheduleModal: (value: boolean) => void;\n        setActiveDeleteModal: (value: boolean) => void;\n        setToDownload: (value: boolean) => void;\n    }\n}) {\n    const { user } = useUser();\n\n    const [changeDate, setChangeDate] = useState('');\n\n    useEffect(() => {\n        if (props.isCloud && props.schedules.cloudSchedule?.created_at) {\n            setChangeDate(handleDate(props.schedules.cloudSchedule.created_at));\n        }\n    }, [props.isCloud, props.schedules.cloudSchedule?.created_at]);\n\n    return (\n        <div className={`flex justify-between items-center w-full ${props.isCloud ? '-bottom-14' : '-bottom-7'}`}>\n            <div className='text-[#000000] opacity-40 text-lg font-bold' >\n                Grade {props.position} <br />\n                {props.isCloud && changeDate && <span className='text-sm font-normal'>{changeDate}</span>}\n            </div>\n            <div className='flex gap-4 h-[25px] opacity-50'>\n                {!props.isCloud && !user.is_anonymous && <UploadToCloudButton schedules={props.schedules} handleDelete={props.handleDelete} />}\n                <button onClick={() => {\n                    props.setters.setActiveScheduleModal(true);\n                    props.setters.setToDownload(true);\n                }}>\n                    <Image width={25} height={25} src={downloadIcon} alt=\"ícone de download\" />\n                </button>\n                <DeleteButton setActiveDeleteModal={props.setters.setActiveDeleteModal} />\n            </div>\n        </div>\n    );\n}\n\nfunction UploadToCloudButton({ ...props }: {\n    schedules: {\n        localSchedule?: Array<ScheduleClassType>;\n    };\n    handleDelete: () => void;\n}) {\n    const { user } = useUser();\n    const { setCloudSchedules } = useSchedules();\n\n    function handleSuccessToSave() {\n        getSchedules(user.access).then(response => {\n            props.handleDelete();\n            setCloudSchedules(response.data);\n        }).catch(() => commonError());\n        successToast('Grade salva com sucesso!');\n    }\n\n    function handleErrorToSave(axiosError: AxiosError) {\n        if (axiosError.response) {\n            const data = axiosError.response.data as { errors: string };\n            errorToast(data.errors);\n        }\n    }\n\n    /**\n    * Tenta salvar a grade na nuvem, se der certo, atualiza as grades locais.\n    * Caso contrário, exibe errorToast com mensagem retornada pela API.\n    */\n    async function handleUploadToCloud() {\n        saveSchedule(props.schedules.localSchedule, user.access).then(response => {\n            if (response.status == 201) handleSuccessToSave();\n        }).catch((error: any) => handleErrorToSave(error));\n    }\n\n    return (\n        <button onClick={() => handleUploadToCloud()}>\n            <Image width={25} src={uploadIcon} alt=\"ícone de upload\" />\n        </button>\n    );\n}\n\nfunction handleDownloadPDF(isCloud: boolean, index: number) {\n    const doc = document.getElementById('download-content')!;\n\n    const pdfManager = new jsPDF('l', 'pt', 'a4');\n    pdfManager.html(doc, {\n        callback: function (doc) {\n            doc.save(`schedule-${isCloud ? 'cloud' : 'local'}-${index + 1}.pdf`);\n        },\n        x: 0, y: 0,\n        width: 1150, windowWidth: 2000,\n    });\n}\n\nexport default function SchedulePreview({ localSchedule, cloudSchedule, index, position, isCloud = false }: {\n    localSchedule?: Array<ScheduleClassType>;\n    cloudSchedule?: CloudScheduleType;\n    index: number;\n    position: number;\n    isCloud?: boolean;\n}) {\n    const { user } = useUser();\n    const { localSchedules, setCloudSchedules, setLocalSchedules } = useSchedules();\n\n    const [toDownload, setToDownload] = useState(false);\n    const [activeScheduleModal, setActiveScheduleModal] = useState(false);\n    const [activeDeleteModal, setActiveDeleteModal] = useState(false);\n\n    async function handleDeleteCloud() {\n        const response = await deleteSchedule(cloudSchedule?.id, user.access);\n\n        if (response.status == 204) {\n            getSchedules(user.access).then(response => {\n                setCloudSchedules(response.data);\n            }).catch(() => commonError());\n        } else errorToast('Não foi possível deletar a grade na nuvem!');\n    }\n\n    function handleDeleteLocal() {\n        const newLocalSchedules = [...localSchedules];\n        newLocalSchedules.splice(index, 1);\n        setLocalSchedules(newLocalSchedules, false);\n    }\n\n    useEffect(() => {\n        if (toDownload && activeScheduleModal) {\n            setTimeout(() => {\n                handleDownloadPDF(isCloud, index);\n                setActiveScheduleModal(false);\n                setToDownload(false);\n            }, 75);\n        }\n    }, [toDownload, activeScheduleModal, isCloud, index]);\n\n    return (\n        <>\n            <div className='relative w-full max-w-sm'>\n                <div\n                    onClick={() => {\n                        if (!activeScheduleModal) setActiveScheduleModal(true);\n                    }}\n                    className='flex justify-center items-center bg-snow-tertiary h-48 rounded-3xl'>\n                    <Schedule schedules={isCloud ? cloudSchedule!.classes : localSchedule} preview />\n                    {activeScheduleModal &&\n                        <Modal setActiveModal={setActiveScheduleModal}>\n                            <Schedule id='download-content' schedules={isCloud ? cloudSchedule!.classes : localSchedule} toDownload={toDownload} />\n                        </Modal>\n                    }\n                </div>\n                <BottomPart\n                    schedules={{ localSchedule, cloudSchedule }}\n                    index={index} position={position} isCloud={isCloud}\n                    setters={{ setActiveScheduleModal, setActiveDeleteModal, setToDownload }}\n                    handleDelete={handleDeleteLocal}\n                />\n            </div>\n            <DeleteModalHandler\n                deleteModal={{ activeDeleteModal, setActiveDeleteModal }} isCloud={isCloud} index={index}\n                deleteHandler={{ handleDeleteCloud, handleDeleteLocal }}\n            />\n        </>\n    );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/components/SignInSection.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'SignInSection' has a complexity of 1. Maximum allowed is 0.",
+        "line": 24,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 66,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 29,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 31,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 33,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 49,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 35,
+        "column": 50,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 45,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 45,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 47,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 54,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 57,
+        "endColumn": 14
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 6,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useEffect, useState } from 'react';\nimport { useRouter } from 'next/navigation';\nimport useUser from '../hooks/useUser';\n\nimport signInWithGoogle from '../utils/signInWithGoogle';\nimport registerWithGoogle from '../utils/api/registerWithGoogle';\nimport retrieveAccessToken from '../utils/retrieveAccessToken';\n\nimport googleLogoImage from '../../public/google.jpg';\n\nimport Image from 'next/image';\nimport Button from './Button';\nimport toast from 'react-hot-toast';\n\nexport interface UserData {\n    access: string;\n    first_name: string;\n    email: string;\n    picture_url: string;\n}\n\nexport default function SignInSection() {\n    const router = useRouter();\n    const { user, setUser } = useUser();\n    const [accessToken, setAccessToken] = useState<string>();\n\n    useEffect(() => {\n        setAccessToken(retrieveAccessToken());\n    }, [setAccessToken]);\n\n    useEffect(() => {\n        if (accessToken) {\n            registerWithGoogle(accessToken).then(response => {\n                const userData: UserData = response.data;\n                setUser({\n                    is_anonymous: false,\n                    access: userData.access,\n                    first_name: userData.first_name,\n                    email: userData.email,\n                    picture_url: userData.picture_url\n                });\n                router.push('/schedules/home');\n            }).catch(error => {\n                toast.error('Algo deu errado: ' + error.response.data.errors);\n            });\n        }\n    }, [accessToken, router, setUser]);\n\n    return (\n        <Button\n            className='text-sm flat:text-center hover:bg-slate-100 bg-white !text-black'\n            onClick={() => {\n                if (!user.is_anonymous) router.push('/schedules/home');\n                else signInWithGoogle(router);\n            }}\n        >\n            <Image\n                src={googleLogoImage} alt='Logo do Google'\n            />\n            Continuar com o Google\n        </Button>\n\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/ClassesToShowContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ClassesToShowContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 18,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 26,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { createContext, useState } from 'react';\n\nimport { ClassValueType } from './SelectedClassesContext/types';\n\nexport interface ClassesToShowContextType {\n    classesToShow: Array<ClassValueType>,\n    setClassesToShow: (value: Array<ClassValueType>) => void;\n}\n\nexport interface ClassesToShowContextProviderPropsType {\n    children: React.ReactNode\n}\n\nexport const ClassesToShowContext = createContext({} as ClassesToShowContextType);\n\nexport default function ClassesToShowContextProvider({ children, ...props }: ClassesToShowContextProviderPropsType) {\n    const [classesToShow, setClassesToShow] = useState<Array<ClassValueType>>([]);\n\n    return (\n        <ClassesToShowContext.Provider value={{ classesToShow, setClassesToShow }}>\n            {children}\n        </ClassesToShowContext.Provider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/SchedulesContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'SchedulesContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 40,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 87,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 46,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 50,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 52,
+        "column": 31,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 68,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 58,
+        "column": 62,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 61,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 60,
+        "column": 49,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 60,
+        "endColumn": 92
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 70,
+        "column": 31,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 77,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 73,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 75,
+        "endColumn": 10
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport React, { createContext, useEffect, useState } from 'react';\n\nimport { ClassType } from '../utils/api/searchDiscipline';\n\nexport interface ScheduleClassType extends ClassType {\n    discipline: {\n        id: number;\n        name: string;\n        code: string;\n        department: number;\n        unicode_name: string;\n    }\n};\n\nexport interface CloudScheduleType {\n    id: number;\n    created_at: string;\n    classes: Array<ScheduleClassType>;\n};\n\nexport interface ScheduleAPIType {\n    schedules: Array<ScheduleClassType>;\n    message: string;\n};\n\ntype SchedulesType = Array<Array<ScheduleClassType>>;\ntype SchedulesCloudType = Array<CloudScheduleType>;\n\ninterface SchedulesContextType {\n    localSchedules: SchedulesType;\n    setLocalSchedules: (newSchedules: Array<ScheduleClassType> | Array<Array<ScheduleClassType>>, add?: boolean) => void;\n    cloudSchedules: SchedulesCloudType;\n    setCloudSchedules: (newSchedules: SchedulesCloudType) => void;\n}\n\nexport const SchedulesContext = createContext<SchedulesContextType>({} as SchedulesContextType);\n\nexport default function SchedulesContextProvider({ children }: {\n    children: React.ReactNode;\n}) {\n    const [localSchedules, setLocalDefaultSchedules] = useState<SchedulesType>([] as SchedulesType);\n    const [cloudSchedules, setCloudDefaultSchedules] = useState<SchedulesCloudType>([] as SchedulesCloudType);\n\n    useEffect(() => {\n        const localJSON = JSON.parse(localStorage.getItem('schedules') || '[]');\n        const localSchedulesFromJSON: SchedulesType = localJSON;\n        setLocalDefaultSchedules(localSchedulesFromJSON);\n    }, []);\n\n    const setLocalSchedules = (newSchedules: Array<ScheduleClassType> | Array<Array<ScheduleClassType>>, add: boolean = true) => {\n        if (add) {\n            const newLocalSchedules = [\n                ...newSchedules,\n                ...localSchedules,\n            ];\n            const uniqueSchedules = newLocalSchedules.filter((schedule, index, self) => {\n                const stringSchedule = JSON.stringify(schedule);\n                return index === self.findIndex((s) => JSON.stringify(s) === stringSchedule);\n            });\n            localStorage.setItem('schedules', JSON.stringify(uniqueSchedules));\n        } else localStorage.setItem('schedules', JSON.stringify(newSchedules));\n\n        const localJSON = JSON.parse(localStorage.getItem('schedules') || '[]');\n        const localSchedulesFromJSON: SchedulesType = localJSON;\n        setLocalDefaultSchedules(localSchedulesFromJSON);\n    };\n\n    const setCloudSchedules = (newSchedules: SchedulesCloudType) => {\n        newSchedules.reverse();\n        const data: Array<any> = newSchedules;\n        data.forEach((schedule, index) => {\n            data[index].classes = JSON.parse(schedule.classes);\n        });\n        setCloudDefaultSchedules(data);\n    };\n\n    return (\n        <SchedulesContext.Provider value={{\n            localSchedules, setLocalSchedules,\n            cloudSchedules, setCloudSchedules\n        }}>\n            {children}\n        </SchedulesContext.Provider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 16,
+        "column": 21,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 19,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleMaxDisciplinesError' has a complexity of 2. Maximum allowed is 0.",
+        "line": 21,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 25,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleMaxClassesError' has a complexity of 1. Maximum allowed is 0.",
+        "line": 27,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 33,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 28,
+        "column": 19,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 32,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ProviderJSX' has a complexity of 1. Maximum allowed is 0.",
+        "line": 35,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 41,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'SelectedClassesContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 43,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 63,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleNoError' has a complexity of 2. Maximum allowed is 0.",
+        "line": 48,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 52,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 54,
+        "column": 32,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 60,
+        "endColumn": 6
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 8,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { createContext, useState } from 'react';\n\nimport { errorToast } from '../../utils/toast';\n\nimport { ProviderJSXPropsType, SelectedClassesContextProviderPropsType, SelectedClassesContextType, SelectedClassesType } from './types';\n\n\nlet hasError = false;\nconst MAX_CLASSES = 4;\nconst MAX_DISCIPLINES = 11;\n\nexport const SelectedClassesContext = createContext({} as SelectedClassesContextType);\n\nconst handleError = (message: string) => {\n    errorToast(message);\n    hasError = true;\n};\n\nfunction handleMaxDisciplinesError(value: SelectedClassesType) {\n    if (value.size > MAX_DISCIPLINES) {\n        handleError(`Você só pode escolher até ${MAX_DISCIPLINES} disciplinas!`);\n    }\n}\n\nfunction handleMaxClassesError(value: SelectedClassesType) {\n    value.forEach(classes => {\n        if (classes.size > MAX_CLASSES) {\n            handleError(`Você só pode escolher até ${MAX_CLASSES} aulas da mesma disciplina!`);\n        }\n    });\n}\n\nfunction ProviderJSX({ children, ...props }: ProviderJSXPropsType) {\n    return (\n        <SelectedClassesContext.Provider value={props}>\n            {children}\n        </SelectedClassesContext.Provider>\n    );\n}\n\nexport default function SelectedClassesContextProvider({ children }: SelectedClassesContextProviderPropsType) {\n    const [selectedClasses, setSelectedClassesDefault] = useState<SelectedClassesType>(new Map());\n    const [classesChange, setClassesChange] = useState(false);\n    const [currentYearPeriod, setCurrentYearPeriod] = useState('');\n\n    function handleNoError(value: SelectedClassesType) {\n        if (!value.size) setCurrentYearPeriod('');\n        setSelectedClassesDefault(value);\n        setClassesChange(!classesChange);\n    }\n\n    const setSelectedClasses = (value: SelectedClassesType) => {\n        hasError = false;\n\n        handleMaxClassesError(value);\n        handleMaxDisciplinesError(value);\n        if (!hasError) handleNoError(value);\n    };\n\n    return ProviderJSX({ children, selectedClasses, setSelectedClasses, classesChange, currentYearPeriod, setCurrentYearPeriod });\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/SelectedClassesContext/types.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/ShowPopUpContentContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ShowPopUpContentContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 14,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 22,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { createContext, useState } from 'react';\n\ninterface ShowPopUpContentContextType {\n    showPopUpContent: boolean;\n    setShowPopUpContent: React.Dispatch<React.SetStateAction<boolean>>;\n}\n\ninterface ShowPopUpContentContextProviderPropsType {\n    children: React.ReactNode;\n}\n\nexport const ShowPopUpContentContext = createContext({} as ShowPopUpContentContextType);\n\nexport default function ShowPopUpContentContextProvider({ children, ...props }: ShowPopUpContentContextProviderPropsType) {\n    const [showPopUpContent, setShowPopUpContent] = useState(false);\n\n    return (\n        <ShowPopUpContentContext.Provider value={{ showPopUpContent, setShowPopUpContent }}>\n            {children}\n        </ShowPopUpContentContext.Provider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/UserContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'UserContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 38,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 78,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 44,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 59,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 45,
+        "column": 58,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 55,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 55,
+        "column": 18,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 58,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 61,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 71,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 63,
+        "column": 44,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 67,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 67,
+        "column": 22,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 69,
+        "endColumn": 14
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { createContext, useEffect, useState } from 'react';\n\nimport { UserData } from '../components/SignInSection';\n\nimport { settings } from '../utils/settings';\nimport request from '../utils/request';\nimport getSchedules from '../utils/api/getSchedules';\nimport { errorToast } from '../utils/toast';\nimport useSchedules from '../hooks/useSchedules';\n\nexport interface User {\n    is_anonymous: boolean;\n    access?: string;\n    first_name?: string;\n    email?: string;\n    picture_url?: string;\n}\n\nexport const defaultUser: User = {\n    is_anonymous: true,\n};\n\nexport interface UserContextType {\n    user: User;\n    setUser: React.Dispatch<React.SetStateAction<User>>;\n    isLoading: boolean;\n    setLoading: React.Dispatch<React.SetStateAction<boolean>>;\n}\n\ninterface UserContextProviderProps {\n    children: React.ReactNode;\n}\n\nexport const UserContext = createContext({} as UserContextType);\n\nexport default function UserContextProvider({ children, ...props }: UserContextProviderProps) {\n    const [user, setUser] = useState<User>(defaultUser);\n    const [isLoading, setLoading] = useState(true);\n\n    const { cloudSchedules, setCloudSchedules } = useSchedules();\n\n    useEffect(() => {\n        request.post('/users/login/', {}, settings).then(response => {\n            const userData: UserData = response.data;\n            setUser({\n                is_anonymous: false,\n                access: userData.access,\n                first_name: userData.first_name,\n                email: userData.email,\n                picture_url: userData.picture_url\n            });\n            setLoading(false);\n        }).catch(error => {\n            setUser(defaultUser);\n            setLoading(false);\n        });\n    }, [setUser]);\n\n    useEffect(() => {\n        if (!user.is_anonymous && !cloudSchedules.length) {\n            getSchedules(user.access).then(response => {\n                if (response.status == 200 && response.data.length) {\n                    setCloudSchedules(response.data);\n                }\n            }).catch(error => {\n                errorToast('Não foi possível carregar suas grades na nuvem.');\n            });\n        }\n    }, [user, cloudSchedules, setCloudSchedules]);\n\n    return (\n        <UserContext.Provider value={{ user, setUser, isLoading, setLoading }}>\n            {children}\n        </UserContext.Provider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/contexts/YearPeriodContext.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'YearPeriodContextProvider' has a complexity of 1. Maximum allowed is 0.",
+        "line": 17,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 29,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 20,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 22,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 21,
+        "column": 38,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 21,
+        "endColumn": 62
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 3,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { createContext, useEffect, useState } from 'react';\nimport retrieveYearAndPeriod, { YearPeriodType } from '../utils/api/retrieveYearAndPeriod';\n\ninterface YearPeriodContextType {\n    periods: YearPeriodType,\n    setPeriods: (value: YearPeriodType) => void,\n}\n\ninterface YearPeriodContextProviderPropsType {\n    children: React.ReactNode,\n}\n\nexport const YearPeriodContext = createContext({} as YearPeriodContextType);\n\nexport default function YearPeriodContextProvider({ children }: YearPeriodContextProviderPropsType) {\n    const [periods, setPeriods] = useState<YearPeriodType>({ 'year/period': [] });\n\n    useEffect(() => {\n        retrieveYearAndPeriod().then(data => setPeriods(data));\n    }, []);\n\n    return (\n        <YearPeriodContext.Provider value={{ periods, setPeriods }}>\n            {children}\n        </YearPeriodContext.Provider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useClassesToShow.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useClassesToShow' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { ClassesToShowContext } from '../contexts/ClassesToShowContext';\n\nexport default function useClassesToShow() {\n    const value = useContext(ClassesToShowContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useSchedules.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useSchedules' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { SchedulesContext } from '../contexts/SchedulesContext';\n\nexport default function useSchedules() {\n    const value = useContext(SchedulesContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useSelectedClasses.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useSelectedClasses' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { SelectedClassesContext } from '../contexts/SelectedClassesContext/SelectedClassesContext';\n\nexport default function useSelectedClasses() {\n    const value = useContext(SelectedClassesContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useShowPopUpContent.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useShowPopUpContent' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { ShowPopUpContentContext } from '../contexts/ShowPopUpContentContext';\n\nexport default function useShowPopUpContent() {\n    const value = useContext(ShowPopUpContentContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useUser.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useUser' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { UserContext } from '../contexts/UserContext';\n\nexport default function useUser() {\n    const value = useContext(UserContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useWindowDimensions.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 9,
+        "column": 29,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 32,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 16,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 29,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleResize' has a complexity of 1. Maximum allowed is 0.",
+        "line": 17,
+        "column": 9,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 23,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 28,
+        "column": 16,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 28,
+        "endColumn": 78
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 4,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { useEffect, useState } from 'react';\n\ntype WindowDimentions = {\n    width: number | undefined;\n    height: number | undefined;\n    breakHeighPoint: boolean;\n};\n\nconst useWindowDimensions = (): WindowDimentions => {\n    const [windowDimensions, setWindowDimensions] = useState<WindowDimentions>({\n        width: undefined,\n        height: undefined,\n        breakHeighPoint: false\n    });\n\n    useEffect(() => {\n        function handleResize(): void {\n            setWindowDimensions({\n                width: window.innerWidth,\n                height: window.innerHeight,\n                breakHeighPoint: window.innerHeight >= 490\n            });\n        }\n\n        handleResize();\n        window.addEventListener('resize', handleResize);\n\n        return (): void => window.removeEventListener('resize', handleResize);\n    }, []);\n\n    return windowDimensions;\n};\n\nexport default useWindowDimensions;",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/hooks/useYearPeriod.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'useYearPeriod' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useContext } from 'react';\nimport { YearPeriodContext } from '../contexts/YearPeriodContext';\n\nexport default function useYearPeriod() {\n    const value = useContext(YearPeriodContext);\n\n    return value;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/layout.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'RootLayout' has a complexity of 1. Maximum allowed is 0.",
+        "line": 33,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 56,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import type { Metadata } from 'next';\n\nimport { Poppins, Chivo_Mono } from 'next/font/google';\nimport './globals.css';\n\nimport UserContextProvider from './contexts/UserContext';\nimport YearPeriodContextProvider from './contexts/YearPeriodContext';\nimport ClassesToShowContextProvider from './contexts/ClassesToShowContext';\nimport SelectedClassesContextProvider from './contexts/SelectedClassesContext/SelectedClassesContext';\nimport SchedulesContextProvider from './contexts/SchedulesContext';\n\nimport { Toaster } from 'react-hot-toast';\n\nexport const poppins = Poppins({\n  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],\n  style: ['normal', 'italic'],\n  subsets: ['latin'],\n  variable: '--font-poppins',\n});\n\nexport const chivoMono = Chivo_Mono({\n  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],\n  style: ['normal', 'italic'],\n  subsets: ['latin'],\n  variable: '--font-chivo-mono',\n});\n\nexport const metadata: Metadata = {\n  title: 'Sua Grade UnB',\n  description: 'Aplicação para gerenciamento de grade de horários da UnB',\n};\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\">\n      <body className={`${poppins.variable} ${chivoMono.variable} max-h-screen font-sans bg-white`}>\n        <Toaster />\n        <SchedulesContextProvider>\n          <UserContextProvider>\n            <YearPeriodContextProvider>\n              <ClassesToShowContextProvider>\n                <SelectedClassesContextProvider>\n                  {children}\n                </SelectedClassesContextProvider>\n              </ClassesToShowContextProvider>\n            </YearPeriodContextProvider>\n          </UserContextProvider>\n        </SchedulesContextProvider>\n      </body>\n    </html>\n  );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/not-found.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'NotFound' has a complexity of 1. Maximum allowed is 0.",
+        "line": 3,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 17,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import Link from 'next/link';\n\nexport default function NotFound() {\n    return (\n        <div className='flex flex-col justify-between min-h-screen z-10'>\n            <div></div>\n            <main className='flex flex-col justify-center items-center h-full'>\n                <h1 className='text-2xl font-semibold'>404 Not Found</h1>\n                <p>A página que você está procurando não existe.</p>\n                <p>\n                    Voltar para o <Link href=\"/\" className='underline'>início</Link>\n                </p>\n            </main>\n            <footer className='flex items-center justify-center p-3'>Sua Grade UnB</footer>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/page.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Welcome' has a complexity of 2. Maximum allowed is 0.",
+        "line": 11,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 39,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport Link from 'next/link';\n\nimport SignInSection from './components/SignInSection';\nimport LogoImageHandler from './components/LogoImageHandler';\nimport { LoadingScreen } from './components/LoadingScreen';\n\nimport useUser from './hooks/useUser';\n\nexport default function Welcome() {\n  const { isLoading } = useUser();\n\n  if (isLoading) return <LoadingScreen />;\n\n  return (\n    <main className='flex flex-col flat:flex-row justify-center items-center gap-8 text-white p-8 h-screen w-screen bg-primary'>\n      <LogoImageHandler />\n      <div className='flex flex-col gap-2'>\n        <div>\n          <span className='text-2xl font-bold'>Bem-vindos ao</span>\n          <h1 className='flex flex-col text-6xl font-bold'>\n            <span>Sua Grade</span>\n            <span>UnB</span>\n          </h1>\n        </div>\n        <div className='grid grid-cols-3'>\n          <p className='col-span-2 font-semibold text-base'>A ferramenta definitiva para os alunos da Universidade de Brasília planejarem suas trajetórias acadêmicas!</p>\n        </div>\n      </div>\n      <div className='flex flex-col justify-center items-center gap-3'>\n        <SignInSection />\n        <Link href='/schedules/home' className='font-bold underline underline-offset-2 flat:text-center'>\n          Continuar como anônimo\n        </Link>\n      </div>\n    </main>\n  );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/home/components/AddDisciplineButton.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'AddDisciplineButton' has a complexity of 2. Maximum allowed is 0.",
+        "line": 11,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 26,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 19,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 19,
+        "endColumn": 70
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { MutableRefObject } from 'react';\n\nimport Button from '@/app/components/Button';\nimport useShowPopUpContent from '@/app/hooks/useShowPopUpContent';\nimport useWindowDimensions from '@/app/hooks/useWindowDimensions';\n\ninterface AddDisciplineButtonPropsType {\n    buttonAddDisciplineRef: MutableRefObject<HTMLButtonElement | null>;\n}\n\nexport default function AddDisciplineButton(props: AddDisciplineButtonPropsType) {\n    const { breakHeighPoint } = useWindowDimensions();\n    const { showPopUpContent, setShowPopUpContent } = useShowPopUpContent();\n\n    return (\n        <div className='flex justify-center'>\n            <Button\n                innerRef={props.buttonAddDisciplineRef}\n                onClick={() => setShowPopUpContent(!showPopUpContent)}\n                className={`fixed ${breakHeighPoint ? 'top-20' : 'top-3'} z-[6] font-semibold bg-secondary`}\n            >\n                Buscar matéria\n            </Button>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'PreferenceOrder' has a complexity of 1. Maximum allowed is 0.",
+        "line": 18,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 31,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 22,
+        "column": 78,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 25,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'GenerateScheduleButton' has a complexity of 2. Maximum allowed is 0.",
+        "line": 33,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 111,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 46,
+        "column": 28,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 75,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 48,
+        "column": 33,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 52,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 49,
+        "column": 47,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 55,
+        "column": 102,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 74,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 66,
+        "column": 32,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 68,
+        "endColumn": 22
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 98,
+        "column": 70,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 98,
+        "endColumn": 97
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 105,
+        "column": 67,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 105,
+        "endColumn": 93
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 10,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useRouter } from 'next/navigation';\nimport { useState } from 'react';\nimport useClassesToShow from '@/app/hooks/useClassesToShow';\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\nimport useSchedules from '@/app/hooks/useSchedules';\nimport useUser from '@/app/hooks/useUser';\n\nimport Button from '@/app/components/Button';\nimport Modal from '@/app/components/Modal/Modal';\n\nimport { ScheduleAPIType, ScheduleClassType } from '@/app/contexts/SchedulesContext';\n\nimport generateSchedule, { EachFieldNumber } from '@/app/utils/api/generateSchedule';\nimport { errorToast } from '@/app/utils/toast';\n\nfunction PreferenceOrder({ setPreference }: {\n    setPreference: (preference: EachFieldNumber) => void\n}) {\n    return (\n        <select className='bg-white shadow-md h-14 p-2 rounded-xl' onChange={(event) => {\n            const preference = parseInt(event.target.value) as EachFieldNumber;\n            setPreference(preference);\n        }}>\n            <option value=\"1\">Mínima</option>\n            <option value=\"2\">Média</option>\n            <option value=\"3\">Máxima</option>\n        </select>\n    );\n}\n\nexport default function GenerateScheduleButton() {\n    const router = useRouter();\n\n    const { setLoading } = useUser();\n    const { setLocalSchedules } = useSchedules();\n    const { selectedClasses } = useSelectedClasses();\n    const { classesToShow } = useClassesToShow();\n\n    const [activeModal, setActiveModal] = useState(false);\n    const [morningPreference, setMorningPreference] = useState<EachFieldNumber>(1);\n    const [afternoonPreference, setAfternoonPreference] = useState<EachFieldNumber>(1);\n    const [nightPreference, setNightPreference] = useState<EachFieldNumber>(1);\n\n    const createSchedule = () => {\n        let classes_id = new Array();\n        selectedClasses.forEach((_class) => {\n            Array.from(_class.keys()).forEach((key) => {\n                classes_id.push(key);\n            });\n        });\n\n        setLoading(true);\n        generateSchedule(classes_id, [morningPreference, afternoonPreference, nightPreference]).then((response) => {\n            if (response.status === 200) {\n                const data = response.data as ScheduleAPIType;\n                const schedules = data.schedules as Array<ScheduleClassType>;\n\n                if (!schedules.length) {                    \n                    errorToast(data.message, {centered: data.message.split('\\n').length == 1});\n                    setLoading(false);\n                } else {\n                    setLocalSchedules(schedules);\n                    router.replace('/schedules/mygrades');\n                    setTimeout(() => {\n                        setLoading(false);\n                    }, 500);\n                }\n            } else {\n                errorToast('Não foi possível gerar as grades, tente novamente mais tarde!');\n                setLoading(false);\n            }\n        });\n    };\n\n    return (\n        <>\n            {activeModal &&\n                <Modal setActiveModal={setActiveModal} noExit>\n                    <div className='flex flex-col justify-center items-center gap-10 p-3 h-full'>\n                        <h1 className='font-semibold'>Período de preferência</h1>\n\n                        <div className='flex flex-col gap-3'>\n                            <div className='grid grid-cols-3 gap-3 font-medium text-center'>\n                                <span>Manhã</span>\n                                <span>Tarde</span>\n                                <span>Noite</span>\n                            </div>\n                            <div className='grid grid-cols-3 gap-3'>\n                                <PreferenceOrder setPreference={setMorningPreference} />\n                                <PreferenceOrder setPreference={setAfternoonPreference} />\n                                <PreferenceOrder setPreference={setNightPreference} />\n                            </div>\n                        </div>\n\n                        <div className='flex gap-16 justify-center items-center'>\n                            <Button className='bg-gray-400' onClick={() => setActiveModal(false)}>Cancelar</Button>\n                            <Button className='bg-primary' onClick={createSchedule}>Gerar</Button>\n                        </div>\n                    </div>\n                </Modal>\n            }\n            <div className='flex justify-center'>\n                <Button disabled={!classesToShow.length} onClick={() => setActiveModal(true)} className='fixed bottom-20 w-52 h-10 font-semibold bg-primary disabled:opacity-70'>\n                    Gerar Grade\n                </Button>\n            </div>\n        </>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'ClickOutsideHandler' has a complexity of 1. Maximum allowed is 0.",
+        "line": 15,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 36,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 19,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 33,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 5. Maximum allowed is 0.",
+        "line": 20,
+        "column": 36,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 29,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 32,
+        "column": 16,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 32,
+        "endColumn": 79
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 4,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useEffect } from 'react';\n\nimport useShowPopUpContent from '@/app/hooks/useShowPopUpContent';\n\ninterface ClickOutsideHandlerPropsType {\n    children: React.ReactNode;\n    refs: {\n        divAddClassRef: React.MutableRefObject<HTMLDivElement | null>;\n        buttonAddDisciplineRef: React.MutableRefObject<HTMLButtonElement | null>;\n    }\n}\n\nexport default function ClickOutsideHandler({ children, ...props }: ClickOutsideHandlerPropsType) {\n    const { setShowPopUpContent } = useShowPopUpContent();\n    const { divAddClassRef, buttonAddDisciplineRef } = props.refs;\n\n    useEffect(() => {\n        const handleClickOutside = (event: Event) => {\n            const element: Node = event.target as Node;\n\n            if (divAddClassRef.current && buttonAddDisciplineRef.current) {\n                const checkButtonAddDiscipline: boolean = buttonAddDisciplineRef.current == element;\n                const checkDivAddClass: boolean = (divAddClassRef.current as HTMLElement).contains(element);\n\n                if (!checkButtonAddDiscipline && !checkDivAddClass) setShowPopUpContent(false);\n            }\n        };\n        document.addEventListener('click', handleClickOutside);\n\n        return () => document.removeEventListener('click', handleClickOutside);\n    }, [buttonAddDisciplineRef, divAddClassRef, setShowPopUpContent]);\n\n    return children;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/home/page.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'DisciplineBlockJSX' has a complexity of 4. Maximum allowed is 0.",
+        "line": 18,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 41,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Home' has a complexity of 3. Maximum allowed is 0.",
+        "line": 43,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 71,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 49,
+        "column": 15,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 54,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 51,
+        "column": 33,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 86
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 51,
+        "column": 54,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 85
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 61,
+        "column": 63,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 63,
+        "endColumn": 22
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 6,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { Fragment, useEffect, useRef } from 'react';\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\nimport useClassesToShow from '@/app/hooks/useClassesToShow';\n\nimport DisciplineBox from '@/app/components/DisciplineBox';\nimport AsideSchedulePopUp from '@/app/components/AsideSchedulePopUp/AsideSchedulePopUp';\nimport GenerateScheduleButton from './components/GenerateScheduleButton';\nimport AddDisciplineButton from './components/AddDisciplineButton';\n\nimport ClickOutsideHandler from './handlers/ClickOutsideHandler';\n\nimport ShowPopUpContentContextProvider from '@/app/contexts/ShowPopUpContentContext';\n\nimport { ClassValueType } from '@/app/contexts/SelectedClassesContext/types';\n\nfunction DisciplineBlockJSX({ ...props }: {\n    index: number,\n    cls: ClassValueType,\n    classesToShow: ClassValueType[]\n}) {\n    let classAppearance;\n    for (let indexInner = 0; indexInner < props.classesToShow.length; indexInner++) {\n        if (props.classesToShow[indexInner].discipline.code === props.cls.discipline.code) {\n            classAppearance = indexInner;\n            break;\n        }\n    }\n\n    return (\n        <Fragment key={props.index}>\n            {props.index === classAppearance &&\n                <span className='flex justify-center items-center text-center rounded-md font-medium bg-primary bg-opacity-80 w-10/12 p-2'>\n                    {props.cls.discipline.name}\n                </span>\n            }\n            <DisciplineBox currentClass={props.cls} discipline={props.cls.discipline} />\n        </Fragment>\n    );\n}\n\nexport default function Home() {\n    const { classesToShow, setClassesToShow } = useClassesToShow();\n    const { classesChange, selectedClasses } = useSelectedClasses();\n\n    const divAddClassRef = useRef(null), buttonAddDisciplineRef = useRef(null);\n\n    useEffect(() => {\n        const newClasses = new Array();\n        selectedClasses.forEach((cls) => cls.forEach(value => newClasses.push(value)));\n\n        setClassesToShow(newClasses);\n    }, [classesChange, selectedClasses, setClassesToShow]);\n\n    return (\n        <ShowPopUpContentContextProvider>\n            <ClickOutsideHandler refs={{ divAddClassRef, buttonAddDisciplineRef }}>\n                <AddDisciplineButton buttonAddDisciplineRef={buttonAddDisciplineRef} />\n                <div className={`flex flex-col items-center ${classesToShow.length ? '' : 'justify-center text-center'} gap-5 overflow-auto min-h-full max-h-full pb-2`}>\n                    {classesToShow.length ? classesToShow.map((cls, index) => {\n                        return DisciplineBlockJSX({ index, cls, classesToShow });\n                    }) : 'Nenhuma disciplina escolhida no momento'}\n                </div>\n\n                <AsideSchedulePopUp divAddClassRef={divAddClassRef} />\n                <GenerateScheduleButton />\n            </ClickOutsideHandler>\n        </ShowPopUpContentContextProvider>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/info/page.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'CollaboratorImage' has a complexity of 1. Maximum allowed is 0.",
+        "line": 4,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 21,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 23,
+        "column": 14,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 38,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'About' has a complexity of 1. Maximum allowed is 0.",
+        "line": 40,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'HowToUse' has a complexity of 1. Maximum allowed is 0.",
+        "line": 53,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 62,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'HowToContribute' has a complexity of 1. Maximum allowed is 0.",
+        "line": 64,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 73,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Collaborators' has a complexity of 1. Maximum allowed is 0.",
+        "line": 75,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 82,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Info' has a complexity of 1. Maximum allowed is 0.",
+        "line": 84,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 98,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 7,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import Image from 'next/image';\nimport Link from 'next/link';\n\nfunction CollaboratorImage({ name, src }: { name: string, src: string }) {\n    return (\n        <div className=\"flex flex-col items-center justify-end text-center\">\n            {name}\n            <br />\n            <Link target='_blank' href={src.split('.png')[0]}>\n                <Image\n                    src={src}\n                    alt={`Foto ${name}`}\n                    width={100}\n                    height={100}\n                    className=\"rounded-full\"\n                />\n            </Link>\n        </div>\n\n    );\n}\n\nconst Team = () => {\n    return (\n        <div className=\"flex flex-col gap-5\">\n            <div className=\"grid grid-cols-3 gap-5\">\n                <CollaboratorImage name=\"Arthur Ribeiro\" src=\"https://github.com/artrsousa1.png\" />\n                <CollaboratorImage name=\"Caio Habibe\" src=\"https://github.com/CaioHabibe.png\" />\n                <CollaboratorImage name=\"Caio Rodrigues\" src=\"https://github.com/caio-felipee.png\" />\n            </div>\n            <div className=\"grid grid-cols-3 gap-5\">\n                <CollaboratorImage name=\"Gabriel Castelo\" src=\"https://github.com/GabrielCastelo-31.png\" />\n                <CollaboratorImage name=\"Henrique Camelo\" src=\"https://github.com/henriquecq.png\" />\n                <CollaboratorImage name=\"Mateus Vieira\" src=\"https://github.com/mateusvrs.png\" />\n            </div>\n        </div>\n    );\n};\n\nfunction About() {\n    return (\n        <>\n            <h2 className=\"text-3xl font-semibold pb-5\">Sobre</h2>\n            <p className=\"text-justify\">\n                O Sua Grade UnB é um projeto em desenvolvimento da matéria de <b>Métodos de Desenvolvimento de Software</b>.\n                Seu propósito é proporcionar aos estudantes da Universidade de Brasília uma experiência simplificada e intuitiva na elaboração de suas grades horárias.\n                O projeto visa facilitar o processo de organização acadêmica, oferecendo uma ferramenta eficiente e amigável para a montagem de horários, otimizando assim a gestão do tempo dos alunos.\n            </p>\n        </>\n    );\n}\n\nfunction HowToUse() {\n    return (\n        <>\n            <h2 className=\"text-3xl font-semibold pt-5 pb-5\">Como utilizar?</h2>\n            <p className=\"pb-5 text-justify\">Na página inicial, clique no botão <b>Buscar Matéria</b> para selecionar as disciplinas desejadas para a sua grade. Escolha o ano/período e insira o nome da disciplina para poder optar por turmas potenciais na criação da grade, permitindo a escolha de até quatro turmas para cada disciplina.</p>\n            <p className=\"pb-5 text-justify\">Após fazer suas escolhas, clique no botão <b>Gerar Grade</b> e defina a prioridade dos turnos que melhor se adequam à sua rotina. Em seguida, basta escolher a grade mais adequada entre as opções geradas para realizar o download e/ou salvar as disciplinas escolhidas.</p>\n            <p className=\"text-justify\">Compartilhe suas experiências e sugestões. O aplicativo está em constante desenvolvimento, e seu feedback é valioso para aprimorar a experiência de todos os usuários.</p>\n        </>\n    );\n}\n\nfunction HowToContribute() {\n    return (\n        <>\n            <h2 className=\"text-3xl font-semibold  pt-5 pb-5\">Como contribuir?</h2>\n            <p className=\"text-justify\">\n                Se você é um programador e deseja contribuir com nosso projeto, basta <Link legacyBehavior href=\"https://unb-mds.github.io/2023-2-SuaGradeUnB/contributing/\" className=\"\"><a target=\"_blank\" className=\"text-primary hover:underline\">clicar aqui</a></Link> para ter acesso a nossa documentação. Lá você encontrará todos os detalhes de como contribuir com novas funcionalidades e reportar possíveis erros.\n            </p>\n        </>\n    );\n}\n\nfunction Collaborators() {\n    return (\n        <>\n            <h2 className=\"text-3xl font-semibold  pt-5 pb-5\">Colaboradores</h2>\n            <Team />\n        </>\n    );\n}\n\nexport default function Info() {\n\n    return (\n        <div className=\"overflow-auto m-auto min-h-full max-h-full px-8 max-w-4xl\">\n            <div className=\"flex flex-col items-center gap-5 py-0\">\n                <div className=\"flex flex-col items-center gap-2\">\n                    <About />\n                    <HowToUse />\n                    <HowToContribute />\n                    <Collaborators />\n                </div>\n            </div>\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/layout.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'calculatePositionOfBlob' has a complexity of 1. Maximum allowed is 0.",
+        "line": 21,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 27,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'LogoReturnButton' has a complexity of 2. Maximum allowed is 0.",
+        "line": 29,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 44,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 35,
+        "column": 26,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 35,
+        "endColumn": 51
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'footerRefCallback' has a complexity of 3. Maximum allowed is 0.",
+        "line": 46,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 51,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'asideRefCallback' has a complexity of 4. Maximum allowed is 0.",
+        "line": 61,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 67,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'AsideButtonsJSX' has a complexity of 2. Maximum allowed is 0.",
+        "line": 69,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 99,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 74,
+        "column": 43,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 76,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 82,
+        "column": 37,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 85,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 93,
+        "column": 91,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 93,
+        "endColumn": 127
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 94,
+        "column": 99,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 94,
+        "endColumn": 139
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 95,
+        "column": 125,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 95,
+        "endColumn": 164
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 96,
+        "column": 91,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 96,
+        "endColumn": 127
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'LayoutJSX' has a complexity of 3. Maximum allowed is 0.",
+        "line": 101,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 118,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'SchedulesLayout' has a complexity of 1. Maximum allowed is 0.",
+        "line": 120,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 133,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 14,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { usePathname, useRouter } from 'next/navigation';\nimport { useCallback, useState } from 'react';\nimport useUser from '@/app/hooks/useUser';\nimport useWindowDimensions from '../hooks/useWindowDimensions';\n\nimport Image from 'next/image';\nimport Button from '../components/Button';\nimport AsideButton from '../components/AsideButton';\nimport Protected from '../components/Protected';\nimport InfoHeader from '../components/InfoHeader';\nimport { LoadingScreen } from '../components/LoadingScreen';\n\nimport homeIcon from '@/public/icons/home.jpg';\nimport infoIcon from '@/public/icons/info.jpg';\nimport googleIcon from '@/public/icons/google.jpg';\nimport scheduleIcon from '@/public/icons/schedule.jpg';\nimport profileIcon from '@/public/icons/profile.jpg';\n\nfunction calculatePositionOfBlob(node: any, width: number, footerWidth: number) {\n    const infos = node.getBoundingClientRect();\n    const intX = Math.round(infos.x - ((width - footerWidth) / 2));\n    const intWidth = Math.round(infos.width);\n\n    return { x: intX, width: intWidth };\n}\n\nfunction LogoReturnButton() {\n    const router = useRouter();\n    const { user } = useUser();\n\n    return (\n        user.is_anonymous &&\n        <Button onClick={() => router.replace('/')} className=\"fixed z-[6] top-4 right-6 !shadow-none !p-0 \">\n            <div className=\"bg-white flex justify-center items-center rounded-full w-12 h-12\">\n                <Image\n                    width={35} height={35}\n                    src={googleIcon} alt='ícone do logotipo google'\n                />\n            </div>\n        </Button>\n    );\n}\n\nfunction footerRefCallback(node: any, width: number | undefined, setFooterWidth: (width: number) => void) {\n    if (width && node) {\n        const intWidth = Math.round(node.getBoundingClientRect().width);\n        setFooterWidth(intWidth);\n    }\n}\n\ninterface AsideRefCallbackPropsType {\n    node: any,\n    path: string,\n    width: number | undefined,\n    footerWidth: number,\n    setCurrentBlobDimensions: (position: { x: number, width: number }) => void\n}\n\nfunction asideRefCallback(props: AsideRefCallbackPropsType) {\n    const { node, path, width, footerWidth } = props;\n    if (width && node && node.name === path) {\n        const position = calculatePositionOfBlob(node, width, footerWidth);\n        props.setCurrentBlobDimensions(position);\n    }\n}\n\nfunction AsideButtonsJSX() {\n    const { user } = useUser();\n\n    const { width } = useWindowDimensions();\n    const [footerWidth, setFooterWidth] = useState(0);\n    const onFooterRefChange = useCallback((node: any) => {\n        footerRefCallback(node, width, setFooterWidth);\n    }, [width]);\n\n    const router = useRouter();\n    const path = usePathname().split('/')[2];\n\n    const [currentBlobDimensions, setCurrentBlobDimensions] = useState({ x: 0, width: 0 });\n    const onRefChange = useCallback((node: any) => {\n        const props = { node, path, width, footerWidth, setCurrentBlobDimensions };\n        asideRefCallback(props);\n    }, [path, width, footerWidth]);\n\n    return (\n        <div ref={onFooterRefChange} className=\"flex justify-around bg-white rounded-t-[25px] px-6 py-3 max-w-md fixed b-0 m-auto inset-x-px bottom-0 backdrop-blur-sm bg-opacity-50 drop-shadow-lg\">\n            <div style={{\n                width: currentBlobDimensions.width,\n                left: currentBlobDimensions.x\n            }} className='h-[49px] rounded-full bg-primary transition-all duration-500 absolute'></div>\n            <AsideButton innerRef={onRefChange} pageName='home' image={homeIcon} onClick={() => router.push('/schedules/home')} />\n            <AsideButton innerRef={onRefChange} pageName='mygrades' image={scheduleIcon} onClick={() => router.push('/schedules/mygrades')} />\n            {user.is_anonymous ? null : <AsideButton innerRef={onRefChange} pageName='profile' image={profileIcon} onClick={() => router.push('/schedules/profile')} />}\n            <AsideButton innerRef={onRefChange} pageName='info' image={infoIcon} onClick={() => router.push('/schedules/info')} />\n        </div>\n    );\n}\n\nfunction LayoutJSX({ children }: { children: React.ReactNode }) {\n    const { breakHeighPoint } = useWindowDimensions();\n    const { isLoading } = useUser();\n\n    return (\n        <>\n            <InfoHeader />\n            {!isLoading ?\n                <main className={`${breakHeighPoint ? 'pt-[136px]' : 'pt-16'} pb-36`}>\n                    {children}\n                </main> :\n                <LoadingScreen />\n            }\n            <LogoReturnButton />\n            <AsideButtonsJSX />\n        </>\n    );\n}\n\nexport default function SchedulesLayout({\n    children,\n}: {\n    children: React.ReactNode\n}) {\n\n    return (\n        <Protected>\n            <LayoutJSX>\n                {children}\n            </LayoutJSX>\n        </Protected>\n    );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/mygrades/page.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'RenderLocalSchedules' has a complexity of 2. Maximum allowed is 0.",
+        "line": 7,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 22,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 15,
+        "column": 37,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 17,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'RenderCloudSchedules' has a complexity of 3. Maximum allowed is 0.",
+        "line": 24,
+        "column": 1,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 38,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 32,
+        "column": 37,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 34,
+        "endColumn": 18
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'MyGrades' has a complexity of 3. Maximum allowed is 0.",
+        "line": 40,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 55,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 5,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport useSchedules from '@/app/hooks/useSchedules';\n\nimport SchedulePreview from '@/app/components/SchedulePreview/SchedulePreview';\n\nfunction RenderLocalSchedules() {\n    const { localSchedules } = useSchedules();\n    if (!localSchedules.length) return null;\n\n    return (\n        <>\n            <h1 className='text-center pb-5'>Grades locais</h1>\n            <div className='flex flex-wrap justify-center items-center gap-10 w-11/12 mx-auto'>\n                {localSchedules.map((schedule, index) => (\n                    schedule && <SchedulePreview key={index} index={index} localSchedule={schedule} position={localSchedules.length - index} />\n                ))}\n            </div>\n        </>\n\n    );\n}\n\nfunction RenderCloudSchedules() {\n    const { cloudSchedules } = useSchedules();\n    if (!cloudSchedules.length) return null;\n\n    return (\n        <>\n            <h1 className={`text-center pb-5 ${cloudSchedules.length ? 'pt-16' : ''}`}>Grades nuvem</h1>\n            <div className='flex flex-wrap justify-center items-center gap-10 w-11/12 mx-auto'>\n                {cloudSchedules.map((schedule, index) => (\n                    schedule && <SchedulePreview key={index} index={index} cloudSchedule={schedule} position={cloudSchedules.length - index} isCloud />\n                ))}\n            </div>\n        </>\n    );\n}\n\nexport default function MyGrades() {\n    const { localSchedules, cloudSchedules } = useSchedules();\n\n    return (\n        <div className='overflow-auto min-h-full max-h-full px-3'>\n            <h1 className='text-center text-xl font-semibold pb-6'>Suas Grades</h1>\n            <RenderLocalSchedules />\n            <RenderCloudSchedules />\n            {localSchedules.length === 0 && cloudSchedules.length === 0 && (\n                <div className='flex h-full justify-center items-center'>\n                    Você ainda não possui nenhuma grade.\n                </div>\n            )}\n        </div>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/schedules/profile/page.tsx",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'Profile' has a complexity of 3. Maximum allowed is 0.",
+        "line": 21,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 87,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleLogoutAndRedirect' has a complexity of 1. Maximum allowed is 0.",
+        "line": 32,
+        "column": 5,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 38,
+        "endColumn": 6
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 49,
+        "column": 50,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 49,
+        "endColumn": 77
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 52,
+        "column": 50,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 52,
+        "endColumn": 81
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 75,
+        "column": 34,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 75,
+        "endColumn": 64
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 78,
+        "column": 34,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 81,
+        "endColumn": 18
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 6,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useRouter } from 'next/navigation';\nimport { useState } from 'react';\n\nimport useUser from '@/app/hooks/useUser';\nimport useClassesToShow from '@/app/hooks/useClassesToShow';\nimport useSelectedClasses from '@/app/hooks/useSelectedClasses';\n\nimport LogoImage from '@/public/logo.png';\nimport defaultProfile from '@/public/profile.svg';\n\nimport Image from 'next/image';\nimport Button from '@/app/components/Button';\nimport Modal from '@/app/components/Modal/Modal';\n\nimport signInWithGoogle from '@/app/utils/signInWithGoogle';\nimport handleLogout from '@/app/utils/api/logout';\nimport useSchedules from '@/app/hooks/useSchedules';\n\nexport default function Profile() {\n    const [activeModal, setActiveModal] = useState(false);\n\n    const { setClassesToShow } = useClassesToShow();\n    const { setSelectedClasses } = useSelectedClasses();\n    const { localSchedules, setLocalSchedules, setCloudSchedules } = useSchedules();\n\n    const userContext = useUser();\n    const { user } = userContext;\n    const router = useRouter();\n\n    function handleLogoutAndRedirect() {\n        setClassesToShow(new Array());\n        setSelectedClasses(new Map());\n        setLocalSchedules(new Array(), false);\n        setCloudSchedules(new Array());\n        handleLogout({ userContext, router });\n    }\n\n    return (\n        <>\n            {activeModal &&\n                <Modal setActiveModal={setActiveModal} noExit>\n                    <div className=\"flex flex-col items-center justify-center h-full gap-16\">\n                        <h1 className=\"font-semibold text-center\">Você tem grades não salvas na nuvem e vai perdê-las!</h1>\n                        <div>\n                            <h2 className=\"font-semibold text-center\">Tem certeza que quer sair?</h2>\n                            <div className=\"flex gap-16 justify-center mt-4\">\n                                <Button onClick={() => setActiveModal(false)} className='bg-red-500'>\n                                    Não\n                                </Button>\n                                <Button onClick={() => handleLogoutAndRedirect()} className='bg-primary'>\n                                    Sim, eu quero!\n                                </Button>\n                            </div>\n                        </div>\n                    </div>\n                </Modal>\n            }\n            <Image\n                className='opacity-60 absolute inset-x-1/2 top-0 mt-[300px] ml-[-150px]'\n                src={LogoImage}\n                alt='Pessoa marcando datas em um calendário com borda azul'\n                width={300} height={300}\n            />\n            <div className=\"w-[100px] h-[100px] absolute top-[60px] right-10 z-10\">\n                <Image\n                    className='shadow-lg rounded-full border-[5px]'\n                    src={user.picture_url || defaultProfile}\n                    alt='Foto de perfil do usuário'\n                    width={120} height={120}\n                />\n            </div>\n            <div className=\"flex flex-col justify-end w-[131px] absolute h-36 bg-primary rounded-[15px] top-[140px] right-[25px] z-0\">\n                <Button onClick={() => signInWithGoogle(router)} className='!shadow-none'>\n                    Trocar de conta\n                </Button>\n                <Button onClick={() => {\n                    if (localSchedules.length) setActiveModal(true);\n                    else handleLogoutAndRedirect();\n                }} className='!shadow-none text-white'>\n                    Sair\n                </Button>\n            </div>\n        </>\n    );\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/deleteSchedule.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'deleteSchedule' has a complexity of 1. Maximum allowed is 0.",
+        "line": 4,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 11,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import request from '../request';\nimport { settingsWithAuth } from '../settingsWithAuth';\n\nexport default async function deleteSchedule(scheduleId?: number, access_token?: string) {\n    const response = await request.delete(\n        `/courses/schedules/${scheduleId}/`,\n        settingsWithAuth(access_token)\n    );\n\n    return response;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/generateSchedule.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'generateSchedule' has a complexity of 2. Maximum allowed is 0.",
+        "line": 8,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 20,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import request from '../request';\nimport { settings } from '../settings';\n\nexport type EachFieldNumber = 1 | 2 | 3;\ntype PreferenceType = [EachFieldNumber, EachFieldNumber, EachFieldNumber];\n\n//Promise<AxiosResponse<any, any>>\nexport default async function generateSchedule(classes_id: Array<number>, preference?: PreferenceType) {\n    const body: {\n        classes: Array<number>,\n        preference?: PreferenceType,\n    } = {\n        classes: classes_id,\n    };\n    if (preference) body.preference = preference;\n\n    const response = await request.post('/courses/schedules/generate/', body, settings);\n\n    return response;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/getSchedules.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'getSchedules' has a complexity of 1. Maximum allowed is 0.",
+        "line": 4,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 8,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import request from '../request';\nimport { settingsWithAuth } from '../settingsWithAuth';\n\nexport default async function getSchedules(access_token?: string) {\n    const response = request.get('/courses/schedules/', settingsWithAuth(access_token));\n\n    return response;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/logout.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'handleLogout' has a complexity of 2. Maximum allowed is 0.",
+        "line": 15,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 31,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 22,
+        "column": 59,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 27,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 27,
+        "column": 18,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 27,
+        "endColumn": 64
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 3,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { UserContextType, defaultUser } from '@/app/contexts/UserContext';\n\nimport request from '../request';\nimport { settings } from '../settings';\n\nimport { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';\n\nimport toast from 'react-hot-toast';\n\ninterface handleLogoutParamsType {\n    userContext: UserContextType,\n    router: AppRouterInstance\n};\n\nexport default function handleLogout({\n    userContext,\n    router\n}: handleLogoutParamsType) {\n    const { user, setUser } = userContext;\n\n    if (!user.is_anonymous) {\n        request.post('/users/logout/', {}, settings).then(response => {\n            if (response.status == 200) {\n                setUser(defaultUser);\n                router.push('/');\n            }\n        }).catch(error => toast.error('Não foi possível sair!'));\n    }\n    else router.push('/');\n    router.refresh();\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/registerWithGoogle.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'registerWithGoogle' has a complexity of 1. Maximum allowed is 0.",
+        "line": 5,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 13,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import request from '../request';\nimport { AxiosResponse } from 'axios';\nimport { settings } from '../settings';\n\nexport default async function registerWithGoogle(access_token: string): Promise<AxiosResponse<any, any>> {\n    const body = {\n        access_token: access_token,\n    };\n\n    const response = await request.post('/users/register/google/', body, settings);\n\n    return response;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/retrieveYearAndPeriod.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'retrieveYearAndPeriod' has a complexity of 2. Maximum allowed is 0.",
+        "line": 10,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 20,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import toast from 'react-hot-toast';\n\nimport request from '../request';\nimport { settings } from '../settings';\n\nexport interface YearPeriodType {\n    'year/period': Array<string>;\n}\n\nexport default async function retrieveYearAndPeriod() {\n    try {\n        const response = await request.get('/courses/year-period/', settings);\n\n        const data: YearPeriodType = response.data;\n        return data;\n    } catch (error: any) {\n        toast.error(error.response.data.detail);\n        return { 'year/period': [] };\n    }\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/saveSchedule.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'saveSchedule' has a complexity of 1. Maximum allowed is 0.",
+        "line": 6,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 10,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { ScheduleClassType } from '@/app/contexts/SchedulesContext';\n\nimport request from '../request';\nimport { settingsWithAuth } from '../settingsWithAuth';\n\nexport default async function saveSchedule(schedule?: Array<ScheduleClassType>, access_token?: string) {\n    const response = await request.post('/courses/schedules/', schedule, settingsWithAuth(access_token));\n\n    return response;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/api/searchDiscipline.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Async function 'searchDiscipline' has a complexity of 4. Maximum allowed is 0.",
+        "line": 24,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 48,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import toast from 'react-hot-toast';\n\nimport request from '../request';\nimport { settings } from '../settings';\n\nexport type ClassType = {\n    id: number,\n    _class: string,\n    classroom: string,\n    days: Array<string>,\n    schedule: string,\n    special_dates: Array<Array<string>>,\n    teachers: Array<string>\n}\n\nexport type DisciplineType = {\n    expanded: boolean,\n    id: number,\n    code: string,\n    name: string,\n    classes: Array<ClassType>\n}\n\nexport default async function searchDiscipline(search: string, year: string, period: string) {\n    const params = {\n        search: search,\n        year: year,\n        period: period\n    };\n\n    try {\n        const response = await request.get('/courses/', {\n            ...settings,\n            params: params\n        });\n\n        const data: Array<DisciplineType> = response.data;\n        if (data.length === 0) {\n            toast.error('Nenhuma disciplina encontrada');\n        }\n        return data;\n    } catch (error: any) {\n        const mensagem = error.response.data.errors;\n        if (mensagem === 'search must have at least 4 characters') {\n            toast.error('A busca deve conter pelo menos 4 caracteres');\n        }\n    }\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/dates.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/request.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/retrieveAccessToken.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'retrieveAccessToken' has a complexity of 2. Maximum allowed is 0.",
+        "line": 1,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 18,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+        "line": 11,
+        "column": 24,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 14,
+        "endColumn": 10
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 2,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "export default function retrieveAccessToken(): string | undefined {\n    let access_token: string | undefined = undefined;\n\n    const fullUrl = window.location.href;\n    const urlParts = fullUrl.split('#');\n\n    if (urlParts.length > 1) {\n        const fragment = urlParts[1];\n        const params = fragment.split('&');\n\n        params.forEach(param => {\n            const [key, value] = param.split('=');\n            if (key === 'access_token') access_token = value;\n        });\n    }\n\n    return access_token;\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/settings.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/settingsWithAuth.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 3,
+        "column": 33,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 11,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { settings } from '@/app/utils/settings';\n\nexport const settingsWithAuth = (access_token?: string) => {\n    return {\n        ...settings,\n        headers: {\n            ...settings.headers,\n            'Authorization': `Bearer ${access_token}`\n        }\n    };\n};",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/signInWithGoogle.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Function 'signInWithGoogle' has a complexity of 3. Maximum allowed is 0.",
+        "line": 3,
+        "column": 16,
+        "nodeType": "FunctionDeclaration",
+        "messageId": "complex",
+        "endLine": 25,
+        "endColumn": 2
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import { AppRouterInstance } from 'next/dist/shared/lib/app-router-context.shared-runtime';\n\nexport default function signInWithGoogle(router: AppRouterInstance) {\n    const tokenEndpoint = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_URL;\n\n    const clientId = process.env.NEXT_PUBLIC_GOOGLE_OAUTH_CLIENT_ID || '';\n    const redirectUri = process.env.NEXT_PUBLIC_FRONT_END_URL || 'http://localhost:3000';\n    const scope = [\n        'https://www.googleapis.com/auth/userinfo.email',\n        'https://www.googleapis.com/auth/userinfo.profile'\n    ].join(' ');\n\n    const params = new URLSearchParams({\n        client_id: clientId,\n        redirect_uri: redirectUri,\n        scope: scope,\n        include_granted_scopes: 'false',\n        access_type: 'online',\n        state: 'pass-through-value',\n        response_type: 'token',\n    });\n\n    const url = `${tokenEndpoint}?${params}`;\n    router.replace(url);\n}",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/app/utils/toast.ts",
+    "messages": [
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+        "line": 9,
+        "column": 21,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 19,
+        "endColumn": 2
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 21,
+        "column": 29,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 21,
+        "endColumn": 114
+      },
+      {
+        "ruleId": "complexity",
+        "severity": 2,
+        "message": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+        "line": 23,
+        "column": 27,
+        "nodeType": "ArrowFunctionExpression",
+        "messageId": "complex",
+        "endLine": 23,
+        "endColumn": 110
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 3,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "import toast from 'react-hot-toast';\n\ninterface ToastOptions {\n    duration?: number;\n    centered?: boolean;\n    style?: React.CSSProperties;\n}\n\nconst createToast = (message: string, type: 'success' | 'error', options?: ToastOptions) => {\n    const { duration = 5000, centered = true, style } = options || {};\n\n    toast[type](message, {\n        duration,\n        style: {\n            textAlign: centered ? 'center' : 'justify',\n            ...style,\n        },\n    });\n};\n\nexport const successToast = (message: string, options?: ToastOptions) => createToast(message, 'success', options);\n\nexport const errorToast = (message: string, options?: ToastOptions) => createToast(message, 'error', options);\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "/tmp/suagrade-validacao-f2/web/tailwind.config.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  }
+]

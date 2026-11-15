@@ -1,0 +1,325 @@
+[
+  {
+    "comando": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "git",
+      "status",
+      "--porcelain",
+      "--untracked-files=no"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "git",
+      "ls-files"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "node",
+      "--version"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "api"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": "/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:125: SyntaxWarning: invalid escape sequence '\\d'\n  regex = \"\\d+[MTN]\\d+\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:186: SyntaxWarning: invalid escape sequence '\\d'\n  date_format = \"\\d{2}\\/\\d{2}\\/\\d{4}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:187: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"{date_format}\\s\\-\\s{date_format}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:194: SyntaxWarning: invalid escape sequence '\\d'\n  hours_format = \"\\d+\\:\\d+\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\w'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n"
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "core"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "users"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "utils"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": "/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:125: SyntaxWarning: invalid escape sequence '\\d'\n  regex = \"\\d+[MTN]\\d+\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:186: SyntaxWarning: invalid escape sequence '\\d'\n  date_format = \"\\d{2}\\/\\d{2}\\/\\d{4}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:187: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"{date_format}\\s\\-\\s{date_format}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:194: SyntaxWarning: invalid escape sequence '\\d'\n  hours_format = \"\\d+\\:\\d+\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\w'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n/tmp/suagrade-validacao-f2/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n"
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/delete_schedule.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/get_schedules.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/save_schedule.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/schedules.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/utils.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/api/views/views.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/manutencao-venv/bin/pydeps\", line 8, in <module>\n    sys.exit(pydeps())\n             ^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/pydeps.py\", line 176, in pydeps\n    return _pydeps(inp, **_args)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/pydeps.py\", line 39, in _pydeps\n    dep_graph = py2depgraph.py2dep(trgt, **kw)\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 237, in py2dep\n    mf.run_script(dummy.fname)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 122, in run_script\n    self.load_module('__main__', fp, pathname, stuff)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/py2depgraph.py\", line 159, in load_module\n    module = mf27.ModuleFinder.load_module(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/mf27.py\", line 151, in load_module\n    self.scan_code(co, m)\n  File \"/tmp/manutencao-venv/lib/python3.12/site-packages/pydeps/mf27.py\", line 204, in scan_code\n    parent = self.determine_parent(m, level=level)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/modulefinder.py\", line 188, in determine_parent\n    raise ImportError(\"relative importpath too deep\")\nImportError: relative importpath too deep\n"
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/core/settings/base.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/core/settings/dev.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/core/settings/prod.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/users/backends/google.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/users/backends/utils.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/users/simplejwt/decorators.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/manutencao-venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/suagrade-validacao-f2/api/users/simplejwt/serializers.py"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "node",
+      "/home/lucasmf/projects/qualidade/2026-2_T02_ELIZABETH_FRIEDMAN/avaliacao/manutenibilidade/coletar_frontend.cjs",
+      "/tmp/suagrade-validacao-f2",
+      "/home/lucasmf/projects/qualidade/2026-2_T02_ELIZABETH_FRIEDMAN/avaliacao/manutenibilidade/evidencias/piloto/estatica",
+      "/home/lucasmf/projects/qualidade/2026-2_T02_ELIZABETH_FRIEDMAN/avaliacao/manutenibilidade/evidencias/piloto/estatica/inventario.json"
+    ],
+    "diretorio": "/tmp/suagrade-validacao-f2",
+    "codigo": 0,
+    "stderr": ""
+  }
+]

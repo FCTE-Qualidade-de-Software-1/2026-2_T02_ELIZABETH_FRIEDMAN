@@ -1,0 +1,2 @@
+# Logs dos pilotos são evidências e devem poder ser versionados.
+!*.log

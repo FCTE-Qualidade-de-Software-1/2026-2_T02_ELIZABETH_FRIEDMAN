@@ -21,5 +21,9 @@ __pycache__/
 *.fls
 *.xdv
 
+# Logs necessários como evidências do piloto de manutenibilidade
+!avaliacao/manutenibilidade/evidencias/piloto/**/execucao.log
+!avaliacao/manutenibilidade/evidencias/piloto/M1.3/**/*.log
+
 # Coleta formal de M2–M5 (#43): fora do repositório até a análise
 avaliacao/resultados/desempenho/coleta/

@@ -1,0 +1,7 @@
+metrica,recorte,versao,data,ferramenta,numerador,denominador,valor,unidade,estado,evidencia,observacoes
+M1.2,API,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,Radon 6.0.1,1,137,0.7299270072992701,%,Medido,radon-blocos.json,Nota 3
+M1.2,frontend,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,ESLint 8.57.1,0,213,0.0,%,Medido,eslint-blocos.json,Nota 3
+M1.2,scraper,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,Radon 6.0.1,0,18,0.0,%,Medido,radon-blocos.json,Nota 3
+M1.2,gerador,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,Radon 6.0.1,0,15,0.0,%,Medido,radon-blocos.json,Nota 3
+M1.1,API,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,pydeps 3.0.1 + AST,2,50,4.0,%,Medido; ciclos auditados,ciclos.json,Nota 2
+M1.1,frontend,3d399e745383b05e8e3b1a7c97ac0fdbf93a0360,2026-11-08,Madge 8.0.0,3,60,5.0,%,Medido; ciclos auditados,ciclos.json,Nota 2

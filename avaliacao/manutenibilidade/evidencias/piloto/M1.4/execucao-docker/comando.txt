@@ -1,0 +1,2 @@
+bash avaliacao/manutenibilidade/cobertura.sh /tmp/suagrade-validacao-f2 avaliacao/manutenibilidade/evidencias/piloto/M1.4/execucao-docker
+python3 avaliacao/manutenibilidade/resumir_cobertura.py avaliacao/manutenibilidade/evidencias/piloto/M1.4/execucao-docker avaliacao/manutenibilidade/evidencias/piloto/estatica/inventario.json

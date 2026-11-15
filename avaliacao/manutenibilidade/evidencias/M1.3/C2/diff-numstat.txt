@@ -1,0 +1,4 @@
+62	1	api/api/tests/test_generate_schedule_api.py
+1	1	api/api/views/views.py
+11	3	api/utils/schedule_generator.py
+34	9	api/utils/tests/test_schedule_generator.py

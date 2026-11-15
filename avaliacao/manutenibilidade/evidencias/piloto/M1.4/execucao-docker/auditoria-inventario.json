@@ -1,0 +1,17 @@
+{
+  "inventario": "avaliacao/manutenibilidade/evidencias/piloto/estatica/inventario.json",
+  "arquivos_esperados": 50,
+  "arquivos_reportados": 50,
+  "ausentes": [],
+  "extras": [],
+  "arquivos_sem_linhas_executadas": [
+    "api/management/commands/initadmin.py",
+    "api/management/commands/updatedb.py",
+    "api/views/get_schedules.py",
+    "core/asgi.py",
+    "core/settings/prod.py",
+    "core/wsgi.py",
+    "utils/management/commands/updatemock.py"
+  ],
+  "linhas_excluidas": 0
+}

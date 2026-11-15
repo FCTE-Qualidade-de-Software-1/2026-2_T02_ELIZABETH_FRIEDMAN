@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/mnt/data/suagrade_entrega/projeto/api/manage.py", line 5, in <module>
+    from decouple import config
+ModuleNotFoundError: No module named 'decouple'
