@@ -1,0 +1,4 @@
+{"id":"m2-nome-aq1","metrica":"M2","cenario":"m2-nome","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:41:22-03:00","estado":"expiração","motivo":"Tmax 5 ms excedido","observado":null}
+{"id":"m2-nome-1","metrica":"M2","cenario":"m2-nome","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:41:24-03:00","estado":"expiração","motivo":"Tmax 5 ms excedido","observado":null}
+{"id":"m2-nome-2","metrica":"M2","cenario":"m2-nome","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:41:26-03:00","estado":"expiração","motivo":"Tmax 5 ms excedido","observado":null}
+{"id":"m2-nome-3","metrica":"M2","cenario":"m2-nome","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:41:27-03:00","estado":"expiração","motivo":"Tmax 5 ms excedido","observado":null}

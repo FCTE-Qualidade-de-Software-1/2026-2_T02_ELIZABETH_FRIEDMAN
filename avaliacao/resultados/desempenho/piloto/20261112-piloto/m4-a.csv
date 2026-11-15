@@ -1,0 +1,5 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M4,m4-a,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:40-03:00,1,sim,2623.0,3274.9,651.9,sucesso,evidencias.jsonl#m4-a-aq1
+M4,m4-a,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:44-03:00,1,não,2680.0,3297.4,617.4,sucesso,evidencias.jsonl#m4-a-1; evidencias/m4-a-1.png
+M4,m4-a,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:47-03:00,2,não,2263.9,2887.0,623.1,sucesso,evidencias.jsonl#m4-a-2
+M4,m4-a,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:39:51-03:00,3,não,2724.8,3361.4,636.6,sucesso,evidencias.jsonl#m4-a-3

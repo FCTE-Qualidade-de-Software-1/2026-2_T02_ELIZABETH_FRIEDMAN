@@ -1,0 +1,28 @@
+{"id":"m2-nome-aq1","metrica":"M2","cenario":"m2-nome","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:38:50-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS0156","PPGPS0157","PPGPS2989"]}}
+{"id":"m2-nome-1","metrica":"M2","cenario":"m2-nome","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:38:52-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS0156","PPGPS0157","PPGPS2989"]}}
+{"id":"m2-nome-2","metrica":"M2","cenario":"m2-nome","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:38:54-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS0156","PPGPS0157","PPGPS2989"]}}
+{"id":"m2-nome-3","metrica":"M2","cenario":"m2-nome","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:38:56-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS0156","PPGPS0157","PPGPS2989"]}}
+{"id":"m2-codigo-aq1","metrica":"M2","cenario":"m2-codigo","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:39:00-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS2475"]}}
+{"id":"m2-codigo-1","metrica":"M2","cenario":"m2-codigo","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:39:01-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS2475"]}}
+{"id":"m2-codigo-2","metrica":"M2","cenario":"m2-codigo","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:39:03-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS2475"]}}
+{"id":"m2-codigo-3","metrica":"M2","cenario":"m2-codigo","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:39:05-03:00","estado":"sucesso","motivo":null,"observado":{"codigos":["PPGPS2475"]}}
+{"id":"m3-sem-selecao-aq1","metrica":"M3","cenario":"m3-sem-selecao","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:39:18-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":1,"gerar":"habilitado"}}
+{"id":"m3-sem-selecao-1","metrica":"M3","cenario":"m3-sem-selecao","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:39:20-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":1,"gerar":"habilitado"}}
+{"id":"m3-sem-selecao-2","metrica":"M3","cenario":"m3-sem-selecao","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:39:22-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":1,"gerar":"habilitado"}}
+{"id":"m3-sem-selecao-3","metrica":"M3","cenario":"m3-sem-selecao","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:39:24-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":1,"gerar":"habilitado"}}
+{"id":"m3-com-selecao-aq1","metrica":"M3","cenario":"m3-com-selecao","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:39:28-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":2,"gerar":"habilitado"}}
+{"id":"m3-com-selecao-1","metrica":"M3","cenario":"m3-com-selecao","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:39:30-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":2,"gerar":"habilitado"}}
+{"id":"m3-com-selecao-2","metrica":"M3","cenario":"m3-com-selecao","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:39:32-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":2,"gerar":"habilitado"}}
+{"id":"m3-com-selecao-3","metrica":"M3","cenario":"m3-com-selecao","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:39:34-03:00","estado":"sucesso","motivo":null,"observado":{"cartoes":2,"gerar":"habilitado"}}
+{"id":"m4-a-aq1","metrica":"M4","cenario":"m4-a","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:39:40-03:00","estado":"sucesso","motivo":null,"observado":{"grades":1}}
+{"id":"m4-a-1","metrica":"M4","cenario":"m4-a","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:39:44-03:00","estado":"sucesso","motivo":null,"observado":{"grades":1}}
+{"id":"m4-a-2","metrica":"M4","cenario":"m4-a","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:39:47-03:00","estado":"sucesso","motivo":null,"observado":{"grades":1}}
+{"id":"m4-a-3","metrica":"M4","cenario":"m4-a","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:39:51-03:00","estado":"sucesso","motivo":null,"observado":{"grades":1}}
+{"id":"m4-b-aq1","metrica":"M4","cenario":"m4-b","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:40:01-03:00","estado":"sucesso","motivo":null,"observado":{"grades":5}}
+{"id":"m4-b-1","metrica":"M4","cenario":"m4-b","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:40:07-03:00","estado":"sucesso","motivo":null,"observado":{"grades":5}}
+{"id":"m4-b-2","metrica":"M4","cenario":"m4-b","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:40:14-03:00","estado":"sucesso","motivo":null,"observado":{"grades":5}}
+{"id":"m4-b-3","metrica":"M4","cenario":"m4-b","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:40:20-03:00","estado":"sucesso","motivo":null,"observado":{"grades":5}}
+{"id":"m5-conta-aq1","metrica":"M5","cenario":"m5-conta","tentativa":1,"aquecimento":true,"data":"2026-11-12T21:40:25-03:00","estado":"sucesso","motivo":null,"observado":{"toast":"Grade salva com sucesso!"}}
+{"id":"m5-conta-1","metrica":"M5","cenario":"m5-conta","tentativa":1,"aquecimento":false,"data":"2026-11-12T21:40:27-03:00","estado":"sucesso","motivo":null,"observado":{"toast":"Grade salva com sucesso!"}}
+{"id":"m5-conta-2","metrica":"M5","cenario":"m5-conta","tentativa":2,"aquecimento":false,"data":"2026-11-12T21:40:29-03:00","estado":"sucesso","motivo":null,"observado":{"toast":"Grade salva com sucesso!"}}
+{"id":"m5-conta-3","metrica":"M5","cenario":"m5-conta","tentativa":3,"aquecimento":false,"data":"2026-11-12T21:40:31-03:00","estado":"sucesso","motivo":null,"observado":{"toast":"Grade salva com sucesso!"}}

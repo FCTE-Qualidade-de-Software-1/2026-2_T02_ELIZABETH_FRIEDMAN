@@ -1,0 +1,5 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M5,m5-conta,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:40:25-03:00,1,sim,641.3,710.1,68.8,sucesso,evidencias.jsonl#m5-conta-aq1
+M5,m5-conta,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:40:27-03:00,1,não,739.1,787.2,48.1,sucesso,evidencias.jsonl#m5-conta-1; evidencias/m5-conta-1.png
+M5,m5-conta,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:40:29-03:00,2,não,607.9,641.3,33.4,sucesso,evidencias.jsonl#m5-conta-2
+M5,m5-conta,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-12T21:40:31-03:00,3,não,676.3,725.9,49.6,sucesso,evidencias.jsonl#m5-conta-3
