@@ -16,7 +16,7 @@ Dados de participantes: anonimizar e descrever as condições de acesso (premiss
 |---------|----------------|-------------|--------------|-------------------------|
 | M1.1 — Modularidade | 15/11/2026 | Kaleb | [ciclos.json](avaliacao/dados/g1/m1-1-ciclos.json), [grafo do Madge](avaliacao/dados/g1/m1-1-madge-frontend.json); pacote completo em [`formal/estatica/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica) | [Roteiro de M1.1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m11--ciclos-de-importação), [`ciclos.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/ciclos.py), [auditoria dos ciclos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica/auditoria-ciclos.md) e [resultados](avaliacao/dados/g1/m1-1-m1-2-resultados.csv) |
 | M1.2 — Analisabilidade | 15/11/2026 | Kaleb | [blocos do Radon](avaliacao/dados/g1/m1-2-radon-blocos.json), [blocos do ESLint](avaliacao/dados/g1/m1-2-eslint-blocos.json), [maiores CC por recorte](avaliacao/dados/g1/m1-2-maximos-cc.json); pacote completo em [`formal/estatica/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica) | [Roteiro de M1.2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m12--complexidade-ciclomática), [`coletar.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/coletar.py) e [resultados](avaliacao/dados/g1/m1-1-m1-2-resultados.csv) |
-| M1.3 — Modificabilidade | Não coletada | Lucas (executor formal previsto) | Nenhuma execução cronometrada e validada de C1 e C2 até esta data | [Roteiro de M1.3](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) |
+| M1.3 — Modificabilidade | 12/11/2026 | Joaquim  | [Patches de C1 e C2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3) e [verificação a posteriori](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori) (relatório e logs) | [Roteiro de M1.3](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) e [relatório da verificação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori/RELATORIO.md) |
 | M1.4 — Testabilidade | 15/11/2026 | Kaleb | [`coverage.json`](avaliacao/dados/g1/m1-4-coverage.json), [auditoria do inventário](avaliacao/dados/g1/m1-4-auditoria-inventario.json), [ambiente](avaliacao/dados/g1/m1-4-ambiente.txt); log e demais arquivos em [`formal/M1.4/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/M1.4/execucao-docker) | [Roteiro de M1.4](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m14--cobertura-de-linhas), [`cobertura.sh`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/cobertura.sh), [`resumir_cobertura.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/resumir_cobertura.py) e [resultados](avaliacao/dados/g1/m1-4-resultados.csv) |
 
 ## 2. Análise e respostas ao GQM
@@ -45,7 +45,8 @@ diferentes, e as notas não são calculadas em média, conforme a
 | M1.2 | Frontend | 0 / 213 | 0,00% | 0 a 5% | 3 |
 | M1.2 | *Scraper* | 0 / 18 | 0,00% | 0 a 5% | 3 |
 | M1.2 | Gerador | 0 / 15 | 0,00% | 0 a 5% | 3 |
-| M1.3 (minutos para C1 e C2) | C1 e C2 | — | — | — | Não avaliado |
+| M1.3 (minutos até a mudança validada) | C1 | — | 20 min, autodeclarado pelo executor, com medição no próprio celular do executor; patch aprovado na suíte completa na verificação posterior | >0 a 30 min | 3  |
+| M1.3 | C2 | — | 20 min, autodeclarado pelo executor, com medição no próprio celular do executor; patch reprova na suíte completa (9 falhas) | — | Não concluída; sem nota |
 | M1.4 (% de linhas cobertas) | API | 1.143 / 1.396 | 81,88% | 80% a menos de 90% | 2 |
 | M1.4 | *Scraper* | 156 / 160 | 97,50% | 90% ou mais | 3 |
 | M1.4 | Gerador | 140 / 141 | 99,29% | 90% ou mais | 3 |
@@ -72,15 +73,27 @@ operacional. Esses máximos são diagnóstico e não geram nota adicional (dados
 (TypeScript) contam construções de forma própria; por isso cada recorte é comparado com a
 faixa e não com os demais.
 
-**Q1.3 — Modificabilidade (H1.3).** Não respondida. A medida exige as duas mudanças
-controladas (C1 e C2) executadas por uma pessoa elegível, cronometradas e validadas pela
-suíte. Os roteiros, as fichas e o protocolo estão prontos, mas o repositório não contém,
-até esta data, uma execução humana cronometrada e válida de C1 e C2: o material de
-`evidencias/M1.3/` tem alterações de código, e o registro de testes de C2 mostra falha.
-Pelo item 4 da seção 4.5 da Fase 2, H1.3 fica **inconclusiva** e M1.3 não recebe nota nem
-tempo. Os resultados de M1.1, M1.2 e M1.4 apoiam Q1.3 apenas como contexto: *scraper* e
-gerador têm CC máxima baixa (7 e 6) e cobertura alta (97,50% e 99,29%), mas isso não prova
-que uma mudança seja rápida, correta e sem regressão.
+**Q1.3 — Modificabilidade (H1.3).** Inconclusivo. O integrante Joaquim entregou os
+*patches* de C1 e C2 em 12/11/2026 (commit `18bd323`) e, em mensagem a Kaleb em 15/11/2026,
+declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclaradoe o log de C2 arquivado na `main`
+mostra apenas um erro de ambiente. Por isso ele não foi usado como medida.
+
+Em 15/11/2026 a equipe aplicou os dois *patches* sobre o commit inicial do produto e rodou
+a suíte completa da API ([relatório e logs](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori/RELATORIO.md)). O *patch* de C1 passa
+(110 testes, os dois novos incluídos). O de C2 não: dos 114 testes, 9 falham, sendo 8 nos
+próprios testes novos (a mensagem de erro, que contém `[1, 3]`, é usada como expressão
+regular e não casa) e 1 em teste existente, que passa isolado. Pelo critério de conclusão
+da Fase 2, C2 não está concluída. A verificação foi feita fora do Docker do projeto e
+não mede tempo.
+
+Pelo item 4 da seção 4.5 da Fase 2, H1.3 fica **inconclusiva** e M1.3 não recebe nota. Se o
+*patch* de C2 fosse tomado como entrega final de uma execução válida, seria insucesso e
+nota 0, o que contrariaria H1.3; essa leitura não foi adotada porque a execução original não
+tem registro, mas fica declarada. Os resultados de M1.1, M1.2 e M1.4 apoiam Q1.3 apenas como
+contexto: *scraper* e gerador têm CC máxima baixa (7 e 6) e cobertura alta (97,50% e
+99,29%), mas isso não prova que uma mudança seja rápida, correta e sem regressão. Uma
+execução cronometrada, registrada e feita por um executor que não conheça as mudanças é
+necessária para responder Q1.3.
 
 **Q1.4 — Testabilidade (H1.4).** Sim. A suíte original, com 108 testes, passou (código de
 saída 0) e cobre 81,88% das linhas executáveis da API (nota 2), 97,50% do *scraper* e 99,29%
@@ -112,9 +125,7 @@ linhas, sem ramos. (d) M1.1 e M1.2 foram executadas em ambiente com Python 3.13 
 o piloto de 08/11/2026 usou Python 3.12 e Node 24 e deu os mesmos seis valores. (e) M1.4 foi
 executada em contêineres `linux/amd64` emulados em um computador com Apple Silicon
 (arm64), com PostgreSQL 16.16 e Redis 8.10.3; o resultado coincide com o do piloto
-(1.143/1.396, 156/160 e 140/141). (f) A coleta e a auditoria de M1.1 e M1.2 foram executadas
-por Claude (IA) sob direção de Kaleb, e M1.4 foi executada por Kaleb com orientação da IA; o
-uso está declarado em [Uso de IA](uso-de-ia.md). Detalhes de ambiente em
+(1.143/1.396, 156/160 e 140/141). Detalhes de ambiente em
 [`m1-4-ambiente.txt`](avaliacao/dados/g1/m1-4-ambiente.txt).
 
 ## 3. Julgamento da qualidade
