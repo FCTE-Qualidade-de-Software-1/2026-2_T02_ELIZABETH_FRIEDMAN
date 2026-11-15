@@ -14,15 +14,16 @@ serão o moderador e o observador das sessões; cada sessão registra quem atuou
 função. Os dois respondem pelos CSV, pela inspeção M8 e pela revisão de M9. O recrutamento
 fica com Júlia. O contato de pesquisa para os participantes **ainda precisa ser definido**
 antes do envio do convite.
-Sessões individuais online por Google Meet, com link privado enviado ao participante.
-A distribuição por modalidade deve ser fechada no [protocolo](protocolo.md) antes de
-confirmar a amostra. Não há recrutamento ou agenda confirmados neste documento.
+Sessões individuais online por Google Meet, com link privado enviado ao participante,
+no site público do Sua Grade UnB. Todas as sessões usam a modalidade conta, com a
+conta Google do próprio participante ([protocolo](protocolo.md)). Não há recrutamento ou agenda confirmados neste documento.
 
 ## Convite pronto para envio pela equipe
 
 > Estamos procurando estudantes da UnB, com 18 anos ou mais, que nunca tenham usado
 > o Sua Grade UnB, para uma avaliação acadêmica sobre montagem de grade. A sessão
-> individual dura até 45 minutos em computador ou celular, com dados de teste.
+> individual dura até 45 minutos em computador ou celular, no site do Sua Grade UnB,
+> entrando com a sua conta Google (a equipe não vê nem registra a senha).
 > A participação é voluntária e pode ser interrompida a qualquer momento.
 > Gravações de tela e áudio são opcionais, mediante consentimento específico.
 > Se tiver interesse, informe sua disponibilidade e dispositivo ao contato
@@ -38,6 +39,7 @@ O convite está preparado; nenhum convite foi enviado automaticamente.
 4. Você participou do piloto ou desta avaliação antes? Se sim, não incluir na amostra formal de primeiro uso.
 5. Tem disponibilidade para sessão de até 45 minutos? Quais horários?
 6. Pode participar usando computador ou celular real? Qual sistema e navegador? A equipe pode fornecer dispositivo, se disponível.
+7. Você tem conta Google e aceita entrar com ela no Sua Grade UnB durante a sessão? Se não, não incluir na amostra formal.
 
 Não pedir que a pessoa experimente a aplicação antes da sessão. Distribuir os
 elegíveis entre os grupos, registrar dispositivo e modalidade antes de M6 e nunca
@@ -51,6 +53,6 @@ confirmar ambiente e contato. Registrar suplentes, recusas e ausências sem deta
 pessoais desnecessários. Não confundir código reservado com pessoa recrutada.
 
 Antes de cada sessão, confirmar elegibilidade e autorizações. Antes de liberar a
-coleta formal, verificar duas confirmações por dispositivo, cobertura das modalidades
-planejadas, suplentes e exclusão do piloto. Se reduzir a amostra, versionar e justificar
+coleta formal, verificar duas confirmações por dispositivo, aceite de entrar com a conta Google,
+suplentes e exclusão do piloto. Se reduzir a amostra, versionar e justificar
 antes da coleta, publicando a cobertura efetiva sem alegar cumprimento da meta original.

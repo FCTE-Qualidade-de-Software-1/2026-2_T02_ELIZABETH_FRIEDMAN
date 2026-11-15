@@ -24,10 +24,10 @@ Os níveis resumem a [escala da Fase 2, seção 4.1](fase-2.md#41-escala-e-faixa
 | [M3](fase-2.md#m3-tempo-de-atualizacao-apos-selecao-de-turma-p95) | Mesmo protocolo de M2, com seleção de turma e restauração das seleções entre tentativas; tempo máximo de espera **5000 ms** | Playwright, Chromium, CSV; roteiro `m3-selecao.spec.ts`; turma identificada por código da disciplina e número da turma | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >1000; 1 = >300 a 1000; 2 = >100 a 300; 3 = ≤100 | #39 |
 | [M4](fase-2.md#m4-tempo-de-geracao-de-grades-p95) | Mesmo protocolo de M2, com conjuntos fixos de disciplinas e turmas e combinações esperadas conferidas pelo gerador do produto; tempo máximo de espera **30000 ms** | Playwright, Chromium, CSV; roteiro `m4-geracao.spec.ts`; conjuntos M4-A e M4-B da massa de [2.3](#23-massa-de-referencia); `avaliacao/massa/m4_combinacoes.py` | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >10000; 1 = >3000 a 10000; 2 = >1000 a 3000; 3 = ≤1000 | #39 |
 | [M5](fase-2.md#m5-tempo-de-retorno-do-salvamento-de-grade-p95) | Mesmo protocolo de M2, com salvamento na conta de teste; depois da medição, recarregar a página e recuperar a grade para validar a persistência; tempo máximo de espera **10000 ms**. Só a conta, desde a correção da #63 ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 5) | Playwright, Chromium, CSV; roteiro `m5-salvamento.spec.ts`; sessão da conta de teste pelo fluxo do *frontend* com o *token* simulado ([1.1.6](#116-sessao-da-conta-de-teste-m5)) | Reprodução local: `db`, `redis`, `api` e `web` ([2.1](#21-versao-avaliada-e-subida-do-ambiente)); massa de [2.3](#23-massa-de-referencia); Playwright e Chromium de [2.4](#24-playwright-e-chromium); `workers: 1`, `retries: 0` | P95 (ms): 0 = >2000; 1 = >1000 a 2000; 2 = >500 a 1000; 3 = ≤500 | #39 |
-| [M6](fase-2.md#m6-sucesso-no-primeiro-uso-apos-exploracao-inicial) | Sessão de primeiro uso, com exploração livre limitada e tarefa padronizada; distribuição entre computador e celular em participantes distintos | Cronômetro, questionário de experiência prévia, ficha CSV, capturas, termo de consentimento; estudantes sem uso prévio | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <80; 1 = 80 a <90; 2 = 90 a <100; 3 = 100 | #40 |
-| [M7](fase-2.md#m7-sucesso-independente-nas-tarefas-de-controle-da-grade) | Tarefas de selecionar, remover e alterar escolhas, com estado inicial restaurado; conferência do estado final | Ficha de observação CSV, capturas antes e depois; Playwright apenas para restaurar o estado | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
-| [M8](fase-2.md#m8-cobertura-de-protecao-contra-perda-involuntaria-da-grade) | Inspeção pelo avaliador de cada cenário do inventário de ações de risco, com grade de referência restaurada | Inventário de riscos, roteiro de inspeção, CSV, capturas; grades descartáveis | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Binária: 0 = <100%; 3 = 100% (níveis 1 e 2 não se aplicam) | #40 |
-| [M9](fase-2.md#m9-compreensao-dos-estados-e-acoes-da-interface) | Perguntas neutras em pontos de verificação (seleção, geração em andamento e concluída, resultado do salvamento), confrontadas com o gabarito | Gabarito de estados e ações, ficha CSV, capturas da interface no instante da pergunta | Aplicação em versão fixa com a massa de [2.3](#23-massa-de-referencia); computador e celular reais; Chrome manual ([2.2](#22-requisitos-do-avaliador)); como o celular acessa a instância local é definido no card #40 | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
+| [M6](fase-2.md#m6-sucesso-no-primeiro-uso-apos-exploracao-inicial) | Sessão de primeiro uso, com exploração livre limitada e tarefa padronizada; distribuição entre computador e celular em participantes distintos | Cronômetro, questionário de experiência prévia, ficha CSV, capturas, termo de consentimento; estudantes sem uso prévio | Site público na versão `3d399e7`, conferida em cada dia de sessão ([2.5](#25-participantes-e-sessoes-m6-a-m9)); disciplinas reais do período; computador e celular reais, com navegador registrado; conta Google do participante | Percentual: 0 = <80; 1 = 80 a <90; 2 = 90 a <100; 3 = 100 | #40 |
+| [M7](fase-2.md#m7-sucesso-independente-nas-tarefas-de-controle-da-grade) | Tarefas de selecionar, remover e alterar escolhas, com estado inicial restaurado; conferência do estado final | Ficha de observação CSV, capturas antes e depois; Playwright apenas para restaurar o estado | Site público na versão `3d399e7`, conferida em cada dia de sessão ([2.5](#25-participantes-e-sessoes-m6-a-m9)); disciplinas reais do período; computador e celular reais, com navegador registrado | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
+| [M8](fase-2.md#m8-cobertura-de-protecao-contra-perda-involuntaria-da-grade) | Inspeção pelo avaliador de cada cenário do inventário de ações de risco, com grade de referência restaurada | Inventário de riscos, roteiro de inspeção, CSV, capturas; grades descartáveis | Site público na versão `3d399e7`, conferida em cada dia de sessão ([2.5](#25-participantes-e-sessoes-m6-a-m9)); disciplinas reais do período; computador e celular reais, com navegador registrado; conta Google de um integrante e grades descartáveis | Binária: 0 = <100%; 3 = 100% (níveis 1 e 2 não se aplicam) | #40 |
+| [M9](fase-2.md#m9-compreensao-dos-estados-e-acoes-da-interface) | Perguntas neutras em pontos de verificação (seleção, geração em andamento e concluída, resultado do salvamento), confrontadas com o gabarito | Gabarito de estados e ações, ficha CSV, capturas da interface no instante da pergunta | Site público na versão `3d399e7`, conferida em cada dia de sessão ([2.5](#25-participantes-e-sessoes-m6-a-m9)); disciplinas reais do período; computador e celular reais, com navegador registrado; conta Google do participante | Percentual: 0 = <90; 1 = 90 a <95; 2 = 95 a <100; 3 = 100 | #40 |
 
 ### 1.1 Eficiência de desempenho (M2 a M5): passo a passo
 
@@ -331,7 +331,8 @@ perfil exigido dos avaliadores/usuários (conhecimento em informática e no dom�
 -->
 
 Esta seção descreve o ambiente local usado nas métricas que dependem da reprodução do
-produto (M1.3, M1.4 e M2–M5, ver [Fase 2](fase-2.md)). Cada versão traz a fonte de onde
+produto (M1.3, M1.4 e M2–M5, ver [Fase 2](fase-2.md)). M6–M9 usam o site público
+([2.5](#25-participantes-e-sessoes-m6-a-m9)). Cada versão traz a fonte de onde
 foi lida: um arquivo do repositório do produto ou a saída de um comando executado na
 máquina de avaliação em 03/11/2026. O que ainda não foi confirmado está marcado como
 **a confirmar**.
@@ -594,12 +595,18 @@ O *smoke* só confirma que o Chromium inicia, que a API responde e que a tela in
 
 ### 2.5 Participantes e sessões (M6 a M9)
 
-Para M6–M9, usar a versão `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`
-do Sua Grade UnB (seção 2.1) em ambiente local isolado, com a massa de referência da seção 2.3,
-conta de teste quando necessária e acesso por computador e celular físicos. Registrar sistema operacional,
-navegador/versão, dimensões e URL efetiva no manifesto da sessão. As sessões serão online por Google Meet. Validar acesso remoto privado ao ambiente
-nos dispositivos dos participantes antes do piloto; `localhost` no celular aponta
-para o próprio celular. O compartilhamento de tela também deve ser validado.
+Para M6–M9, usar o site público [suagradeunb.com.br](https://suagradeunb.com.br/), como a
+[Fase 1, Tabela 11](fase-1.md#61-objetos-de-avaliacao) previa para Capacidade de interação,
+e não a reprodução local das seções 2.1 e 2.3. Em 15/11/2026, o último commit do produto era o
+`3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`, o mesmo das demais métricas, e o registro de
+*deployments* do GitHub mostrava esse commit publicado em produção em 15/02/2026, sem publicação
+posterior. Isso indica que o site roda a versão avaliada; a conferência se repete em cada dia de
+sessão. As tarefas usam disciplinas reais do período oferecido pelo site, registradas por captura
+datada. O participante entra com a própria conta Google antes do cronômetro; a tela de login do
+Google segue fora do escopo ([Fase 1, Tabela 12](fase-1.md#62-o-que-fica-fora-do-escopo)). M8 é
+inspecionada com a conta Google de um integrante e grades descartáveis. Registrar sistema operacional,
+navegador/versão, dimensões e URL no manifesto da sessão. As sessões serão online por Google Meet,
+com acesso por computador e celular físicos, e o compartilhamento de tela deve ser validado.
 
 O avaliador deve saber restaurar o estado, conferir disciplinas/turmas e preservar
 registros sem orientar o caminho. Participantes: estudantes adultos sem uso prévio,
@@ -616,9 +623,9 @@ O [consentimento](avaliacao-interacao/consentimento.md), o [recrutamento](avalia
 e os [modelos CSV](avaliacao-interacao/registros.md) fazem parte do instrumento.
 O [procedimento de proteção dos dados](avaliacao-interacao/dados.md) orienta a equipe
 sobre o preenchimento do termo e o tratamento das autorizações e registros.
-O ambiente e a massa de referência são os da #37 (seções 2.1 e 2.3). Ainda precisam ser
-confirmados os identificadores reais das disciplinas e turmas usadas nas tarefas e o acesso
-às modalidades de salvamento. Preparação documental não constitui coleta validada.
+Ainda precisam ser escolhidos os identificadores reais das disciplinas e turmas usadas nas
+tarefas e conferido, por um integrante logado, o salvamento na conta no site público.
+Preparação documental não constitui coleta validada.
 
 ## 3. Cronograma da avaliação
 
@@ -658,11 +665,11 @@ em **Depende de**. A coluna **Situação** vale para 12/11/2026. Todas as ativid
 | Atividade | Responsável | Início | Fim | Métricas envolvidas |
 |-----------|-------------|--------|-----|---------------------|
 | Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | M6–M9 |
-| Preencher campos do termo e validar acesso ao ambiente nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 (previsão) | M6–M9 |
+| Preencher campos do termo e validar acesso ao site público e login nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 (previsão) | M6–M9 |
 | Recrutar PIL01 e quatro participantes, com um suplente por grupo | Júlia | 10/11/2026 | 14/11/2026 (previsão) | M6, M7, M9 |
 | Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Júlia e João | 14/11/2026 (previsão) | 14/11/2026 (previsão) | M6–M9 |
 | Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Júlia e João | 15/11/2026 (previsão) | 15/11/2026 (previsão) | M6–M9 |
-| Inspeção M8 no ambiente, com dados descartáveis | Júlia e João | 14/11/2026 (previsão) | 15/11/2026 (previsão) | M8 |
+| Inspeção M8 no site público, com a conta de um integrante e grades descartáveis | Júlia e João | 14/11/2026 (previsão) | 15/11/2026 (previsão) | M8 |
 | Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Júlia e João | 16/11/2026 (previsão) | 17/11/2026 (previsão) | M6, M7, M9 |
 | Análise dos resultados de M6 a M9 na Fase 4 (#44 e #45) | Equipe | 17/11/2026 (previsão) | 19/11/2026 (previsão) | M6–M9 |
 
@@ -673,7 +680,7 @@ previsão serão confirmadas quando os participantes estiverem agendados; as ses
 
 #### Situação da issue #40
 
-Materiais preparados em 03/11/2026 e revisados em 08/11/2026, protocolo 0.2, **aguardando validação humana**.
+Materiais preparados em 03/11/2026 e revisados em 08/11/2026 e 15/11/2026, protocolo 0.3, **aguardando validação humana**.
 O [registro de piloto e fechamento](avaliacao-interacao/piloto.md) mantém os critérios
 de liberação e as pendências. Não encerrar a issue antes de confirmar recrutamento,
 inventário no ambiente real e piloto com pessoa fora da amostra.
@@ -699,6 +706,7 @@ A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
 | 3 | Sessão na conta (M5) | Conta de teste com autenticação funcional por OAuth local | O login Google fica fora do escopo ([Fase 1, Tabela 12](fase-1.md#62-o-que-fica-fora-do-escopo)). A API aceita um *token* simulado, e o roteiro o entrega ao próprio fluxo do *frontend* pelo fragmento `#access_token`, sem credencial real ([1.1.6](#116-sessao-da-conta-de-teste-m5)); confirmado no piloto de 12/11/2026 | Evita depender de credenciais reais. A modalidade conta é coletada. O *token* simulado nunca é gravado nos resultados |
 | 4 | Período da massa | Não especificado | A massa é gravada no ano e período correntes (`/courses/year-period/`), e o valor é registrado em cada coleta ([2.3](#23-massa-de-referencia)) | O *frontend* só oferece o período atual e o seguinte |
 | 5 | Modalidade navegador de M5 | Modalidade navegador de M5 prevista, com sinal visual de conclusão a confirmar ([3.2](fase-2.md#32-verificacao-de-viabilidade-da-coleta)) | **Removida de M5.** Na versão `3d399e7` não existe uma ação de salvar no navegador nem um sinal de conclusão desse salvamento. As grades vão para `localStorage['schedules']` como efeito colateral da geração ([GenerateScheduleButton.tsx#L64](https://github.com/unb-mds/2023-2-SuaGradeUnB/blob/3d399e745383b05e8e3b1a7c97ac0fdbf93a0360/web/app/schedules/home/components/GenerateScheduleButton.tsx#L64) → [SchedulesContext.tsx#L52-L63](https://github.com/unb-mds/2023-2-SuaGradeUnB/blob/3d399e745383b05e8e3b1a7c97ac0fdbf93a0360/web/app/contexts/SchedulesContext.tsx#L52-L63)), e o fim visível dessa gravação é o próprio fim de M4 | A Fase 2, seção 3.2, prevê revisar M5 quando o sinal não existe. A equipe decidiu em 12/11/2026 que M5 avalia só o salvamento na conta, e a [ficha de M5](fase-2.md#m5-tempo-de-retorno-do-salvamento-de-grade-p95) e a H5 foram corrigidas (issue #63). Assim, M5 tem nota consolidada com o cenário da conta, sem cobertura parcial |
+| 6 | Ambiente de M6–M9 | Viabilidade de M7 com massa de dados fixa e de M8 em aplicação isolada com estado restaurável, com sessão de teste e sem grades pessoais ([3.2](fase-2.md#32-verificacao-de-viabilidade-da-coleta)); contexto de G3 com dados de referência | Site público, que a [Fase 1, Tabela 11](fase-1.md#61-objetos-de-avaliacao) já previa para Capacidade de interação, na mesma versão `3d399e7` das demais métricas (último commit e último *deployment* em produção conferidos em 15/11/2026 e a cada dia de sessão). Dados reais do período, com captura datada. O participante entra com a própria conta Google antes do cronômetro, e a tela de login segue fora do escopo ([Fase 1, Tabela 12](fase-1.md#62-o-que-fica-fora-do-escopo)). M6 e M9 são coletadas só na modalidade conta, separadas por dispositivo, porque não há salvamento no navegador (linha 5). M8 usa a conta de um integrante e grades descartáveis ([2.5](#25-participantes-e-sessoes-m6-a-m9)) | A instância local não é alcançável pelo celular nem pelas sessões online sem túnel ou rede compartilhada. A equipe decidiu a mudança em 15/11/2026, antes da coleta. Efeitos: os dados do período podem mudar entre sessões; M7 encadeia os estados S0 → S1 → S2, sem backup; V02 de M9 usa só o estado pendente natural e, se não for observável, fica não coletado; o termo informa o uso da conta Google e que a grade salva fica no site ([protocolo 0.3](avaliacao-interacao/protocolo.md), [instrumentos 0.2](avaliacao-interacao/instrumentos.md)) |
 
 ### 4.2 Decisões que a Fase 2 deixou para a Fase 3
 
@@ -712,6 +720,7 @@ A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
 | Revisão de M5 para a modalidade navegador (sem ação de salvar nem sinal de conclusão) | **Decidida em 12/11/2026:** M5 avalia só o salvamento na conta; Fase 2 corrigida ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 5) | #63 |
 | Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Pendente; conferir no piloto | #38 |
 | Executor de C1 e C2 e fichas das mudanças | Pendente | #38 |
+| Ambiente das sessões de M6–M9 | **Decidido em 15/11/2026:** site público com a conta Google do participante ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 6) | #40, #44 |
 | Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Pendente | #40 |
 | Inventário de riscos de M8 e gabarito de M9 | Pendente | #40 |
 | Pilotos de todas as métricas | M2 a M5: piloto feito em 12/11/2026 ([1.1.8](#118-piloto-12112026)). M1.1 a M1.4 e M6 a M9: pendentes | #38, #39 (concluído), #40 |

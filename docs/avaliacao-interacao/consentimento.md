@@ -13,8 +13,8 @@ Sua participação consistirá em realizar tarefas de busca de disciplinas, sele
 alteração de turmas, geração e salvamento de uma grade, além de responder a
 perguntas sobre a interface. A atividade terá duração de aproximadamente **45
 minutos**, em **sessão online por Google Meet, com link privado**, usando computador ou celular
-com dados e contas de teste. Você poderá fazer perguntas e esclarecer dúvidas
-antes e durante a atividade.
+no site público do Sua Grade UnB, em que você entrará com a sua própria conta Google.
+Você poderá fazer perguntas e esclarecer dúvidas antes e durante a atividade.
 
 Serão coletados sua experiência prévia com o sistema, informações sobre o
 dispositivo e navegador utilizados, tempos e resultados das tarefas, pedidos de
@@ -23,12 +23,22 @@ de tela, gravação da tela e gravação de áudio para conferir as ações real
 os estados da interface e as respostas. Não haverá gravação de câmera ou rosto.
 As autorizações são independentes, conforme as opções ao final deste termo. A
 recusa de gravação permite a participação com observação e registro escrito.
+Capturas e gravações podem mostrar o nome ou o e-mail que o site exibe; eles serão
+removidos ou desfocados antes de qualquer apresentação dos resultados.
 
 A atividade pode causar cansaço, frustração ou desconforto ao encontrar dificuldades
 no uso da aplicação. Para reduzi-los, a equipe permitirá pausas e a interrupção da
 atividade sempre que você desejar. Estamos avaliando o produto; sua habilidade
-não receberá nota. Não serão solicitadas senhas de contas pessoais, matrícula ou
-grade particular.
+não receberá nota. A equipe não pedirá, não verá e não registrará a senha da sua
+conta Google: você a digita na página do Google, e a gravação fica pausada nesse
+momento. Não serão solicitadas matrícula ou grade particular.
+
+O Sua Grade UnB é mantido por terceiros, não pela equipe. Ao entrar, o site recebe a
+identificação da sua conta Google e guarda a grade que você salvar durante a atividade,
+conforme o funcionamento do próprio site. A equipe não tem acesso a esse banco de dados
+e não consegue apagar essa grade depois; ao final da sessão você poderá excluí-la, se
+quiser. Excluir a grade não remove o cadastro da sua conta no site, que segue as regras
+do próprio Sua Grade UnB.
 
 Os dados serão utilizados para elaborar o relatório, o artigo e a apresentação
 dos resultados do trabalho da disciplina. Antes da apresentação dos resultados,

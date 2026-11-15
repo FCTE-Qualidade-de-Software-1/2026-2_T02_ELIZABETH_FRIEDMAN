@@ -17,8 +17,8 @@ exemplo como se fossem coleta real.
 | `sessao_id`, `protocolo_versao`, `fase_coleta` | Identificador único; versão; `piloto` ou `formal` |
 | `metrica`, `participante_codigo` | `M6`…`M9`; código pseudonimizado; vazio para inspeção M8 |
 | `experiencia_previa`, `ordem` | `sem_uso_previo`, `apos_M6`, `apos_M7` ou `na`; registrar ordem das tarefas |
-| `dispositivo`, `modalidade` | `computador`/`celular`; `navegador`/`conta`/`na` |
-| Ambiente | Modelo, SO, navegador e versão, viewport, commit completo e identificador da massa |
+| `dispositivo`, `modalidade` | `computador`/`celular`; `navegador`/`conta`/`na`. M6 e M9 usam `conta`; em M8, `navegador` indica grade não salva na conta |
+| Ambiente | Modelo, SO, navegador e versão, viewport; em `versao_sistema`, o commit e o último *deployment* conferidos no dia; em `massa_id`, o período e a referência da captura datada de A e B |
 | Cenário e resultados | IDs do roteiro, estado inicial, resultado esperado e resultado observado concretos |
 | Tempos | `inicio`, `fim`, `duracao_s`; M6 também `exploracao_inicio`, `exploracao_fim`, `execucao_inicio`, `execucao_fim` |
 | Ajuda | `nenhuma`, `solicitada_sem_orientacao`, `orientacao_fornecida`; detalhar instante, conteúdo e motivo em `ajuda_detalhe` |
