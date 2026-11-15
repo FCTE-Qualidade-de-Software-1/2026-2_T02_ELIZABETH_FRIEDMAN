@@ -191,6 +191,7 @@ Ver também: [Métricas PSM/CID](metricas.md).
 3. Criação de issue para acompanhar a adição dos novos tópicos ao artigo.
 4. Planejamento e organização da apresentação do PC2.
 5. Definição dos limiares de decisão pendentes em `docs/gestao/metricas.md` (I3, I4, I6, meta do I9 e regra do D6).
+6. Interpretação dos indicadores PSM/CID (coleta de 05/11/2026) e decisões de gestão decorrentes.
 
 **Decisões**
 
@@ -203,6 +204,22 @@ Ver também: [Métricas PSM/CID](metricas.md).
 7. I6 (desvio de prazo médio): até +1 dia, normal; acima de +1 dia, investigar; acima de +3 dias, ação corretiva. Toda issue fechada depois do prazo do milestone é analisada individualmente. Em 05/11, o I6 era −5,1 dias, com 1 issue fechada depois do prazo (#27).
 8. I9 (issues concluídas sem horas reais): meta de 0 ao fechar o milestone. Em 05/11, havia 1 issue sem horas (#37).
 9. D6 (issues adicionadas depois do planejamento): sem label e sem alteração no script. Essas issues continuam no milestone e entram no I5. A revisão da iteração registra na ata quantas foram adicionadas.
+
+**Interpretação dos indicadores e decisões de gestão (coleta de 05/11/2026)**
+
+Os critérios de decisão aplicados são os definidos em [Métricas PSM/CID](metricas.md). Os valores estão em [Indicadores](indicadores.md).
+
+| Indicador | Valor em 05/11 | Interpretação | Decisão de gestão |
+|---|---|---|---|
+| I1 PRs revisados no prazo | 52,6% (10 de 19) | Abaixo da meta de 100%. Os PRs #16 a #23 foram aprovados só em 21/10, depois do merge, e o #28 foi aprovado antes do merge, mas depois de 48 h. Desde o #29, os 8 PRs mergeados foram aprovados no prazo. | Manter a regra de merge só com aprovação de outra pessoa. O acumulado só sobe com novos PRs, então a análise passa a olhar os PRs a partir do #29. |
+| I2 PRs aprovados antes do merge | 57,9% (11 de 19) | Mesma causa do I1: os 8 PRs sem aprovação antes do merge são os #16 a #23. | Verificar se a proteção da `main` exige aprovação de outra pessoa antes do merge, para que o caso não se repita. |
+| I3 Retrabalho (issues) | 23,8% (5 de 21) | Acima de 20%. As 5 issues são as correções solicitadas no PC1 (#24, #25, #26, #27 e #30), e não issues fechadas sem cumprir o Done. | Aplicar a regra do I3: revisar o critério Done (D4) no planejamento da E2. Abrir as correções do PC2 como issues com a label `correcao`, com estimativa. |
+| I4 Retrabalho (horas) | 29,3% (22 h de 75 h) | Acima de 20% e maior que o I3. As correções do PC1 concentraram horas, principalmente #24 (6 h), #25 (5,5 h) e #26 (8 h). | Mesma decisão do I3. Estimar as horas das correções do PC2 no planejamento. |
+| I5 Conclusão por milestone | PC1: 100%. E1: 100%. PC2: 33,3% (1 de 3, prazo 16/11). E2: 6,7% (1 de 15, prazo 22/11) | PC2 e E2 estavam longe de 100% (diferença acima de 10%). Em 05/11, 12 issues abertas não tinham responsável (#36, #38, #39, #42 a #48, #50 e #51). | Atribuir responsável às issues abertas sem responsável e priorizar as do PC2 (#36 e #55). A revisão da iteração registra quantas issues foram adicionadas depois do planejamento (D6). |
+| I6 Desvio de prazo médio | −5,1 dias (1 de 21 depois do prazo) | Dentro do limite (até +1 dia). A única issue fechada depois do prazo é a #27 (+10 dias), uma correção do PC1. | Sem ação corretiva. Registrar a #27 como atraso pontual e manter o acompanhamento. |
+| I7 Distribuição de esforço | Eduardo 36,7%, Joaquim 20,0%, João Paulo 13,3%, Júlia 10,7%, Kaleb 10,0%, Lucas 9,3% | A média por integrante é 16,7%. Eduardo está 20 pontos acima, o que passa do limite de 10% de desvio. | Ao atribuir as issues sem responsável, priorizar quem tem menos horas registradas, para redistribuir a carga. |
+| I8 Esforço real / estimado | 0,92 (75 h / 81,5 h) | Dentro do intervalo de 0,90 a 1,10. A equipe superestima levemente, sem desvio sistemático. | Manter as estimativas. Sem recalibração no próximo planejamento. |
+| I9 Issues concluídas sem horas reais | 1 (#37) | Acima da meta (0 ao fechar o milestone). Esse valor deixa I4, I7 e I8 menos representativos. | Cobrar o registro das horas da #37 (Júlia) antes do fechamento do milestone E2. |
 
 **Encaminhamentos**
 
