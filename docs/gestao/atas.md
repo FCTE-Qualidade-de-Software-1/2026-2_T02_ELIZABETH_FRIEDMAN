@@ -190,6 +190,7 @@ Ver também: [Métricas PSM/CID](metricas.md).
 2. Organização dos tópicos previamente encaminhados para inclusão no artigo.
 3. Criação de issue para acompanhar a adição dos novos tópicos ao artigo.
 4. Planejamento e organização da apresentação do PC2.
+5. Definição dos limiares de decisão pendentes em `docs/gestao/metricas.md` (I3, I4, I6, meta do I9 e regra do D6).
 
 **Decisões**
 
@@ -197,6 +198,11 @@ Ver também: [Métricas PSM/CID](metricas.md).
 2. Foi definida a criação de uma issue específica para acompanhar a inclusão de novos tópicos no artigo. Os tópicos já haviam sido previamente encaminhados e discutidos, restando organizar sua adição ao documento.
 3. A equipe definiu a organização da apresentação do PC2, distribuindo e estruturando os conteúdos que deverão ser apresentados.
 4. Os integrantes deverão finalizar suas respectivas contribuições e revisar os materiais produzidos antes da apresentação, garantindo a consistência entre o artigo e os demais produtos do projeto.
+5. I3 (retrabalho, issues): até 10%, normal; acima de 10%, investigar na revisão da iteração; acima de 20%, revisar o critério Done (D4) e o escopo da iteração seguinte. A label `correcao` é mantida para todo retrabalho, inclusive as correções solicitadas nos pontos de controle. Em 05/11, o I3 era 23,8% (5 de 21 issues), todas correções do PC1 (#24, #25, #26, #27 e #30).
+6. I4 (retrabalho, horas): mesmos limiares do I3. Em 05/11, o I4 era 29,3% (22 h de 75 h).
+7. I6 (desvio de prazo médio): até +1 dia, normal; acima de +1 dia, investigar; acima de +3 dias, ação corretiva. Toda issue fechada depois do prazo do milestone é analisada individualmente. Em 05/11, o I6 era −5,1 dias, com 1 issue fechada depois do prazo (#27).
+8. I9 (issues concluídas sem horas reais): meta de 0 ao fechar o milestone. Em 05/11, havia 1 issue sem horas (#37).
+9. D6 (issues adicionadas depois do planejamento): sem label e sem alteração no script. Essas issues continuam no milestone e entram no I5. A revisão da iteração registra na ata quantas foram adicionadas.
 
 **Encaminhamentos**
 
