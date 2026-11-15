@@ -10,10 +10,10 @@ A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de P
 - [x] Definir funções: Júlia e João serão moderador e observador.
 - [ ] Definir o contato de pesquisa para os participantes e o local de guarda dos registros.
 - [ ] Completar curso, e-mail e data exata de exclusão no termo antes de apresentá-lo.
-- [ ] Confirmar ambiente #37, commit, massa real e modalidades acessíveis; preencher manifesto.
-- [ ] Confirmar computador e celular físicos, compartilhamento de tela e acesso remoto privado ao ambiente de teste.
+- [ ] Conferir commit e último *deployment* do site público, disciplinas reais do período e salvamento na conta; preencher manifesto.
+- [ ] Confirmar computador e celular físicos, acesso ao site público e compartilhamento de tela, com a gravação pausada durante o login Google.
 - [ ] Recrutar uma pessoa sem uso prévio, exclusiva do piloto, e obter consentimento.
-- [ ] Preparar cartões com disciplinas/turmas reais; demonstrar restauração S0/S1/G0.
+- [ ] Preparar cartões com disciplinas/turmas reais; demonstrar S0 e a sequência S0 → S1 → S2 de M7.
 
 ## Execução
 
@@ -48,7 +48,7 @@ A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de P
 - [ ] Participantes recrutados sem uso prévio, com grupos distintos e agenda confirmada.
 - [ ] Inventário M8 validado no ambiente e gabarito M9 conferido, incluindo V02.
 - [ ] Piloto com pessoa fora da amostra executado e documentado; correções verificadas.
-- [ ] Protocolo, massa, limites, modalidades, tamanho da amostra e configuração congelados antes da coleta formal.
+- [ ] Protocolo, dados do período, limites, modalidades, tamanho da amostra e configuração congelados antes da coleta formal.
 
 Os itens documentais preparados não equivalem à validação dos instrumentos. A issue
 permanece aberta até satisfazer os itens de recrutamento e piloto.
