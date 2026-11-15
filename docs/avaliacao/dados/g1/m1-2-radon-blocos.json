@@ -1,0 +1,824 @@
+[
+  {
+    "arquivo": "api/api/admin.py",
+    "nome": "classes_pretty",
+    "linha": 35,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/decorators.py",
+    "nome": "handle_cache_before_delete",
+    "linha": 6,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/decorators.py",
+    "nome": "wrapper",
+    "linha": 9,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/api/management/commands/initadmin.py",
+    "nome": "handle",
+    "linha": 8,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "add_arguments",
+    "linha": 20,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "handle",
+    "linha": 36,
+    "cc": 9
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "start_update_year_period",
+    "linha": 78,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "update_departments",
+    "linha": 108,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "execute_update",
+    "linha": 110,
+    "cc": 9
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "delete_period",
+    "linha": 168,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "display_error_message",
+    "linha": 177,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "display_success_update_message",
+    "linha": 182,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/management/commands/updatedb.py",
+    "nome": "display_success_delete_message",
+    "linha": 187,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "delete",
+    "linha": 15,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "__str__",
+    "linha": 36,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "get_cache_key",
+    "linha": 39,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "delete",
+    "linha": 46,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "__str__",
+    "linha": 64,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "save",
+    "linha": 67,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "get_cache_key",
+    "linha": 71,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "delete",
+    "linha": 78,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "__str__",
+    "linha": 108,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "get_cache_key",
+    "linha": 111,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "delete",
+    "linha": 118,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/models.py",
+    "nome": "__str__",
+    "linha": 133,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/serializers.py",
+    "nome": "get_classes",
+    "linha": 30,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/swagger.py",
+    "nome": "__init__",
+    "linha": 7,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/swagger.py",
+    "nome": "get_schema",
+    "linha": 10,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/swagger.py",
+    "nome": "add_error",
+    "linha": 21,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/swagger.py",
+    "nome": "retrieve_erros",
+    "linha": 29,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/delete_schedule.py",
+    "nome": "delete",
+    "linha": 25,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/get_schedules.py",
+    "nome": "get",
+    "linha": 25,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_discipline_key_existence",
+    "linha": 65,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_department_key_existence",
+    "linha": 72,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_department",
+    "linha": 81,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_disciplines",
+    "linha": 92,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_class_key_existence",
+    "linha": 100,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_if_discipline",
+    "linha": 107,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "validate_class",
+    "linha": 117,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "validate_request_body_structure",
+    "linha": 125,
+    "cc": 5
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_classes_viability",
+    "linha": 149,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "retrieve_year_period_from_class",
+    "linha": 168,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "retrieve_discipline_code_from_class",
+    "linha": 175,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "retrieve_important_params_from_class",
+    "linha": 182,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "validate_received_schedule",
+    "linha": 208,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "check_permission_to_save",
+    "linha": 219,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/save_schedule.py",
+    "nome": "post",
+    "linha": 31,
+    "cc": 6
+  },
+  {
+    "arquivo": "api/api/views/schedules.py",
+    "nome": "get_permissions",
+    "linha": 22,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/schedules.py",
+    "nome": "get",
+    "linha": 39,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/utils.py",
+    "nome": "handle_400_error",
+    "linha": 4,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "treat_string",
+    "linha": 32,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "filter_disciplines",
+    "linha": 38,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "retrieve_disciplines_by_similarity",
+    "linha": 50,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "get_disciplines_and_search_flag",
+    "linha": 65,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "get_serialized_data",
+    "linha": 73,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "get_request_parameters",
+    "linha": 84,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "get",
+    "linha": 106,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "get",
+    "linha": 150,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/api/views/views.py",
+    "nome": "post",
+    "linha": 194,
+    "cc": 15
+  },
+  {
+    "arquivo": "api/users/admin.py",
+    "nome": "__init__",
+    "linha": 7,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/users/backends/google.py",
+    "nome": "get_user_data",
+    "linha": 12,
+    "cc": 5
+  },
+  {
+    "arquivo": "api/users/backends/google.py",
+    "nome": "do_auth",
+    "linha": 44,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/users/backends/utils.py",
+    "nome": "get_backend",
+    "linha": 4,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/users/simplejwt/decorators.py",
+    "nome": "move_refresh_token_to_cookie",
+    "linha": 8,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/users/simplejwt/decorators.py",
+    "nome": "wrapper",
+    "linha": 11,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/users/simplejwt/serializers.py",
+    "nome": "validate",
+    "linha": 6,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/users/views.py",
+    "nome": "post",
+    "linha": 64,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/users/views.py",
+    "nome": "handle",
+    "linha": 99,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/users/views.py",
+    "nome": "post",
+    "linha": 110,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/users/views.py",
+    "nome": "post",
+    "linha": 157,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/users/views.py",
+    "nome": "post",
+    "linha": 183,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_or_create_department",
+    "linha": 18,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_or_create_discipline",
+    "linha": 23,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "create_class",
+    "linha": 28,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "delete_classes_from_discipline",
+    "linha": 35,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "delete_all_departments_using_year_and_period",
+    "linha": 41,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_best_similarities_by_name",
+    "linha": 46,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "filter_disciplines_by_teacher",
+    "linha": 60,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "filter_disciplines_by_code",
+    "linha": 73,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "filter_disciplines_by_year_and_period",
+    "linha": 78,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_class_by_id",
+    "linha": 83,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_class_by_params",
+    "linha": 88,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "save_schedule",
+    "linha": 104,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "get_schedules",
+    "linha": 118,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "delete_schedule",
+    "linha": 123,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/db_handler.py",
+    "nome": "filter_classes_by_teacher",
+    "linha": 133,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/functions.py",
+    "nome": "multiple_replace",
+    "linha": 4,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/ira_calculator.py",
+    "nome": "validate",
+    "linha": 20,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/ira_calculator.py",
+    "nome": "wrapper",
+    "linha": 21,
+    "cc": 10
+  },
+  {
+    "arquivo": "api/utils/ira_calculator.py",
+    "nome": "__init__",
+    "linha": 65,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/ira_calculator.py",
+    "nome": "get_grade_number",
+    "linha": 80,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/ira_calculator.py",
+    "nome": "get_ira_value",
+    "linha": 84,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/json_pretty.py",
+    "nome": "json_prettify",
+    "linha": 8,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/management/commands/updatemock.py",
+    "nome": "handle",
+    "linha": 17,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/management/commands/updatemock.py",
+    "nome": "response_decode",
+    "linha": 52,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "check",
+    "linha": 19,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "wrapper",
+    "linha": 24,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "__init__",
+    "linha": 36,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_validate_preference",
+    "linha": 46,
+    "cc": 5
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_get_and_validate_classes",
+    "linha": 54,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_validate_parameters_length",
+    "linha": 75,
+    "cc": 5
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "is_valid",
+    "linha": 87,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_get_priority",
+    "linha": 90,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_add_schedule_code",
+    "linha": 104,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_make_disciplines_list",
+    "linha": 139,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_handle_conflict",
+    "linha": 145,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_valid_schedule",
+    "linha": 153,
+    "cc": 6
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "_add_schedule",
+    "linha": 199,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "generate",
+    "linha": 209,
+    "cc": 6
+  },
+  {
+    "arquivo": "api/utils/schedule_generator.py",
+    "nome": "sort_by_priority",
+    "linha": 237,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/search.py",
+    "nome": "__init__",
+    "linha": 12,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/search.py",
+    "nome": "filter_by_search_result",
+    "linha": 15,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "create_request_session",
+    "linha": 21,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "get_response",
+    "linha": 30,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "get_session_cookie",
+    "linha": 37,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "get_current_year_and_period",
+    "linha": 46,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "get_next_period",
+    "linha": 60,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/sessions.py",
+    "nome": "get_previous_period",
+    "linha": 72,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/views.py",
+    "nome": "mock_sigaa",
+    "linha": 11,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_list_of_departments",
+    "linha": 28,
+    "cc": 5
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "__init__",
+    "linha": 52,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_response_from_disciplines_post_request",
+    "linha": 72,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_teachers",
+    "linha": 106,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_schedules_and_intervals",
+    "linha": 124,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "check_start",
+    "linha": 135,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "check_end",
+    "linha": 145,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_start_index",
+    "linha": 151,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_end_index",
+    "linha": 160,
+    "cc": 4
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_start_and_end",
+    "linha": 167,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_values_from_special_dates",
+    "linha": 172,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_special_dates",
+    "linha": 185,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_week_days",
+    "linha": 193,
+    "cc": 1
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "make_disciplines",
+    "linha": 200,
+    "cc": 7
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "retrieve_classes_tables",
+    "linha": 251,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "create_page_fingerprint",
+    "linha": 262,
+    "cc": 3
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "make_web_scraping_of_disciplines",
+    "linha": 279,
+    "cc": 2
+  },
+  {
+    "arquivo": "api/utils/web_scraping.py",
+    "nome": "get_disciplines",
+    "linha": 289,
+    "cc": 2
+  }
+]

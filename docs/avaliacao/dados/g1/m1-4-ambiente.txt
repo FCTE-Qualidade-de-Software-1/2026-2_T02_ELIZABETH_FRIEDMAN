@@ -1,0 +1,13 @@
+data_utc: 2026-11-15T19:41:50Z
+host: Darwin 25.5.0 arm64
+Docker version 29.9.3, build 5457199
+Docker Compose version v5.7.0
+produto_sha: 3d399e745383b05e8e3b1a7c97ac0fdbf93a0360
+api: x86_64, Python 3.11.6
+postgres: postgres (PostgreSQL) 16.16 (Debian 16.16-1.pgdg13+1)
+redis: Redis server v=8.10.3 sha=00000000:1 malloc=jemalloc-5.3.0 bits=64 build=824ea7d79042256
+imagem postgres:16 arm64 postgres@sha256:dd2bf3ce2dc83a81674cf7f217fcfd8a5009a4b325dda5b843bfee82a06cff6f
+imagem redis:alpine arm64 redis@sha256:7958cfbb9d152f87dadfbc89f1b0b15938f0b81ff8982feb327476f4911935c3
+imagem suagrade-formal-m14-api:latest amd64 sha256:5a183addf924f200ac7e47e1abce7c8c328db6364d6972ef29510c6eafd6e532
+nota: conteineres em linux/amd64 emulado, host arm64 (DOCKER_DEFAULT_PLATFORM)
+uname -m nos conteineres em execucao: api x86_64; postgresql x86_64; rediscache x86_64 (o campo Architecture de docker image inspect para postgres:16 e redis:alpine mostra arm64, mas vale a medicao dentro do conteiner)
