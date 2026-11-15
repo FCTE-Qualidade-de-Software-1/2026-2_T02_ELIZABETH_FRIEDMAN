@@ -6,6 +6,7 @@
 | 02 | 16/10/2026 | Requisitos e cronograma da Entrega 1, divisão em issues e responsáveis | [Ata 02](#ata-02) |
 | 03 | 18/10/2026 | Conteúdo, divisão e ensaio dos slides do Ponto de Controle 1 | [Ata 03](#ata-03) |
 | 04 | 03/11/2026 | Slides das métricas PSM/CID, gráficos de análise e planejamento da semana | [Ata 04](#ata-04) |
+| 05 | 15/11/2026 | Organização e finalização para entrega do Ponto de Controle 2 | [Ata 05](#ata-05) |
 
 ## Ata 01
 
@@ -168,3 +169,41 @@ Ver também: [Métricas PSM/CID](metricas.md).
 | Fase 3: ambiente de avaliação e massa de dados de referência | Júlia Santana | 08/11 | [#37](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/37) |
 | Fase 3: cronograma da avaliação e consistência com a Fase 2 | Joaquim Neto | 08/11 | [#41](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/41) |
 | Fase 3: protocolo com participantes de Capacidade de interação (M6 a M9) | Lucas Monteiro e Kaleb Macedo | 08/11 | [#40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40) |
+
+
+## Ata 05
+
+- **Data e horário:** 15/11/2026, 19h
+- **Local / meio:** Google Meet
+- **Presentes:**
+    - Eduardo Silva Waski
+    - João Paulo Barbosa Pereira Nunes
+    - José Joaquim da Silva Neto
+    - Júlia Santana Campos
+    - Kaleb de Souza Macedo
+    - Lucas Monteiro Freitas
+- **Ausentes:** nenhum
+
+**Pauta**
+
+1. Verificação das atividades pendentes para a conclusão do Ponto de Controle 2 (PC2).
+2. Organização dos tópicos previamente encaminhados para inclusão no artigo.
+3. Criação de issue para acompanhar a adição dos novos tópicos ao artigo.
+4. Planejamento e organização da apresentação do PC2.
+
+**Decisões**
+
+1. As atividades pendentes foram revisadas e organizadas com o objetivo de finalizar os produtos necessários para o PC2.
+2. Foi definida a criação de uma issue específica para acompanhar a inclusão de novos tópicos no artigo. Os tópicos já haviam sido previamente encaminhados e discutidos, restando organizar sua adição ao documento.
+3. A equipe definiu a organização da apresentação do PC2, distribuindo e estruturando os conteúdos que deverão ser apresentados.
+4. Os integrantes deverão finalizar suas respectivas contribuições e revisar os materiais produzidos antes da apresentação, garantindo a consistência entre o artigo e os demais produtos do projeto.
+
+**Encaminhamentos**
+
+| Tarefa | Responsável | Prazo | Issue |
+|--------|-------------|-------|-------|
+| Finalizar as atividades pendentes para o PC2 | Todos | Conforme cronograma do PC2 | — |
+| Criar issue para acompanhar a adição dos tópicos previamente encaminhados ao artigo | A definir | — | — |
+| Adicionar os tópicos definidos ao artigo | Responsáveis pelos respectivos tópicos | Antes do PC2 | — |
+| Organizar e estruturar os slides da apresentação | Todos | Antes do PC2 | — |
+| Revisar os materiais e preparar a apresentação | Todos | Antes do PC2 | — |
