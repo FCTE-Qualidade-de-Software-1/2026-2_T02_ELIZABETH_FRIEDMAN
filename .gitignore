@@ -1,6 +1,9 @@
 # Site gerado pelo MkDocs
 site/
 
+# Dados pessoais, termos e evidências originais da avaliação
+dados-restritos/
+
 # Ambientes Python
 .venv/
 venv/
