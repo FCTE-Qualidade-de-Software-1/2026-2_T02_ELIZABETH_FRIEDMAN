@@ -22,6 +22,8 @@ Dados de participantes: anonimizar e descrever as condições de acesso (premiss
 | M3 — Seleção | 16/11/2026 (recoleta; a rodada de 15/11/2026 fica como registro) | João (recoleta), Júlia (análise) | [`m3-sem-selecao.csv`](avaliacao/dados/g2/20261116-0102/m3-sem-selecao.csv), [`m3-com-selecao.csv`](avaliacao/dados/g2/20261116-0102/m3-com-selecao.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261116-0102/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261116-0102/evidencias), [`metadados.json`](avaliacao/dados/g2/20261116-0102/metadados.json) e [ambiente da recoleta](avaliacao/dados/g2/20261116-0102/AMBIENTE.md). Rodada anterior: [`20261115-2128`](avaliacao/dados/g2/20261115-2128/m3-com-selecao.csv) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261116-0102/analise/resultados.csv) |
 | M4 — Geração | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m4-a.csv`](avaliacao/dados/g2/20261115-2128/m4-a.csv), [`m4-b.csv`](avaliacao/dados/g2/20261115-2128/m4-b.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 | M5 — Salvamento | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m5-conta.csv`](avaliacao/dados/g2/20261115-2128/m5-conta.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
+| M6, M7 e M9 — Interação (sessões P01 a P04) | 15/11/2026 | Júlia (moderadora) e Eduardo (observador) | [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv); vídeos e transcrições em acesso restrito, citados pelo código e pelo tempo do vídeo | [Protocolo 0.3](avaliacao-interacao/protocolo.md), [instrumentos](avaliacao-interacao/instrumentos.md) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
+| M8 — Proteção contra perda | 16/11/2026 | Eduardo | [`m8-inventario.csv`](avaliacao/dados/g3/m8-inventario.csv), [`m8-observacoes.csv`](avaliacao/dados/g3/m8-observacoes.csv) e [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g3/m8-capturas) de antes, aviso e depois | [Instrumentos, seção 1](avaliacao-interacao/instrumentos.md#1-inventario-m8) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
 
 ## 2. Análise e respostas ao GQM
 
@@ -265,6 +267,99 @@ máquina e num ambiente diferentes dos de M2, M4 e M5 ([`AMBIENTE.md`](avaliacao
 sem Docker e com Chromium 153. Os dois cenários de M3 estão no mesmo ambiente, mas os tempos
 de M3 não são comparáveis em valor absoluto com os das outras métricas. Como todos os P95
 ficaram abaixo de 4% de $L_3$, a diferença de ambiente não muda a faixa.
+
+### 2.3 G3 — Capacidade de interação
+
+Coleta no site público, na versão `3d399e7` (último commit e último *deployment* conferidos
+em 15/11 e 16/11/2026), conforme o [protocolo 0.3](avaliacao-interacao/protocolo.md). Foram
+feitas as quatro sessões previstas em 15/11/2026: P01 e P02 no computador, P03 e P04 no
+celular. A inspeção de M8 foi feita nos dois dispositivos em 16/11. Cada recorte foi julgado
+pela [Fase 2, seção 4.4](fase-2.md#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9):
+recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está determinada.
+
+**Tabela 3 — Resultados de G3 por métrica e recorte**
+
+| Métrica | Recorte | Numerador / denominador | Valor | Cobertura | Nota |
+|---------|---------|-------------------------|-------|-----------|------|
+| M6 (% de sucesso no primeiro uso) | Computador / conta | 0 / 2 | 0% | 2 de 2 sessões | 0 |
+| M6 | Celular / conta | 1 / 2 | 50% | 2 de 2 sessões | 0 |
+| M7 (% de sucesso independente) | Computador / seleção | 2 / 2 | 100% | 2 de 2 | 3 |
+| M7 | Computador / troca | 1 / 2 | 50% | 2 de 2 | 0 |
+| M7 | Computador / remoção | 2 / 2 | 100% | 2 de 2 | 3 |
+| M7 | Celular / seleção | 1 / 2 | 50% | 2 de 2 | 0 |
+| M7 | Celular / troca | 1 / 1 | 100% | 1 de 2 (P04 inválida) | Sem nota |
+| M7 | Celular / remoção | 1 / 1 | 100% | 1 de 2 (P04 inválida) | Sem nota |
+| M8 (% de cenários protegidos) | Computador / navegador | 3 / 4 | 75% | 4 de 6 cenários | 0 |
+| M8 | Computador / conta | 1 / 1 | 100% | 1 de 1 cenário | 3 |
+| M8 | Celular / navegador | 4 / 5 | 80% | 5 de 6 cenários | 0 |
+| M8 | Celular / conta | 1 / 1 | 100% | 1 de 1 cenário | 3 |
+| M9 (% de pontos compreendidos) | Computador / seleção (V01) | 2 / 2 | 100% | 2 de 2 | 3 |
+| M9 | Computador / geração concluída (V03) | 2 / 2 | 100% | 2 de 2 | 3 |
+| M9 | Celular / seleção (V01) | 1 / 2 | 50% | 2 de 2 | 0 |
+| M9 | Celular / geração concluída (V03) | 1 / 2 | 50% | 2 de 2 | 0 |
+| M9 | Geração em andamento (V02) e salvamento (V04), nos dois dispositivos | — | — | 0 de 4 | Não avaliado |
+
+Os dados de cada sessão estão em [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv)
+e os de cada recorte, em [`m6-m9-resultados.csv`](avaliacao/dados/g3/m6-m9-resultados.csv).
+
+**Q6 — Aprendizagem (H6).** Não. Os quatro participantes selecionaram as três turmas do
+cartão e geraram a grade correta, mas só P03, no celular, salvou a grade na conta e a recuperou
+depois de recarregar. Nos outros três casos a grade ficou em "Grades locais", e o ícone de
+nuvem não foi usado; P02 afirmou que a grade "já está disponível aqui". O computador fica com
+0% e o celular com 50%, os dois com nota 0, e H6 é contrariada.
+
+**Q7 — Operabilidade (H7).** Não, nas condições avaliadas. Seleção e remoção funcionaram no
+computador (2/2). Na troca, P02 incluiu a nova turma de Cálculo 1 sem remover a anterior, e no
+celular P04 deixou de selecionar Álgebra Linear; esses recortes ficam com 50% e nota 0. Não
+houve bloqueio de controle; as falhas foram de execução da tarefa. Para achar a turma pelo
+professor nas listas longas, os participantes leram a lista inteira ou usaram a busca do
+navegador.
+
+**Q8 — Proteção contra erros (H8).** Não. Nos dois dispositivos, excluir uma grade (local ou na
+nuvem) e sair com grade não salva pedem confirmação, e o cancelamento preservou a grade.
+Recarregar a página durante a montagem apaga as turmas selecionadas sem aviso, o que dá nota
+0 aos conjuntos da modalidade navegador; a modalidade conta tem nota 3. Trocar de conta (R06)
+não foi executado e voltar pelo navegador no computador (R05b) foi feito sem turma
+selecionada; esses cenários seguem pendentes e não mudam a nota 0.
+
+**Q9 — Autodescrição (H9).** Não no celular; no computador, parcial. No computador, os quatro
+pontos coletados tiveram estado e ação corretos. No celular, P03 não descreveu o estado depois
+da seleção nem depois da geração (o insucesso em V01 é provisório: a resposta será conferida
+no áudio). A geração em andamento (V02) não foi perguntada em nenhuma sessão, e o salvamento
+(V04) não foi alcançado: os participantes baixaram o PDF da grade, e P04 disse ter salvo uma
+grade que nunca foi para a conta.
+
+**Tabela 4 — Julgamento das hipóteses de G3**
+
+| Subcaracterística | Hipótese | Resultado | Notas por recorte |
+|-------------------|----------|-----------|-------------------|
+| Aprendizagem | H6 | Contrariada | Computador 0 (0/2); celular 0 (1/2) |
+| Operabilidade | H7 | Contrariada | Computador: seleção 3, troca 0, remoção 3; celular: seleção 0, demais sem nota |
+| Proteção contra erros | H8 | Contrariada | Navegador 0 nos dois dispositivos; conta 3 |
+| Autodescrição | H9 | Contrariada (celular) | Computador V01 e V03 com 3; celular V01 e V03 com 0; V02 e V04 não avaliados |
+
+O obstáculo mais frequente é o salvamento: a interface não deixa claro que a grade gerada
+fica só no navegador e que salvar na conta é outra ação. Ele aparece em Q6 e em Q9 e, junto
+com a perda das seleções ao recarregar (Q8), é o principal candidato à ação de melhoria da
+seção 4.
+
+**Desvios e limitações.** (a) Amostra de conveniência de quatro pessoas, duas por dispositivo;
+um dos participantes tem vínculo pessoal com integrante da equipe. (b) P01 participou pelo
+Microsoft Teams e os demais pelo Google Meet; moderação de Júlia e observação de Eduardo, e M8
+inspecionada por Eduardo, diferentemente dos nomes da Fase 3. (c) O cartão da M6 usou três
+disciplinas (Cálculo 1, Introdução à Álgebra Linear e Algoritmos e Programação de
+Computadores), enquanto o protocolo 0.3 descreve duas; M7 e M9 usaram duas. (d) A exploração
+livre foi anunciada como 1,5 minuto, abaixo dos 3 minutos do protocolo, e os cartões foram
+ditados em partes. (e) Em P01, a moderação confirmou o botão de gerar e disse que a grade
+estava salva; em P02 a P04, a instrução de V04 foi alterada para aceitar salvar localmente
+ou baixar o PDF, por isso V04 não foi coletado. (f) Em P04, a lista de turmas selecionadas não
+foi exibida ao fim da troca e da remoção, e essas tarefas foram invalidadas. (g) No celular,
+R05b foi classificado como volta pelo navegador pelo estado dos botões da barra, a confirmar
+com o avaliador.
+
+**Acesso aos dados.** Vídeos, transcrições e termos de consentimento ficam em acesso restrito à
+equipe e são citados pelo código e pelo tempo do vídeo; as respostas literais não são
+publicadas. A M8 não tem participante, e suas capturas estão publicadas.
 
 ## 3. Julgamento da qualidade
 
