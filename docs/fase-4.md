@@ -45,7 +45,7 @@ diferentes, e as notas não são calculadas em média, conforme a
 | M1.2 | Frontend | 0 / 213 | 0,00% | 0 a 5% | 3 |
 | M1.2 | *Scraper* | 0 / 18 | 0,00% | 0 a 5% | 3 |
 | M1.2 | Gerador | 0 / 15 | 0,00% | 0 a 5% | 3 |
-| M1.3 (minutos até a mudança validada) | C1 | — | 20 min, autodeclarado pelo executor, com medição no próprio celular do executor; patch aprovado na suíte completa na verificação posterior | >0 a 30 min | 3  |
+| M1.3 (minutos até a mudança validada) | C1 | — | 20 min, autodeclarado pelo executor, com medição no próprio celular do executor; patch aprovado na suíte completa na verificação posterior | — | Sem nota (tempo autodeclarado) |
 | M1.3 | C2 | — | 20 min, autodeclarado pelo executor, com medição no próprio celular do executor; patch reprova na suíte completa (9 falhas) | — | Não concluída; sem nota |
 | M1.4 (% de linhas cobertas) | API | 1.143 / 1.396 | 81,88% | 80% a menos de 90% | 2 |
 | M1.4 | *Scraper* | 156 / 160 | 97,50% | 90% ou mais | 3 |

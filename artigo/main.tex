@@ -332,10 +332,10 @@ matrícula real. As sessões de M6 a M9 usam o site oficial
 (\url{https://suagradeunb.com.br/}), com os dados reais do período corrente, no
 computador ou no celular do próprio participante, com a tela compartilhada em
 chamada on-line. Assim, não há ambiente local nem massa de referência nessas
-métricas, e a versão em produção pode diferir do \textit{commit} \texttt{3d399e7}:
-a data da sessão e a versão observada são registradas, e as conclusões de M6 a M9
-valem para a versão em produção naquela data. O participante entra com a própria
-conta Google, com a gravação pausada durante o login, e M8 usa a conta de um
+métricas. Em 15 e 16/11/2026, o último \textit{commit} do produto e o último
+\textit{deployment} em produção eram o \texttt{3d399e7}, a mesma versão das
+demais métricas; as conclusões de M6 a M9 valem para a versão em produção nessas
+datas. O participante entra com a própria conta Google, e M8 usa a conta de um
 integrante da equipe, com grades descartáveis.
 Os participantes são estudantes adultos sem uso prévio, com conhecimento básico
 de navegador e do conceito de disciplina e turma: planeja-se quatro, dois por
@@ -384,7 +384,8 @@ posterior, o \textit{patch} de C1 passou na suíte completa e o de C2 reprovou e
 computador e duas no celular, e a inspeção de M8, nos dois dispositivos, em
 16/11/2026. Elas se desviaram do protocolo em alguns pontos: a exploração livre
 foi mais curta que a prevista, o cartão de M6 teve três disciplinas em vez de
-duas, uma sessão usou outra plataforma de chamada, e a instrução do ponto de
+duas, uma sessão usou outra plataforma de chamada, na primeira sessão a moderação
+confirmou o botão de gerar e disse que a grade estava salva, e a instrução do ponto de
 salvamento de M9 foi alterada a partir da segunda sessão, o que impediu sua
 coleta. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
 ficam no repositório do projeto; vídeos, transcrições e termos de consentimento
@@ -441,7 +442,7 @@ funcionamento das ferramentas, mas não constitui coleta validada.
 
 \section{Resultados}\label{sec:resultados}
 
-% TODO: incluir G3 (#44), o julgamento e as relações entre as características (#45) e a ação de melhoria (#46).
+% TODO: incluir o julgamento e as relações entre as características (#45) e a ação de melhoria (#46).
 Os resultados de cada métrica são comparados com as faixas da Fase~2 sem
 arredondamento prévio. A nota de uma métrica é a menor entre seus recortes e só é
 atribuída quando todos os recortes previstos foram avaliados; as notas não são
@@ -473,7 +474,7 @@ M1.2 & API & 1 de 137 blocos com CC $> 10$ (0,73\%) & 3 \\
  & \textit{Frontend} & 0 de 213 blocos (0,00\%) & 3 \\
  & \textit{Scraper} & 0 de 18 blocos (0,00\%) & 3 \\
  & Gerador & 0 de 15 blocos (0,00\%) & 3 \\
-M1.3 & C1 & 20 min, autodeclarado; \textit{patch} aprovado na suíte & 3 \\
+M1.3 & C1 & 20 min, autodeclarado; \textit{patch} aprovado na suíte & Sem nota \\
  & C2 & 20 min, autodeclarado; \textit{patch} reprovado em 9 testes & Sem nota \\
 M1.4 & API & 1.143 de 1.396 linhas cobertas (81,88\%) & 2 \\
  & \textit{Scraper} & 156 de 160 linhas (97,50\%) & 3 \\
