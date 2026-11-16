@@ -174,8 +174,8 @@ esperado 1)". Para montar a pré-condição, o roteiro seleciona `PPGPS0156/02`,
 da mesma disciplina para expandir a turma-alvo e confere quantas turmas aparecem marcadas,
 sem esperar a lista terminar de ser redesenhada. As capturas dessas tentativas (por exemplo,
 [`m3-com-selecao-1.png`](avaliacao/dados/g2/20261115-2128/evidencias/m3-com-selecao-1.png)) mostram `PPGPS0156/02`
-marcada logo depois. Os erros se alternam com os sucessos (tentativas 3, 4, 6, 9, 12 a 15,
-23 e 26), o padrão de uma condição de corrida no roteiro. Nenhuma tentativa chegou a medir uma
+marcada logo depois. Os erros se alternam com os sucessos (houve sucesso nas tentativas 3, 4,
+6, 9, 12 a 15, 23 e 26), o padrão de uma condição de corrida no roteiro. Nenhuma tentativa chegou a medir uma
 seleção que tenha falhado na aplicação. Pela regra 1 da seção 4.3 da Fase 2 ("defeito no
 roteiro recebe o estado Não avaliado, sem nota"), o cenário não é classificado. A regra 2
 (qualquer erro leva a Insatisfatório) vale para erros da aplicação durante a tarefa medida, o
