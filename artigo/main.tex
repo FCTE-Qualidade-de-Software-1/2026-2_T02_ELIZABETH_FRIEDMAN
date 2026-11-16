@@ -366,9 +366,22 @@ sessão da conta de teste e a persistência da grade em M5. O piloto de M6 a M9
 aguardava participantes.
 
 \paragraph{Execução e conclusão.}
-% TODO: completar após a Fase 4 com a execução, a análise e o julgamento.
-A execução, a análise das respostas ao GQM e o julgamento são atividades da
-Fase~4 e serão descritos na versão seguinte.
+% TODO: completar com a execução de G3 (#44), o julgamento (#45) e a ação de melhoria (#46).
+As medidas de G1 foram coletadas em 12/11/2026 (M1.3) e 15/11/2026 (M1.1, M1.2 e
+M1.4), e as de G2, em uma rodada formal em 15/11/2026, com 30 tentativas medidas
+por cenário. Nessa rodada, 20 tentativas do cenário de M3 com uma turma já
+selecionada falharam na preparação, antes do clique medido, por uma condição de
+corrida no próprio roteiro. Pela regra de validade da Fase~2, defeito no roteiro
+deixa o cenário não avaliado, e não insatisfatório. Depois da correção do roteiro,
+M3 foi coletada de novo em 16/11/2026, com os dois cenários na mesma rodada, para
+que a nota da métrica não misture ambientes. Essa recoleta não usou o ambiente
+descrito acima: o produto rodou no mesmo \textit{commit} e com a mesma massa, mas
+fora de contêineres, com Node 22 e Chromium 153, em uma máquina virtual Linux com
+2 vCPUs. Em M1.3, o executor informou ter concluído cada mudança em 20 minutos,
+cronometrados no próprio celular e sem registro da execução; na verificação
+posterior, o \textit{patch} de C1 passou na suíte completa e o de C2 reprovou em
+9 testes. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
+ficam no repositório do projeto.
 
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
@@ -421,8 +434,142 @@ funcionamento das ferramentas, mas não constitui coleta validada.
 
 \section{Resultados}\label{sec:resultados}
 
-% TODO: preencher após a Fase 4 (medições, análise das respostas ao GQM, julgamento e ação de melhoria).
-Os resultados serão apresentados após a execução da avaliação (Fase~4).
+% TODO: incluir G3 (#44), o julgamento e as relações entre as características (#45) e a ação de melhoria (#46).
+Os resultados de cada métrica são comparados com as faixas da Fase~2 sem
+arredondamento prévio. A nota de uma métrica é a menor entre seus recortes e só é
+atribuída quando todos os recortes previstos foram avaliados; as notas não são
+combinadas em média.
+
+\subsection{G1: Manutenibilidade}\label{subsec:res-g1}
+
+A Tabela~\ref{tab:res-g1} reúne os valores de G1 no \textit{commit}
+\texttt{3d399e7}. Os blocos de M1.2 da API incluem os do \textit{scraper} e os do
+gerador.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G1 por métrica e recorte}
+\label{tab:res-g1}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] Q[l] X[l] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,8,10} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Recorte & Resultado & Nota \\
+M1.1 & API & 2 de 50 arquivos em ciclo (4,00\%) & 2 \\
+ & \textit{Frontend} & 3 de 60 arquivos em ciclo (5,00\%) & 2 \\
+M1.2 & API & 1 de 137 blocos com CC $> 10$ (0,73\%) & 3 \\
+ & \textit{Frontend} & 0 de 213 blocos (0,00\%) & 3 \\
+ & \textit{Scraper} & 0 de 18 blocos (0,00\%) & 3 \\
+ & Gerador & 0 de 15 blocos (0,00\%) & 3 \\
+M1.3 & C1 & 20 min, autodeclarado; \textit{patch} aprovado na suíte & 3 \\
+ & C2 & 20 min, autodeclarado; \textit{patch} reprovado em 9 testes & Sem nota \\
+M1.4 & API & 1.143 de 1.396 linhas cobertas (81,88\%) & 2 \\
+ & \textit{Scraper} & 156 de 160 linhas (97,50\%) & 3 \\
+ & Gerador & 140 de 141 linhas (99,29\%) & 3 \\
+\end{tblr}
+\end{table}
+
+\textbf{Q1.1 (Modularidade).} Sim, nas condições medidas. Na API, dois arquivos se
+importam mutuamente (\texttt{api/serializers.py} e \texttt{utils/db\_handler.py});
+no \textit{frontend}, o ciclo envolve três arquivos ligados ao usuário autenticado
+e se fecha por uma referência de tipo. Os dois recortes recebem nota~2, e H1.1 é
+sustentada. O \textit{frontend} está no limite superior dessa faixa: um arquivo a
+mais em ciclo o levaria à nota~1.
+
+\textbf{Q1.2 (Analisabilidade).} Sim. Só um dos 137 blocos da API passa de
+CC~10 (\texttt{GenerateSchedule.post}, com CC~15), e o \textit{frontend} não tem
+nenhum. Nos componentes críticos, a maior CC é 7 no \textit{scraper} e 6 no
+gerador. Os quatro recortes recebem nota~3, e H1.2 é sustentada.
+
+\textbf{Q1.3 (Modificabilidade).} Inconclusiva. O tempo das duas mudanças foi
+autodeclarado, sem registro da execução, e o \textit{patch} de C2 não cumpre o
+critério de conclusão: dos 114 testes, 9 falham, 8 deles nos próprios testes
+novos. Por isso M1.3 não recebe nota e H1.3 fica inconclusiva. A CC baixa e a
+cobertura alta do \textit{scraper} e do gerador são contexto, mas não mostram que
+uma mudança seja rápida e sem regressão; responder Q1.3 exige uma execução
+cronometrada e registrada por quem não conheça as mudanças.
+
+\textbf{Q1.4 (Testabilidade).} Sim. A suíte de 108 testes passou e cobre 81,88\%
+das linhas da API (nota~2), 97,50\% do \textit{scraper} e 99,29\% do gerador
+(nota~3), e H1.4 é sustentada. Sete arquivos sem nenhuma linha executada
+concentram 211 das 253 linhas não cobertas da API, com destaque para o comando
+\texttt{updatedb} (122 linhas), que atualiza a base a partir do SIGAA.
+
+Assim, G1 tem três hipóteses sustentadas (H1.1, H1.2 e H1.4) e uma inconclusiva
+(H1.3), e não recebe nota única. As limitações são o uso de indicadores
+indiretos em um único \textit{commit}, a cobertura medida só por linhas e a
+ausência de testes no \textit{frontend}.
+
+\subsection{G2: Eficiência de desempenho}\label{subsec:res-g2}
+
+A Tabela~\ref{tab:res-g2} mostra o P95 de cada cenário. M2, M4 e M5 vêm da rodada
+de 15/11/2026; M3, da recoleta de 16/11/2026. Todos os cenários tiveram 30
+sucessos em 30 tentativas medidas, sem erro e sem expiração.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G2 por cenário (30 tentativas medidas em cada)}
+\label{tab:res-g2}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] X[l] Q[r] Q[r] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,6,8} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Cenário & P95 (ms) & \% do limite & Nota \\
+M2 & Busca por nome (3 disciplinas) & 30,8 & 1,5\% & 3 \\
+ & Busca por código (1 disciplina) & 31,0 & 1,6\% & 3 \\
+M3 & Seleção sem turma anterior & 38,5 & 3,8\% & 3 \\
+ & Seleção com uma turma já selecionada & 33,5 & 3,4\% & 3 \\
+M4 & Geração com 2 turmas (1 grade) & 649,3 & 6,5\% & 3 \\
+ & Geração com 16 turmas (5 grades) & 700,7 & 7,0\% & 3 \\
+M5 & Salvamento na conta & 53,0 & 2,6\% & 3 \\
+\end{tblr}
+\end{table}
+
+\textbf{Q2 (Busca).} Sim. As 60 buscas retornaram exatamente as disciplinas
+esperadas, com P95 de cerca de 31~ms, 1,5\% do limite de 2000~ms. M2 recebe
+nota~3, e H2 é sustentada.
+
+\textbf{Q3 (Seleção).} Sim, nas condições da recoleta. As 60 seleções marcaram a
+turma, atualizaram os cartões e habilitaram a geração, com P95 de 38,5~ms sem
+turma anterior e 33,5~ms com uma turma da mesma disciplina já selecionada. M3
+recebe nota~3, e H3 é sustentada.
+
+\textbf{Q4 (Geração).} Sim. Os 60 acionamentos chegaram à tela de grades com o
+número esperado de grades, com P95 de 649,3 e 700,7~ms, até 7\% do limite de
+10000~ms. Cerca de 500~ms de cada tempo vêm de uma espera fixa do próprio
+produto antes de esconder a tela de carregamento. Passar de 2 para 16 turmas
+(de 1 para 128 combinações candidatas) aumentou o P95 em 51~ms. M4 recebe nota~3,
+e H4 é sustentada.
+
+\textbf{Q5 (Salvamento).} Sim. Nas 30 tentativas, a interface confirmou o
+salvamento e a grade continuava na conta depois de recarregar a página. O P95 foi
+de 53,0~ms, 2,6\% do limite de 2000~ms. M5 recebe nota~3, e H5 é sustentada.
+
+Assim, G2 é atendido nas condições avaliadas: as quatro hipóteses foram
+sustentadas, e nenhum P95 passou de 7\% do respectivo limite. Essas condições
+restringem o alcance do resultado. As medidas são locais, com um único usuário,
+sem concorrência e com o \textit{frontend} em modo de desenvolvimento, e a massa
+tem só 14 disciplinas e 43 turmas; por isso, não representam o site público no
+pico de matrícula. O fim de cada medida é o primeiro quadro de tela com o sinal
+completo, e os quadros têm 16,7~ms, o que limita a precisão dos tempos de cerca de
+30~ms. Por fim, M3 foi medida em ambiente diferente do das demais métricas; os
+dois cenários de M3 estão no mesmo ambiente, mas seus tempos não são comparáveis
+em valor absoluto com os de M2, M4 e M5.
+
+\subsection{G3: Capacidade de interação}\label{subsec:res-g3}
+
+% TODO (#44): preencher com M6 a M9 depois das sessões com participantes.
+As sessões com participantes de M6 a M9 ainda não foram concluídas.
 
 \section{Conclusão}\label{sec:conclusao}
 
