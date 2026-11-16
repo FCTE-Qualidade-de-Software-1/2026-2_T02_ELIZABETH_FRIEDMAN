@@ -334,9 +334,9 @@ computador ou no celular do próprio participante, com a tela compartilhada em
 chamada on-line. Assim, não há ambiente local nem massa de referência nessas
 métricas, e a versão em produção pode diferir do \textit{commit} \texttt{3d399e7}:
 a data da sessão e a versão observada são registradas, e as conclusões de M6 a M9
-valem para a versão em produção naquela data. As tarefas usam grades descartáveis
-e não envolvem dados de outros usuários. O acesso é o de um estudante comum, em
-poucas sessões. % TODO (equipe): confirmar quais disciplinas e turmas reais as tarefas usarão e se há conta de teste para os cenários de M8 e M9 que dependem de login.
+valem para a versão em produção naquela data. O participante entra com a própria
+conta Google, com a gravação pausada durante o login, e M8 usa a conta de um
+integrante da equipe, com grades descartáveis.
 Os participantes são estudantes adultos sem uso prévio, com conhecimento básico
 de navegador e do conceito de disciplina e turma: planeja-se quatro, dois por
 dispositivo, com um suplente por grupo, em amostra exploratória por
@@ -366,7 +366,7 @@ sessão da conta de teste e a persistência da grade em M5. O piloto de M6 a M9
 aguardava participantes.
 
 \paragraph{Execução e conclusão.}
-% TODO: completar com a execução de G3 (#44), o julgamento (#45) e a ação de melhoria (#46).
+% TODO: completar com o julgamento (#45) e a ação de melhoria (#46).
 As medidas de G1 foram coletadas em 12/11/2026 (M1.3) e 15/11/2026 (M1.1, M1.2 e
 M1.4), e as de G2, em uma rodada formal em 15/11/2026, com 30 tentativas medidas
 por cenário. Nessa rodada, 20 tentativas do cenário de M3 com uma turma já
@@ -380,8 +380,15 @@ fora de contêineres, com Node 22 e Chromium 153, em uma máquina virtual Linux 
 2 vCPUs. Em M1.3, o executor informou ter concluído cada mudança em 20 minutos,
 cronometrados no próprio celular e sem registro da execução; na verificação
 posterior, o \textit{patch} de C1 passou na suíte completa e o de C2 reprovou em
-9 testes. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
-ficam no repositório do projeto.
+9 testes. As quatro sessões de G3 foram feitas em 15/11/2026, duas no
+computador e duas no celular, e a inspeção de M8, nos dois dispositivos, em
+16/11/2026. Elas se desviaram do protocolo em alguns pontos: a exploração livre
+foi mais curta que a prevista, o cartão de M6 teve três disciplinas em vez de
+duas, uma sessão usou outra plataforma de chamada, e a instrução do ponto de
+salvamento de M9 foi alterada a partir da segunda sessão, o que impediu sua
+coleta. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
+ficam no repositório do projeto; vídeos, transcrições e termos de consentimento
+ficam em acesso restrito à equipe.
 
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
@@ -568,8 +575,72 @@ em valor absoluto com os de M2, M4 e M5.
 
 \subsection{G3: Capacidade de interação}\label{subsec:res-g3}
 
-% TODO (#44): preencher com M6 a M9 depois das sessões com participantes.
-As sessões com participantes de M6 a M9 ainda não foram concluídas.
+A Tabela~\ref{tab:res-g3} resume os recortes de G3. Um recorte sem cobertura
+completa fica sem nota, exceto quando a nota~0 já está determinada. No celular,
+a troca e a remoção de turma de uma das sessões foram invalidadas, porque a lista
+final de turmas não foi exibida.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G3 por métrica e recorte}
+\label{tab:res-g3}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] X[l] Q[c] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,8,10} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Recorte & Resultado & Nota \\
+M6 & Computador & 0 de 2 (0\%) & 0 \\
+ & Celular & 1 de 2 (50\%) & 0 \\
+M7 & Computador: seleção e remoção & 2 de 2 em cada (100\%) & 3 \\
+ & Computador: troca de turma & 1 de 2 (50\%) & 0 \\
+ & Celular: seleção & 1 de 2 (50\%) & 0 \\
+ & Celular: troca e remoção & 1 de 1 em cada (cobertura parcial) & Sem nota \\
+M8 & Navegador (computador / celular) & 3 de 4 (75\%) / 4 de 5 (80\%) & 0 \\
+ & Conta (computador / celular) & 1 de 1 (100\%) em cada & 3 \\
+M9 & Computador: seleção e geração concluída & 2 de 2 em cada (100\%) & 3 \\
+ & Celular: seleção e geração concluída & 1 de 2 em cada (50\%) & 0 \\
+ & Geração em andamento e salvamento & Não coletados & Não avaliado \\
+\end{tblr}
+\end{table}
+
+\textbf{Q6 (Aprendizagem).} Não. Os quatro participantes selecionaram as turmas
+do cartão e geraram a grade correta, mas só um, no celular, salvou a grade na
+conta e a recuperou depois de recarregar a página. Nos outros três casos, a grade
+ficou só no navegador, e um participante afirmou que ela já estava disponível. M6
+tem nota~0 nos dois dispositivos, e H6 é contrariada.
+
+\textbf{Q7 (Operabilidade).} Não, nas condições avaliadas. Selecionar e remover
+turmas funcionou no computador, mas na troca um participante incluiu a nova
+turma sem remover a anterior, e no celular outro deixou de selecionar uma
+disciplina. Não houve bloqueio de controle; as falhas foram de execução da
+tarefa. Para achar uma turma pelo professor em listas longas, os participantes
+leram a lista inteira ou usaram a busca do próprio navegador. H7 é contrariada.
+
+\textbf{Q8 (Proteção contra erros).} Não. Excluir uma grade e sair com uma grade
+não salva pedem confirmação, e cancelar preserva a grade. Já recarregar a página
+durante a montagem apaga as turmas selecionadas sem aviso, o que leva a
+modalidade navegador à nota~0 nos dois dispositivos; a modalidade conta tem
+nota~3. H8 é contrariada.
+
+\textbf{Q9 (Autodescrição).} Não no celular. No computador, os pontos coletados
+tiveram estado e ação descritos corretamente; no celular, um participante não
+descreveu o estado depois da seleção nem depois da geração. A geração em
+andamento não foi perguntada, e o salvamento não foi alcançado, porque os
+participantes baixaram o PDF da grade. H9 é contrariada no celular.
+
+Assim, as quatro hipóteses de G3 foram contrariadas em algum recorte. O obstáculo
+mais frequente é o salvamento: a interface não deixa claro que a grade gerada
+fica só no navegador e que salvar na conta é outra ação. Ele aparece em Q6 e Q9
+e, junto com a perda das seleções ao recarregar a página (Q8), é o principal
+candidato à ação de melhoria. Os resultados vêm de uma amostra de conveniência de
+quatro pessoas, uma delas com vínculo pessoal com um integrante da equipe, e dos
+desvios de protocolo descritos na Seção~\ref{subsec:fases34}; servem para
+identificar obstáculos, e não para estimar taxas de sucesso.
 
 \section{Conclusão}\label{sec:conclusao}
 
