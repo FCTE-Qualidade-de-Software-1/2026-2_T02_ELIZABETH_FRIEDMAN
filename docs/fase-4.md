@@ -144,7 +144,7 @@ recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está
 | Métrica | Recorte | Numerador / denominador | Valor | Cobertura | Nota |
 |---------|---------|-------------------------|-------|-----------|------|
 | M6 (% de sucesso no primeiro uso) | Computador / conta | 0 / 2 | 0% | 2 de 2 sessões | 0 |
-| M6 | Celular / conta | 0 / 1 | 0% | 1 de 2 sessões (P03 inválida) | 0 (máximo possível: 50%) |
+| M6 | Celular / conta | 1 / 2 | 50% | 2 de 2 sessões | 0 |
 | M7 (% de sucesso independente) | Computador / seleção | 2 / 2 | 100% | 2 de 2 | 3 |
 | M7 | Computador / troca | 1 / 2 | 50% | 2 de 2 | 0 |
 | M7 | Computador / remoção | 2 / 2 | 100% | 2 de 2 | 3 |
@@ -164,12 +164,11 @@ recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está
 Os dados de cada sessão estão em [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv)
 e os de cada recorte, em [`m6-m9-resultados.csv`](avaliacao/dados/g3/m6-m9-resultados.csv).
 
-**Q6 — Aprendizagem (H6).** Não. Nas três sessões válidas, os participantes selecionaram as
-três turmas do cartão e geraram a grade correta, mas nenhum salvou a grade na conta: ela ficou
-em "Grades locais", e o ícone de nuvem não foi usado. P02 afirmou que a grade "já está
-disponível aqui". A M6 de P03 foi invalidada porque ele explorou o site e começou a tarefa no
-computador antes de passar para o celular; no celular, ele salvou a grade na conta. Os dois
-recortes têm nota 0, e H6 é contrariada.
+**Q6 — Aprendizagem (H6).** Não. Os quatro participantes selecionaram as três turmas do
+cartão e geraram a grade correta, mas só P03, no celular, salvou a grade na conta e a recuperou
+depois de recarregar. Nos outros três casos a grade ficou em "Grades locais", e o ícone de
+nuvem não foi usado; P02 afirmou que a grade "já está disponível aqui". O computador fica com
+0% e o celular com 50%, os dois com nota 0, e H6 é contrariada.
 
 **Q7 — Operabilidade (H7).** Não, nas condições avaliadas. Seleção e remoção funcionaram no
 computador (2/2). Na troca, P02 incluiu a nova turma de Cálculo 1 sem remover a anterior, e no
@@ -196,7 +195,7 @@ grade que nunca foi para a conta.
 
 | Subcaracterística | Hipótese | Resultado | Notas por recorte |
 |-------------------|----------|-----------|-------------------|
-| Aprendizagem | H6 | Contrariada | Computador 0; celular 0 |
+| Aprendizagem | H6 | Contrariada | Computador 0 (0/2); celular 0 (1/2) |
 | Operabilidade | H7 | Contrariada | Computador: seleção 3, troca 0, remoção 3; celular: seleção 0, demais sem nota |
 | Proteção contra erros | H8 | Contrariada | Navegador 0 nos dois dispositivos; conta 3 |
 | Autodescrição | H9 | Contrariada (celular) | Computador V01 e V03 com 3; celular V01 e V03 com 0; V02 e V04 não avaliados |

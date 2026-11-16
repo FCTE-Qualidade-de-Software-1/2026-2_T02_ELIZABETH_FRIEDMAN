@@ -1,6 +1,6 @@
 metrica,recorte,numerador,denominador,percentual,cobertura,nota,observacao
 M6,computador / conta,0,2,0%,2 de 2 sessões,0,P01 e P02 não salvaram a grade na conta
-M6,celular / conta,0,1,0%,1 de 2 sessões (P03 inválida),0,"Nota já determinada: com sucesso na sessão inválida, o máximo seria 50%"
+M6,celular / conta,1,2,50%,2 de 2 sessões,0,P03 salvou a grade na conta; P04 não salvou
 M7,computador / M7-SEL,2,2,100%,2 de 2 sessões,3,
 M7,computador / M7-ALT,1,2,50%,2 de 2 sessões,0,P02 incluiu a nova turma sem remover a anterior
 M7,computador / M7-REM,2,2,100%,2 de 2 sessões,3,
