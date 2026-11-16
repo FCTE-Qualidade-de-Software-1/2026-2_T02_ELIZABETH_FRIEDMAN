@@ -1,0 +1,33 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:01-03:00,1,sim,4638.2,5326.5,688.3,sucesso,evidencias.jsonl#m4-b-aq1
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:06-03:00,2,sim,4683.1,5392.2,709.1,sucesso,evidencias.jsonl#m4-b-aq2
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:12-03:00,1,não,4419.3,5066.3,647.0,sucesso,evidencias.jsonl#m4-b-1; evidencias/m4-b-1.png
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:18-03:00,2,não,4757.5,5447.6,690.1,sucesso,evidencias.jsonl#m4-b-2
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:24-03:00,3,não,4807.9,5492.4,684.5,sucesso,evidencias.jsonl#m4-b-3
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:30-03:00,4,não,4760.1,5408.8,648.7,sucesso,evidencias.jsonl#m4-b-4
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:36-03:00,5,não,4897.2,5550.9,653.7,sucesso,evidencias.jsonl#m4-b-5
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:41-03:00,6,não,4378.9,5029.0,650.1,sucesso,evidencias.jsonl#m4-b-6
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:47-03:00,7,não,4670.9,5410.8,739.9,sucesso,evidencias.jsonl#m4-b-7
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:52-03:00,8,não,4382.5,5035.7,653.2,sucesso,evidencias.jsonl#m4-b-8
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:34:58-03:00,9,não,4683.5,5322.6,639.1,sucesso,evidencias.jsonl#m4-b-9
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:04-03:00,10,não,4648.2,5293.7,645.5,sucesso,evidencias.jsonl#m4-b-10
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:09-03:00,11,não,4713.1,5413.8,700.7,sucesso,evidencias.jsonl#m4-b-11
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:15-03:00,12,não,4480.2,5130.9,650.7,sucesso,evidencias.jsonl#m4-b-12
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:21-03:00,13,não,4712.6,5381.0,668.4,sucesso,evidencias.jsonl#m4-b-13
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:26-03:00,14,não,4366.3,5004.8,638.5,sucesso,evidencias.jsonl#m4-b-14
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:32-03:00,15,não,4599.7,5263.1,663.4,sucesso,evidencias.jsonl#m4-b-15
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:37-03:00,16,não,4387.8,5036.9,649.1,sucesso,evidencias.jsonl#m4-b-16
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:43-03:00,17,não,4356.4,5019.2,662.8,sucesso,evidencias.jsonl#m4-b-17
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:48-03:00,18,não,4670.9,5371.5,700.6,sucesso,evidencias.jsonl#m4-b-18
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:35:54-03:00,19,não,4603.1,5257.6,654.5,sucesso,evidencias.jsonl#m4-b-19
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:00-03:00,20,não,4639.2,5288.5,649.3,sucesso,evidencias.jsonl#m4-b-20
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:05-03:00,21,não,4677.9,5314.8,636.9,sucesso,evidencias.jsonl#m4-b-21
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:11-03:00,22,não,4718.5,5360.3,641.8,sucesso,evidencias.jsonl#m4-b-22
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:17-03:00,23,não,4721.7,5363.1,641.4,sucesso,evidencias.jsonl#m4-b-23
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:23-03:00,24,não,4738.9,5376.1,637.2,sucesso,evidencias.jsonl#m4-b-24
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:28-03:00,25,não,4773.0,5415.5,642.5,sucesso,evidencias.jsonl#m4-b-25
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:34-03:00,26,não,4749.8,5403.0,653.2,sucesso,evidencias.jsonl#m4-b-26
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:39-03:00,27,não,4317.6,4961.2,643.6,sucesso,evidencias.jsonl#m4-b-27
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:45-03:00,28,não,4736.7,5393.1,656.4,sucesso,evidencias.jsonl#m4-b-28
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:51-03:00,29,não,4689.7,5360.3,670.6,sucesso,evidencias.jsonl#m4-b-29
+M4,m4-b,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:36:57-03:00,30,não,4739.2,5397.9,658.7,sucesso,evidencias.jsonl#m4-b-30

@@ -1,0 +1,33 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:06-03:00,1,sim,1718.5,1747.4,28.9,sucesso,evidencias.jsonl#m2-codigo-aq1
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:07-03:00,2,sim,1682.8,1711.7,28.9,sucesso,evidencias.jsonl#m2-codigo-aq2
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:09-03:00,1,não,1682.7,1713.1,30.4,sucesso,evidencias.jsonl#m2-codigo-1; evidencias/m2-codigo-1.png
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:11-03:00,2,não,1696.5,1727.5,31.0,sucesso,evidencias.jsonl#m2-codigo-2
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:13-03:00,3,não,1717.2,1746.5,29.3,sucesso,evidencias.jsonl#m2-codigo-3
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:14-03:00,4,não,1683.0,1713.1,30.1,sucesso,evidencias.jsonl#m2-codigo-4
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:16-03:00,5,não,1683.3,1712.1,28.8,sucesso,evidencias.jsonl#m2-codigo-5
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:18-03:00,6,não,1682.8,1712.6,29.8,sucesso,evidencias.jsonl#m2-codigo-6
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:19-03:00,7,não,1700.2,1729.2,29.0,sucesso,evidencias.jsonl#m2-codigo-7
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:21-03:00,8,não,1684.1,1712.4,28.3,sucesso,evidencias.jsonl#m2-codigo-8
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:23-03:00,9,não,1699.1,1729.9,30.8,sucesso,evidencias.jsonl#m2-codigo-9
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:25-03:00,10,não,1700.2,1762.9,62.7,sucesso,evidencias.jsonl#m2-codigo-10
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:26-03:00,11,não,1684.3,1712.9,28.6,sucesso,evidencias.jsonl#m2-codigo-11
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:28-03:00,12,não,1701.0,1729.9,28.9,sucesso,evidencias.jsonl#m2-codigo-12
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:30-03:00,13,não,1666.7,1695.8,29.1,sucesso,evidencias.jsonl#m2-codigo-13
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:31-03:00,14,não,1665.9,1696.1,30.2,sucesso,evidencias.jsonl#m2-codigo-14
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:33-03:00,15,não,1698.5,1728.3,29.8,sucesso,evidencias.jsonl#m2-codigo-15
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:35-03:00,16,não,1650.6,1679.5,28.9,sucesso,evidencias.jsonl#m2-codigo-16
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:37-03:00,17,não,1700.1,1729.6,29.5,sucesso,evidencias.jsonl#m2-codigo-17
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:38-03:00,18,não,1666.2,1696.1,29.9,sucesso,evidencias.jsonl#m2-codigo-18
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:40-03:00,19,não,1666.9,1696.1,29.2,sucesso,evidencias.jsonl#m2-codigo-19
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:42-03:00,20,não,1716.8,1745.8,29.0,sucesso,evidencias.jsonl#m2-codigo-20
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:44-03:00,21,não,1766.1,1796.6,30.5,sucesso,evidencias.jsonl#m2-codigo-21
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:45-03:00,22,não,1716.7,1746.6,29.9,sucesso,evidencias.jsonl#m2-codigo-22
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:47-03:00,23,não,1699.1,1728.4,29.3,sucesso,evidencias.jsonl#m2-codigo-23
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:49-03:00,24,não,1717.1,1746.3,29.2,sucesso,evidencias.jsonl#m2-codigo-24
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:51-03:00,25,não,1683.9,1712.8,28.9,sucesso,evidencias.jsonl#m2-codigo-25
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:52-03:00,26,não,1714.9,1745.4,30.5,sucesso,evidencias.jsonl#m2-codigo-26
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:54-03:00,27,não,1765.9,1795.8,29.9,sucesso,evidencias.jsonl#m2-codigo-27
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:55-03:00,28,não,1400.8,1429.3,28.5,sucesso,evidencias.jsonl#m2-codigo-28
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:57-03:00,29,não,1716.2,1746.5,30.3,sucesso,evidencias.jsonl#m2-codigo-29
+M2,m2-codigo,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; coleta",3d399e7,2026-11-15T21:29:59-03:00,30,não,1698.5,1729.1,30.6,sucesso,evidencias.jsonl#m2-codigo-30
