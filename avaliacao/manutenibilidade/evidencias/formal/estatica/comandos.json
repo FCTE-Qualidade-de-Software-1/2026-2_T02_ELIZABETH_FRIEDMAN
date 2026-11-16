@@ -1,0 +1,325 @@
+[
+  {
+    "comando": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "git",
+      "status",
+      "--porcelain",
+      "--untracked-files=no"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "git",
+      "ls-files"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "node",
+      "--version"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "api"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:125: SyntaxWarning: invalid escape sequence '\\d'\n  regex = \"\\d+[MTN]\\d+\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:186: SyntaxWarning: invalid escape sequence '\\d'\n  date_format = \"\\d{2}\\/\\d{2}\\/\\d{4}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:187: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"{date_format}\\s\\-\\s{date_format}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:194: SyntaxWarning: invalid escape sequence '\\d'\n  hours_format = \"\\d+\\:\\d+\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\w'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n"
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "core"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "users"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "utils"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:125: SyntaxWarning: invalid escape sequence '\\d'\n  regex = \"\\d+[MTN]\\d+\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:186: SyntaxWarning: invalid escape sequence '\\d'\n  date_format = \"\\d{2}\\/\\d{2}\\/\\d{4}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:187: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"{date_format}\\s\\-\\s{date_format}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:194: SyntaxWarning: invalid escape sequence '\\d'\n  hours_format = \"\\d+\\:\\d+\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\w'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/utils/web_scraping.py:195: SyntaxWarning: invalid escape sequence '\\s'\n  regex = f\"[A-Z]\\w?[a-z|ç]+\\-?[a-z]*\\s{hours_format}\\sàs\\s{hours_format}\"\n"
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/delete_schedule.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/get_schedules.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/save_schedule.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/schedules.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/utils.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/views/views.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 1,
+    "stderr": "Traceback (most recent call last):\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps\", line 6, in <module>\n    sys.exit(pydeps())\n             ~~~~~~^^\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/pydeps.py\", line 176, in pydeps\n    return _pydeps(inp, **_args)\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/pydeps.py\", line 39, in _pydeps\n    dep_graph = py2depgraph.py2dep(trgt, **kw)\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/py2depgraph.py\", line 237, in py2dep\n    mf.run_script(dummy.fname)\n    ~~~~~~~~~~~~~^^^^^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/py2depgraph.py\", line 122, in run_script\n    self.load_module('__main__', fp, pathname, stuff)\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/py2depgraph.py\", line 159, in load_module\n    module = mf27.ModuleFinder.load_module(\n        self,\n        fqname, fp, pathname, (suffix, mode, kind)\n    )\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/mf27.py\", line 151, in load_module\n    self.scan_code(co, m)\n    ~~~~~~~~~~~~~~^^^^^^^\n  File \"/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/lib/python3.13/site-packages/pydeps/mf27.py\", line 204, in scan_code\n    parent = self.determine_parent(m, level=level)\n  File \"/usr/lib/python3.13/modulefinder.py\", line 193, in determine_parent\n    raise ImportError(\"relative importpath too deep\")\nImportError: relative importpath too deep\n"
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/settings/base.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/settings/dev.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/settings/prod.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/backends/google.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/backends/utils.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/simplejwt/decorators.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/venv/bin/pydeps",
+      "--no-config",
+      "--show-deps",
+      "--no-output",
+      "--max-bacon",
+      "0",
+      "--noise-level",
+      "100000",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/simplejwt/serializers.py"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api",
+    "codigo": 0,
+    "stderr": ""
+  },
+  {
+    "comando": [
+      "node",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/../r12/repo/avaliacao/manutenibilidade/coletar_frontend.cjs",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/pacote/avaliacao/manutenibilidade/evidencias/formal/estatica",
+      "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/pacote/avaliacao/manutenibilidade/evidencias/formal/estatica/inventario.json"
+    ],
+    "diretorio": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto",
+    "codigo": 0,
+    "stderr": ""
+  }
+]

@@ -1,0 +1,4 @@
+metrica,recorte,linhas_cobertas,linhas_executaveis,percentual,nota,estado
+M1.4,API,1143,1396,81.87679083094555,2,Medido
+M1.4,scraper,156,160,97.5,3,Medido
+M1.4,gerador,140,141,99.29078014184397,3,Medido

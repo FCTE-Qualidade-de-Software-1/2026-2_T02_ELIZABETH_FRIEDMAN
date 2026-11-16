@@ -1,0 +1,293 @@
+{
+  "app/components/AsideButton.tsx": [
+    "app/components/Button.tsx"
+  ],
+  "app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx": [
+    "app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "app/components/AsideSchedulePopUp/types/types.ts",
+    "app/contexts/SelectedClassesContext/types.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "app/hooks/useShowPopUpContent.ts",
+    "app/utils/api/searchDiscipline.ts"
+  ],
+  "app/components/AsideSchedulePopUp/ClassInfoBox.tsx": [
+    "app/components/ClassInfo.tsx",
+    "app/hooks/useSelectedClasses.ts",
+    "app/utils/api/searchDiscipline.ts",
+    "public/icons/add.jpg",
+    "public/icons/remove.jpg"
+  ],
+  "app/components/AsideSchedulePopUp/DisciplineFragment.tsx": [
+    "app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+    "app/utils/api/searchDiscipline.ts",
+    "public/icons/expand_less.png",
+    "public/icons/expand_more.png"
+  ],
+  "app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx": [
+    "app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "app/components/AsideSchedulePopUp/types/types.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "app/hooks/useYearPeriod.ts",
+    "app/utils/api/searchDiscipline.ts",
+    "app/utils/toast.ts"
+  ],
+  "app/components/AsideSchedulePopUp/Form/InputForm.tsx": [
+    "app/components/AsideSchedulePopUp/types/types.ts",
+    "app/utils/api/searchDiscipline.ts",
+    "public/icons/search.jpg"
+  ],
+  "app/components/AsideSchedulePopUp/Tooltip.tsx": [
+    "app/hooks/useWindowDimensions.ts",
+    "app/styles/tooltip.module.css",
+    "public/icons/close.jpg",
+    "public/icons/question.jpg"
+  ],
+  "app/components/AsideSchedulePopUp/types/types.ts": [
+    "app/contexts/SelectedClassesContext/types.ts",
+    "app/utils/api/searchDiscipline.ts"
+  ],
+  "app/components/Button.tsx": [],
+  "app/components/ClassInfo.tsx": [
+    "app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "app/contexts/SelectedClassesContext/types.ts"
+  ],
+  "app/components/DisciplineBox.tsx": [
+    "app/components/ClassInfo.tsx",
+    "app/contexts/SelectedClassesContext/types.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "public/icons/delete.jpg"
+  ],
+  "app/components/InfoHeader.tsx": [
+    "app/hooks/useUser.ts",
+    "app/hooks/useWindowDimensions.ts",
+    "app/utils/dates.ts"
+  ],
+  "app/components/LoadingScreen.tsx": [
+    "app/styles/loading.module.css"
+  ],
+  "app/components/LogoImageHandler.tsx": [
+    "app/hooks/useWindowDimensions.ts",
+    "public/logo.png"
+  ],
+  "app/components/Modal/Modal.tsx": [
+    "public/icons/close.jpg"
+  ],
+  "app/components/Protected.tsx": [
+    "app/hooks/useUser.ts"
+  ],
+  "app/components/Schedule/Schedule.tsx": [
+    "app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "app/components/ClassInfo.tsx",
+    "app/contexts/SchedulesContext.tsx"
+  ],
+  "app/components/SchedulePreview/SchedulePreview.tsx": [
+    "app/components/Button.tsx",
+    "app/components/Modal/Modal.tsx",
+    "app/components/Schedule/Schedule.tsx",
+    "app/contexts/SchedulesContext.tsx",
+    "app/hooks/useSchedules.ts",
+    "app/hooks/useUser.ts",
+    "app/utils/api/deleteSchedule.ts",
+    "app/utils/api/getSchedules.ts",
+    "app/utils/api/saveSchedule.ts",
+    "app/utils/dates.ts",
+    "app/utils/toast.ts",
+    "public/icons/delete.jpg",
+    "public/icons/download.jpg",
+    "public/icons/upload.jpg"
+  ],
+  "app/components/SignInSection.tsx": [
+    "app/components/Button.tsx",
+    "app/hooks/useUser.ts",
+    "app/utils/api/registerWithGoogle.ts",
+    "app/utils/retrieveAccessToken.ts",
+    "app/utils/signInWithGoogle.ts",
+    "public/google.jpg"
+  ],
+  "app/contexts/ClassesToShowContext.tsx": [
+    "app/contexts/SelectedClassesContext/types.ts"
+  ],
+  "app/contexts/SchedulesContext.tsx": [
+    "app/utils/api/searchDiscipline.ts"
+  ],
+  "app/contexts/SelectedClassesContext/SelectedClassesContext.tsx": [
+    "app/contexts/SelectedClassesContext/types.ts",
+    "app/utils/toast.ts"
+  ],
+  "app/contexts/SelectedClassesContext/types.ts": [
+    "app/utils/api/searchDiscipline.ts"
+  ],
+  "app/contexts/ShowPopUpContentContext.tsx": [],
+  "app/contexts/UserContext.tsx": [
+    "app/components/SignInSection.tsx",
+    "app/hooks/useSchedules.ts",
+    "app/utils/api/getSchedules.ts",
+    "app/utils/request.ts",
+    "app/utils/settings.ts",
+    "app/utils/toast.ts"
+  ],
+  "app/contexts/YearPeriodContext.tsx": [
+    "app/utils/api/retrieveYearAndPeriod.ts"
+  ],
+  "app/globals.css": [],
+  "app/hooks/useClassesToShow.ts": [
+    "app/contexts/ClassesToShowContext.tsx"
+  ],
+  "app/hooks/useSchedules.ts": [
+    "app/contexts/SchedulesContext.tsx"
+  ],
+  "app/hooks/useSelectedClasses.ts": [
+    "app/contexts/SelectedClassesContext/SelectedClassesContext.tsx"
+  ],
+  "app/hooks/useShowPopUpContent.ts": [
+    "app/contexts/ShowPopUpContentContext.tsx"
+  ],
+  "app/hooks/useUser.ts": [
+    "app/contexts/UserContext.tsx"
+  ],
+  "app/hooks/useWindowDimensions.ts": [],
+  "app/hooks/useYearPeriod.ts": [
+    "app/contexts/YearPeriodContext.tsx"
+  ],
+  "app/layout.tsx": [
+    "app/contexts/ClassesToShowContext.tsx",
+    "app/contexts/SchedulesContext.tsx",
+    "app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "app/contexts/UserContext.tsx",
+    "app/contexts/YearPeriodContext.tsx",
+    "app/globals.css"
+  ],
+  "app/not-found.tsx": [],
+  "app/page.tsx": [
+    "app/components/LoadingScreen.tsx",
+    "app/components/LogoImageHandler.tsx",
+    "app/components/SignInSection.tsx",
+    "app/hooks/useUser.ts"
+  ],
+  "app/schedules/home/components/AddDisciplineButton.tsx": [
+    "app/components/Button.tsx",
+    "app/hooks/useShowPopUpContent.ts",
+    "app/hooks/useWindowDimensions.ts"
+  ],
+  "app/schedules/home/components/GenerateScheduleButton.tsx": [
+    "app/components/Button.tsx",
+    "app/components/Modal/Modal.tsx",
+    "app/contexts/SchedulesContext.tsx",
+    "app/hooks/useClassesToShow.ts",
+    "app/hooks/useSchedules.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "app/hooks/useUser.ts",
+    "app/utils/api/generateSchedule.ts",
+    "app/utils/toast.ts"
+  ],
+  "app/schedules/home/handlers/ClickOutsideHandler.tsx": [
+    "app/hooks/useShowPopUpContent.ts"
+  ],
+  "app/schedules/home/page.tsx": [
+    "app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "app/components/DisciplineBox.tsx",
+    "app/contexts/SelectedClassesContext/types.ts",
+    "app/contexts/ShowPopUpContentContext.tsx",
+    "app/hooks/useClassesToShow.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "app/schedules/home/components/AddDisciplineButton.tsx",
+    "app/schedules/home/components/GenerateScheduleButton.tsx",
+    "app/schedules/home/handlers/ClickOutsideHandler.tsx"
+  ],
+  "app/schedules/info/page.tsx": [],
+  "app/schedules/layout.tsx": [
+    "app/components/AsideButton.tsx",
+    "app/components/Button.tsx",
+    "app/components/InfoHeader.tsx",
+    "app/components/LoadingScreen.tsx",
+    "app/components/Protected.tsx",
+    "app/hooks/useUser.ts",
+    "app/hooks/useWindowDimensions.ts",
+    "public/icons/google.jpg",
+    "public/icons/home.jpg",
+    "public/icons/info.jpg",
+    "public/icons/profile.jpg",
+    "public/icons/schedule.jpg"
+  ],
+  "app/schedules/mygrades/page.tsx": [
+    "app/components/SchedulePreview/SchedulePreview.tsx",
+    "app/hooks/useSchedules.ts"
+  ],
+  "app/schedules/profile/page.tsx": [
+    "app/components/Button.tsx",
+    "app/components/Modal/Modal.tsx",
+    "app/hooks/useClassesToShow.ts",
+    "app/hooks/useSchedules.ts",
+    "app/hooks/useSelectedClasses.ts",
+    "app/hooks/useUser.ts",
+    "app/utils/api/logout.ts",
+    "app/utils/signInWithGoogle.ts",
+    "public/logo.png",
+    "public/profile.svg"
+  ],
+  "app/styles/loading.module.css": [],
+  "app/styles/tooltip.module.css": [],
+  "app/utils/api/deleteSchedule.ts": [
+    "app/utils/request.ts",
+    "app/utils/settingsWithAuth.ts"
+  ],
+  "app/utils/api/generateSchedule.ts": [
+    "app/utils/request.ts",
+    "app/utils/settings.ts"
+  ],
+  "app/utils/api/getSchedules.ts": [
+    "app/utils/request.ts",
+    "app/utils/settingsWithAuth.ts"
+  ],
+  "app/utils/api/logout.ts": [
+    "app/contexts/UserContext.tsx",
+    "app/utils/request.ts",
+    "app/utils/settings.ts"
+  ],
+  "app/utils/api/registerWithGoogle.ts": [
+    "app/utils/request.ts",
+    "app/utils/settings.ts"
+  ],
+  "app/utils/api/retrieveYearAndPeriod.ts": [
+    "app/utils/request.ts",
+    "app/utils/settings.ts"
+  ],
+  "app/utils/api/saveSchedule.ts": [
+    "app/contexts/SchedulesContext.tsx",
+    "app/utils/request.ts",
+    "app/utils/settingsWithAuth.ts"
+  ],
+  "app/utils/api/searchDiscipline.ts": [
+    "app/utils/request.ts",
+    "app/utils/settings.ts"
+  ],
+  "app/utils/dates.ts": [],
+  "app/utils/request.ts": [],
+  "app/utils/retrieveAccessToken.ts": [],
+  "app/utils/settings.ts": [],
+  "app/utils/settingsWithAuth.ts": [
+    "app/utils/settings.ts"
+  ],
+  "app/utils/signInWithGoogle.ts": [],
+  "app/utils/toast.ts": [],
+  "public/google.jpg": [],
+  "public/icons/add.jpg": [],
+  "public/icons/close.jpg": [],
+  "public/icons/delete.jpg": [],
+  "public/icons/download.jpg": [],
+  "public/icons/expand_less.png": [],
+  "public/icons/expand_more.png": [],
+  "public/icons/google.jpg": [],
+  "public/icons/home.jpg": [],
+  "public/icons/info.jpg": [],
+  "public/icons/profile.jpg": [],
+  "public/icons/question.jpg": [],
+  "public/icons/remove.jpg": [],
+  "public/icons/schedule.jpg": [],
+  "public/icons/search.jpg": [],
+  "public/icons/upload.jpg": [],
+  "public/logo.png": [],
+  "public/profile.svg": [],
+  "tailwind.config.ts": []
+}

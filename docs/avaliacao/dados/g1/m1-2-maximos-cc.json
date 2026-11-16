@@ -1,0 +1,44 @@
+{
+  "descricao": "Diagnostico do passo 5 de M1.2 (sem nota adicional): blocos de maior CC por recorte, extraidos de radon-blocos.json e eslint-blocos.json (coleta formal de 15/11/2026, commit 3d399e745383b05e8e3b1a7c97ac0fdbf93a0360).",
+  "limite_m1_2": 10,
+  "API": {
+    "blocos": 137,
+    "acima_do_limite": [
+      {"arquivo": "api/api/views/views.py", "bloco": "post", "linha": 194, "cc": 15}
+    ],
+    "maiores": [
+      {"arquivo": "api/api/views/views.py", "bloco": "post", "linha": 194, "cc": 15},
+      {"arquivo": "api/utils/ira_calculator.py", "bloco": "wrapper", "linha": 21, "cc": 10},
+      {"arquivo": "api/api/management/commands/updatedb.py", "bloco": "handle", "linha": 36, "cc": 9},
+      {"arquivo": "api/api/management/commands/updatedb.py", "bloco": "execute_update", "linha": 110, "cc": 9}
+    ]
+  },
+  "frontend": {
+    "blocos": 213,
+    "acima_do_limite": [],
+    "maiores": [
+      {"arquivo": "web/app/components/Schedule/Schedule.tsx", "bloco": "Function 'Schedule'", "linha": 14, "cc": 7},
+      {"arquivo": "web/app/components/Schedule/Schedule.tsx", "bloco": "Arrow function", "linha": 37, "cc": 6},
+      {"arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx", "bloco": "Function 'BottomPart'", "linha": 80, "cc": 6},
+      {"arquivo": "web/app/components/Schedule/Schedule.tsx", "bloco": "Arrow function", "linha": 103, "cc": 5}
+    ]
+  },
+  "scraper": {
+    "arquivo": "utils/web_scraping.py",
+    "blocos": 18,
+    "maiores": [
+      {"arquivo": "api/utils/web_scraping.py", "bloco": "make_disciplines", "linha": 200, "cc": 7},
+      {"arquivo": "api/utils/web_scraping.py", "bloco": "get_list_of_departments", "linha": 28, "cc": 5},
+      {"arquivo": "api/utils/web_scraping.py", "bloco": "get_teachers", "linha": 106, "cc": 4}
+    ]
+  },
+  "gerador": {
+    "arquivo": "utils/schedule_generator.py",
+    "blocos": 15,
+    "maiores": [
+      {"arquivo": "api/utils/schedule_generator.py", "bloco": "_valid_schedule", "linha": 153, "cc": 6},
+      {"arquivo": "api/utils/schedule_generator.py", "bloco": "generate", "linha": 209, "cc": 6},
+      {"arquivo": "api/utils/schedule_generator.py", "bloco": "_validate_preference", "linha": 46, "cc": 5}
+    ]
+  }
+}
