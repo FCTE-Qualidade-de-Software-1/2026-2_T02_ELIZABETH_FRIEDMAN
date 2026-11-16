@@ -1,0 +1,12 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:12-03:00,1,sim,2314.9,2344.2,29.3,sucesso,evidencias.jsonl#m3-com-selecao-aq1
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:15-03:00,1,não,2398.5,2423.1,24.6,sucesso,evidencias.jsonl#m3-com-selecao-1; evidencias/m3-com-selecao-1.png
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:17-03:00,2,não,2395.6,2424.7,29.1,sucesso,evidencias.jsonl#m3-com-selecao-2
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:20-03:00,3,não,2346.1,2375.5,29.4,sucesso,evidencias.jsonl#m3-com-selecao-3
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:22-03:00,4,não,2354.4,2388.5,34.1,sucesso,evidencias.jsonl#m3-com-selecao-4
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:24-03:00,5,não,2426.9,2452.9,26.0,sucesso,evidencias.jsonl#m3-com-selecao-5
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:27-03:00,6,não,2498.1,2522.0,23.9,sucesso,evidencias.jsonl#m3-com-selecao-6
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:29-03:00,7,não,2155.5,2184.2,28.7,sucesso,evidencias.jsonl#m3-com-selecao-7
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:32-03:00,8,não,2611.2,2638.2,27.0,sucesso,evidencias.jsonl#m3-com-selecao-8
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:34-03:00,9,não,2399.8,2425.4,25.6,sucesso,evidencias.jsonl#m3-com-selecao-9
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 153.0.8010.12 headless; piloto",3d399e7,2026-11-16T01:02:37-03:00,10,não,2629.3,2655.6,26.3,sucesso,evidencias.jsonl#m3-com-selecao-10
