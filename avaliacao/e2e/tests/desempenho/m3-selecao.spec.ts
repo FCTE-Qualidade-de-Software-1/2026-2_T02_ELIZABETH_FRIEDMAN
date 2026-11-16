@@ -35,6 +35,13 @@ for (const s of CENARIOS) {
         await abrirBusca(p, texto);
         for (const t of anteriores) await selecionarTurma(p, t);
         const linha = await expandirTurma(p, alvo);
+        // A nova busca da mesma disciplina re-renderiza a lista; sem esta espera, `limpo`
+        // podia ler a lista antes de as seleções anteriores voltarem a aparecer marcadas
+        // (20 falhas de preparação em m3-com-selecao na rodada 20261115-2128).
+        if (anteriores.length) {
+          await p.locator('img[alt="ícone remover matéria"]').nth(anteriores.length - 1)
+            .waitFor({ timeout: 5000 });
+        }
         return linha.getByRole('button');
       },
       limpo: async (p) => {

@@ -9,12 +9,15 @@ CSV por cenário (m2-nome.csv, ..., m5-conta.csv) e o metadados.json.
 Aplica as regras da Fase 2, seção 4.3, e o cálculo do P95 da Fase 3, seção 1.1.7:
 
   1. Cenário sem 30 tentativas medidas (aquecimento = não) -> "Não avaliado".
+     Também "Não avaliado" quando alguma tentativa medida falhou na preparação
+     (motivo "preparação: ..." em evidencias.jsonl): a falha ocorreu antes do
+     clique, fora do intervalo medido, e é defeito do roteiro, não da aplicação.
   2. Qualquer erro ou expiração -> nota 0, com o motivo. Zero sucessos -> P95
      "não calculável" e nota 0.
   3. Com 30 sucessos, a nota é a faixa do P95 (sem arredondamento prévio).
   4. Nota da métrica = menor nota entre os cenários. Se algum cenário não foi
      avaliado, a cobertura é parcial e não há nota consolidada.
-  5. H2 a H5: sustentada (todos os cenários com nota >= 1), refutada (algum
+  5. H2 a H5: sustentada (todos os cenários com nota >= 1), contrariada (algum
      cenário com nota 0) ou inconclusiva (nenhum 0, mas algum não avaliado).
 
 Saídas (em --saida, por padrão a própria pasta da rodada, subpasta `analise/`):
@@ -55,7 +58,23 @@ def nota_por_p95(metrica, p95):
     return 0
 
 
-def analisar_cenario(caminho, meta):
+def motivos_preparacao(rodada):
+    """Ids de tentativas medidas que falharam antes do clique (defeito do roteiro)."""
+    ev = rodada / "evidencias.jsonl"
+    falhas = {}
+    if not ev.exists():
+        return falhas
+    for l in open(ev, encoding="utf-8"):
+        if not l.strip():
+            continue
+        d = json.loads(l)
+        if (not d.get("aquecimento") and d.get("estado") != "sucesso"
+                and str(d.get("motivo") or "").startswith("preparação:")):
+            falhas.setdefault(d["cenario"], []).append(d["motivo"])
+    return falhas
+
+
+def analisar_cenario(caminho, meta, prep):
     linhas = list(csv.DictReader(open(caminho, encoding="utf-8")))
     if not linhas:
         raise ValueError(f"{caminho.name}: CSV vazio")
@@ -68,9 +87,15 @@ def analisar_cenario(caminho, meta):
     limite = meta.get("cenarios", {}).get(cenario, {}).get("L_ms", LIMITE[metrica])
     r = {"metrica": metrica, "cenario": cenario, "medidas": len(medidas), **cont,
          "p95_ms": p95, "limite_ms": limite, "nota": None, "classificacao": "", "motivo": ""}
+    falhas_prep = prep.get(cenario, [])
     if len(medidas) != N_MEDIDAS:
         r["classificacao"] = "Não avaliado"
         r["motivo"] = f"{len(medidas)} tentativas medidas em vez de {N_MEDIDAS} (regra 1)"
+    elif falhas_prep:
+        r["classificacao"] = "Não avaliado"
+        tipos = sorted(set(falhas_prep))
+        r["motivo"] = (f"{len(falhas_prep)} tentativa(s) falharam na preparação, antes do clique "
+                       f"(defeito do roteiro, regra 1): {'; '.join(tipos)}")
     elif cont["erro"] or cont["expiração"]:
         r["nota"] = 0
         r["motivo"] = (f"{cont['erro']} erro(s) e {cont['expiração']} expiração(ões) (regra 2)"
@@ -100,7 +125,7 @@ def consolidar(res):
         else:
             nota, cob = min(notas), "completa"
         if any(n == 0 for n in notas):
-            h = "refutada"
+            h = "contrariada"
         elif sem:
             h = "inconclusiva"
         else:
@@ -110,32 +135,52 @@ def consolidar(res):
 
 
 def grafico(res, destino):
-    larg, lin, esq, dir_ = 760, 34, 150, 120
-    alt = 60 + lin * len(res)
-    razoes = [r["p95_ms"] / r["limite_ms"] for r in res if r["p95_ms"] is not None]
-    teto = max([1.2] + [x * 1.1 for x in razoes])
+    """Barras horizontais do P95 indexado ao limite L do cenário (100% = L).
+
+    Eixo linear de 0 a 100% de L, com grade a cada 25%. A cor segue a classificação e o
+    texto ao lado repete valor e classificação, para não depender só da cor. Cada barra
+    tem <title> (dica ao passar o mouse). Cenários sem nota não têm barra, só o motivo.
+    """
+    larg, lin, esq, dir_ = 760, 34, 130, 250
+    topo = 48
+    alt = topo + lin * len(res) + 56
+    razoes = [r["p95_ms"] / r["limite_ms"] for r in res if r["p95_ms"] is not None and r["nota"] is not None]
+    teto = max([1.0] + razoes)
     esc = (larg - esq - dir_) / teto
-    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {larg} {alt}" font-family="sans-serif" font-size="12">',
+    base = topo + lin * len(res)
+    s = [f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 {larg} {alt}" font-family="sans-serif" font-size="12" role="img" aria-labelledby="t d">',
+         '<title id="t">P95 de cada cenário de G2 em relação ao limite de aceitação L</title>',
+         '<desc id="d">' + "; ".join(
+             f'{r["cenario"]}: ' + (f'P95 {fmt(r["p95_ms"])} ms, L {r["limite_ms"]} ms, {r["classificacao"]}'
+                                    if r["nota"] is not None else r["classificacao"]) for r in res) + '</desc>',
          '<rect width="100%" height="100%" fill="#ffffff"/>',
-         f'<text x="{esq}" y="18" font-weight="bold">P95 de cada cenário em relação ao limite de aceitação L (100% = L)</text>']
+         f'<text x="{esq}" y="18" font-weight="bold" fill="#1a1a1a">P95 de cada cenário em % do limite de aceitação L do cenário</text>',
+         f'<text x="{esq}" y="34" fill="#555" font-size="11">Menor é melhor. Barra até a linha tracejada = P95 igual a L.</text>']
+    for k in range(0, 101, 25):
+        x = esq + k / 100 * esc
+        tracejado = ' stroke-dasharray="4 3"' if k == 100 else ''
+        cor = "#333" if k == 100 else "#e3e3e3"
+        s.append(f'<line x1="{x:.1f}" y1="{topo - 6}" x2="{x:.1f}" y2="{base}" stroke="{cor}"{tracejado}/>')
+        s.append(f'<text x="{x:.1f}" y="{base + 14}" text-anchor="middle" fill="#555" font-size="11">{k}%{" (L)" if k == 100 else ""}</text>')
     for i, r in enumerate(res):
-        y = 40 + i * lin
-        s.append(f'<text x="{esq - 8}" y="{y + 14}" text-anchor="end">{r["cenario"]}</text>')
-        if r["p95_ms"] is None:
-            s.append(f'<text x="{esq + 6}" y="{y + 14}" fill="#555">{r["classificacao"] or "P95 não calculável"}</text>')
+        y = topo + i * lin
+        s.append(f'<text x="{esq - 8}" y="{y + 14}" text-anchor="end" fill="#1a1a1a">{r["cenario"]}</text>')
+        if r["nota"] is None:
+            s.append(f'<text x="{esq + 6}" y="{y + 14}" fill="#555" font-style="italic">'
+                     f'{r["classificacao"]}: sem nota (ver motivo na tabela)</text>')
             continue
-        w = r["p95_ms"] / r["limite_ms"] * esc
-        s.append(f'<rect x="{esq}" y="{y}" width="{max(w, 1):.1f}" height="20" fill="{COR[r["nota"]]}"/>')
-        rot = f'{fmt(r["p95_ms"])} ms' + ("" if r["nota"] is not None else " (não avaliado)")
-        s.append(f'<text x="{esq + w + 6:.1f}" y="{y + 14}">{rot}</text>')
-    x1 = esq + esc
-    s.append(f'<line x1="{x1:.1f}" y1="30" x2="{x1:.1f}" y2="{alt - 22}" stroke="#333" stroke-dasharray="4 3"/>')
-    s.append(f'<text x="{x1:.1f}" y="{alt - 8}" text-anchor="middle">100% (L)</text>')
-    leg = [(3, "Excelente"), (2, "Bom"), (1, "Aceitável"), (0, "Insatisfatório"), (None, "Não avaliado")]
+        frac = r["p95_ms"] / r["limite_ms"]
+        w = max(frac * esc, 2)
+        dica = f'{r["cenario"]}: P95 {fmt(r["p95_ms"])} ms de L = {r["limite_ms"]} ms ({fmt(frac * 100)}%), {r["classificacao"]}'
+        s.append(f'<g><title>{dica}</title><rect x="{esq}" y="{y}" width="{w:.1f}" height="20" rx="2" fill="{COR[r["nota"]]}"/>'
+                 f'<rect x="{esq}" y="{y - 4}" width="{max(w, 12):.1f}" height="28" fill="transparent"/></g>')
+        rot = f'{fmt(r["p95_ms"])} ms · {fmt(frac * 100)}% de L · {r["classificacao"]}'
+        s.append(f'<text x="{esq + w + 6:.1f}" y="{y + 14}" fill="#1a1a1a">{rot}</text>')
+    leg = [(3, "Excelente"), (2, "Bom"), (1, "Aceitável"), (0, "Insatisfatório")]
     x = esq
     for n, t in leg:
         s.append(f'<rect x="{x}" y="{alt - 20}" width="10" height="10" fill="{COR[n]}"/>')
-        s.append(f'<text x="{x + 14}" y="{alt - 11}" font-size="11">{t}</text>')
+        s.append(f'<text x="{x + 14}" y="{alt - 11}" font-size="11" fill="#1a1a1a">{t}</text>')
         x += 100
     s.append("</svg>")
     destino.write_text("\n".join(s), encoding="utf-8")
@@ -155,7 +200,8 @@ def main():
     csvs = sorted(p for p in a.rodada.glob("m[2-5]-*.csv"))
     if not csvs:
         sys.exit(f"Nenhum CSV de M2 a M5 em {a.rodada}")
-    res = sorted((analisar_cenario(p, meta) for p in csvs), key=lambda r: (r["metrica"], r["cenario"]))
+    prep = motivos_preparacao(a.rodada)
+    res = sorted((analisar_cenario(p, meta, prep) for p in csvs), key=lambda r: (r["metrica"], r["cenario"]))
     cons = consolidar(res)
 
     with open(saida / "resultados.csv", "w", newline="", encoding="utf-8") as f:

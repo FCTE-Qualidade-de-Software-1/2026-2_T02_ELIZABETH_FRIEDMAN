@@ -6,7 +6,7 @@
 |---|---|---|---|---|---|---|---|---|---|
 | M2 | m2-codigo | 30 | 30 | 0 | 0 | 31,0 | 2000 | Excelente (3) |  |
 | M2 | m2-nome | 30 | 30 | 0 | 0 | 30,8 | 2000 | Excelente (3) |  |
-| M3 | m3-com-selecao | 30 | 10 | 20 | 0 | 31,6 | 1000 | Insatisfatório (0) | 20 erro(s) e 0 expiração(ões) (regra 2) |
+| M3 | m3-com-selecao | 30 | 10 | 20 | 0 | 31,6 | 1000 | Não avaliado | 20 tentativa(s) falharam na preparação, antes do clique (defeito do roteiro, regra 1): preparação: estado não limpo (turmas marcadas = 0, esperado 1) |
 | M3 | m3-sem-selecao | 30 | 30 | 0 | 0 | 31,4 | 1000 | Excelente (3) |  |
 | M4 | m4-a | 30 | 30 | 0 | 0 | 649,3 | 10000 | Excelente (3) |  |
 | M4 | m4-b | 30 | 30 | 0 | 0 | 700,7 | 10000 | Excelente (3) |  |
@@ -17,7 +17,7 @@
 | Métrica | Nota da métrica (menor cenário) | Cobertura | Hipótese | Questão |
 |---|---|---|---|---|
 | M2 | Excelente (3) | completa | H2 sustentada | Q2 |
-| M3 | Insatisfatório (0) | completa | H3 refutada | Q3 |
+| M3 | sem nota consolidada | parcial | H3 inconclusiva | Q3 |
 | M4 | Excelente (3) | completa | H4 sustentada | Q4 |
 | M5 | Excelente (3) | completa | H5 sustentada | Q5 |
 

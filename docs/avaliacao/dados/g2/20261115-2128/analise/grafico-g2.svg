@@ -1,37 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 298" font-family="sans-serif" font-size="12">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 342" font-family="sans-serif" font-size="12" role="img" aria-labelledby="t d">
+<title id="t">P95 de cada cenário de G2 em relação ao limite de aceitação L</title>
+<desc id="d">m2-codigo: P95 31,0 ms, L 2000 ms, Excelente (3); m2-nome: P95 30,8 ms, L 2000 ms, Excelente (3); m3-com-selecao: Não avaliado; m3-sem-selecao: P95 31,4 ms, L 1000 ms, Excelente (3); m4-a: P95 649,3 ms, L 10000 ms, Excelente (3); m4-b: P95 700,7 ms, L 10000 ms, Excelente (3); m5-conta: P95 53,0 ms, L 2000 ms, Excelente (3)</desc>
 <rect width="100%" height="100%" fill="#ffffff"/>
-<text x="150" y="18" font-weight="bold">P95 de cada cenário em relação ao limite de aceitação L (100% = L)</text>
-<text x="142" y="54" text-anchor="end">m2-codigo</text>
-<rect x="150" y="40" width="6.3" height="20" fill="#27ae60"/>
-<text x="162.3" y="54">31,0 ms</text>
-<text x="142" y="88" text-anchor="end">m2-nome</text>
-<rect x="150" y="74" width="6.3" height="20" fill="#27ae60"/>
-<text x="162.3" y="88">30,8 ms</text>
-<text x="142" y="122" text-anchor="end">m3-com-selecao</text>
-<rect x="150" y="108" width="12.9" height="20" fill="#c0392b"/>
-<text x="168.9" y="122">31,6 ms</text>
-<text x="142" y="156" text-anchor="end">m3-sem-selecao</text>
-<rect x="150" y="142" width="12.8" height="20" fill="#27ae60"/>
-<text x="168.8" y="156">31,4 ms</text>
-<text x="142" y="190" text-anchor="end">m4-a</text>
-<rect x="150" y="176" width="26.5" height="20" fill="#27ae60"/>
-<text x="182.5" y="190">649,3 ms</text>
-<text x="142" y="224" text-anchor="end">m4-b</text>
-<rect x="150" y="210" width="28.6" height="20" fill="#27ae60"/>
-<text x="184.6" y="224">700,7 ms</text>
-<text x="142" y="258" text-anchor="end">m5-conta</text>
-<rect x="150" y="244" width="10.8" height="20" fill="#27ae60"/>
-<text x="166.8" y="258">53,0 ms</text>
-<line x1="558.3" y1="30" x2="558.3" y2="276" stroke="#333" stroke-dasharray="4 3"/>
-<text x="558.3" y="290" text-anchor="middle">100% (L)</text>
-<rect x="150" y="278" width="10" height="10" fill="#27ae60"/>
-<text x="164" y="287" font-size="11">Excelente</text>
-<rect x="250" y="278" width="10" height="10" fill="#2e86c1"/>
-<text x="264" y="287" font-size="11">Bom</text>
-<rect x="350" y="278" width="10" height="10" fill="#e6a817"/>
-<text x="364" y="287" font-size="11">Aceitável</text>
-<rect x="450" y="278" width="10" height="10" fill="#c0392b"/>
-<text x="464" y="287" font-size="11">Insatisfatório</text>
-<rect x="550" y="278" width="10" height="10" fill="#999999"/>
-<text x="564" y="287" font-size="11">Não avaliado</text>
+<text x="130" y="18" font-weight="bold" fill="#1a1a1a">P95 de cada cenário em % do limite de aceitação L do cenário</text>
+<text x="130" y="34" fill="#555" font-size="11">Menor é melhor. Barra até a linha tracejada = P95 igual a L.</text>
+<line x1="130.0" y1="42" x2="130.0" y2="286" stroke="#e3e3e3"/>
+<text x="130.0" y="300" text-anchor="middle" fill="#555" font-size="11">0%</text>
+<line x1="225.0" y1="42" x2="225.0" y2="286" stroke="#e3e3e3"/>
+<text x="225.0" y="300" text-anchor="middle" fill="#555" font-size="11">25%</text>
+<line x1="320.0" y1="42" x2="320.0" y2="286" stroke="#e3e3e3"/>
+<text x="320.0" y="300" text-anchor="middle" fill="#555" font-size="11">50%</text>
+<line x1="415.0" y1="42" x2="415.0" y2="286" stroke="#e3e3e3"/>
+<text x="415.0" y="300" text-anchor="middle" fill="#555" font-size="11">75%</text>
+<line x1="510.0" y1="42" x2="510.0" y2="286" stroke="#333" stroke-dasharray="4 3"/>
+<text x="510.0" y="300" text-anchor="middle" fill="#555" font-size="11">100% (L)</text>
+<text x="122" y="62" text-anchor="end" fill="#1a1a1a">m2-codigo</text>
+<g><title>m2-codigo: P95 31,0 ms de L = 2000 ms (1,6%), Excelente (3)</title><rect x="130" y="48" width="5.9" height="20" rx="2" fill="#27ae60"/><rect x="130" y="44" width="12.0" height="28" fill="transparent"/></g>
+<text x="141.9" y="62" fill="#1a1a1a">31,0 ms · 1,6% de L · Excelente (3)</text>
+<text x="122" y="96" text-anchor="end" fill="#1a1a1a">m2-nome</text>
+<g><title>m2-nome: P95 30,8 ms de L = 2000 ms (1,5%), Excelente (3)</title><rect x="130" y="82" width="5.9" height="20" rx="2" fill="#27ae60"/><rect x="130" y="78" width="12.0" height="28" fill="transparent"/></g>
+<text x="141.9" y="96" fill="#1a1a1a">30,8 ms · 1,5% de L · Excelente (3)</text>
+<text x="122" y="130" text-anchor="end" fill="#1a1a1a">m3-com-selecao</text>
+<text x="136" y="130" fill="#555" font-style="italic">Não avaliado: sem nota (ver motivo na tabela)</text>
+<text x="122" y="164" text-anchor="end" fill="#1a1a1a">m3-sem-selecao</text>
+<g><title>m3-sem-selecao: P95 31,4 ms de L = 1000 ms (3,1%), Excelente (3)</title><rect x="130" y="150" width="11.9" height="20" rx="2" fill="#27ae60"/><rect x="130" y="146" width="12.0" height="28" fill="transparent"/></g>
+<text x="147.9" y="164" fill="#1a1a1a">31,4 ms · 3,1% de L · Excelente (3)</text>
+<text x="122" y="198" text-anchor="end" fill="#1a1a1a">m4-a</text>
+<g><title>m4-a: P95 649,3 ms de L = 10000 ms (6,5%), Excelente (3)</title><rect x="130" y="184" width="24.7" height="20" rx="2" fill="#27ae60"/><rect x="130" y="180" width="24.7" height="28" fill="transparent"/></g>
+<text x="160.7" y="198" fill="#1a1a1a">649,3 ms · 6,5% de L · Excelente (3)</text>
+<text x="122" y="232" text-anchor="end" fill="#1a1a1a">m4-b</text>
+<g><title>m4-b: P95 700,7 ms de L = 10000 ms (7,0%), Excelente (3)</title><rect x="130" y="218" width="26.6" height="20" rx="2" fill="#27ae60"/><rect x="130" y="214" width="26.6" height="28" fill="transparent"/></g>
+<text x="162.6" y="232" fill="#1a1a1a">700,7 ms · 7,0% de L · Excelente (3)</text>
+<text x="122" y="266" text-anchor="end" fill="#1a1a1a">m5-conta</text>
+<g><title>m5-conta: P95 53,0 ms de L = 2000 ms (2,6%), Excelente (3)</title><rect x="130" y="252" width="10.1" height="20" rx="2" fill="#27ae60"/><rect x="130" y="248" width="12.0" height="28" fill="transparent"/></g>
+<text x="146.1" y="266" fill="#1a1a1a">53,0 ms · 2,6% de L · Excelente (3)</text>
+<rect x="130" y="322" width="10" height="10" fill="#27ae60"/>
+<text x="144" y="331" font-size="11" fill="#1a1a1a">Excelente</text>
+<rect x="230" y="322" width="10" height="10" fill="#2e86c1"/>
+<text x="244" y="331" font-size="11" fill="#1a1a1a">Bom</text>
+<rect x="330" y="322" width="10" height="10" fill="#e6a817"/>
+<text x="344" y="331" font-size="11" fill="#1a1a1a">Aceitável</text>
+<rect x="430" y="322" width="10" height="10" fill="#c0392b"/>
+<text x="444" y="331" font-size="11" fill="#1a1a1a">Insatisfatório</text>
 </svg>

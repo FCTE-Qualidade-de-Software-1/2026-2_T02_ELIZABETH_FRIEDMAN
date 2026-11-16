@@ -18,6 +18,10 @@ Dados de participantes: anonimizar e descrever as condições de acesso (premiss
 | M1.2 — Analisabilidade | 15/11/2026 | Kaleb | [blocos do Radon](avaliacao/dados/g1/m1-2-radon-blocos.json), [blocos do ESLint](avaliacao/dados/g1/m1-2-eslint-blocos.json), [maiores CC por recorte](avaliacao/dados/g1/m1-2-maximos-cc.json); pacote completo em [`formal/estatica/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica) | [Roteiro de M1.2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m12--complexidade-ciclomática), [`coletar.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/coletar.py) e [resultados](avaliacao/dados/g1/m1-1-m1-2-resultados.csv) |
 | M1.3 — Modificabilidade | 12/11/2026 | Joaquim  | [Patches de C1 e C2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3) e [verificação a posteriori](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori) (relatório e logs) | [Roteiro de M1.3](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) e [relatório da verificação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori/RELATORIO.md) |
 | M1.4 — Testabilidade | 15/11/2026 | Kaleb | [`coverage.json`](avaliacao/dados/g1/m1-4-coverage.json), [auditoria do inventário](avaliacao/dados/g1/m1-4-auditoria-inventario.json), [ambiente](avaliacao/dados/g1/m1-4-ambiente.txt); log e demais arquivos em [`formal/M1.4/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/M1.4/execucao-docker) | [Roteiro de M1.4](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m14--cobertura-de-linhas), [`cobertura.sh`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/cobertura.sh), [`resumir_cobertura.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/resumir_cobertura.py) e [resultados](avaliacao/dados/g1/m1-4-resultados.csv) |
+| M2 — Busca | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m2-nome.csv`](avaliacao/dados/g2/20261115-2128/m2-nome.csv), [`m2-codigo.csv`](avaliacao/dados/g2/20261115-2128/m2-codigo.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
+| M3 — Seleção | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m3-sem-selecao.csv`](avaliacao/dados/g2/20261115-2128/m3-sem-selecao.csv), [`m3-com-selecao.csv`](avaliacao/dados/g2/20261115-2128/m3-com-selecao.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
+| M4 — Geração | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m4-a.csv`](avaliacao/dados/g2/20261115-2128/m4-a.csv), [`m4-b.csv`](avaliacao/dados/g2/20261115-2128/m4-b.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
+| M5 — Salvamento | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m5-conta.csv`](avaliacao/dados/g2/20261115-2128/m5-conta.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 
 ## 2. Análise e respostas ao GQM
 
@@ -127,6 +131,124 @@ executada em contêineres `linux/amd64` emulados em um computador com Apple Sili
 (arm64), com PostgreSQL 16.16 e Redis 8.10.3; o resultado coincide com o do piloto
 (1.143/1.396, 156/160 e 140/141). Detalhes de ambiente em
 [`m1-4-ambiente.txt`](avaliacao/dados/g1/m1-4-ambiente.txt).
+
+### 2.2 G2 — Eficiência de desempenho
+
+Rodada formal `20261115-2128`, executada em 15/11/2026 das 21h28 às 21h37 sobre o Sua Grade
+UnB no commit `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`, sem alterações rastreadas, em
+reprodução local com Docker Compose (`db`, `redis`, `api`, `web`), Chromium 151.0.7922.34
+*headless* com Playwright 1.62.1, viewport 1280×720, um *worker* e sem novas tentativas
+automáticas. A massa é a de referência da [Fase 3, seção 2.3](fase-3.md#23-massa-de-referencia)
+(departamento 1499, 14 disciplinas, 43 turmas, período 2026/2). Cada cenário teve 2 tentativas
+de aquecimento, descartadas do cálculo, e 30 tentativas medidas. O P95 é o 29º tempo dos
+sucessos ordenados (posto mais próximo, [Fase 2, seção 3.1](fase-2.md#31-convencoes-de-medicao-de-eficiencia-de-desempenho)),
+comparado sem arredondamento com as faixas da [seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica)
+e julgado pelas regras da [seção 4.3](fase-2.md#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5).
+Os valores foram recalculados a partir dos CSVs pelo [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py)
+([saída completa](avaliacao/dados/g2/20261115-2128/analise/resumo.md)).
+
+**Tabela 2 — Resultados de G2 por métrica e cenário (30 tentativas medidas por cenário)**
+
+| Métrica | Cenário | Sucessos / erros / expirações | Mínimo | Mediana | Máximo | P95 | Limite $L_j$ | P95 em % de $L_j$ | Classificação final |
+|---------|---------|-------------------------------|--------|---------|--------|-----|--------------|-------------------|---------------------|
+| M2 | `m2-nome` (termo `seminario`, 3 disciplinas) | 30 / 0 / 0 | 28,2 ms | 29,7 ms | 31,0 ms | **30,8 ms** | 2000 ms | 1,5% | Excelente (3) |
+| M2 | `m2-codigo` (termo `PPGPS2475`, 1 disciplina) | 30 / 0 / 0 | 28,3 ms | 29,7 ms | 62,7 ms | **31,0 ms** | 2000 ms | 1,6% | Excelente (3) |
+| M3 | `m3-sem-selecao` (`PPGPS2475/01`) | 30 / 0 / 0 | 28,7 ms | 30,6 ms | 31,9 ms | **31,4 ms** | 1000 ms | 3,1% | Excelente (3) |
+| M3 | `m3-com-selecao` (`PPGPS0156/04` com `/02` já selecionada) | 10 / 20 / 0 | 29,8 ms | 30,7 ms | 31,6 ms | 31,6 ms (só dos 10 sucessos) | 1000 ms | — | **Não avaliado** (defeito do roteiro, regra 1) |
+| M4 | `m4-a` (2 turmas, 1 grade) | 30 / 0 / 0 | 597,3 ms | 614,0 ms | 666,4 ms | **649,3 ms** | 10000 ms | 6,5% | Excelente (3) |
+| M4 | `m4-b` (16 turmas, 128 candidatas, 5 grades) | 30 / 0 / 0 | 636,9 ms | 652,0 ms | 739,9 ms | **700,7 ms** | 10000 ms | 7,0% | Excelente (3) |
+| M5 | `m5-conta` (salvamento na conta, persistência conferida) | 30 / 0 / 0 | 29,1 ms | 31,6 ms | 67,0 ms | **53,0 ms** | 2000 ms | 2,6% | Excelente (3) |
+
+Mínimo, mediana e máximo são descritivos e não entram na nota. A faixa Excelente termina em
+500 ms (M2 e M5), 100 ms (M3) e 1000 ms (M4).
+
+![P95 de cada cenário de G2 em porcentagem do limite de aceitação L do cenário; todos os cenários avaliados ficam entre 1,5% e 7% de L, e m3-com-selecao aparece sem barra por não ter sido avaliado](avaliacao/dados/g2/20261115-2128/analise/grafico-g2.svg)
+
+**Figura 1 — P95 de cada cenário em relação ao seu limite de aceitação.** A linha tracejada é
+o limite $L_j$ (100%). Os valores estão na Tabela 2 e em [`resultados.csv`](avaliacao/dados/g2/20261115-2128/analise/resultados.csv).
+
+**Por que `m3-com-selecao` não recebeu nota.** As 20 tentativas sem sucesso falharam todas
+na **preparação**, antes do clique que inicia a medição, com o mesmo motivo registrado em
+[`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl): "estado não limpo (turmas marcadas = 0,
+esperado 1)". Para montar a pré-condição, o roteiro seleciona `PPGPS0156/02`, refaz a busca
+da mesma disciplina para expandir a turma-alvo e confere quantas turmas aparecem marcadas,
+sem esperar a lista terminar de ser redesenhada. As capturas dessas tentativas (por exemplo,
+[`m3-com-selecao-1.png`](avaliacao/dados/g2/20261115-2128/evidencias/m3-com-selecao-1.png)) mostram `PPGPS0156/02`
+marcada logo depois. Os erros se alternam com os sucessos (tentativas 3, 4, 6, 9, 12 a 15,
+23 e 26), o padrão de uma condição de corrida no roteiro. Nenhuma tentativa chegou a medir uma
+seleção que tenha falhado na aplicação. Pela regra 1 da seção 4.3 da Fase 2 ("defeito no
+roteiro recebe o estado Não avaliado, sem nota"), o cenário não é classificado. A regra 2
+(qualquer erro leva a Insatisfatório) vale para erros da aplicação durante a tarefa medida, o
+que não aconteceu aqui. A primeira saída automática do script classificava o cenário como
+Insatisfatório (0) e dava H3 como contrariada; o script foi corrigido para separar falhas de
+preparação, e o roteiro de M3 passou a esperar as seleções anteriores antes de conferir o
+estado. Os 10 sucessos (30 a 32 ms) são compatíveis com `m3-sem-selecao`, mas não somam 30
+tentativas válidas e servem só como indicação. Uma nova rodada identificada de
+`m3-com-selecao`, com o roteiro corrigido, completa M3; os registros desta rodada ficam
+preservados.
+
+**Q2 — Busca de disciplinas (H2).** Sim, nas condições avaliadas. As 60 buscas medidas
+terminaram com exatamente as disciplinas esperadas. O P95 foi de 30,8 ms por nome e 31,0 ms
+por código, cerca de 1,5% de $L_2 = 2000$ ms e bem abaixo do corte de Excelente (500 ms). Os
+dois cenários recebem **Excelente (3)**, M2 fica com nota 3 e cobertura completa, e **H2 é
+sustentada**. O maior tempo isolado (62,7 ms, em `m2-codigo`) não altera o P95. Com a
+massa de referência a busca retorna poucas disciplinas (no máximo três), então o resultado
+não diz como a busca se comporta com o catálogo completo de um período.
+
+**Q3 — Seleção de turmas (H3).** Inconclusiva. A seleção sem turmas anteriores teve
+30 sucessos e P95 de 31,4 ms (3,1% de $L_3 = 1000$ ms, faixa Excelente, abaixo de 100 ms).
+O cenário com uma turma já selecionada não foi avaliado por defeito do roteiro (ver acima).
+Pela regra 4 da seção 4.3, M3 tem cobertura parcial e não recebe nota consolidada; pela
+regra 5, sem cenário insatisfatório e com um cenário não avaliado, **H3 é inconclusiva**. O
+cenário avaliado não traz nenhum sinal contra H3: a atualização acontece em cerca de dois
+quadros de tela.
+
+**Q4 — Geração de grades (H4).** Sim. Os 60 acionamentos terminaram em `/schedules/mygrades`
+com o número esperado de grades (1 em `m4-a` e 5 em `m4-b`). O P95 foi de 649,3 ms e
+700,7 ms, 6,5% e 7,0% de $L_4 = 10000$ ms e abaixo do corte de Excelente (1000 ms). Os dois
+cenários recebem **Excelente (3)**, M4 fica com nota 3 e **H4 é sustentada**. Cerca de 500 ms
+de cada tempo vêm da espera fixa que o produto impõe antes de esconder a tela de
+carregamento ([Fase 3, 1.1.3](fase-3.md#113-acoes-seletores-e-sinais-de-conclusao)), então o
+processamento e a apresentação custam por volta de 100 a 200 ms. Passar de 2 para 16 turmas
+(1 para 128 combinações candidatas) aumentou o P95 em 51 ms. Como a API devolve no máximo
+5 grades, essa diferença reflete o trabalho do gerador e não a quantidade exibida, e não
+estabelece a capacidade máxima ([limitação de M4-B](fase-3.md#112-cenarios-fixos)).
+
+**Q5 — Salvamento na conta (H5).** Sim. Nas 30 tentativas, a interface mostrou "Grade salva
+com sucesso!" e, depois de recarregar a página, a grade estava em "Grades nuvem" (persistência
+conferida fora do intervalo medido). O P95 foi de 53,0 ms, 2,6% de $L_5 = 2000$ ms, na faixa
+Excelente; M5 fica com nota 3 e **H5 é sustentada**. A cauda (máximo de 67,0 ms) é mais longa
+que a de M2 e M3, o que é compatível com a escrita no banco, mas continua muito abaixo do
+limite. Só a modalidade de salvamento na conta foi medida, conforme a correção de 12/11/2026
+da [Fase 2, M5](fase-2.md#m5-tempo-de-retorno-do-salvamento-de-grade-p95).
+
+**G2 — Resumo.** Aplicando a [seção 4.6 da Fase 2](fase-2.md#46-julgamento-global-dos-objetivos),
+G2 fica **inconclusivo nas condições avaliadas**: nenhuma hipótese foi contrariada, mas H3
+está inconclusiva por um cenário não avaliado. Todos os seis cenários avaliados tiveram 30
+sucessos e P95 na faixa Excelente, com no máximo 7% do respectivo limite.
+
+| Comportamento temporal | Hipótese | Resultado | Classificação da métrica (menor cenário) |
+|------------------------|----------|-----------|------------------------------------------|
+| Busca (M2) | H2 | Sustentada operacionalmente | 3 (nome 3; código 3) |
+| Seleção (M3) | H3 | Inconclusiva (`m3-com-selecao` não avaliado) | Sem nota consolidada (sem seleção 3; com seleção não avaliado) |
+| Geração (M4) | H4 | Sustentada operacionalmente | 3 (A 3; B 3) |
+| Salvamento (M5) | H5 | Sustentada operacionalmente | 3 (conta 3) |
+
+Se a nova rodada de `m3-com-selecao` tiver 30 sucessos com P95 de até 1000 ms, H3 passa a
+sustentada e G2 a atendido nas condições avaliadas. Se tiver algum erro da aplicação ou P95
+acima de 1000 ms, H3 passa a contrariada e G2 a não atendido.
+
+**Limitações.** (a) Todas as medidas são de reprodução local, com um usuário e sem
+concorrência. Não representam o site público nem o pico de matrícula, e não são testes de
+significância ([Fase 2, seção 4.3, regra 5](fase-2.md#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5)).
+(b) O fim de cada medida é o primeiro quadro (`requestAnimationFrame`) em que o sinal completo
+aparece, com quadros a cada 16,7 ms ([`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json)). Por isso os
+tempos de M2, M3 e M5 (cerca de 30 ms) estão perto da resolução do método, mas a distância até
+os limites é de mais de 900 ms. (c) A massa de referência é pequena (14 disciplinas e
+43 turmas), bem menor que o catálogo real de um período. (d) Durante a coleta havia 8,0 GiB de
+memória em uso numa máquina de 15 GiB, com os quatro contêineres do produto em execução,
+conforme registrado em `metadados.json`. (e) G2 cobre só o comportamento temporal; uso de
+recursos e capacidade ficam fora do recorte (Fase 2, seção 2.2).
 
 ## 3. Julgamento da qualidade
 
