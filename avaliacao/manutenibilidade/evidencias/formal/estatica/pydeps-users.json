@@ -1,0 +1,174 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "users",
+      "users.admin",
+      "users.apps",
+      "users.models",
+      "users.tests",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register",
+      "users.urls",
+      "users.views"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "api": {
+    "bacon": 2,
+    "imported_by": [
+      "users.views"
+    ],
+    "name": "api",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/__init__.py"
+  },
+  "api.swagger": {
+    "bacon": 2,
+    "imported_by": [
+      "users.views"
+    ],
+    "name": "api.swagger",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/api/swagger.py"
+  },
+  "test.support": {
+    "bacon": 9223372036854775807,
+    "name": "test.support",
+    "path": null
+  },
+  "test.support.import_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.import_helper",
+    "path": null
+  },
+  "test.support.isolation": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.isolation",
+    "path": null
+  },
+  "test.support.os_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.os_helper",
+    "path": null
+  },
+  "test.support.script_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.script_helper",
+    "path": null
+  },
+  "users": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register",
+      "users.urls",
+      "users.views"
+    ],
+    "name": "users",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/__init__.py"
+  },
+  "users.admin": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users.models"
+    ],
+    "name": "users.admin",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/admin.py"
+  },
+  "users.apps": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "users.apps",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/apps.py"
+  },
+  "users.models": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.admin",
+      "users.tests.test_session_login",
+      "users.tests.test_session_logout",
+      "users.tests.test_session_register"
+    ],
+    "name": "users.models",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/models.py"
+  },
+  "users.tests": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "users.tests",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/tests/__init__.py"
+  },
+  "users.tests.test_session_login": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_login",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/tests/test_session_login.py"
+  },
+  "users.tests.test_session_logout": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_logout",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/tests/test_session_logout.py"
+  },
+  "users.tests.test_session_register": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.models"
+    ],
+    "name": "users.tests.test_session_register",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/tests/test_session_register.py"
+  },
+  "users.urls": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "imports": [
+      "users",
+      "users.views"
+    ],
+    "name": "users.urls",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/urls.py"
+  },
+  "users.views": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__",
+      "users.urls"
+    ],
+    "imports": [
+      "api",
+      "api.swagger",
+      "users"
+    ],
+    "name": "users.views",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/users/views.py"
+  }
+}

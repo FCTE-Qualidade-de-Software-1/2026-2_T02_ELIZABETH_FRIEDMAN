@@ -83,7 +83,7 @@ manutenção. Os resultados pretendem apoiar três decisões: o que os mantenedo
 devem corrigir primeiro, qual ação de melhoria a equipe executará e por qual
 parte do código novos contribuidores devem começar.
 % TODO: atualizar após a Fase 4 para resumir os principais resultados e a ação de melhoria.
-Esta versão cobre as duas primeiras atividades do processo de avaliação; as
+Esta versão cobre as três primeiras atividades do processo de avaliação; as
 demais serão incorporadas na versão seguinte. A Seção~\ref{sec:referencial}
 apresenta o referencial teórico, a Seção~\ref{sec:metodologia} descreve sua
 aplicação ao Sua Grade UnB, e as Seções~\ref{sec:resultados}
@@ -230,7 +230,8 @@ código-fonte e os testes no \textit{commit} \texttt{3d399e7} (15/02/2026), o
 site e a API públicos e uma reprodução local com Docker Compose. Como a equipe
 não tem acesso a dados de produção e não deve gerar carga sobre o SIGAA, as
 medições de desempenho em produção limitam-se a poucas requisições espaçadas, e
-as demais são feitas na reprodução local.
+as demais são feitas na reprodução local, exceto as sessões de capacidade de
+interação (M6 a M9), que usam o site oficial.
 
 \subsection{Especificação com GQM (Fase 2)}\label{subsec:gqm}
 
@@ -292,10 +293,82 @@ capacidade em G2, que ficam fora das conclusões.
 
 \subsection{Projeto, execução e conclusão (Fases 3 e 4)}\label{subsec:fases34}
 
-% TODO: completar após a Fase 3 com o método de avaliação por métrica, recursos,
-%       ambiente (hardware, software, massa de dados, perfil dos participantes) e cronograma.
+A Fase~3 fixa como cada métrica será coletada, em que ambiente e em que prazo.
+Os roteiros ficam no repositório do projeto, e as coletas locais usam o
+\textit{commit} \texttt{3d399e7}.
+
+\paragraph{Método por métrica.}
+M1.1 e M1.2 são análises estáticas por camada: pydeps 3.0.1 e Madge 8.0.0 montam o
+grafo de importações, e os ciclos são os componentes fortemente conexos; Radon
+6.0.1 e a regra \texttt{complexity} do ESLint 8.57.1 apontam os blocos com
+complexidade ciclomática maior que 10. M1.3 cronometra duas tarefas, C1 no
+\textit{scraper} e C2 no gerador de grades, em cópias independentes do mesmo
+\textit{commit}; o executor não conhece as alterações, o tempo só vale com
+aceitação e sem regressão na suíte Django, e um revisor confere o \textit{patch}.
+M1.4 executa a suíte completa da API com coverage.py 7.3.2, com universo de
+produção explícito. M2 a M5 usam um roteiro Playwright por métrica, com o mesmo
+clique em todas as tentativas: o instante inicial é o \texttt{Event.timeStamp} do
+clique, e o final, o \texttt{performance.now()} no primeiro quadro em que o sinal
+visível de conclusão está completo. Cada cenário tem 2 tentativas de aquecimento e
+30 medidas, o P95 usa só os sucessos, e o tempo máximo de espera (10000, 5000,
+30000 e 10000~ms para M2 a M5) é maior que o limite de cada métrica; uma
+expiração leva o cenário a Insatisfatório. M6 a M9 são feitas no site oficial: M6
+e M7 em sessões com tarefa padronizada, M9 com perguntas neutras em pontos de
+verificação confrontadas com um gabarito, e M8 por inspeção, pelo avaliador, de um
+inventário de ações de risco.
+
+\paragraph{Recursos e ambiente.}
+As medidas locais (M1.3, M1.4 e M2 a M5) rodam em uma máquina com Ubuntu 24.04.2
+LTS, Intel Core i5-1135G7 e 7,5~GiB de RAM, com Docker 29.1.2. A API (Python 3.11.6,
+Django 5.1.5), o \textit{frontend} (Node 20.9.0, Next.js 14.2.21), o PostgreSQL e o
+Redis sobem em contêineres, sem acesso ao SIGAA, e o \textit{frontend} roda em
+modo de desenvolvimento, o que limita as medidas de desempenho a esse modo. A
+automação usa Playwright 1.62.1 e Chromium 151.0.7922.34 \textit{headless}, em
+execução sequencial e sem novas tentativas. A massa de referência é a página do
+SIGAA que o próprio produto guarda para testes (14 disciplinas e 43 turmas do
+Programa de Pós-Graduação em Política Social), carregada por um \textit{script}
+repetível; os resultados locais valem para essa massa, não para o volume de uma
+matrícula real. As sessões de M6 a M9 usam o site oficial
+(\url{https://suagradeunb.com.br/}), com os dados reais do período corrente, no
+computador ou no celular do próprio participante, com a tela compartilhada em
+chamada on-line. Assim, não há ambiente local nem massa de referência nessas
+métricas, e a versão em produção pode diferir do \textit{commit} \texttt{3d399e7}:
+a data da sessão e a versão observada são registradas, e as conclusões de M6 a M9
+valem para a versão em produção naquela data. As tarefas usam grades descartáveis
+e não envolvem dados de outros usuários. O acesso é o de um estudante comum, em
+poucas sessões. % TODO (equipe): confirmar quais disciplinas e turmas reais as tarefas usarão e se há conta de teste para os cenários de M8 e M9 que dependem de login.
+Os participantes são estudantes adultos sem uso prévio, com conhecimento básico
+de navegador e do conceito de disciplina e turma: planeja-se quatro, dois por
+dispositivo, com um suplente por grupo, em amostra exploratória por
+conveniência, sem representatividade estatística. A redução de dez para quatro
+foi definida em 08/11/2026 para viabilizar a execução, sem alterar os limiares da
+Fase~2.
+
+\paragraph{Cronograma.}
+A coleta ocorre de 13/11 a 17/11/2026 (as sessões de M6 a M9 dependem do
+recrutamento), o julgamento e as recomendações em 18 e 19/11, a ação de melhoria
+em 20/11, a revisão do artigo em 20 e 21/11 e o fechamento em 22/11.
+
+\paragraph{Mudanças em relação à Fase~2.}
+M5 mede apenas o salvamento na conta (\#63, decisão de 12/11/2026): na versão
+avaliada não há ação de salvar no navegador nem sinal de conclusão dessa gravação,
+pois as grades vão para o \texttt{localStorage} como efeito colateral da geração.
+A sessão da conta de teste de M5 usa o fluxo do \textit{frontend} com um
+\textit{token} simulado, sem credenciais reais. Além disso, as sessões de M6 a M9,
+antes previstas em uma instância local, passam a usar o site oficial.
+
+\paragraph{Verificações já feitas.}
+Os pilotos validam método e ferramentas e não integram a coleta formal. O piloto de
+M1, de 08/11/2026, executou o procedimento de M1.4 e aprovou os 108 testes da
+suíte; o piloto humano de M1.3 seguia pendente em 12/11. O piloto de M2 a M5, de
+12/11/2026, usou 1 tentativa de aquecimento e 3 medidas por cenário e confirmou a
+sessão da conta de teste e a persistência da grade em M5. O piloto de M6 a M9
+aguardava participantes.
+
+\paragraph{Execução e conclusão.}
 % TODO: completar após a Fase 4 com a execução, a análise e o julgamento.
-Estas atividades compõem a segunda entrega e serão descritas na versão seguinte.
+A execução, a análise das respostas ao GQM e o julgamento são atividades da
+Fase~4 e serão descritos na versão seguinte.
 
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
@@ -339,35 +412,12 @@ Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, na
 
 \subsection{Ferramentas}\label{subsec:ferramentas}
 
-A Tabela~\ref{tab:ferramentas} relaciona as ferramentas às métricas. Os dados
-brutos são registrados em CSV com as versões das ferramentas e as evidências. Em
-18/10/2026, pydeps, Madge, Radon e Playwright foram executados em uma
-verificação inicial, que confirma o funcionamento das ferramentas, mas não
-constitui coleta validada.
-
-\begin{table}[H]
-\centering
-\caption{Ferramentas de medição e métricas apoiadas}
-\label{tab:ferramentas}
-\footnotesize
-\begin{tblr}{
-  width = \linewidth,
-  colspec = {Q[l] X[l] Q[l]},
-  row{1} = {font=\bfseries},
-  hline{1,2,Z} = {0.8pt},
-  rowsep = 1pt,
-}
-Ferramenta & Uso & Métricas \\
-pydeps e Madge & Ciclos de importação em Python e TypeScript & M1.1 \\
-Radon e ESLint (\texttt{complexity}) & Complexidade ciclomática por função & M1.2 \\
-Git, testes Django e cronômetro & Execução e validação das mudanças controladas & M1.3 \\
-coverage.py 7.3.2 & Cobertura de linhas da suíte de testes da API & M1.4 \\
-Playwright 1.62.1 (Chromium) & Automação do fluxo e marcação de tempos com \texttt{performance.now()} & M2 a M5 \\
-Fichas de observação e capturas & Registro das sessões com estudantes e dos cenários de risco & M6 a M9 \\
-Docker Compose & Reprodução local de API, \textit{frontend}, PostgreSQL e Redis & M1.3, M1.4, M2 a M5 \\
-\end{tblr}
-\end{table}
-% TODO: registrar as versões de pydeps, Madge, Radon e ESLint efetivamente usadas na coleta formal (Fase 3).
+Os dados brutos são registrados em CSV com as versões das ferramentas e as
+evidências: pydeps e Madge (M1.1), Radon e ESLint (M1.2), Git, testes Django e
+cronômetro (M1.3), coverage.py (M1.4), Playwright com Chromium (M2 a M5) e fichas
+de observação com capturas (M6 a M9). Em 18/10/2026, pydeps, Madge, Radon e
+Playwright foram executados em uma verificação inicial, que confirma o
+funcionamento das ferramentas, mas não constitui coleta validada.
 
 \section{Resultados}\label{sec:resultados}
 

@@ -1,0 +1,70 @@
+{
+  "__main__": {
+    "bacon": 0,
+    "imports": [
+      "core",
+      "core.asgi",
+      "core.urls",
+      "core.wsgi"
+    ],
+    "name": "__main__",
+    "path": null
+  },
+  "core": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/__init__.py"
+  },
+  "core.asgi": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.asgi",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/asgi.py"
+  },
+  "core.urls": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.urls",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/urls.py"
+  },
+  "core.wsgi": {
+    "bacon": 1,
+    "imported_by": [
+      "__main__"
+    ],
+    "name": "core.wsgi",
+    "path": "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/teste_g1/produto/api/core/wsgi.py"
+  },
+  "test.support": {
+    "bacon": 9223372036854775807,
+    "name": "test.support",
+    "path": null
+  },
+  "test.support.import_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.import_helper",
+    "path": null
+  },
+  "test.support.isolation": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.isolation",
+    "path": null
+  },
+  "test.support.os_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.os_helper",
+    "path": null
+  },
+  "test.support.script_helper": {
+    "bacon": 9223372036854775807,
+    "name": "test.support.script_helper",
+    "path": null
+  }
+}

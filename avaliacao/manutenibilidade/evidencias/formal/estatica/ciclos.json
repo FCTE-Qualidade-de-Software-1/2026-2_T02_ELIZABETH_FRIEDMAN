@@ -1,0 +1,685 @@
+{
+  "api": {
+    "inventario": 50,
+    "presentes_no_grafo": 50,
+    "ausentes": [],
+    "componentes_ciclicos": [
+      [
+        "api/api/serializers.py",
+        "api/utils/db_handler.py"
+      ]
+    ],
+    "arquivos_em_ciclos": 2,
+    "percentual_preliminar": 4.0,
+    "arestas": {
+      "api/api/__init__.py": [],
+      "api/api/admin.py": [
+        "api/api/models.py",
+        "api/utils/__init__.py",
+        "api/utils/json_pretty.py"
+      ],
+      "api/api/apps.py": [],
+      "api/api/decorators.py": [
+        "api/api/__init__.py",
+        "api/api/models.py"
+      ],
+      "api/api/management/__init__.py": [],
+      "api/api/management/commands/__init__.py": [],
+      "api/api/management/commands/initadmin.py": [
+        "api/users/__init__.py",
+        "api/users/models.py"
+      ],
+      "api/api/management/commands/updatedb.py": [
+        "api/core/__init__.py",
+        "api/core/settings/base.py",
+        "api/utils/__init__.py",
+        "api/utils/db_handler.py",
+        "api/utils/sessions.py",
+        "api/utils/web_scraping.py"
+      ],
+      "api/api/models.py": [
+        "api/users/__init__.py",
+        "api/users/models.py"
+      ],
+      "api/api/serializers.py": [
+        "api/api/__init__.py",
+        "api/api/models.py",
+        "api/utils/__init__.py",
+        "api/utils/db_handler.py"
+      ],
+      "api/api/swagger.py": [],
+      "api/api/urls.py": [
+        "api/api/__init__.py",
+        "api/api/views/delete_schedule.py",
+        "api/api/views/schedules.py",
+        "api/api/views/views.py"
+      ],
+      "api/api/views/delete_schedule.py": [
+        "api/api/swagger.py",
+        "api/utils/__init__.py",
+        "api/utils/db_handler.py"
+      ],
+      "api/api/views/get_schedules.py": [
+        "api/api/serializers.py",
+        "api/api/swagger.py",
+        "api/utils/db_handler.py"
+      ],
+      "api/api/views/save_schedule.py": [
+        "api/api/__init__.py",
+        "api/api/models.py",
+        "api/api/serializers.py",
+        "api/api/swagger.py",
+        "api/api/views/utils.py",
+        "api/utils/__init__.py",
+        "api/utils/db_handler.py",
+        "api/utils/schedule_generator.py"
+      ],
+      "api/api/views/schedules.py": [
+        "api/api/__init__.py",
+        "api/api/models.py",
+        "api/api/serializers.py",
+        "api/api/swagger.py",
+        "api/api/views/save_schedule.py",
+        "api/api/views/utils.py",
+        "api/utils/__init__.py",
+        "api/utils/db_handler.py",
+        "api/utils/schedule_generator.py"
+      ],
+      "api/api/views/utils.py": [],
+      "api/api/views/views.py": [
+        "api/api/__init__.py",
+        "api/api/models.py",
+        "api/api/serializers.py",
+        "api/api/swagger.py",
+        "api/api/views/utils.py",
+        "api/utils/db_handler.py",
+        "api/utils/schedule_generator.py",
+        "api/utils/search.py",
+        "api/utils/sessions.py"
+      ],
+      "api/core/__init__.py": [],
+      "api/core/asgi.py": [],
+      "api/core/settings/base.py": [],
+      "api/core/settings/dev.py": [
+        "api/core/settings/base.py"
+      ],
+      "api/core/settings/prod.py": [
+        "api/core/settings/base.py"
+      ],
+      "api/core/urls.py": [],
+      "api/core/wsgi.py": [],
+      "api/users/__init__.py": [],
+      "api/users/admin.py": [
+        "api/users/models.py"
+      ],
+      "api/users/apps.py": [],
+      "api/users/backends/google.py": [
+        "api/users/models.py"
+      ],
+      "api/users/backends/utils.py": [],
+      "api/users/models.py": [],
+      "api/users/simplejwt/decorators.py": [],
+      "api/users/simplejwt/serializers.py": [],
+      "api/users/urls.py": [
+        "api/users/__init__.py",
+        "api/users/views.py"
+      ],
+      "api/users/views.py": [
+        "api/api/__init__.py",
+        "api/api/swagger.py",
+        "api/users/__init__.py",
+        "api/users/backends/utils.py",
+        "api/users/simplejwt/decorators.py"
+      ],
+      "api/utils/__init__.py": [],
+      "api/utils/apps.py": [],
+      "api/utils/db_handler.py": [
+        "api/api/__init__.py",
+        "api/api/decorators.py",
+        "api/api/models.py",
+        "api/api/serializers.py",
+        "api/users/__init__.py",
+        "api/users/models.py"
+      ],
+      "api/utils/functions.py": [],
+      "api/utils/ira_calculator.py": [],
+      "api/utils/json_pretty.py": [],
+      "api/utils/management/__init__.py": [],
+      "api/utils/management/commands/__init__.py": [],
+      "api/utils/management/commands/updatemock.py": [
+        "api/utils/__init__.py",
+        "api/utils/functions.py",
+        "api/utils/sessions.py",
+        "api/utils/web_scraping.py"
+      ],
+      "api/utils/schedule_generator.py": [
+        "api/api/__init__.py",
+        "api/api/models.py",
+        "api/utils/db_handler.py"
+      ],
+      "api/utils/search.py": [],
+      "api/utils/sessions.py": [],
+      "api/utils/urls.py": [
+        "api/utils/__init__.py",
+        "api/utils/views.py"
+      ],
+      "api/utils/views.py": [],
+      "api/utils/web_scraping.py": [
+        "api/utils/__init__.py",
+        "api/utils/functions.py",
+        "api/utils/sessions.py"
+      ]
+    },
+    "complementos_ast": [
+      {
+        "origem": "api/api/management/commands/updatedb.py",
+        "destino": "api/core/settings/base.py",
+        "linha": 11,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/urls.py",
+        "destino": "api/api/views/schedules.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/urls.py",
+        "destino": "api/api/views/delete_schedule.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/urls.py",
+        "destino": "api/api/views/views.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/delete_schedule.py",
+        "destino": "api/utils/__init__.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/delete_schedule.py",
+        "destino": "api/utils/db_handler.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/delete_schedule.py",
+        "destino": "api/api/swagger.py",
+        "linha": 10,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/get_schedules.py",
+        "destino": "api/api/swagger.py",
+        "linha": 8,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/get_schedules.py",
+        "destino": "api/api/serializers.py",
+        "linha": 9,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/get_schedules.py",
+        "destino": "api/utils/db_handler.py",
+        "linha": 11,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/utils/schedule_generator.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/utils/db_handler.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/utils/__init__.py",
+        "linha": 9,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/api/models.py",
+        "linha": 10,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/api/swagger.py",
+        "linha": 11,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/api/views/utils.py",
+        "linha": 12,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/api/__init__.py",
+        "linha": 13,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/save_schedule.py",
+        "destino": "api/api/serializers.py",
+        "linha": 13,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/utils/schedule_generator.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/utils/__init__.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/utils/db_handler.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/models.py",
+        "linha": 11,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/swagger.py",
+        "linha": 12,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/views/utils.py",
+        "linha": 13,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/__init__.py",
+        "linha": 14,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/serializers.py",
+        "linha": 14,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/schedules.py",
+        "destino": "api/api/views/save_schedule.py",
+        "linha": 16,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/api/models.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/utils/sessions.py",
+        "linha": 11,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/utils/schedule_generator.py",
+        "linha": 12,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/utils/db_handler.py",
+        "linha": 13,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/utils/search.py",
+        "linha": 14,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/api/__init__.py",
+        "linha": 16,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/api/serializers.py",
+        "linha": 16,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/api/swagger.py",
+        "linha": 17,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/api/views/views.py",
+        "destino": "api/api/views/utils.py",
+        "linha": 19,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/core/settings/dev.py",
+        "destino": "api/core/settings/base.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/core/settings/prod.py",
+        "destino": "api/core/settings/base.py",
+        "linha": 1,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/users/backends/google.py",
+        "destino": "api/users/models.py",
+        "linha": 2,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/users/views.py",
+        "destino": "api/users/backends/utils.py",
+        "linha": 4,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      },
+      {
+        "origem": "api/users/views.py",
+        "destino": "api/users/simplejwt/decorators.py",
+        "linha": 5,
+        "motivo": "aresta confirmada por AST; complemento ao pydeps"
+      }
+    ],
+    "estado": "Grafo complementado por inspeção AST; ver parecer do piloto"
+  },
+  "web": {
+    "inventario": 60,
+    "presentes_no_grafo": 60,
+    "ausentes": [],
+    "componentes_ciclicos": [
+      [
+        "web/app/components/SignInSection.tsx",
+        "web/app/contexts/UserContext.tsx",
+        "web/app/hooks/useUser.ts"
+      ]
+    ],
+    "arquivos_em_ciclos": 3,
+    "percentual_preliminar": 5.0,
+    "arestas": {
+      "web/app/components/AsideButton.tsx": [
+        "web/app/components/Button.tsx"
+      ],
+      "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx": [
+        "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+        "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+        "web/app/components/AsideSchedulePopUp/types/types.ts",
+        "web/app/contexts/SelectedClassesContext/types.ts",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/hooks/useShowPopUpContent.ts",
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx": [
+        "web/app/components/ClassInfo.tsx",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx": [
+        "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx": [
+        "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+        "web/app/components/AsideSchedulePopUp/types/types.ts",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/hooks/useYearPeriod.ts",
+        "web/app/utils/api/searchDiscipline.ts",
+        "web/app/utils/toast.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx": [
+        "web/app/components/AsideSchedulePopUp/types/types.ts",
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/Tooltip.tsx": [
+        "web/app/hooks/useWindowDimensions.ts"
+      ],
+      "web/app/components/AsideSchedulePopUp/types/types.ts": [
+        "web/app/contexts/SelectedClassesContext/types.ts",
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/components/Button.tsx": [],
+      "web/app/components/ClassInfo.tsx": [
+        "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+        "web/app/contexts/SelectedClassesContext/types.ts"
+      ],
+      "web/app/components/DisciplineBox.tsx": [
+        "web/app/components/ClassInfo.tsx",
+        "web/app/contexts/SelectedClassesContext/types.ts",
+        "web/app/hooks/useSelectedClasses.ts"
+      ],
+      "web/app/components/InfoHeader.tsx": [
+        "web/app/hooks/useUser.ts",
+        "web/app/hooks/useWindowDimensions.ts",
+        "web/app/utils/dates.ts"
+      ],
+      "web/app/components/LoadingScreen.tsx": [],
+      "web/app/components/LogoImageHandler.tsx": [
+        "web/app/hooks/useWindowDimensions.ts"
+      ],
+      "web/app/components/Modal/Modal.tsx": [],
+      "web/app/components/Protected.tsx": [
+        "web/app/hooks/useUser.ts"
+      ],
+      "web/app/components/Schedule/Schedule.tsx": [
+        "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+        "web/app/components/ClassInfo.tsx",
+        "web/app/contexts/SchedulesContext.tsx"
+      ],
+      "web/app/components/SchedulePreview/SchedulePreview.tsx": [
+        "web/app/components/Button.tsx",
+        "web/app/components/Modal/Modal.tsx",
+        "web/app/components/Schedule/Schedule.tsx",
+        "web/app/contexts/SchedulesContext.tsx",
+        "web/app/hooks/useSchedules.ts",
+        "web/app/hooks/useUser.ts",
+        "web/app/utils/api/deleteSchedule.ts",
+        "web/app/utils/api/getSchedules.ts",
+        "web/app/utils/api/saveSchedule.ts",
+        "web/app/utils/dates.ts",
+        "web/app/utils/toast.ts"
+      ],
+      "web/app/components/SignInSection.tsx": [
+        "web/app/components/Button.tsx",
+        "web/app/hooks/useUser.ts",
+        "web/app/utils/api/registerWithGoogle.ts",
+        "web/app/utils/retrieveAccessToken.ts",
+        "web/app/utils/signInWithGoogle.ts"
+      ],
+      "web/app/contexts/ClassesToShowContext.tsx": [
+        "web/app/contexts/SelectedClassesContext/types.ts"
+      ],
+      "web/app/contexts/SchedulesContext.tsx": [
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx": [
+        "web/app/contexts/SelectedClassesContext/types.ts",
+        "web/app/utils/toast.ts"
+      ],
+      "web/app/contexts/SelectedClassesContext/types.ts": [
+        "web/app/utils/api/searchDiscipline.ts"
+      ],
+      "web/app/contexts/ShowPopUpContentContext.tsx": [],
+      "web/app/contexts/UserContext.tsx": [
+        "web/app/components/SignInSection.tsx",
+        "web/app/hooks/useSchedules.ts",
+        "web/app/utils/api/getSchedules.ts",
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts",
+        "web/app/utils/toast.ts"
+      ],
+      "web/app/contexts/YearPeriodContext.tsx": [
+        "web/app/utils/api/retrieveYearAndPeriod.ts"
+      ],
+      "web/app/hooks/useClassesToShow.ts": [
+        "web/app/contexts/ClassesToShowContext.tsx"
+      ],
+      "web/app/hooks/useSchedules.ts": [
+        "web/app/contexts/SchedulesContext.tsx"
+      ],
+      "web/app/hooks/useSelectedClasses.ts": [
+        "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx"
+      ],
+      "web/app/hooks/useShowPopUpContent.ts": [
+        "web/app/contexts/ShowPopUpContentContext.tsx"
+      ],
+      "web/app/hooks/useUser.ts": [
+        "web/app/contexts/UserContext.tsx"
+      ],
+      "web/app/hooks/useWindowDimensions.ts": [],
+      "web/app/hooks/useYearPeriod.ts": [
+        "web/app/contexts/YearPeriodContext.tsx"
+      ],
+      "web/app/layout.tsx": [
+        "web/app/contexts/ClassesToShowContext.tsx",
+        "web/app/contexts/SchedulesContext.tsx",
+        "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+        "web/app/contexts/UserContext.tsx",
+        "web/app/contexts/YearPeriodContext.tsx"
+      ],
+      "web/app/not-found.tsx": [],
+      "web/app/page.tsx": [
+        "web/app/components/LoadingScreen.tsx",
+        "web/app/components/LogoImageHandler.tsx",
+        "web/app/components/SignInSection.tsx",
+        "web/app/hooks/useUser.ts"
+      ],
+      "web/app/schedules/home/components/AddDisciplineButton.tsx": [
+        "web/app/components/Button.tsx",
+        "web/app/hooks/useShowPopUpContent.ts",
+        "web/app/hooks/useWindowDimensions.ts"
+      ],
+      "web/app/schedules/home/components/GenerateScheduleButton.tsx": [
+        "web/app/components/Button.tsx",
+        "web/app/components/Modal/Modal.tsx",
+        "web/app/contexts/SchedulesContext.tsx",
+        "web/app/hooks/useClassesToShow.ts",
+        "web/app/hooks/useSchedules.ts",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/hooks/useUser.ts",
+        "web/app/utils/api/generateSchedule.ts",
+        "web/app/utils/toast.ts"
+      ],
+      "web/app/schedules/home/handlers/ClickOutsideHandler.tsx": [
+        "web/app/hooks/useShowPopUpContent.ts"
+      ],
+      "web/app/schedules/home/page.tsx": [
+        "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+        "web/app/components/DisciplineBox.tsx",
+        "web/app/contexts/SelectedClassesContext/types.ts",
+        "web/app/contexts/ShowPopUpContentContext.tsx",
+        "web/app/hooks/useClassesToShow.ts",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/schedules/home/components/AddDisciplineButton.tsx",
+        "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+        "web/app/schedules/home/handlers/ClickOutsideHandler.tsx"
+      ],
+      "web/app/schedules/info/page.tsx": [],
+      "web/app/schedules/layout.tsx": [
+        "web/app/components/AsideButton.tsx",
+        "web/app/components/Button.tsx",
+        "web/app/components/InfoHeader.tsx",
+        "web/app/components/LoadingScreen.tsx",
+        "web/app/components/Protected.tsx",
+        "web/app/hooks/useUser.ts",
+        "web/app/hooks/useWindowDimensions.ts"
+      ],
+      "web/app/schedules/mygrades/page.tsx": [
+        "web/app/components/SchedulePreview/SchedulePreview.tsx",
+        "web/app/hooks/useSchedules.ts"
+      ],
+      "web/app/schedules/profile/page.tsx": [
+        "web/app/components/Button.tsx",
+        "web/app/components/Modal/Modal.tsx",
+        "web/app/hooks/useClassesToShow.ts",
+        "web/app/hooks/useSchedules.ts",
+        "web/app/hooks/useSelectedClasses.ts",
+        "web/app/hooks/useUser.ts",
+        "web/app/utils/api/logout.ts",
+        "web/app/utils/signInWithGoogle.ts"
+      ],
+      "web/app/utils/api/deleteSchedule.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settingsWithAuth.ts"
+      ],
+      "web/app/utils/api/generateSchedule.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/api/getSchedules.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settingsWithAuth.ts"
+      ],
+      "web/app/utils/api/logout.ts": [
+        "web/app/contexts/UserContext.tsx",
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/api/registerWithGoogle.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/api/retrieveYearAndPeriod.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/api/saveSchedule.ts": [
+        "web/app/contexts/SchedulesContext.tsx",
+        "web/app/utils/request.ts",
+        "web/app/utils/settingsWithAuth.ts"
+      ],
+      "web/app/utils/api/searchDiscipline.ts": [
+        "web/app/utils/request.ts",
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/dates.ts": [],
+      "web/app/utils/request.ts": [],
+      "web/app/utils/retrieveAccessToken.ts": [],
+      "web/app/utils/settings.ts": [],
+      "web/app/utils/settingsWithAuth.ts": [
+        "web/app/utils/settings.ts"
+      ],
+      "web/app/utils/signInWithGoogle.ts": [],
+      "web/app/utils/toast.ts": [],
+      "web/tailwind.config.ts": []
+    },
+    "complementos_ast": [],
+    "estado": "Grafo complementado por inspeção AST; ver parecer do piloto"
+  }
+}

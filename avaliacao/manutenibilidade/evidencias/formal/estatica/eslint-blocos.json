@@ -1,0 +1,1280 @@
+[
+  {
+    "arquivo": "web/app/components/AsideButton.tsx",
+    "linha": 13,
+    "nome": "Function 'AsideButton' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 15,
+    "nome": "Function 'checkDisciplineObj' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 25,
+    "nome": "Function 'createNewClassInfo' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 38,
+    "nome": "Function 'AsideSchedulePopUpJSX' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 51,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 65,
+    "nome": "Function 'AsideSchedulePopUp' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 70,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/AsideSchedulePopUp.tsx",
+    "linha": 74,
+    "nome": "Function 'handleSelectClass' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+    "linha": 16,
+    "nome": "Function 'ClassInfoBox' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/ClassInfoBox.tsx",
+    "linha": 20,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 20,
+    "nome": "Function 'DisciplineFragmentJSX' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 29,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 42,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 45,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 54,
+    "nome": "Function 'DisciplineFragment' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 57,
+    "nome": "Function 'handleDisciplineToggle' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/DisciplineFragment.tsx",
+    "linha": 59,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 19,
+    "nome": "Function 'Form' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 32,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 35,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 46,
+    "nome": "Function 'getYearAndPeriod' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 53,
+    "nome": "Function 'handleChangeYearAndPeriod' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 59,
+    "nome": "Function 'DisciplineOptionForm' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 64,
+    "nome": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 72,
+    "nome": "Function 'handleYearAndPeriodChange' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/DisciplineOptionForm.tsx",
+    "linha": 77,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 19,
+    "nome": "Function 'Form' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 29,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 43,
+    "nome": "Async function 'makeDisciplineSearch' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 47,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 52,
+    "nome": "Async function 'handleDisciplineSearch' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 61,
+    "nome": "Function 'InputForm' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Form/InputForm.tsx",
+    "linha": 65,
+    "nome": "Async function 'handleSearch' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 17,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 21,
+    "nome": "Function 'Tooltip' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 25,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 26,
+    "nome": "Function 'keyPress' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 32,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 40,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/AsideSchedulePopUp/Tooltip.tsx",
+    "linha": 51,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Button.tsx",
+    "linha": 8,
+    "nome": "Function 'Button' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 11,
+    "nome": "Function 'generateSpecialDates' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 12,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 17,
+    "nome": "Function 'make_days' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 18,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 36,
+    "nome": "Function 'ClassInfo' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/ClassInfo.tsx",
+    "linha": 48,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/DisciplineBox.tsx",
+    "linha": 22,
+    "nome": "Function 'DisciplineBox' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/DisciplineBox.tsx",
+    "linha": 25,
+    "nome": "Function 'handleDeleteClass' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/InfoHeader.tsx",
+    "linha": 15,
+    "nome": "Function 'InfoHeader' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/LoadingScreen.tsx",
+    "linha": 3,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/LogoImageHandler.tsx",
+    "linha": 11,
+    "nome": "Function 'LogoImageHandler' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/Modal/Modal.tsx",
+    "linha": 11,
+    "nome": "Function 'Modal' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/Modal/Modal.tsx",
+    "linha": 18,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Protected.tsx",
+    "linha": 14,
+    "nome": "Function 'Protected' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/Protected.tsx",
+    "linha": 19,
+    "nome": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 14,
+    "nome": "Function 'Schedule' has a complexity of 7. Maximum allowed is 0.",
+    "cc": 7
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 27,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 33,
+    "nome": "Function 'addClassToSchedule' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 37,
+    "nome": "Arrow function has a complexity of 6. Maximum allowed is 0.",
+    "cc": 6
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 59,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 74,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 82,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 88,
+    "nome": "Arrow function has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 103,
+    "nome": "Arrow function has a complexity of 5. Maximum allowed is 0.",
+    "cc": 5
+  },
+  {
+    "arquivo": "web/app/components/Schedule/Schedule.tsx",
+    "linha": 113,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 26,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 28,
+    "nome": "Function 'DeleteButton' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 34,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 40,
+    "nome": "Function 'DeleteModalHandler' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 52,
+    "nome": "Async function 'handleDelete' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 63,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 64,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 70,
+    "nome": "Function 'handleDate' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 80,
+    "nome": "Function 'BottomPart' has a complexity of 6. Maximum allowed is 0.",
+    "cc": 6
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 99,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 113,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 125,
+    "nome": "Function 'UploadToCloudButton' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 134,
+    "nome": "Function 'handleSuccessToSave' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 135,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 138,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 142,
+    "nome": "Function 'handleErrorToSave' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 153,
+    "nome": "Async function 'handleUploadToCloud' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 154,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 156,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 160,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 166,
+    "nome": "Function 'handleDownloadPDF' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 171,
+    "nome": "Method 'callback' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 179,
+    "nome": "Function 'SchedulePreview' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 193,
+    "nome": "Async function 'handleDeleteCloud' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 197,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 199,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 203,
+    "nome": "Function 'handleDeleteLocal' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 209,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 211,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SchedulePreview/SchedulePreview.tsx",
+    "linha": 223,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 24,
+    "nome": "Function 'SignInSection' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 29,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 33,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 35,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 45,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/components/SignInSection.tsx",
+    "linha": 54,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/ClassesToShowContext.tsx",
+    "linha": 18,
+    "nome": "Function 'ClassesToShowContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 40,
+    "nome": "Function 'SchedulesContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 46,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 52,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 58,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 60,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 70,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SchedulesContext.tsx",
+    "linha": 73,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 16,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 21,
+    "nome": "Function 'handleMaxDisciplinesError' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 27,
+    "nome": "Function 'handleMaxClassesError' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 28,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 35,
+    "nome": "Function 'ProviderJSX' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 43,
+    "nome": "Function 'SelectedClassesContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 48,
+    "nome": "Function 'handleNoError' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx",
+    "linha": 54,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/contexts/ShowPopUpContentContext.tsx",
+    "linha": 14,
+    "nome": "Function 'ShowPopUpContentContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 38,
+    "nome": "Function 'UserContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 44,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 45,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 55,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 61,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 63,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/contexts/UserContext.tsx",
+    "linha": 67,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/YearPeriodContext.tsx",
+    "linha": 17,
+    "nome": "Function 'YearPeriodContextProvider' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/YearPeriodContext.tsx",
+    "linha": 20,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/contexts/YearPeriodContext.tsx",
+    "linha": 21,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useClassesToShow.ts",
+    "linha": 6,
+    "nome": "Function 'useClassesToShow' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useSchedules.ts",
+    "linha": 6,
+    "nome": "Function 'useSchedules' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useSelectedClasses.ts",
+    "linha": 6,
+    "nome": "Function 'useSelectedClasses' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useShowPopUpContent.ts",
+    "linha": 6,
+    "nome": "Function 'useShowPopUpContent' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useUser.ts",
+    "linha": 6,
+    "nome": "Function 'useUser' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useWindowDimensions.ts",
+    "linha": 9,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useWindowDimensions.ts",
+    "linha": 16,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useWindowDimensions.ts",
+    "linha": 17,
+    "nome": "Function 'handleResize' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useWindowDimensions.ts",
+    "linha": 28,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/hooks/useYearPeriod.ts",
+    "linha": 6,
+    "nome": "Function 'useYearPeriod' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/layout.tsx",
+    "linha": 33,
+    "nome": "Function 'RootLayout' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/not-found.tsx",
+    "linha": 3,
+    "nome": "Function 'NotFound' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/page.tsx",
+    "linha": 11,
+    "nome": "Function 'Welcome' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/AddDisciplineButton.tsx",
+    "linha": 11,
+    "nome": "Function 'AddDisciplineButton' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/AddDisciplineButton.tsx",
+    "linha": 19,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 18,
+    "nome": "Function 'PreferenceOrder' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 22,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 33,
+    "nome": "Function 'GenerateScheduleButton' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 46,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 48,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 49,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 55,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 66,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 98,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/components/GenerateScheduleButton.tsx",
+    "linha": 105,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "linha": 15,
+    "nome": "Function 'ClickOutsideHandler' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "linha": 19,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "linha": 20,
+    "nome": "Arrow function has a complexity of 5. Maximum allowed is 0.",
+    "cc": 5
+  },
+  {
+    "arquivo": "web/app/schedules/home/handlers/ClickOutsideHandler.tsx",
+    "linha": 32,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 18,
+    "nome": "Function 'DisciplineBlockJSX' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 43,
+    "nome": "Function 'Home' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 49,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 51,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 51,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/home/page.tsx",
+    "linha": 61,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 4,
+    "nome": "Function 'CollaboratorImage' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 23,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 40,
+    "nome": "Function 'About' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 53,
+    "nome": "Function 'HowToUse' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 64,
+    "nome": "Function 'HowToContribute' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 75,
+    "nome": "Function 'Collaborators' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/info/page.tsx",
+    "linha": 84,
+    "nome": "Function 'Info' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 21,
+    "nome": "Function 'calculatePositionOfBlob' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 29,
+    "nome": "Function 'LogoReturnButton' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 35,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 46,
+    "nome": "Function 'footerRefCallback' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 61,
+    "nome": "Function 'asideRefCallback' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 69,
+    "nome": "Function 'AsideButtonsJSX' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 74,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 82,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 93,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 94,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 95,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 96,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 101,
+    "nome": "Function 'LayoutJSX' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/layout.tsx",
+    "linha": 120,
+    "nome": "Function 'SchedulesLayout' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/mygrades/page.tsx",
+    "linha": 7,
+    "nome": "Function 'RenderLocalSchedules' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/mygrades/page.tsx",
+    "linha": 15,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/mygrades/page.tsx",
+    "linha": 24,
+    "nome": "Function 'RenderCloudSchedules' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/mygrades/page.tsx",
+    "linha": 32,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/schedules/mygrades/page.tsx",
+    "linha": 40,
+    "nome": "Function 'MyGrades' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 21,
+    "nome": "Function 'Profile' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 32,
+    "nome": "Function 'handleLogoutAndRedirect' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 49,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 52,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 75,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/schedules/profile/page.tsx",
+    "linha": 78,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/api/deleteSchedule.ts",
+    "linha": 4,
+    "nome": "Async function 'deleteSchedule' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/api/generateSchedule.ts",
+    "linha": 8,
+    "nome": "Async function 'generateSchedule' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/api/getSchedules.ts",
+    "linha": 4,
+    "nome": "Async function 'getSchedules' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/api/logout.ts",
+    "linha": 15,
+    "nome": "Function 'handleLogout' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/api/logout.ts",
+    "linha": 22,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/api/logout.ts",
+    "linha": 27,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/api/registerWithGoogle.ts",
+    "linha": 5,
+    "nome": "Async function 'registerWithGoogle' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/api/retrieveYearAndPeriod.ts",
+    "linha": 10,
+    "nome": "Async function 'retrieveYearAndPeriod' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/api/saveSchedule.ts",
+    "linha": 6,
+    "nome": "Async function 'saveSchedule' has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/api/searchDiscipline.ts",
+    "linha": 24,
+    "nome": "Async function 'searchDiscipline' has a complexity of 4. Maximum allowed is 0.",
+    "cc": 4
+  },
+  {
+    "arquivo": "web/app/utils/retrieveAccessToken.ts",
+    "linha": 1,
+    "nome": "Function 'retrieveAccessToken' has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/retrieveAccessToken.ts",
+    "linha": 11,
+    "nome": "Arrow function has a complexity of 2. Maximum allowed is 0.",
+    "cc": 2
+  },
+  {
+    "arquivo": "web/app/utils/settingsWithAuth.ts",
+    "linha": 3,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/signInWithGoogle.ts",
+    "linha": 3,
+    "nome": "Function 'signInWithGoogle' has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/utils/toast.ts",
+    "linha": 9,
+    "nome": "Arrow function has a complexity of 3. Maximum allowed is 0.",
+    "cc": 3
+  },
+  {
+    "arquivo": "web/app/utils/toast.ts",
+    "linha": 21,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  },
+  {
+    "arquivo": "web/app/utils/toast.ts",
+    "linha": 23,
+    "nome": "Arrow function has a complexity of 1. Maximum allowed is 0.",
+    "cc": 1
+  }
+]

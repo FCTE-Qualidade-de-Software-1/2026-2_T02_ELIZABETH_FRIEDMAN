@@ -1,0 +1,16 @@
+{
+  "skipped": [
+    "next/image",
+    "react",
+    "lodash",
+    "react-hot-toast",
+    "axios",
+    "next/navigation",
+    "next/dist/shared/lib/app-router-context.shared-runtime",
+    "jspdf",
+    "next",
+    "next/font/google",
+    "next/link",
+    "tailwindcss"
+  ]
+}
