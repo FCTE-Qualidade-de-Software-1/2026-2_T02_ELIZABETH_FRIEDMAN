@@ -1,0 +1,16 @@
+metrica,recorte,numerador,denominador,percentual,cobertura,nota,observacao
+M6,computador / conta,0,1,0%,1 de 2 sessões previstas,0,"Nota já determinada: mesmo com sucesso na sessão que falta, o máximo seria 50%, abaixo de 80%"
+M6,celular / conta,,,,0 de 2 sessões,Não avaliada,Sem sessões no celular
+M7,computador / M7-SEL,1,1,100%,1 de 2 sessões,Sem nota,Cobertura parcial; com a sessão que falta o valor ficaria entre 50% e 100%
+M7,computador / M7-ALT,1,1,100%,1 de 2 sessões,Sem nota,Cobertura parcial
+M7,computador / M7-REM,1,1,100%,1 de 2 sessões,Sem nota,Cobertura parcial
+M7,celular (todas as tarefas),,,,0 de 2 sessões,Não avaliada,Sem sessões no celular
+M8,computador / navegador,3,4,75%,4 de 6 cenários (R05b e R06 não coletados),0,R04 (recarregar durante a montagem) sem proteção
+M8,computador / conta,1,1,100%,1 de 1 cenário,3,R02 com confirmação
+M8,celular / navegador,4,5,80%,5 de 6 cenários (R06 não coletado),0,R04 (recarregar durante a montagem) sem proteção
+M8,celular / conta,1,1,100%,1 de 1 cenário,3,R02 com confirmação
+M9,computador / V01,1,1,100%,1 de 2 sessões,Sem nota,Cobertura parcial
+M9,computador / V02,,,,0 de 2 sessões,Sem nota,Não coletado: carregamento não foi perguntado
+M9,computador / V03,1,1,100%,1 de 2 sessões,Sem nota,Cobertura parcial
+M9,computador / V04,,,,0 de 2 sessões,Sem nota,Não coletado: grade não chegou a ser salva na conta
+M9,celular (todos os pontos),,,,0 de 2 sessões,Não avaliada,Sem sessões no celular
