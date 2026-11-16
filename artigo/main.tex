@@ -332,11 +332,11 @@ matrícula real. As sessões de M6 a M9 usam o site oficial
 (\url{https://suagradeunb.com.br/}), com os dados reais do período corrente, no
 computador ou no celular do próprio participante, com a tela compartilhada em
 chamada on-line. Assim, não há ambiente local nem massa de referência nessas
-métricas, e a versão em produção pode diferir do \textit{commit} \texttt{3d399e7}:
-a data da sessão e a versão observada são registradas, e as conclusões de M6 a M9
-valem para a versão em produção naquela data. As tarefas usam grades descartáveis
-e não envolvem dados de outros usuários. O acesso é o de um estudante comum, em
-poucas sessões. % TODO (equipe): confirmar quais disciplinas e turmas reais as tarefas usarão e se há conta de teste para os cenários de M8 e M9 que dependem de login.
+métricas. Em 15 e 16/11/2026, o último \textit{commit} do produto e o último
+\textit{deployment} em produção eram o \texttt{3d399e7}, a mesma versão das
+demais métricas; as conclusões de M6 a M9 valem para a versão em produção nessas
+datas. O participante entra com a própria conta Google, e M8 usa a conta de um
+integrante da equipe, com grades descartáveis.
 Os participantes são estudantes adultos sem uso prévio, com conhecimento básico
 de navegador e do conceito de disciplina e turma: planeja-se quatro, dois por
 dispositivo, com um suplente por grupo, em amostra exploratória por
@@ -366,9 +366,30 @@ sessão da conta de teste e a persistência da grade em M5. O piloto de M6 a M9
 aguardava participantes.
 
 \paragraph{Execução e conclusão.}
-% TODO: completar após a Fase 4 com a execução, a análise e o julgamento.
-A execução, a análise das respostas ao GQM e o julgamento são atividades da
-Fase~4 e serão descritos na versão seguinte.
+% TODO: completar com o julgamento (#45) e a ação de melhoria (#46).
+As medidas de G1 foram coletadas em 12/11/2026 (M1.3) e 15/11/2026 (M1.1, M1.2 e
+M1.4), e as de G2, em uma rodada formal em 15/11/2026, com 30 tentativas medidas
+por cenário. Nessa rodada, 20 tentativas do cenário de M3 com uma turma já
+selecionada falharam na preparação, antes do clique medido, por uma condição de
+corrida no próprio roteiro. Pela regra de validade da Fase~2, defeito no roteiro
+deixa o cenário não avaliado, e não insatisfatório. Depois da correção do roteiro,
+M3 foi coletada de novo em 16/11/2026, com os dois cenários na mesma rodada, para
+que a nota da métrica não misture ambientes. Essa recoleta não usou o ambiente
+descrito acima: o produto rodou no mesmo \textit{commit} e com a mesma massa, mas
+fora de contêineres, com Node 22 e Chromium 153, em uma máquina virtual Linux com
+2 vCPUs. Em M1.3, o executor informou ter concluído cada mudança em 20 minutos,
+cronometrados no próprio celular e sem registro da execução; na verificação
+posterior, o \textit{patch} de C1 passou na suíte completa e o de C2 reprovou em
+9 testes. As quatro sessões de G3 foram feitas em 15/11/2026, duas no
+computador e duas no celular, e a inspeção de M8, nos dois dispositivos, em
+16/11/2026. Elas se desviaram do protocolo em alguns pontos: a exploração livre
+foi mais curta que a prevista, o cartão de M6 teve três disciplinas em vez de
+duas, uma sessão usou outra plataforma de chamada, na primeira sessão a moderação
+confirmou o botão de gerar e disse que a grade estava salva, e a instrução do ponto de
+salvamento de M9 foi alterada a partir da segunda sessão, o que impediu sua
+coleta. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
+ficam no repositório do projeto; vídeos, transcrições e termos de consentimento
+ficam em acesso restrito à equipe.
 
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
@@ -421,8 +442,206 @@ funcionamento das ferramentas, mas não constitui coleta validada.
 
 \section{Resultados}\label{sec:resultados}
 
-% TODO: preencher após a Fase 4 (medições, análise das respostas ao GQM, julgamento e ação de melhoria).
-Os resultados serão apresentados após a execução da avaliação (Fase~4).
+% TODO: incluir o julgamento e as relações entre as características (#45) e a ação de melhoria (#46).
+Os resultados de cada métrica são comparados com as faixas da Fase~2 sem
+arredondamento prévio. A nota de uma métrica é a menor entre seus recortes e só é
+atribuída quando todos os recortes previstos foram avaliados; as notas não são
+combinadas em média.
+
+\subsection{G1: Manutenibilidade}\label{subsec:res-g1}
+
+A Tabela~\ref{tab:res-g1} reúne os valores de G1 no \textit{commit}
+\texttt{3d399e7}. Os blocos de M1.2 da API incluem os do \textit{scraper} e os do
+gerador.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G1 por métrica e recorte}
+\label{tab:res-g1}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] Q[l] X[l] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,8,10} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Recorte & Resultado & Nota \\
+M1.1 & API & 2 de 50 arquivos em ciclo (4,00\%) & 2 \\
+ & \textit{Frontend} & 3 de 60 arquivos em ciclo (5,00\%) & 2 \\
+M1.2 & API & 1 de 137 blocos com CC $> 10$ (0,73\%) & 3 \\
+ & \textit{Frontend} & 0 de 213 blocos (0,00\%) & 3 \\
+ & \textit{Scraper} & 0 de 18 blocos (0,00\%) & 3 \\
+ & Gerador & 0 de 15 blocos (0,00\%) & 3 \\
+M1.3 & C1 & 20 min, autodeclarado; \textit{patch} aprovado na suíte & Sem nota \\
+ & C2 & 20 min, autodeclarado; \textit{patch} reprovado em 9 testes & Sem nota \\
+M1.4 & API & 1.143 de 1.396 linhas cobertas (81,88\%) & 2 \\
+ & \textit{Scraper} & 156 de 160 linhas (97,50\%) & 3 \\
+ & Gerador & 140 de 141 linhas (99,29\%) & 3 \\
+\end{tblr}
+\end{table}
+
+\textbf{Q1.1 (Modularidade).} Sim, nas condições medidas. Na API, dois arquivos se
+importam mutuamente (\texttt{api/serializers.py} e \texttt{utils/db\_handler.py});
+no \textit{frontend}, o ciclo envolve três arquivos ligados ao usuário autenticado
+e se fecha por uma referência de tipo. Os dois recortes recebem nota~2, e H1.1 é
+sustentada. O \textit{frontend} está no limite superior dessa faixa: um arquivo a
+mais em ciclo o levaria à nota~1.
+
+\textbf{Q1.2 (Analisabilidade).} Sim. Só um dos 137 blocos da API passa de
+CC~10 (\texttt{GenerateSchedule.post}, com CC~15), e o \textit{frontend} não tem
+nenhum. Nos componentes críticos, a maior CC é 7 no \textit{scraper} e 6 no
+gerador. Os quatro recortes recebem nota~3, e H1.2 é sustentada.
+
+\textbf{Q1.3 (Modificabilidade).} Inconclusiva. O tempo das duas mudanças foi
+autodeclarado, sem registro da execução, e o \textit{patch} de C2 não cumpre o
+critério de conclusão: dos 114 testes, 9 falham, 8 deles nos próprios testes
+novos. Por isso M1.3 não recebe nota e H1.3 fica inconclusiva. A CC baixa e a
+cobertura alta do \textit{scraper} e do gerador são contexto, mas não mostram que
+uma mudança seja rápida e sem regressão; responder Q1.3 exige uma execução
+cronometrada e registrada por quem não conheça as mudanças.
+
+\textbf{Q1.4 (Testabilidade).} Sim. A suíte de 108 testes passou e cobre 81,88\%
+das linhas da API (nota~2), 97,50\% do \textit{scraper} e 99,29\% do gerador
+(nota~3), e H1.4 é sustentada. Sete arquivos sem nenhuma linha executada
+concentram 211 das 253 linhas não cobertas da API, com destaque para o comando
+\texttt{updatedb} (122 linhas), que atualiza a base a partir do SIGAA.
+
+Assim, G1 tem três hipóteses sustentadas (H1.1, H1.2 e H1.4) e uma inconclusiva
+(H1.3), e não recebe nota única. As limitações são o uso de indicadores
+indiretos em um único \textit{commit}, a cobertura medida só por linhas e a
+ausência de testes no \textit{frontend}.
+
+\subsection{G2: Eficiência de desempenho}\label{subsec:res-g2}
+
+A Tabela~\ref{tab:res-g2} mostra o P95 de cada cenário. M2, M4 e M5 vêm da rodada
+de 15/11/2026; M3, da recoleta de 16/11/2026. Todos os cenários tiveram 30
+sucessos em 30 tentativas medidas, sem erro e sem expiração.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G2 por cenário (30 tentativas medidas em cada)}
+\label{tab:res-g2}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] X[l] Q[r] Q[r] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,6,8} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Cenário & P95 (ms) & \% do limite & Nota \\
+M2 & Busca por nome (3 disciplinas) & 30,8 & 1,5\% & 3 \\
+ & Busca por código (1 disciplina) & 31,0 & 1,6\% & 3 \\
+M3 & Seleção sem turma anterior & 38,5 & 3,8\% & 3 \\
+ & Seleção com uma turma já selecionada & 33,5 & 3,4\% & 3 \\
+M4 & Geração com 2 turmas (1 grade) & 649,3 & 6,5\% & 3 \\
+ & Geração com 16 turmas (5 grades) & 700,7 & 7,0\% & 3 \\
+M5 & Salvamento na conta & 53,0 & 2,6\% & 3 \\
+\end{tblr}
+\end{table}
+
+\textbf{Q2 (Busca).} Sim. As 60 buscas retornaram exatamente as disciplinas
+esperadas, com P95 de cerca de 31~ms, 1,5\% do limite de 2000~ms. M2 recebe
+nota~3, e H2 é sustentada.
+
+\textbf{Q3 (Seleção).} Sim, nas condições da recoleta. As 60 seleções marcaram a
+turma, atualizaram os cartões e habilitaram a geração, com P95 de 38,5~ms sem
+turma anterior e 33,5~ms com uma turma da mesma disciplina já selecionada. M3
+recebe nota~3, e H3 é sustentada.
+
+\textbf{Q4 (Geração).} Sim. Os 60 acionamentos chegaram à tela de grades com o
+número esperado de grades, com P95 de 649,3 e 700,7~ms, até 7\% do limite de
+10000~ms. Cerca de 500~ms de cada tempo vêm de uma espera fixa do próprio
+produto antes de esconder a tela de carregamento. Passar de 2 para 16 turmas
+(de 1 para 128 combinações candidatas) aumentou o P95 em 51~ms. M4 recebe nota~3,
+e H4 é sustentada.
+
+\textbf{Q5 (Salvamento).} Sim. Nas 30 tentativas, a interface confirmou o
+salvamento e a grade continuava na conta depois de recarregar a página. O P95 foi
+de 53,0~ms, 2,6\% do limite de 2000~ms. M5 recebe nota~3, e H5 é sustentada.
+
+Assim, G2 é atendido nas condições avaliadas: as quatro hipóteses foram
+sustentadas, e nenhum P95 passou de 7\% do respectivo limite. Essas condições
+restringem o alcance do resultado. As medidas são locais, com um único usuário,
+sem concorrência e com o \textit{frontend} em modo de desenvolvimento, e a massa
+tem só 14 disciplinas e 43 turmas; por isso, não representam o site público no
+pico de matrícula. O fim de cada medida é o primeiro quadro de tela com o sinal
+completo, e os quadros têm 16,7~ms, o que limita a precisão dos tempos de cerca de
+30~ms. Por fim, M3 foi medida em ambiente diferente do das demais métricas; os
+dois cenários de M3 estão no mesmo ambiente, mas seus tempos não são comparáveis
+em valor absoluto com os de M2, M4 e M5.
+
+\subsection{G3: Capacidade de interação}\label{subsec:res-g3}
+
+A Tabela~\ref{tab:res-g3} resume os recortes de G3. Um recorte sem cobertura
+completa fica sem nota, exceto quando a nota~0 já está determinada. No celular,
+a troca e a remoção de turma de uma das sessões foram invalidadas, porque a lista
+final de turmas não foi exibida.
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados de G3 por métrica e recorte}
+\label{tab:res-g3}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] X[l] Q[c] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  hline{4,8,10} = {0.4pt},
+  rowsep = 1pt,
+}
+Métrica & Recorte & Resultado & Nota \\
+M6 & Computador & 0 de 2 (0\%) & 0 \\
+ & Celular & 1 de 2 (50\%) & 0 \\
+M7 & Computador: seleção e remoção & 2 de 2 em cada (100\%) & 3 \\
+ & Computador: troca de turma & 1 de 2 (50\%) & 0 \\
+ & Celular: seleção & 1 de 2 (50\%) & 0 \\
+ & Celular: troca e remoção & 1 de 1 em cada (cobertura parcial) & Sem nota \\
+M8 & Navegador (computador / celular) & 3 de 4 (75\%) / 4 de 5 (80\%) & 0 \\
+ & Conta (computador / celular) & 1 de 1 (100\%) em cada & 3 \\
+M9 & Computador: seleção e geração concluída & 2 de 2 em cada (100\%) & 3 \\
+ & Celular: seleção e geração concluída & 1 de 2 em cada (50\%) & 0 \\
+ & Geração em andamento e salvamento & Não coletados & Não avaliado \\
+\end{tblr}
+\end{table}
+
+\textbf{Q6 (Aprendizagem).} Não. Os quatro participantes selecionaram as turmas
+do cartão e geraram a grade correta, mas só um, no celular, salvou a grade na
+conta e a recuperou depois de recarregar a página. Nos outros três casos, a grade
+ficou só no navegador, e um participante afirmou que ela já estava disponível. M6
+tem nota~0 nos dois dispositivos, e H6 é contrariada.
+
+\textbf{Q7 (Operabilidade).} Não, nas condições avaliadas. Selecionar e remover
+turmas funcionou no computador, mas na troca um participante incluiu a nova
+turma sem remover a anterior, e no celular outro deixou de selecionar uma
+disciplina. Não houve bloqueio de controle; as falhas foram de execução da
+tarefa. Para achar uma turma pelo professor em listas longas, os participantes
+leram a lista inteira ou usaram a busca do próprio navegador. H7 é contrariada.
+
+\textbf{Q8 (Proteção contra erros).} Não. Excluir uma grade e sair com uma grade
+não salva pedem confirmação, e cancelar preserva a grade. Já recarregar a página
+durante a montagem apaga as turmas selecionadas sem aviso, o que leva a
+modalidade navegador à nota~0 nos dois dispositivos; a modalidade conta tem
+nota~3. H8 é contrariada.
+
+\textbf{Q9 (Autodescrição).} Não no celular. No computador, os pontos coletados
+tiveram estado e ação descritos corretamente; no celular, um participante não
+descreveu o estado depois da seleção nem depois da geração. A geração em
+andamento não foi perguntada, e o salvamento não foi alcançado, porque os
+participantes baixaram o PDF da grade. H9 é contrariada no celular.
+
+Assim, as quatro hipóteses de G3 foram contrariadas em algum recorte. O obstáculo
+mais frequente é o salvamento: a interface não deixa claro que a grade gerada
+fica só no navegador e que salvar na conta é outra ação. Ele aparece em Q6 e Q9
+e, junto com a perda das seleções ao recarregar a página (Q8), é o principal
+candidato à ação de melhoria. Os resultados vêm de uma amostra de conveniência de
+quatro pessoas, uma delas com vínculo pessoal com um integrante da equipe, e dos
+desvios de protocolo descritos na Seção~\ref{subsec:fases34}; servem para
+identificar obstáculos, e não para estimar taxas de sucesso.
 
 \section{Conclusão}\label{sec:conclusao}
 

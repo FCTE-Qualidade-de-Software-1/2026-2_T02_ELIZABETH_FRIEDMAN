@@ -17,8 +17,8 @@ Artigo da equipe no modelo de artigos da SBC (coluna única, pacote `sbc-templat
 | Resumo e abstract | Versão curta; revisar após a Fase 4 (o modelo limita a 10 linhas) | |
 | 1. Introdução | Escrita e reduzida | #9, #24 |
 | 2. Referencial teórico (SQuaRE, ISO/IEC 25010:2023, ISO/IEC 25040, GQM e PSM) | Escrito e reduzido | #9, #24 |
-| 3. Metodologia (Fases 1 e 2, PSM/CID e ferramentas) | Escrita e reduzida; Fases 3 e 4 após a Fase 3 | #8, #10, #24 |
-| 4. Resultados | Após a Fase 4 | |
+| 3. Metodologia (Fases 1 a 4, PSM/CID e ferramentas) | Escrita; execução da Fase 4 com G1, G2 e G3; faltam julgamento e ação de melhoria | #8, #10, #24, #47 |
+| 4. Resultados | G1, G2 e G3 escritos; faltam julgamento e ação de melhoria | #47 |
 | 5. Conclusão | Após a Fase 4 | |
 | Contribuições e uso de IA | Rascunho; contribuições CRediT e declaração de IA a revisar | #10 |
 
