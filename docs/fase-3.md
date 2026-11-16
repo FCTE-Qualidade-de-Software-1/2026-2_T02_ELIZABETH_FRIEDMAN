@@ -651,12 +651,14 @@ em **Depende de**. A coluna **Situação** vale para 12/11/2026. Todas as ativid
 | #49 | Correções do PC1 e largura do site | Eduardo | 10/11 | 10/11 | n/a | n/a | Concluída |
 | #63 | Correção da Fase 2: M5 restrita ao salvamento na conta | Eduardo | 12/11 | 12/11 | M5 | #39 | PR em revisão |
 | #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 13/11 | 18/11 | n/a | #38–#41 | A iniciar |
+| #68 | Artigo: atualização até o PC2 (Fase 3) | Joaquim | 15/11 | 15/11 | n/a | #41 | A iniciar |
+| #67 | Entrega do PC2: GitPage e *release* v1.1 | Eduardo | 15/11 | 15/11 | n/a | #68 | A iniciar |
 | #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | Kaleb | 13/11 | 17/11 | M1.1–M1.4 | #38 | A iniciar |
 | #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 13/11 | 17/11 | M2–M5 | #39, #63 | A iniciar |
 | #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 13/11 | 17/11 | M6–M9 | #40 | A iniciar |
 | #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 18/11 | 19/11 | M1.1–M9 | #42–#44 | A iniciar |
 | #46 | Fase 4: ação de melhoria | Lucas | 20/11 | 20/11 | n/a | #45 | A iniciar |
-| #47 | Artigo: metodologia, resultados e conclusão | João | 20/11 | 20/11 | n/a | #41–#46 | A iniciar |
+| #47 | Artigo: Fase 4, resultados e conclusão | João | 20/11 | 20/11 | n/a | #42–#46, #68 | A iniciar |
 | #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 21/11 | n/a | #47 | A iniciar |
 | #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 | n/a | #48, #50 | A iniciar |
 
