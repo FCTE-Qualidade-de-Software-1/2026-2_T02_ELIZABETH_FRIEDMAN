@@ -1,0 +1,5 @@
+métrica,cenário,ambiente,versão do sistema,data,número da tentativa,aquecimento,instante inicial,instante final,duração (ms),estado,referência à evidência
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-15T21:22:16-03:00,1,sim,,,,erro,evidencias.jsonl#m3-com-selecao-aq1; evidencias/m3-com-selecao-aq1.png
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-15T21:22:18-03:00,1,não,,,,erro,evidencias.jsonl#m3-com-selecao-1; evidencias/m3-com-selecao-1.png
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-15T21:22:20-03:00,2,não,,,,erro,evidencias.jsonl#m3-com-selecao-2; evidencias/m3-com-selecao-2.png
+M3,m3-com-selecao,"local Docker Compose (db, redis, api, web); Chromium 151.0.7922.34 headless; piloto",3d399e7,2026-11-15T21:22:22-03:00,3,não,,,,erro,evidencias.jsonl#m3-com-selecao-3; evidencias/m3-com-selecao-3.png

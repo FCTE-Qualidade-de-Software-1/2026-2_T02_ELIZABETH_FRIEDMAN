@@ -1,0 +1,96 @@
+{
+  "modo": "coleta",
+  "observacao": "Coleta formal (Fase 2, 3.1).",
+  "rodada": "20261116-0102",
+  "inicio": "2026-11-16T01:02:39-03:00",
+  "produto": {
+    "repositorio": "unb-mds/2023-2-SuaGradeUnB",
+    "commit": "3d399e745383b05e8e3b1a7c97ac0fdbf93a0360",
+    "alteracoes_rastreadas": "nenhuma"
+  },
+  "playwright": "1.62.1",
+  "chromium": "153.0.8010.12",
+  "headless": true,
+  "dispositivo": "Desktop Chrome (Playwright devices), viewport 1280x720",
+  "config": {
+    "workers": 1,
+    "fullyParallel": false,
+    "retries": 0,
+    "trace": "off",
+    "screenshot": "manual",
+    "video": "off"
+  },
+  "massa": {
+    "year_period": {
+      "year/period": [
+        "2026/2",
+        "2027/1"
+      ]
+    },
+    "fonte": "avaliacao/massa/seed_referencia.py (depto 1499, 14 disciplinas, 43 turmas)"
+  },
+  "docker_ps": [
+    "falhou: Command failed: docker ps --format '{{.Names}}\\t{{.Image}}\\t{{.Status}}'"
+  ],
+  "free_h": [
+    "total        used        free      shared  buff/cache   available",
+    "Mem:           7.8Gi       1.4Gi       6.0Gi        39Mi       709Mi       6.4Gi",
+    "Swap:             0B          0B          0B"
+  ],
+  "host": {
+    "node": "v22.23.4",
+    "uname": "Linux 6.18.44-fc-v470 x86_64"
+  },
+  "mecanismo": "Início: Event.timeStamp do clique confiável; fim: performance.now() no 1º quadro (requestAnimationFrame) com o sinal completo; mesmo relógio da página.",
+  "cenarios": {
+    "m3-sem-selecao": {
+      "metrica": "M3",
+      "descricao": "Seleção de PPGPS2475/01 sem seleções anteriores",
+      "esperado": {
+        "alvo": {
+          "codigo": "PPGPS2475",
+          "turma": "01"
+        },
+        "anteriores": [],
+        "cartoes_codigo": 1,
+        "gerar_grade": "habilitado"
+      },
+      "tmax_ms": 5000,
+      "L_ms": 1000,
+      "aquecimento": 2,
+      "medidas": 30,
+      "intervalo_quadros_ms": {
+        "min": 16.6,
+        "mediana": 16.7,
+        "max": 16.8
+      }
+    },
+    "m3-com-selecao": {
+      "metrica": "M3",
+      "descricao": "Seleção de PPGPS0156/04 com PPGPS0156/02 já selecionada",
+      "esperado": {
+        "alvo": {
+          "codigo": "PPGPS0156",
+          "turma": "04"
+        },
+        "anteriores": [
+          {
+            "codigo": "PPGPS0156",
+            "turma": "02"
+          }
+        ],
+        "cartoes_codigo": 2,
+        "gerar_grade": "habilitado"
+      },
+      "tmax_ms": 5000,
+      "L_ms": 1000,
+      "aquecimento": 2,
+      "medidas": 30,
+      "intervalo_quadros_ms": {
+        "min": 16.6,
+        "mediana": 16.7,
+        "max": 16.8
+      }
+    }
+  }
+}
