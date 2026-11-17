@@ -1,0 +1,3 @@
+.next/types/app/layout.ts(8,13): error TS2344: Type 'OmitWithTag<typeof import("/tmp/suagrade-r04-antes/web/app/layout"), "metadata" | "default" | "config" | "generateStaticParams" | "revalidate" | "dynamic" | "dynamicParams" | "fetchCache" | ... 5 more ... | "generateViewport", "">' does not satisfy the constraint '{ [x: string]: never; }'.
+  Property 'poppins' is incompatible with index signature.
+    Type 'NextFontWithVariable' is not assignable to type 'never'.

@@ -1,0 +1,212 @@
+[
+  {
+    "device": "computador",
+    "scenario": "R04",
+    "status": "passou",
+    "observed": "Mesma turma restaurada após recarga",
+    "at": "2026-11-17T02:08:57.578Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "segunda-recarga",
+    "status": "passou",
+    "observed": "Rascunho não sobrescrito pelo estado inicial vazio",
+    "at": "2026-11-17T02:08:58.038Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "remocao",
+    "status": "passou",
+    "observed": "Só a segunda turma permanece após recarga",
+    "at": "2026-11-17T02:08:59.958Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "limpeza",
+    "status": "passou",
+    "observed": "Remover a última turma apaga o rascunho",
+    "at": "2026-11-17T02:09:00.494Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "troca-periodo",
+    "status": "passou",
+    "observed": "Troca com seleção bloqueada; após limpar, outro período não ressuscita rascunho",
+    "at": "2026-11-17T02:09:02.606Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "periodo-indisponivel",
+    "status": "passou",
+    "observed": "Rascunho de período ausente da API descartado",
+    "at": "2026-11-17T02:09:03.055Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "dados-invalidos",
+    "status": "passou",
+    "observed": "JSON truncado, null, versão incompatível e ID com tipo errado ignorados",
+    "at": "2026-11-17T02:09:05.037Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "dados-atuais",
+    "status": "passou",
+    "observed": "Dados exibidos vêm da API, sem confiar no rascunho",
+    "at": "2026-11-17T02:09:05.557Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "turma-obsoleta",
+    "status": "passou",
+    "observed": "Turma que deixou de existir não restaurada",
+    "at": "2026-11-17T02:09:05.993Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "api-indisponivel",
+    "status": "passou",
+    "observed": "Rascunho mantido para tentar novamente após recarga",
+    "at": "2026-11-17T02:09:06.462Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "restauracao-concorrente",
+    "status": "passou",
+    "observed": "Resposta atrasada não sobrescreve alteração feita durante restauração",
+    "at": "2026-11-17T02:09:08.789Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "outra-aba",
+    "status": "passou",
+    "observed": "SessionStorage isolado em uma nova aba independente",
+    "at": "2026-11-17T02:09:09.827Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "limpar-toda-selecao",
+    "status": "passou",
+    "observed": "Sair executa setSelectedClasses(new Map()) e remove todo o rascunho",
+    "at": "2026-11-17T02:09:14.501Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "storage-indisponivel",
+    "status": "passou",
+    "observed": "Falhas de escrita e remoção não interrompem a seleção em memória",
+    "at": "2026-11-17T02:09:16.481Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "erros-javascript",
+    "status": "passou",
+    "observed": "Nenhum pageerror observado",
+    "at": "2026-11-17T02:09:16.481Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "R04",
+    "status": "passou",
+    "observed": "Mesma turma restaurada após recarga",
+    "at": "2026-11-17T02:09:19.047Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "segunda-recarga",
+    "status": "passou",
+    "observed": "Rascunho não sobrescrito pelo estado inicial vazio",
+    "at": "2026-11-17T02:09:19.541Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "remocao",
+    "status": "passou",
+    "observed": "Só a segunda turma permanece após recarga",
+    "at": "2026-11-17T02:09:21.770Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "limpeza",
+    "status": "passou",
+    "observed": "Remover a última turma apaga o rascunho",
+    "at": "2026-11-17T02:09:22.313Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "troca-periodo",
+    "status": "passou",
+    "observed": "Troca com seleção bloqueada; após limpar, outro período não ressuscita rascunho",
+    "at": "2026-11-17T02:09:24.397Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "periodo-indisponivel",
+    "status": "passou",
+    "observed": "Rascunho de período ausente da API descartado",
+    "at": "2026-11-17T02:09:24.909Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "dados-invalidos",
+    "status": "passou",
+    "observed": "JSON truncado, null, versão incompatível e ID com tipo errado ignorados",
+    "at": "2026-11-17T02:09:26.842Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "dados-atuais",
+    "status": "passou",
+    "observed": "Dados exibidos vêm da API, sem confiar no rascunho",
+    "at": "2026-11-17T02:09:27.367Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "turma-obsoleta",
+    "status": "passou",
+    "observed": "Turma que deixou de existir não restaurada",
+    "at": "2026-11-17T02:09:27.922Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "api-indisponivel",
+    "status": "passou",
+    "observed": "Rascunho mantido para tentar novamente após recarga",
+    "at": "2026-11-17T02:09:28.480Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "restauracao-concorrente",
+    "status": "passou",
+    "observed": "Resposta atrasada não sobrescreve alteração feita durante restauração",
+    "at": "2026-11-17T02:09:31.515Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "outra-aba",
+    "status": "passou",
+    "observed": "SessionStorage isolado em uma nova aba independente",
+    "at": "2026-11-17T02:09:32.524Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "limpar-toda-selecao",
+    "status": "passou",
+    "observed": "Sair executa setSelectedClasses(new Map()) e remove todo o rascunho",
+    "at": "2026-11-17T02:09:35.837Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "storage-indisponivel",
+    "status": "passou",
+    "observed": "Falhas de escrita e remoção não interrompem a seleção em memória",
+    "at": "2026-11-17T02:09:37.833Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "erros-javascript",
+    "status": "passou",
+    "observed": "Nenhum pageerror observado",
+    "at": "2026-11-17T02:09:37.834Z"
+  }
+]
