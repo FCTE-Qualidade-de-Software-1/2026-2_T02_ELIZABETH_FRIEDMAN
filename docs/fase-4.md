@@ -81,7 +81,7 @@ faixa e não com os demais.
 
 **Q1.3 — Modificabilidade (H1.3).** Inconclusivo. O integrante Joaquim entregou os
 *patches* de C1 e C2 em 12/11/2026 (commit `18bd323`) e, em mensagem a Kaleb em 15/11/2026,
-declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclaradoe o log de C2 arquivado na `main`
+declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclarado e o log de C2 arquivado na `main`
 mostra apenas um erro de ambiente. Por isso ele não foi usado como medida.
 
 Em 15/11/2026 a equipe aplicou os dois *patches* sobre o commit inicial do produto e rodou
