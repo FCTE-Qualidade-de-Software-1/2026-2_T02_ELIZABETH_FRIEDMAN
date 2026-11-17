@@ -401,9 +401,10 @@ manutenção por voluntários. Os resultados respondem assim:
   seleção, geração e salvamento ficaram em no máximo 7% do limite de aceitação. Isso vale
   para a reprodução local; não se estende ao pico de matrícula nem ao site público.
 - **Estudantes, interação (G3).** É aqui que estão os problemas encontrados. Os dois que mais
-  pesam para quem monta a grade na matrícula são o salvamento na conta, que três dos quatro
-  participantes não realizaram sem que a interface deixasse isso claro, e a perda silenciosa
-  das turmas selecionadas ao recarregar a página (R04, nos dois dispositivos).
+  pesam para quem monta a grade na matrícula são a perda silenciosa das turmas selecionadas
+  ao recarregar a página (R04, nos dois dispositivos) e o salvamento na conta, que três dos
+  quatro participantes não fizeram, sem que a interface indicasse que a grade local não
+  estava salva na conta.
 - **Mantenedores voluntários (G1).** O código analisado é de baixa complexidade
   (um bloco com CC acima de 10 entre os 137 da API e nenhum entre os 213 do *frontend*) e tem dois ciclos de importação pequenos. A
   testabilidade é boa nos componentes críticos (*scraper* e gerador), com a API em 81,88%. O
@@ -413,7 +414,15 @@ manutenção por voluntários. Os resultados respondem assim:
 contrariadas, todas de G3 e todas com nota 0. A Fase 2 não define desempate dentro da mesma
 característica; a equipe adotou como critério o número de recortes com nota 0 em que o
 problema aparece e, em seguida, a gravidade da consequência (perda de trabalho do usuário).
-A ordem proposta está na [seção 4.1](#41-oportunidades-de-melhoria).
+Com esse critério, a ordem da [seção 4.1](#41-oportunidades-de-melhoria) fica assim:
+
+1. **Recarga apaga a seleção** (M8 navegador, nota 0 no computador e no celular). Empata com
+   o salvamento em número de recortes e vem primeiro pela gravidade: o estudante perde as
+   turmas já escolhidas sem nenhum aviso.
+2. **Salvamento na conta** (M6, nota 0 no computador e no celular). A grade fica no
+   navegador; o trabalho não se perde na hora, mas não fica disponível em outro aparelho.
+3. **Estado após selecionar e após gerar no celular** (M9 V01 e V03, dois recortes com nota 0).
+4. **Troca de turma** (M7 computador/troca, um recorte com nota 0).
 
 **D2 (ação da equipe).** Registrada na [seção 4.2](#42-acao-de-melhoria-executada).
 
@@ -432,8 +441,8 @@ separado, em um único *commit*, e não varia uma para observar o efeito na outr
 **Eficiência de desempenho e capacidade de interação.** *O que se observa:* G2 foi sustentado
 com folga e G3 foi contrariado, de modo que um bom tempo de resposta não bastou para uma boa
 interação. As falhas de G3 foram de compreensão (salvar na conta, estado após selecionar e
-após gerar) e de proteção contra perda, e o registro das sessões
-([`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv)) não traz queixa de lentidão. *O que não se pode concluir:* se o tempo de resposta influencia a compreensão do
+após gerar) e de proteção contra perda, e nenhuma sessão registrou queixa de lentidão
+(notas do observador e transcrições, de acesso restrito). *O que não se pode concluir:* se o tempo de resposta influencia a compreensão do
 estado de "geração em andamento", porque V02 não foi perguntado em nenhuma sessão. A tela de
 carregamento tem espera fixa de cerca de 500 ms ([Fase 3, 1.1.3](fase-3.md#113-acoes-seletores-e-sinais-de-conclusao)),
 mas não há dado sobre como os participantes a interpretam. Também não se pode concluir se o
@@ -492,7 +501,7 @@ justificada por evidências da avaliação.
 
 ### 4.1 Oportunidades de melhoria
 
-As oportunidades seguem a ordem da [seção 3.2](#32-julgamento-em-relacao-ao-proposito-e-as-decisoes-d1-a-d3).
+As oportunidades de D1 seguem a ordem e o critério da [seção 3.2](#32-julgamento-em-relacao-ao-proposito-e-as-decisoes-d1-a-d3).
 As de D1 serão abertas como *issues* no repositório do Sua Grade UnB, como promete a
 [Fase 1, seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
 
@@ -500,10 +509,10 @@ As de D1 serão abertas como *issues* no repositório do Sua Grade UnB, como pro
 
 | Nº | Decisão | Problema e evidência | Onde revisar (commit `3d399e7`) | Recomendação | Observação |
 |----|---------|----------------------|----------------------------------|--------------|------------|
-| 1 | D1 | A grade gerada fica em "Grades locais" e o salvamento na conta é outra ação. M6: 0/2 no computador e 1/2 no celular; P02 disse que a grade "já está disponível aqui"; P04 disse ter salvo uma grade que não foi para a conta (Q6, Q9) | `web/app/components/SchedulePreview/SchedulePreview.tsx` (`UploadToCloudButton`: botão só com ícone e texto alternativo "ícone de upload", dentro de um contêiner com `opacity-50`, exibido apenas a usuários autenticados) e `web/app/schedules/mygrades/page.tsx` (títulos "Grades locais" e "Grades nuvem") | Rotular o botão ("Salvar na conta"), explicar que a grade local fica só neste navegador e, a quem não está autenticado, indicar que entrar permite salvar | A relação entre o ícone e o insucesso é compatível com as sessões, mas não foi testada isoladamente |
-| 2 | D1 | Recarregar durante a montagem apaga as turmas sem aviso (M8 R04, nos dois dispositivos, nota 0 em "navegador") | `web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx` (estado só em `useState`; não há `beforeunload` em `web/app`) | Avisar antes de recarregar, ou persistir a seleção como o produto já faz com as grades locais (`SchedulesContext.tsx`, `localStorage`) | Persistir exige invalidar a seleção ao mudar de período letivo (*trade-off* de dados desatualizados) |
-| 3 | D1 | Na troca de turma, P02 incluiu a nova sem remover a anterior (M7-ALT no computador, 50%) | Fluxo de seleção de turmas em `web/app/components/` (a localizar) | Repetir a observação com mais participantes antes de alterar a interface | Um caso em dois; evidência fraca |
-| 4 | D1 | No celular, P03 não descreveu o estado após selecionar nem após gerar (M9 V01 e V03, 50%) | Mensagens de estado da tela de geração e de seleção | Conferir V01 no áudio e repetir V02 e V04, que não foram coletados, antes de recomendar mudança | Um participante; V01 é provisório |
+| 1 | D1 | Recarregar durante a montagem apaga as turmas sem aviso (M8 R04, nos dois dispositivos, nota 0 em "navegador") | `web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx` (estado só em `useState`; não há `beforeunload` em `web/app`) | Avisar antes de recarregar, ou persistir a seleção como o produto já faz com as grades locais (`SchedulesContext.tsx`, `localStorage`) | Persistir exige invalidar a seleção ao mudar de período letivo (*trade-off* de dados desatualizados) |
+| 2 | D1 | A grade gerada fica em "Grades locais" e o salvamento na conta é outra ação. M6: 0/2 no computador e 1/2 no celular; P02 disse que a grade "já está disponível aqui"; P04 disse ter salvo uma grade que não foi para a conta (Q6, Q9) | `web/app/components/SchedulePreview/SchedulePreview.tsx` (`UploadToCloudButton`: botão só com ícone e texto alternativo "ícone de upload", dentro de um contêiner com `opacity-50`, exibido apenas a usuários autenticados) e `web/app/schedules/mygrades/page.tsx` (títulos "Grades locais" e "Grades nuvem") | Rotular o botão ("Salvar na conta"), explicar que a grade local fica só neste navegador e, a quem não está autenticado, indicar que entrar permite salvar | A relação entre o ícone e o insucesso é compatível com as sessões, mas não foi testada isoladamente |
+| 3 | D1 | No celular, P03 não descreveu o estado após selecionar nem após gerar (M9 V01 e V03, 50%) | Mensagens de estado da tela de geração e de seleção | Conferir V01 no áudio e repetir V02 e V04, que não foram coletados, antes de recomendar mudança | Um participante; V01 é provisório |
+| 4 | D1 | Na troca de turma, P02 incluiu a nova sem remover a anterior (M7-ALT no computador, 50%) | Fluxo de seleção de turmas em `web/app/components/` (a localizar) | Repetir a observação com mais participantes antes de alterar a interface | Um caso em dois; evidência fraca |
 | 5 | D3 | Ciclo de importação no *frontend*: `UserContext.tsx` importa o tipo `UserData` de `SignInSection.tsx` (M1.1, 5,00%) | `web/app/contexts/UserContext.tsx`, `web/app/components/SignInSection.tsx` | Mover `UserData` para um arquivo de tipos; é uma mudança pequena, adequada a quem começa | O ciclo é de tipo, sem efeito em tempo de execução observado |
 | 6 | D3 | Ciclo na API: `api/serializers.py` e `utils/db_handler.py` se importam (M1.1, 4,00%) | os dois arquivos | Desfazer o ciclo movendo a dependência comum para um terceiro módulo | Rodar a suíte da API (108 testes) a cada passo |
 | 7 | D3 | `GenerateSchedule.post` tem CC 15, o único bloco acima de 10 (M1.2) | `api/api/views/views.py`, linha 194 | Dividir em funções menores | Ponto de maior risco de regressão em G2 (M4); refatorar com a suíte rodando |
