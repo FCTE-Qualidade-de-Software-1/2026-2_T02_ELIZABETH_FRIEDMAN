@@ -1,0 +1,30 @@
+[
+  {
+    "device": "computador",
+    "scenario": "R04",
+    "status": "passou",
+    "observed": "Seleção perdida após recarga, sem diálogo",
+    "at": "2026-11-17T02:07:18.892Z"
+  },
+  {
+    "device": "computador",
+    "scenario": "erros-javascript",
+    "status": "passou",
+    "observed": "Nenhum pageerror observado",
+    "at": "2026-11-17T02:07:18.934Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "R04",
+    "status": "passou",
+    "observed": "Seleção perdida após recarga, sem diálogo",
+    "at": "2026-11-17T02:07:21.822Z"
+  },
+  {
+    "device": "celular",
+    "scenario": "erros-javascript",
+    "status": "passou",
+    "observed": "Nenhum pageerror observado",
+    "at": "2026-11-17T02:07:21.886Z"
+  }
+]

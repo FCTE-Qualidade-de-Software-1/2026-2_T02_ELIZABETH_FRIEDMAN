@@ -1,0 +1,30 @@
+[
+  {
+    "variante": "antes",
+    "comando": [
+      "./node_modules/.bin/tsc",
+      "--noEmit"
+    ],
+    "codigo_saida": 1,
+    "log": "antes/tipos.txt"
+  },
+  {
+    "variante": "depois",
+    "comando": [
+      "./node_modules/.bin/tsc",
+      "--noEmit"
+    ],
+    "codigo_saida": 1,
+    "log": "depois/tipos.txt"
+  },
+  {
+    "variante": "depois",
+    "comando": [
+      "npm",
+      "run",
+      "lint"
+    ],
+    "codigo_saida": 0,
+    "log": "depois/lint.txt"
+  }
+]
