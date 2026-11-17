@@ -1,0 +1,131 @@
+Found 114 test(s).
+Creating test database for alias 'default'...
+System check identified no issues (0 silenced).
+......................................................F................................................FFFFFFFF.........
+======================================================================
+FAIL: test_with_incomplete_correct_search (api.tests.test_search_api.TestSearchAPI.test_with_incomplete_correct_search)
+Testa a busca por disciplinas com nome incompleto e todos os parâmetros corretos
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/api/tests/test_search_api.py", line 53, in test_with_incomplete_correct_search
+    self.assertEqual(content[1]['classes'][0]
+AssertionError: Lists differ: ['VINICIUS CARVALHO RISPOLI'] != ['VINICIUS RISPOLI']
+
+First differing element 0:
+'VINICIUS CARVALHO RISPOLI'
+'VINICIUS RISPOLI'
+
+- ['VINICIUS CARVALHO RISPOLI']
+?            ---------
+
++ ['VINICIUS RISPOLI']
+
+======================================================================
+FAIL: test_with_invalid_preference (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference) (preference=[1, 2, '3'])
+Rejeita valores que não são inteiros entre 1 e 3.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 179, in test_with_invalid_preference
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference) (preference=[1, 2, 0])
+Rejeita valores que não são inteiros entre 1 e 3.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 179, in test_with_invalid_preference
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference) (preference=[1, 2, 4])
+Rejeita valores que não são inteiros entre 1 e 3.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 179, in test_with_invalid_preference
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference) (preference=[1, 2, 2.5])
+Rejeita valores que não são inteiros entre 1 e 3.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 179, in test_with_invalid_preference
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference) (preference=[1, 2, True])
+Rejeita valores que não são inteiros entre 1 e 3.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 179, in test_with_invalid_preference
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference_length (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference_length) (preference=[])
+Rejeita preferências que não tenham exatamente três posições M/T/N.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 189, in test_with_invalid_preference_length
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference_length (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference_length) (preference=[1, 2])
+Rejeita preferências que não tenham exatamente três posições M/T/N.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 189, in test_with_invalid_preference_length
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+======================================================================
+FAIL: test_with_invalid_preference_length (utils.tests.test_schedule_generator.TestSchedule.test_with_invalid_preference_length) (preference=[1, 2, 3, 1])
+Rejeita preferências que não tenham exatamente três posições M/T/N.
+----------------------------------------------------------------------
+ValueError: preference must be a list of exactly 3 integers with range [1, 3]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/tmp/claude-0/-home-claude/819bd0f8-7721-5603-9f30-88960dd8af3e/scratchpad/m13/c2/api/utils/tests/test_schedule_generator.py", line 189, in test_with_invalid_preference_length
+    with self.assertRaisesRegex(ValueError, PREFERENCE_RANGE_ERROR):
+AssertionError: "preference must be a list of exactly 3 integers with range [1, 3]" does not match "preference must be a list of exactly 3 integers with range [1, 3]"
+
+----------------------------------------------------------------------
+Ran 114 tests in 1.629s
+
+FAILED (failures=9)
+Destroying test database for alias 'default'...

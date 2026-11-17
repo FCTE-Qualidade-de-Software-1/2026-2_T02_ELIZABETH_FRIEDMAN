@@ -81,7 +81,7 @@ faixa e não com os demais.
 
 **Q1.3 — Modificabilidade (H1.3).** Inconclusivo. O integrante Joaquim entregou os
 *patches* de C1 e C2 em 12/11/2026 (commit `18bd323`) e, em mensagem a Kaleb em 15/11/2026,
-declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclaradoe o log de C2 arquivado na `main`
+declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclarado, e o log de C2 arquivado na `main`
 mostra apenas um erro de ambiente. Por isso ele não foi usado como medida.
 
 Em 15/11/2026 a equipe aplicou os dois *patches* sobre o commit inicial do produto e rodou
@@ -369,7 +369,127 @@ Premissa 1: discutir as relações entre as características com evidências, li
 e os casos em que os dados não permitem estabelecer relações.
 -->
 
-*A preencher.*
+O julgamento aplica a [Fase 2, seção 4.6](fase-2.md#46-julgamento-global-dos-objetivos) aos
+resultados da [seção 2](#2-analise-e-respostas-ao-gqm). Não há nota única: as notas de 0 a 3
+são categorias ordenadas e não se somam, e a prioridade da Fase 1 não funciona como peso de
+qualidade. Os critérios foram fixados antes da coleta e não mudaram.
+
+### 3.1 Estado de cada hipótese e de cada objetivo
+
+**Tabela 5: Julgamento por objetivo**
+
+| Objetivo | Estado | Hipóteses | Recortes que determinaram o estado | Principais limitações |
+|----------|--------|-----------|-------------------------------------|-----------------------|
+| G1 Manutenibilidade | **Inconclusivo** | H1.1, H1.2 e H1.4 sustentadas; H1.3 inconclusiva | Nenhum recorte contraria hipótese (notas 2 e 3). C1 e C2 não têm execução válida: o tempo é autodeclarado, sem registro, e o *patch* de C2 reprova na suíte | Um único *commit*; indicadores indiretos; cobertura só de linhas; *frontend* sem testes |
+| G2 Eficiência de desempenho | **Atendido nas condições avaliadas** | H2, H3, H4 e H5 sustentadas | Sete cenários com 30 sucessos e P95 na faixa Excelente, no máximo 7% do limite $L_j$ | Reprodução local, um usuário, massa pequena; M3 coletada em outro ambiente |
+| G3 Capacidade de interação | **Não atendido** | H6, H7, H8 e H9 contrariadas | H6: M6 computador/conta 0% e celular/conta 50%. H7: M7 computador/troca 50% e celular/seleção 50%. H8: M8 navegador com 75% (computador) e 80% (celular), por R04. H9: M9 celular V01 e V03 com 50% | Amostra de conveniência de 4 pessoas; desvios de protocolo; cobertura parcial em M7, M8 e M9 |
+
+Em G1, uma hipótese inconclusiva indica coleta a completar, e não problema do produto
+(Fase 2, seção 4.6, item 4). Em G3, as quatro hipóteses são contrariadas porque ao menos um
+recorte de cada uma recebeu nota 0; os recortes sem cobertura completa (R05b e R06 em M8,
+V02 e V04 em M9, e a troca e a remoção no celular em M7) não mudam essa conclusão.
+"Atendido" em G2 significa que as hipóteses formuladas foram sustentadas no recorte medido;
+não certifica a característica nem o produto.
+
+### 3.2 Julgamento em relação ao propósito e às decisões D1 a D3
+
+O propósito da [Fase 1, seção 1.2](fase-1.md#12-proposito) é identificar e priorizar os
+problemas que mais afetam os estudantes no período de matrícula e a continuidade da
+manutenção por voluntários. Os resultados respondem assim:
+
+- **Estudantes, tempo de resposta (G2).** Nenhum problema nas condições medidas. Busca,
+  seleção, geração e salvamento ficaram em no máximo 7% do limite de aceitação. Isso vale
+  para a reprodução local; não se estende ao pico de matrícula nem ao site público.
+- **Estudantes, interação (G3).** É aqui que estão os problemas encontrados. Os dois que mais
+  pesam para quem monta a grade na matrícula são a perda silenciosa das turmas selecionadas
+  ao recarregar a página (R04, nos dois dispositivos) e o salvamento na conta, que três dos
+  quatro participantes não fizeram, sem que a interface indicasse que a grade local não
+  estava salva na conta.
+- **Mantenedores voluntários (G1).** O código analisado é de baixa complexidade
+  (um bloco com CC acima de 10 entre os 137 da API e nenhum entre os 213 do *frontend*) e tem dois ciclos de importação pequenos. A
+  testabilidade é boa nos componentes críticos (*scraper* e gerador), com a API em 81,88%. O
+  que falta para julgar a característica é a modificabilidade (M1.3).
+
+**D1 (o que corrigir antes da próxima matrícula).** Os candidatos nascem das hipóteses
+contrariadas, todas de G3 e todas com nota 0. A Fase 2 não define desempate dentro da mesma
+característica; a equipe adotou como critério o número de recortes com nota 0 em que o
+problema aparece e, em seguida, a gravidade da consequência (perda de trabalho do usuário).
+Com esse critério, a ordem da [seção 4.1](#41-oportunidades-de-melhoria) fica assim:
+
+1. **Recarga apaga a seleção** (M8 navegador, nota 0 no computador e no celular). Empata com
+   o salvamento em número de recortes e vem primeiro pela gravidade: o estudante perde as
+   turmas já escolhidas sem nenhum aviso.
+2. **Salvamento na conta** (M6, nota 0 no computador e no celular). A grade fica no
+   navegador; o trabalho não se perde na hora, mas não fica disponível em outro aparelho.
+3. **Estado após selecionar e após gerar no celular** (M9 V01 e V03, dois recortes com nota 0).
+4. **Troca de turma** (M7 computador/troca, um recorte com nota 0).
+
+**D2 (ação da equipe).** Registrada na [seção 4.2](#42-acao-de-melhoria-executada).
+
+**D3 (por onde começar a contribuir).** Pelos resultados de G1 por camada: o *scraper* e o
+gerador têm a menor CC máxima (7 e 6) e a maior cobertura (97,50% e 99,29%), o que oferece
+rede de segurança a quem altera esses módulos; a API tem a maior complexidade pontual
+(`GenerateSchedule.post`, CC 15) e sete arquivos sem nenhuma linha executada; o *frontend*
+não tem testes. Contribuições nele não contam com suíte para detectar regressões.
+
+### 3.3 Relações entre as características
+
+Cada relação abaixo traz o que os dados mostram, o que não mostram e como a evidência foi
+obtida. Nenhuma é estabelecida como causal: a avaliação mede cada característica em
+separado, em um único *commit*, e não varia uma para observar o efeito na outra.
+
+**Eficiência de desempenho e capacidade de interação.** *O que se observa:* G2 foi sustentado
+com folga e G3 foi contrariado, de modo que um bom tempo de resposta não bastou para uma boa
+interação. As falhas de G3 foram de compreensão (salvar na conta, estado após selecionar e
+após gerar) e de proteção contra perda, e nenhuma sessão registrou queixa de lentidão
+(notas do observador e transcrições, de acesso restrito). *O que não se pode concluir:* se o tempo de resposta influencia a compreensão do
+estado de "geração em andamento", porque V02 não foi perguntado em nenhuma sessão. A tela de
+carregamento tem espera fixa de cerca de 500 ms ([Fase 3, 1.1.3](fase-3.md#113-acoes-seletores-e-sinais-de-conclusao)),
+mas não há dado sobre como os participantes a interpretam. Também não se pode concluir se o
+tempo medido localmente se repete no site público, onde as sessões de G3 ocorreram.
+
+**Eficiência de desempenho e manutenibilidade.** O *trade-off* previsto na
+[Fase 1, seção 5.3](fase-1.md#53-trade-offs) (otimizações que deixam o código mais difícil de
+entender) não se manifestou: o gerador tem CC máxima 6, cobertura de 99,29% e P95 de geração
+de 649,3 ms a 700,7 ms, dos quais cerca de 500 ms vêm de uma espera fixa do produto. Os dados não
+indicam necessidade de otimizar e, portanto, não há otimização a ponderar. Como M4 só variou
+de 2 para 16 turmas e a API devolve no máximo 5 grades (`MAXIMUM_RETURNED_SCHEDULES`), os dados
+também não permitem avaliar o custo de ampliar esse limite, e nenhuma recomendação nesse
+sentido é feita.
+
+**Manutenibilidade e capacidade de interação.** *O que se observa:* as correções que G3
+indica ficam no *frontend* (`SchedulePreview.tsx`, `SelectedClassesContext` e a página de
+Perfil), que tem CC baixa (0 de 213 blocos acima de 10), o que facilita entender o código a
+alterar, mas não tem nenhum teste automatizado. Qualquer correção de interação nesse recorte
+é feita sem rede de segurança, e a medida M1.4 nem o cobre. O ciclo de importação do
+*frontend* (`SignInSection.tsx`, `useUser.ts` e `UserContext.tsx`) está na área de login, e
+não nos componentes de salvamento e de confirmação que G3 apontou; portanto a evidência não
+liga o ciclo aos problemas de interação. *O que não se pode concluir:* se a testabilidade do
+*frontend* seria boa ou ruim, pois só a ausência de testes foi medida; nem se os problemas de
+interação decorrem de alguma decisão de projeto do código.
+
+**Manutenibilidade e o risco que motivou a avaliação.** A [Fase 1, seção 1.1](fase-1.md#11-contexto)
+aponta a quebra da coleta do SIGAA como o evento que mais exigiu manutenção. O *scraper*
+tem CC baixa e 97,50% de cobertura, mas o comando que grava o resultado no banco
+(`updatedb.py`) tem 122 linhas sem execução e responde sozinho por 122 das 253 linhas não
+cobertas da API. A cobertura de linhas não mostra se esse comando funcionaria após uma mudança
+no SIGAA; essa pergunta depende de M1.3, que ficou sem medida válida.
+
+**Onde os dados não permitem estabelecer relação.** (a) Não há medida que cruze, para o mesmo
+usuário, desempenho percebido e interação. (b) M1.3, a única medida de esforço de mudança,
+está inconclusiva; sem ela, a relação entre estrutura do código (M1.1, M1.2, M1.4) e o custo de
+corrigir os problemas de G3 fica sem teste. (c) Quatro participantes não sustentam
+comparações entre dispositivos; as diferenças entre computador e celular em G3 são
+descritivas.
+
+### 3.4 Limites do julgamento
+
+Os julgamentos valem para o *commit* `3d399e7`, para as condições de cada coleta e para os
+recortes medidos ([Fase 1, seção 6.4](fase-1.md#64-limites-de-validade-dos-resultados)). Não
+são testes de significância estatística e não se estendem ao pico de matrícula. Dois pontos
+ainda abertos podem mudar o texto, mas não o estado de G3: M8 R05b e R06 (computador) e R06
+(celular), e a conferência no áudio da resposta de P03 em V01. O estado de G1 mudaria se uma
+execução válida de C1 e C2 fosse registrada antes da entrega.
 
 ## 4. Oportunidades e ação de melhoria
 
@@ -379,7 +499,33 @@ F4-C5 e seção 3.2 da especificação: oportunidades de melhoria e PELO MENOS U
 justificada por evidências da avaliação.
 -->
 
-*A preencher.*
+### 4.1 Oportunidades de melhoria
+
+As oportunidades de D1 seguem a ordem e o critério da [seção 3.2](#32-julgamento-em-relacao-ao-proposito-e-as-decisoes-d1-a-d3).
+As de D1 serão abertas como *issues* no repositório do Sua Grade UnB, como promete a
+[Fase 1, seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+
+**Tabela 6: Oportunidades de melhoria**
+
+| Nº | Decisão | Problema e evidência | Onde revisar (commit `3d399e7`) | Recomendação | Observação |
+|----|---------|----------------------|----------------------------------|--------------|------------|
+| 1 | D1 | Recarregar durante a montagem apaga as turmas sem aviso (M8 R04, nos dois dispositivos, nota 0 em "navegador") | `web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx` (estado só em `useState`; não há `beforeunload` em `web/app`) | Avisar antes de recarregar, ou persistir a seleção como o produto já faz com as grades locais (`SchedulesContext.tsx`, `localStorage`) | Persistir exige invalidar a seleção ao mudar de período letivo (*trade-off* de dados desatualizados) |
+| 2 | D1 | A grade gerada fica em "Grades locais" e o salvamento na conta é outra ação. M6: 0/2 no computador e 1/2 no celular; P02 disse que a grade "já está disponível aqui"; P04 disse ter salvo uma grade que não foi para a conta (Q6, Q9) | `web/app/components/SchedulePreview/SchedulePreview.tsx` (`UploadToCloudButton`: botão só com ícone e texto alternativo "ícone de upload", dentro de um contêiner com `opacity-50`, exibido apenas a usuários autenticados) e `web/app/schedules/mygrades/page.tsx` (títulos "Grades locais" e "Grades nuvem") | Rotular o botão ("Salvar na conta"), explicar que a grade local fica só neste navegador e, a quem não está autenticado, indicar que entrar permite salvar | A relação entre o ícone e o insucesso é compatível com as sessões, mas não foi testada isoladamente |
+| 3 | D1 | No celular, P03 não descreveu o estado após selecionar nem após gerar (M9 V01 e V03, 50%) | Mensagens de estado da tela de geração e de seleção | Conferir V01 no áudio e repetir V02 e V04, que não foram coletados, antes de recomendar mudança | Um participante; V01 é provisório |
+| 4 | D1 | Na troca de turma, P02 incluiu a nova sem remover a anterior (M7-ALT no computador, 50%) | Fluxo de seleção de turmas em `web/app/components/` (a localizar) | Repetir a observação com mais participantes antes de alterar a interface | Um caso em dois; evidência fraca |
+| 5 | D3 | Ciclo de importação no *frontend*: `UserContext.tsx` importa o tipo `UserData` de `SignInSection.tsx` (M1.1, 5,00%) | `web/app/contexts/UserContext.tsx`, `web/app/components/SignInSection.tsx` | Mover `UserData` para um arquivo de tipos; é uma mudança pequena, adequada a quem começa | O ciclo é de tipo, sem efeito em tempo de execução observado |
+| 6 | D3 | Ciclo na API: `api/serializers.py` e `utils/db_handler.py` se importam (M1.1, 4,00%) | os dois arquivos | Desfazer o ciclo movendo a dependência comum para um terceiro módulo | Rodar a suíte da API (108 testes) a cada passo |
+| 7 | D3 | `GenerateSchedule.post` tem CC 15, o único bloco acima de 10 (M1.2) | `api/api/views/views.py`, linha 194 | Dividir em funções menores | Ponto de maior risco de regressão em G2 (M4); refatorar com a suíte rodando |
+| 8 | D3 | Sete arquivos de produção sem nenhuma linha executada concentram 211 das 253 linhas não cobertas da API (M1.4); o maior é `updatedb.py`, que atualiza o banco com dados do SIGAA | `api/management/commands/updatedb.py` e os outros seis da Q1.4 | Priorizar testes de `updatedb.py` e `get_schedules.py` | Relaciona-se ao risco de quebra do SIGAA (seção 3.3) |
+| 9 | D3 | O *frontend* não tem testes automatizados; M1.4 não o cobre | `web/` | Incluir testes nas correções 1 e 2 e usá-las como primeiros casos | Não se mediu a testabilidade do *frontend*, só a ausência de testes |
+
+**O que não se recomenda.** Nenhuma mudança de desempenho (G2 sustentado), nem ampliar os
+limites de 11 disciplinas e 5 grades, porque os dados de G2 e G3 não avaliam esse custo
+(seção 3.3).
+
+### 4.2 Ação de melhoria executada
+
+*A preencher na #46.*
 
 ---
 
