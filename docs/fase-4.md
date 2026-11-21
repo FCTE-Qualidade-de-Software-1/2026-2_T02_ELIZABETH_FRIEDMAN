@@ -579,15 +579,35 @@ de exceções JavaScript. O lint passou. A checagem de tipos falhou nas duas
 variantes pelo mesmo erro preexistente dos exports de fontes em `app/layout.tsx`
 ([logs e códigos de saída](avaliacao/dados/acao-r04/checagens.json)).
 
-**Limitações.** Trata-se de uma verificação funcional de R04, com massa controlada,
-sem celular físico, Safari ou Firefox e sem nova sessão com participantes.
+**Teste manual com dados reais.** Em 21/11/2026, Eduardo repetiu R04 à mão, no computador,
+com as duas versões abertas lado a lado em abas do Google Chrome (Linux): a origem `3d399e7`
+em `127.0.0.1:3045` e a correção `54c7811` em `127.0.0.1:3046`, ambas com o servidor de
+desenvolvimento do Next. As disciplinas vieram da API pública, período 2026/2, por um
+[*proxy* local somente de leitura](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04/proxy-api.cjs),
+que repassa apenas consultas (GET) e bloqueia login e gravações; o site ficou no modo
+anônimo. A tela foi gravada do início ao fim
+([vídeo, 40 s](avaliacao/dados/acao-r04/manual/teste-manual-r04.mp4)).
+
+| Momento no vídeo | Versão | Ação | Resultado |
+|------------------|--------|------|-----------|
+| 00:00–00:06 | Correção | Quatro turmas selecionadas (FGA0210 e FGA0242, duas de cada) e recarga | As quatro turmas voltam cerca de 2 s depois ([antes](avaliacao/dados/acao-r04/manual/01-corrigido-antes-de-recarregar.png), [carregando](avaliacao/dados/acao-r04/manual/02-corrigido-recarregando.png), [depois](avaliacao/dados/acao-r04/manual/03-corrigido-apos-recarregar.png)) |
+| 00:07–00:31 | Origem | Busca por "tecnicas de progra" em 2026/2, seleção de duas turmas de FGA0242 e recarga | Seleção perdida, sem aviso: "Nenhuma disciplina escolhida no momento" ([antes](avaliacao/dados/acao-r04/manual/04-original-antes-de-recarregar.png), [depois](avaliacao/dados/acao-r04/manual/05-original-apos-recarregar.png)) |
+| 00:33–00:39 | Correção | Nova recarga da mesma aba | As quatro turmas voltam de novo ([depois](avaliacao/dados/acao-r04/manual/06-corrigido-segunda-recarga.png)) |
+
+Durante a restauração, a correção mostra por cerca de 1 s a tela de carregamento e,
+em seguida, a lista vazia antes de as turmas reaparecerem (00:04 e 00:35). O teste
+confirma o comportamento com dados reais do período, mas é uma única execução, num
+computador, sem participante.
+
+**Limitações.** Trata-se de uma verificação funcional de R04, com massa controlada no
+roteiro automatizado e uma execução manual com dados reais, sem celular físico, Safari
+ou Firefox e sem nova sessão com participantes.
 Os demais cenários do denominador de M8 não foram repetidos; portanto, os valores
 originais de **3/4 no computador e 4/5 no celular** permanecem como resultados da
 avaliação, e não se publicam novos percentuais de M8. O rascunho não substitui
 o salvamento na conta. Se a API falhar, o rascunho é mantido para outra recarga e
 uma mensagem é exibida; se o armazenamento estiver bloqueado, a seleção continua
-em memória, sem garantia de recuperação. O tempo real de trabalho e o fechamento
-da #46 serão registrados pelo responsável; a issue não foi alterada nesta ação.
+em memória, sem garantia de recuperação.
 
 ---
 

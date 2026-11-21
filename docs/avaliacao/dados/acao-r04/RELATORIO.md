@@ -114,6 +114,41 @@ ambas as variantes apontaram `TS2344` nos tipos de rota gerados, por exportar
 Não foi feita validação de build de produção; o resultado funcional é do
 servidor de desenvolvimento.
 
+## Teste manual com dados reais (21/11/2026)
+
+Eduardo repetiu R04 à mão, no computador, para conferir a correção fora do roteiro
+automatizado e com as disciplinas reais do período.
+
+| Condição | Registro |
+|----------|----------|
+| Origem | `3d399e7` em `http://127.0.0.1:3045/schedules/home` |
+| Correção | `54c7811` em `http://127.0.0.1:3046/schedules/home` |
+| Servidor | `next dev` (Next 14.2.21), uma cópia por versão, com as mesmas dependências |
+| API | Pública (`api.suagradeunb.com.br`), período 2026/2, por [`proxy-api.cjs`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04/proxy-api.cjs) em `127.0.0.1:8999`, que repassa só GET; login responde 401 e gravações respondem 403 |
+| Navegador | Google Chrome, Linux, as duas versões em abas da mesma janela |
+| Sessão | Anônima, sem conta Google |
+| Registro | [Gravação da tela, 40 s](manual/teste-manual-r04.mp4), sem áudio, reduzida para 1280×784 |
+
+| Vídeo | Versão | Ação | Resultado | Captura |
+|-------|--------|------|-----------|---------|
+| 00:01 | Correção | Quatro turmas selecionadas: FGA0210 Paradigmas de Programação e FGA0242 Técnicas de Programação em Plataformas Emergentes, duas turmas de cada | — | [01](manual/01-corrigido-antes-de-recarregar.png) |
+| 00:03 | Correção | Recarga da página | Tela de carregamento | [02](manual/02-corrigido-recarregando.png) |
+| 00:06 | Correção | — | As quatro turmas voltam, com sala, horário e professor | [03](manual/03-corrigido-apos-recarregar.png) |
+| 00:08–00:26 | Origem | Período 2026/2, busca "tecnicas de progra", seleção das duas turmas de FGA0242 | Duas turmas selecionadas | [04](manual/04-original-antes-de-recarregar.png) |
+| 00:28–00:31 | Origem | Recarga da página | Seleção perdida sem aviso: "Nenhuma disciplina escolhida no momento" | [05](manual/05-original-apos-recarregar.png) |
+| 00:34–00:37 | Correção | Nova recarga da mesma aba | As quatro turmas voltam de novo | [06](manual/06-corrigido-segunda-recarga.png) |
+
+Observação: na correção, entre a tela de carregamento e o retorno das turmas, a lista
+aparece vazia por cerca de 1 s (00:04 e 00:35), enquanto as turmas são consultadas na API.
+
+O teste é uma única execução, num computador e sem participante. Ele confirma, com dados
+reais, o mesmo resultado da verificação automatizada para R04, mas não mede o celular nem
+substitui a repetição dos demais cenários de M8.
+
+Para repetir: iniciar `node avaliacao/melhoria-r04/proxy-api.cjs`, criar em cada cópia
+`web/.env.local` com `NEXT_PUBLIC_API_URL=http://127.0.0.1:8999` e subir os servidores nas
+portas 3045 e 3046, como na [reprodução do roteiro](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04/README.md).
+
 ## Alcance e entrega
 
 Não foram repetidos todos os cenários do denominador de M8 nem as sessões com
@@ -127,6 +162,5 @@ salvamento permanente. Uma nova aba com `opener` pode receber uma cópia inicial
 do armazenamento por comportamento do navegador; o teste usa aba independente.
 
 O artefato do produto está publicado no fork. A documentação e as evidências
-da avaliação acompanham a branch `feat-Acao_melhoria`, para revisão antes do merge.
-A #46 permanece inalterada a pedido do responsável, que registrará links e
-horas reais. Não foi imputada a estimativa de 8 h como esforço realizado.
+da avaliação estão neste repositório, em `docs/avaliacao/dados/acao-r04/` e
+`avaliacao/melhoria-r04/`.

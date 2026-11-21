@@ -58,10 +58,18 @@ da origem `3d399e7`, execute:
 git am /caminho/para/avaliacao/melhoria-r04/correcao.patch
 ```
 
-## Entrega na issue
+## Teste manual com dados reais
 
-A #46 permanece inalterada a pedido do responsável. Para registrar a entrega,
-use o link do fork e do commit acima, a seção 4.2 e o relatório com evidências.
-Registre as horas efetivas manualmente. A estimativa de oito horas não é tempo
-real medido. A documentação e as evidências acompanham esta alteração na branch
-`feat-Acao_melhoria`; seus links em `main` e na GitPage ficam disponíveis após o merge.
+`proxy-api.cjs` permite abrir as duas versões com as disciplinas reais do período.
+Ele escuta em `127.0.0.1:8999`, repassa apenas GET para a API pública e bloqueia
+login (401) e gravações (403), de modo que o site fica no modo anônimo.
+
+```sh
+node avaliacao/melhoria-r04/proxy-api.cjs
+echo NEXT_PUBLIC_API_URL=http://127.0.0.1:8999 > /tmp/r04-original/web/.env.local
+echo NEXT_PUBLIC_API_URL=http://127.0.0.1:8999 > /tmp/r04-corrigido/web/.env.local
+```
+
+Depois, suba os servidores nas portas 3045 e 3046 como acima e abra
+`/schedules/home` nas duas. O teste de 21/11/2026 está registrado no
+[relatório](../../docs/avaliacao/dados/acao-r04/RELATORIO.md#teste-manual-com-dados-reais-21112026).
