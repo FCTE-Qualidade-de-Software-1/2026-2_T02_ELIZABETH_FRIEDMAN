@@ -14,6 +14,7 @@ recuperação temporária e verifica seu comportamento sem recrutar participante
 - Origem: `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`.
 - Correção: [`54c781189868b7138fbeb8659622fd3540cafdcb`](https://github.com/LucasMF1/2023-2-SuaGradeUnB/commit/54c781189868b7138fbeb8659622fd3540cafdcb).
 - [Fork e branch](https://github.com/LucasMF1/2023-2-SuaGradeUnB/tree/fix/r04-selection-draft).
+- [PR nº 252 no repositório original do Sua Grade UnB](https://github.com/unb-mds/2023-2-SuaGradeUnB/pull/252).
 - [Código, roteiro, massa e patch](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04).
 - [Instruções no commit do fork](https://github.com/LucasMF1/2023-2-SuaGradeUnB/blob/54c781189868b7138fbeb8659622fd3540cafdcb/web/tests/r04/README.md).
 

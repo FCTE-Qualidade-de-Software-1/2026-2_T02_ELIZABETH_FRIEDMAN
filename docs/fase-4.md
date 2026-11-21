@@ -554,7 +554,7 @@ no commit [`54c781189868b7138fbeb8659622fd3540cafdcb`](https://github.com/LucasM
 derivado da origem avaliada `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`.
 Há [instruções de reprodução no fork](https://github.com/LucasMF1/2023-2-SuaGradeUnB/blob/54c781189868b7138fbeb8659622fd3540cafdcb/web/tests/r04/README.md)
 e um [pacote local da ação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04),
-com roteiro, massa e patch. A entrega usa o fork; não depende de PR ou merge no projeto original.
+com roteiro, massa e patch. A equipe enviou a correção ao projeto original no [PR nº 252 do Sua Grade UnB](https://github.com/unb-mds/2023-2-SuaGradeUnB/pull/252).
 
 **Verificação e antes/depois.** Em 16/11/2026, foram executadas duas cópias locais
 com a mesma massa sintética, roteiro, dependências e navegador, diferenciadas
