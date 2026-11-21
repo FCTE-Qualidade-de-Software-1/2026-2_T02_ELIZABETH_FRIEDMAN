@@ -525,7 +525,89 @@ limites de 11 disciplinas e 5 grades, porque os dados de G2 e G3 não avaliam es
 
 ### 4.2 Ação de melhoria executada
 
-*A preencher na #46.*
+Foi executada a prioridade 1 da [seção 4.1](#41-oportunidades-de-melhoria),
+consolidada na [#45](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/45),
+como ação da [#46](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/46):
+recuperar a seleção de turmas após recarregar a página (M8–R04).
+
+**Problema e escolha.** Na coleta original, a recarga apagou a turma selecionada
+sem aviso no computador e no celular ([observações](avaliacao/dados/g3/m8-observacoes.csv)
+e [capturas originais](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g3/m8-capturas)).
+O caso foi escolhido pelo risco concreto de perder a montagem e pela possibilidade
+de verificar a correção sem novas sessões com participantes. O efeito de mudar
+o botão de salvamento na conta sobre compreensão e sucesso continua sem avaliação.
+
+**Ação e artefato.** O contexto `SelectedClassesContext.tsx` passou a guardar o
+rascunho em `sessionStorage`, para a sessão da aba atual. O novo módulo `draft.ts`
+valida a versão e a estrutura dos dados e guarda apenas período, códigos e IDs.
+A restauração espera os períodos oferecidos pela API e consulta novamente as
+turmas; assim, sala, horário e professor vêm da resposta atual. Período não
+oferecido e turma removida não são restaurados. Inclusões, remoções e limpeza
+atualizam o rascunho; mudar o período invalida a seleção anterior. O formulário
+mantém a proteção existente contra misturar períodos, exigindo remover as
+turmas antes da troca. O estado vazio inicial não é gravado, e uma ação do
+usuário prevalece sobre uma restauração ainda em andamento.
+
+O código e o roteiro de verificação estão no
+[fork público, branch `fix/r04-selection-draft`](https://github.com/LucasMF1/2023-2-SuaGradeUnB/tree/fix/r04-selection-draft),
+no commit [`54c781189868b7138fbeb8659622fd3540cafdcb`](https://github.com/LucasMF1/2023-2-SuaGradeUnB/commit/54c781189868b7138fbeb8659622fd3540cafdcb),
+derivado da origem avaliada `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`.
+Há [instruções de reprodução no fork](https://github.com/LucasMF1/2023-2-SuaGradeUnB/blob/54c781189868b7138fbeb8659622fd3540cafdcb/web/tests/r04/README.md)
+e um [pacote local da ação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04),
+com roteiro, massa e patch. A equipe enviou a correção ao projeto original no [PR nº 252 do Sua Grade UnB](https://github.com/unb-mds/2023-2-SuaGradeUnB/pull/252).
+
+**Verificação e antes/depois.** Em 16/11/2026, foram executadas duas cópias locais
+com a mesma massa sintética, roteiro, dependências e navegador, diferenciadas
+pelo código e pela porta do servidor. O Playwright interceptou as respostas da
+API; não foi usado o banco público. Foram usados Chromium 151.0.7922.34,
+computador 1366×900 e celular **emulado** 390×844 com toque, em Linux/WSL2.
+O [relatório da verificação](avaliacao/dados/acao-r04/RELATORIO.md) contém ambiente,
+procedimento, resultados e limitações. Os dados originais de G3 foram preservados;
+esta coleta fica separada em `acao-r04/`.
+
+| R04 no ambiente controlado | Origem `3d399e7` | Correção `54c7811` |
+|---------------------------|-----------------|-------------------|
+| Computador | Seleção perdida sem diálogo ([captura](avaliacao/dados/acao-r04/antes/computador-R04-recarregada.png)) | Mesma turma restaurada ([captura](avaliacao/dados/acao-r04/depois/computador-R04-recarregada.png)) |
+| Celular emulado | Seleção perdida sem diálogo ([captura](avaliacao/dados/acao-r04/antes/celular-R04-recarregada.png)) | Mesma turma restaurada ([captura](avaliacao/dados/acao-r04/depois/celular-R04-recarregada.png)) |
+
+Na variante corrigida passaram **30 verificações (15 por tela)**: recarga,
+segunda recarga, remoção parcial, remoção da última turma, troca de período,
+período indisponível, dados inválidos, atualização dos dados pela API, turma
+obsoleta, falha da API, restauração concorrente com ação do usuário, aba
+independente, limpeza completa ao sair, armazenamento indisponível e ausência
+de exceções JavaScript. O lint passou. A checagem de tipos falhou nas duas
+variantes pelo mesmo erro preexistente dos exports de fontes em `app/layout.tsx`
+([logs e códigos de saída](avaliacao/dados/acao-r04/checagens.json)).
+
+**Teste manual com dados reais.** Em 21/11/2026, Eduardo repetiu R04 à mão, no computador,
+com as duas versões abertas lado a lado em abas do Google Chrome (Linux): a origem `3d399e7`
+em `127.0.0.1:3045` e a correção `54c7811` em `127.0.0.1:3046`, ambas com o servidor de
+desenvolvimento do Next. As disciplinas vieram da API pública, período 2026/2, por um
+[*proxy* local somente de leitura](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04/proxy-api.cjs),
+que repassa apenas consultas (GET) e bloqueia login e gravações; o site ficou no modo
+anônimo. A tela foi gravada do início ao fim
+([vídeo, 40 s](avaliacao/dados/acao-r04/manual/teste-manual-r04.mp4)).
+
+| Momento no vídeo | Versão | Ação | Resultado |
+|------------------|--------|------|-----------|
+| 00:00–00:06 | Correção | Quatro turmas selecionadas (FGA0210 e FGA0242, duas de cada) e recarga | As quatro turmas voltam cerca de 2 s depois ([antes](avaliacao/dados/acao-r04/manual/01-corrigido-antes-de-recarregar.png), [carregando](avaliacao/dados/acao-r04/manual/02-corrigido-recarregando.png), [depois](avaliacao/dados/acao-r04/manual/03-corrigido-apos-recarregar.png)) |
+| 00:07–00:31 | Origem | Busca por "tecnicas de progra" em 2026/2, seleção de duas turmas de FGA0242 e recarga | Seleção perdida, sem aviso: "Nenhuma disciplina escolhida no momento" ([antes](avaliacao/dados/acao-r04/manual/04-original-antes-de-recarregar.png), [depois](avaliacao/dados/acao-r04/manual/05-original-apos-recarregar.png)) |
+| 00:33–00:39 | Correção | Nova recarga da mesma aba | As quatro turmas voltam de novo ([depois](avaliacao/dados/acao-r04/manual/06-corrigido-segunda-recarga.png)) |
+
+Durante a restauração, a correção mostra por cerca de 1 s a tela de carregamento e,
+em seguida, a lista vazia antes de as turmas reaparecerem (00:04 e 00:35). O teste
+confirma o comportamento com dados reais do período, mas é uma única execução, num
+computador, sem participante.
+
+**Limitações.** Trata-se de uma verificação funcional de R04, com massa controlada no
+roteiro automatizado e uma execução manual com dados reais, sem celular físico, Safari
+ou Firefox e sem nova sessão com participantes.
+Os demais cenários do denominador de M8 não foram repetidos; portanto, os valores
+originais de **3/4 no computador e 4/5 no celular** permanecem como resultados da
+avaliação, e não se publicam novos percentuais de M8. O rascunho não substitui
+o salvamento na conta. Se a API falhar, o rascunho é mantido para outra recarga e
+uma mensagem é exibida; se o armazenamento estiver bloqueado, a seleção continua
+em memória, sem garantia de recuperação.
 
 ---
 

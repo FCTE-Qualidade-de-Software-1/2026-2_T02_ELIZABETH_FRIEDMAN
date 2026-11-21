@@ -25,5 +25,8 @@ __pycache__/
 !avaliacao/manutenibilidade/evidencias/piloto/**/execucao.log
 !avaliacao/manutenibilidade/evidencias/piloto/M1.3/**/*.log
 
+# Dependências da verificação da ação R04
+avaliacao/melhoria-r04/node_modules/
+
 # Coleta formal de M2–M5 (#43): fora do repositório até a análise
 avaliacao/resultados/desempenho/coleta/

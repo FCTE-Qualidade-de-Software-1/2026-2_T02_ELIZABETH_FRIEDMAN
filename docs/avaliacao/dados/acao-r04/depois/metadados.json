@@ -1,0 +1,26 @@
+{
+  "startedAt": "2026-11-17T02:08:55.025Z",
+  "variant": "depois",
+  "baseURL": "http://127.0.0.1:3046",
+  "sourceCommit": "54c781189868b7138fbeb8659622fd3540cafdcb",
+  "sourceStatus": "",
+  "node": "v24.22.1",
+  "playwright": "1.62.1",
+  "browser": "151.0.7922.34",
+  "os": "linux 6.18.58.1-microsoft-standard-WSL2 x64",
+  "api": "Interceptada pelo Playwright; massa.json sintética; sem banco, login real ou SIGAA",
+  "devices": {
+    "computador": {
+      "width": 1366,
+      "height": 900
+    },
+    "celular": {
+      "width": 390,
+      "height": 844,
+      "isMobile": true,
+      "hasTouch": true,
+      "deviceScaleFactor": 3
+    }
+  },
+  "finishedAt": "2026-11-17T02:09:37.843Z"
+}
