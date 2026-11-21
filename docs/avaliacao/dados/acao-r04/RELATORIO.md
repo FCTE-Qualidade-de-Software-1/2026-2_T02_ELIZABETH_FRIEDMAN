@@ -150,6 +150,32 @@ Para repetir: iniciar `node avaliacao/melhoria-r04/proxy-api.cjs`, criar em cada
 `web/.env.local` com `NEXT_PUBLIC_API_URL=http://127.0.0.1:8999` e subir os servidores nas
 portas 3045 e 3046, como na [reprodução do roteiro](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04/README.md).
 
+## Aviso sobre turmas indisponíveis
+
+O ajuste em `avaliacao/melhoria-r04/aviso-turma.patch`, aplicado sobre o commit
+`54c7811`, informa quando uma ou mais turmas deixam de estar disponíveis durante
+a restauração: “Algumas turmas da seleção não estão mais disponíveis e não foram
+recuperadas.” As turmas disponíveis continuam selecionadas. Se nenhuma puder
+ser recuperada, o rascunho é removido e o mesmo aviso é exibido. Uma resposta
+atrasada não exibe o aviso se o usuário já tiver alterado a seleção.
+
+A rodada complementar usa o mesmo ambiente controlado, com o patch aplicado,
+e preserva os dados da rodada inicial. Seus registros ficam em
+[`aviso-turma/depois/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/acao-r04/aviso-turma/depois).
+Passaram **32 verificações (16 por tela)** nessa rodada, incluindo recuperação
+parcial e total com aviso, ausência de aviso quando todas as turmas são
+recuperadas e ausência de aviso atrasado após uma ação do usuário. O lint passou;
+a checagem de tipos continuou apontando o mesmo `TS2344` preexistente do layout.
+
+- [Resultados](aviso-turma/depois/resultados.json) e [metadados](aviso-turma/depois/metadados.json).
+- [Identificação do patch e hashes](aviso-turma/artefato.json), pois esta rodada usa o commit base com alterações locais.
+- Recuperação parcial com aviso: [computador](aviso-turma/depois/computador-turma-parcial-aviso.png) e [celular emulado](aviso-turma/depois/celular-turma-parcial-aviso.png).
+- Nenhuma turma recuperada, com aviso: [computador](aviso-turma/depois/computador-turma-obsoleta-aviso.png) e [celular emulado](aviso-turma/depois/celular-turma-obsoleta-aviso.png).
+
+O material em `web/tests/r04/` foi mantido no fork para a avaliação. Um futuro
+PR ao projeto original deve retirar essa pasta e adotar os testes e caminhos
+próprios do projeto.
+
 ## Alcance e entrega
 
 Não foram repetidos todos os cenários do denominador de M8 nem as sessões com

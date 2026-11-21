@@ -1,0 +1,7 @@
+{
+  "commit_base": "54c781189868b7138fbeb8659622fd3540cafdcb",
+  "patch": "avaliacao/melhoria-r04/aviso-turma.patch",
+  "patch_sha256": "85409a65da169398bb641d5896d1088cfb5cff87fd1f6f5b30831dc1b9c3e295",
+  "roteiro_sha256": "2c8e759d37173820a6ac6f18d3fe56999beba24f42bdd7674a9be85202bcfb78",
+  "verificacoes_aprovadas": 32
+}

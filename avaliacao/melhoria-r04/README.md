@@ -17,6 +17,7 @@ git clone https://github.com/LucasMF1/2023-2-SuaGradeUnB.git /tmp/r04-original
 git -C /tmp/r04-original checkout 3d399e745383b05e8e3b1a7c97ac0fdbf93a0360
 git clone https://github.com/LucasMF1/2023-2-SuaGradeUnB.git /tmp/r04-corrigido
 git -C /tmp/r04-corrigido checkout 54c781189868b7138fbeb8659622fd3540cafdcb
+git -C /tmp/r04-corrigido apply "$PWD/avaliacao/melhoria-r04/aviso-turma.patch"
 npm --prefix /tmp/r04-original/web ci
 npm --prefix /tmp/r04-corrigido/web ci
 ```
@@ -39,7 +40,9 @@ BASE_URL=http://127.0.0.1:3046 VARIANTE=depois FONTE=/tmp/r04-corrigido EVIDENCI
 ```
 
 Use um novo diretório em `EVIDENCIAS` para preservar a coleta já registrada.
-O roteiro também consta do fork em `web/tests/r04/`. `massa.json` é sintética;
+O roteiro inicial também consta do fork em `web/tests/r04/`. O patch
+`aviso-turma.patch` acrescenta o toast e a verificação da recuperação parcial.
+`massa.json` é sintética;
 as requisições são interceptadas pelo Playwright, sem login ou banco reais.
 Os servidores Next podem precisar de acesso à internet para baixar as fontes
 na primeira compilação. Não é necessário configurar a API para esta verificação.
@@ -56,6 +59,7 @@ da origem `3d399e7`, execute:
 
 ```sh
 git am /caminho/para/avaliacao/melhoria-r04/correcao.patch
+git apply /caminho/para/avaliacao/melhoria-r04/aviso-turma.patch
 ```
 
 ## Teste manual com dados reais
@@ -73,3 +77,10 @@ echo NEXT_PUBLIC_API_URL=http://127.0.0.1:8999 > /tmp/r04-corrigido/web/.env.loc
 Depois, suba os servidores nas portas 3045 e 3046 como acima e abra
 `/schedules/home` nas duas. O teste de 21/11/2026 está registrado no
 [relatório](../../docs/avaliacao/dados/acao-r04/RELATORIO.md#teste-manual-com-dados-reais-21112026).
+
+## Escopo da entrega pelo fork
+
+`web/tests/r04/` é material da avaliação e pode permanecer nesta entrega pelo
+fork. Para um futuro PR ao projeto original, retirar essa pasta e preparar os
+testes conforme as convenções do projeto, sem caminhos padrão para o repositório
+da avaliação. O patch complementar inclui essa observação no README dos testes.

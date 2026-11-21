@@ -13,6 +13,7 @@ assert(process.env.FONTE, 'Defina FONTE com o checkout testado');
 const out = path.resolve(process.env.EVIDENCIAS || '../../docs/avaliacao/dados/acao-r04', variant);
 fs.mkdirSync(out, { recursive: true });
 const KEY = 'suagrade:selected-classes:v1';
+const UNAVAILABLE_NOTICE = 'Algumas turmas da seleção não estão mais disponíveis e não foram recuperadas.';
 const results = [];
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
@@ -156,11 +157,25 @@ async function main() {
         await waitCount(1);
         assert((await page.locator('main').innerText()).includes('Sala atualizada na API'));
         record('dados-atuais', 'Dados exibidos vêm da API, sem confiar no rascunho');
+        assert.equal(await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).count(), 0);
+
+        const partialDraft = JSON.parse(draft);
+        partialDraft.disciplines[0].classIds = [10701, 10702];
+        courses[0].classes = courses[0].classes.slice(0, 1);
+        await seed(JSON.stringify(partialDraft));
+        await waitCount(1);
+        await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).waitFor();
+        assert.deepEqual(JSON.parse(await read()).disciplines[0].classIds, [10701]);
+        await page.screenshot({ path: path.join(out, `${device}-turma-parcial-aviso.png`), animations: 'disabled', scale: 'css' });
+        record('turma-parcialmente-obsoleta', 'Turma disponível preservada e aviso exibido sobre a turma descartada');
+
         courses[0].classes = [];
         await seed(draft);
         await page.waitForFunction(key => sessionStorage.getItem(key) === null, KEY);
         await waitCount(0);
-        record('turma-obsoleta', 'Turma que deixou de existir não restaurada');
+        await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).waitFor();
+        await page.screenshot({ path: path.join(out, `${device}-turma-obsoleta-aviso.png`), animations: 'disabled', scale: 'css' });
+        record('turma-obsoleta', 'Seleção esvaziada, rascunho removido e aviso de turma indisponível exibido');
 
         courses = structuredClone(massa.disciplines);
         failCourses = true;
@@ -172,16 +187,19 @@ async function main() {
         await home();
         await waitCount(1);
 
+        courses[0].classes = [];
         delay = 1200;
         await home();
         await page.getByRole('button', { name: 'Buscar matéria', exact: true }).click();
         await page.locator('select').first().selectOption('2026/1');
         await sleep(1400);
         assert.equal(await read(), null);
+        assert.equal(await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).count(), 0);
         await closeSearch();
         await waitCount(0);
         record('restauracao-concorrente', 'Resposta atrasada não sobrescreve alteração feita durante restauração');
         delay = 0;
+        courses = structuredClone(massa.disciplines);
 
         await seed(draft);
         await waitCount(1);

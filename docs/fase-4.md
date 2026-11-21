@@ -556,6 +556,15 @@ Há [instruções de reprodução no fork](https://github.com/LucasMF1/2023-2-Su
 e um [pacote local da ação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/melhoria-r04),
 com roteiro, massa e patch. A equipe enviou a correção ao projeto original no [PR nº 252 do Sua Grade UnB](https://github.com/unb-mds/2023-2-SuaGradeUnB/pull/252).
 
+O [patch complementar de aviso](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/melhoria-r04/aviso-turma.patch),
+aplicado sobre `54c7811`, acrescenta uma mensagem quando alguma turma deixou de
+estar disponível e não pôde ser recuperada. As turmas ainda disponíveis são
+preservadas. Esse comportamento foi verificado em uma
+[rodada complementar](avaliacao/dados/acao-r04/RELATORIO.md#aviso-sobre-turmas-indisponiveis),
+separada da coleta inicial. A pasta `web/tests/r04/` faz parte da entrega pelo
+fork; para um futuro PR ao projeto original, deve ser retirada e os testes
+adaptados às convenções desse projeto.
+
 **Verificação e antes/depois.** Em 16/11/2026, foram executadas duas cópias locais
 com a mesma massa sintética, roteiro, dependências e navegador, diferenciadas
 pelo código e pela porta do servidor. O Playwright interceptou as respostas da
@@ -570,7 +579,7 @@ esta coleta fica separada em `acao-r04/`.
 | Computador | Seleção perdida sem diálogo ([captura](avaliacao/dados/acao-r04/antes/computador-R04-recarregada.png)) | Mesma turma restaurada ([captura](avaliacao/dados/acao-r04/depois/computador-R04-recarregada.png)) |
 | Celular emulado | Seleção perdida sem diálogo ([captura](avaliacao/dados/acao-r04/antes/celular-R04-recarregada.png)) | Mesma turma restaurada ([captura](avaliacao/dados/acao-r04/depois/celular-R04-recarregada.png)) |
 
-Na variante corrigida passaram **30 verificações (15 por tela)**: recarga,
+Na rodada inicial da variante corrigida passaram **30 verificações (15 por tela)**: recarga,
 segunda recarga, remoção parcial, remoção da última turma, troca de período,
 período indisponível, dados inválidos, atualização dos dados pela API, turma
 obsoleta, falha da API, restauração concorrente com ação do usuário, aba
@@ -607,7 +616,7 @@ originais de **3/4 no computador e 4/5 no celular** permanecem como resultados d
 avaliação, e não se publicam novos percentuais de M8. O rascunho não substitui
 o salvamento na conta. Se a API falhar, o rascunho é mantido para outra recarga e
 uma mensagem é exibida; se o armazenamento estiver bloqueado, a seleção continua
-em memória, sem garantia de recuperação.
+em memória, sem garantia de recuperação. Não foi validado o build de produção.
 
 ---
 

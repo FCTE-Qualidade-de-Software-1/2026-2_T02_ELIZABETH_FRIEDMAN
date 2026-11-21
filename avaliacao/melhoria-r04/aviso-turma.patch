@@ -1,0 +1,140 @@
+diff --git a/web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx b/web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx
+index 2d964b9..a017623 100644
+--- a/web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx
++++ b/web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx
+@@ -1,6 +1,7 @@
+ 'use client';
+ 
+ import { createContext, useEffect, useRef, useState } from 'react';
++import toast from 'react-hot-toast';
+ import useYearPeriod from '../../hooks/useYearPeriod';
+ 
+ import { errorToast } from '../../utils/toast';
+@@ -58,12 +59,17 @@ export default function SelectedClassesContextProvider({ children }: SelectedCla
+             return;
+         }
+         let active = true;
+-        restoreDraft(draft).then(restored => {
++        restoreDraft(draft).then(({ discardedClasses, ...restored }) => {
+             if (!active || interacted.current) return;
+             selectionRef.current = restored;
+             setSelection(restored);
+             setClassesChange(value => !value);
+             saveDraft(restored);
++            if (discardedClasses > 0) {
++                toast('Algumas turmas da seleção não estão mais disponíveis e não foram recuperadas.', {
++                    icon: '⚠️', duration: 6000
++                });
++            }
+         }).catch(() => {
+             if (active && !interacted.current) {
+                 errorToast('Não foi possível recuperar a seleção. Recarregue para tentar novamente.');
+diff --git a/web/app/contexts/SelectedClassesContext/draft.ts b/web/app/contexts/SelectedClassesContext/draft.ts
+index e732cb4..4a15db0 100644
+--- a/web/app/contexts/SelectedClassesContext/draft.ts
++++ b/web/app/contexts/SelectedClassesContext/draft.ts
+@@ -69,7 +69,7 @@ function isClass(value: unknown): value is ClassType {
+ }
+ 
+ // Only identifiers are stored. Names, rooms, teachers and schedules always come from the API.
+-export async function restoreDraft(draft: Draft): Promise<Selection> {
++export async function restoreDraft(draft: Draft): Promise<Selection & { discardedClasses: number }> {
+     const [year, period] = draft.yearPeriod.split('/');
+     const restored = await Promise.all(draft.disciplines.map(async saved => {
+         const { data } = await request.get<unknown>('/courses/', {
+@@ -92,5 +92,11 @@ export async function restoreDraft(draft: Draft): Promise<Selection> {
+         return [saved.id, classes] as const;
+     }));
+     const selectedClasses = new Map(restored.filter(([, classes]) => classes.size));
+-    return { selectedClasses, currentYearPeriod: selectedClasses.size ? draft.yearPeriod : '' };
++    const savedCount = draft.disciplines.reduce((total, discipline) => total + discipline.classIds.length, 0);
++    const restoredCount = restored.reduce((total, [, classes]) => total + classes.size, 0);
++    return {
++        selectedClasses,
++        currentYearPeriod: selectedClasses.size ? draft.yearPeriod : '',
++        discardedClasses: savedCount - restoredCount
++    };
+ }
+diff --git a/web/tests/r04/README.md b/web/tests/r04/README.md
+index 543674b..6f351fd 100644
+--- a/web/tests/r04/README.md
++++ b/web/tests/r04/README.md
+@@ -2,7 +2,8 @@
+ 
+ O rascunho usa `sessionStorage` (`suagrade:selected-classes:v1`) e guarda somente
+ período, códigos e identificadores. A restauração espera os períodos oferecidos
+-e busca as turmas na API; informações removidas não voltam à seleção. A troca de
++e busca as turmas na API; informações removidas não voltam à seleção, e um aviso
++informa quando alguma turma não pode ser recuperada. A troca de
+ período invalida a seleção anterior. O formulário mantém a proteção existente:
+ é necessário remover as turmas antes de escolher outro período.
+ 
+@@ -51,3 +52,9 @@ Com tipos de rotas gerados pelo Next, `tsc --noEmit` falha em
+ `.next/types/app/layout.ts` porque `app/layout.tsx` exporta `poppins` e
+ `chivoMono`. O mesmo erro ocorre no checkout original, sem esta correção.
+ Esse problema preexistente fica fora do escopo de R04.
++
++## Escopo dos testes
++
++Esta pasta integra a entrega da avaliação pelo fork. Para um futuro PR ao projeto
++original, remover este material da avaliação e preparar testes conforme as
++convenções do projeto, sem o caminho padrão de evidências deste repositório.
+diff --git a/web/tests/r04/verificar.cjs b/web/tests/r04/verificar.cjs
+index b94eaf3..b801e0b 100644
+--- a/web/tests/r04/verificar.cjs
++++ b/web/tests/r04/verificar.cjs
+@@ -13,6 +13,7 @@ assert(process.env.FONTE, 'Defina FONTE com o checkout testado');
+ const out = path.resolve(process.env.EVIDENCIAS || '../../docs/avaliacao/dados/acao-r04', variant);
+ fs.mkdirSync(out, { recursive: true });
+ const KEY = 'suagrade:selected-classes:v1';
++const UNAVAILABLE_NOTICE = 'Algumas turmas da seleção não estão mais disponíveis e não foram recuperadas.';
+ const results = [];
+ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
+ 
+@@ -156,11 +157,25 @@ async function main() {
+         await waitCount(1);
+         assert((await page.locator('main').innerText()).includes('Sala atualizada na API'));
+         record('dados-atuais', 'Dados exibidos vêm da API, sem confiar no rascunho');
++        assert.equal(await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).count(), 0);
++
++        const partialDraft = JSON.parse(draft);
++        partialDraft.disciplines[0].classIds = [10701, 10702];
++        courses[0].classes = courses[0].classes.slice(0, 1);
++        await seed(JSON.stringify(partialDraft));
++        await waitCount(1);
++        await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).waitFor();
++        assert.deepEqual(JSON.parse(await read()).disciplines[0].classIds, [10701]);
++        await page.screenshot({ path: path.join(out, `${device}-turma-parcial-aviso.png`), animations: 'disabled', scale: 'css' });
++        record('turma-parcialmente-obsoleta', 'Turma disponível preservada e aviso exibido sobre a turma descartada');
++
+         courses[0].classes = [];
+         await seed(draft);
+         await page.waitForFunction(key => sessionStorage.getItem(key) === null, KEY);
+         await waitCount(0);
+-        record('turma-obsoleta', 'Turma que deixou de existir não restaurada');
++        await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).waitFor();
++        await page.screenshot({ path: path.join(out, `${device}-turma-obsoleta-aviso.png`), animations: 'disabled', scale: 'css' });
++        record('turma-obsoleta', 'Seleção esvaziada, rascunho removido e aviso de turma indisponível exibido');
+ 
+         courses = structuredClone(massa.disciplines);
+         failCourses = true;
+@@ -172,16 +187,19 @@ async function main() {
+         await home();
+         await waitCount(1);
+ 
++        courses[0].classes = [];
+         delay = 1200;
+         await home();
+         await page.getByRole('button', { name: 'Buscar matéria', exact: true }).click();
+         await page.locator('select').first().selectOption('2026/1');
+         await sleep(1400);
+         assert.equal(await read(), null);
++        assert.equal(await page.getByText(UNAVAILABLE_NOTICE, { exact: true }).count(), 0);
+         await closeSearch();
+         await waitCount(0);
+         record('restauracao-concorrente', 'Resposta atrasada não sobrescreve alteração feita durante restauração');
+         delay = 0;
++        courses = structuredClone(massa.disciplines);
+ 
+         await seed(draft);
+         await waitCount(1);
