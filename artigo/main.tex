@@ -12,6 +12,8 @@
 \usepackage[brazil]{babel}
 \usepackage{tabularray}
 \usepackage{float}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
 
 \sloppy
 \raggedbottom
@@ -32,24 +34,29 @@
 \maketitle
 
 \begin{abstract}
-% TODO: revisar após a Fase 4 para incluir os principais resultados (limite de 10 linhas).
-This paper presents the product quality evaluation of Sua Grade UnB, an
-open-source web application that helps students at the University of Brasília
-build their semester timetable. The evaluation follows the ISO/IEC 25040 process
-and the ISO/IEC 25010:2023 quality model, focusing on Maintainability,
-Interaction capability and Performance efficiency. Metrics were derived with the
-GQM approach, and the evaluation project itself is tracked with PSM indicators.
+This paper evaluates the product quality of Sua Grade UnB, an open-source web
+application that helps students at the University of Brasília build their
+timetable, following ISO/IEC 25040 and the ISO/IEC 25010:2023 model, with
+metrics derived by GQM. In a local reproduction, Performance efficiency met its
+hypotheses, with every P95 under 7\% of its limit. Maintainability had three of
+four hypotheses supported, with modifiability inconclusive. Interaction
+capability was not met: in sessions with four students, saving to the account
+and losing the selection on page reload were the main obstacles. As an
+improvement action, the team implemented and verified the recovery of the
+selection after a reload.
 \end{abstract}
 
 \begin{resumo}
-% TODO: revisar após a Fase 4 para incluir os principais resultados (limite de 10 linhas).
-Este trabalho apresenta a avaliação de qualidade de produto do Sua Grade UnB,
-aplicação web de código aberto que ajuda estudantes da Universidade de Brasília a
-montar a grade horária do semestre. A avaliação segue o processo da ISO/IEC 25040
-e o modelo de qualidade da ISO/IEC 25010:2023, com foco em Manutenibilidade,
-Capacidade de interação e Eficiência de desempenho. As métricas foram derivadas
-pela abordagem GQM, e o próprio projeto de avaliação é acompanhado com
-indicadores do PSM.
+Este trabalho avalia a qualidade de produto do Sua Grade UnB, aplicação web de
+código aberto em que estudantes da UnB montam a grade horária, segundo a
+ISO/IEC 25040 e o modelo da ISO/IEC 25010:2023, com métricas derivadas pelo GQM.
+Na reprodução local, a Eficiência de desempenho sustentou suas hipóteses, com
+todo P95 abaixo de 7\% do limite. A Manutenibilidade teve três de quatro
+hipóteses sustentadas, e a modificabilidade ficou inconclusiva. A Capacidade de
+interação não foi atendida: em sessões com quatro estudantes, o salvamento na
+conta e a perda da seleção ao recarregar a página foram os principais
+obstáculos. Como ação de melhoria, a equipe implementou e verificou a
+recuperação da seleção após a recarga.
 \end{resumo}
 
 \section{Introdução}\label{sec:intro}
@@ -82,9 +89,10 @@ que mais afetam os estudantes no período de matrícula e a continuidade da
 manutenção. Os resultados pretendem apoiar três decisões: o que os mantenedores
 devem corrigir primeiro, qual ação de melhoria a equipe executará e por qual
 parte do código novos contribuidores devem começar.
-% TODO: atualizar após a Fase 4 para resumir os principais resultados e a ação de melhoria.
-Esta versão cobre as três primeiras atividades do processo de avaliação; as
-demais serão incorporadas na versão seguinte. A Seção~\ref{sec:referencial}
+Os problemas encontrados concentram-se na capacidade de interação, e não no
+tempo de resposta nem na estrutura do código; a ação de melhoria executada
+evita que o estudante perca as turmas já escolhidas ao recarregar a página.
+A Seção~\ref{sec:referencial}
 apresenta o referencial teórico, a Seção~\ref{sec:metodologia} descreve sua
 aplicação ao Sua Grade UnB, e as Seções~\ref{sec:resultados}
 e~\ref{sec:conclusao} trazem resultados e conclusões.
@@ -366,7 +374,6 @@ sessão da conta de teste e a persistência da grade em M5. O piloto de M6 a M9
 aguardava participantes.
 
 \paragraph{Execução e conclusão.}
-% TODO: completar com o julgamento (#45) e a ação de melhoria (#46).
 As medidas de G1 foram coletadas em 12/11/2026 (M1.3) e 15/11/2026 (M1.1, M1.2 e
 M1.4), e as de G2, em uma rodada formal em 15/11/2026, com 30 tentativas medidas
 por cenário. Nessa rodada, 20 tentativas do cenário de M3 com uma turma já
@@ -390,6 +397,19 @@ salvamento de M9 foi alterada a partir da segunda sessão, o que impediu sua
 coleta. As rodadas descartadas, os dados brutos e os \textit{scripts} de análise
 ficam no repositório do projeto; vídeos, transcrições e termos de consentimento
 ficam em acesso restrito à equipe.
+
+O julgamento aplica os critérios da Fase~2, fixados antes da coleta: cada
+objetivo recebe um estado a partir de suas hipóteses, sem nota única e sem usar
+a prioridade da Fase~1 como peso. As oportunidades de melhoria para os
+mantenedores (D1) são ordenadas pelo número de recortes com nota~0 em que o
+problema aparece e, no empate, pela gravidade da consequência para o estudante.
+A ação de melhoria (D2) foi implementada em um \textit{fork} do produto, a partir
+do \textit{commit} \texttt{3d399e7}, e verificada de duas formas: em 16/11/2026,
+um roteiro Playwright executou o mesmo cenário na versão original e na corrigida,
+com a mesma massa sintética e o computador e o celular emulados; em 21/11/2026,
+um integrante repetiu o cenário à mão nas duas versões, com as disciplinas reais
+do período obtidas por um \textit{proxy} local que só repassa consultas e bloqueia
+login e gravações.
 
 \subsection{Gestão do projeto com PSM/CID}\label{subsec:psm}
 
@@ -442,7 +462,6 @@ funcionamento das ferramentas, mas não constitui coleta validada.
 
 \section{Resultados}\label{sec:resultados}
 
-% TODO: incluir o julgamento e as relações entre as características (#45) e a ação de melhoria (#46).
 Os resultados de cada métrica são comparados com as faixas da Fase~2 sem
 arredondamento prévio. A nota de uma métrica é a menor entre seus recortes e só é
 atribuída quando todos os recortes previstos foram avaliados; as notas não são
@@ -609,6 +628,37 @@ M9 & Computador: seleção e geração concluída & 2 de 2 em cada (100\%) & 3 \
 \end{tblr}
 \end{table}
 
+A Figura~\ref{fig:g3} compara cada recorte avaliado com o limite de aceitação
+da sua métrica. Só os recortes de seleção e remoção no computador, de salvamento
+na conta em M8 e de estado no computador em M9 alcançam o limite.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  xbar, bar width=6pt, width=0.8\linewidth, height=6.3cm,
+  xmin=0, xmax=105, xlabel={Sucesso (\%)},
+  symbolic y coords={M9 cel,M9 comp,M8 conta,M8 nav cel,M8 nav comp,M7 cel sel,M7 comp troca,M7 comp sel/rem,M6 cel,M6 comp},
+  ytick=data, tick label style={font=\footnotesize},
+  label style={font=\footnotesize}, legend style={font=\footnotesize, at={(0.5,1.02)}, anchor=south, legend columns=2, draw=none},
+  nodes near coords, nodes near coords style={font=\scriptsize},
+  enlarge y limits=0.07,
+]
+\addplot[fill=gray!45, draw=gray!70] coordinates {
+  (0,M6 comp) (50,M6 cel) (100,M7 comp sel/rem) (50,M7 comp troca) (50,M7 cel sel)
+  (75,M8 nav comp) (80,M8 nav cel) (100,M8 conta) (100,M9 comp) (50,M9 cel)};
+\addlegendentry{Resultado}
+\addplot[only marks, mark=|, mark size=5pt, very thick, black, nodes near coords={}] coordinates {
+  (80,M6 comp) (80,M6 cel) (90,M7 comp sel/rem) (90,M7 comp troca) (90,M7 cel sel)
+  (100,M8 nav comp) (100,M8 nav cel) (100,M8 conta) (90,M9 comp) (90,M9 cel)};
+\addlegendentry{Limite de aceitação}
+\end{axis}
+\end{tikzpicture}
+\caption{Resultados de G3 por recorte avaliado e limite de aceitação da métrica.
+M9 reúne os pontos de seleção e de geração concluída; recortes sem nota não aparecem.}
+\label{fig:g3}
+\end{figure}
+
 \textbf{Q6 (Aprendizagem).} Não. Os quatro participantes selecionaram as turmas
 do cartão e geraram a grade correta, mas só um, no celular, salvou a grade na
 conta e a recuperou depois de recarregar a página. Nos outros três casos, a grade
@@ -643,10 +693,126 @@ quatro pessoas, uma delas com vínculo pessoal com um integrante da equipe, e do
 desvios de protocolo descritos na Seção~\ref{subsec:fases34}; servem para
 identificar obstáculos, e não para estimar taxas de sucesso.
 
+\subsection{Ação de melhoria}\label{subsec:res-acao}
+
+A ação executada corresponde à primeira oportunidade de D1
+(Seção~\ref{sec:conclusao}): recuperar a seleção de turmas após recarregar a
+página (M8, cenário R04). Ela foi escolhida pelo risco concreto de o estudante
+perder a montagem e por poder ser verificada sem novas sessões com
+participantes. No \textit{commit} \texttt{3d399e7}, a seleção fica só na memória
+do componente \texttt{SelectedClassesContext}. A correção guarda um rascunho em
+\texttt{sessionStorage}, válido só para a aba atual, com apenas o período e os
+códigos das turmas; na recarga, consulta de novo a API, de modo que sala, horário
+e professor vêm dos dados atuais, e turmas removidas ou de período não oferecido
+não são restauradas. O código está em um \textit{fork} público (\textit{commit}
+\texttt{54c7811}) e foi enviado ao projeto original como \textit{pull request}.
+
+A Tabela~\ref{tab:res-acao} resume a verificação. Na versão corrigida, o roteiro
+automatizado passou em 30 verificações, 15 por tela, que incluem segunda recarga,
+remoção de turmas, troca de período, dados inválidos, turma obsoleta, falha da
+API e armazenamento indisponível. O \textit{lint} passou; a checagem de tipos
+falhou nas duas versões pelo mesmo erro preexistente do produto.
+
+\begin{table}[htbp]
+\centering
+\caption{Cenário R04 antes e depois da correção}
+\label{tab:res-acao}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {X[l] X[l] X[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Verificação & Origem \texttt{3d399e7} & Correção \texttt{54c7811} \\
+Roteiro, computador (16/11) & Seleção perdida, sem aviso & Mesma turma restaurada \\
+Roteiro, celular emulado (16/11) & Seleção perdida, sem aviso & Mesma turma restaurada \\
+Manual, dados reais (21/11) & Seleção perdida, sem aviso & Quatro turmas restauradas em cerca de 2\,s, também na segunda recarga \\
+\end{tblr}
+\end{table}
+
+A verificação é funcional e vale para o cenário R04: não houve celular físico,
+Safari, Firefox nem nova sessão com participantes. Como os demais cenários de M8
+não foram repetidos, os valores originais (3 de 4 no computador e 4 de 5 no
+celular) continuam sendo os resultados da avaliação. O rascunho também não
+substitui o salvamento na conta, segundo problema da lista.
+
 \section{Conclusão}\label{sec:conclusao}
 
-% TODO: escrever a Conclusão após a Fase 4.
-A conclusão será apresentada após a execução da avaliação (Fase~4).
+\subsection{Julgamento}\label{subsec:julgamento}
+
+A Tabela~\ref{tab:julgamento} reúne o estado de cada objetivo. ``Atendido'' em
+G2 significa que as hipóteses foram sustentadas no recorte medido; não certifica
+a característica nem o produto. Em G1, a hipótese inconclusiva indica coleta a
+completar, e não problema do produto.
+
+\begin{table}[htbp]
+\centering
+\caption{Julgamento por objetivo}
+\label{tab:julgamento}
+\footnotesize
+\begin{tblr}{
+  width = \linewidth,
+  colspec = {Q[l] Q[l] X[l]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Objetivo & Estado & Base \\
+G1 Manutenibilidade & Inconclusivo & H1.1, H1.2 e H1.4 sustentadas; H1.3 sem execução válida \\
+G2 Eficiência de desempenho & {Atendido nas\\condições avaliadas} & H2 a H5 sustentadas; todo P95 abaixo de 7\% do limite \\
+G3 Capacidade de interação & Não atendido & H6 a H9 contrariadas, cada uma com ao menos um recorte com nota~0 \\
+\end{tblr}
+\end{table}
+
+Em relação ao propósito da Fase~1, os problemas que mais afetam os estudantes na
+matrícula estão na interação, e não no tempo de resposta. Para os mantenedores
+(D1), a ordem recomendada é: (1)~a recarga que apaga a seleção, nota~0 nos dois
+dispositivos e com perda do trabalho sem aviso; (2)~o salvamento na conta, também
+nota~0 nos dois dispositivos, cujo botão tem só um ícone e aparece esmaecido;
+(3)~a descrição do estado após selecionar e após gerar no celular; e (4)~a troca
+de turma, com um caso em dois. Os itens 3 e 4 pedem nova observação antes de
+mudar a interface. A ação da equipe (D2) foi o item~1
+(Seção~\ref{subsec:res-acao}). Para novos contribuidores (D3), o \textit{scraper}
+e o gerador são o melhor ponto de partida, com a menor complexidade e a maior
+cobertura; pequenas mudanças, como desfazer o ciclo de tipo do \textit{frontend},
+também são adequadas. A API concentra o único bloco com CC acima de 10
+(\texttt{GenerateSchedule.post}) e sete arquivos sem linha executada, entre eles
+o comando \texttt{updatedb}, que grava os dados do SIGAA; o \textit{frontend} não
+tem testes. Nenhuma mudança de desempenho é recomendada.
+
+\subsection{Relações entre as características}\label{subsec:relacoes}
+
+Nenhuma relação é estabelecida como causal, porque cada característica foi
+medida em separado, em um único \textit{commit}. \textbf{Desempenho e
+interação:} o bom tempo de resposta não bastou para uma boa interação; as falhas
+de G3 foram de compreensão e de proteção contra perda, e nenhuma sessão registrou
+queixa de lentidão. Não se sabe se o tempo medido localmente se repete no site
+público, onde as sessões ocorreram. \textbf{Desempenho e manutenibilidade:} o
+\textit{trade-off} previsto na Fase~1 não apareceu, já que o gerador tem CC
+máxima~6, 99,29\% de cobertura e P95 de até 700,7~ms, e não há otimização a
+ponderar. \textbf{Manutenibilidade e interação:} as correções indicadas por G3
+ficam no \textit{frontend}, de complexidade baixa, mas sem nenhum teste, de modo
+que são feitas sem rede de segurança; o ciclo do \textit{frontend} está na área
+de login e não se liga aos problemas observados. \textbf{Manutenibilidade e
+SIGAA:} o \textit{scraper} é simples e bem coberto, mas o comando que grava seus
+dados no banco não é executado pelos testes, e só M1.3, inconclusiva, diria se
+uma mudança no SIGAA seria fácil de absorver.
+
+\subsection{Limitações e trabalhos futuros}\label{subsec:limitacoes}
+
+Os julgamentos valem para o \textit{commit} \texttt{3d399e7} e para as
+condições de cada coleta, sem teste de significância estatística. G2 foi medido
+localmente, com um usuário, \textit{frontend} em modo de desenvolvimento e massa
+de 14 disciplinas, e não representa o pico de matrícula; M3 foi recoletada em
+outro ambiente. G3 vem de quatro participantes por conveniência, com desvios de
+protocolo e cobertura parcial em M7, M8 e M9, o que impede comparar
+dispositivos. G1 depende de uma execução cronometrada e registrada de M1.3 para
+deixar de ser inconclusivo. Como próximos passos, a equipe sugere repetir M1.3
+por quem não conheça as mudanças, medir G2 no ambiente de produção fora do
+período de matrícula, testar com participantes a mudança do botão de salvamento
+e abrir as demais oportunidades como \textit{issues} no repositório do produto.
 
 \section*{Contribuições dos autores e uso de IA}
 
