@@ -173,7 +173,8 @@ A avaliação é independente e acadêmica, conduzida na disciplina FGA0315
 (Qualidade de Software~1). A equipe atua como requisitante e avaliadora, e os
 principais destinatários são os mantenedores do produto. Todos os artefatos estão
 no repositório
-\url{https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN}
+\url{https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN},
+na versão v2.0\footnote{\url{https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/tag/v2.0}},
 e na página do projeto. As Fases~1 e~2 correspondem às atividades de
 estabelecer os requisitos e especificar a avaliação; a Fase~3, a projetar; e a
 Fase~4, a executar e concluir.
@@ -820,15 +821,51 @@ e abrir as demais oportunidades como \textit{issues} no repositório do produto.
 ESW conduziu a Fase~1. KSM e LMF especificaram a avaliação pela abordagem GQM
 (Fase~2). JPBPN e JSC escreveram este manuscrito. JJSN conduziu a gestão do
 projeto e as medições PSM/CID.
-% TODO: informar a versão do Claude Code usada (extensão do VS Code) e revisar a lista de usos.
-Os autores usaram o Claude Code, com o modelo Claude Opus~5.5 (Anthropic), na
-estruturação do documento em \LaTeX{} e no rascunho da Metodologia, a partir dos
-documentos da equipe; todo o conteúdo foi revisado pelos autores.
+% TODO: informar a versão do Claude Code usada (extensão do VS Code).
+Os autores usaram o Claude Code, com o modelo Claude Opus~5.5 (Anthropic), em
+três frentes de apoio: (i)~busca e levantamento de fontes bibliográficas;
+(ii)~revisão aprofundada das informações do texto, para checar consistência com
+as fontes e os documentos da equipe; e (iii)~implementação das métricas em
+\textit{scripts} de coleta automatizada, para garantir que os dados fossem
+coletados conforme as definições do plano de medição. As fontes indicadas foram
+consultadas pelos autores, e os \textit{scripts} e todo o conteúdo do artigo foram
+revisados e validados por eles.
+O percentual de esforço de cada membro está no Apêndice~\ref{ap:contribuicao}
+(Tabela~\ref{tab:contribuicao}).
 % TODO: confirmar com a docente se as sessões com estudantes exigem submissão a comitê de ética.
 As sessões com estudantes previstas em G3 têm autorização dos participantes,
 identificados apenas por códigos nos dados publicados.
 
+
 \bibliographystyle{sbc}
 \bibliography{refs}
+
+\appendix
+
+\section{Contribuição dos membros}\label{ap:contribuicao}
+
+% Percentuais da Entrega 2 decididos pela equipe (docs/equipe.md): 20% para
+% Eduardo e 16% para cada um dos demais; total = 100%.
+\begin{table}[htbp]
+\centering
+\caption{Percentual de esforço de cada membro}
+\label{tab:contribuicao}
+\footnotesize
+\begin{tblr}{
+  colspec = {Q[l] Q[c]},
+  row{1} = {font=\bfseries},
+  hline{1,2,Y,Z} = {0.8pt},
+  rowsep = 1pt,
+}
+Membro & Esforço (\%) \\
+Eduardo Silva Waski & \textbf{20} \\
+João Paulo Barbosa Pereira Nunes & \textbf{16} \\
+José Joaquim da Silva Neto & \textbf{16} \\
+Júlia Santana Campos & \textbf{16} \\
+Kaleb de Souza Macedo & \textbf{16} \\
+Lucas Monteiro Freitas & \textbf{16} \\
+Total & \textbf{100} \\
+\end{tblr}
+\end{table}
 
 \end{document}
