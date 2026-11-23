@@ -71,26 +71,26 @@ data_referencia,categoria,indicador,valor,unidade,detalhe
 2026-11-15,Calendário e progresso,Desvio de prazo médio,-6.1,dias,1 de 31 issues concluídas depois do prazo do milestone (negativo = adiantado)
 2026-11-15,Recursos e custos,Esforço real / estimado,0.94,razão,120 h reais / 127 h estimadas em 32 issues com os dois registros
 2026-11-15,Recursos e custos,Issues concluídas sem horas reais,0,issues,de 32 issues concluídas
-2026-11-15,Recursos e custos,Distribuição de esforço — Eduardo Waski,29.2,%,38 h de 130 h registradas
-2026-11-15,Recursos e custos,Distribuição de esforço — Joaquim Neto,17.3,%,22.5 h de 130 h registradas
-2026-11-15,Recursos e custos,Distribuição de esforço — João Paulo Nunes,8.5,%,11 h de 130 h registradas
-2026-11-15,Recursos e custos,Distribuição de esforço — Júlia Santana Campos,18.8,%,24.5 h de 130 h registradas
-2026-11-15,Recursos e custos,Distribuição de esforço — LucasMF,10.0,%,13 h de 130 h registradas
-2026-11-15,Recursos e custos,Distribuição de esforço — kalebmacedo,16.2,%,21 h de 130 h registradas
-2026-11-16,Desempenho dos processos,PRs revisados no prazo,73.5,%,25 de 34 PRs mergeados aprovados antes do merge e em até 48 h
-2026-11-16,Desempenho dos processos,PRs aprovados antes do merge,76.5,%,26 de 34 PRs mergeados
-2026-11-16,Desempenho dos processos,Retrabalho (issues),20.6,%,7 de 34 issues concluídas com a label correcao ou reabertas
-2026-11-16,Desempenho dos processos,Retrabalho (horas),17.3,%,23.5 h de 136 h reais registradas em issues concluídas
-2026-11-16,Calendário e progresso,Conclusão de issues — PC1 — Ponto de Controle 1,100.0,%,1 de 1 issues concluídas (prazo 19/10)
-2026-11-16,Calendário e progresso,Conclusão de issues — E1 — Fases 1 e 2,100.0,%,18 de 18 issues concluídas (prazo 26/10)
-2026-11-16,Calendário e progresso,Conclusão de issues — PC2 — Ponto de Controle 2,66.7,%,4 de 6 issues concluídas (prazo 16/11)
-2026-11-16,Calendário e progresso,Conclusão de issues — E2 — Fases 3 e 4,62.5,%,10 de 16 issues concluídas (prazo 22/11)
-2026-11-16,Calendário e progresso,Desvio de prazo médio,-6.1,dias,1 de 33 issues concluídas depois do prazo do milestone (negativo = adiantado)
-2026-11-16,Recursos e custos,Esforço real / estimado,0.96,razão,136 h reais / 141 h estimadas em 34 issues com os dois registros
-2026-11-16,Recursos e custos,Issues concluídas sem horas reais,0,issues,de 34 issues concluídas
-2026-11-16,Recursos e custos,Distribuição de esforço — Eduardo Waski,27.9,%,38 h de 136 h registradas
-2026-11-16,Recursos e custos,Distribuição de esforço — Joaquim Neto,18.0,%,24.5 h de 136 h registradas
-2026-11-16,Recursos e custos,Distribuição de esforço — João Paulo Nunes,9.6,%,13 h de 136 h registradas
-2026-11-16,Recursos e custos,Distribuição de esforço — Júlia Santana Campos,19.5,%,26.5 h de 136 h registradas
-2026-11-16,Recursos e custos,Distribuição de esforço — LucasMF,9.6,%,13 h de 136 h registradas
-2026-11-16,Recursos e custos,Distribuição de esforço — kalebmacedo,15.4,%,21 h de 136 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — Eduardo Waski,28.8,%,38 h de 132 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — Joaquim Neto,17.0,%,22.5 h de 132 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — João Paulo Nunes,8.3,%,11 h de 132 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — Júlia Santana Campos,18.6,%,24.5 h de 132 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — LucasMF,9.8,%,13 h de 132 h registradas
+2026-11-15,Recursos e custos,Distribuição de esforço — kalebmacedo,17.4,%,23 h de 132 h registradas
+2026-11-22,Desempenho dos processos,PRs revisados no prazo,71.8,%,28 de 39 PRs mergeados aprovados antes do merge e em até 48 h
+2026-11-22,Desempenho dos processos,PRs aprovados antes do merge,76.9,%,30 de 39 PRs mergeados
+2026-11-22,Desempenho dos processos,Retrabalho (issues),17.9,%,7 de 39 issues concluídas com a label correcao ou reabertas
+2026-11-22,Desempenho dos processos,Retrabalho (horas),15.0,%,23.5 h de 156.5 h reais registradas em issues concluídas
+2026-11-22,Calendário e progresso,Conclusão de issues — PC1 — Ponto de Controle 1,100.0,%,1 de 1 issues concluídas (prazo 19/10)
+2026-11-22,Calendário e progresso,Conclusão de issues — E1 — Fases 1 e 2,100.0,%,18 de 18 issues concluídas (prazo 26/10)
+2026-11-22,Calendário e progresso,Conclusão de issues — PC2 — Ponto de Controle 2,100.0,%,6 de 6 issues concluídas (prazo 16/11)
+2026-11-22,Calendário e progresso,Conclusão de issues — E2 — Fases 3 e 4,81.2,%,13 de 16 issues concluídas (prazo 22/11)
+2026-11-22,Calendário e progresso,Desvio de prazo médio,-5.5,dias,1 de 38 issues concluídas depois do prazo do milestone (negativo = adiantado)
+2026-11-22,Recursos e custos,Esforço real / estimado,0.96,razão,156.5 h reais / 163 h estimadas em 39 issues com os dois registros
+2026-11-22,Recursos e custos,Issues concluídas sem horas reais,0,issues,de 39 issues concluídas
+2026-11-22,Recursos e custos,Distribuição de esforço — Eduardo Waski,27.4,%,45 h de 164.5 h registradas
+2026-11-22,Recursos e custos,Distribuição de esforço — Joaquim Neto,17.3,%,28.5 h de 164.5 h registradas
+2026-11-22,Recursos e custos,Distribuição de esforço — João Paulo Nunes,11.6,%,19 h de 164.5 h registradas
+2026-11-22,Recursos e custos,Distribuição de esforço — Júlia Santana Campos,16.1,%,26.5 h de 164.5 h registradas
+2026-11-22,Recursos e custos,Distribuição de esforço — LucasMF,12.2,%,20 h de 164.5 h registradas
+2026-11-22,Recursos e custos,Distribuição de esforço — kalebmacedo,15.5,%,25.5 h de 164.5 h registradas

@@ -1,8 +1,9 @@
 # Piloto e fechamento da issue #40
 
-Situação documental revisada em 08/11/2026: **não executado**. Nenhum resultado de
-métrica é declarado por estes materiais. Júlia e João serão moderador e observador e
-respondem pelos CSV e por M8 (funções atualizadas em 12/11/2026). Sessões online por Google Meet.
+Situação em 22/11/2026: **piloto não executado**. As sessões formais ocorreram em 15/11/2026,
+com moderação de Júlia e observação de Eduardo, e a inspeção de M8 foi feita por Eduardo em
+16/11/2026; os resultados e desvios estão na [Fase 4](../fase-4.md#23-g3-capacidade-de-interacao).
+O texto abaixo é o planejamento original, mantido como registro.
 A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de PIL01.
 
 ## Condições antes de agendar

@@ -7,6 +7,7 @@
 | 03 | 18/10/2026 | Conteúdo, divisão e ensaio dos slides do Ponto de Controle 1 | [Ata 03](#ata-03) |
 | 04 | 03/11/2026 | Slides das métricas PSM/CID, gráficos de análise e planejamento da semana | [Ata 04](#ata-04) |
 | 05 | 15/11/2026 | Finalização e organização final para o ponto de controle 2 | [Ata 05](#ata-05) |
+| 06 | 22/11/2026 | Pendências da Entrega 2 e slides da apresentação final | [Ata 06](#ata-06) |
 
 ## Ata 01
 
@@ -230,3 +231,37 @@ Os critérios de decisão aplicados são os definidos em [Métricas PSM/CID](met
 | Adicionar os tópicos definidos ao artigo | Responsáveis pelos respectivos tópicos | 15/11 | — |
 | Organizar e estruturar os slides da apresentação | Todos | 15/11 | — |
 | Revisar os materiais e preparar a apresentação | Todos | 15/11 | — |
+
+
+## Ata 06
+
+- **Data e horário:** 22/11/2026, 21h30
+- **Local / meio:** Google Meet
+- **Presentes:**
+    - Eduardo Silva Waski
+    - João Paulo Barbosa Pereira Nunes
+    - Júlia Santana Campos
+- **Ausentes:**
+    - José Joaquim da Silva Neto
+    - Kaleb de Souza Macedo
+    - Lucas Monteiro Freitas
+
+**Pauta**
+
+1. Últimas pendências da Entrega 2 (22/11): coleta dos indicadores PSM/CID, horas das *issues*, versão 2.0 da GitPage e *release*.
+2. Tabela de contribuição da Entrega 2.
+3. Elaboração dos slides da apresentação final.
+
+**Decisões**
+
+1. As horas reais de todas as *issues* concluídas foram conferidas antes da coleta de 22/11/2026, que terminou sem *issue* concluída sem horas (I9 = 0).
+2. Na contribuição da Entrega 2, Eduardo recebe 20% e os demais membros, 16% cada, totalizando 100%. As horas reais continuam registradas nas *issues* e aparecem na distribuição de esforço (I7).
+3. Os slides da apresentação final serão elaborados a partir dos resultados da Fase 4, da ação de melhoria e dos indicadores de gestão.
+
+**Encaminhamentos**
+
+| Tarefa | Responsável | Prazo | Issue |
+|--------|-------------|-------|-------|
+| Fechamento da E2: *snapshot* dos indicadores, contribuição e *release* | Eduardo Waski | 22/11 | [#51](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/51) |
+| Revisão final do artigo, com o apêndice de contribuição | João Paulo Nunes | 24/11 | [#48](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/48) |
+| Elaborar os slides da apresentação final | Todos | Véspera da apresentação final (sorteio: 23/11, 25/11 ou 30/11) | — |
