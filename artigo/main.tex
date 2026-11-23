@@ -356,7 +356,7 @@ Fase~2.
 \paragraph{Cronograma.}
 A coleta ocorre de 13/11 a 17/11/2026 (as sessões de M6 a M9 dependem do
 recrutamento), o julgamento e as recomendações em 18 e 19/11, a ação de melhoria
-em 20/11, a revisão do artigo em 20 e 21/11 e o fechamento em 22/11.
+em 20/11, a revisão do artigo em 20 e 21/11 e o fechamento em 24/11.
 
 \paragraph{Mudanças em relação à Fase~2.}
 M5 mede apenas o salvamento na conta (\#63, decisão de 12/11/2026): na versão
@@ -423,8 +423,13 @@ indicadores da Tabela~\ref{tab:psm} são calculados por um \textit{script} que l
 GitHub. Ele roda a cada publicação da página do projeto, a cada \textit{issue}
 fechada e todo domingo, e recalcula o histórico semanal desde o início do
 projeto. Os valores, os dados brutos e as decisões de gestão ficam na página do
-projeto, junto com as atas.
-% TODO (#25): incluir os valores medidos e as decisões de gestão tomadas a partir deles.
+projeto, junto com as atas. A Tabela~\ref{tab:psm} traz os valores da coleta de
+22/11/2026. Na revisão da coleta de 05/11, os indicadores levaram a três decisões:
+verificar se a proteção da \textit{branch} principal exigia aprovação antes do
+\textit{merge} (I1 e I2 em 52,6\% e 57,9\%), atribuir responsáveis às
+\textit{issues} abertas da E2 priorizando quem tinha menos horas (conclusão de
+6,7\% e um integrante 20 pontos acima da média) e abrir as correções do PC2 com
+estimativa (retrabalho acima de 20\%, vindo das correções do PC1).
 
 \begin{table}[H]
 \centering
@@ -433,22 +438,22 @@ projeto, junto com as atas.
 \footnotesize
 \begin{tblr}{
   width = \linewidth,
-  colspec = {Q[l] X[l] X[l]},
+  colspec = {Q[l] X[l] X[l,1.6] Q[c]},
   row{1} = {font=\bfseries},
   hline{1,2,Z} = {0.8pt},
   hline{6,8} = {0.4pt},
   rowsep = 1pt,
 }
-Categoria & Indicador & Fórmula \\
-Desempenho dos processos & PRs revisados no prazo & PRs aprovados antes do \textit{merge} e em até 48\,h / PRs mergeados \\
- & PRs aprovados antes do \textit{merge} & PRs aprovados antes do \textit{merge} / PRs mergeados \\
- & Retrabalho (\textit{issues}) & \textit{Issues} concluídas com a \textit{label} de correção ou reabertas / \textit{issues} concluídas \\
- & Retrabalho (horas) & Horas reais dessas \textit{issues} / horas reais das \textit{issues} concluídas \\
-Calendário e progresso & Conclusão por \textit{milestone} & \textit{Issues} concluídas / \textit{issues} do \textit{milestone} \\
- & Desvio de prazo médio & Média de (data de fechamento $-$ prazo do \textit{milestone}), em dias \\
-Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, nas \textit{issues} com os dois registros \\
- & \textit{Issues} sem horas reais & \textit{Issues} concluídas sem registro de horas \\
- & Distribuição de esforço & Horas reais da pessoa / horas reais registradas \\
+Categoria & Indicador & Fórmula & 22/11 \\
+Desempenho dos processos & PRs revisados no prazo & PRs aprovados antes do \textit{merge} e em até 48\,h / PRs mergeados & 71,8\% \\
+ & PRs aprovados antes do \textit{merge} & PRs aprovados antes do \textit{merge} / PRs mergeados & 76,9\% \\
+ & Retrabalho (\textit{issues}) & \textit{Issues} concluídas com a \textit{label} de correção ou reabertas / \textit{issues} concluídas & 17,9\% \\
+ & Retrabalho (horas) & Horas reais dessas \textit{issues} / horas reais das \textit{issues} concluídas & 14,0\% \\
+Calendário e progresso & Conclusão por \textit{milestone} & \textit{Issues} concluídas / \textit{issues} do \textit{milestone} & 100\%; E2: 81,2\% \\
+ & Desvio de prazo médio & Média de (data de fechamento $-$ prazo do \textit{milestone}), em dias & $-$6,2 dias \\
+Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, nas \textit{issues} com os dois registros & 1,03 \\
+ & \textit{Issues} sem horas reais & \textit{Issues} concluídas sem registro de horas & 0 \\
+ & Distribuição de esforço & Horas reais da pessoa / horas reais registradas & 10,7 a 25,4\% \\
 \end{tblr}
 \end{table}
 
@@ -830,10 +835,10 @@ as fontes e os documentos da equipe; e (iii)~implementação das métricas em
 coletados conforme as definições do plano de medição. As fontes indicadas foram
 consultadas pelos autores, e os \textit{scripts} e todo o conteúdo do artigo foram
 revisados e validados por eles.
-O percentual de esforço de cada membro está no Apêndice~\ref{ap:contribuicao}
-(Tabela~\ref{tab:contribuicao}).
+As atividades e o percentual de esforço de cada membro na Entrega~2 estão no
+Apêndice~\ref{ap:contribuicao} (Tabela~\ref{tab:contribuicao}).
 % TODO: confirmar com a docente se as sessões com estudantes exigem submissão a comitê de ética.
-As sessões com estudantes previstas em G3 têm autorização dos participantes,
+As sessões com estudantes de G3 contaram com a autorização dos participantes,
 identificados apenas por códigos nos dados publicados.
 
 
@@ -848,23 +853,24 @@ identificados apenas por códigos nos dados publicados.
 % Eduardo e 16% para cada um dos demais; total = 100%.
 \begin{table}[htbp]
 \centering
-\caption{Percentual de esforço de cada membro}
+\caption{Atividades e percentual de esforço de cada membro na Entrega~2}
 \label{tab:contribuicao}
 \footnotesize
 \begin{tblr}{
-  colspec = {Q[l] Q[c]},
+  width = \linewidth,
+  colspec = {Q[l] X[l] Q[c]},
   row{1} = {font=\bfseries},
   hline{1,2,Y,Z} = {0.8pt},
   rowsep = 1pt,
 }
-Membro & Esforço (\%) \\
-Eduardo Silva Waski & \textbf{20} \\
-João Paulo Barbosa Pereira Nunes & \textbf{16} \\
-José Joaquim da Silva Neto & \textbf{16} \\
-Júlia Santana Campos & \textbf{16} \\
-Kaleb de Souza Macedo & \textbf{16} \\
-Lucas Monteiro Freitas & \textbf{16} \\
-Total & \textbf{100} \\
+Membro & Atividades (Fases 3 e 4) & Esforço (\%) \\
+Eduardo Silva Waski & Cronograma; observação das sessões de G3 e inspeção de M8; teste manual da ação de melhoria; gestão da E2, atas e gráficos do PSM; material e entrega do PC2 e da E2 & \textbf{20} \\
+João Paulo Barbosa Pereira Nunes & Recoleta de M3; artigo: Fase~4, resultados, conclusão e revisão final & \textbf{16} \\
+José Joaquim da Silva Neto & Cronograma e consistência com a Fase~2; coleta de G2; julgamento e relações entre as características; artigo até o PC2; gestão PSM/CID e atas & \textbf{16} \\
+Júlia Santana Campos & Ambiente e massa de referência; método de G2 com piloto; análise de G2; moderação das sessões de G3; artigo até o PC2 e revisão final & \textbf{16} \\
+Kaleb de Souza Macedo & Protocolo de G3; coleta de G1; sessões e análise de G3; julgamento e recomendações & \textbf{16} \\
+Lucas Monteiro Freitas & Método de G1 com piloto; ação de melhoria R04 em um \textit{fork} do produto & \textbf{16} \\
+Total & & \textbf{100} \\
 \end{tblr}
 \end{table}
 
