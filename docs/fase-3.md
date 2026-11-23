@@ -656,13 +656,14 @@ começa depois do fim das que aparecem em **Depende de**. A coluna **Situação*
 | #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 16/11 | 16/11 | 19/11 | M1.1–M9 | #42–#44 | Concluída |
 | #46 | Fase 4: ação de melhoria | Lucas | 16/11 | 21/11 | 20/11 | n/a | #45 | Concluída |
 | #47 | Artigo: Fase 4, resultados e conclusão | João | 20/11 | 22/11 | 20/11 | n/a | #42–#46, #68 | Concluída |
-| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim, Eduardo | 02/11 | 22/11 (previsão) | 21/11 | n/a | contínuo | Em andamento |
-| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 (previsão) | 22/11 | n/a | #48, #50 | Em andamento |
+| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim, Eduardo | 02/11 | 24/11 (previsão) | 21/11 | n/a | contínuo | Em andamento |
+| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 24/11 (previsão) | 22/11 | n/a | #48, #50 | Em andamento |
 | #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 24/11 (previsão) | 21/11 | n/a | #47 | Em andamento; versão final do artigo até 24/11 |
 
 Em relação à revisão de 12/11, a coleta da Fase 4 (#42 a #44) terminou de um a dois dias antes do
 previsto, e o julgamento (#45) foi antecipado para 16/11. O método de G1 (#38) fechou três dias depois do
-previsto, e a ação de melhoria (#46) e o artigo (#47), um e dois dias depois. A revisão final do artigo (#48) passou para 24/11, prazo da versão final no Moodle.
+previsto, e a ação de melhoria (#46) e o artigo (#47), um e dois dias depois. Em 22/11, a docente adiou a entrega da E2 de 22/11 para 24/11, às 23h59; a revisão final do artigo (#48) e o
+fechamento da E2 (#50 e #51) passaram para essa data.
 
 ### 3.1 Cronograma de M6 a M9 (issue #40)
 

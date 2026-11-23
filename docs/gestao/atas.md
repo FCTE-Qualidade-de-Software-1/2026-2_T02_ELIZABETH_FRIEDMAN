@@ -248,7 +248,7 @@ Os critérios de decisão aplicados são os definidos em [Métricas PSM/CID](met
 
 **Pauta**
 
-1. Últimas pendências da Entrega 2 (22/11): coleta dos indicadores PSM/CID, horas das *issues*, versão 2.0 da GitPage e *release*.
+1. Últimas pendências da Entrega 2: coleta dos indicadores PSM/CID, horas das *issues*, versão 2.0 da GitPage e *release*.
 2. Tabela de contribuição da Entrega 2.
 3. Elaboração dos slides da apresentação final.
 
@@ -262,6 +262,6 @@ Os critérios de decisão aplicados são os definidos em [Métricas PSM/CID](met
 
 | Tarefa | Responsável | Prazo | Issue |
 |--------|-------------|-------|-------|
-| Fechamento da E2: *snapshot* dos indicadores, contribuição e *release* | Eduardo Waski | 22/11 | [#51](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/51) |
+| Fechamento da E2: *snapshot* dos indicadores, contribuição e *release* | Eduardo Waski | 24/11 | [#51](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/51) |
 | Revisão final do artigo, com o apêndice de contribuição | João Paulo Nunes | 24/11 | [#48](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/48) |
 | Elaborar os slides da apresentação final | Todos | Véspera da apresentação final (sorteio: 23/11, 25/11 ou 30/11) | — |

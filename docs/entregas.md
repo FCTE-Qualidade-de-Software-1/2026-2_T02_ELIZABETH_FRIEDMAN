@@ -9,7 +9,7 @@ Ao criar uma release, atualizar esta tabela e o campo extra.versao no mkdocs.yml
 |---------|------|----------|---------|--------------|
 | E1 | 26/10/2026 | Fases 1 e 2; 1ª versão do artigo | [v1.0](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/tag/v1.0) | [PDF](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/download/v1.0/Artigo___Qualida_Elizabeth_Friedman.pdf) |
 | PC2 | 18/11/2026 | Fase 3 e protocolo das sessões de interação; artigo atualizado até a Fase 3 | [v1.1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/tag/v1.1) | [PDF](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/download/v1.1/Artigo___Qualida_Elizabeth_Friedman.pdf) |
-| E2 | 22/11/2026 | Fases 3 e 4; 2ª versão do artigo, com resultados e conclusão | [v2.0](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/tag/v2.0) | [PDF](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/download/v2.0/Artigo___Qualida_Elizabeth_Friedman.pdf) |
+| E2 | 24/11/2026 (adiada de 22/11) | Fases 3 e 4; 2ª versão do artigo, com resultados e conclusão | [v2.0](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/tag/v2.0) | [PDF](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases/download/v2.0/Artigo___Qualida_Elizabeth_Friedman.pdf) |
 
 Todas as releases: <https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/releases>
 
