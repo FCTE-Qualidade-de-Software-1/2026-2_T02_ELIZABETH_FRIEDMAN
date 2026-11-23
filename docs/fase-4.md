@@ -23,7 +23,7 @@ Dados de participantes: anonimizar e descrever as condições de acesso (premiss
 | M4 — Geração | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m4-a.csv`](avaliacao/dados/g2/20261115-2128/m4-a.csv), [`m4-b.csv`](avaliacao/dados/g2/20261115-2128/m4-b.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 | M5 — Salvamento | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m5-conta.csv`](avaliacao/dados/g2/20261115-2128/m5-conta.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 | M6, M7 e M9 — Interação (sessões P01 a P04) | 15/11/2026 | Júlia (moderadora) e Eduardo (observador) | [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv); vídeos e transcrições em acesso restrito, citados pelo código e pelo tempo do vídeo | [Protocolo 0.3](avaliacao-interacao/protocolo.md), [instrumentos](avaliacao-interacao/instrumentos.md) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
-| M8 — Proteção contra perda | 16/11/2026 | Eduardo | [`m8-inventario.csv`](avaliacao/dados/g3/m8-inventario.csv), [`m8-observacoes.csv`](avaliacao/dados/g3/m8-observacoes.csv) e [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g3/m8-capturas) de antes, aviso e depois | [Instrumentos, seção 1](avaliacao-interacao/instrumentos.md#1-inventario-m8) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
+| M8 — Proteção contra perda | 16/11/2026 (R05b no computador e R06 nos dois dispositivos em 23/11/2026) | Eduardo | [`m8-inventario.csv`](avaliacao/dados/g3/m8-inventario.csv), [`m8-observacoes.csv`](avaliacao/dados/g3/m8-observacoes.csv) e [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g3/m8-capturas) de antes, aviso e depois | [Instrumentos, seção 1](avaliacao-interacao/instrumentos.md#1-inventario-m8) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
 
 ## 2. Análise e respostas ao GQM
 
@@ -273,7 +273,8 @@ ficaram abaixo de 4% de $L_3$, a diferença de ambiente não muda a faixa.
 Coleta no site público, na versão `3d399e7` (último commit e último *deployment* conferidos
 em 15/11 e 16/11/2026), conforme o [protocolo 0.3](avaliacao-interacao/protocolo.md). Foram
 feitas as quatro sessões previstas em 15/11/2026: P01 e P02 no computador, P03 e P04 no
-celular. A inspeção de M8 foi feita nos dois dispositivos em 16/11. Cada recorte foi julgado
+celular. A inspeção de M8 foi feita nos dois dispositivos em 16/11, e o R05b do computador e o R06 nos dois
+dispositivos foram executados em 23/11. Cada recorte foi julgado
 pela [Fase 2, seção 4.4](fase-2.md#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9):
 recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está determinada.
 
@@ -289,9 +290,9 @@ recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está
 | M7 | Celular / seleção | 1 / 2 | 50% | 2 de 2 | 0 |
 | M7 | Celular / troca | 1 / 1 | 100% | 1 de 2 (P04 inválida) | Sem nota |
 | M7 | Celular / remoção | 1 / 1 | 100% | 1 de 2 (P04 inválida) | Sem nota |
-| M8 (% de cenários protegidos) | Computador / navegador | 3 / 4 | 75% | 4 de 6 cenários | 0 |
+| M8 (% de cenários protegidos) | Computador / navegador | 5 / 6 | 83,3% | 6 de 6 cenários | 0 |
 | M8 | Computador / conta | 1 / 1 | 100% | 1 de 1 cenário | 3 |
-| M8 | Celular / navegador | 4 / 5 | 80% | 5 de 6 cenários | 0 |
+| M8 | Celular / navegador | 5 / 6 | 83,3% | 6 de 6 cenários | 0 |
 | M8 | Celular / conta | 1 / 1 | 100% | 1 de 1 cenário | 3 |
 | M9 (% de pontos compreendidos) | Computador / seleção (V01) | 2 / 2 | 100% | 2 de 2 | 3 |
 | M9 | Computador / geração concluída (V03) | 2 / 2 | 100% | 2 de 2 | 3 |
@@ -318,14 +319,14 @@ navegador.
 **Q8 — Proteção contra erros (H8).** Não. Nos dois dispositivos, excluir uma grade (local ou na
 nuvem) e sair com grade não salva pedem confirmação, e o cancelamento preservou a grade.
 Recarregar a página durante a montagem apaga as turmas selecionadas sem aviso, o que dá nota
-0 aos conjuntos da modalidade navegador; a modalidade conta tem nota 3. Trocar de conta (R06)
-não foi executado e voltar pelo navegador no computador (R05b) foi feito sem turma
-selecionada; esses cenários seguem pendentes e não mudam a nota 0.
+0 aos conjuntos da modalidade navegador; a modalidade conta tem nota 3. Voltar pelo navegador (R05b)
+preservou a seleção nos dois dispositivos. Trocar de conta (R06) não mostra aviso, mas as grades
+locais continuaram em Suas Grades: elas ficam no navegador e não dependem da conta, tanto que,
+no computador, apareceram para a segunda conta depois da troca.
 
 **Q9 — Autodescrição (H9).** Não no celular; no computador, parcial. No computador, os quatro
 pontos coletados tiveram estado e ação corretos. No celular, P03 não descreveu o estado depois
-da seleção nem depois da geração (o insucesso em V01 é provisório: a resposta será conferida
-no áudio). A geração em andamento (V02) não foi perguntada em nenhuma sessão, e o salvamento
+da seleção nem depois da geração. A geração em andamento (V02) não foi perguntada em nenhuma sessão, e o salvamento
 (V04) não foi alcançado: os participantes baixaram o PDF da grade, e P04 disse ter salvo uma
 grade que nunca foi para a conta.
 
@@ -353,9 +354,11 @@ livre foi anunciada como 1,5 minuto, abaixo dos 3 minutos do protocolo, e os car
 ditados em partes. (e) Em P01, a moderação confirmou o botão de gerar e disse que a grade
 estava salva; em P02 a P04, a instrução de V04 foi alterada para aceitar salvar localmente
 ou baixar o PDF, por isso V04 não foi coletado. (f) Em P04, a lista de turmas selecionadas não
-foi exibida ao fim da troca e da remoção, e essas tarefas foram invalidadas. (g) No celular,
-R05b foi classificado como volta pelo navegador pelo estado dos botões da barra, a confirmar
-com o avaliador.
+foi exibida ao fim da troca e da remoção, e essas tarefas foram invalidadas. (g) No computador, R05b foi repetido em 23/11/2026, com duas
+turmas selecionadas, porque a execução de 16/11 foi feita sem turma selecionada; o site seguia no
+*commit* `3d399e7`. Na mesma data, R06 foi executado com o botão Trocar de conta, que não tinha sido
+acionado em 16/11. No celular, o login do Google voltou direto para a mesma conta, sem oferecer
+a escolha de outra; a troca efetiva de conta foi observada só no computador.
 
 **Acesso aos dados.** Vídeos, transcrições e termos de consentimento ficam em acesso restrito à
 equipe e são citados pelo código e pelo tempo do vídeo; as respostas literais não são
@@ -382,12 +385,12 @@ qualidade. Os critérios foram fixados antes da coleta e não mudaram.
 |----------|--------|-----------|-------------------------------------|-----------------------|
 | G1 Manutenibilidade | **Inconclusivo** | H1.1, H1.2 e H1.4 sustentadas; H1.3 inconclusiva | Nenhum recorte contraria hipótese (notas 2 e 3). C1 e C2 não têm execução válida: o tempo é autodeclarado, sem registro, e o *patch* de C2 reprova na suíte | Um único *commit*; indicadores indiretos; cobertura só de linhas; *frontend* sem testes |
 | G2 Eficiência de desempenho | **Atendido nas condições avaliadas** | H2, H3, H4 e H5 sustentadas | Sete cenários com 30 sucessos e P95 na faixa Excelente, no máximo 7% do limite $L_j$ | Reprodução local, um usuário, massa pequena; M3 coletada em outro ambiente |
-| G3 Capacidade de interação | **Não atendido** | H6, H7, H8 e H9 contrariadas | H6: M6 computador/conta 0% e celular/conta 50%. H7: M7 computador/troca 50% e celular/seleção 50%. H8: M8 navegador com 75% (computador) e 80% (celular), por R04. H9: M9 celular V01 e V03 com 50% | Amostra de conveniência de 4 pessoas; desvios de protocolo; cobertura parcial em M7, M8 e M9 |
+| G3 Capacidade de interação | **Não atendido** | H6, H7, H8 e H9 contrariadas | H6: M6 computador/conta 0% e celular/conta 50%. H7: M7 computador/troca 50% e celular/seleção 50%. H8: M8 navegador com 83,3% no computador e no celular, por R04. H9: M9 celular V01 e V03 com 50% | Amostra de conveniência de 4 pessoas; desvios de protocolo; cobertura parcial em M7, M8 e M9 |
 
 Em G1, uma hipótese inconclusiva indica coleta a completar, e não problema do produto
 (Fase 2, seção 4.6, item 4). Em G3, as quatro hipóteses são contrariadas porque ao menos um
-recorte de cada uma recebeu nota 0; os recortes sem cobertura completa (R05b e R06 em M8,
-V02 e V04 em M9, e a troca e a remoção no celular em M7) não mudam essa conclusão.
+recorte de cada uma recebeu nota 0; os recortes sem cobertura completa
+(V02 e V04 em M9, e a troca e a remoção no celular em M7) não mudam essa conclusão.
 "Atendido" em G2 significa que as hipóteses formuladas foram sustentadas no recorte medido;
 não certifica a característica nem o produto.
 
@@ -486,10 +489,10 @@ descritivas.
 
 Os julgamentos valem para o *commit* `3d399e7`, para as condições de cada coleta e para os
 recortes medidos ([Fase 1, seção 6.4](fase-1.md#64-limites-de-validade-dos-resultados)). Não
-são testes de significância estatística e não se estendem ao pico de matrícula. Dois pontos
-ainda abertos podem mudar o texto, mas não o estado de G3: M8 R05b e R06 (computador) e R06
-(celular), e a conferência no áudio da resposta de P03 em V01. O estado de G1 mudaria se uma
-execução válida de C1 e C2 fosse registrada antes da entrega.
+são testes de significância estatística e não se estendem ao pico de matrícula. Em M8, R06 no celular não
+chegou a trocar de conta, porque o login do Google voltou para a mesma conta. A nova medição de C1 e C2, com o tempo
+registrado, está na [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84); o estado de G1 só muda se ela for concluída com o tempo registrado e a suíte
+completa aprovada.
 
 ## 4. Oportunidades e ação de melhoria
 
@@ -502,8 +505,11 @@ justificada por evidências da avaliação.
 ### 4.1 Oportunidades de melhoria
 
 As oportunidades de D1 seguem a ordem e o critério da [seção 3.2](#32-julgamento-em-relacao-ao-proposito-e-as-decisoes-d1-a-d3).
-As de D1 serão abertas como *issues* no repositório do Sua Grade UnB, como promete a
-[Fase 1, seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+A primeira, a recarga que apaga a seleção, foi enviada ao repositório do Sua Grade UnB no
+[PR nº 252](https://github.com/unb-mds/2023-2-SuaGradeUnB/pull/252), em 21/11/2026, junto com a ação
+de melhoria da seção 4.2. As demais ficam registradas nesta tabela como recomendação aos
+mantenedores; abri-las como *issues* no repositório do produto, como prevê a
+[Fase 1, seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas), fica como próximo passo.
 
 **Tabela 6: Oportunidades de melhoria**
 
@@ -511,7 +517,7 @@ As de D1 serão abertas como *issues* no repositório do Sua Grade UnB, como pro
 |----|---------|----------------------|----------------------------------|--------------|------------|
 | 1 | D1 | Recarregar durante a montagem apaga as turmas sem aviso (M8 R04, nos dois dispositivos, nota 0 em "navegador") | `web/app/contexts/SelectedClassesContext/SelectedClassesContext.tsx` (estado só em `useState`; não há `beforeunload` em `web/app`) | Avisar antes de recarregar, ou persistir a seleção como o produto já faz com as grades locais (`SchedulesContext.tsx`, `localStorage`) | Persistir exige invalidar a seleção ao mudar de período letivo (*trade-off* de dados desatualizados) |
 | 2 | D1 | A grade gerada fica em "Grades locais" e o salvamento na conta é outra ação. M6: 0/2 no computador e 1/2 no celular; P02 disse que a grade "já está disponível aqui"; P04 disse ter salvo uma grade que não foi para a conta (Q6, Q9) | `web/app/components/SchedulePreview/SchedulePreview.tsx` (`UploadToCloudButton`: botão só com ícone e texto alternativo "ícone de upload", dentro de um contêiner com `opacity-50`, exibido apenas a usuários autenticados) e `web/app/schedules/mygrades/page.tsx` (títulos "Grades locais" e "Grades nuvem") | Rotular o botão ("Salvar na conta"), explicar que a grade local fica só neste navegador e, a quem não está autenticado, indicar que entrar permite salvar | A relação entre o ícone e o insucesso é compatível com as sessões, mas não foi testada isoladamente |
-| 3 | D1 | No celular, P03 não descreveu o estado após selecionar nem após gerar (M9 V01 e V03, 50%) | Mensagens de estado da tela de geração e de seleção | Conferir V01 no áudio e repetir V02 e V04, que não foram coletados, antes de recomendar mudança | Um participante; V01 é provisório |
+| 3 | D1 | No celular, P03 não descreveu o estado após selecionar nem após gerar (M9 V01 e V03, 50%) | Mensagens de estado da tela de geração e de seleção | Repetir V02 e V04, que não foram coletados, antes de recomendar mudança | Um participante |
 | 4 | D1 | Na troca de turma, P02 incluiu a nova sem remover a anterior (M7-ALT no computador, 50%) | Fluxo de seleção de turmas em `web/app/components/` (a localizar) | Repetir a observação com mais participantes antes de alterar a interface | Um caso em dois; evidência fraca |
 | 5 | D3 | Ciclo de importação no *frontend*: `UserContext.tsx` importa o tipo `UserData` de `SignInSection.tsx` (M1.1, 5,00%) | `web/app/contexts/UserContext.tsx`, `web/app/components/SignInSection.tsx` | Mover `UserData` para um arquivo de tipos; é uma mudança pequena, adequada a quem começa | O ciclo é de tipo, sem efeito em tempo de execução observado |
 | 6 | D3 | Ciclo na API: `api/serializers.py` e `utils/db_handler.py` se importam (M1.1, 4,00%) | os dois arquivos | Desfazer o ciclo movendo a dependência comum para um terceiro módulo | Rodar a suíte da API (108 testes) a cada passo |
@@ -602,8 +608,8 @@ computador, sem participante.
 **Limitações.** Trata-se de uma verificação funcional de R04, com massa controlada no
 roteiro automatizado e uma execução manual com dados reais, sem celular físico, Safari
 ou Firefox e sem nova sessão com participantes.
-Os demais cenários do denominador de M8 não foram repetidos; portanto, os valores
-originais de **3/4 no computador e 4/5 no celular** permanecem como resultados da
+Os demais cenários do denominador de M8 não foram repetidos com a correção; portanto, os valores
+da inspeção do site original, **5/6 no computador e 5/6 no celular**, permanecem como resultados da
 avaliação, e não se publicam novos percentuais de M8. O rascunho não substitui
 o salvamento na conta. Se a API falhar, o rascunho é mantido para outra recarga e
 uma mensagem é exibida; se o armazenamento estiver bloqueado, a seleção continua

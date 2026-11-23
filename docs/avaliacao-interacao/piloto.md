@@ -51,5 +51,6 @@ A amostra formal prevista é de quatro pessoas, duas por dispositivo, além de P
 - [ ] Piloto com pessoa fora da amostra executado e documentado; correções verificadas.
 - [ ] Protocolo, dados do período, limites, modalidades, tamanho da amostra e configuração congelados antes da coleta formal.
 
-Os itens documentais preparados não equivalem à validação dos instrumentos. A issue
-permanece aberta até satisfazer os itens de recrutamento e piloto.
+Os itens documentais preparados não equivalem à validação dos instrumentos. A issue #40
+foi concluída em 15/11/2026 sem o piloto; o que foi realizado está na
+[Fase 3, seção 3.1](../fase-3.md#31-cronograma-de-m6-a-m9-issue-40).
