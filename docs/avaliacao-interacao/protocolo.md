@@ -1,7 +1,8 @@
 # Protocolo de capacidade de interação — M6 a M9
 
 Versão 0.3 · 15/11/2026 · [Issue #40](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/40).
-Situação: preparado para validação; piloto e recrutamento ainda pendentes.
+Situação: aplicado em 15/11/2026 nas sessões P01 a P04, sem piloto; os desvios estão na
+[Fase 4, seção 2.3](../fase-4.md#23-g3-capacidade-de-interacao).
 A versão 0.3 passa as sessões para o site público, com a conta Google do participante
 ([Fase 3, seção 4.1](../fase-3.md#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 6).
 

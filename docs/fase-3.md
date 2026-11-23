@@ -314,14 +314,11 @@ O [relatório dos pilotos](https://github.com/FCTE-Qualidade-de-Software-1/2026-
 registra as execuções de 08/11/2026 e suas limitações. Após habilitar o Docker no Ubuntu,
 o piloto M1.4 aprovou os 108 testes e conferiu os 50 arquivos do inventário, sem linhas excluídas.
 A cobertura foi 81,8768% na API, 97,5% no scraper e 99,2908% no gerador.
-Lucas será o executor da coleta formal de M1.3; Joaquim fará o piloto e revisará a coleta formal.
-O piloto M1.4 foi executado por Codex com autorização de Lucas; Lucas guardará/versionará
-as evidências e Joaquim conferirá a cobertura.
-As soluções do piloto C1/C2 ficam sob guarda de Joaquim até a sessão formal. A elegibilidade de Lucas
-foi confirmada pelo usuário; a de Joaquim deve ser verificada antes do piloto, confirmando que
-não especificou, ensaiou nem conhece a localização das alterações. As sessões humanas ainda não foram registradas.
-O ambiente de Joaquim para o piloto C1/C2 deve ser preparado e registrado, seguindo o guia em `avaliacao/manutenibilidade/tarefas/GUIA-PILOTO-JOAQUIM.md`.
-A issue #38 permanece pendente do piloto humano e da conferência de Joaquim.
+O piloto M1.4 foi executado por Codex com autorização de Lucas, que versionou as evidências.
+A issue #38 foi concluída em 15/11/2026. A coleta formal de M1.1, M1.2 e M1.4 foi feita por Kaleb
+em 15/11/2026 e repetiu os valores do piloto. Em M1.3, os *patches* de C1 e C2 foram entregues por
+Joaquim em 12/11/2026, sem registro do tempo nem da execução; por isso M1.3 ficou sem medida válida
+([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)).
 
 ## 2. Recursos e ambiente de avaliação
 
@@ -623,9 +620,8 @@ O [consentimento](avaliacao-interacao/consentimento.md), o [recrutamento](avalia
 e os [modelos CSV](avaliacao-interacao/registros.md) fazem parte do instrumento.
 O [procedimento de proteção dos dados](avaliacao-interacao/dados.md) orienta a equipe
 sobre o preenchimento do termo e o tratamento das autorizações e registros.
-Ainda precisam ser escolhidos os identificadores reais das disciplinas e turmas usadas nas
-tarefas e conferido, por um integrante logado, o salvamento na conta no site público.
-Preparação documental não constitui coleta validada.
+As disciplinas e turmas das tarefas foram escolhidas no período 2026/2 do site público antes das
+sessões, e as quatro sessões ocorreram em 15/11/2026 ([3.1](#31-cronograma-de-m6-a-m9-issue-40)).
 
 ## 3. Cronograma da avaliação
 
@@ -633,59 +629,67 @@ Preparação documental não constitui coleta validada.
 F3-C3: cronograma realista com atividades distribuídas e alinhadas à execução da Fase 4.
 -->
 
-Cada linha corresponde a uma issue do repositório. **Início** e **Fim** são as datas reais das atividades
-concluídas e a previsão da equipe para as demais, e cada atividade começa depois do fim das que aparecem
-em **Depende de**. A coluna **Situação** vale para 12/11/2026. Todas as atividades terminam até **22/11/2026**.
+Cada linha corresponde a uma issue do repositório. **Início** e **Fim** são as datas reais (o fim é a
+data de fechamento da issue); para as atividades em andamento, **Fim** traz a previsão. **Fim previsto** é
+a data planejada na revisão de 12/11/2026, mantida para comparar o plano com a execução. Cada atividade
+começa depois do fim das que aparecem em **Depende de**. A coluna **Situação** vale para 22/11/2026.
 
-| Issue | Atividade | Responsável | Início | Fim | Métricas | Depende de | Situação |
-|------|-----------|-------------|--------|-----|----------|------------|----------|
-| #37 | Ambiente de avaliação e massa de referência | Júlia | 02/11 | 05/11 | M1.3, M1.4, M2–M5 | n/a | Concluída |
-| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 12/11 | M1.1–M1.4 | #37 | Em andamento |
-| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 12/11 | M2–M5 | #37 | Concluída |
-| #40 | Protocolo com participantes de Capacidade de interação, com piloto | Lucas, Kaleb (preparação); Júlia, João (sessões) | 02/11 | 15/11 (previsão) | M6–M9 | n/a | Em andamento: piloto e sessões aguardam participantes |
-| #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 09/11 | M1.1–M9 | n/a | Concluída |
-| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim | 02/11 | 21/11 | n/a | contínuo | Contínua |
-| #52 | Apresentação da gestão PSM/CID | Todos | 03/11 | 08/11 | n/a | n/a | Concluída |
-| #54 | Ata da reunião de 03/11 | Eduardo | 04/11 | 04/11 | n/a | n/a | Concluída |
-| #55 | Gráficos dos indicadores PSM/CID | Eduardo, Joaquim | 04/11 | 06/11 | n/a | n/a | Concluída |
-| #49 | Correções do PC1 e largura do site | Eduardo | 10/11 | 10/11 | n/a | n/a | Concluída |
-| #63 | Correção da Fase 2: M5 restrita ao salvamento na conta | Eduardo | 12/11 | 12/11 | M5 | #39 | PR em revisão |
-| #36 | Material do PC2 (apresentação em 16/11 ou 18/11) | Todos | 13/11 | 18/11 | n/a | #38–#41 | A iniciar |
-| #68 | Artigo: atualização até o PC2 (Fase 3) | Joaquim | 15/11 | 15/11 | n/a | #41 | A iniciar |
-| #67 | Entrega do PC2: GitPage e *release* v1.1 | Eduardo | 15/11 | 15/11 | n/a | #68 | A iniciar |
-| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | Kaleb | 13/11 | 17/11 | M1.1–M1.4 | #38 | A iniciar |
-| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia | 13/11 | 17/11 | M2–M5 | #39, #63 | A iniciar |
-| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João | 13/11 | 17/11 | M6–M9 | #40 | A iniciar |
-| #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 18/11 | 19/11 | M1.1–M9 | #42–#44 | A iniciar |
-| #46 | Fase 4: ação de melhoria | Lucas | 20/11 | 20/11 | n/a | #45 | A iniciar |
-| #47 | Artigo: Fase 4, resultados e conclusão | João | 20/11 | 20/11 | n/a | #42–#46, #68 | A iniciar |
-| #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 21/11 | n/a | #47 | A iniciar |
-| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 22/11 | n/a | #48, #50 | A iniciar |
+| Issue | Atividade | Responsável | Início | Fim | Fim previsto | Métricas | Depende de | Situação |
+|------|-----------|-------------|--------|-----|--------------|----------|------------|----------|
+| #37 | Ambiente de avaliação e massa de referência | Júlia | 02/11 | 05/11 | 05/11 | M1.3, M1.4, M2–M5 | n/a | Concluída |
+| #38 | Método e roteiros de Manutenibilidade, com piloto | Lucas | 02/11 | 15/11 | 12/11 | M1.1–M1.4 | #37 | Concluída |
+| #39 | Método e roteiros de Eficiência de desempenho, com piloto | Júlia | 02/11 | 12/11 | 12/11 | M2–M5 | #37 | Concluída |
+| #40 | Protocolo com participantes de Capacidade de interação | Lucas, Kaleb (preparação); Júlia, Eduardo (sessões) | 02/11 | 15/11 | 15/11 | M6–M9 | n/a | Concluída, sem piloto ([3.1](#31-cronograma-de-m6-a-m9-issue-40)) |
+| #41 | Cronograma e consistência com a Fase 2 | Joaquim | 02/11 | 10/11 | 09/11 | M1.1–M9 | n/a | Concluída |
+| #52 | Apresentação da gestão PSM/CID | Todos | 03/11 | 08/11 | 08/11 | n/a | n/a | Concluída |
+| #54 | Ata da reunião de 03/11 | Eduardo | 04/11 | 04/11 | 04/11 | n/a | n/a | Concluída |
+| #55 | Gráficos dos indicadores PSM/CID | Eduardo, Joaquim | 04/11 | 06/11 | 06/11 | n/a | n/a | Concluída |
+| #49 | Correções do PC1 e largura do site | Eduardo | 10/11 | 10/11 | 10/11 | n/a | n/a | Concluída |
+| #63 | Correção da Fase 2: M5 restrita ao salvamento na conta | Eduardo | 12/11 | 12/11 | 12/11 | M5 | #39 | Concluída |
+| #70 | Gestão PSM/CID, atas e decisões até o PC2 | Joaquim | 15/11 | 15/11 | 15/11 | n/a | n/a | Concluída |
+| #68 | Artigo: atualização até o PC2 (Fase 3) | Júlia, Joaquim | 15/11 | 15/11 | 15/11 | n/a | #41 | Concluída |
+| #42 | Fase 4: coleta e análise de Manutenibilidade (G1) | Kaleb | 13/11 | 15/11 | 17/11 | M1.1–M1.4 | #38 | Concluída |
+| #43 | Fase 4: coleta e análise de Eficiência de desempenho (G2) | Júlia, Joaquim, João | 13/11 | 16/11 | 17/11 | M2–M5 | #39, #63 | Concluída |
+| #44 | Fase 4: sessões e análise de Capacidade de interação (G3) | Kaleb, João; sessões com Júlia e Eduardo | 13/11 | 16/11 | 17/11 | M6–M9 | #40 | Concluída |
+| #36 | Material do PC2 (apresentação em 18/11) | Todos | 13/11 | 16/11 | 18/11 | n/a | #38–#41 | Concluída |
+| #67 | Entrega do PC2: GitPage e *release* v1.1 | Eduardo | 15/11 | 16/11 | 15/11 | n/a | #68 | Concluída |
+| #45 | Fase 4: julgamento, relações entre características e recomendações | Kaleb, Joaquim | 16/11 | 16/11 | 19/11 | M1.1–M9 | #42–#44 | Concluída |
+| #46 | Fase 4: ação de melhoria | Lucas | 16/11 | 21/11 | 20/11 | n/a | #45 | Concluída |
+| #47 | Artigo: Fase 4, resultados e conclusão | João | 20/11 | 22/11 | 20/11 | n/a | #42–#46, #68 | Concluída |
+| #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim, Eduardo | 02/11 | 24/11 (previsão) | 21/11 | n/a | contínuo | Em andamento |
+| #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 24/11 (previsão) | 22/11 | n/a | #48, #50 | Em andamento |
+| #48 | Artigo: revisão final da 2ª versão | João | 21/11 | 24/11 (previsão) | 21/11 | n/a | #47 | Em andamento; versão final do artigo até 24/11 |
+
+Em relação à revisão de 12/11, a coleta da Fase 4 (#42 a #44) terminou de um a dois dias antes do
+previsto, e o julgamento (#45) foi antecipado para 16/11. O método de G1 (#38) fechou três dias depois do
+previsto, e a ação de melhoria (#46) e o artigo (#47), um e dois dias depois. Em 22/11, a docente adiou a entrega da E2 de 22/11 para 24/11, às 23h59; a revisão final do artigo (#48) e o
+fechamento da E2 (#50 e #51) passaram para essa data.
 
 ### 3.1 Cronograma de M6 a M9 (issue #40)
 
-| Atividade | Responsável | Início | Fim | Métricas envolvidas |
-|-----------|-------------|--------|-----|---------------------|
-| Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | M6–M9 |
-| Preencher campos do termo e validar acesso ao site público e login nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 (previsão) | M6–M9 |
-| Recrutar PIL01 e quatro participantes, com um suplente por grupo | Júlia | 10/11/2026 | 14/11/2026 (previsão) | M6, M7, M9 |
-| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Júlia e João | 14/11/2026 (previsão) | 14/11/2026 (previsão) | M6–M9 |
-| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Júlia e João | 15/11/2026 (previsão) | 15/11/2026 (previsão) | M6–M9 |
-| Inspeção M8 no site público, com a conta de um integrante e grades descartáveis | Júlia e João | 14/11/2026 (previsão) | 15/11/2026 (previsão) | M8 |
-| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Júlia e João | 16/11/2026 (previsão) | 17/11/2026 (previsão) | M6, M7, M9 |
-| Análise dos resultados de M6 a M9 na Fase 4 (#44 e #45) | Equipe | 17/11/2026 (previsão) | 19/11/2026 (previsão) | M6–M9 |
+| Atividade | Responsável | Início previsto | Fim previsto | Realizado | Métricas envolvidas |
+|-----------|-------------|-----------------|--------------|-----------|---------------------|
+| Preparar roteiro, consentimento, CSV e instrumentos | Lucas e Kaleb | 03/11/2026 | 08/11/2026 | 03/11 a 08/11/2026 | M6–M9 |
+| Preencher campos do termo e validar acesso ao site público e login nos dois dispositivos | Equipe | 09/11/2026 | 13/11/2026 | Até 15/11/2026, com o protocolo 0.3 no site público | M6–M9 |
+| Recrutar PIL01 e quatro participantes, com um suplente por grupo | Júlia | 10/11/2026 | 14/11/2026 | Quatro participantes até 15/11/2026; PIL01 e suplentes não recrutados | M6, M7, M9 |
+| Executar piloto com PIL01 e verificar recursos nos dois dispositivos | Júlia e João | 14/11/2026 | 14/11/2026 | Não executado | M6–M9 |
+| Corrigir instrumentos, repetir trechos afetados e congelar protocolo | Júlia e João | 15/11/2026 | 15/11/2026 | Protocolo 0.3 fixado em 15/11/2026, sem piloto | M6–M9 |
+| Inspeção M8 no site público, com a conta de um integrante e grades descartáveis | Júlia e João | 14/11/2026 | 15/11/2026 | 16/11/2026, por Eduardo, no computador e no celular | M8 |
+| Coleta formal: sessões com os quatro participantes (suplentes se necessário) | Júlia e João | 16/11/2026 | 17/11/2026 | 15/11/2026, P01 a P04, com moderação de Júlia e observação de Eduardo | M6, M7, M9 |
+| Análise dos resultados de M6 a M9 na Fase 4 (#44 e #45) | Equipe | 17/11/2026 | 19/11/2026 | 16/11/2026 | M6–M9 |
 
-Cronograma replanejado em 12/11/2026: o piloto previsto para 11/11 e o congelamento previsto para 12/11
-não foram executados, e as sessões dependem do recrutamento dos participantes. As datas marcadas como
-previsão serão confirmadas quando os participantes estiverem agendados; as sessões devem terminar até
-17/11/2026, data final de #44 na tabela acima.
+O cronograma foi replanejado em 12/11/2026, porque o piloto previsto para 11/11 e o congelamento previsto
+para 12/11 não foram executados. Com os participantes disponíveis em 15/11/2026, a equipe fez as quatro
+sessões nesse dia, sem o piloto, e a inspeção de M8 em 16/11/2026. As sessões terminaram antes de
+17/11/2026, data final de #44. Os desvios do protocolo estão na
+[Fase 4, seção 2.3](fase-4.md#23-g3-capacidade-de-interacao).
 
 #### Situação da issue #40
 
-Materiais preparados em 03/11/2026 e revisados em 08/11/2026 e 15/11/2026, protocolo 0.3, **aguardando validação humana**.
-O [registro de piloto e fechamento](avaliacao-interacao/piloto.md) mantém os critérios
-de liberação e as pendências. Não encerrar a issue antes de confirmar recrutamento,
-inventário no ambiente real e piloto com pessoa fora da amostra.
+Concluída em 15/11/2026, com o protocolo 0.3. Os materiais foram preparados em 03/11/2026 e revisados em
+08/11/2026 e 15/11/2026. O piloto com uma pessoa fora da amostra não foi executado; o
+[registro de piloto](avaliacao-interacao/piloto.md) mantém os critérios previstos. As sessões formais e seus
+resultados estão na [Fase 4](fase-4.md#23-g3-capacidade-de-interacao).
 
 ---
 
@@ -720,12 +724,12 @@ A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
 | Seletores e sinais de conclusão visual de M2–M5 | Resolvida para M2, M3, M4 e M5 ([1.1.3](#113-acoes-seletores-e-sinais-de-conclusao)); a modalidade navegador saiu de M5 (linha seguinte) | #39 |
 | Sessão da conta de teste em M5 | Resolvida: fluxo do *frontend* com o *token* simulado no fragmento; cookie aceito no piloto ([1.1.6](#116-sessao-da-conta-de-teste-m5)) | #39 |
 | Revisão de M5 para a modalidade navegador (sem ação de salvar nem sinal de conclusão) | **Decidida em 12/11/2026:** M5 avalia só o salvamento na conta; Fase 2 corrigida ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 5) | #63 |
-| Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Pendente; conferir no piloto | #38 |
-| Executor de C1 e C2 e fichas das mudanças | Pendente | #38 |
+| Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Resolvida: arquivo de configuração próprio usado no piloto de 08/11 e na coleta formal de 15/11 (`avaliacao/manutenibilidade/cobertura.sh`) | #38, concluído |
+| Executor de C1 e C2 e fichas das mudanças | Fichas preparadas; *patches* entregues por Joaquim em 12/11, sem registro de tempo, e M1.3 ficou sem medida válida ([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)) | #38, #42 |
 | Ambiente das sessões de M6–M9 | **Decidido em 15/11/2026:** site público com a conta Google do participante ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 6) | #40, #44 |
-| Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Pendente | #40 |
-| Inventário de riscos de M8 e gabarito de M9 | Pendente | #40 |
-| Pilotos de todas as métricas | M2 a M5: piloto feito em 12/11/2026 ([1.1.8](#118-piloto-12112026)). M1.1 a M1.4 e M6 a M9: pendentes | #38, #39 (concluído), #40 |
+| Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Resolvida: quatro estudantes sem uso prévio, dois por dispositivo; $E$ = 3 min e $T$ = 15 min; termo de consentimento ([protocolo 0.3](avaliacao-interacao/protocolo.md)) | #40, concluído |
+| Inventário de riscos de M8 e gabarito de M9 | Resolvida ([instrumentos](avaliacao-interacao/instrumentos.md)) | #40, concluído |
+| Pilotos de todas as métricas | M2 a M5: piloto em 12/11/2026 ([1.1.8](#118-piloto-12112026)). M1.1, M1.2 e M1.4: piloto em 08/11/2026 ([1.2](#12-procedimentos-e-pilotos-de-manutenibilidade)). M1.3 e M6 a M9: piloto não executado | #38, #39 e #40, concluídos |
 
 ---
 

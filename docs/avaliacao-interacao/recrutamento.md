@@ -10,7 +10,8 @@ Com duas observações válidas por dispositivo, M6 só pode resultar em 0%, 50%
 Manter os limiares da Fase 2 e publicar contagens e percentuais por recorte.
 
 Júlia Santana Campos e João Paulo Barbosa Pereira Nunes
-serão o moderador e o observador das sessões; cada sessão registra quem atuou em cada
+eram o moderador e o observador previstos
+(nas sessões de 15/11/2026, a moderação foi de Júlia e a observação, de Eduardo Silva Waski); cada sessão registra quem atuou em cada
 função. Os dois respondem pelos CSV, pela inspeção M8 e pela revisão de M9. O recrutamento
 fica com Júlia. O contato de pesquisa para os participantes **ainda precisa ser definido**
 antes do envio do convite.

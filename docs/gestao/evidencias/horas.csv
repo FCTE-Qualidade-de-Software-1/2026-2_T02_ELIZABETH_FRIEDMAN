@@ -6,6 +6,7 @@ issue,data,pessoa,horas
 5,2026-10-18,LucasMF,3.0
 6,2026-10-18,kalebmacedo,3.5
 7,2026-10-18,kalebmacedo,4.0
+7,2026-10-18,LucasMF,4.0
 8,2026-10-18,Júlia Santana Campos,3.0
 9,2026-10-21,João Paulo Nunes,2.0
 9,2026-10-21,Júlia Santana Campos,2.0
@@ -24,19 +25,32 @@ issue,data,pessoa,horas
 27,2026-11-05,Eduardo Waski,1.5
 30,2026-10-26,Eduardo Waski,1.0
 32,2026-10-26,Eduardo Waski,1.5
+36,2026-11-16,Eduardo Waski,2.0
 37,2026-11-05,Júlia Santana Campos,4.0
 38,2026-11-15,LucasMF,5.0
 39,2026-11-13,Júlia Santana Campos,5.0
 40,2026-11-13,kalebmacedo,6.5
+40,2026-11-13,LucasMF,6.5
 41,2026-11-08,Joaquim Neto,3.0
 41,2026-11-10,Eduardo Waski,1.0
 42,2026-11-15,kalebmacedo,6.0
 43,2026-11-16,Joaquim Neto,2.0
 43,2026-11-16,João Paulo Nunes,2.0
 43,2026-11-16,Júlia Santana Campos,2.0
+44,2026-11-15,kalebmacedo,2.0
 44,2026-11-15,Eduardo Waski,5.0
 44,2026-11-15,Júlia Santana Campos,5.0
+45,2026-11-16,kalebmacedo,2.5
+45,2026-11-16,Joaquim Neto,2.5
+46,2026-11-16,LucasMF,7.0
+46,2026-11-21,Eduardo Waski,0.5
+47,2026-11-22,João Paulo Nunes,4.0
+48,2026-11-22,João Paulo Nunes,2.0
+48,2026-11-22,Júlia Santana Campos,2.0
 49,2026-11-10,Eduardo Waski,1.0
+50,2026-11-22,Eduardo Waski,1.5
+50,2026-11-22,Joaquim Neto,1.5
+51,2026-11-22,Eduardo Waski,2.0
 52,2026-11-03,Eduardo Waski,1.0
 52,2026-11-03,Joaquim Neto,1.0
 52,2026-11-03,João Paulo Nunes,1.0
@@ -46,6 +60,7 @@ issue,data,pessoa,horas
 54,2026-11-03,Eduardo Waski,1.0
 55,2026-11-05,Eduardo Waski,2.0
 63,2026-11-12,Eduardo Waski,0.5
+67,2026-11-16,Eduardo Waski,1.0
 68,2026-11-15,Joaquim Neto,1.5
 68,2026-10-15,Júlia Santana Campos,1.5
 70,2026-11-15,Joaquim Neto,2.0

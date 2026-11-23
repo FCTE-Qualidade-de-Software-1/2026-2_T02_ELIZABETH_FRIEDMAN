@@ -39,7 +39,7 @@ theme:
 
 extra:
   # Atualize a cada entrega (aparece no rodapé de todas as páginas).
-  versao: "2.0, Entrega 2 (22/11/2026)"
+  versao: "2.0 — Entrega 2 (24/11/2026)"
   generator: false
 
 plugins:
