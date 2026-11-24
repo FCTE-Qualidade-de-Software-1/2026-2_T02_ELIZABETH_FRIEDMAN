@@ -1,5 +1,13 @@
 # Fichas e convenções de registro
 
+!!! info "Os arquivos desta página são modelos vazios"
+    Os registros preenchidos da coleta, anonimizados, estão em
+    [sessões M6, M7 e M9](../avaliacao/dados/g3/m6-m9-sessoes.csv),
+    [inventário M8](../avaliacao/dados/g3/m8-inventario.csv),
+    [observações M8](../avaliacao/dados/g3/m8-observacoes.csv) e
+    [resultados por recorte](../avaliacao/dados/g3/m6-m9-resultados.csv).
+    A análise está na [Fase 4, seção 2.3](../fase-4.md#23-g3-capacidade-de-interacao).
+
 Baixar os modelos vazios e salvar cópias preenchidas fora da documentação pública:
 
 - [Observações M6–M9](observacoes.csv): uma linha por sessão M6, tarefa M7, cenário M8 ou ponto M9.

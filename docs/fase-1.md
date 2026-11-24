@@ -322,6 +322,10 @@ Fonte: elaborado pela equipe a partir da ISO/IEC 25010:2023.
 
 As linhas tracejadas indicam as subcaracterísticas excluídas, com a justificativa na Tabela 7.
 
+A Fase 2 mudou três pontos deste recorte: a autodescritividade passou a ser medida (Q9 e M9), e a
+utilização de recursos e a capacidade ficaram sem métrica. Os motivos estão na
+[Fase 2, seção 6.4](fase-2.md#64-diferencas-em-relacao-a-fase-1).
+
 ## 5. Seleção e priorização das características
 
 
@@ -488,6 +492,10 @@ exatas serão definidas no GQM da [Fase 2](fase-2.md).
 | 4.3 | Pontuação SUS média dos participantes | Capacidade de interação |
 | 4.3 | Tempo de resposta da busca e da geração de grade | Eficiência de desempenho |
 | 4.4 | Métricas de analisabilidade, modificabilidade e testabilidade do código (por exemplo, complexidade e cobertura de testes) | Manutenibilidade |
+
+A pontuação SUS não virou métrica na Fase 2; a correspondência dos demais indicadores com as métricas e o
+motivo estão na [Fase 2, seções 6.3](fase-2.md#63-dos-indicadores-da-fase-1-as-metricas) e
+[6.4](fase-2.md#64-diferencas-em-relacao-a-fase-1).
 
 ---
 

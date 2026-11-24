@@ -19,7 +19,21 @@ O sistema foi desenvolvido no segundo semestre de 2023 por seis estudantes na di
 Repositório disponível em: [unb-mds/2023-2-SuaGradeUnB](https://github.com/unb-mds/2023-2-SuaGradeUnB).
 
 
-## Como navegar
+## Percurso por objetivo
+
+Cada página segue um objetivo de medição do começo ao fim: definição, questões e hipóteses, métricas,
+método, dados, resultados e julgamento.
+
+| Objetivo | O que se quer saber | Questões e métricas | Estado | Ir direto para |
+|----------|---------------------|---------------------|--------|----------------|
+| [**G1 — Manutenibilidade**](objetivo-g1.md) | Mantenedores e contribuidores conseguem compreender, modificar e testar o código? | Q1.1 a Q1.4, M1.1 a M1.4 | Inconclusivo: falta medida válida de M1.3 | [Definição](fase-2.md#g1-manutenibilidade) · [Dados](fase-4.md#dados-g1) · [Resultados](fase-4.md#21-g1-manutenibilidade) |
+| [**G2 — Eficiência de desempenho**](objetivo-g2.md) | O estudante recebe resposta em tempo aceitável ao buscar, selecionar, gerar e salvar? | Q2 a Q5, M2 a M5 | Atendido nas condições avaliadas | [Definição](fase-2.md#g2-eficiencia-de-desempenho) · [Dados](fase-4.md#dados-g2) · [Resultados](fase-4.md#22-g2-eficiencia-de-desempenho) |
+| [**G3 — Capacidade de interação**](objetivo-g3.md) | O estudante aprende o fluxo, controla as escolhas, não perde a grade e entende a interface? | Q6 a Q9, M6 a M9 | Não atendido | [Definição](fase-2.md#g3-capacidade-de-interacao-usabilidade) · [Dados](fase-4.md#dados-g3) · [Resultados](fase-4.md#23-g3-capacidade-de-interacao) |
+
+A visão dos três juntos está no [diagrama GQM](fase-2.md#5-diagrama-gqm) e no
+[julgamento por objetivo](fase-4.md#31-estado-de-cada-hipotese-e-de-cada-objetivo).
+
+## Como navegar por fase
 
 | Etapa | Conteúdo | Situação |
 |-------|----------|----------|

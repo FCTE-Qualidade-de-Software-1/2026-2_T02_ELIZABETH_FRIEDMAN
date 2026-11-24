@@ -7,9 +7,9 @@ M7,computador / M7-REM,2,2,100%,2 de 2 sessões,3,
 M7,celular / M7-SEL,1,2,50%,2 de 2 sessões,0,P04 não selecionou Álgebra Linear
 M7,celular / M7-ALT,1,1,100%,1 de 2 sessões (P04 inválida),Sem nota,Estado final de P04 não conferido na tela
 M7,celular / M7-REM,1,1,100%,1 de 2 sessões (P04 inválida),Sem nota,Estado final de P04 não conferido na tela
-M8,computador / navegador,5,6,83,3%,6 de 6 cenários,0,R04 (recarregar durante a montagem) sem proteção
+M8,computador / navegador,5,6,"83,3%",6 de 6 cenários,0,R04 (recarregar durante a montagem) sem proteção
 M8,computador / conta,1,1,100%,1 de 1 cenário,3,R02 com confirmação
-M8,celular / navegador,5,6,83,3%,6 de 6 cenários,0,R04 (recarregar durante a montagem) sem proteção
+M8,celular / navegador,5,6,"83,3%",6 de 6 cenários,0,R04 (recarregar durante a montagem) sem proteção
 M8,celular / conta,1,1,100%,1 de 1 cenário,3,R02 com confirmação
 M9,computador / V01,2,2,100%,2 de 2 sessões,3,
 M9,computador / V02,,,,0 de 2 sessões,Não avaliado,Carregamento não perguntado

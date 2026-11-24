@@ -12,7 +12,7 @@ F3-C1: método justificado e instruções passo a passo para o avaliador,
 garantindo repetibilidade e reprodutibilidade.
 -->
 
-Os níveis resumem a [escala da Fase 2, seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica) (0 Insatisfatório, 1 Aceitável, 2 Bom, 3 Excelente); em caso de divergência, vale a Fase 2. A coluna **Card** indica onde o passo a passo é detalhado: #38 (M1.1 a M1.4), #39 (M2 a M5) e #40 (M6 a M9). O passo a passo de M2 a M5 está na [seção 1.1](#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo); o de M1.1 a M1.4, na [seção 1.2](#12-procedimentos-e-pilotos-de-manutenibilidade); o de M6 a M9, no [protocolo de interação](avaliacao-interacao/protocolo.md).
+Os níveis resumem a [escala da Fase 2, seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica) (0 Insatisfatório, 1 Aceitável, 2 Bom, 3 Excelente); em caso de divergência, vale a Fase 2. A coluna **Card** indica onde o passo a passo é detalhado: #38 (M1.1 a M1.4), #39 (M2 a M5) e #40 (M6 a M9). O passo a passo de M2 a M5 está na [seção 1.1](#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo); o de M1.1 a M1.4, na [seção 1.2](#12-procedimentos-e-pilotos-de-manutenibilidade); o de M6 a M9, no [protocolo de interação](avaliacao-interacao/protocolo.md). Para acompanhar um objetivo do começo ao fim, use o percurso de [G1](objetivo-g1.md), [G2](objetivo-g2.md) ou [G3](objetivo-g3.md).
 
 | Métrica (Fase 2) | Método / técnica | Recurso | Ambiente | Nível de pontuação | Card (instruções) |
 |---|---|---|---|---|---|
