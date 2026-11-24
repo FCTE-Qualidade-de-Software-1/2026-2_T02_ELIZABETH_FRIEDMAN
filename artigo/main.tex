@@ -253,7 +253,7 @@ do ponto de vista dos estudantes, inclusive os de primeiro uso. Os objetivos se
 desdobram em doze questões, cada uma com uma hipótese e uma métrica principal,
 resumidas na Tabela~\ref{tab:gqm}.
 
-\begin{table}[htbp]
+\begin{table}[!t]
 \centering
 \caption{Questões, métricas e limites de aceitação}
 \label{tab:gqm}
@@ -390,7 +390,7 @@ cronometrados no próprio celular e sem registro da execução; na verificação
 posterior, o \textit{patch} de C1 passou na suíte completa e o de C2 reprovou em
 9 testes. As quatro sessões de G3 foram feitas em 15/11/2026, duas no
 computador e duas no celular, e a inspeção de M8, nos dois dispositivos, em
-16/11/2026. Elas se desviaram do protocolo em alguns pontos: a exploração livre
+16/11/2026 (R05b no computador e R06 em 23/11/2026). As sessões se desviaram do protocolo em alguns pontos: a exploração livre
 foi mais curta que a prevista, o cartão de M6 teve três disciplinas em vez de
 duas, uma sessão usou outra plataforma de chamada, na primeira sessão a moderação
 confirmou o botão de gerar e disse que a grade estava salva, e a instrução do ponto de
@@ -424,7 +424,7 @@ GitHub. Ele roda a cada publicação da página do projeto, a cada \textit{issue
 fechada e todo domingo, e recalcula o histórico semanal desde o início do
 projeto. Os valores, os dados brutos e as decisões de gestão ficam na página do
 projeto, junto com as atas. A Tabela~\ref{tab:psm} traz os valores da coleta de
-22/11/2026. Na revisão da coleta de 05/11, os indicadores levaram a três decisões:
+24/11/2026, depois do fechamento de todas as \textit{issues}. Na revisão da coleta de 05/11, os indicadores levaram a três decisões:
 verificar se a proteção da \textit{branch} principal exigia aprovação antes do
 \textit{merge} (I1 e I2 em 52,6\% e 57,9\%), atribuir responsáveis às
 \textit{issues} abertas da E2 priorizando quem tinha menos horas (conclusão de
@@ -444,16 +444,16 @@ estimativa (retrabalho acima de 20\%, vindo das correções do PC1).
   hline{6,8} = {0.4pt},
   rowsep = 1pt,
 }
-Categoria & Indicador & Fórmula & 22/11 \\
-Desempenho dos processos & PRs revisados no prazo & PRs aprovados antes do \textit{merge} e em até 48\,h / PRs mergeados & 71,8\% \\
- & PRs aprovados antes do \textit{merge} & PRs aprovados antes do \textit{merge} / PRs mergeados & 76,9\% \\
- & Retrabalho (\textit{issues}) & \textit{Issues} concluídas com a \textit{label} de correção ou reabertas / \textit{issues} concluídas & 17,9\% \\
- & Retrabalho (horas) & Horas reais dessas \textit{issues} / horas reais das \textit{issues} concluídas & 14,0\% \\
-Calendário e progresso & Conclusão por \textit{milestone} & \textit{Issues} concluídas / \textit{issues} do \textit{milestone} & 100\%; E2: 81,2\% \\
- & Desvio de prazo médio & Média de (data de fechamento $-$ prazo do \textit{milestone}), em dias & $-$6,2 dias \\
-Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, nas \textit{issues} com os dois registros & 1,03 \\
+Categoria & Indicador & Fórmula & 24/11 \\
+Desempenho dos processos & PRs revisados no prazo & PRs aprovados antes do \textit{merge} e em até 48\,h / PRs mergeados & 74,4\% \\
+ & PRs aprovados antes do \textit{merge} & PRs aprovados antes do \textit{merge} / PRs mergeados & 79,1\% \\
+ & Retrabalho (\textit{issues}) & \textit{Issues} concluídas com a \textit{label} de correção ou reabertas / \textit{issues} concluídas & 16,7\% \\
+ & Retrabalho (horas) & Horas reais dessas \textit{issues} / horas reais das \textit{issues} concluídas & 13,1\% \\
+Calendário e progresso & Conclusão por \textit{milestone} & \textit{Issues} concluídas / \textit{issues} do \textit{milestone} & 100\% \\
+ & Desvio de prazo médio & Média de (data de fechamento $-$ prazo do \textit{milestone}), em dias & $-$5,8 dias \\
+Recursos e custos & Esforço real / estimado & Horas reais / horas estimadas, nas \textit{issues} com os dois registros & 1,04 \\
  & \textit{Issues} sem horas reais & \textit{Issues} concluídas sem registro de horas & 0 \\
- & Distribuição de esforço & Horas reais da pessoa / horas reais registradas & 10,7 a 25,4\% \\
+ & Distribuição de esforço & Horas reais da pessoa / horas reais registradas & 10,6 a 26,3\% \\
 \end{tblr}
 \end{table}
 
@@ -626,7 +626,7 @@ M7 & Computador: seleção e remoção & 2 de 2 em cada (100\%) & 3 \\
  & Computador: troca de turma & 1 de 2 (50\%) & 0 \\
  & Celular: seleção & 1 de 2 (50\%) & 0 \\
  & Celular: troca e remoção & 1 de 1 em cada (cobertura parcial) & Sem nota \\
-M8 & Navegador (computador / celular) & 3 de 4 (75\%) / 4 de 5 (80\%) & 0 \\
+M8 & Navegador (computador / celular) & 5 de 6 (83,3\%) em cada & 0 \\
  & Conta (computador / celular) & 1 de 1 (100\%) em cada & 3 \\
 M9 & Computador: seleção e geração concluída & 2 de 2 em cada (100\%) & 3 \\
  & Celular: seleção e geração concluída & 1 de 2 em cada (50\%) & 0 \\
@@ -642,7 +642,7 @@ na conta em M8 e de estado no computador em M9 alcançam o limite.
 \centering
 \begin{tikzpicture}
 \begin{axis}[
-  xbar, bar width=6pt, width=0.8\linewidth, height=6.3cm,
+  xbar, bar width=6pt, width=0.8\linewidth, height=4.9cm,
   xmin=0, xmax=105, xlabel={Sucesso (\%)},
   symbolic y coords={M9 cel,M9 comp,M8 conta,M8 nav cel,M8 nav comp,M7 cel sel,M7 comp troca,M7 comp sel/rem,M6 cel,M6 comp},
   ytick=data, tick label style={font=\footnotesize},
@@ -652,7 +652,7 @@ na conta em M8 e de estado no computador em M9 alcançam o limite.
 ]
 \addplot[fill=gray!45, draw=gray!70] coordinates {
   (0,M6 comp) (50,M6 cel) (100,M7 comp sel/rem) (50,M7 comp troca) (50,M7 cel sel)
-  (75,M8 nav comp) (80,M8 nav cel) (100,M8 conta) (100,M9 comp) (50,M9 cel)};
+  (83,M8 nav comp) (83,M8 nav cel) (100,M8 conta) (100,M9 comp) (50,M9 cel)};
 \addlegendentry{Resultado}
 \addplot[only marks, mark=|, mark size=5pt, very thick, black, nodes near coords={}] coordinates {
   (80,M6 comp) (80,M6 cel) (90,M7 comp sel/rem) (90,M7 comp troca) (90,M7 cel sel)
@@ -726,7 +726,7 @@ falhou nas duas versões pelo mesmo erro preexistente do produto.
 \footnotesize
 \begin{tblr}{
   width = \linewidth,
-  colspec = {X[l] X[l] X[l]},
+  colspec = {Q[l] Q[l] X[l]},
   row{1} = {font=\bfseries},
   hline{1,2,Z} = {0.8pt},
   rowsep = 1pt,
@@ -739,9 +739,8 @@ Manual, dados reais (21/11) & Seleção perdida, sem aviso & Quatro turmas resta
 \end{table}
 
 A verificação é funcional e vale para o cenário R04: não houve celular físico,
-Safari, Firefox nem nova sessão com participantes. Como os demais cenários de M8
-não foram repetidos, os valores originais (3 de 4 no computador e 4 de 5 no
-celular) continuam sendo os resultados da avaliação. O rascunho também não
+Safari, Firefox nem nova sessão com participantes. Como os demais cenários não
+foram repetidos, M8 continua em 5 de 6 nos dois dispositivos. O rascunho também não
 substitui o salvamento na conta, segundo problema da lista.
 
 \section{Conclusão}\label{sec:conclusao}
@@ -814,9 +813,8 @@ localmente, com um usuário, \textit{frontend} em modo de desenvolvimento e mass
 de 14 disciplinas, e não representa o pico de matrícula; M3 foi recoletada em
 outro ambiente. G3 vem de quatro participantes por conveniência, com desvios de
 protocolo e cobertura parcial em M7, M8 e M9, o que impede comparar
-dispositivos. G1 depende de uma execução cronometrada e registrada de M1.3 para
-deixar de ser inconclusivo. Como próximos passos, a equipe sugere repetir M1.3
-por quem não conheça as mudanças, medir G2 no ambiente de produção fora do
+dispositivos. Como próximos passos, a equipe sugere repetir M1.3, cronometrada e
+registrada, por quem não conheça as mudanças, o que pode tirar G1 de inconclusivo, medir G2 no ambiente de produção fora do
 período de matrícula, testar com participantes a mudança do botão de salvamento
 e abrir as demais oportunidades como \textit{issues} no repositório do produto.
 
@@ -826,15 +824,14 @@ e abrir as demais oportunidades como \textit{issues} no repositório do produto.
 ESW conduziu a Fase~1. KSM e LMF especificaram a avaliação pela abordagem GQM
 (Fase~2). JPBPN e JSC escreveram este manuscrito. JJSN conduziu a gestão do
 projeto e as medições PSM/CID.
-% TODO: informar a versão do Claude Code usada (extensão do VS Code).
-Os autores usaram o Claude Code, com o modelo Claude Opus~5.5 (Anthropic), em
-três frentes de apoio: (i)~busca e levantamento de fontes bibliográficas;
-(ii)~revisão aprofundada das informações do texto, para checar consistência com
-as fontes e os documentos da equipe; e (iii)~implementação das métricas em
-\textit{scripts} de coleta automatizada, para garantir que os dados fossem
-coletados conforme as definições do plano de medição. As fontes indicadas foram
-consultadas pelos autores, e os \textit{scripts} e todo o conteúdo do artigo foram
-revisados e validados por eles.
+Os autores usaram o Claude Code~2.1, com o modelo Claude Opus~5.5 (Anthropic),
+em três frentes de apoio: (i)~busca e levantamento de fontes bibliográficas;
+(ii)~revisão do texto, conferido com as fontes e os documentos da equipe; e
+(iii)~\textit{scripts} de coleta automatizada das métricas, conforme o plano de
+medição. O Codex (OpenAI) apoiou o termo de
+consentimento e os instrumentos de M6 a M9; os demais usos estão na página
+\textit{Uso de IA}. Os autores consultaram as fontes e revisaram e validaram os
+\textit{scripts} e todo o conteúdo.
 As atividades e o percentual de esforço de cada membro na Entrega~2 estão no
 Apêndice~\ref{ap:contribuicao} (Tabela~\ref{tab:contribuicao}).
 % TODO: confirmar com a docente se as sessões com estudantes exigem submissão a comitê de ética.
@@ -845,6 +842,7 @@ identificados apenas por códigos nos dados publicados.
 \bibliographystyle{sbc}
 \bibliography{refs}
 
+\clearpage
 \appendix
 
 \section{Contribuição dos membros}\label{ap:contribuicao}

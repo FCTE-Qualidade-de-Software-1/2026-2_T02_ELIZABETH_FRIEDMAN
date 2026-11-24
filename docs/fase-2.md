@@ -30,6 +30,10 @@ as referências detalhadas aparecem após cada objetivo.
 
 ### G1 — Manutenibilidade
 
+Percurso completo, da definição ao julgamento: [G1](objetivo-g1.md).
+
+
+<!-- --8<-- [start:objetivo-g1] -->
 | Elemento | Descrição |
 |----------|-----------|
 | Analisar | O código Python da API e TypeScript/TSX do *frontend* do Sua Grade UnB, na versão avaliada definida na [Fase 1](fase-1.md#61-objetos-de-avaliacao), com inspeção detalhada do *scraper* e do gerador de grades. |
@@ -41,9 +45,14 @@ as referências detalhadas aparecem após cada objetivo.
 **Origem na Fase 1:** a manutenção por voluntários e a adaptação da coleta às mudanças no SIGAA ([Seção 1.1](fase-1.md#11-contexto)) motivam o objetivo. A [Tabela 3](fase-1.md#22-mapa-de-partes-interessadas) associa mantenedores e contribuidores externos à manutenibilidade, e a [Seção 5](fase-1.md#5-selecao-e-priorizacao-das-caracteristicas) lhe atribui a primeira prioridade. O [modelo adaptado](fase-1.md#42-adaptacao-do-modelo) seleciona as quatro subcaracterísticas acima e exclui a reusabilidade, e a [profundidade prevista](fase-1.md#63-profundidade) inclui análise estática da API e do *frontend*, execução dos testes com cobertura e inspeção do *scraper* e do gerador. O objetivo apoia as decisões **D1** (priorizar correções), **D2** (escolher a melhoria da Fase 4) e **D3** (orientar novos contribuidores), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
 
 A análise estática não demonstra, sozinha, facilidade de manutenção. Por isso G1 combina indicadores estruturais, tarefas de mudança controladas e execução dos testes.
+<!-- --8<-- [end:objetivo-g1] -->
 
 ### G2 — Eficiência de desempenho
 
+Percurso completo, da definição ao julgamento: [G2](objetivo-g2.md).
+
+
+<!-- --8<-- [start:objetivo-g2] -->
 | Elemento | Descrição |
 |----------|-----------|
 | Analisar | O desempenho do Sua Grade UnB no fluxo de buscar disciplinas, selecionar turmas, gerar e salvar grades. |
@@ -60,9 +69,14 @@ explicitamente a característica de eficiência e a avaliação dos tempos de re
 no fluxo principal. A mesma tabela estabelece a restrição de não gerar carga sobre
 o SIGAA. O objetivo apoia as decisões **D1** (priorizar correções) e **D2** (escolher a
 melhoria da Fase 4), definidas na [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
+<!-- --8<-- [end:objetivo-g2] -->
 
 ### G3 — Capacidade de interação (Usabilidade)
 
+Percurso completo, da definição ao julgamento: [G3](objetivo-g3.md).
+
+
+<!-- --8<-- [start:objetivo-g3] -->
 | Elemento | Descrição |
 |----------|-----------|
 | Analisar | A interface do Sua Grade UnB no fluxo de buscar disciplinas, selecionar turmas, gerar e salvar grades, em computador e celular. |
@@ -76,8 +90,9 @@ registra a necessidade dos estudantes de montar a grade, inclusive no celular, e
 identificar obstáculos no fluxo principal. Essa necessidade fundamenta G3 e apoia
 as decisões **D1** e **D2** da [Seção 1.3](fase-1.md#13-uso-pretendido-decisoes-apoiadas).
 A comparação das quatro subcaracterísticas de G3 com a seleção da Fase 1 está na
-[Seção 6](#6-consistencia-com-a-fase-1): aprendizagem, operabilidade e proteção contra
+[Seção 6](fase-2.md#6-consistencia-com-a-fase-1): aprendizagem, operabilidade e proteção contra
 erros do usuário foram incluídas pela Fase 1, e a autodescrição é a única que ela não incluiu.
+<!-- --8<-- [end:objetivo-g3] -->
 
 ## 2. Questões e hipóteses (nível operacional)
 
@@ -90,12 +105,14 @@ F2-C3: uma hipótese clara para CADA questão.
 
 O identificador **Q1** é desdobrado em Q1.1 a Q1.4, e as hipóteses e métricas usam os mesmos sufixos (M1.1 a M1.4), de modo que Q2 a Q9 e M2 a M9 mantêm seus identificadores. As hipóteses são expectativas operacionais a verificar, não resultados já obtidos.
 
+<!-- --8<-- [start:questoes-g1] -->
 | ID | Subcaracterística | Questão | Hipótese | Objetivo |
 |----|-------------------|---------|----------|----------|
 | Q1.1 | Modularidade | A organização das dependências internas evita grupos de módulos que dependem circularmente entre si e dificultam mudanças isoladas? | H1.1: no máximo 10% dos arquivos de produção de cada camada participam de ciclos de importação internos. | G1 |
 | Q1.2 | Analisabilidade | A estrutura de controle do código permite examinar os caminhos de execução sem concentração elevada de blocos complexos? | H1.2: no máximo 20% dos blocos de cada camada apresentam complexidade ciclomática superior a 10; o *scraper* e o gerador também atendem ao limite, avaliados separadamente. | G1 |
 | Q1.3 | Modificabilidade | Um contribuidor consegue realizar pequenas mudanças no *scraper* e no gerador, preservando os comportamentos que devem continuar funcionando? | H1.3: cada uma das duas mudanças controladas é concluída e validada em até 90 minutos, sem regressões na suíte de referência. | G1 |
 | Q1.4 | Testabilidade | Os testes automatizados existentes exercitam o código da API e seus componentes críticos o suficiente para apoiar a verificação de mudanças? | H1.4: os testes executam pelo menos 70% das linhas executáveis da API e de cada componente crítico (*scraper* e gerador). | G1 |
+<!-- --8<-- [end:questoes-g1] -->
 
 M1.1 e M1.2 são **indicadores indiretos**: ausência de ciclos e baixa complexidade não comprovam boa arquitetura nem compreensão humana. M1.3 observa dois casos de mudança e não representa toda a manutenção possível. M1.4 mede execução de linhas, não a qualidade das asserções. A testabilidade do *frontend* não recebe nota de cobertura nesta avaliação, porque não há suíte de testes nem comando de teste em `web/package.json`. Essa lacuna é registrada como limitação e não é convertida em cobertura zero medida nem estendida a partir da cobertura Python.
 
@@ -112,12 +129,14 @@ estão definidos na Seção 4, para aplicação na coleta. As condições de exe
 os dados utilizados e a repetição das tarefas serão especificados no plano da
 [Fase 3](fase-3.md), permitindo comparar os resultados sob condições documentadas.
 
+<!-- --8<-- [start:questoes-g2] -->
 | ID | Subcaracterística | Questão | Hipótese | Objetivo |
 |----|-------------------|---------|----------|----------|
 | Q2 | Comportamento temporal | A busca de disciplinas apresenta os resultados em tempo aceitável para o estudante dar continuidade à montagem da grade? | H2: O tempo entre solicitar uma busca por nome ou código e visualizar seus resultados atende ao limite de aceitação definido para a busca, nas condições avaliadas. | G2 |
 | Q3 | Comportamento temporal | A seleção de turmas atualiza a interface em tempo aceitável para o estudante continuar selecionando as opções desejadas? | H3: O tempo entre selecionar uma turma e visualizar a atualização correspondente na interface atende ao limite de aceitação definido para a seleção, nas condições avaliadas. | G2 |
 | Q4 | Comportamento temporal | A geração de combinações de turmas sem conflito apresenta as grades em tempo aceitável nos cenários de montagem avaliados? | H4: O tempo entre solicitar a geração e visualizar as combinações de grades atende ao limite de aceitação definido para a geração em cada cenário avaliado. | G2 |
 | Q5 | Comportamento temporal | O salvamento de uma grade fornece retorno em tempo aceitável para o estudante concluir a tarefa? | H5: O tempo entre solicitar o salvamento e visualizar sua confirmação atende ao limite de aceitação definido para o salvamento na conta do usuário. | G2 |
+<!-- --8<-- [end:questoes-g2] -->
 
 ### 2.3 Capacidade de interação (Usabilidade) — G3
 
@@ -134,12 +153,14 @@ O recorte cobre o primeiro uso, o controle das ações, a prevenção de erros e
 compreensão da interface. As demais subcaracterísticas não são cobertas por estas
 questões; os resultados não deverão ser generalizados para toda a característica.
 
+<!-- --8<-- [start:questoes-g3] -->
 | ID | Subcaracterística | Questão | Hipótese | Objetivo |
 |----|-------------------|---------|----------|----------|
 | Q6 | Aprendizagem | Um estudante que utiliza o Sua Grade UnB pela primeira vez consegue aprender a buscar disciplinas, selecionar turmas, gerar e salvar uma grade com as orientações oferecidas pelo próprio sistema? | H6: Após uma primeira exploração, os estudantes sem experiência prévia conseguem concluir o fluxo principal com as orientações do sistema, sem instruções adicionais do avaliador, dentro do tempo de aprendizagem estabelecido previamente no protocolo. | G3 |
 | Q7 | Operabilidade | O estudante consegue controlar a seleção de disciplinas e turmas e revisar suas escolhas durante a montagem da grade, tanto no computador quanto no celular? | H7: Nos dois tipos de dispositivo, os estudantes conseguem selecionar, remover e alterar suas escolhas pelos controles da interface, sem bloqueios de navegação ou controles inacessíveis que impeçam concluir as tarefas previstas. | G3 |
 | Q8 | Proteção contra erros do usuário | A interface protege o estudante de ações equivocadas que possam causar perda involuntária da grade em edição ou de uma grade salva? | H8: Nos cenários de ações com risco de perda definidos previamente, a interface impede a perda involuntária por meio de prevenção, confirmação antes da ação ou possibilidade de desfazê-la e recuperar a grade. | G3 |
 | Q9 | Autodescrição | O estudante compreende, a partir dos rótulos, mensagens e indicadores da interface, o estado atual da montagem e a próxima ação disponível? | H9: Nos pontos de verificação do fluxo, os estudantes identificam corretamente as turmas selecionadas, distinguem a geração em andamento da geração concluída e reconhecem se o salvamento foi concluído, com base nas informações da interface e sem explicação do avaliador. | G3 |
+<!-- --8<-- [end:questoes-g3] -->
 
 As hipóteses são expectativas a verificar. Para H6, o protocolo deverá separar a
 exploração inicial da execução observada e fixar o tempo de aprendizagem. Para H7,
@@ -226,6 +247,8 @@ das regras de completude e tratamento de falhas dessa seção.
 
 ### M2 — Tempo de resposta da busca de disciplinas (P95)
 
+
+<!-- --8<-- [start:ficha-m2] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q2 — hipótese H2; objetivo G2. |
@@ -234,9 +257,12 @@ das regras de completude e tratamento de falhas dessa seção.
 | Fonte dos dados | Registros de eventos do navegador na reprodução local, arquivo CSV das tentativas e evidências da atualização dos resultados. |
 | Procedimento de coleta | Preparar cenários separados para busca por nome e por código, com termos e resultados esperados fixos. Iniciar a marcação na ação que dispara a busca; se houver busca automática, usar o último evento de entrada do termo, incluindo eventual espera programada pela aplicação. Encerrar quando os resultados correspondentes estiverem visíveis e utilizáveis, sem confundir resultados anteriores com os da nova busca. Executar o protocolo da Seção 3.1 para cada cenário. |
 | Interpretação | Comparar cada cenário com $L_2$. Um resultado acima do limite indica demora na busca sob as condições medidas. Interpretar junto aos erros e expirações; o resultado não demonstra desempenho em picos de matrícula. |
+<!-- --8<-- [end:ficha-m2] -->
 
 ### M3 — Tempo de atualização após seleção de turma (P95)
 
+
+<!-- --8<-- [start:ficha-m3] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q3 — hipótese H3; objetivo G2. |
@@ -245,9 +271,12 @@ das regras de completude e tratamento de falhas dessa seção.
 | Fonte dos dados | Registros de eventos de seleção e atualização visual do navegador na reprodução local, arquivo CSV e evidências do estado selecionado. |
 | Procedimento de coleta | Fixar a disciplina, a turma e as seleções anteriores de cada cenário. Iniciar a marcação na ação de selecionar a turma e encerrar quando os indicadores visuais correspondentes refletirem o novo estado e a interface permitir continuar a tarefa. Restaurar as seleções iniciais entre tentativas, fora do intervalo medido. Executar o protocolo da Seção 3.1. |
 | Interpretação | Comparar cada cenário com $L_3$. Um resultado acima do limite indica atraso na atualização após a seleção, nas condições medidas. Uma atualização ausente ou incorreta é registrada como erro, não como resposta rápida. |
+<!-- --8<-- [end:ficha-m3] -->
 
 ### M4 — Tempo de geração de grades (P95)
 
+
+<!-- --8<-- [start:ficha-m4] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q4 — hipótese H4; objetivo G2. |
@@ -256,9 +285,12 @@ das regras de completude e tratamento de falhas dessa seção.
 | Fonte dos dados | Registros de acionamento e conclusão da geração no navegador da reprodução local, massa de dados de disciplinas e turmas, arquivo CSV e evidências das grades apresentadas. |
 | Procedimento de coleta | Preparar conjuntos fixos de disciplinas e turmas com combinações válidas conhecidas. Documentar por cenário as quantidades de disciplinas, turmas candidatas e combinações válidas esperadas. Iniciar a marcação na solicitação de geração e encerrar quando o processamento e a apresentação previstos pelo fluxo estiverem concluídos e o estudante puder consultar as grades. Não encerrar apenas ao aparecer um indicador de carregamento ou um resultado parcial. Executar o protocolo da Seção 3.1 e calcular o percentil separadamente para cada conjunto. |
 | Interpretação | Comparar cada cenário com $L_4$. Tempos acima do limite indicam demora na geração para aquele conjunto. Comparações entre conjuntos ajudam a identificar sensibilidade ao volume de combinações, mas não estabelecem a capacidade máxima do sistema. Resultados incompatíveis com a massa de referência são registrados como erro. |
+<!-- --8<-- [end:ficha-m4] -->
 
 ### M5 — Tempo de retorno do salvamento de grade (P95)
 
+
+<!-- --8<-- [start:ficha-m5] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q5 — hipótese H5; objetivo G2. |
@@ -269,6 +301,7 @@ das regras de completude e tratamento de falhas dessa seção.
 | Interpretação | Comparar o resultado com $L_5$. Tempos acima do limite indicam demora no retorno do salvamento. Um retorno rápido sem persistência não confirma H5. O tempo de autenticação e o de recuperação usado na verificação não integram esta métrica. |
 
 **Correção (12/11/2026, issue #63):** a versão inicial previa também a modalidade de salvamento no navegador. Na versão `3d399e7` não existe uma ação de salvar no navegador nem uma confirmação desse salvamento: a grade é gravada no armazenamento local durante a geração, cujo fim já é medido em M4. Como previsto na Seção 3.2, M5 foi revista antes da coleta e passa a avaliar só o salvamento na conta ([Fase 3, seção 4.1](fase-3.md#41-o-que-mudou-em-relacao-a-fase-2-e-por-que)).
+<!-- --8<-- [end:ficha-m5] -->
 
 ### 3.2 Verificação de viabilidade da coleta
 
@@ -429,6 +462,8 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 
 ### M6 — Sucesso no primeiro uso após exploração inicial
 
+
+<!-- --8<-- [start:ficha-m6] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q6 — hipótese H6; objetivo G3; aprendizagem. |
@@ -437,9 +472,12 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fonte dos dados | Questionário de experiência prévia, registros de início e fim da exploração e da execução, ficha de observação, evidência da grade produzida e verificação de seu salvamento. |
 | Procedimento de coleta | Confirmar a ausência de uso prévio. Fixar o limite de exploração $E$ e o limite total de aprendizagem $T$, em minutos, com $0 < E < T$, antes da coleta. Iniciar a contagem ao disponibilizar a interface e permitir exploração livre por até $E$ minutos. Em seguida, apresentar uma tarefa padronizada, com disciplinas de referência, e observar sua execução até a conclusão ou até completar $T$ minutos desde o início da exploração. Registrar separadamente os tempos de exploração e execução. Conferir as escolhas, a grade gerada e sua recuperação após o salvamento. Ajuda adicional, conclusão incorreta, desistência por dificuldade ou término após $T$ não contam em $S_6$. |
 | Interpretação | Maior percentual indica maior sucesso de aprendizagem no primeiro contato, nas condições observadas. Examinar as etapas que impediram a conclusão e os tempos registrados. O resultado não mede retenção após dias de uso nem demonstra facilidade para todos os estudantes. Comparar com o critério de aceitação definido na Seção 4, sem reutilizar os limites de tempo de resposta de G2. |
+<!-- --8<-- [end:ficha-m6] -->
 
 ### M7 — Sucesso independente nas tarefas de controle da grade
 
+
+<!-- --8<-- [start:ficha-m7] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q7 — hipótese H7; objetivo G3; operabilidade. |
@@ -449,9 +487,12 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fonte dos dados | Fichas de observação das sessões, capturas dos estados anterior e posterior da grade, registros de ajuda, bloqueios e dificuldades de acesso aos controles. |
 | Procedimento de coleta | Preparar tarefas equivalentes de seleção, remoção e alteração de disciplinas ou turmas, conforme os controles disponíveis, com estado inicial e resultado esperado fixos. Restaurar o estado antes de cada tarefa. Solicitar o resultado desejado sem indicar o caminho. Registrar a conclusão, as tentativas de correção, a ajuda e qualquer controle que impeça continuar. Conferir o estado final, em vez de considerar apenas o relato do participante. Repetir o conjunto em computador e celular conforme a distribuição prevista no protocolo. |
 | Interpretação | Maior percentual indica maior facilidade de controle nas tarefas observadas. Uma falha localizada em determinado controle ou dispositivo deve ser apresentada mesmo que outras tarefas tenham sucesso. Um resultado em computador não demonstra operabilidade no celular. A sustentação de H7 depende da cobertura dos dois dispositivos e das regras definidas na Seção 4. |
+<!-- --8<-- [end:ficha-m7] -->
 
 ### M8 — Cobertura de proteção contra perda involuntária da grade
 
+
+<!-- --8<-- [start:ficha-m8] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q8 — hipótese H8; objetivo G3; proteção contra erros do usuário. |
@@ -460,9 +501,12 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fonte dos dados | Inventário das ações de risco disponíveis na versão avaliada, roteiro de inspeção, capturas de avisos e confirmações e evidências de preservação ou recuperação da grade de referência. |
 | Procedimento de coleta | Inventariar previamente as ações realmente disponíveis que possam descartar uma edição ou excluir/substituir uma grade salva; exemplos a verificar incluem sair da edição, recarregar a página ou acionar exclusão, quando aplicáveis. Fixar os cenários e a grade inicial antes da coleta. Executar cada cenário em estado restaurado. Verificar se a ação é impedida, se há confirmação clara com opção de cancelar antes da perda ou se é possível desfazer e recuperar a grade integralmente. Se houver confirmação, testar seu cancelamento; um aviso exibido apenas depois da perda não constitui proteção. Registrar a comparação da grade antes e depois e repetir por dispositivo e modalidade previstos. |
 | Interpretação | Maior percentual indica maior cobertura de proteção nos riscos inventariados. Cenários sem proteção devem ser descritos individualmente, com o conteúdo perdido e o mecanismo ausente ou ineficaz. Uma confirmação protege contra execução acidental, mas não garante recuperação após uma exclusão conscientemente confirmada. O resultado não estima a frequência de erros reais dos estudantes nem cobre ações ausentes do inventário. Comparar com o critério definido na Seção 4. |
+<!-- --8<-- [end:ficha-m8] -->
 
 ### M9 — Compreensão dos estados e ações da interface
 
+
+<!-- --8<-- [start:ficha-m9] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q9 — hipótese H9; objetivo G3; autodescrição. |
@@ -472,9 +516,11 @@ Com denominador zero, informar **Não calculável**, sem atribuir 0% ou 100%.
 | Fonte dos dados | Respostas registradas dos participantes, capturas da interface no instante da pergunta, estado real da aplicação e gabarito de estados e ações preparado antes das sessões. |
 | Procedimento de coleta | Definir pontos para turmas selecionadas, geração em andamento e concluída e resultado do salvamento, com perguntas neutras como “Qual é o estado atual?” e “O que você pode fazer agora?”. Validar no piloto como apresentar estados transitórios sem alterar os rótulos ou acrescentar pistas; registrar o método. Preparar um gabarito que aceite diferentes formulações corretas e ações válidas. Registrar a resposta antes de dar qualquer retorno, confrontá-la com o estado real e marcar sucesso somente quando ambas as partes estiverem corretas. Ausência de resposta ou informação insuficiente na interface conta como insucesso. Um ponto não apresentado por problema no roteiro fica como não coletado e reduz a cobertura, sem ser presumido correto. |
 | Interpretação | Maior percentual indica que os estudantes compreendem melhor os estados e as possibilidades de ação nos pontos avaliados. Respostas incorretas ajudam a localizar rótulos, mensagens ou indicadores ambíguos; concluir a tarefa por tentativa e erro não equivale a compreender a interface. Publicar os pontos separadamente para que o reconhecimento da seleção não oculte dificuldades na geração ou no salvamento. A conclusão sobre H9 depende dos critérios definidos na Seção 4 e da cobertura dos pontos previstos. |
+<!-- --8<-- [end:ficha-m9] -->
 
-**Situação da coleta de G3:** M6–M9 estão especificadas, mas não foram executadas
-nem validadas em piloto. Sua viabilidade depende da reprodução do fluxo, de dados
+**Situação da coleta de G3 na Entrega 1:** naquela data, M6–M9 estavam especificadas, mas ainda não
+executadas nem validadas em piloto. A coleta foi feita depois, de 15 a 23/11/2026
+([resultados](fase-4.md#23-g3-capacidade-de-interacao)). Sua viabilidade depende da reprodução do fluxo, de dados
 de referência, do recrutamento dos participantes e da validação dos roteiros. A
 matriz e os testes de ferramentas da Seção 3.2 registram essas dependências, sem
 comprovar a execução das sessões. As faixas de pontuação e as regras de julgamento
@@ -523,6 +569,8 @@ métrica, ao ponto onde é pontuada e julgada e à justificativa registrada na F
 
 ### M1.1: Arquivos participantes de ciclos internos
 
+
+<!-- --8<-- [start:ficha-m1-1] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.1, hipótese H1.1; objetivo G1; modularidade. |
@@ -539,9 +587,12 @@ as ligações entre API e *frontend* por HTTP ficam fora deste indicador. Refer�
 internas não resolvidas devem ser investigadas, nunca descartadas em silêncio.
 Arquivos sem arestas permanecem no denominador **somente após análise confirmada**:
 um arquivo ausente do grafo da ferramenta não é automaticamente um arquivo isolado.
+<!-- --8<-- [end:ficha-m1-1] -->
 
 ### M1.2: Blocos com complexidade ciclomática elevada
 
+
+<!-- --8<-- [start:ficha-m1-2] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.2, hipótese H1.2; objetivo G1; analisabilidade. |
@@ -557,9 +608,12 @@ informação diagnóstica e sem criar outra nota. Isso evita esconder um bloco m
 complexo no percentual de um conjunto grande. Os cálculos e denominadores de
 Python e TypeScript permanecem separados; as categorias não demonstram equivalência
 entre as duas linguagens.
+<!-- --8<-- [end:ficha-m1-2] -->
 
 ### M1.3: Tempo para concluir uma mudança validada
 
+
+<!-- --8<-- [start:ficha-m1-3] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.3, hipótese H1.3; objetivo G1; modificabilidade. |
@@ -600,9 +654,12 @@ registros depois.
 Interrupção externa ou infraestrutura inválida gera **Não avaliado**, com o motivo.
 Desistência por dificuldade da mudança ou expiração dos 90 minutos é insucesso.
 Os *patches* ficam como evidência de avaliação, sem envio ao repositório do produto.
+<!-- --8<-- [end:ficha-m1-3] -->
 
 ### M1.4: Cobertura de linhas executáveis da API
 
+
+<!-- --8<-- [start:ficha-m1-4] -->
 | Campo | Descrição |
 |-------|-----------|
 | Questão respondida | Q1.4, hipótese H1.4; objetivo G1; testabilidade. |
@@ -630,6 +687,7 @@ atualização do banco que coletam o SIGAA. Sem execução válida dos testes, n
 atribuir cobertura zero. Se a suíte falhar, preservar o relatório parcial e os
 registros, mas não usá-los para confirmar H1.4. O *frontend* permanece fora da
 cobertura medida; a ausência de suíte é uma limitação e uma oportunidade de melhoria.
+<!-- --8<-- [end:ficha-m1-4] -->
 
 ## 4. Níveis de pontuação e critérios de julgamento
 
@@ -651,15 +709,20 @@ percentuais fora de 0 a 100 são dados inválidos, sem nota.
 
 #### Eficiência de desempenho — M2–M5
 
+
+<!-- --8<-- [start:faixas-g2] -->
 | Métrica | Insatisfatório (0) | Aceitável (1) | Bom (2) | Excelente (3) | Limite de aceitação |
 |---------|-------------------|---------------|---------|---------------|---------------------|
 | M2 — Busca de disciplinas | $M_2 > 2000$ | $1000 < M_2 \leq 2000$ | $500 < M_2 \leq 1000$ | $0 \leq M_2 \leq 500$ | $L_2 = 2000$ ms |
 | M3 — Atualização da seleção | $M_3 > 1000$ | $300 < M_3 \leq 1000$ | $100 < M_3 \leq 300$ | $0 \leq M_3 \leq 100$ | $L_3 = 1000$ ms |
 | M4 — Geração de grades | $M_4 > 10000$ | $3000 < M_4 \leq 10000$ | $1000 < M_4 \leq 3000$ | $0 \leq M_4 \leq 1000$ | $L_4 = 10000$ ms |
 | M5 — Retorno do salvamento | $M_5 > 2000$ | $1000 < M_5 \leq 2000$ | $500 < M_5 \leq 1000$ | $0 \leq M_5 \leq 500$ | $L_5 = 2000$ ms |
+<!-- --8<-- [end:faixas-g2] -->
 
 #### Capacidade de interação — M6–M9
 
+
+<!-- --8<-- [start:faixas-g3] -->
 Na tabela, $M_j$ é o valor numérico do percentual, por exemplo, 90 para 90%.
 As faixas são aplicadas sem arredondamento prévio. Os valores mínimos para a
 categoria **Aceitável (1)** são 80% em M6, 90% em M7 e M9 e 100% em M8.
@@ -676,9 +739,12 @@ efetiva resulta em **Insatisfatório (0)**; todos os cenários protegidos result
 **Excelente (3)**. Os níveis 1 e 2 não são atribuídos a essa métrica. O percentual
 continua sendo publicado para mostrar a extensão das lacunas, mas não compensa um
 risco de perda com a proteção oferecida em outros cenários.
+<!-- --8<-- [end:faixas-g3] -->
 
 #### Manutenibilidade: M1.1 a M1.4
 
+
+<!-- --8<-- [start:faixas-g1] -->
 Aplicar os intervalos ao valor sem arredondamento prévio; os percentuais estão entre
 0 e 100. Dados inválidos ou indisponíveis não recebem nota. A denominação
 **Excelente** descreve somente o resultado no indicador e no recorte, não uma
@@ -693,6 +759,7 @@ certificação da característica inteira.
 
 Tempo nulo ou negativo em M1.3 é inválido. O tempo só é classificado nos níveis
 1 a 3 após conclusão correta; uma falha não é compensada por uma execução rápida.
+<!-- --8<-- [end:faixas-g1] -->
 
 ### 4.2 Justificativa dos limites
 
@@ -980,24 +1047,25 @@ flowchart LR
 Fonte: elaborado pela equipe a partir das Seções 1 a 3.
 
 A tabela a seguir traz a mesma hierarquia em texto, com a hipótese de cada questão,
-as métricas principais e complementares e as seções de definição, pontuação e
-julgamento da métrica principal. As complementares são definidas na mesma seção
-indicada na linha, sem receber uma segunda pontuação pela ligação adicional.
+as métricas principais e complementares, a pontuação e a regra de julgamento da métrica
+principal e os links para o método (Fase 3), os dados e o resultado (Fase 4). A métrica
+principal leva à sua ficha; as complementares têm ficha própria na seção 3, sem receber uma
+segunda pontuação pela ligação adicional. O objetivo leva ao percurso completo.
 
-| Objetivo | Questão | Subcaracterística | Hipótese | Métrica principal | Métricas complementares | Definição | Pontuação | Julgamento |
-|----------|---------|-------------------|----------|-------------------|-------------------------|-----------|-----------|------------|
-| G1 | Q1.1 | Modularidade | H1.1 | M1.1 | — | [3.4](#34-metricas-de-manutenibilidade-g1) | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) |
-| G1 | Q1.2 | Analisabilidade | H1.2 | M1.2 | — | 3.4 | 4.1 | 4.5 |
-| G1 | Q1.3 | Modificabilidade | H1.3 | M1.3 | M1.1, M1.2 e M1.4 | 3.4 | 4.1 | 4.5 |
-| G1 | Q1.4 | Testabilidade | H1.4 | M1.4 | — | 3.4 | 4.1 | 4.5 |
-| G2 | Q2 | Comportamento temporal | H2 | M2 | — | [3.1](#31-convencoes-de-medicao-de-eficiencia-de-desempenho) | 4.1 | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) |
-| G2 | Q3 | Comportamento temporal | H3 | M3 | — | 3.1 | 4.1 | 4.3 |
-| G2 | Q4 | Comportamento temporal | H4 | M4 | — | 3.1 | 4.1 | 4.3 |
-| G2 | Q5 | Comportamento temporal | H5 | M5 | — | 3.1 | 4.1 | 4.3 |
-| G3 | Q6 | Aprendizagem | H6 | M6 | M7 e M9 (primeiro uso) | [3.3](#33-metricas-de-capacidade-de-interacao-g3) | 4.1 | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) |
-| G3 | Q7 | Operabilidade | H7 | M7 | M9 (seleção e revisão) | 3.3 | 4.1 | 4.4 |
-| G3 | Q8 | Proteção contra erros do usuário | H8 | M8 | — | 3.3 | 4.1 | 4.4 |
-| G3 | Q9 | Autodescrição | H9 | M9 | — | 3.3 | 4.1 | 4.4 |
+| Objetivo | Questão | Subcaracterística | Hipótese | Métrica principal | Métricas complementares | Pontuação | Regra de julgamento | Método | Dados | Resultado |
+|---|---|---|---|---|---|---|---|---|---|---|
+| [G1](objetivo-g1.md) | Q1.1 | Modularidade | H1.1 | [M1.1](#m11-arquivos-participantes-de-ciclos-internos) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) | [Fase 3, 1.2](fase-3.md#12-procedimentos-e-pilotos-de-manutenibilidade) | [Fase 4, 1.1](fase-4.md#dados-g1) | [Q1.1](fase-4.md#q1-1) |
+| [G1](objetivo-g1.md) | Q1.2 | Analisabilidade | H1.2 | [M1.2](#m12-blocos-com-complexidade-ciclomatica-elevada) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) | [Fase 3, 1.2](fase-3.md#12-procedimentos-e-pilotos-de-manutenibilidade) | [Fase 4, 1.1](fase-4.md#dados-g1) | [Q1.2](fase-4.md#q1-2) |
+| [G1](objetivo-g1.md) | Q1.3 | Modificabilidade | H1.3 | [M1.3](#m13-tempo-para-concluir-uma-mudanca-validada) | M1.1, M1.2 e M1.4 | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) | [Fase 3, 1.2](fase-3.md#12-procedimentos-e-pilotos-de-manutenibilidade) | [Fase 4, 1.1](fase-4.md#dados-g1) | [Q1.3](fase-4.md#q1-3) |
+| [G1](objetivo-g1.md) | Q1.4 | Testabilidade | H1.4 | [M1.4](#m14-cobertura-de-linhas-executaveis-da-api) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.5](#45-julgamento-das-hipoteses-de-manutenibilidade) | [Fase 3, 1.2](fase-3.md#12-procedimentos-e-pilotos-de-manutenibilidade) | [Fase 4, 1.1](fase-4.md#dados-g1) | [Q1.4](fase-4.md#q1-4) |
+| [G2](objetivo-g2.md) | Q2 | Comportamento temporal | H2 | [M2](#m2-tempo-de-resposta-da-busca-de-disciplinas-p95) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) | [Fase 3, 1.1](fase-3.md#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo) | [Fase 4, 1.2](fase-4.md#dados-g2) | [Q2](fase-4.md#q2) |
+| [G2](objetivo-g2.md) | Q3 | Comportamento temporal | H3 | [M3](#m3-tempo-de-atualizacao-apos-selecao-de-turma-p95) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) | [Fase 3, 1.1](fase-3.md#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo) | [Fase 4, 1.2](fase-4.md#dados-g2) | [Q3](fase-4.md#q3) |
+| [G2](objetivo-g2.md) | Q4 | Comportamento temporal | H4 | [M4](#m4-tempo-de-geracao-de-grades-p95) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) | [Fase 3, 1.1](fase-3.md#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo) | [Fase 4, 1.2](fase-4.md#dados-g2) | [Q4](fase-4.md#q4) |
+| [G2](objetivo-g2.md) | Q5 | Comportamento temporal | H5 | [M5](#m5-tempo-de-retorno-do-salvamento-de-grade-p95) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.3](#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5) | [Fase 3, 1.1](fase-3.md#11-eficiencia-de-desempenho-m2-a-m5-passo-a-passo) | [Fase 4, 1.2](fase-4.md#dados-g2) | [Q5](fase-4.md#q5) |
+| [G3](objetivo-g3.md) | Q6 | Aprendizagem | H6 | [M6](#m6-sucesso-no-primeiro-uso-apos-exploracao-inicial) | M7 e M9 (primeiro uso) | [4.1](#41-escala-e-faixas-por-metrica) | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) | [Protocolo, 3](avaliacao-interacao/protocolo.md#3-m6-primeiro-uso) | [Fase 4, 1.3](fase-4.md#dados-g3) | [Q6](fase-4.md#q6) |
+| [G3](objetivo-g3.md) | Q7 | Operabilidade | H7 | [M7](#m7-sucesso-independente-nas-tarefas-de-controle-da-grade) | M9 (seleção e revisão) | [4.1](#41-escala-e-faixas-por-metrica) | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) | [Protocolo, 4](avaliacao-interacao/protocolo.md#4-m7-controle-da-grade) | [Fase 4, 1.3](fase-4.md#dados-g3) | [Q7](fase-4.md#q7) |
+| [G3](objetivo-g3.md) | Q8 | Proteção contra erros do usuário | H8 | [M8](#m8-cobertura-de-protecao-contra-perda-involuntaria-da-grade) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) | [Protocolo, 5](avaliacao-interacao/protocolo.md#5-m8-e-m9) | [Fase 4, 1.3](fase-4.md#dados-g3) | [Q8](fase-4.md#q8) |
+| [G3](objetivo-g3.md) | Q9 | Autodescrição | H9 | [M9](#m9-compreensao-dos-estados-e-acoes-da-interface) | — | [4.1](#41-escala-e-faixas-por-metrica) | [4.4](#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9) | [Protocolo, 5](avaliacao-interacao/protocolo.md#5-m8-e-m9) | [Fase 4, 1.3](fase-4.md#dados-g3) | [Q9](fase-4.md#q9) |
 
 O julgamento dos três objetivos em conjunto está na [Seção 4.6](#46-julgamento-global-dos-objetivos).
 

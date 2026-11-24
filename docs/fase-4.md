@@ -12,18 +12,39 @@ F4-C1 e F4-C2: coleta seguindo o plano da Fase 3; ligação DIRETA entre cada da
 Dados de participantes: anonimizar e descrever as condições de acesso (premissa 5).
 -->
 
+Cada linha liga a métrica ao dado bruto e ao cálculo. Para ver um objetivo do começo ao fim, use o percurso de
+[G1](objetivo-g1.md), [G2](objetivo-g2.md) ou [G3](objetivo-g3.md).
+
+### 1.1 Dados de G1 — Manutenibilidade {#dados-g1}
+
+<!-- --8<-- [start:dados-g1] -->
 | Métrica | Data da coleta | Responsável | Dados brutos | Procedimento de cálculo |
 |---------|----------------|-------------|--------------|-------------------------|
 | M1.1 — Modularidade | 15/11/2026 | Kaleb | [ciclos.json](avaliacao/dados/g1/m1-1-ciclos.json), [grafo do Madge](avaliacao/dados/g1/m1-1-madge-frontend.json); pacote completo em [`formal/estatica/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica) | [Roteiro de M1.1](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m11--ciclos-de-importação), [`ciclos.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/ciclos.py), [auditoria dos ciclos](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica/auditoria-ciclos.md) e [resultados](avaliacao/dados/g1/m1-1-m1-2-resultados.csv) |
 | M1.2 — Analisabilidade | 15/11/2026 | Kaleb | [blocos do Radon](avaliacao/dados/g1/m1-2-radon-blocos.json), [blocos do ESLint](avaliacao/dados/g1/m1-2-eslint-blocos.json), [maiores CC por recorte](avaliacao/dados/g1/m1-2-maximos-cc.json); pacote completo em [`formal/estatica/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/estatica) | [Roteiro de M1.2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m12--complexidade-ciclomática), [`coletar.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/coletar.py) e [resultados](avaliacao/dados/g1/m1-1-m1-2-resultados.csv) |
 | M1.3 — Modificabilidade | 12/11/2026 | Joaquim  | [Patches de C1 e C2](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3) e [verificação a posteriori](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori) (relatório e logs) | [Roteiro de M1.3](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m13--mudanças-controladas) e [relatório da verificação](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/M1.3/verificacao-a-posteriori/RELATORIO.md) |
 | M1.4 — Testabilidade | 15/11/2026 | Kaleb | [`coverage.json`](avaliacao/dados/g1/m1-4-coverage.json), [auditoria do inventário](avaliacao/dados/g1/m1-4-auditoria-inventario.json), [ambiente](avaliacao/dados/g1/m1-4-ambiente.txt); log e demais arquivos em [`formal/M1.4/`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/avaliacao/manutenibilidade/evidencias/formal/M1.4/execucao-docker) | [Roteiro de M1.4](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/README.md#m14--cobertura-de-linhas), [`cobertura.sh`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/cobertura.sh), [`resumir_cobertura.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/manutenibilidade/resumir_cobertura.py) e [resultados](avaliacao/dados/g1/m1-4-resultados.csv) |
+<!-- --8<-- [end:dados-g1] -->
+
+### 1.2 Dados de G2 — Eficiência de desempenho {#dados-g2}
+
+<!-- --8<-- [start:dados-g2] -->
+| Métrica | Data da coleta | Responsável | Dados brutos | Procedimento de cálculo |
+|---------|----------------|-------------|--------------|-------------------------|
 | M2 — Busca | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m2-nome.csv`](avaliacao/dados/g2/20261115-2128/m2-nome.csv), [`m2-codigo.csv`](avaliacao/dados/g2/20261115-2128/m2-codigo.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 | M3 — Seleção | 16/11/2026 (recoleta; a rodada de 15/11/2026 fica como registro) | João (recoleta), Júlia (análise) | [`m3-sem-selecao.csv`](avaliacao/dados/g2/20261116-0102/m3-sem-selecao.csv), [`m3-com-selecao.csv`](avaliacao/dados/g2/20261116-0102/m3-com-selecao.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261116-0102/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261116-0102/evidencias), [`metadados.json`](avaliacao/dados/g2/20261116-0102/metadados.json) e [ambiente da recoleta](avaliacao/dados/g2/20261116-0102/AMBIENTE.md). Rodada anterior: [`20261115-2128`](avaliacao/dados/g2/20261115-2128/m3-com-selecao.csv) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261116-0102/analise/resultados.csv) |
 | M4 — Geração | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m4-a.csv`](avaliacao/dados/g2/20261115-2128/m4-a.csv), [`m4-b.csv`](avaliacao/dados/g2/20261115-2128/m4-b.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
 | M5 — Salvamento | 15/11/2026 | Joaquim (coleta), Júlia (análise) | [`m5-conta.csv`](avaliacao/dados/g2/20261115-2128/m5-conta.csv); [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl), [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g2/20261115-2128/evidencias) e [`metadados.json`](avaliacao/dados/g2/20261115-2128/metadados.json) | [Fase 3, 1.1.7](fase-3.md#117-registro-e-calculo-do-p95), [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py) e [resultados](avaliacao/dados/g2/20261115-2128/analise/resultados.csv) |
+<!-- --8<-- [end:dados-g2] -->
+
+### 1.3 Dados de G3 — Capacidade de interação {#dados-g3}
+
+<!-- --8<-- [start:dados-g3] -->
+| Métrica | Data da coleta | Responsável | Dados brutos | Procedimento de cálculo |
+|---------|----------------|-------------|--------------|-------------------------|
 | M6, M7 e M9 — Interação (sessões P01 a P04) | 15/11/2026 | Júlia (moderadora) e Eduardo (observador) | [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv); vídeos e transcrições em acesso restrito, citados pelo código e pelo tempo do vídeo | [Protocolo 0.3](avaliacao-interacao/protocolo.md), [instrumentos](avaliacao-interacao/instrumentos.md) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
 | M8 — Proteção contra perda | 16/11/2026 (R05b no computador e R06 nos dois dispositivos em 23/11/2026) | Eduardo | [`m8-inventario.csv`](avaliacao/dados/g3/m8-inventario.csv), [`m8-observacoes.csv`](avaliacao/dados/g3/m8-observacoes.csv) e [capturas](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/tree/main/docs/avaliacao/dados/g3/m8-capturas) de antes, aviso e depois | [Instrumentos, seção 1](avaliacao-interacao/instrumentos.md#1-inventario-m8) e [resultados por recorte](avaliacao/dados/g3/m6-m9-resultados.csv) |
+<!-- --8<-- [end:dados-g3] -->
 
 ## 2. Análise e respostas ao GQM
 
@@ -34,6 +55,8 @@ resposta a TODAS as questões e objetivos, com gráficos e tabelas.
 
 ### 2.1 G1 — Manutenibilidade
 
+Percurso completo: [G1, da definição ao julgamento](objetivo-g1.md).
+
 Medições sobre o Sua Grade UnB no commit `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`,
 sem alterações rastreadas. Os valores seguem as faixas da
 [Fase 2, seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica) e foram classificados sem
@@ -41,6 +64,7 @@ arredondamento prévio. Os percentuais não são combinados entre recortes de de
 diferentes, e as notas não são calculadas em média, conforme a
 [seção 4.5](fase-2.md#45-julgamento-das-hipoteses-de-manutenibilidade).
 
+<!-- --8<-- [start:resultado-g1] -->
 **Tabela 1 — Resultados de G1 por métrica e recorte**
 
 | Métrica | Recorte | Numerador / denominador | Valor | Faixa da nota | Nota |
@@ -59,8 +83,13 @@ diferentes, e as notas não são calculadas em média, conforme a
 
 Os blocos de M1.2 do recorte da API incluem os do *scraper* e do gerador. O *frontend* não
 tem testes automatizados e, por isso, fica fora de M1.4.
+<!-- --8<-- [end:resultado-g1] -->
 
-**Q1.1 — Modularidade (H1.1).** Sim, nas condições medidas. A API tem um componente cíclico
+#### Q1.1 — Modularidade (H1.1) {#q1-1}
+
+
+<!-- --8<-- [start:q1-1] -->
+Sim, nas condições medidas. A API tem um componente cíclico
 de dois arquivos (`api/serializers.py` e `utils/db_handler.py`, que se importam
 mutuamente nas linhas 4 e 2) e o *frontend*, um de três
 (`SignInSection.tsx`, `useUser.ts` e `UserContext.tsx`, em que o ciclo se fecha por uma
@@ -68,8 +97,13 @@ referência de tipo). Os dois recortes ficam abaixo de 10% e recebem nota 2, ent
 sustentação operacional. O *frontend* está exatamente no limite superior da faixa da nota 2:
 com um arquivo a mais em ciclo (4/60, 6,67%), cairia para a nota 1. A medida conta arquivos
 em ciclos de importação estáticos; não mede o tamanho do ciclo nem o custo de desfazê-lo.
+<!-- --8<-- [end:q1-1] -->
 
-**Q1.2 — Analisabilidade (H1.2).** Sim. Apenas um dos 137 blocos da API tem CC acima de 10
+#### Q1.2 — Analisabilidade (H1.2) {#q1-2}
+
+
+<!-- --8<-- [start:q1-2] -->
+Sim. Apenas um dos 137 blocos da API tem CC acima de 10
 (`GenerateSchedule.post`, em [`views.py` linha 194](https://github.com/unb-mds/2023-2-SuaGradeUnB/blob/3d399e745383b05e8e3b1a7c97ac0fdbf93a0360/api/api/views/views.py#L194), CC 15);
 o *frontend* não tem nenhum entre 213. Nos componentes críticos, o maior valor do *scraper* é
 7 (`make_disciplines`, `web_scraping.py` linha 200) e o do gerador é 6 (`_valid_schedule`,
@@ -78,8 +112,13 @@ operacional. Esses máximos são diagnóstico e não geram nota adicional (dados
 [`m1-2-maximos-cc.json`](avaliacao/dados/g1/m1-2-maximos-cc.json)). Radon (Python) e ESLint
 (TypeScript) contam construções de forma própria; por isso cada recorte é comparado com a
 faixa e não com os demais.
+<!-- --8<-- [end:q1-2] -->
 
-**Q1.3 — Modificabilidade (H1.3).** Inconclusivo. O integrante Joaquim entregou os
+#### Q1.3 — Modificabilidade (H1.3) {#q1-3}
+
+
+<!-- --8<-- [start:q1-3] -->
+Inconclusivo. O integrante Joaquim entregou os
 *patches* de C1 e C2 em 12/11/2026 (commit `18bd323`) e, em mensagem a Kaleb em 15/11/2026,
 declarou: "Realizei C1 e C2 em 20 min cada. Cronometrado pelo meu próprio celular". O tempo é, portanto, autodeclarado, e o log de C2 arquivado na `main`
 mostra apenas um erro de ambiente. Por isso ele não foi usado como medida.
@@ -100,8 +139,13 @@ contexto: *scraper* e gerador têm CC máxima baixa (7 e 6) e cobertura alta (97
 99,29%), mas isso não prova que uma mudança seja rápida, correta e sem regressão. Uma
 execução cronometrada, registrada e feita por um executor que não conheça as mudanças é
 necessária para responder Q1.3.
+<!-- --8<-- [end:q1-3] -->
 
-**Q1.4 — Testabilidade (H1.4).** Sim. A suíte original, com 108 testes, passou (código de
+#### Q1.4 — Testabilidade (H1.4) {#q1-4}
+
+
+<!-- --8<-- [start:q1-4] -->
+Sim. A suíte original, com 108 testes, passou (código de
 saída 0) e cobre 81,88% das linhas executáveis da API (nota 2), 97,50% do *scraper* e 99,29%
 do gerador (nota 3). H1.4 tem sustentação operacional. A cobertura da API está a cerca de
 8 pontos percentuais da faixa seguinte (90%). Sete arquivos de produção com linhas
@@ -111,8 +155,13 @@ não cobertas: `api/management/commands/updatedb.py` (122), `utils/management/co
 `core/settings/prod.py` (13), `core/wsgi.py` (5) e `core/asgi.py` (5). Os 42 restantes
 estão espalhados em arquivos parcialmente cobertos. A medida é de linhas, sem ramos, e não
 indica se as asserções detectariam defeitos.
+<!-- --8<-- [end:q1-4] -->
 
-**G1 — Resumo por subcaracterística.** G1 não recebe nota única, porque falta a medida de
+#### Resumo de G1 {#resumo-g1}
+
+
+<!-- --8<-- [start:resumo-g1] -->
+G1 não recebe nota única, porque falta a medida de
 modificabilidade e as notas ordinais não são combinadas.
 
 | Subcaracterística | Hipótese | Resultado | Categoria sintética (menor nota) |
@@ -123,8 +172,10 @@ modificabilidade e as notas ordinais não são combinadas.
 | Testabilidade | H1.4 | Sustentada operacionalmente | 2 (API 2; *scraper* 3; gerador 3) |
 
 Nenhum recorte medido contraria uma hipótese. O julgamento global de G1 em relação ao
-propósito do produto depende de M1.3 e será tratado na seção 3.
+propósito do produto depende de M1.3 e está na [seção 3](fase-4.md#31-estado-de-cada-hipotese-e-de-cada-objetivo).
+<!-- --8<-- [end:resumo-g1] -->
 
+<!-- --8<-- [start:limites-g1] -->
 **Limitações.** (a) São indicadores indiretos de manutenibilidade, medidos em um único commit.
 (b) Não há medida de testabilidade do *frontend*, que não possui testes. (c) A cobertura é de
 linhas, sem ramos. (d) M1.1 e M1.2 foram executadas em ambiente com Python 3.13 e Node 22;
@@ -133,8 +184,11 @@ executada em contêineres `linux/amd64` emulados em um computador com Apple Sili
 (arm64), com PostgreSQL 16.16 e Redis 8.10.3; o resultado coincide com o do piloto
 (1.143/1.396, 156/160 e 140/141). Detalhes de ambiente em
 [`m1-4-ambiente.txt`](avaliacao/dados/g1/m1-4-ambiente.txt).
+<!-- --8<-- [end:limites-g1] -->
 
 ### 2.2 G2 — Eficiência de desempenho
+
+Percurso completo: [G2, da definição ao julgamento](objetivo-g2.md).
 
 Rodada formal `20261115-2128`, executada em 15/11/2026 das 21h28 às 21h37 sobre o Sua Grade
 UnB no commit `3d399e745383b05e8e3b1a7c97ac0fdbf93a0360`, sem alterações rastreadas, em
@@ -147,8 +201,11 @@ sucessos ordenados (posto mais próximo, [Fase 2, seção 3.1](fase-2.md#31-conv
 comparado sem arredondamento com as faixas da [seção 4.1](fase-2.md#41-escala-e-faixas-por-metrica)
 e julgado pelas regras da [seção 4.3](fase-2.md#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5).
 Os valores foram recalculados a partir dos CSVs pelo [`analisar_g2.py`](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/blob/main/avaliacao/analise/analisar_g2.py)
-([saída completa](avaliacao/dados/g2/20261115-2128/analise/resumo.md)).
+([resultado final de M2, M4 e M5](avaliacao/dados/g2/20261115-2128/analise/resumo.md), da rodada de 15/11;
+[resultado final de M3](avaliacao/dados/g2/20261116-0102/analise/resumo.md), da recoleta de 16/11, feita em
+[outro ambiente](avaliacao/dados/g2/20261116-0102/AMBIENTE.md)).
 
+<!-- --8<-- [start:resultado-g2] -->
 **Tabela 2 — Resultados de G2 por métrica e cenário (30 tentativas medidas por cenário)**
 
 | Métrica | Cenário | Sucessos / erros / expirações | Mínimo | Mediana | Máximo | P95 | Limite $L_j$ | P95 em % de $L_j$ | Classificação final |
@@ -167,13 +224,18 @@ As linhas de M3 vêm da recoleta `20261116-0102`, que mediu os dois cenários de
 ![P95 de cada cenário de G2 em porcentagem do limite de aceitação L do cenário; todos os cenários avaliados ficam entre 1,5% e 7% de L, e m3-com-selecao aparece sem barra por não ter sido avaliado](avaliacao/dados/g2/20261115-2128/analise/grafico-g2.svg)
 
 **Figura 1 — P95 de cada cenário em relação ao seu limite de aceitação.** A linha tracejada é
-o limite $L_j$ (100%). Os valores estão em [`resultados.csv`](avaliacao/dados/g2/20261115-2128/analise/resultados.csv). Esta figura é da rodada `20261115-2128`; M3 está na Figura 2.
+o limite $L_j$ (100%). Os valores estão em [`resultados.csv`](avaliacao/dados/g2/20261115-2128/analise/resultados.csv). Esta figura é da rodada `20261115-2128` e vale para M2, M4 e M5; o resultado final de M3 está na Figura 2.
 
 ![P95 dos dois cenários de M3 na recoleta 20261116-0102 em porcentagem do limite de 1000 ms; os dois ficam abaixo de 4% do limite](avaliacao/dados/g2/20261116-0102/analise/grafico-g2.svg)
 
 **Figura 2 — P95 dos cenários de M3 na recoleta `20261116-0102`.** Os valores estão na Tabela 2 e em [`resultados.csv`](avaliacao/dados/g2/20261116-0102/analise/resultados.csv).
+<!-- --8<-- [end:resultado-g2] -->
 
-**Por que `m3-com-selecao` não recebeu nota.** As 20 tentativas sem sucesso falharam todas
+#### Histórico de M3: a rodada de 15/11 e a recoleta {#historico-m3}
+
+
+<!-- --8<-- [start:historico-m3] -->
+**Por que `m3-com-selecao` não recebeu nota na rodada de 15/11.** As 20 tentativas sem sucesso falharam todas
 na **preparação**, antes do clique que inicia a medição, com o mesmo motivo registrado em
 [`evidencias.jsonl`](avaliacao/dados/g2/20261115-2128/evidencias.jsonl): "estado não limpo (turmas marcadas = 0,
 esperado 1)". Para montar a pré-condição, o roteiro seleciona `PPGPS0156/02`, refaz a busca
@@ -202,16 +264,26 @@ massa, mas fora de contêineres (PostgreSQL 16.15, Redis 7.0.15, Python 3.11.18,
 Chromium 153, numa VM Linux de 2 vCPUs. O registro completo está em
 [`AMBIENTE.md`](avaliacao/dados/g2/20261116-0102/AMBIENTE.md); a coluna `ambiente` dos CSVs diz "Docker Compose" porque esse
 texto é fixo no roteiro, e não descreve essa rodada.
+<!-- --8<-- [end:historico-m3] -->
 
-**Q2 — Busca de disciplinas (H2).** Sim, nas condições avaliadas. As 60 buscas medidas
+#### Q2 — Busca de disciplinas (H2) {#q2}
+
+
+<!-- --8<-- [start:q2] -->
+Sim, nas condições avaliadas. As 60 buscas medidas
 terminaram com exatamente as disciplinas esperadas. O P95 foi de 30,8 ms por nome e 31,0 ms
 por código, cerca de 1,5% de $L_2 = 2000$ ms e bem abaixo do corte de Excelente (500 ms). Os
 dois cenários recebem **Excelente (3)**, M2 fica com nota 3 e cobertura completa, e **H2 é
 sustentada**. O maior tempo isolado (62,7 ms, em `m2-codigo`) não altera o P95. Com a
 massa de referência a busca retorna poucas disciplinas (no máximo três), então o resultado
 não diz como a busca se comporta com o catálogo completo de um período.
+<!-- --8<-- [end:q2] -->
 
-**Q3 — Seleção de turmas (H3).** Sim, nas condições da recoleta. Na rodada `20261116-0102`, as
+#### Q3 — Seleção de turmas (H3) {#q3}
+
+
+<!-- --8<-- [start:q3] -->
+Sim, nas condições da recoleta. Na rodada `20261116-0102`, as
 60 seleções medidas marcaram a turma-alvo, mostraram o número esperado de cartões e deixaram
 "Gerar Grade" habilitado. O P95 foi de 38,5 ms sem turmas anteriores e 33,5 ms com uma turma
 já selecionada, 3,8% e 3,4% de $L_3 = 1000$ ms e abaixo do corte de Excelente (100 ms). Os dois
@@ -220,8 +292,13 @@ sustentada**. A atualização acontece em cerca de dois quadros de tela, e ter u
 mesma disciplina já selecionada não deixou a seleção mais lenta. O maior tempo isolado
 (64,8 ms, em `m3-sem-selecao`) não altera o P95. Na rodada anterior, `m3-sem-selecao` já tinha
 P95 de 31,4 ms, na mesma faixa.
+<!-- --8<-- [end:q3] -->
 
-**Q4 — Geração de grades (H4).** Sim. Os 60 acionamentos terminaram em `/schedules/mygrades`
+#### Q4 — Geração de grades (H4) {#q4}
+
+
+<!-- --8<-- [start:q4] -->
+Sim. Os 60 acionamentos terminaram em `/schedules/mygrades`
 com o número esperado de grades (1 em `m4-a` e 5 em `m4-b`). O P95 foi de 649,3 ms e
 700,7 ms, 6,5% e 7,0% de $L_4 = 10000$ ms e abaixo do corte de Excelente (1000 ms). Os dois
 cenários recebem **Excelente (3)**, M4 fica com nota 3 e **H4 é sustentada**. Cerca de 500 ms
@@ -231,16 +308,26 @@ processamento e a apresentação custam por volta de 100 a 200 ms. Passar de 2 p
 (1 para 128 combinações candidatas) aumentou o P95 em 51 ms. Como a API devolve no máximo
 5 grades, essa diferença reflete o trabalho do gerador e não a quantidade exibida, e não
 estabelece a capacidade máxima ([limitação de M4-B](fase-3.md#112-cenarios-fixos)).
+<!-- --8<-- [end:q4] -->
 
-**Q5 — Salvamento na conta (H5).** Sim. Nas 30 tentativas, a interface mostrou "Grade salva
+#### Q5 — Salvamento na conta (H5) {#q5}
+
+
+<!-- --8<-- [start:q5] -->
+Sim. Nas 30 tentativas, a interface mostrou "Grade salva
 com sucesso!" e, depois de recarregar a página, a grade estava em "Grades nuvem" (persistência
 conferida fora do intervalo medido). O P95 foi de 53,0 ms, 2,6% de $L_5 = 2000$ ms, na faixa
 Excelente; M5 fica com nota 3 e **H5 é sustentada**. A cauda (máximo de 67,0 ms) é mais longa
 que a de M2 e M3, o que é compatível com a escrita no banco, mas continua muito abaixo do
 limite. Só a modalidade de salvamento na conta foi medida, conforme a correção de 12/11/2026
 da [Fase 2, M5](fase-2.md#m5-tempo-de-retorno-do-salvamento-de-grade-p95).
+<!-- --8<-- [end:q5] -->
 
-**G2 — Resumo.** Aplicando a [seção 4.6 da Fase 2](fase-2.md#46-julgamento-global-dos-objetivos),
+#### Resumo de G2 {#resumo-g2}
+
+
+<!-- --8<-- [start:resumo-g2] -->
+Aplicando a [seção 4.6 da Fase 2](fase-2.md#46-julgamento-global-dos-objetivos),
 G2 é **atendido nas condições avaliadas**: H2 a H5 foram sustentadas e nenhuma foi
 contrariada. Os sete cenários tiveram 30 sucessos e P95 na faixa Excelente, com no máximo 7% do
 respectivo limite. M3 vem da recoleta, feita em outro ambiente (ver limitação f).
@@ -251,7 +338,9 @@ respectivo limite. M3 vem da recoleta, feita em outro ambiente (ver limitação 
 | Seleção (M3) | H3 | Sustentada operacionalmente (recoleta `20261116-0102`) | 3 (sem seleção 3; com seleção 3) |
 | Geração (M4) | H4 | Sustentada operacionalmente | 3 (A 3; B 3) |
 | Salvamento (M5) | H5 | Sustentada operacionalmente | 3 (conta 3) |
+<!-- --8<-- [end:resumo-g2] -->
 
+<!-- --8<-- [start:limites-g2] -->
 **Limitações.** (a) Todas as medidas são de reprodução local, com um usuário e sem
 concorrência. Não representam o site público nem o pico de matrícula, e não são testes de
 significância ([Fase 2, seção 4.3, regra 5](fase-2.md#43-regras-de-aplicacao-e-julgamento-de-eficiencia-m2m5)).
@@ -267,8 +356,11 @@ máquina e num ambiente diferentes dos de M2, M4 e M5 ([`AMBIENTE.md`](avaliacao
 sem Docker e com Chromium 153. Os dois cenários de M3 estão no mesmo ambiente, mas os tempos
 de M3 não são comparáveis em valor absoluto com os das outras métricas. Como todos os P95
 ficaram abaixo de 4% de $L_3$, a diferença de ambiente não muda a faixa.
+<!-- --8<-- [end:limites-g2] -->
 
 ### 2.3 G3 — Capacidade de interação
+
+Percurso completo: [G3, da definição ao julgamento](objetivo-g3.md).
 
 Coleta no site público, na versão `3d399e7` (último commit e último *deployment* conferidos
 em 15/11 e 16/11/2026), conforme o [protocolo 0.3](avaliacao-interacao/protocolo.md). Foram
@@ -278,6 +370,7 @@ dispositivos foram executados em 23/11. Cada recorte foi julgado
 pela [Fase 2, seção 4.4](fase-2.md#44-regras-de-aplicacao-e-julgamento-de-interacao-m6m9):
 recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está determinada.
 
+<!-- --8<-- [start:resultado-g3] -->
 **Tabela 3 — Resultados de G3 por métrica e recorte**
 
 | Métrica | Recorte | Numerador / denominador | Valor | Cobertura | Nota |
@@ -302,34 +395,59 @@ recortes sem cobertura completa ficam sem nota, exceto quando a nota 0 já está
 
 Os dados de cada sessão estão em [`m6-m9-sessoes.csv`](avaliacao/dados/g3/m6-m9-sessoes.csv)
 e os de cada recorte, em [`m6-m9-resultados.csv`](avaliacao/dados/g3/m6-m9-resultados.csv).
+<!-- --8<-- [end:resultado-g3] -->
 
-**Q6 — Aprendizagem (H6).** Não. Os quatro participantes selecionaram as três turmas do
+#### Q6 — Aprendizagem (H6) {#q6}
+
+
+<!-- --8<-- [start:q6] -->
+Não. Os quatro participantes selecionaram as três turmas do
 cartão e geraram a grade correta, mas só P03, no celular, salvou a grade na conta e a recuperou
 depois de recarregar. Nos outros três casos a grade ficou em "Grades locais", e o ícone de
 nuvem não foi usado; P02 afirmou que a grade "já está disponível aqui". O computador fica com
 0% e o celular com 50%, os dois com nota 0, e H6 é contrariada.
+<!-- --8<-- [end:q6] -->
 
-**Q7 — Operabilidade (H7).** Não, nas condições avaliadas. Seleção e remoção funcionaram no
+#### Q7 — Operabilidade (H7) {#q7}
+
+
+<!-- --8<-- [start:q7] -->
+Não, nas condições avaliadas. Seleção e remoção funcionaram no
 computador (2/2). Na troca, P02 incluiu a nova turma de Cálculo 1 sem remover a anterior, e no
 celular P04 deixou de selecionar Álgebra Linear; esses recortes ficam com 50% e nota 0. Não
 houve bloqueio de controle; as falhas foram de execução da tarefa. Para achar a turma pelo
 professor nas listas longas, os participantes leram a lista inteira ou usaram a busca do
 navegador.
+<!-- --8<-- [end:q7] -->
 
-**Q8 — Proteção contra erros (H8).** Não. Nos dois dispositivos, excluir uma grade (local ou na
+#### Q8 — Proteção contra erros (H8) {#q8}
+
+
+<!-- --8<-- [start:q8] -->
+Não. Nos dois dispositivos, excluir uma grade (local ou na
 nuvem) e sair com grade não salva pedem confirmação, e o cancelamento preservou a grade.
 Recarregar a página durante a montagem apaga as turmas selecionadas sem aviso, o que dá nota
 0 aos conjuntos da modalidade navegador; a modalidade conta tem nota 3. Voltar pelo navegador (R05b)
 preservou a seleção nos dois dispositivos. Trocar de conta (R06) não mostra aviso, mas as grades
 locais continuaram em Suas Grades: elas ficam no navegador e não dependem da conta, tanto que,
 no computador, apareceram para a segunda conta depois da troca.
+<!-- --8<-- [end:q8] -->
 
-**Q9 — Autodescrição (H9).** Não no celular; no computador, parcial. No computador, os quatro
+#### Q9 — Autodescrição (H9) {#q9}
+
+
+<!-- --8<-- [start:q9] -->
+Não no celular; no computador, parcial. No computador, os quatro
 pontos coletados tiveram estado e ação corretos. No celular, P03 não descreveu o estado depois
 da seleção nem depois da geração. A geração em andamento (V02) não foi perguntada em nenhuma sessão, e o salvamento
 (V04) não foi alcançado: os participantes baixaram o PDF da grade, e P04 disse ter salvo uma
 grade que nunca foi para a conta.
+<!-- --8<-- [end:q9] -->
 
+#### Resumo de G3 {#resumo-g3}
+
+
+<!-- --8<-- [start:resumo-g3] -->
 **Tabela 4 — Julgamento das hipóteses de G3**
 
 | Subcaracterística | Hipótese | Resultado | Notas por recorte |
@@ -342,8 +460,10 @@ grade que nunca foi para a conta.
 O obstáculo mais frequente é o salvamento: a interface não deixa claro que a grade gerada
 fica só no navegador e que salvar na conta é outra ação. Ele aparece em Q6 e em Q9 e, junto
 com a perda das seleções ao recarregar (Q8), é o principal candidato à ação de melhoria da
-seção 4.
+[seção 4](fase-4.md#4-oportunidades-e-acao-de-melhoria).
+<!-- --8<-- [end:resumo-g3] -->
 
+<!-- --8<-- [start:limites-g3] -->
 **Desvios e limitações.** (a) Amostra de conveniência de quatro pessoas, duas por dispositivo;
 um dos participantes tem vínculo pessoal com integrante da equipe. (b) P01 participou pelo
 Microsoft Teams e os demais pelo Google Meet; moderação de Júlia e observação de Eduardo, e M8
@@ -363,6 +483,7 @@ a escolha de outra; a troca efetiva de conta foi observada só no computador.
 **Acesso aos dados.** Vídeos, transcrições e termos de consentimento ficam em acesso restrito à
 equipe e são citados pelo código e pelo tempo do vídeo; as respostas literais não são
 publicadas. A M8 não tem participante, e suas capturas estão publicadas.
+<!-- --8<-- [end:limites-g3] -->
 
 ## 3. Julgamento da qualidade
 
@@ -400,24 +521,33 @@ O propósito da [Fase 1, seção 1.2](fase-1.md#12-proposito) é identificar e p
 problemas que mais afetam os estudantes no período de matrícula e a continuidade da
 manutenção por voluntários. Os resultados respondem assim:
 
+<!-- --8<-- [start:proposito-g2] -->
 - **Estudantes, tempo de resposta (G2).** Nenhum problema nas condições medidas. Busca,
   seleção, geração e salvamento ficaram em no máximo 7% do limite de aceitação. Isso vale
   para a reprodução local; não se estende ao pico de matrícula nem ao site público.
+<!-- --8<-- [end:proposito-g2] -->
+
+<!-- --8<-- [start:proposito-g3] -->
 - **Estudantes, interação (G3).** É aqui que estão os problemas encontrados. Os dois que mais
   pesam para quem monta a grade na matrícula são a perda silenciosa das turmas selecionadas
   ao recarregar a página (R04, nos dois dispositivos) e o salvamento na conta, que três dos
   quatro participantes não fizeram, sem que a interface indicasse que a grade local não
   estava salva na conta.
+<!-- --8<-- [end:proposito-g3] -->
+
+<!-- --8<-- [start:proposito-g1] -->
 - **Mantenedores voluntários (G1).** O código analisado é de baixa complexidade
   (um bloco com CC acima de 10 entre os 137 da API e nenhum entre os 213 do *frontend*) e tem dois ciclos de importação pequenos. A
   testabilidade é boa nos componentes críticos (*scraper* e gerador), com a API em 81,88%. O
   que falta para julgar a característica é a modificabilidade (M1.3).
+<!-- --8<-- [end:proposito-g1] -->
 
+<!-- --8<-- [start:d1] -->
 **D1 (o que corrigir antes da próxima matrícula).** Os candidatos nascem das hipóteses
 contrariadas, todas de G3 e todas com nota 0. A Fase 2 não define desempate dentro da mesma
 característica; a equipe adotou como critério o número de recortes com nota 0 em que o
 problema aparece e, em seguida, a gravidade da consequência (perda de trabalho do usuário).
-Com esse critério, a ordem da [seção 4.1](#41-oportunidades-de-melhoria) fica assim:
+Com esse critério, a ordem da [seção 4.1](fase-4.md#41-oportunidades-de-melhoria) fica assim:
 
 1. **Recarga apaga a seleção** (M8 navegador, nota 0 no computador e no celular). Empata com
    o salvamento em número de recortes e vem primeiro pela gravidade: o estudante perde as
@@ -426,14 +556,17 @@ Com esse critério, a ordem da [seção 4.1](#41-oportunidades-de-melhoria) fica
    navegador; o trabalho não se perde na hora, mas não fica disponível em outro aparelho.
 3. **Estado após selecionar e após gerar no celular** (M9 V01 e V03, dois recortes com nota 0).
 4. **Troca de turma** (M7 computador/troca, um recorte com nota 0).
+<!-- --8<-- [end:d1] -->
 
 **D2 (ação da equipe).** Registrada na [seção 4.2](#42-acao-de-melhoria-executada).
 
+<!-- --8<-- [start:d3] -->
 **D3 (por onde começar a contribuir).** Pelos resultados de G1 por camada: o *scraper* e o
 gerador têm a menor CC máxima (7 e 6) e a maior cobertura (97,50% e 99,29%), o que oferece
 rede de segurança a quem altera esses módulos; a API tem a maior complexidade pontual
 (`GenerateSchedule.post`, CC 15) e sete arquivos sem nenhuma linha executada; o *frontend*
 não tem testes. Contribuições nele não contam com suíte para detectar regressões.
+<!-- --8<-- [end:d3] -->
 
 ### 3.3 Relações entre as características
 
@@ -490,9 +623,7 @@ descritivas.
 Os julgamentos valem para o *commit* `3d399e7`, para as condições de cada coleta e para os
 recortes medidos ([Fase 1, seção 6.4](fase-1.md#64-limites-de-validade-dos-resultados)). Não
 são testes de significância estatística e não se estendem ao pico de matrícula. Em M8, R06 no celular não
-chegou a trocar de conta, porque o login do Google voltou para a mesma conta. A nova medição de C1 e C2, com o tempo
-registrado, está na [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84); o estado de G1 só muda se ela for concluída com o tempo registrado e a suíte
-completa aprovada.
+chegou a trocar de conta, porque o login do Google voltou para a mesma conta.
 
 ## 4. Oportunidades e ação de melhoria
 
