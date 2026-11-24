@@ -623,9 +623,7 @@ descritivas.
 Os julgamentos valem para o *commit* `3d399e7`, para as condições de cada coleta e para os
 recortes medidos ([Fase 1, seção 6.4](fase-1.md#64-limites-de-validade-dos-resultados)). Não
 são testes de significância estatística e não se estendem ao pico de matrícula. Em M8, R06 no celular não
-chegou a trocar de conta, porque o login do Google voltou para a mesma conta. A nova medição de C1 e C2, com o tempo
-registrado, está na [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84); o estado de G1 só muda se ela for concluída com o tempo registrado e a suíte
-completa aprovada.
+chegou a trocar de conta, porque o login do Google voltou para a mesma conta.
 
 ## 4. Oportunidades e ação de melhoria
 

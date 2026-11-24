@@ -318,8 +318,7 @@ O piloto M1.4 foi executado por Codex com autorização de Lucas, que versionou 
 A issue #38 foi concluída em 15/11/2026. A coleta formal de M1.1, M1.2 e M1.4 foi feita por Kaleb
 em 15/11/2026 e repetiu os valores do piloto. Em M1.3, os *patches* de C1 e C2 foram entregues por
 Joaquim em 12/11/2026, sem registro do tempo nem da execução; por isso M1.3 ficou sem medida válida
-([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)). Em 23/11/2026, a equipe abriu a [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84) para refazer
-a medição de C1 e C2 com o tempo registrado.
+([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)).
 
 ## 2. Recursos e ambiente de avaliação
 
@@ -658,14 +657,12 @@ começa depois do fim das que aparecem em **Depende de**. A coluna **Situação*
 | #47 | Artigo: Fase 4, resultados e conclusão | João | 20/11 | 22/11 | 20/11 | n/a | #42–#46, #68 | Concluída |
 | #50 | Gestão PSM/CID, atas e decisões da E2 | Joaquim, Eduardo | 02/11 | 22/11 | 21/11 | n/a | contínuo | Concluída |
 | #51 | Fechamento da E2: GitPage, contribuição e *release* v2.0 | Eduardo | 22/11 | 24/11 (previsão) | 22/11 | n/a | #48, #50 | Em andamento |
-| #84 | Fase 4: nova medição de M1.3 (C1 e C2) com tempo registrado | Joaquim | 23/11 | 24/11 (previsão) | 24/11 | M1.3 | #42 | A fazer |
 | #48 | Artigo: revisão final da 2ª versão | João, Júlia | 21/11 | 24/11 (previsão) | 21/11 | n/a | #47 | Em andamento; versão final do artigo até 24/11 |
 
 Em relação à revisão de 12/11, a coleta da Fase 4 (#42 a #44) terminou de um a dois dias antes do
 previsto, e o julgamento (#45) foi antecipado para 16/11. O método de G1 (#38) fechou três dias depois do
 previsto, e a ação de melhoria (#46) e o artigo (#47), um e dois dias depois. Em 22/11, a docente adiou a entrega da E2 de 22/11 para 24/11, às 23h59; a revisão final do artigo (#48) e o
-fechamento da E2 (#51) passaram para essa data, e a gestão da E2 (#50) foi concluída em 22/11. Em 23/11, a
-equipe abriu a #84 para refazer a medição de M1.3, que tinha ficado sem medida válida, com o mesmo prazo.
+fechamento da E2 (#51) passaram para essa data, e a gestão da E2 (#50) foi concluída em 22/11.
 
 ### 3.1 Cronograma de M6 a M9 (issue #40)
 
@@ -727,7 +724,7 @@ A tabela da seção 1 cobre M1.1 a M1.4 e M2 a M9, com a mesma numeração.
 | Sessão da conta de teste em M5 | Resolvida: fluxo do *frontend* com o *token* simulado no fragmento; cookie aceito no piloto ([1.1.6](#116-sessao-da-conta-de-teste-m5)) | #39 |
 | Revisão de M5 para a modalidade navegador (sem ação de salvar nem sinal de conclusão) | **Decidida em 12/11/2026:** M5 avalia só o salvamento na conta; Fase 2 corrigida ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 5) | #63 |
 | Configuração própria do `coverage` (`source` explícito, sem `pragma: no cover`) | Resolvida: arquivo de configuração próprio usado no piloto de 08/11 e na coleta formal de 15/11 (`avaliacao/manutenibilidade/cobertura.sh`) | #38, concluído |
-| Executor de C1 e C2 e fichas das mudanças | Fichas preparadas; *patches* entregues por Joaquim em 12/11, sem registro de tempo, e M1.3 ficou sem medida válida ([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)); nova medição na [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84) | #38, #42, #84 |
+| Executor de C1 e C2 e fichas das mudanças | Fichas preparadas; *patches* entregues por Joaquim em 12/11, sem registro de tempo, e M1.3 ficou sem medida válida ([Fase 4, Q1.3](fase-4.md#21-g1-manutenibilidade)) | #38, #42 |
 | Ambiente das sessões de M6–M9 | **Decidido em 15/11/2026:** site público com a conta Google do participante ([4.1](#41-o-que-mudou-em-relacao-a-fase-2-e-por-que), linha 6) | #40, #44 |
 | Número e perfil dos participantes, limites $E$ e $T$ de M6, consentimento | Resolvida: quatro estudantes sem uso prévio, dois por dispositivo; $E$ = 3 min e $T$ = 15 min; termo de consentimento ([protocolo 0.3](avaliacao-interacao/protocolo.md)) | #40, concluído |
 | Inventário de riscos de M8 e gabarito de M9 | Resolvida ([instrumentos](avaliacao-interacao/instrumentos.md)) | #40, concluído |

@@ -6,7 +6,7 @@ edite a fase. São escritos à mão aqui: o quadro de estado, a tabela da seçã
 -->
 
 !!! warning "Estado: Inconclusivo"
-    H1.1, H1.2 e H1.4 foram sustentadas. H1.3 está inconclusiva porque C1 e C2 não têm execução com o tempo registrado; a nova medição está na [#84](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/84).
+    H1.1, H1.2 e H1.4 foram sustentadas. H1.3 está inconclusiva porque C1 e C2 não têm execução com o tempo registrado.
     Ver o [julgamento dos três objetivos](fase-4.md#31-estado-de-cada-hipotese-e-de-cada-objetivo).
 
 ## 1. Visão geral
