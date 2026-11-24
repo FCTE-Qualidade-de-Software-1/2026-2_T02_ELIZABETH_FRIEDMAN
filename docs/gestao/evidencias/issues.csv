@@ -30,10 +30,10 @@ issue,titulo,milestone,responsaveis,situacao,criada_em,fechada_em,reaberturas,pr
 45,"Fase 4 — Julgamento, relações entre as características e recomendações",E2 — Fases 3 e 4,kalebmacedo JoaquimNetoo,concluida,2026-11-02T16:13-03:00,2026-11-16T22:49-03:00,0,2026-11-24,-8,5.0,5.0,nao
 46,Fase 4 — Ação de melhoria,E2 — Fases 3 e 4,LucasMF1,concluida,2026-11-02T16:13-03:00,2026-11-21T19:10-03:00,0,2026-11-24,-3,8.0,7.5,nao
 47,"Artigo — Fase 4, Resultados e Conclusão",E2 — Fases 3 e 4,jpnunes2210,concluida,2026-11-02T16:13-03:00,2026-11-22T21:33-03:00,0,2026-11-24,-2,4.0,4.0,nao
-48,Artigo — Revisão final da 2ª versão,E2 — Fases 3 e 4,jpnunes2210,aberta,2026-11-02T16:13-03:00,,0,2026-11-24,,4.0,4.0,nao
+48,Artigo — Revisão final da 2ª versão,E2 — Fases 3 e 4,camposs04 jpnunes2210,concluida,2026-11-02T16:13-03:00,2026-11-23T15:23-03:00,0,2026-11-24,-1,4.0,4.0,nao
 49,Correções apontadas no PC1,E2 — Fases 3 e 4,EduardoWaski,concluida,2026-11-02T16:13-03:00,2026-11-10T13:04-03:00,1,2026-11-24,-14,1.0,1.0,sim
-50,"Gestão — PSM/CID, atas e decisões da E2",E2 — Fases 3 e 4,EduardoWaski JoaquimNetoo,aberta,2026-11-02T16:13-03:00,,0,2026-11-24,,3.0,3.0,nao
-51,"Fechamento da E2 — GitPage, contribuição e release",E2 — Fases 3 e 4,EduardoWaski,aberta,2026-11-02T16:13-03:00,,0,2026-11-24,,2.0,2.0,nao
+50,"Gestão — PSM/CID, atas e decisões da E2",E2 — Fases 3 e 4,EduardoWaski JoaquimNetoo,concluida,2026-11-02T16:13-03:00,2026-11-22T22:42-03:00,0,2026-11-24,-2,3.0,3.0,nao
+51,"Fechamento da E2 — GitPage, contribuição e release",E2 — Fases 3 e 4,EduardoWaski,concluida,2026-11-02T16:13-03:00,2026-11-24T00:00-03:00,0,2026-11-24,0,2.0,4.0,nao
 52,Gestão - Preparar a apresentação da gestão PSM/CID,E2 — Fases 3 e 4,LucasMF1 EduardoWaski camposs04 kalebmacedo jpnunes2210 JoaquimNetoo,concluida,2026-11-03T17:03-03:00,2026-11-08T16:16-03:00,0,2026-11-24,-16,6.0,6.0,nao
 54,Gestão - Criar e adicionar a ata da reunião do dia 03/11,PC2 — Ponto de Controle 2,EduardoWaski,concluida,2026-11-03T22:38-03:00,2026-11-04T00:11-03:00,0,2026-11-16,-12,1.0,1.0,nao
 55,Gestão - Atualizar dados da gestão PSM/CID e elaborar gráficos de análise,PC2 — Ponto de Controle 2,EduardoWaski JoaquimNetoo,concluida,2026-11-03T22:41-03:00,2026-11-06T12:39-03:00,0,2026-11-16,-10,3.0,2.0,nao
@@ -41,3 +41,4 @@ issue,titulo,milestone,responsaveis,situacao,criada_em,fechada_em,reaberturas,pr
 67,"Entrega do PC2 — snapshot, GitPage e release",PC2 — Ponto de Controle 2,EduardoWaski,concluida,2026-11-15T19:23-03:00,2026-11-16T02:22-03:00,0,2026-11-16,0,2.0,1.0,nao
 68,Artigo — Atualização até o PC2 (Fase 3),PC2 — Ponto de Controle 2,camposs04 JoaquimNetoo,concluida,2026-11-15T19:37-03:00,2026-11-15T23:52-03:00,0,2026-11-16,-1,3.0,3.0,nao
 70,"Gestão — PSM/CID, atas e decisões até o Ponto de Controle 2",PC2 — Ponto de Controle 2,JoaquimNetoo,concluida,2026-11-15T20:04-03:00,2026-11-15T23:52-03:00,0,2026-11-16,-1,2.0,2.0,nao
+84,Fase 4 — Refazer a medição de M1.3 (C1 e C2) com tempo registrado,,JoaquimNetoo,descartada,2026-11-23T15:13-03:00,2026-11-23T23:47-03:00,0,,,4.0,,sim
