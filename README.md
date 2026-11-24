@@ -46,8 +46,8 @@ Características avaliadas, em ordem de prioridade:
     </td>
     <td align="center">
       <a href="https://github.com/JoaquimNetoo">
-        <img src="https://github.com/JoaquimNetoo.png?size=100" width="100" alt="Foto de perfil de Jose Joaquim da Silva Neto no GitHub"><br>
-        <sub><b>Jose Joaquim da Silva Neto</b></sub>
+        <img src="https://github.com/JoaquimNetoo.png?size=100" width="100" alt="Foto de perfil de José Joaquim da Silva Neto no GitHub"><br>
+        <sub><b>José Joaquim da Silva Neto</b></sub>
       </a>
     </td>
   </tr>

@@ -2,9 +2,9 @@
 
 Você está sendo convidado(a) a participar do trabalho **Avaliação de Qualidade do
 Sua Grade UnB**, desenvolvido por Eduardo Silva Waski, João Paulo Barbosa Pereira
-Nunes, Jose Joaquim da Silva Neto, Júlia Santana Campos, Kaleb de Souza Macedo e
+Nunes, José Joaquim da Silva Neto, Júlia Santana Campos, Kaleb de Souza Macedo e
 Lucas Monteiro Freitas, da equipe Elizabeth Friedman, na disciplina **FGA0315 —
-Qualidade de Software 1**, do curso **[CURSO]**, da **Universidade de Brasília
+Qualidade de Software 1**, do curso **Engenharia de Software**, da **Universidade de Brasília
 (UnB)**, sob a orientação da **Profa. Cristiane Soares Ramos**. O objetivo do
 trabalho é avaliar a qualidade do Sua Grade UnB e identificar dificuldades na
 montagem de grades e na compreensão de sua interface.
@@ -46,11 +46,11 @@ os dados serão anonimizados, com remoção de nomes e de informações que perm
 identificar você. O termo de consentimento será guardado separado dos dados da
 atividade. Terão acesso aos registros originais somente os alunos da equipe
 avaliadora identificados neste termo. Eles serão guardados em **pasta local dados-restritos/, fora do repositório público, no computador de
-Lucas Monteiro Freitas, protegida por senha de acesso ao computador**. Os registros
+Eduardo Silva Waski, protegida por senha de acesso ao computador**. Os registros
 serão excluídos **em até 30 dias após a sessão e, em qualquer caso, até 90 dias após
 o término da disciplina, prevalecendo o prazo que ocorrer primeiro**. A equipe
 informará a data exata de exclusão na cópia entregue antes do consentimento:
-**[DATA DE EXCLUSÃO CONFORME A REGRA ACIMA]**. Resultados anonimizados poderão
+**15/12/2026**. Resultados anonimizados poderão
 permanecer no relatório e no repositório do projeto. Você poderá consultar os
 resultados pela [página pública do projeto](https://fcte-qualidade-de-software-1.github.io/2026-2_T02_ELIZABETH_FRIEDMAN/).
 
@@ -61,7 +61,7 @@ registros ao responsável até a data de exclusão indicada, informando seu cód
 Após a anonimização irreversível, pode não ser possível localizar sua contribuição
 para removê-la dos resultados.
 
-Para dúvidas, entre em contato com **Júlia Santana Campos, João Paulo Barbosa Pereira Nunes, Kaleb de Souza Macedo ou Lucas Monteiro Freitas — [E-MAIL DE CONTATO]**.
+Para dúvidas, entre em contato com **Júlia Santana Campos, João Paulo Barbosa Pereira Nunes, Kaleb de Souza Macedo ou Lucas Monteiro Freitas — eduardowaski688@gmail.com**.
 
 Declaro que compreendi o objetivo e as condições da atividade, tive oportunidade
 de esclarecer minhas dúvidas e aceito participar. Receberei uma cópia deste termo.

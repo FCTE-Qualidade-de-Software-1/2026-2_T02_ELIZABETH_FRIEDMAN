@@ -1,5 +1,10 @@
 # Recrutamento e triagem
 
+Situação em 23/11/2026: **recrutamento concluído**. Os quatro participantes (P01 a P04) fizeram as
+sessões em 15/11/2026, sem suplentes e sem piloto; os resultados e desvios estão na
+[Fase 4](../fase-4.md#23-g3-capacidade-de-interacao). O texto abaixo é o plano de recrutamento,
+mantido como registro.
+
 Plano revisado em 08/11/2026: quatro estudantes adultos sem uso prévio, dois no
 computador (P01–P02) e dois no celular (P03–P04), com uma pessoa suplente por grupo.
 Piloto: uma pessoa adicional (PIL01), excluída da amostra formal. A redução da meta
@@ -13,13 +18,12 @@ Júlia Santana Campos e João Paulo Barbosa Pereira Nunes
 eram o moderador e o observador previstos
 (nas sessões de 15/11/2026, a moderação foi de Júlia e a observação, de Eduardo Silva Waski); cada sessão registra quem atuou em cada
 função. Os dois respondem pelos CSV, pela inspeção M8 e pela revisão de M9. O recrutamento
-fica com Júlia. O contato de pesquisa para os participantes **ainda precisa ser definido**
-antes do envio do convite.
+ficou com Júlia.
 Sessões individuais online por Google Meet, com link privado enviado ao participante,
 no site público do Sua Grade UnB. Todas as sessões usam a modalidade conta, com a
-conta Google do próprio participante ([protocolo](protocolo.md)). Não há recrutamento ou agenda confirmados neste documento.
+conta Google do próprio participante ([protocolo](protocolo.md)).
 
-## Convite pronto para envio pela equipe
+## Modelo do convite
 
 > Estamos procurando estudantes da UnB, com 18 anos ou mais, que nunca tenham usado
 > o Sua Grade UnB, para uma avaliação acadêmica sobre montagem de grade. A sessão
@@ -28,9 +32,9 @@ conta Google do próprio participante ([protocolo](protocolo.md)). Não há recr
 > A participação é voluntária e pode ser interrompida a qualquer momento.
 > Gravações de tela e áudio são opcionais, mediante consentimento específico.
 > Se tiver interesse, informe sua disponibilidade e dispositivo ao contato
-> [preencher responsável e contato antes de enviar].
+> [responsável e contato].
 
-O convite está preparado; nenhum convite foi enviado automaticamente.
+O responsável e o contato são preenchidos no envio e não são publicados.
 
 ## Perguntas de triagem
 

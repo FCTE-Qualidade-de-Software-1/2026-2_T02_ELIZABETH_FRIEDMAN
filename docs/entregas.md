@@ -19,4 +19,4 @@ Todas as releases: <https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_E
 |-------|------|-----------------------|----------|
 | PC1 | 19/10 ou 21/10/2026 (sorteio) | Artigo no modelo SBC em coluna única e com o conteúdo reduzido ([#24](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/24), [#30](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/30))<br>Métricas PSM/CID com a cadeia do PSM e com os valores reais ([#25](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/25))<br>Coleta automática das métricas PSM/CID ([#26](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/26))<br>GitHub Project do repositório ([#27](https://github.com/FCTE-Qualidade-de-Software-1/2026-2_T02_ELIZABETH_FRIEDMAN/issues/27)) | Todas atendidas: as do artigo, das métricas e da coleta até 27/10, e o Project em 05/11 |
 | PC2 | 18/11/2026 (14h, 5ª apresentação da T02) | Nenhuma registrada | Apresentado em 18/11 |
-| Apresentação final | 23/11, 25/11 ou 30/11/2026 (sorteio) | — | |
+| Apresentação final | 25/11/2026 | — | Agendada |
